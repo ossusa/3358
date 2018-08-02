@@ -1,0 +1,5 @@
+User-agent: *
+Crawl-delay: 4
+Disallow: /
+Disallow: /Sitefinity/
+Disallow: /wildlands/

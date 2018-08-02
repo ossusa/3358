@@ -1,0 +1,31 @@
+
+@if (Model.Any()){
+  <ul class="maxx-events sfitemsList sflist">
+    @foreach (var meeting in Model)
+    {
+
+        if (meeting.CalendarItem.StartDate != null)
+        {
+      <li class="sfitem sflistitem sfClearfix">
+          <div class="sfeventMetaInfo sfitemPublicationDate">@meeting.CalendarItem.StartDate.Value.ToString("MMMM d, yyy")
+              @if(meeting.Location!=null){
+              @Html.Raw("| " + meeting.Location.PrintPrettyHTMLVagueNoName)
+              }
+          </div>
+          
+          <h3 class="sfitemTitle sftitle"><a href="http://@meeting.PublicUrl">@meeting.Name</a></h3>
+
+          @if (!String.IsNullOrEmpty(@meeting.CalendarBlurb))
+          {
+          <p class="description">
+            @meeting.CalendarBlurb
+          </p>
+        }
+
+      </li>
+    }
+        
+        
+    }
+  </ul>
+}

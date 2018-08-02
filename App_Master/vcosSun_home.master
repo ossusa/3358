@@ -1,0 +1,538 @@
+<%@ Master Language="C#" %>
+
+<!doctype html>
+<html>
+<head  id="Head1" runat="server">
+
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+	
+	
+<!-- favicon begins -->
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/manifest.json">
+<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+<!-- favicon ends -->
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="~/VCOSsunAssets/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="~/VCOSsunAssets/style.css" type="text/css" />
+	<link rel="stylesheet" href="~/VCOSsunAssets/css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="~/VCOSsunAssets/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="~/VCOSsunAssets/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="~/VCOSsunAssets/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="~/VCOSsunAssets/css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="~/VCOSsunAssets/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>VCOS Symposium Homepage 3</title>
+</head>
+
+<body>
+<form id="form1" runat="server">
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
+<asp:ContentPlaceHolder ID="JavaScript" runat="server">
+</asp:ContentPlaceHolder>
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Top Bar
+		============================================= -->
+		<div id="top-bar">
+
+			<div class="container clearfix">
+
+				<div class="col_half nobottommargin">
+
+					<!-- Top Links
+					============================================= -->
+					<div class="top-links">
+						
+					</div><!-- .top-links end -->
+
+				</div>
+
+				<div class="col_half fright col_last nobottommargin">
+
+				</div>
+
+			</div>
+
+		</div><!-- #top-bar end -->
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="sticky-style-2">
+
+			<div class="container clearfix">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo">
+					  <a href="index.html" class="standard-logo"><img src="https://www.iafc.org/images/default-source/1LOGOS/vcossunlogo_275x125.png" alt="Symposium in the Sun"></a> 
+					  <a href="index.html" class="retina-logo"><img src="https://www.iafc.org/images/default-source/1LOGOS/vcossunlogo_250x200.png" alt="Symposium in the Sun"></a> 
+				</div><!-- #logo end -->
+
+				<div class="header-extras-date">
+				<h4 class="nobottommargin hidden-md hidden-lg hidden-xl visible-xs visible-sm" color="#ffffff" style="color: #ffffff; letter-spacing: 2px; text-align: center">November 9 – 12, 2017<br>
+          <a href="https://www.google.com/maps/place/Hilton+Clearwater+Beach+Resort+%26+Spa/@27.9787705,-82.8300641,17z/data=!3m1!4b1!4m5!3m4!1s0x88c2f6d14aa9e1bb:0x383a73b1237b70a9!8m2!3d27.9787658!4d-82.8278754" target="_blank" style="text-decoration: none !important;">Hilton Clearwater Beach | Clearwater, FL</a><br><button class="button button-3d button-small button-rounded button-amber bottommargin-sm center-block center">Register</button></h4>	
+					
+					<h4 class="nobottommargin hidden-xs hidden-sm visible-md visible-lg visible-xl" color="#ffffff" style="letter-spacing: 2px; text-align: right;"><span style="color: #fff;">November 9 – 12, 2017</span><br>
+          <a href="https://www.google.com/maps/place/Hilton+Clearwater+Beach+Resort+%26+Spa/@27.9787705,-82.8300641,17z/data=!3m1!4b1!4m5!3m4!1s0x88c2f6d14aa9e1bb:0x383a73b1237b70a9!8m2!3d27.9787658!4d-82.8278754" target="_blank" style="text-decoration: none !important;">Hilton Clearwater Beach | Clearwater, FL</a><br><button class="button button-3d button-small button-rounded button-amber bottommargin-sm center-block center">Register</button></h4>			
+					
+
+			</div>
+			</div>
+
+			<div id="header-wrap">
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav id="primary-menu" class="style-2">
+
+					<div class="container clearfix">
+
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+				  <ul>
+            <li class="current"><a href="index.html">
+              <div>Home</div>
+              </a> </li>
+            <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8489" target="_blank">
+              <div>About</div>
+              </a>
+              <ul>
+                <li><a href="http://sites.iafc.org/micrositeVCOSorg/index.cfm" target="_blank">
+                  <div>VCOS Section</div>
+                  </a></li>
+                <li><a href="http://www.iafc.org" target="_blank">
+                  <div>About IAFC</div>
+                  </a></li>
+                <li><a href="http://sites.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8486" target="_blank">
+                  <div>Symposium Sponsors</div>
+                  </a></li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8498" target="_blank">
+                  <div>Future Events</div>
+                  </a></li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8499" target="_blank">
+                  <div>Contact Us</div>
+                  </a></li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=9347" target="_blank">
+                  <div>FAQs</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="landing_page_cz.html" target="_blank">
+              <div>Registration &amp; Hotel</div>
+              </a>
+              <ul>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympRegHotel.cfm?ItemNumber=8605" target="_blank">
+                  <div>Travel</div>
+                  </a></li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympRegHotel.cfm?ItemNumber=9386" target="_blank">
+                  <div>Visit Clearwater</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympEduExhibits.cfm?ItemNumber=8503" target="_blank">
+              <div>Education &amp; Exhibits</div>
+              </a>
+              <ul>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8506" target="_blank">
+                  <div>VCOS App</div>
+                  </a></li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympEduExhibits.cfm?ItemNumber=8504" target="_blank">
+                  <div>Education</div>
+                  </a></li>
+                <li><a href="http://s36.a2zinc.net/clients/IAFC/VCOS2017/Public/eventmap.aspx?shmode=E" target="_blank">
+                  <div>Floor Plan</div>
+                  </a></li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympEduExhibits.cfm?ItemNumber=8504" target="_blank">
+                  <div>Schedule at-a-Glance</div>
+                  </a></li>
+                <li><a href="Interior_cz.html">
+                  <div>Networking</div>
+                  </a></li>
+              </ul>
+            </li>
+            <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8507" target="_blank">
+              <div>For Exhibitors/Sponsors</div>
+              </a>
+              <ul>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8508" target="_blank">
+                  <div>Already an Exhibitor?</div>
+                  </a>
+                  <ul>
+                    <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8499" target="_blank">
+                      <div>Contact Us</div>
+                      </a></li>
+                  </ul>
+                </li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8509" target="_blank">
+                  <div>Interested in becoming an exhibitor?</div>
+                  </a>
+                  <ul>
+                    <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8510" target="_blank">
+                      <div>Become an Exhibitor</div>
+                      </a></li>
+                    <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8499" target="_blank">
+                      <div>Contact Us</div>
+                      </a></li>
+                  </ul>
+                </li>
+                <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8511" target="_blank">
+                  <div>Marketing Opportunities</div>
+                  </a>
+                  <ul>
+                    <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8512" target="_blank">
+                      <div>Sponsorship Opportunities</div>
+                      </a></li>
+                    <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8513" target="_blank">
+                      <div>Advertising Opportunities</div>
+                      </a></li>
+                    <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8499" target="_blank">
+                      <div>Marketing Toolkit</div>
+                      </a></li>
+                    <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=8499" target="_blank">
+                      <div>Contact Us</div>
+                      </a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+						
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+							</form>
+						</div><!-- #top-search end -->
+
+					</div>
+
+				</nav><!-- #primary-menu end -->
+
+			</div>
+
+		 </header>
+  <!-- #header end --> 
+  
+  <!-- Page Sub Menu
+		============================================= -->
+  <div id="page-menu">
+    <div id="page-menu-wrap">
+      <div class="container clearfix">
+        <div class="menu-title"><span></span></div>
+        <nav>
+          <ul>
+            <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympAbout.cfm?ItemNumber=9347" target="_blank">
+              <div>Register</div>
+              </a></li>
+            <li><a href="http://iafcdev.azurewebsites.net/landing_page_cz.html" target="_blank">
+              <div>Attend &amp; Learn</div>
+              </a></li>
+            <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympEduExhibits.cfm?ItemNumber=8503" target="_blank">
+              <div>Exhibit</div>
+              </a></li>
+            <li><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8508" target="blank">
+              <div>Sponsor</div>
+              </a></li>
+          </ul>
+        </nav>
+        <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+      </div>
+    </div>
+  </div>
+  <!-- #page-menu end --> 
+  
+  <!-- Slider begins
+						============================================= -->
+  <section id="slider" class="slider-parallax swiper_wrapper clearfix" height="500" data-autoplay="7000" data-speed="650" data-loop="true">
+    <div class="slider-parallax-inner">
+      <div class="swiper-container swiper-parent">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide dark" style="background-image: url('https://www.iafc.org/images/default-source/1PHOTOS/vcossun_slider_1100x400.jpg');">
+            <div class="container clearfix">
+              <div class="slider-caption slider-caption-center slider-caption-transform">
+                <div class="caption-background-box">
+                  <h2 data-caption-animate="fadeInUp" style="color: #ffffff !important;">Welcome to VCOS</h2>
+                  <p data-caption-animate="fadeInUp" data-caption-delay="200" class="semi-bold" style="color: #ffffff !important;"><a href="landing_page_cz.html">View Landing page</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide dark" style="background-image: url('https://www.iafc.org/images/default-source/1PHOTOS/vcossun_slider_2100x400.jpg'); background-position: center top;">
+            <div class="container clearfix">
+              <div class="slider-caption slider-caption-center slider-caption-transform">
+                <div class="caption-background-box">
+                  <h2 data-caption-animate="fadeInUp" style="color: #ffffff !important;">Education Opportunities</h2>
+                  <p data-caption-animate="fadeInUp" data-caption-delay="200" class="semi-bold" style="color: #ffffff !important;"><a href="Interior_cz.html">Check out the Interior page</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide dark" style="background-image: url('https://www.iafc.org/images/default-source/1PHOTOS/vcossun_slider_2100x400.jpg');">
+            <div class="container clearfix">
+              <div class="slider-caption slider-caption-center slider-caption-transform">
+                <div class="caption-background-box">
+                  <h2 data-caption-animate="fadeInUp" style="color: #ffffff !important;">Showcase your business</h2>
+                  <p data-caption-animate="fadeInUp" data-caption-delay="200" class="semi-bold" style="color: #ffffff !important;">Gain access to the first responder community<br>
+                    <a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8510" target="_blank" class="button button-3d button-large button-rounded button-amber" style="background-color: #f7a11a;">Exhibit Now!</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide dark" style="background-image: url('https://www.iafc.org/images/default-source/1PHOTOS/vcossun_slider_4100x400.jpg');">
+            <div class="container clearfix">
+              <div class="slider-caption slider-caption-center slider-caption-transform">
+                <div class="caption-background-box">
+                  <h2 data-caption-animate="fadeInUp" style="color: #ffffff !important;">Networking Opportunities are Endless</h2>
+                  <p data-caption-animate="fadeInUp" data-caption-delay="200" class="semi-bold"><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympEduExhibits.cfm?ItemNumber=8505" target="_blank" style="color: #ffffff !important;">Network</a> within the first responder community.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+        <div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+        <div id="slide-number">
+          <div id="slide-number-current"></div>
+          <span>/</span>
+          <div id="slide-number-total"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- slider ends --> 
+  
+  
+  <!-- Content
+		============================================= -->
+  <section id="content">
+    <div class="content-wrap"> 
+      
+      <!-- Action icons begin
+		============================================= -->
+      
+      <div class="container clearfix">
+        <div class="col-md-3 bottommargin-lg">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+            <div class="fbox-icon"> <a href="/landing_page_cz.html"><i class="i-alt noborder icon-user"></i></a> </div>
+            <h3>Register</h3>
+          </div>
+        </div>
+        <div class="col-md-3 bottommargin-lg">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+            <div class="fbox-icon"><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympEduExhibits.cfm?ItemNumber=8503" target="_blank"><i class="i-alt noborder icon-plane"></i></a></div>
+			  <h3>Attend &amp; Learn</h3>
+          </div>
+        </div>
+        <div class="col-md-3 bottommargin-lg">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+            <div class="fbox-icon"><a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympEduExhibits.cfm?ItemNumber=8503" target="_blank"><i class="i-alt noborder icon-cogs"></i></a> </div>
+            <h3>Exhibit</h3>
+          </div>
+        </div>
+        <div class="col-md-3 bottommargin-lg col_last">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+            <div class="fbox-icon"> <a href="http://events.iafc.org/micrositeVCOSsymp/interiorVCOSsympForExhibsSpons.cfm?ItemNumber=8508" target="_blank"><i class="i-alt noborder icon-fire"></i></a> </div>
+            <h3>Sponsor</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Action icons end-->
+      
+      <div class="line bottommargin-lg"></div>
+     
+      
+      <!-- Video begins -->
+      
+      <div class="container clearfix bottommargin-sm">
+        <div class="col-md-6">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/e6YR1N8cmiI" frameborder="0" allowfullscreen></iframe>
+          </a> </div>
+        <div class="col-md-6 col_last">
+          <div class="heading"> <span style="margin: 4px;">
+            <h3>IAFC's Volunteers Conference</h3>
+            <p>Video text here</p>
+            </span></div>
+        </div>
+      </div>
+      
+      <!-- Video ends -->
+      
+      <div class="line bottommargin-lg"></div>
+      
+      <!--Testimonies and updates begins-->
+      
+      <div class="container clearfix bottommargin-sm">
+        <div class="row divcenter clearfix">
+          <div class="col-md-4 col-sm-6 bottommargin-lg">
+            <div class="widget clearfix">
+              <h4>Attendee comments</h4>
+              <div class="fslider testimonial" data-animation="fade" data-arrows="false">
+                <div class="flexslider">
+                  <div class="slider-wrap">
+                    <div class="slide">
+                      <div class="testi-content">
+                        <p>The VCOS Symposium is the ONLY conference that allows participants to interact face-to-face with leaders of rural and suburban combination departments. This is the best conference available for combination organizations.</p>
+                        <div class="testi-meta"> Ken Preston <span>Commissioner, North Greece (NY) Fire District</span> </div>
+                      </div>
+                    </div>
+                    <div class="slide">
+                     <div class="testi-content">
+                    <p>The VCOS Symposium provides respected fire service leaders who deliver timely educational topics. In addition, it provides a unique format not available at other conferences.</p>
+                      <div class="testi-meta">Patrick J Kenny<span>Chief, Western Springs (IL) Department of Fire and EMS</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 bottommargin-lg">
+            <div class="widget clearfix">
+              <h4>Get Conference Updates</h4>
+              <div> <h5>Subscribe to receive the latest conference updates and news.</h5></div>
+              <div> <a href="http://iafc.informz.net/iafc/default.asp?fid=725" target="_blank">
+                <button class="button button-3d button-large button-rounded button-amber topmargin-sm bottommargin-lg center">Subscribe Now</button>
+                </a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 bottommargin-lg">
+            <div class="widget clearfix">
+              <h4>Volunteer Updates</h4>
+              <div id="post-list-footer">
+                <div class="spost clearfix">
+                  <div class="entry-image"> <a href="#" class="nobg"><img src="images/magazine/small/1.jpg" alt=""></a> </div>
+                  <div class="entry-c">
+                    <div class="entry-title">
+                      <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                    </div>
+                    <ul class="entry-meta">
+                      <li>10th July 2014</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="spost clearfix">
+                  <div class="entry-image"> <a href="#" class="nobg"><img src="images/magazine/small/2.jpg" alt=""></a> </div>
+                  <div class="entry-c">
+                    <div class="entry-title">
+                      <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+                    </div>
+                    <ul class="entry-meta">
+                      <li>10th July 2014</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="spost clearfix">
+                  <div class="entry-image"> <a href="#" class="nobg"><img src="images/magazine/small/3.jpg" alt=""></a> </div>
+                  <div class="entry-c">
+                    <div class="entry-title">
+                      <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                    </div>
+                    <ul class="entry-meta">
+                      <li>10th July 2014</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonies and Volunteer Updates end -->
+      
+      <div class="line bottommargin-lg"></div>
+      
+      <!-- Powered by begins -->
+      
+      <div class="container clearfix">
+        <div class="col-md-6">
+          <div class="heading bottommargin-sm text-center">
+            <h3>Powered by:</h3>
+            <img class="sponsored-by-home-2" width="135" height="92" src="https://www.iafc.org/images/default-source/1LOGOS/comp-vcos135wiafcbdr.gif" alt="VCOS logo" /> 
+            <img class="sponsored-by-home-2" width="135" height="92" src="https://www.iafc.org/images/default-source/1LOGOS/comp-iafc135wgraybdr.gif?sfvrsn=0" alt="International Association of Fire Chiefs logo"/> </div>
+        </div>
+        <div class="col-md-6 col_last">
+          <div class="heading bottommargin-sm text-center">
+            <h3>Sponsored by:</h3>
+            <img class="sponsored-by-home" width="135" height="92" src="https://www.iafc.org/images/default-source/1LOGOS/comp_ems1-com_135w.gif?sfvrsn=4" alt="comp_EMS1-com_135w"/> </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!-- Powered by ends --> 
+      
+    </div>
+  </section>
+  <!-- #content end --> 
+  
+  <!-- Footer
+		============================================= -->
+  <footer id="footer" class="light"> 
+    
+    <!-- Copyrights
+			============================================= -->
+    
+    <div id="copyrights" class="dark" style="background: #184989;">
+      <div class="container clearfix">
+        <div class="col-md-6 text-center hidden-md hidden-lg hidden-xl visible-xs visible-sm">
+          <p> <a href="https://www.facebook.com/firechiefs" target="_blank"><img src="images/social/icon_36x36_facebk_orngf57d20.png" alt="IAFC on Facebook"style="padding: 2px;"></a> <a href="http://www.linkedin.com/groups?mostPopular=&amp;gid=1322717" target="_blank"><img src="images/social/icon_36x36_LinkedIn_orngf57d20.png" alt="IAFC on LinkedIn" style="padding: 2px;"></a> <a href="https://twitter.com/IAFC" target="_blank"><img src="images/social/icon_36x36_twitter_orngf57d20.png" alt="IAFC on Twitter" style="padding: 2px;"></a> <a href="http://www.iafc.org/knowledgeNet" target="_blank"><img src="images/social/icon_36x36_knowNet_orngf57d20.png" alt="IAFC KnowledgeNet" style="padding: 2px; padding-left: 4px;"></a> <a href="http://iafc.informz.net/iafc/default.asp?fid=725" target="_blank"><img src="images/social/icon_36x36_envelope_blue184989.png" alt="Subscribe to IAFC email" style="padding: 2px; padding-left: 5px;"></a></p>
+        </div>
+ <div class="col-md-6 tleft hidden-xs hidden-sm visible-md visible-lg visible-xl">
+          <p> <a href="https://www.facebook.com/firechiefs" target="_blank"><img src="images/social/icon_36x36_facebk_orngf57d20.png" alt="IAFC on Facebook"style="padding: 2px;"></a> <a href="http://www.linkedin.com/groups?mostPopular=&amp;gid=1322717" target="_blank"><img src="images/social/icon_36x36_LinkedIn_orngf57d20.png" alt="IAFC on LinkedIn" style="padding: 2px;"></a> <a href="https://twitter.com/IAFC" target="_blank"><img src="images/social/icon_36x36_twitter_orngf57d20.png" alt="IAFC on Twitter" style="padding: 2px;"></a> <a href="http://www.iafc.org/knowledgeNet" target="_blank"><img src="images/social/icon_36x36_knowNet_orngf57d20.png" alt="IAFC KnowledgeNet" style="padding: 2px; padding-left: 4px;"></a> <a href="http://iafc.informz.net/iafc/default.asp?fid=725" target="_blank"><img src="images/social/icon_36x36_envelope_blue184989.png" alt="Subscribe to IAFC email" style="padding: 2px; padding-left: 5px;"></a></p>
+        </div>
+        <div class="col-md-6 col_last text-center hidden-md hidden-lg hidden-xl visible-xs visible-sm">
+          <div class="clear"></div>
+          &copy; 1999 <script>new Date().getFullYear()>1999&&document.write("-"+new Date().getFullYear());</script> All Rights Reserved<br> by International Association of Fire Chiefs<br>
+          <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+        </div>
+        <div class="col-md-6 col_last tright hidden-xs hidden-sm visible-md visible-lg visible-xl">
+          <div class="clear"></div>
+          &copy; 1999 <script>new Date().getFullYear()>1999&&document.write("-"+new Date().getFullYear());</script> All Rights Reserved by International Association of Fire Chiefs<br>
+          <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- #copyrights end --> 
+    
+  </footer>
+  
+  <!-- #footer end --> 
+  
+</div>
+<!-- #wrapper end --> 
+
+<!-- Go To Top
+	============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+	============================================= --> 
+<script type="text/javascript" src="/VCOSsunAssets/js/jquery.js"></script> 
+<script type="text/javascript" src="/VCOSsunAssets/js/plugins.js"></script> 
+
+<!-- Footer Scripts
+	============================================= --> 
+	<script type="text/javascript" src="/VCOSsunAssets/js/functions.js"></script></form>
+</body>
+</html>

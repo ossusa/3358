@@ -1,0 +1,25 @@
+﻿@using MatrixGroup.Data.Extension
+@using MatrixGroup.Data.Model
+@using MatrixGroup.Implementation.Security
+@using ServiceStack
+@using Telerik.Sitefinity.Security.Claims
+
+@model MatrixGroup.Data.Model.VisitUserModel
+
+@{
+    ViewBag.Title = "";
+    /*Layout = "~/MVC/Views/Shared/_VueLayout.cshtml";*/
+	Layout = "";
+    var vdata = ViewData["code"]?? new VisitUserModel();
+    Guid myId = ClaimsManager.GetCurrentIdentity().UserId;
+    bool isLoginusr = myId.IsNullOrEmptyGuid();
+}
+
+@if (myId.IsNullOrEmptyGuid())
+{
+	<p><a href="/Mxg/AuthService/SignInByHelix/" class="button-red">Login</a></p>
+
+}else
+{
+    <p><a href="~/Mxg/AuthService/SignOut" class="button-red">Logout</a></p>
+}

@@ -1,0 +1,58 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<div>
+        @foreach (var result in Model.ResultSet)
+        {
+            <div class="spost clearfix">
+                @if (!String.IsNullOrEmpty(result.ImageUrl))
+                {
+                    <div class="entry-image">
+                        <img src="@result.ImageUrl" alt="@HttpUtility.HtmlEncode(result.ImageCaption)" />
+                    </div>
+                }
+
+
+
+
+                <div class="entry-c">
+                    <div class="entry-title">
+
+                        <h4 class="sfitemTitle sftitle">
+                            <a href="@result.Link">@result.Title</a>
+                        </h4>
+                    </div>
+                    <ul class="entry-meta">
+                        <li>
+                            @if (!string.IsNullOrEmpty(result.DisplayDate))
+                {
+                                @result.DisplayDate
+                            }
+                            else if (result.DateField != null && result.DateField != DateTime.MinValue)
+                            {
+                                @result.DateField.ToString("MMMM d, yyyy")
+                            }
+                            else if (result.PublicationDate != null && result.PublicationDate != DateTime.MinValue)
+                            {
+                                @result.PublicationDate.ToString("MMMM d, yyyy")
+                            }
+                        </li>
+                    </ul><div class="entry-content">
+                             @result.Summary
+                             
+                    </div>
+                     <div style="margin-top: 8px !important;">
+                <a href="@result.Link" target="_blank" class="button button-3d button button-rounded button-red">Read More</a>
+            </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+    }
+    </div>
+

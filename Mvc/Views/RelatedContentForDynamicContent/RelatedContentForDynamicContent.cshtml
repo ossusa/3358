@@ -1,0 +1,38 @@
+
+@model IList<SitefinityWebApp.Mvc.Models.BlendedListItem>
+
+@if (Model.Any())
+{
+    <ul class="sfnewsList sfnewsListTitleDateSummary sflist mg-list">
+
+        @foreach (var item in Model)
+        {
+            var link = string.IsNullOrEmpty(item.Link) ? "" : item.Link;
+            var title = string.IsNullOrEmpty(item.Title) ? "" : item.Title;
+            var summary = string.IsNullOrEmpty(item.Summary) ? "" : item.Summary;
+
+			<li class="sfnewsListItem mg-list-item mg-list-item__no-padding">
+			  <div class="newstitle">
+			    <a href="@link">@title</a>
+				</div>
+				<div class="gray-text">
+					@if(!string.IsNullOrEmpty(item.DisplayDate)){
+						@item.DisplayDate
+}
+                    else if(item.PublicationDate != null)
+                    {
+						@item.PublicationDate.ToString("MMMM d, yyyy")
+					}
+				</div>
+				  <div class="news-summary">
+					<p>@summary <a class="readmore" href="@link">read more</a></p>
+				  </div>
+
+			</li>
+        }
+    </ul>
+}
+else
+{
+	<h4>No result</h4>
+}

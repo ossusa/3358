@@ -1,0 +1,422 @@
+/**
+ * Layout
+ */
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+.container {
+  width: auto;
+  margin: 0 auto;
+  max-width: $container-width;
+  box-sizing: content-box;
+  padding-left: $gutter/2;
+  padding-right: $gutter/2;
+  @include bp(tablet){
+    // width:calc(100% - 30px)!important;
+    // padding:0 15px!important;
+  }
+  @include bp(portrait){
+    padding:0 10px;
+  }
+}
+.full-width-container{
+  width:100%;
+  //float: left;
+  display: block;
+  background-color: $bright;
+  position: relative;
+  img{
+    width:100%;
+  }
+}
+.content-container{
+  width: calc(100% - #{$gutter});
+}
+.page-body {
+    min-height: 200px;
+    padding-bottom: 2em;
+}
+/* Interior */
+.interior-container {
+    margin-top: 2em;
+}
+/* Interior columns */
+.primary {
+    padding-left: 0;
+}
+
+// .secondary {
+//     padding-right: 3%;
+// }
+
+.tertiary {
+    padding-left: 3%;
+}
+/* One column */
+.one-column {
+    .primary {
+        padding-left: 0;
+    }
+}
+/* Two columns */
+.two-columns {
+    .primary,
+    .secondary {
+        @extend %mobile-zero;
+    }
+
+    .secondary {
+        @include bp(mobile) {
+            margin-top: 1em !important;
+        }
+    }
+}
+/* Three columns */
+.three-columns {
+    .primary {
+        padding-right: 0;
+        @extend %mobile-zero;
+        @include bp(portrait) {
+            float: right;
+            width: 75%;
+        }
+    }
+
+    .secondary {
+        @include bp(mobile) {
+            display: none;
+        }
+    }
+
+    .tertiary {
+        @extend %mobile-zero;
+        @include bp(portrait) {
+            margin-top: 1em;
+            padding-top: 1em;
+            border-top: 1px solid $gray-light;
+            float: right;
+            clear: left;
+            width: 75%;
+            padding-left: 0;
+        }
+    }
+}
+/* Page Elements */
+.section-title {
+    margin-top: 2em;
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.landing-page-title {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 30px 0;
+    padding: ($gutter/2) 0;
+    display: flex;
+    align-items: center;
+    //wild land
+    .landing-page-bkg {
+        background-image: url("../images/wildland.jpg");
+    }
+	a {
+	    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+	    letter-spacing: 10px;
+		font-size:4em;
+	    text-decoration: none;
+	    color: $bright;
+	    @include bp(portrait) {}
+	}
+}
+
+.separated {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid $gray-light;
+}
+
+.section {
+    display: block;
+    margin-top: $gutter;
+    margin-bottom: $gutter;
+}
+.inner-page-content .primary {
+    .section {
+        margin-top: 0;
+    }
+}
+// this is mostly for sections that have a background
+// example: /about/
+// use .section every other time
+
+.section-inner {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+}
+// for areas with a larger background image
+// or just needs big padding
+
+.section-inner--3x {
+    padding-top: $gutter * 3;
+    padding-bottom: $gutter * 3;
+}
+
+.component {
+    display: block;
+    margin-top: ($gutter/2);
+    margin-bottom: ($gutter/2);
+}
+
+.gutters {
+    margin-left: ($gutter/2);
+    margin-right: ($gutter/2);
+}
+
+.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.gutters-tablet {
+    @include bp(tablet) {
+        margin-left: ($gutter/2);
+        margin-right: ($gutter/2);
+    }
+}
+
+.gutter-half-top {
+    margin-top: ($gutter/2);
+}
+
+.gutter-half-bottom {
+    margin-bottom: ($gutter/2);
+}
+
+.gutter-half-left {
+    margin-left: ($gutter/2);
+}
+
+.gutter-half-right {
+    margin-right: ($gutter/2);
+}
+
+.gutter-left {
+    margin-left: $gutter;
+}
+
+.gutter-right {
+    margin-right: $gutter;
+}
+
+.gutter-top {
+    margin-top: $gutter;
+}
+
+.gutter-bottom {
+    margin-bottom: $gutter;
+}
+
+.gutter-bottom-narrow {
+    margin-bottom: ($gutter/4);
+}
+
+.banded {
+    background-color: $secondary;
+    overflow: hidden;
+
+    .banded {
+        background-color: $secondary;
+    }
+
+    .list-items-divided li,
+    .list-items-divided--less li,
+    [class*="divider"] {
+        border-color: white;
+    }
+
+    .divider {
+        border-color: $secondary;
+    }
+}
+// these divider classes are meant for layout blocks.
+// to divide list items check the _lists.scss classes
+
+.divider {
+    border-bottom: 5px solid $dividers;
+    padding-bottom: $gutter/2;
+    margin-bottom: $gutter/2;
+}
+
+.divider-top {
+    border-top: 5px solid $dividers;
+    padding-top: $gutter/2;
+    margin-top: $gutter/2;
+}
+
+.divider-left {
+    border-left: 5px solid $dividers;
+    padding-left: $gutter/2;
+    margin-left: $gutter/2;
+}
+
+.divider-right {
+    border-right: 5px solid $dividers;
+    padding-right: $gutter/2;
+    margin-right: $gutter/2;
+}
+
+.divider--slim {
+    border-width: 2px;
+}
+
+.push-down {
+    margin-bottom: $gutter * 2;
+}
+
+.inline-elements {
+    > * {
+        display: inline;
+    }
+}
+// .content-img {
+//     float: left;
+//     padding: ($gutter/8) ($gutter/2) ($gutter/4) 0;
+// }
+
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.block-heading {
+    font-size: 48px;
+    line-height: 0.9;
+    color: $blue-heavy;
+    font-weight: normal;
+    border-bottom: 1px solid $border;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+
+// IAFC General Styles
+
+%header-styles{
+  margin:0;
+  margin-bottom:15px;
+  a{
+    color:inherit;
+    text-decoration: none;
+  }
+}
+h1{
+  font-size: 42px;
+  line-height: 1.2;
+  color: $dark-blue;
+  font-weight: 700;
+  @extend %header-styles;
+  @include bp(portrait){
+    font-size:32px;
+  }
+}
+h2{
+  font-size: 36px;
+  line-height: 1.2;
+  color: $dark;
+  font-weight: 400;
+  padding-bottom: 12px;
+  border-bottom: solid 1px $gray-mid;
+  @extend %header-styles;
+  @include bp(portrait){
+    font-size:26px;
+  }
+}
+h3{
+  font-size: 32px;
+  line-height: 1.3;
+  color: $dark;
+  font-weight: 400;
+  @extend %header-styles;
+  @include bp(portrait){
+    font-size:22px;
+  }
+}
+h4, h4 a{
+  font-size: 32px;
+  line-height: 1.1;
+  color: $dark-blue;
+  margin: 0;
+  @extend %header-styles;
+  @include bp(portrait){
+    font-size:22px;
+  }
+}
+h5{
+  font-size: 24px;
+  line-height: 1.3;
+  color: $gray-mid;
+  @extend %header-styles;
+}
+h6{
+  font-size: 24px;
+  line-height: 1.3;
+  color: $dark-blue;
+  @extend %header-styles;
+  @include bp(portrait){
+    font-size:18px;
+  }
+}
+
+.h7,
+h7,
+h7 a{
+  font-size: 18px;
+  line-height: 1.3;
+  color: $red;
+  display:block;
+  font-weight: 700;
+  @extend %header-styles;
+}
+iframe {
+    max-width: 100%;
+}
+p{
+  font-size:20px;
+  line-height: 27px;
+}
+
+//  ul{
+// 	 li {
+//      font-size: 1.25em;
+//  }
+// }
+.box-frame
+{
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #dfdfdf;
+    padding: 2em;
+    margin-bottom: 2em;
+    overflow: hidden;
+	position: relative;
+}
+.box-dark{
+	color: $bright;
+	background-color: rgba(0,0,0,.6);
+	padding: 2em;
+}
+tbody {
+    vertical-align: top;
+}
+.callout{
+	background: #E5EBF0;
+    padding: 10px;
+    line-height: 1.5em;
+    border-top: #333 solid 1px;
+    border-bottom: #333 solid 1px;
+}

@@ -1,0 +1,20 @@
+@model SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel
+
+<div class="solr-search-results-container">
+    <script>
+        var IAFCSearch = {
+            categoryLimiter: "@Model.CategoryLimiter",
+            metatagLimiter: "@Model.MetatagLimiter",
+            excludedCategories: "@Model.ExcludedCategories" 
+        };
+    </script>
+    <script src="/MvcAssets/SBAngularSearchResults/public/js/build/app.min.js"></script>
+    <link rel="stylesheet" href="/MvcAssets/SBAngularSearchResults/public/css/main.css">
+
+    <text> Test </text>
+    <div id="ng-app" ng-app="searchbloxSearchResultsApp">
+        <div>
+            <div id="app-content-container" ui-view="content"></div>
+        </div>
+    </div>
+</div>

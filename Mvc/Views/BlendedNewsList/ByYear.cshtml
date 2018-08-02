@@ -1,0 +1,33 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+@{
+    var pubYears = Model.ResultSet.Select(r => r.PublicationDate.Year).Distinct();
+    var years = pubYears as int[] ?? pubYears.ToArray();
+}
+
+<div class="by-year-container">
+  <ul class="year-list">
+      @foreach (var year in years)
+      {
+          <li class="year-button-@year" data-year="year-@year">@year</li>
+      }
+      <li class="all">All</li>
+  </ul>
+
+  @foreach (var year in years)
+  {
+    <ul class="year-entries year-@year">
+        @foreach (var result in Model.ResultSet.Where(r => r.PublicationDate.Year == year))
+        {
+          <li>
+            <span class="the-date">@result.PublicationDate.ToString("MMM dd, yyyy")</span>
+            <a href="@result.Link">@result.Title</a>
+          </li>
+        }
+    </ul>
+  }
+</div>
+
+<script>
+require(['mod/year-list']);
+</script>

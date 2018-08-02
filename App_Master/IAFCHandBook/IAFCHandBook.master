@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" %>
+
+<!doctype html>
+<html lang="en">
+<head id="Head1" runat="server">
+	<meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
+
+</head>
+
+<body>
+
+	<form id="form1" runat="server">
+		<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+		<asp:ContentPlaceHolder ID="JavaScript" runat="server"></asp:ContentPlaceHolder>
+
+		<!-- Document Wrapper============================================= -->
+		<div id="wrapper">
+
+			<!-- Header ============================================= -->
+			<header id="header">
+				<div>
+					<!-- Header Text ============================================= -->
+					<div id="headerText">
+						<asp:ContentPlaceHolder ID="headerHolder" runat="server">
+						</asp:ContentPlaceHolder>
+					</div>
+					<!-- Header Text End ============================================= -->
+					<table width="100%">
+						<tr>
+							<td>
+
+								<!-- Logo ============================================= -->
+								<div id="logo">
+									<asp:ContentPlaceHolder ID="logoHolder" runat="server">
+									</asp:ContentPlaceHolder>
+								</div>
+								<!-- Logo ============================================= -->
+							</td>
+							<td>
+								<!-- Menu ============================================= -->
+								<div>
+									<nav id="primaryMenu">
+										<asp:ContentPlaceHolder ID="menuHolder" runat="server">
+										</asp:ContentPlaceHolder>
+									</nav>
+								</div>
+							</td>
+							<!-- Menu end ============================================= -->
+						</tr>
+					</table>
+				</div>
+			</header>
+			<!-- End Header ============================================= -->
+
+			<!-- Content ============================================= -->
+			<section id="content">
+				<!-- Content ============================================= -->
+				<div>
+					<asp:ContentPlaceHolder ID="contentHolder" runat="server">
+					</asp:ContentPlaceHolder>
+				</div>
+				<!-- Content Ends ============================================= -->
+			</section>
+			<!-- Content End ============================================= -->
+
+			<!-- Footer ============================================= -->
+			<footer id="footer">
+				<table width="100%">
+					<tr>
+						<td>
+							<div>
+								<asp:ContentPlaceHolder ID="footerImage" runat="server">
+								</asp:ContentPlaceHolder>
+							</div>
+						</td>
+						<td>
+							<div>
+								<asp:ContentPlaceHolder ID="footerMenu" runat="server">
+								</asp:ContentPlaceHolder>
+							</div>
+						</td>
+						<td>
+							<div>
+								<asp:ContentPlaceHolder ID="footerCurentYear" runat="server">
+								</asp:ContentPlaceHolder>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</footer>
+			<!-- Footer End ============================================= -->
+
+		</div>
+		<!-- Document Wrapper end ============================================= -->
+	</form>
+
+</body>
+</html>

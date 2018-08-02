@@ -1,0 +1,158 @@
+<div class="row">
+	<div class="col-sm-8 col-xs-12">
+
+        <!-- Search Box and Sort Buttons-->
+		<div ng-show="showSearchBox()" class="search-form well">
+			<div class="row">
+				<div class="col-sm-10 col-xs-12">
+					<div class="form-group">
+						<input type="text" class="form-control input-lg" placeholder="search" ng-model="newSearchPhrase" ng-keydown="executeSearchOnEnter($event)">
+					</div>
+				</div>
+				<div class="col-sm-2 col-xs-12" style="text-align:right">
+					<button class="btn btn-lg" type="button" ng-click="executeSearch(newSearchPhrase)">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="btn-group btn-group-xs">
+						<button class="btn btn-default" type="button" ng-class="{ 'active': sortBy == 'relevance' }" ng-click="setSortBy('relevance')">Relevance</button>
+						<button class="btn btn-default" type="button" ng-class="{ 'active': sortBy == 'new' }" ng-click="setSortBy('new')">Newest</button>
+						<button class="btn btn-default" type="button" ng-class="{ 'active': sortBy == 'old' }" ng-click="setSortBy('old')">Oldest</button>
+						<button class="btn btn-default" type="button" ng-class="{ 'active': sortBy == 'alpha' }" ng-click="setSortBy('alpha')">Alphabetical</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /search box and sort buttons-->
+
+        <!-- Alert -->
+		<div class="alert alert-warning" ng-show="! isSearchDone">
+			<p>
+				<span class="glyphicon glyphicon-refresh icon-refresh-animate"></span>
+				Searching &hellip;
+			</p>
+		</div>
+        <!-- /alert -->
+
+        <!-- Page information -->
+		<div class="alert alert-info" ng-show="searchPhrase && isSearchDone">
+            <p>
+                <span ng-if="result.recordCount > 0">
+                    <span ng-hide="currentPage < 1 "Page <span ng-bind="'Viewing ' + ((currentPage-1) * recordsPerPage() + 1) + ' to ' + (currentPage == result.recordCount ? result.hits : currentPage * recordsPerPage()) + ' of'"></span></span>
+                    <strong ng-bind="result.hits"></strong>
+                </span>
+                <span ng-if="result.recordCount < 1">
+                    No
+                </span>
+                results for
+				<strong>
+					<em ng-bind="searchPhrase"></em>
+				</strong>
+				<span ng-show="hasFiltersApplied()">(with filters applied)</span>
+			</p>
+		</div>
+        <!-- /page information -->
+
+        <!-- Results List -->
+		<div class="search-results">
+			<ul>
+                <!-- Using ng-class for production purposes is bad, but I can't disable $compileProvider.debugInfoEnabled for some reason, so I won't remove it -->
+				<li ng-repeat="record in result.bestBets.concat(result.records) track by $index" class="search-result" ng-class="{ 'best-bet': record['@colname'] != undefined}" ng-show="record != undefined && record['@no'] != undefined && record['@no'] != -1">
+                    <span ng-if="record != undefined">
+                        <h4>
+                            <a href="{{ record.url || record['@url']}}">
+                                <span ng-if="record.isProtected" class="icon-key" title="This page has protected content; a login is required."></span>
+                                <span ng-bind="decodeHTMLEntities(getRecordTitle(record))"></span>
+                            </a>
+                            <span ng-if="record['@colname'] != undefined" class="best-bets-badge"><span class="glyphicon glyphicon-star"/> Featured Result</span>
+                        </h4>
+                        <div class="summary dot-dot-dot">
+                            <p>
+                                <span ng-if="!record.description && !record['@description']">&hellip;</span>
+                                <span ng-if="record.description || record['@description']" ng-bind-html="highlightText(decodeHTMLEntities(record.description || record['@description']), searchPhrase)">
+                                </span>
+                            </p>
+                        </div>
+                        <div class="permalink">
+                            <a ng-href="{{ record.url || record['@url'] }}" ng-bind="record.url || record['@url']"></a>
+                        </div>
+                    </span>
+                </li>
+			</ul>
+		</div>
+        <!-- /results list -->
+
+        <!-- Pagination -->
+		<div ng-show="isSearchDone && result.recordCount > 1">
+			<ul class="pagination pagination-sm">
+				<li ng-hide="currentPage === 1">
+					<a href="javascript:void(0);" ng-click="goToPrevPage()" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li ng-repeat="i in getPageNumbers(result.recordCount, currentPage)" ng-class="{'active':currentPage == i}">
+                    <!-- Bold if on current page -->
+                    <span ng-if="currentPage != i">
+                        <a href="javascript:void(0);" ng-click="goToPage(i)" ng-bind="i"></a>
+                    </span>
+                    <span ng-if="currentPage == i">
+                        <strong><a href="javascript:void(0);" ng-click="goToPage(i)" ng-bind="i"></a></strong>
+                    </span>
+				</li>
+				<li ng-hide="currentPage == result.recordCount">
+					<a href="javascript:void(0);" ng-click="goToNextPage()" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+        <!-- /pagination -->
+
+	</div>
+
+    <!-- Facets -->
+    <div class="col-sm-3 col-xs-12">
+        <div class="search-filter">
+            <h4>Refine your results</h4>
+			<p>The numbers identify the number of results for that item.</p>
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <!-- Facets from Searchblox -->
+                <div ng-repeat="facet in result.facetFields track by $index" ng-show="facet.length">
+                    <div class="panel-heading" role="tab" ng-click="collapseFacet($index);">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-target="#collapse-focusareas" href="javascript:void(0);" aria-expanded="true" aria-controls="collapse-focusareas">
+                                <span ng-hide="$scope.curIndex = $index"></span>
+                                <span ng-bind="specialName(result.facetsKeys[$scope.curIndex])"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse-focusareas" class="panel-collapse collapse" ng-class="{ in: hasFacetsChecked(facet, filterParams['metatag.categories']) || currentPage === 1 }" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                        <!--The subfacetSorter filter is defined in results.js-->
+                            <div class="checkbox" ng-repeat="subfacet in facet | subfacetSorter track by subfacet.name">
+                                <!-- There are some subfacets that have a duplicate that starts with "Featured", so filter those out -->
+                                <span ng-if="subfacet.name != '' && subfacet.name.toLowerCase().indexOf('featured') != 0">
+                                    <label>
+                                        <input type="checkbox" checklist-model="filterParams['facets']" checklist-value="subfacet.sbparam">
+                                        <span ng-bind="specialName(result.facetsKeys[$scope.curIndex], subfacet.name)"></span>
+                                        <span class="badge" ng-bind="subfacet.count"></span>
+                                    </label>
+                                </span>
+                            </div>
+
+                        </div> <!-- end panel-body -->
+                    </div>
+                    <br />
+                </div>
+                <!-- /facets from searchblox -->
+                <!-- /date range facet -->
+            </div>
+        </div>
+    </div>
+    <!-- /facets -->
+
+</div>

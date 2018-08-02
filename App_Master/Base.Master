@@ -1,0 +1,64 @@
+﻿<!-- CBB 180521 test - can we update base.master in SF? -->
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="SitefinityWebApp.App_Master.Base" %>
+<%@ Register TagPrefix="sf" Namespace="Telerik.Sitefinity.Web.UI" Assembly="Telerik.Sitefinity" %>
+<%@ Register TagPrefix="asp" Namespace="System.Web.UI.HtmlControls" Assembly="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" %>
+
+<!DOCTYPE html>
+<html>
+    <head runat="server">
+        <script src="//assets.adobedtm.com/c876840ac68fc41c08a580a3fb1869c51ca83380/satelliteLib-37dd9dab2f0bd0b05d2526671b4314c0aae1ac68.js"></script>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="~/Sitefinity/WebsiteTemplates/MatrixBase/App_Themes/MatrixBase/images/IAFC_logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    </head>
+    <body class="<%= BodyCssClass %>">
+	<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P7TWW6"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-P7TWW6');</script>
+	<!-- End Google Tag Manager -->
+        <form id="aspnetForm" runat="server">
+
+            <sf:ResourceLinks ID="ResourceLinks1" runat="server" UseEmbeddedThemes="false">
+                <sf:ResourceFile JavaScriptLibrary="JQuery" />
+            </sf:ResourceLinks>
+
+            <div class="sfPublicWrapper" id="PublicWrapper" runat="server">
+                <asp:ContentPlaceHolder ID="Body" runat="server" />
+            </div>
+
+        </form>
+
+    <script src="/Sitefinity/WebsiteTemplates/MatrixBase/App_Themes/MatrixBase/js/min/main.min.js?v=2"></script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "e837658f-c1fe-44ae-befa-f7a1e46336f4", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+    <asp:HtmlIframe ID="iMisFrm" runat="server" CssClass="hidden" />
+    <script type="text/javascript">_satellite.pageBottom();</script>
+
+    <!-- begin Feathr code -->
+    <script>
+        !function (f, e, a, t, h, r) {
+            if (!f[h]) {
+                r = f[h] = function () {
+                    r.invoke ?
+                    r.invoke.apply(r, arguments) : r.queue.push(arguments)
+                },
+                r.queue = [], r.loaded = 1 * new Date, r.version = "1.0.0",
+                f.FeathrBoomerang = r; var g = e.createElement(a),
+                h = e.getElementsByTagName("head")[0] || e.getElementsByTagName("script")[0].parentNode;
+                g.async = !0, g.src = t, h.appendChild(g)
+            }
+        }(window, document, "script", "https://cdn.feathr.co/js/boomerang.min.js", "feathr")
+
+        feathr("fly", "589b636b7c1fea23194db3c2");
+        feathr("sprinkle", "page_view");
+</script>
+    <!-- end Feathr code -->
+    </body>
+</html>

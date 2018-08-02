@@ -1,0 +1,123 @@
+/**
+ * Branding Area
+ */
+
+.homepage-branding {
+  position: relative;
+  z-index: 8;
+  max-height:480px;
+  overflow: hidden;
+  .slides-container {
+    background-color:$dark;
+    .slide .slide-content {
+      @include bp(mobile) {
+        font-size: .8em;
+      }
+    }
+  }
+
+  h4 {
+    margin: 0;
+
+    @include bp(mobile) {
+      font-weight: $regular;
+      font-size: 1.2em;
+    }
+  }
+
+  p {
+    @include bp(mobile) {
+      display: none;
+    }
+  }
+  .mtx-branding{
+    height: 480px;
+    overflow: hidden;
+    padding: 0;
+    @include bp(tablet){
+      height: 385px;
+    }
+    @include bp(mobile){
+      height: 215px;
+      img{
+        height:215px;
+        width:100%;
+      }
+    }
+    img{
+    //   max-height: 480px;
+    //   max-width:100%;
+    }
+    .slides-container{
+      max-height: 480px;
+      .slide{
+		.slide-background{
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center center;
+		}
+        .slide-content{
+          padding:2% 20%;
+		  max-width: 1400px;
+    	  position: absolute;
+		  left: 50%;
+    	  transform: translateX(-50%);
+          background: transparent url("../images/branding-content.png");
+          a{
+            color: $yellow;
+            text-decoration: none;
+          }
+          h4{
+            font-size: 48px;
+            margin:0;
+            color:$bright;
+          }
+          p{
+            font-size: 21px;
+            line-height: 21px;
+            margin: 0;
+          }
+          @include bp(tablet){
+            padding:2% 12%;
+            h4{
+              font-size:29px;
+            }
+            p{
+              display: block;
+              font-size: 15px;
+            }
+          }
+          @include bp(mobile){
+            min-height: 44%;
+            padding:2% 12%;
+            h4{
+              font-size:20px;
+            }
+            p{
+              display: block;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .prev,
+    .next {
+      //bottom:40px;
+      opacity: 1;
+      background: none;
+	  padding: 0 2%;
+      &:hover
+      {
+        background: none;
+      }
+
+    }
+
+    .icon-angle-right,.icon-angle-left{
+      color:$bright;
+      font-size: 64px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+@foreach (var result in Model.ResultSet)
+{
+    <p>@result.PublicationDate.ToString("MMM dd, yyyy")</p>
+    <a href="@result.Link">@result.Title</a><br />
+    <p>@result.Summary</p>
+    <img src="@result.ImageUrl" />
+    
+}

@@ -1,0 +1,32 @@
+@model IList<SitefinityWebApp.Mvc.Models.BlendedListItem>
+
+@if(Model.Any())
+{
+<div class="box-slick">
+    <div class="slick-container">
+        @foreach (var item in Model)
+        {
+            var link = string.IsNullOrEmpty(item.Link)? "": item.Link;
+            var title = string.IsNullOrEmpty(item.Title)? "": item.Title;
+            var summary= string.IsNullOrEmpty(item.Summary)?"":item.Summary;
+
+	        <div class="mg-carousel__item">
+	            @if(!string.IsNullOrEmpty(item.Image) ){
+	            	<img src="@item.Image">
+	            }
+	            <div class="mg-card">
+	                <div class="mg-card-title">
+	                    <a href="@link">@title</a>
+	                </div>
+						<div class="wildland-event_date">
+							<p>@summary</p>
+						</div>
+	            </div>
+	        </div>
+        }
+    </div>
+
+</div>
+}
+
+

@@ -1,0 +1,492 @@
+/**
+ * Various Sitefinity Lists
+ * Includes, but is not limited to: News, Events, Lists, Documents, etc.
+ */
+
+.clean-list {
+  @extend %clean-list;
+}
+
+%list-spaced {
+  > li {
+    margin-bottom: ($gutter / 2);
+  }
+}
+
+.list-spaced {
+  @extend %list-spaced;
+
+  &--more {
+    @extend %list-spaced;
+    > li { margin-bottom: $gutter; }
+  }
+
+  &--less {
+    @extend %list-spaced;
+    > li { margin-bottom: $gutter/4; }
+  }
+
+}
+
+%list-across,
+.list-across {
+  @extend %horizontal-list-spaced;
+  li {
+    margin-bottom: $gutter/3;
+  }
+}
+
+
+%list-across-spaced,
+.list-across-spaced {
+  @extend %horizontal-list-spaced;
+  margin-bottom: $gutter / 2;
+
+  li { margin-right: $gutter; }
+
+}
+
+.list-across-divided,%list-across-divided {
+  @extend %list-across;
+  // overflow: hidden;
+
+  li {
+    // float: left;
+    border-right: 1px solid darken($dividers, 10%);
+    padding-right: $gutter/3;
+    line-height: 1;
+
+    &:last-child {
+      border: none;
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+  }
+
+}
+
+%list-items-divided {
+  > li {
+    border-bottom: 1px solid $dividers;
+  }
+}
+
+.list-items-divided {
+  @extend %list-items-divided;
+  > li {
+    padding-bottom: ($gutter/2);
+    margin-bottom: ($gutter/2);
+  }
+
+  &--less {
+    @extend %list-items-divided;
+    > li {
+      padding-bottom: ($gutter/4);
+      margin-bottom: ($gutter/4);
+    }
+  }
+
+}
+
+.h-list-divided {
+    @extend %horizontal-list-divided;
+
+    .no-border {
+        border: none;
+        padding-right: 0;
+    }
+}
+
+/**
+ * Widget lists
+ * Use for News, events, blog posts, etc.
+ */
+
+/**
+ * Default list
+ */
+
+.mg-list {
+  @extend %clean-list;
+
+  .mg-list-item {
+    margin: 0 0 1em;
+    overflow: auto;
+    &:last-child{
+      margin: 0;
+    }
+  }
+
+  .mg-title {
+    font-weight: $regular;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .mg-meta {
+    margin: .2em 0;
+    font-size: 1em;
+    color: $gray-mid;
+  }
+
+  .mg-summary {
+    margin-bottom: .3em;
+  }
+
+  .mg-meta-info {
+    margin-right: 1em;
+    padding-right: 1em;
+    border-right: 1px solid $gray;
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  .more {
+    font-size: .9em;
+  }
+}
+
+/**
+ * Anchor list
+ */
+
+.mg-anchor-list {
+  margin-bottom: 2em;
+
+  .mg-list-item {
+    margin: 0;
+  }
+}
+
+/**
+ * Expandable list
+ */
+
+.mg-expand-all-wrap {
+  float: right;
+  font-size: .8em;
+
+  a {
+    margin-top: .7em;
+    text-decoration: none;
+    color: $gray-heavy;
+    @extend %button;
+
+    &:hover {
+      color: $gray-heavy;
+    }
+  }
+}
+
+/**
+ * Download list
+ */
+
+.mg-download-list {
+  margin: 1em 0;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .mg-meta-info {
+    padding-right: .5em;
+    margin-right: .3em;
+  }
+}
+
+/**
+ * Archive live
+ */
+
+.mg-archive-list {
+
+  ul {
+    @extend %horizontal-list-spaced;
+    margin-bottom: 1em;
+  }
+
+  a {
+    @extend %button;
+    text-decoration: none;
+
+    &.sfSel {
+      background: $bright;
+    }
+  }
+}
+
+/**
+ * Images list
+ */
+
+.mg-images-list {
+  @extend %clean-list;
+}
+
+.mg-grid {
+  @extend %clearfix;
+
+  li {
+    padding: 1%;
+    float: left;
+    width: 20%;
+    text-align: center;
+
+    img {
+      border: 1px solid $gray-light;
+    }
+  }
+}
+
+/**
+ * List paging
+ */
+
+.mg-pager {
+  font-size: 1.125em;
+  text-align: center;
+  margin: 3.33em 0 0;
+  a {
+    display: inline-block;
+    padding: 0 .4em;
+    color: $blue;
+    text-decoration: none;
+    margin: .2em;
+    font-weight: $bold;
+
+    &.sf_PagerCurrent {
+      color: $gray-mid;
+      background: $gray;
+    }
+  }
+}
+/**********Default List: style like homepage latest section****************/
+.info-list,
+.info-list-career{
+  list-style: none;
+  margin:0;
+  padding:0;
+  float:left;
+  .jt_job{
+	  margin: 1em 0;
+  }
+  h6{
+	  margin-bottom: 0;
+  }
+  .topic-image{
+    img{
+      max-width:16px;
+      max-height:125px;
+      float:right;
+      margin-bottom:15px;
+      margin-left:15px;
+    }
+  }
+  &.blog-pages{
+    .info-description{
+      p{
+        float:none;
+      }
+      .info-date{
+        float:none;
+      }
+    }
+  }
+  .thumb{
+    width:100%;
+    float:left;
+    max-height: 232px;
+    margin-bottom:30px;
+    img{
+      max-height: 100%;
+      max-width: 100%;
+      float:left;
+    }
+  }
+  li{
+    border-bottom: 1px solid $border;
+    float: left;
+    width: 100%;
+    display: table;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    .info-description{
+      h3{
+        color: $red;
+        font-size: 24px;
+        text-transform: capitalize;
+        float:left;
+        display: block;
+        margin:5px 0;
+      }
+      .info-date{
+        float:left;
+        width:100%;
+        color:$gray-mid;
+        text-transform: capitalize;
+        font-size: 18px;
+        font-weight: normal;
+        margin-bottom:10px;
+      }
+      p{
+        float:left;
+        width:100%;
+        font-size:20px;
+        line-height: 30px;
+      }
+    }
+    .left,.right{
+      display: table-cell;
+      vertical-align: top;
+      padding:5px;
+      h3{
+        margin-top:0;
+      }
+      img{
+        max-width: 50px;
+        max-height: 50px;
+      }
+
+    }
+    .gi{
+      font-size: 21px;
+      line-height: 1.4;
+      color: $dark;
+      margin-bottom:5px;
+      float:left;
+      width:100%;
+      font-weight: 700;
+    }
+  }
+}
+/**Calendar List -- Homepage style **/
+.calendar-list{
+  float:left;
+  width:100%;
+  ul{
+    float:left;
+    padding:0;
+    li{
+      padding: 20px 0;
+      float:left;
+      width:100%;
+      &:first-child{
+        //padding:0;
+      }
+      .calendar-content{
+        display: table;
+        .cc-left{
+          display: table-cell;
+          vertical-align: top;
+          padding-top:5px;
+            .dtstart{
+              .month{
+                font-size:21px;
+              }
+              .day{
+                font-size:48px;
+                padding:10px 20px;
+                color:$blue-heavy;
+                font-weight: normal;
+              }
+            }
+        }
+        .cc-right{
+          display: table-cell;
+          vertical-align: top;
+          padding-left:10px;
+          h3{
+            margin:0;
+            padding: 0;
+            font-size: 30px;
+            a{
+              color: $blue-heavy;
+              font-weight: normal;
+              text-decoration: none;
+            }
+          }
+          span.cc-date{
+            font-size: 18px;
+            text-transform: capitalize;
+            color:$gray-heavy;
+            margin-top:10px;
+            float:left;
+            width:100%;
+          }
+          .button-wrapper{
+            text-align: left;
+            .button-blue,.button-default{
+              padding:4px 15px;
+              font-size: 16px;
+              @include bp(mobile){
+                margin-right:5px;
+                font-size:11px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Featured List Item */
+.mg-featured {
+    position: relative;
+    font-size: 1em;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #dfdfdf;
+    padding: 2em;
+    margin-bottom: 2em;
+
+    .major-link {
+        position: absolute;
+        right: 1.5em;
+        bottom: 1em;
+        line-height: 1;
+        float: none;
+        text-transform: none;
+
+        &:after {
+            content: "\e901";
+            font-family: $icon-font;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            vertical-align: top;
+            margin-left: 5px;
+        }
+    }
+
+    .mg-media {
+        margin-bottom: 1.5em;
+    }
+}
+
+.mg-promo {
+    &__item {
+        text-align: center;
+        margin: 1em 0;
+    }
+}

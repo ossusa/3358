@@ -1,0 +1,162 @@
+/**
+ * Sitefinity Forums Module
+ */
+
+/* Forum list */
+.mg-forums-list {
+  .mg-forum-group-title,
+  .mg-forum-group-desc {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.mg-forum-no-threads {
+  padding: 1em;
+  background: $gray-light;
+  border: 1px dashed $gray;
+
+  p {
+    margin: 0 0 .5em;
+    font-style: italic;
+  }
+}
+
+.mg-first-thread {
+  @extend %button-primary;
+}
+
+/* New thread */
+.mg-forum-new-thread {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  ol {
+    @extend %clean-list;
+  }
+
+  label,
+  .sfTxtLbl {
+    font-weight: $bold;
+    display: block;
+  }
+
+  .mg-forum-new-thread-content {}
+}
+
+.mg-forum-threads-list {
+  a {
+    text-decoration: none;
+  }
+}
+
+.mg-forum-thread-post-list {
+  @extend %clean-list;
+
+  .mg-forum-post {
+    @extend %clearfix;
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid $gray;
+
+    &:last-child {
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      border-bottom: 1px solid $gray;
+    }
+
+  }
+
+  .mg-forum-post-user {
+    float: left;
+    width: 15%;
+    font-size: .9em;
+  }
+
+  .mg-forum-post-content-wrap {
+    margin-left: 18%;
+  }
+
+  .mg-forum-post-content {
+    margin: 1em 0;
+  }
+
+  .mg-forum-post-featured {
+    float: right;
+  }
+
+  .mg-forum-reply-btn {
+    @extend %button;
+    color: $gray-heavy !important;
+  }
+}
+
+.mg-forum-reply-wrap {
+  @extend %clearfix;
+}
+
+.mg-forum-reply-container {
+  @extend %clearfix;
+  margin-top: 4em;
+
+  fieldset {
+    border: none;
+  }
+
+  // There's no way to add classes to these controls so we must target ".sf" classes
+  .sfforumsReplyToTitle {
+    font-size: 1.1em;
+    margin-top: 0;
+  }
+
+  .sfClose {
+    float: right;
+    @extend %button;
+    font-size: .8em;
+    text-decoration: none;
+    color: $gray-heavy !important;
+  }
+
+  .sfSubmitBtnWrp {
+    margin-top: .5em;
+    [type=submit] {
+      @extend %button-primary;
+    }
+  }
+
+  .sfforumThreadPostUser {
+    float: left;
+    width: 15%;
+    font-size: .9em;
+  }
+
+  .sfforumReplyThreadContent {
+    margin-left: 18%;
+  }
+}
+
+/* New thread button */
+.mg-new-thread,
+.mg-forum-reply-wrap [type=submit] {
+  @extend %button-primary;
+  float: right;
+  margin-bottom: .5em;
+}
+
+/* Forum feed */
+.mg-forum-feed {
+  float: left;
+  margin-top: .3em;
+
+  .icon {
+    color: nth($links-main, 1);
+  }
+}
+
+.mg-forums-filter {
+  margin-top: 2em;
+}

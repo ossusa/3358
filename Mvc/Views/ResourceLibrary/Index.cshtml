@@ -1,0 +1,88 @@
+@model SitefinityWebApp.Mvc.Models.ResultsViewModel
+<div class="sf_cols">
+    <div class="sf_colsOut sf_2cols_1_25 filter-column">
+        <div class="sf_colsIn sf_2cols_1in_25">
+            @Html.Partial("_Filter", Model.Criteria)
+        </div>
+    </div>
+    <div class="sf_colsOut sf_2cols_2_75 results-column">
+        <div class="sf_colsIn sf_2cols_2in_75">
+            <ul class="resource-results">
+                @if (Model.Results.Any()) {
+                    foreach (var result in Model.Results) {                    
+                        <li class="search-result">
+                            <div class="mg-media searchProtected">
+                                @if (!String.IsNullOrEmpty(result.ImageUrl)) {
+                                    <div class="mg-media__right">
+                                        <a href="@result.Link"><img class="mg-media__object" src="@result.ImageUrl" /></a>
+                                    </div>
+                                }
+                                <div class="mg-media__body">
+                                    <h3 class="title mg-media__heading">
+                                        <a href="@result.Link">@result.Title</a>
+                                    </h3>
+
+                                    <div class="mg-media__meta mg-media__meta--dark">
+                                        @if (!result.Type.Contains("Event")) {
+                                            /*<a class="type-label" href="?Types=@result.DocumentFolder">@result.DocumentFolder</a>*/
+
+                                            if (result.CategoryPair.Any()) {
+                                                <div class="type-label category">
+                                                    <ul class="h-list-divided sfCategoriesList">
+                                                        <li class="no-border">Topics:</li>
+                                                        @foreach (var category in result.CategoryPair)
+                                                        {
+                                                            <li><a href="?Topics=@category.Guid">@category.Name</a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            }
+
+                                            if (result.ResourceTypes.Any()) {
+                                                <div class="type-label category">
+                                                    <ul class="h-list-divided">
+                                                        <li class="no-border">Resource type:</li>
+                                                        @foreach (var category in result.ResourceTypes)
+                                                        {
+                                                            <li><a href="?Types=@category.Guid">@category.Name</a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            }
+
+                                            if (result.Author.Any()) {
+                                                <div class="type-label category">
+                                                    <ul class="h-list-divided">
+                                                        <li class="no-border">Organizational author:</li>
+                                                        @foreach (var category in result.Author)
+                                                        {
+                                                            <li><a href="?Authors=@category.Guid">@category.Name</a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            }
+
+                                            /*<div class="publication-date">
+                                                @(result.PublicationDate.ToLongDateString())
+                                            </div>*/
+                                        }
+                                        else {
+                                            /*<div class="publication-date">
+                                                @(result.EventStart.HasValue ? result.EventStart.Value.ToString("MMM d, yyyy") : result.PublicationDate.ToString("MMM d, yyyy"))
+                                            </div>*/
+                                        }
+                                    </div>
+                                    @*<div>@result.Summary</div>*@
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+                else {
+                    <div>There are no results, please try your search again.</div>
+                }
+            </ul>
+            @Html.Partial("_Pagination", Model.Pagination)
+        </div>
+    </div>
+</div>

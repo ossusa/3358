@@ -1,0 +1,298 @@
+// .sf_cols{
+//       margin-top: 2.5em;
+//       margin-bottom: 2.5em;
+// }
+body {
+    background-color: $bright;
+}
+.center{
+      text-align: center;
+}
+.major-link{
+  text-decoration: none;
+  line-height: 3;
+  font-size: 1em;
+  font-weight: 700;
+  display:block;
+  text-align: right;
+  color: #003c71;
+  &:after {
+    font-family: icomoon;
+    content: "\e901";
+    font-weight: 300;
+    margin-left: 5px;
+  }
+}
+
+//-------------------------Sidebar lost img------------------------------------
+.yellow-btn {
+    background-color: #e59a00;
+    color: #fff;
+    text-decoration: none;
+	text-transform: uppercase;
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: color .2s linear, background .2s linear !important;
+	display: inline-block;
+    margin: 1em 0;
+    .icon{
+      display: inline-block;
+      margin-left: 5px;
+    }
+}
+.yellow-btn:hover{
+    background-color: #a6192e;
+}
+//------------------------Resources Carousel--------------------------
+.carousel-section {
+    background-color: rgba(0,0,0,0);
+    overflow: auto;
+    padding: 2em 0 0;
+    margin: 2px 0;
+}
+.carousel-section .slider-range {
+    //background-color: rgba(0, 0, 0, 0.3);
+    margin-left: 0;
+    margin-right: 0;
+}
+.flipster__item__content{
+    background-color: $blue-heavy;
+    height:470px;
+    width: 390px;
+    padding:0;
+}
+.mg-card{
+    padding: 1em;
+    margin: 0;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+.mg-card-title a{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+}
+.mg-card-text{
+    color: #ffffff;
+    line-height: 1.3;
+    font-size: 1em;
+}
+
+//----------------------------connect on wildland------------------------------------------------
+.connect-wild_img img {
+    height: 50px;
+}
+.connect-wild_title{
+  text-align: center;
+  color: #737373;
+  font-size: 1.6em;
+  font-weight: 700;
+  margin: 1em 0;
+}
+
+.sf_colsOut.sf_3cols_1_33.center #Body_C045_Col00,
+.sf_colsOut.sf_3cols_2_34.center #Body_C045_Col01{
+  border: solid 1px #dfdfdf;
+  padding: 1em;
+  padding-top: 20px;
+  margin-right:10px;
+}
+.sf_colsOut.sf_3cols_3_33.center #Body_C045_Col02{
+  border: solid 1px #dfdfdf;
+  padding: 1em;
+  padding-top: 20px;
+}
+.policy-feed{
+  text-align: left;
+  font-size: 1.4em;
+}
+.policy-title a{
+  color: $dark;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+//-----------------------------  WUI-------------------------------------
+.world{
+  // background: url(../images/world@2x.png) no-repeat center center fixed;
+  background: url(../images/aboutiafc.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+// .wui{
+//   h3, h4{
+//     margin-bottom:0;
+//     font-weight: 300;
+//     color: $dark;
+//   }
+// }
+.space-vertical{
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+// .red-btn {
+//     background-color: #a6192e;
+//     color: #fff;
+//     text-decoration: none;
+//     padding: 0.7rem 1.5rem;
+//     border-radius: 4px;
+//     transition: color .2s linear, background .2s linear !important;
+//     line-height: 6;
+//     text-transform: uppercase;
+//     font-size: 1em;
+//     .icon{
+//       display: inline-block;
+//       margin-left: 5px;
+//     }
+// }
+// .red-btn:hover{
+//     background-color: #e59a00;
+// }
+//-------------------------------------video section-----------------------------
+.video-margin{
+  margin-right: 2em;
+}
+.video-desc h2{
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #a6192e;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+.video-desc{
+  font-size: 24px;
+  line-height: 1.4;
+  color: #3c3c3c;
+  padding-bottom: 1em;
+  border-bottom: solid 1px #e1e0e0;
+  .icon{
+    display: inline-block;
+    margin-left: 5px;
+  }
+}
+
+//--------------------wildland legislative issues & wildland positions----------------------
+.yellow-btn-jumbo {
+    background-color: #e59a00;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 0.9rem 3rem;
+    border-radius: 4px;
+    transition: color .2s linear, background .2s linear !important;
+    box-shadow: 1px 2px 0 0 #d3d3d3;
+    display: block;
+    .icon{
+      display: inline-block;
+      margin-left: 5px;
+    }
+}
+.yellow-btn-jumbo:hover{
+    background-color: #a6192e;
+}
+.iafc-positions{
+  background-color: #ffffff;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  border: solid 1px #dfdfdf;
+  margin: 3em 0 0;
+  padding: 2em;
+
+  .red-title{
+    padding: 1em 0;
+    border-top: 1px solid #e1e0e0;
+  }
+  // .major-link{
+  //   border-top: 1px solid #e1e0e0;
+  //   line-height: 1;
+  //   float:none;
+  //   display: block;
+  //   text-align: right;
+  //   padding-top: 1em;
+  //   .icon{
+  //     display: inline-block;
+  //     margin-left: 5px;
+  //   }
+  // }
+}
+.mg-details .big-huge-title{
+  margin-bottom: 0;
+}
+.event-time{
+  font-size:1.2em;
+  color: $dark;
+  font-weight: 700;
+}
+.event-detail,
+.event-detail a{
+	font-size:24px;
+    color: $dark;
+    font-weight: 300;
+	text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em;
+  li{
+    font-size:1em;
+  }
+}
+
+.paged-content{
+  text-align: center;
+  ol li{
+    display:inline-block;
+    a{
+      font-size: 1.2em;
+      padding: 10px;
+      font-weight: 700;
+      color: #0076a8;
+      text-decoration:none;
+    }
+    .active{
+        text-decoration: underline;
+    }
+  }
+}
+.sf_2cols_1_67,
+.sf_2cols_2_33,
+.sf_2cols_1_25,
+.sf_2cols_2_75 {
+    @extend %mobile-zero;
+}
+.landing-page-title .sf_3cols_3_25,
+.landing-page-title .sf_3cols_1_25{
+  @include bp(tablet) {
+    display:none;
+  }
+}
+.landing-page-title {
+    .sf_3cols_2_50 {
+        @include bp(tablet) {
+            float: none;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+    .sf_3cols_2in_50 {
+        @include bp(tablet) {
+            margin-left: 0;
+        }
+    }
+    a {
+		@include bp(landscape) {
+            font-size: 3em;
+            letter-spacing: 5px;
+        }
+        @include bp(mobile) {
+            font-size: 2em;
+            letter-spacing: 5px;
+        }
+    }
+}

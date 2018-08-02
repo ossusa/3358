@@ -1,0 +1,2771 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GlobalLink.Connect</name>
+    </assembly>
+    <members>
+        <member name="P:GlobalLink.Connect.Config.ProjectDirectorConfig.password">
+            Project director password.
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProjectDirectorConfig.proxy">
+            [Optional] Proxy configuration
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProjectDirectorConfig.timeOut">
+            [Optional] - Response Timeout in miliseconds (Default is 3000)
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProjectDirectorConfig.url">
+            URL of the project director server to connect to.
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProjectDirectorConfig.username">
+            Project director username.
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProjectDirectorConfig.userAgent">
+            User-agent.
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProxyConfig.proxyHost">
+            Proxy server IP address or hostname
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProxyConfig.proxyPassword">
+            [Optional] - Proxy user password
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProxyConfig.proxyPort">
+            Proxy server port
+        </member>
+        <member name="P:GlobalLink.Connect.Config.ProxyConfig.proxyUser">
+            [Optional] - Proxy user
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.#ctor(GlobalLink.Connect.Config.ProjectDirectorConfig)">
+            Initialize a connection to Project Director
+            
+            @param connectionConfig
+                       The Project Director server configuration to connect to.
+            @see ProjectDirectorConfig
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.cancelDocument(System.String)">
+            Cancel document for all languages
+            
+            @param documentTicket
+                       Document ticket to cancel
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.cancelDocument(System.String,System.String)">
+            Cancel document for specified target language
+            
+            @param documentTicket
+                       Document ticket to cancel
+            @param locale
+                       Target locale to cancel
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.cancelSubmission(System.String)">
+            Cancel Submission for all languages
+            
+            @param submissionTicket
+                       Submission ticket to cancel
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.cancelSubmission(System.String,System.String)">
+            Cancel Submission for all languages with comment
+            
+            @param submissionTicket
+                       Submission ticket to cancel
+            @param comment
+                       Option Cancellation comment
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.downloadTarget(System.String)">
+            Downloads translated document from PD
+            
+            @param targetTicket
+                       Document ticket to download
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.getCancelledTargets(System.String,System.Int32)">
+            Get cancelled targets for a submission
+            
+            @param submissionTicket
+                       Submission ticket
+            @param maxResults
+                       Maximum number of cancelled targets to return. This
+                       configuration is to avoid time-outs in case the number of
+                       targets is very large.
+            @return Array of cancelled targets
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.getCancelledTargets(System.Int32)">
+            Get cancelled targets for all projects
+            
+            @param maxResults
+                       Maximum number of cancelled targets to return. This
+                       configuration is to avoid time-outs in case the number of
+                       targets is very large.
+            @return Array of cancelled targets
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.getCompletedTargets(System.Int32)">
+            Get completed targets for all projects
+            
+            @param maxResults
+                       Maximum number of completed targets to return in this call.
+            @return Array of completed targets
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.getCompletedTargets(GlobalLink.Connect.Model.Project,System.Int32)">
+            Get completed targets for specified project
+            
+            @param project
+                       Project for which completed targets are requested
+            @param maxResults
+                       Maximum number of completed targets to return in this call.
+            @return Array of completed targets
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.getCompletedTargets(System.String,System.Int32)">
+            Get completed targets for specified submission ticket
+            
+            @param submissionTicket
+                       Submission for which completed targets are requested
+            @param maxResults
+                       Maximum number of completed targets to return in this call.
+            @return Array of completed targets
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.getProject(System.String)">
+            Get project by shortcode
+            
+            @param projectShortcode
+                       Project shortcode
+                       
+            @return Project
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.getProjects">
+            Get all user projects
+            
+                       
+            @return Array of Projects to which the logged in user has access to
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.initSubmission(GlobalLink.Connect.Model.Submission)">
+            Initialize a new Submission
+            
+            @param submission
+                       Submission configuration to initialize a new submission
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.sendDownloadConfirmation(System.String)">
+            Sends confirmation that the target resources was downloaded successfully
+            by the customer.
+            
+            @param targetTicket
+                       Downloaded target`s ticket
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.setConnectionConfig(GlobalLink.Connect.Config.ProjectDirectorConfig)">
+            
+            Set/update Project Director connection configuration
+            
+            @param connectionConfig
+                       Project Director Connection Configuration
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.startSubmission">
+            
+            Start Submission
+            
+            @return Submission Ticket
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.uploadReference(GlobalLink.Connect.Model.ReferenceDocument)">
+            
+            Upload reference file for submission
+            
+            @param referenceDocument
+                       Reference document
+        </member>
+        <member name="M:GlobalLink.Connect.GLExchange.uploadTranslatable(GlobalLink.Connect.Model.Document)">
+            Uploads the document to project director for translation
+            
+            @param document
+                       Document that requires translation
+            @return Document Ticket
+        </member>
+        <member name="M:GlobalLink.Connect.Model.ReferenceDocument.setDataFromString(System.String)">
+            Set data from string
+            
+            @param data
+                       String containing data that needs to be translated
+        </member>
+        <member name="M:GlobalLink.Connect.Model.ReferenceDocument.setDataFromMemoryStream(System.IO.MemoryStream)">
+            Set data from string
+            
+            @param data
+                       String containing data that needs to be translated
+            @throws UnsupportedEncodingException
+        </member>
+        <member name="M:GlobalLink.Connect.Model.ReferenceDocument.getDataAsString">
+            Gets data as InputStream
+            @return InputStream
+        </member>
+        <member name="M:GlobalLink.Connect.Model.Document.getDocumentInfo(GlobalLink.Connect.Model.Submission)">
+            Internal method used by the UCF API
+            
+            @return DocumentInfo object
+        </member>
+        <member name="M:GlobalLink.Connect.Model.Document.getTargetInfos">
+            Internal method used by the UCF API
+            
+            @return TargetInfo array
+        </member>
+        <member name="M:GlobalLink.Connect.Model.Document.getResourceInfo">
+            Internal method used by the UCF API
+            
+            @return ResourceInfo object
+            @throws IOException
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Document.fileformat">
+            File Format profile that defines the parsing rules for the document
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Document.instructions">
+            [Optional] Translation instructions
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Project.shortcode">
+            Project short code
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Project.name">
+            Project name
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Project.ticket">
+            Project ticket, an internal ID required for creating submissions
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Project.languageDirections">
+            List of supported language directions
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Project.fileFormats">
+            List of file format profiles configured for this project. A file format
+            profile defines the parsing rules to identify translatable content and
+            inline non-translatable content (placeholders) within the submitted
+            document. Project Director supports a wide range of formats such as XML,
+            DOC, PPT, XLS, .properties
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Project.workflows">
+            List of available workflows configured for this project
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Project.customAttributes">
+            List of custom attributes configured for this project
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.customAttributes">
+            [Optional] Custom attributes. Project.getCustomAttributes() gets you the list of configured attributes for the project. 
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.dueDate">
+            [Optional] Due date by when the submission should be completed in Project Director.
+            This should always be greater than current date. If due date is not specified, Project Director 
+            will rely on the configured language model to calculate a due date. 
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.instructions">
+            [Optional] Set instructions for the translators    
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.isUrgent">
+            [Optional] Set priority. Defaults to Normal 
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.metadata">
+            [Optional] Key-value pair of metadata
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.name">
+            Name of the submission that will show up in Project Director
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.pmNotes">
+            [Optional] Notes for the project managers 
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.project">
+            Set the project for which this submission will be created
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.ticket">
+            Submission ticket
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.submitter">
+            [Optional]  Set the submitter to a user other than the logged in user 
+        </member>
+        <member name="P:GlobalLink.Connect.Model.Submission.workflow">
+            [Optional]  Set the workflow to use 
+        </member>
+        <member name="M:GlobalLink.Connect.Model.Target.getData(GlobalLink.Connect.GLExchange)">
+            Get translated data
+            
+            @return byte array containing the translated content
+        </member>
+        <member name="M:GlobalLink.Connect.Model.Target.sendDownloadConfirmation(GlobalLink.Connect.GLExchange)">
+            Sends confirmation that the target resources was downloaded successfully
+            by the customer.
+            
+            @param targetTicket
+                       Downloaded target`s ticket
+        </member>
+        <member name="T:GlobalLink.Connect.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:GlobalLink.Connect.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:GlobalLink.Connect.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Document">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Document.documentGroup">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Document.documentInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Document.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Document.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Document.sourceWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Document.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.DocumentGroup">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentGroup.classifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentGroup.documents">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentGroup.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentGroup.submission">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Submission">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.alerts">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.availableTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.dateArchived">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.dateCompleted">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.dateCreated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.dateEstimated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.documents">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.dueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.owner">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.project">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.status">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.submissionInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.submitterFullNames">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Submission.workflowDefinition">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Notification">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Notification.errorMessage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Notification.notificationDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Notification.notificationPriority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Notification.notificationText">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Date">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Date.critical">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Date.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Task">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Task.groupName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Task.selectStyle">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Task.taskId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Task.taskName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Task.weight">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.DocumentPagedList">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentPagedList.elements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentPagedList.pagedListInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentPagedList.tasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentPagedList.totalCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.PagedListInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.PagedListInfo.index">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.PagedListInfo.indexesSize">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.PagedListInfo.size">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.PagedListInfo.sortDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.PagedListInfo.sortProperty">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.DocumentSearchRequest">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentSearchRequest.projectTickets">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentSearchRequest.sourceLocaleId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentSearchRequest.submissionTicket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.base64Binary">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.base64Binary.contentType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.base64Binary.Value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.DocumentTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentTicket.submissionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentTicket.ticketId">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ResourceType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceType.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ResourceInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.classifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.description">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.encoding">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.md5Checksum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.path">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.resourceInfoId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.size">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ResourceInfo.type">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.TargetInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.encoding">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.instructions">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.requestedDueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.targetLocale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.TargetInfo.workflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Metadata.key">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Metadata.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Priority.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Priority.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.DocumentInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.childDocumentInfos">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.instructions">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.sourceLocale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.submissionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.targetInfos">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.DocumentInfo.wordCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.SubmissionCustomFields">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionCustomFields.fieldName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionCustomFields.fieldValue">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ClaimScopeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ClaimScopeEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ClaimScopeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.additionalCosts">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.autoStartChilds">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.claimScope">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.internalNotes">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.officeName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.paClientTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.paJobNumber">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.revenue">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.submissionBackground">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.submissionCustomFields">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.submitters">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.SubmissionInfo.workflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ItemStatusEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ItemStatusEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ItemStatusEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Language">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Language.locale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Language.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ProjectLanguageDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectLanguageDirection.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectLanguageDirection.targetLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectLanguageDirection.default">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectLanguageDirection.frequent">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ProjectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectInfo.defaultJobWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectInfo.defaultSubmissionWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectInfo.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectInfo.enabled">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectInfo.shortCode">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ProjectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectCustomFieldConfiguration.mandatory">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectCustomFieldConfiguration.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectCustomFieldConfiguration.type">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ProjectCustomFieldConfiguration.values">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.configurable">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.isDefault">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.pluginName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.profileName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.targetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.FileFormatProfile.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.WorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.WorkflowDefinition.description">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.WorkflowDefinition.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.WorkflowDefinition.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.WorkflowDefinition.type">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.EntityTypeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.EntityTypeEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.EntityTypeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.ContentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ContentMonitorPluginInfo.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.ContentMonitorPluginInfo.pluginName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Announcement">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Announcement.announcementText">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Announcement.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.Project">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.announcements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.contentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.defaultTargetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.fileFormatProfiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.includeSubmissionNameInLocalizationKit">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.organizationName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.projectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.projectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.projectLanguageDirections">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.Project.workflowDefinitions">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.DocumentServiceRef.NotificationPriority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.DocumentServiceRef.NotificationPriority.notificationPriorityName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.Project">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.announcements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.contentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.defaultTargetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.fileFormatProfiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.includeSubmissionNameInLocalizationKit">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.organizationName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.projectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.projectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.projectLanguageDirections">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Project.workflowDefinitions">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.Announcement">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Announcement.announcementText">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Announcement.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.Date">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Date.critical">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Date.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.Language">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Language.locale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Language.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.ProjectLanguageDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectLanguageDirection.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectLanguageDirection.targetLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectLanguageDirection.default">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectLanguageDirection.frequent">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.ProjectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectInfo.defaultJobWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectInfo.defaultSubmissionWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectInfo.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectInfo.enabled">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectInfo.shortCode">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.ProjectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectCustomFieldConfiguration.mandatory">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectCustomFieldConfiguration.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectCustomFieldConfiguration.type">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ProjectCustomFieldConfiguration.values">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.Metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Metadata.key">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.Metadata.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.configurable">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.isDefault">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.pluginName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.profileName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.targetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.FileFormatProfile.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.WorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.WorkflowDefinition.description">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.WorkflowDefinition.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.WorkflowDefinition.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.WorkflowDefinition.type">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.EntityTypeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.EntityTypeEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.EntityTypeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.ProjectServiceRef.ContentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ContentMonitorPluginInfo.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.ProjectServiceRef.ContentMonitorPluginInfo.pluginName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Submission">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.alerts">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.availableTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.dateArchived">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.dateCompleted">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.dateCreated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.dateEstimated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.documents">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.dueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.owner">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.project">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.status">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.submissionInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.submitterFullNames">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Submission.workflowDefinition">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Notification">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Notification.errorMessage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Notification.notificationDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Notification.notificationPriority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Notification.notificationText">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Date">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Date.critical">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Date.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.base64Binary">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.base64Binary.contentType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.base64Binary.Value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ResourceType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceType.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.classifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.description">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.encoding">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.md5Checksum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.path">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.resourceInfoId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.size">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ResourceInfo.type">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.UserData">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.UserData.email">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.UserData.name">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.FileProgressData">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileProgressData.numberOfAvailableFiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileProgressData.numberOfCanceledFiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileProgressData.numberOfCompletedFiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileProgressData.numberOfDeliveredFiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileProgressData.numberOfFailedFiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileProgressData.numberOfInProcessFiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileProgressData.overallProgressPercent">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.alerts">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.availableTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.budgetStatus">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.claimScope">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.customFields">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.date">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.dateArchived">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.dateCompleted">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.dateStarted">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.dueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.fileCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.fileProgress">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.gate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.instructions">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.officeName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.owner">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.paClientName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.parentSubmissionName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.parentTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.pmNotes">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.projectName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.quote">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.reserved">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.status">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.submissionBackground">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.submissionName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.submitterFullName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.wordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.workflowDueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SimpleSubmissionSearchModel.workflowStatus">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ClaimScopeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ClaimScopeEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ClaimScopeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ItemStatusEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ItemStatusEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ItemStatusEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchModelPagedList">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchModelPagedList.elements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchModelPagedList.pagedListInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchModelPagedList.tasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchModelPagedList.totalCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.PagedListInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.PagedListInfo.index">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.PagedListInfo.indexesSize">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.PagedListInfo.size">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.PagedListInfo.sortDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.PagedListInfo.sortProperty">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Task">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Task.groupName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Task.selectStyle">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Task.taskId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Task.taskName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Task.weight">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.SubmissionPagedList">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionPagedList.elements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionPagedList.pagedListInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionPagedList.tasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionPagedList.totalCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ItemFolderEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ItemFolderEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchRequest">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchRequest.folder">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchRequest.projectTickets">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchRequest.submissionDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchRequest.submissionDueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionSearchRequest.submissionName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.SubmissionCustomFields">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionCustomFields.fieldName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionCustomFields.fieldValue">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.additionalCosts">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.autoStartChilds">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.claimScope">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.internalNotes">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.officeName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.paClientTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.paJobNumber">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.revenue">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.submissionBackground">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.submissionCustomFields">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.submitters">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.SubmissionInfo.workflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Metadata.key">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Metadata.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Priority.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Priority.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ProjectLanguageDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectLanguageDirection.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectLanguageDirection.targetLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectLanguageDirection.default">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectLanguageDirection.frequent">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Language">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Language.locale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Language.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo.defaultJobWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo.defaultSubmissionWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo.enabled">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectInfo.shortCode">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ProjectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectCustomFieldConfiguration.mandatory">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectCustomFieldConfiguration.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectCustomFieldConfiguration.type">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ProjectCustomFieldConfiguration.values">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.configurable">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.isDefault">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.pluginName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.profileName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.targetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.FileFormatProfile.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.WorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.WorkflowDefinition.description">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.WorkflowDefinition.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.WorkflowDefinition.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.WorkflowDefinition.type">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.EntityTypeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.EntityTypeEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.EntityTypeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.ContentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ContentMonitorPluginInfo.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.ContentMonitorPluginInfo.pluginName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Announcement">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Announcement.announcementText">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Announcement.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Project">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.announcements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.contentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.defaultTargetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.fileFormatProfiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.includeSubmissionNameInLocalizationKit">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.organizationName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.projectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.projectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.projectLanguageDirections">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Project.workflowDefinitions">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.TargetInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.encoding">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.instructions">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.requestedDueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.targetLocale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.TargetInfo.workflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.childDocumentInfos">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.instructions">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.sourceLocale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.submissionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.targetInfos">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentInfo.wordCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.DocumentGroup">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentGroup.classifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentGroup.documents">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentGroup.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.DocumentGroup.submission">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.Document">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Document.documentGroup">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Document.documentInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Document.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Document.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Document.sourceWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.Document.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.SubmissionServiceRef.NotificationPriority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.SubmissionServiceRef.NotificationPriority.notificationPriorityName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Target">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.availableTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.dateCompleted">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.dateCreated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.dateEstimated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.document">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.downloadThresholdTimeStamp">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.dueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.fileName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.phases">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.refPhase">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.sourceWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.status">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.targetInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.targetLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.targetWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.tmStatistics">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Target.workflowDefinition">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Date">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Date.critical">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Date.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Task">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Task.groupName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Task.selectStyle">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Task.taskId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Task.taskName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Task.weight">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.TargetPagedList">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetPagedList.elements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetPagedList.pagedListInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetPagedList.tasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetPagedList.totalCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.PagedListInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.PagedListInfo.index">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.PagedListInfo.indexesSize">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.PagedListInfo.size">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.PagedListInfo.sortDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.PagedListInfo.sortProperty">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ItemFolderEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ItemFolderEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.TargetSearchRequest">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetSearchRequest.dateCreated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetSearchRequest.folder">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetSearchRequest.projectTickets">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetSearchRequest.sourceLocaleId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetSearchRequest.submissionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetSearchRequest.targetLocaleId">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.PreviewResult">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.PreviewResult.message">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.PreviewResult.repositoryItem">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.RepositoryItem">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.RepositoryItem.data">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.RepositoryItem.resourceInfo">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.base64Binary">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.base64Binary.contentType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.base64Binary.Value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ResourceInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.classifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.description">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.encoding">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.md5Checksum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.path">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.resourceInfoId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.size">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceInfo.type">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ResourceType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ResourceType.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.DocumentTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentTicket.submissionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentTicket.ticketId">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.FuzzyTmStatistics">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FuzzyTmStatistics.fuzzyName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FuzzyTmStatistics.wordCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.TmStatistics">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount1">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount10">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount2">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount3">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount4">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount5">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount6">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount7">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount8">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyRepetitionsWordCount9">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount1">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount10">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount2">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount3">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount4">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount5">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount6">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount7">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount8">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.fuzzyWordCount9">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.goldWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.noMatchWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.oneHundredMatchWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.repetitionWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TmStatistics.totalWordCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Phase">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Phase.dateEnded">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Phase.dueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Phase.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Phase.status">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ItemStatusEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ItemStatusEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ItemStatusEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.TargetInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.encoding">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.instructions">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.requestedDueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.targetLocale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.TargetInfo.workflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Metadata.key">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Metadata.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Priority.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Priority.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.DocumentInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.childDocumentInfos">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.instructions">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.sourceLocale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.submissionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.targetInfos">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentInfo.wordCount">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.SubmissionCustomFields">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionCustomFields.fieldName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionCustomFields.fieldValue">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ClaimScopeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ClaimScopeEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ClaimScopeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.SubmissionInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.additionalCosts">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.autoStartChilds">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.claimScope">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.dateRequested">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.internalNotes">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.officeName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.paClientTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.paJobNumber">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.priority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.revenue">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.submissionBackground">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.submissionCustomFields">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.submitters">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.SubmissionInfo.workflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Language">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Language.locale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Language.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ProjectLanguageDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectLanguageDirection.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectLanguageDirection.targetLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectLanguageDirection.default">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectLanguageDirection.frequent">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ProjectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectInfo.clientIdentifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectInfo.defaultJobWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectInfo.defaultSubmissionWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectInfo.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectInfo.enabled">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectInfo.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectInfo.shortCode">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ProjectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectCustomFieldConfiguration.mandatory">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectCustomFieldConfiguration.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectCustomFieldConfiguration.type">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ProjectCustomFieldConfiguration.values">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.FileFormatProfile">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.configurable">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.isDefault">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.pluginName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.profileName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.targetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.FileFormatProfile.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.WorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.WorkflowDefinition.description">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.WorkflowDefinition.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.WorkflowDefinition.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.WorkflowDefinition.type">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.EntityTypeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.EntityTypeEnum.name">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.EntityTypeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.ContentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ContentMonitorPluginInfo.pluginId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.ContentMonitorPluginInfo.pluginName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Announcement">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Announcement.announcementText">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Announcement.date">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Project">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.announcements">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.contentMonitorPluginInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.defaultTargetWorkflowDefinition">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.defaultTargetWorkflowDefinitionTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.fileFormatProfiles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.includeSubmissionNameInLocalizationKit">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.metadata">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.organizationName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.projectCustomFieldConfiguration">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.projectInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.projectLanguageDirections">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Project.workflowDefinitions">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.NotificationPriority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.NotificationPriority.notificationPriorityName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Notification">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Notification.errorMessage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Notification.notificationDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Notification.notificationPriority">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Notification.notificationText">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Submission">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.alerts">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.availableTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.dateArchived">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.dateCompleted">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.dateCreated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.dateEstimated">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.documents">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.dueDate">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.owner">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.project">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.status">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.submissionInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.submitterFullNames">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Submission.workflowDefinition">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.Document">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Document.documentGroup">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Document.documentInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Document.id">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Document.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Document.sourceWordCount">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.Document.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.TargetServiceRef.DocumentGroup">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentGroup.classifier">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentGroup.documents">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentGroup.mimeType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.TargetServiceRef.DocumentGroup.submission">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.UserProfile">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserProfile.availableTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserProfile.organizationName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserProfile.systemRoles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserProfile.tasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserProfile.ticket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserProfile.userInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserProfile.vendorName">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.Role">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Role.policies">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Role.roleId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Role.roleType">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Role.tasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Role.ticket">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.Policy">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Policy.category">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Policy.policyId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Policy.policyType">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.RoleTypeEnum">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.RoleTypeEnum.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.Language">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Language.locale">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Language.value">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.LanguageDirection">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.LanguageDirection.sourceLanguage">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.LanguageDirection.targetLanguage">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.TiUserInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.TiUserInfo.languageDirections">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.TiUserInfo.organizationId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.TiUserInfo.projectRoles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.TiUserInfo.projectTicket">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.TiUserInfo.systemRoles">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.TiUserInfo.vendorId">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.UserInfo">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.accountNonExpired">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.accountNonLocked">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.adress">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.autoClaimMultipleTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.claimMultipleJobTasks">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.credentialsNonExpired">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.dateLastLogin">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.department">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.emailAddress">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.emailNotification">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.enabled">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.fax">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.firstName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.lastName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.password">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.phone1">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.phone2">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.timeZone">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.userName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.UserInfo.userType">
+            <remarks/>
+        </member>
+        <member name="T:GlobalLink.Connect.UserProfileServiceRef.Task">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Task.groupName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Task.selectStyle">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Task.taskId">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Task.taskName">
+            <remarks/>
+        </member>
+        <member name="P:GlobalLink.Connect.UserProfileServiceRef.Task.weight">
+            <remarks/>
+        </member>
+    </members>
+</doc>

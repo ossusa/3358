@@ -1,0 +1,11 @@
+﻿@model SitefinityWebApp.Mvc.Models.AccountModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Mvc/Views/Shared/_VueLayout.cshtml";
+}
+<script src="/Sitefinity/WebsiteTemplates/MatrixBase/App_Themes/MatrixBase/js/lib/chosen.jquery.min.js"></script>
+<div>
+    <app></app>
+   <script src="~/MvcAssets/App/build/main.js"></script>
+</div>

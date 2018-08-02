@@ -1,0 +1,9 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<h5>Related Articles</h4>
+<ul class="related-articles">
+   @foreach (var result in Model.ResultSet.Skip(0))
+   {
+       <li><a href="@result.Link">@result.Title</a></li>
+   }
+</ul>

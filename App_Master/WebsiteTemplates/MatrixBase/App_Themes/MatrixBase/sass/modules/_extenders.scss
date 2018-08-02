@@ -1,0 +1,189 @@
+// ----------------------------------------------------------------------------
+// Extender classes
+// ----------------------------------------------------------------------------
+
+// Button
+%button {
+  transition: color .2s linear, background .2s linear !important;
+  display: inline-block;
+  color: $bright;
+  background: $gray-light;
+  padding: .4em .5em;
+  border: 1px solid darken($gray-light, 10%);
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1;
+
+  &:hover {
+    background: lighten($gray-light, 10%);
+    text-decoration: none;
+  }
+
+  // &:active {
+  //   position: relative;
+  //   top: 1px;
+  //   left: 1px;
+  //   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  // }
+}
+
+// Primary button
+%button-primary {
+  @extend %button;
+  background: nth($links-main, 1);
+  border-color: nth($links-main, 1);
+  color: $bright !important;
+  font-weight: $bold;
+  text-decoration: none;
+
+  &:hover {
+    background: lighten(nth($links-main, 1), 10%);
+  }
+}
+
+// Basic list with no bullets or spacing
+%clean-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Clearfix
+%clearfix {
+  @include clearfix;
+}
+
+// Horizontal list
+%horizontal-list {
+  @extend %clean-list;
+
+  li {
+    float: none;
+    display: inline-block;
+  }
+}
+
+// Spaced Horizontal list
+%horizontal-list-spaced {
+  @extend %clean-list;
+
+  li {
+    float: none;
+    display: inline-block;
+    margin-right: .5em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+%horizontal-list-divided {
+    @extend %horizontal-list-spaced;
+
+    li {
+        line-height: 1;
+        padding-right: .5em;
+        border-right: 1px solid $gray-mid;
+
+        &:last-child {
+            padding-right: 0;
+            border-right: none;
+        }
+    }
+}
+
+%tag {
+  display: inline-block;
+  font-size: .8em;
+  border: 1px solid $gray;
+  border-radius: 3px;
+  background: $gray-light;
+  color: $gray-mid;
+  padding: .1em .4em;
+}
+
+%transition {
+  transition: all .3s;
+}
+
+// Zero-out floating DIVs on mobile
+%mobile-zero {
+  @include bp(mobile) {
+    width: auto !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    float: none;
+
+    .sf_colsIn {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+	      margin: 1em 0 !important;
+    }
+
+  }
+}
+
+// Striped table
+table%striped {
+  border-top: none !important;
+
+  td {
+    border-bottom: none !important;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f0f0f0;
+  }
+}
+
+%text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+%visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+%visuallyHidden-undo {
+  position: inherit;
+  overflow: visible;
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+%border-sides{
+	border-left: 5px solid $gray-heaviest;
+    border-right: 5px solid $gray-heaviest;
+	@include bp(tablet){
+		border-left: 10px solid $gray-heaviest;
+	    border-right: 10px solid $gray-heaviest;
+	}
+}
+//sometimes @fontface fonts look strange on colored backgrounds - if this happens, use the following:
+//this may only work on chrome / safari / firefox ( mac )
+%font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+%button-layout{
+  width:auto;
+  border-radius: 4px;
+  padding:12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size:21px;
+  font-weight: bold;
+  // margin-right:10px;
+}

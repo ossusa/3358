@@ -1,0 +1,76 @@
+/**
+ * Declare all Sass variables, import Compass and all modules
+ */
+
+// Layout widths
+$bp-full: 1200px;
+$bp-landscape: 1024px;
+$bp-tab:960px;
+$bp-mobile: 500px;
+$bp-portrait: 768px;
+$bp-wide: 1400px;
+$container-width: 1400px;
+
+$gutter: 40px;
+
+// time function
+$cubic-bezier: cubic-bezier(.46,.6,.5,.36);
+
+// Font
+$light: 200;
+$regular: 400;
+$bold: 700;
+$boldest: 900;
+
+$base-font-family: 'Lato', sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 20px;
+$base-line-height: 1.4;
+
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+$icon-font: 'icomoon';
+
+// Colors
+$bright: #ffffff;
+$dark: #3c3c3c;
+$blue: #0076a8;
+$blue-heavy: #003c71;
+$gray-light: #f9f9f9;
+$gray: #d8d8d8;
+$gray-mid: #97999b;
+$gray-heavy: #737373;
+$gray-heaviest:#212121;
+$green: #2ecc71;
+$red: #a6192e;
+$red-heavy: #690817;
+$orange: #e59a00;
+$yellow: #FBE122;
+$bronze: #A05F0A;
+$dark-blue: #1b3858;
+$gray-mild:#d3d3d3;
+$gray-light2:#d6d6d6;
+$gray-white:#f9f9f9;
+$gray-call:#ececec;
+
+// Semantic colors
+$primary: $blue-heavy;
+$secondary: $red;
+$tertiary: $orange;
+$accent: $blue;
+$dividers: $gray;
+$border:$gray-light2;
+$shadow:$gray-mild;
+$featured-resource:$gray-white;
+
+$links-footer: ($gray-heavy); // color
+$links-header: ($gray-heavy); // color
+$links-main: ($gray-heavy, $gray); // color, :hover color
+$links-main-nav: ($bright, $gray-mid); // color, background-color
+
+$ui-links: ($secondary, lighten($secondary, 10%));
+
+// Pull in all modules
+@import "../modules/all";

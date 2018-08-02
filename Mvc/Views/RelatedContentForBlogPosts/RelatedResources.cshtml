@@ -1,0 +1,25 @@
+@model IList<SitefinityWebApp.Mvc.Models.BlendedListItem>
+
+@if(Model.Any())
+{
+<div class="box-slick">
+    <div class="slick-container">
+        @foreach (var item in Model)
+		{
+	        <div class="mg-carousel__item">
+	            <img src="@item.Image">
+	            <div class="mg-card">
+	                <div class="mg-card-title">
+	                    <a href="@item.Link">@item.Title</a>
+	                </div>
+						<div class="wildland-event_date">
+							<p>@item.Summary</p>
+						</div>
+	            </div>
+	        </div>
+        }
+    </div>
+
+</div>
+}
+

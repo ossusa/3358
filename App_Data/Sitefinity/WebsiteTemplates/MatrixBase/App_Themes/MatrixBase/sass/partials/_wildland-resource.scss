@@ -1,0 +1,213 @@
+.resource_library {
+    .sf_2cols_1_67 {
+        width: 65%;
+    }
+
+    .sf_2cols_1_25 {
+        width: 25%;
+        border-right: 1px solid #d3d3d3;
+    }
+
+    .sf_2cols_2_75 {
+        width: 75%;
+        padding-right: 2em;
+        margin-top: 1em;
+    }
+
+    .sf_2cols_1_67,
+    .sf_2cols_2_33,
+    .sf_2cols_1_25,
+    .sf_2cols_2_75 {
+        @extend %mobile-zero;
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        color: $blue;
+        border-radius: 4px;
+        background-color: #ffffff;
+        box-shadow: 1px 2px 0 0 #d3d3d3;
+        font-weight: 700;
+        padding: 8px;
+        line-height: 1;
+        border: 1px solid #d3d3d3;
+    }
+
+    .controls {
+        margin: 1em 0;
+    }
+
+    .searchwrap {
+        margin: 1em 0;
+    }
+
+    label.cursor {
+        margin-right: 1em;
+    }
+
+    .control-group:first-child {
+        display: none;
+    }
+
+    select.checkboxes {
+        width: 100%;
+        max-width: 100%;
+        display: none;
+
+        @include bp(portrait) {
+            display: block;
+        }
+    }
+
+    .mtx-select-tree-container {
+        @include bp(portrait) {
+            display: none;
+        }
+    }
+
+    .mtx-select-tree-container ul {
+        padding: 0;
+        list-style: none;
+        margin-top: 1em;
+
+        li a {
+            font-size: 1em;
+            text-decoration: none;
+            color: $dark;
+            padding-left: 5px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        &:first-child {
+            span {
+                color: $red-heavy;
+                font-size: 1.2em;
+                font-weight: 700;
+            }
+        }
+    }
+    // ---------------Category Column------------------
+    .resource-results {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .search-result {
+            margin-bottom: 2em;
+            font-size: .9em;
+        }
+
+        .category,
+        .publication-date {
+            font-size: .9em;
+        }
+
+        h3.title {
+            margin: 0;
+            font-size: 1.5em;
+
+            a {
+                text-decoration: none;
+                color: $blue-heavy;
+            }
+        }
+
+        img {
+            border: 1px solid #ddd;
+        }
+
+        .type-label a {
+            text-decoration: none;
+        }
+        // .search-result .type-label.category{
+        //   display:inline-block;
+        //   font-size: 24px;
+        //   line-height: 1.4;
+        //   font-weight:700;
+        //   a{
+        //     text-decoration:none;
+        //   }
+        //   &:after{
+        //     content:"|";
+        //   }
+        //   &:nth-last-child(3):after{
+        //     content:"";
+        //   }
+        // }
+    }
+
+    .type-type {
+        font-weight: 300;
+        font-size: 21px;
+        color: $dark;
+        display: block;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            font-size: 24px;
+            line-height: 1.4;
+            font-weight: 700;
+
+            &:after {
+                content: "|";
+                font-weight: 300;
+            }
+
+            &:last-child:after {
+                content: "";
+            }
+        }
+    }
+
+    .paged-content {
+        text-align: center;
+
+        ol li {
+            display: inline-block;
+
+            a {
+                font-size: 1.5em;
+                padding: 10px;
+                font-weight: 700;
+                color: #0076a8;
+                text-decoration: none;
+
+            }
+            .active{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .mtx-select-tree-values {
+        display: none;
+    }
+}
+.mg-card{
+  min-height: 200px;
+    float:left;
+    width:100%;
+}
+.mg-card .mg-card-tags a {
+    width: 75px;
+    height: 19px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #0076a8;
+    margin-right: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: 200;
+    padding: 3px 10px;
+}
+.mg-media__right a img{
+	border: 1px solid gray;
+}

@@ -1,0 +1,74 @@
+/**
+ * Detail widgets
+ */
+
+.mg-details {
+  @extend %clean-list;
+
+  .mg-title {
+    font-weight: $regular;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+ img{
+	border: 1px solid $gray;
+ }
+  .mg-summary {
+    margin-bottom: .3em;
+  }
+
+  .mg-meta-info {
+    margin-right: 1em;
+    padding-right: 1em;
+    border-right: 1px solid $gray;
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+  }
+
+  .mg-detail-list {
+    border: 1px solid darken($gray-light, 10%);
+    border-radius: 3px;
+    margin-top: 1em;
+    background: $gray-light;
+    padding: .8em 1em;
+
+    ul {
+      @extend %clean-list;
+    }
+
+    li {
+      margin-bottom: .6em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .mg-tags {
+    ul {
+      @extend %horizontal-list;
+    }
+
+    li {
+      @extend %tag;
+    }
+  }
+}
+
+.mg-meta {
+  margin: .2em 0;
+  font-size: .9em;
+  color: $gray-mid;
+}

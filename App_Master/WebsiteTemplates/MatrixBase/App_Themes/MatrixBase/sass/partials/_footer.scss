@@ -1,0 +1,110 @@
+/**
+ * Footer
+ */
+ .footer-top{
+   background-color: $blue;
+   padding: 12px 0;
+   position: relative;
+   margin-top:140px;
+   //clear:both;
+   .footer-head{
+     color: $bright;
+     font-size: 1.7em;
+     font-weight: 700;
+     position: relative;
+     max-width: 900px;
+   }
+   .footer-logo{
+     position: absolute;
+     width: 155px;
+     z-index: 9;
+     left: -152px;
+     top: -67px;
+   }
+   .footer-social a{
+     color: $bright;
+     text-decoration: none;
+     font-size: 1.2em;
+     padding: 0 5px;
+   }
+
+ }
+ .footer-bottom{
+   max-width: 900px;
+ }
+ .morespace {
+
+  //margin-left: 7em; //Comment out because it causes bottom navigation to shift left
+  max-width: 1045px;
+  }
+ @include bp(portrait){
+   font-size:16px;
+   .morespace{
+     div{
+       width:100%;
+       margin:10px 0 0 0;
+       padding:0;
+     }
+   }
+ }
+ .footer-inner{
+   margin-left: 190px;
+ }
+@media screen and (max-width: 1110px){
+     .morespace{
+      margin-left: 0;
+      margin: 0 auto;
+      max-width: 820px;
+    }
+    .footer-logo{
+      display:none;
+    }
+    .footer-inner{
+      margin-left: 0;
+    }
+	.footer-bottom{
+      max-width: 820px;
+    }
+}
+
+.footer {
+  @include rem(font-size, .9);
+  background: $blue-heavy;
+  padding: 2em 0 4em;
+  font-size: 1em;
+  font-weight: 300;
+  color: $bright;
+  .morespace {
+   max-width: 820px;
+   }
+  ul li{
+    border-right: 1px solid $bright;
+    margin-left: 0;
+    padding:0 15px;
+    &:first-child{
+      padding-left:0;
+    }
+    &:last-child{
+      border:0;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $yellow;
+    &:hover {
+      color: $bright;
+    }
+  }
+  @include bp(portrait){
+    font-size:16px;
+    li{
+      width:50%;
+      margin-bottom:5px;
+      padding:0!important;
+      border:0!important;
+    }
+    p{
+      line-height: 25px;
+    }
+  }
+}

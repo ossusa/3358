@@ -1,0 +1,17 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<div>
+    @foreach (var result in Model.ResultSet.Take(1))
+    {
+        <article>
+            <div class="image-wrap">
+                <img src="@result.ImageUrl" alt="@HttpUtility.HtmlEncode(result.ImageCaption)"/>
+                <p class="caption">@result.ImageCaption</p>
+            </div>
+            <h3>
+              <a href="@result.Link">@result.Title</a>
+            </h3>
+            <p>@result.Summary</p>
+        </article>
+    }
+</div>

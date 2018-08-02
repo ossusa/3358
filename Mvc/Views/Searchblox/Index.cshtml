@@ -1,0 +1,118 @@
+@using Telerik.Sitefinity.UI.MVC;
+@model SitefinityWebApp.Mvc.Models.Searchblox
+
+@if (Model.ShowSearchBox)
+{
+	using (@Html.BeginFormSitefinity("Index", "SearchbloxForm", FormMethod.Get))
+	{
+		<div class="mg-search-box">
+
+			<label>Search Term: @Html.TextBoxFor(x => x.Query)</label>
+			<input id="search-submit" type="submit" value="Submit" />
+		</div>
+		<hr/>
+	}
+}
+
+@if (!Model.ErrorMessage.IsNullOrEmpty() && Model.ShowErrors)
+{
+	<p class="mg-search-error">@Model.ErrorMessage</p>
+}
+else
+{
+	<ul class="mg-searchblox-results">
+		@foreach (var result in Model.Results) {
+			<li class="mg-searchblox-result">
+				<h2 class="mg-result-title"><a class="mg-primary-link" href=@result.Url>@result.Title</a></h2>
+				@if(result.Published != null) {
+					<p class="mg-published-date">@result.Published.Value.ToLongDateString()</p>
+				}
+				@if (!result.Context.IsNullOrEmpty()) {
+					<p class="mg-search-description">@Html.Raw(result.Context)</p>
+				}
+				else if (!result.Description.IsNullOrEmpty())
+				{
+					<p class="mg-search-description">@Html.Raw(result.Description)</p>
+				}
+			</li>
+  }
+	</ul>
+}
+
+@if (Model.NumPages > 1)
+{
+	<div class="mg-searchblox-paging mg-pager">
+		@if (Model.Page > 1)
+  {
+	  var prevUrl = Model.PageingUrl + (Model.Page - 1).ToString();
+			<a class="mg-paging-link" href=@prevUrl>Prev</a>
+  }
+		@if (Model.ShowNumResults)
+  {
+			<span class="mg-number-results">@Model.PageStart.ToString() - @Model.PageEnd.ToString() of @Model.NumResults.ToString()</span>
+  }
+  else
+  {
+			<span class="mg-number-pages">page @Model.Page.ToString() of @Model.NumPages.ToString()</span>
+  }
+		@if (Model.Page < Model.NumPages)
+  {
+	  var nextUrl = Model.PageingUrl + (Model.Page + 1).ToString();
+			<a class="mg-paging-link" href=@nextUrl>Next</a>
+  }
+	</div>
+}
+
+
+@*
+	removes webforms params before submitting form. Needed until this bug is fixed:
+	http://feedback.telerik.com/Project/153/Feedback/Details/131362-mvc-beginformsitefinity-in-hybrid-mode-with-get-method-places-viewstate-in-the-u
+*@
+
+<script>
+
+	function getReadyToSubmit() {
+		var form = document.getElementById("SearchbloxForm");
+		var allInputs = document.getElementsByTagName("input");
+
+		for (var i = allInputs.length - 1; i >= 0; i--) {
+			if (!form.contains(allInputs[i])) {
+				allInputs[i].remove();
+			}
+		};
+		//document.forms["aspnetForm"].action = "search";
+		document.forms["aspnetForm"].method = "GET";
+	}
+
+	$('#SearchbloxForm').keypress(function (event) {
+		if (event.keyCode == 10 || event.keyCode == 13) {
+			getReadyToSubmit();
+		}
+	});
+
+	function handleFormSubmitElements(elementName) {
+		{
+			var allSubmitElements = document.getElementById("SearchbloxForm").getElementsByTagName(elementName);
+			var elementCount = allSubmitElements.length;
+			while (elementCount) {
+				{
+					typeAttr = allSubmitElements[elementCount - 1].getAttribute("type");
+					if (typeAttr == "submit") {
+						{
+							allSubmitElements[elementCount - 1].onclick = function () {
+								{
+									getReadyToSubmit();
+								}
+							};
+						}
+					}
+					elementCount--;
+				}
+			}
+		}
+	}
+
+	handleFormSubmitElements("input");
+	handleFormSubmitElements("button");
+
+</script>

@@ -1,0 +1,74 @@
+@model IList<SitefinityWebApp.Mvc.Models.BlendedListItem>
+
+@if(Model.Any())
+{
+<ul class="sfeventsList sfeventsListTitleCityDate mg-list">
+	@foreach (var item in Model.Reverse())
+    {
+        var link = string.IsNullOrEmpty(item.Link) ? "" : item.Link;
+        var title = string.IsNullOrEmpty(item.Title) ? "" : item.Title;
+
+		<li class="sfeventListItem">
+			<div class="mg-date-icon">
+				<span class="month">
+					@if (@item.SelfPaced == false && item.EventStartDate != null)
+                    {
+						@item.EventStartDate.ToString("MMM")
+					}
+					
+				</span>
+				<span class="day">
+					@if(@item.SelfPaced == true){
+						<div class="icon icon-laptop"></div>
+}
+                    else if(item.EventStartDate != null)
+                    {
+						@item.EventStartDate.ToString(" d ")
+					}
+				</span>
+			</div>
+			<div class="blue-title">
+				<a href="@link">@title</a>
+				@if(@item.SelfPaced == true){
+					<div class="gray-text">
+						Self-Paced
+					</div>
+				}
+				else{
+				    <div class="gray-text">
+				        @if (item.EventStartDate != null && item.EventEndDate != null)
+				        {
+				            if (item.EventStartDate.ToString("MMM d, yyyy") == item.EventEndDate.ToString("MMM d, yyyy"))
+                            {
+                                @item.EventStartDate.ToString("MMM d, yyyy")
+                            }
+                            else if (item.EventStartDate.ToString("MMM yyyy") == item.EventEndDate.ToString("MMM yyyy"))
+                            {
+                                @(item.EventStartDate.ToString("MMM d") + @item.EventEndDate.ToString("-d, yyyy"))  }
+                            else if (item.EventStartDate.ToString("yyyy") != item.EventEndDate.ToString("yyyy"))
+                            {
+                                @(item.EventStartDate.ToString("MMM d, yyyy") + @item.EventEndDate.ToString("- MMM d, yyyy"))  }
+                            else
+                            {
+                                @(item.EventStartDate.ToString("MMM d, yyyy") + @item.EventEndDate.ToString("MMM d, yyyy"))  }
+                        }
+				        
+				    </div>
+				}
+			    <div class="wildland-event_location">
+			        @{
+			            var location = string.IsNullOrEmpty(item.LocationStreet) ? "" : item.LocationStreet;
+			            var state = string.IsNullOrEmpty(item.LocationState) ? "" : item.LocationState;
+			        }
+			        @location
+			        @if (item.LocationCity != "")
+			        {
+			            @item.LocationCity
+			        }
+			        @state
+			    </div>
+			</div>
+		</li>
+	}
+</ul>
+}

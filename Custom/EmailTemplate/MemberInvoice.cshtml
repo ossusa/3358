@@ -1,0 +1,50 @@
+﻿@using Mx.IAFC.Webapp.Data
+@using ServiceStack
+@model Mx.IAFC.Webapp.Data.GenericPaymentModel
+
+@{
+    List<TitleFunctionItem> sections = Model.Products as List<TitleFunctionItem> ?? new List<TitleFunctionItem>(); //Model.GenericTitleFunctionItem as List<TitleFunctionItem>;
+    GenericUserPaymentModel user = Model.User as GenericUserPaymentModel ?? new GenericUserPaymentModel();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Membership Invoice</title>
+</head>
+<body>
+<p><em>"The IAFC is honored to have you on board! I encourage you to use the IAFC as your first-choice resource for networking, news, and professional development in the fire and emergency service. The future for our leaders is bright. I’m glad you’ll be there with us along the way. Thanks for all you do."</em>
+</p>
+<p>Fire Chief Rhoda Mae Kerr, EFO, CFO, MPA</p>
+<p>President and Chair of the Board</p>
+@foreach (var item in sections)
+{
+    <p>@item.Title</p>
+    <p>@item.MemberUnitPrice</p>
+}
+<div>
+    <p>Do you wish to add a section?</p>
+    <p>Please circle the section you would like to add and include the additional dues amount to your membership package total above.</p>
+</div>
+<div>
+    <table style="border: none;">
+        <tr>
+            <td>
+                Company Officers $25.00
+            </td>
+            <td>Industrial Fire & Safety $25.00</td>
+        </tr>
+        <tr><td>Emergency Medical Services (EMS) $25.00</td><td>Metropolitan Fire Chiefs Association (Contact IAFC for Info)</td></tr>
+        <tr><td>Emergency Vehicle Management $25.00</td><td>Safety, Health & Survival $25.00</td></tr>
+        <tr><td>Executive Fire Officers $25.00</td><td>Volunteer & Combination Officers $25.00</td></tr>
+        <tr><td>Federal & Military Fire Services $20.00</td></tr>
+    </table>
+</div>
+<div>
+    <p>To pay by Credit Card: Please call Member Services at (866) 385-9110</p>
+    <p>To pay by Check: Please return invoice with payment. Make checks payable to: IAFC Membership</p>
+    <p>Mail payment to (Please note new address): IAFC CL500039 PO Box 5007 Merrifield, VA 22116-5007</p>
+</div>
+</body>
+</html>

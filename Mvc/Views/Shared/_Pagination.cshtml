@@ -1,0 +1,26 @@
+﻿@using MatrixGroup.Sitefinity.Utilities
+@model SitefinityWebApp.Mvc.Models.Pagination
+           
+@{
+    var currentAction = Html.ViewContext.RouteData.Values["action"].ToString();
+}
+
+@if (Model.TotalPages > 1)
+{
+    <div class="paged-content">
+        <ol>
+            @if (Model.ShowPreviousPage)
+            {
+                <li><a href="@Url.Action(currentAction, new { Model.RouteValues, page = Model.PreviousPage }, true)">Previous</a></li>
+            }
+            @foreach (var page in Model.LinkedPages)
+            {
+                <li><a href="@Url.Action(currentAction, new { Model.RouteValues, page }, true)" class="@(page == Model.CurrentPage ? "active" : "")">@page</a></li>
+            }
+            @if (Model.ShowNextPage)
+            {
+                <li><a href="@Url.Action(currentAction, new { Model.RouteValues, page = Model.NextPage }, true)">Next</a></li>
+            }
+        </ol>
+    </div>
+}

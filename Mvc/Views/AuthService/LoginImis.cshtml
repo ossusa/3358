@@ -1,0 +1,160 @@
+﻿@using System.Text
+@using Microsoft.Http
+@using ServiceStack
+@using System;
+@using System.Collections.Generic;
+@using System.ComponentModel;
+@using System.Configuration;
+@using System.Linq;
+@using System.Net.Http;
+@using System.Threading.Tasks;
+@{
+    var excep = ViewData["exception"];
+    var message = ViewData["message"];
+    var excep2 = ViewData["exception2"];
+    var message2 = ViewData["message2"];
+
+    /*StringBuilder sb = new StringBuilder();
+    try
+    {
+        /*var kollResult = String.Format(this.Conn.SignInUrl, username).AppendPath("/true").GetAsync();
+        var res = kollResult.ReceiveString().Result;
+        qryResp.ResponseStatus = ResponseStatus.Success;
+        qryResp.Message = res;#1#
+        using (var client = new HttpClient())
+        {
+            string loginUrl = "https://members.iafc.org/helix/MembershipSignIn/patlamp/true";
+            var cont = client.Get(loginUrl);
+
+            sb.Append("call to user ")
+                .Append(loginUrl)
+                .Append(" rea: ")
+                .Append(cont.Request.Headers);
+
+        }
+        message = sb.ToString();
+    }
+    catch (Exception ex)
+    {
+        sb.Append("exception: ").Append(ex.Message);
+        if (ex.InnerException != null)
+        {
+            sb.Append("exception: ").Append(ex.InnerException.Message);
+            excep = sb.ToString();
+        }
+
+    }*/
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-Frame-Options" content="ALLOW-FROM http://members.iafc.org"/>
+    <script src="~/MvcAssets/jquery.min.js"></script>
+    <title>title</title>
+</head>
+<body>
+<div>
+    <p>Result:</p>
+    @if (message != null)
+    {
+        <p>Messge: @message</p>
+    }
+    @if (excep != null)
+    {
+        <p>Excep: @excep</p>
+    }
+    <hr/>
+    @if (message2 != null)
+    {
+        <p>Messge: @message2</p>
+    }
+    @if (excep2 != null)
+    {
+        <p>Excep: @excep2</p>
+    }
+        <iframe id="Example2"
+            name="Example2"
+            title="Example2"
+            width="400"
+            height="300"
+            frameborder="1"
+            scrolling="yes"
+            marginheight="0"
+            marginwidth="0"
+            src="https://members.iafc.org/helix/MembershipSignIn/patlamp/true">
+        <p>iframe is not support</p>
+    </iframe>
+    <hr />
+    <p>2</p>
+    <iframe id="Example2"
+            name="Example2"
+            title="Example2"
+            width="400"
+            height="300"
+            frameborder="1"
+            scrolling="yes"
+            marginheight="0"
+            marginwidth="0"
+            src="https://staging.iafc.org">
+        <p>iframe is not support</p>
+    </iframe></div>
+
+    <hr />
+<div id="jresult">
+
+    <p>script call</p>
+</div>
+
+<script>
+    console.info("jq is ", $);
+    $(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "https://members.iafc.org/helix/MembershipSignIn/patlamp/true",
+            //data: "name=John&location=Boston",
+            success: function (msg) {
+                console.info("Data Saved: " + msg);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.info("some error", xhr.responseText);
+                console.info("erro", JSON.stringify(errorThrown));
+            }
+        });
+    });
+
+    function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+            xhr.open(method, url, true);
+        } else if (typeof XDomainRequest != "undefined") {
+            xhr = new XDomainRequest();
+            xhr.open(method, url);
+        } else {
+            xhr = null;
+        }
+        return xhr;
+    }
+    function transferFailed(e) {
+        console.info("error:", JSON.stringify(e));
+    }
+
+    function stateChan(m) {
+        console.info("state change ", m);
+    }
+
+    var request = createCORSRequest("get", "https://members.iafc.org/helix/MembershipSignIn/patlamp/true");
+    request.overrideMimeType("text/plain; charset=x-user-defined");
+    request.addEventListener("error", transferFailed);
+    if (request) {
+        request.onload = function (e) {
+            console.info("loading..", e);
+        };
+        request.onreadystatechange = stateChan;
+        request.send();
+        console.info("send");
+    }
+</script>
+
+</body>
+</html>

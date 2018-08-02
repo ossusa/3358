@@ -1,0 +1,122 @@
+@model SitefinityWebApp.Mvc.Models.SearchCriteria
+<div class="form-container">
+    <div class="control-group">
+        <div class="controls">
+            @if (String.IsNullOrWhiteSpace(Model.Term))
+            {
+            <text>
+            	<div class="searchwrap">
+					@Html.TextBoxFor(m => m.Term, new { placeholder = "Search the Library" })
+					<input type="submit" value="Search" />
+					<!-- <span class="icon icon-search"></span> -->
+				</div>
+			</text>
+			} else {
+			<text>
+				<div class="searchwrap">
+					@Html.TextBoxFor(m => m.Term, new { placeholder = "Search the Library" })
+					<div class="secondarysearchwrap">
+						<span class="icon-wide-arrow-down"></span>
+						@Html.TextBoxFor(m => m.SecondTerm)
+						<input type="submit" value="Search" />
+						<!-- <span class="icon icon-search"></span> -->
+					</div>
+				</div>
+			</text>
+            }
+        	@Html.LabelFor(m => m.OrderBy)
+            <select id="OrderBy" name="OrderBy">
+                <option value="" @if(Model.OrderBy.IsNullOrEmpty()) {<text>selected="selected"</text>}></option>
+                <option value="ContentTypeOrdinal" @if(Model.OrderBy == "ContentTypeOrdinal") {<text>selected="selected"</text>}>Information Type</option>
+                <option value="PublicationDate DESC" @if(Model.OrderBy == "PublicationDate DESC") {<text>selected="selected"</text>}>Publication Date</option>\
+                <option value="SortTitle" @if(Model.OrderBy == "SortTitle") {<text>selected="selected"</text>}>Title</option>
+            </select>
+        </div>
+
+        <div class="form-actions hide-mobile">
+            @if (String.IsNullOrWhiteSpace(Model.Term))
+            {
+            <label class="cursor"><span class="visuallyhidden">Get Results</span><input type="submit" value="Get Results" /><span class="icon icon-arrow-circle-right"></span></label><input type="button" class="reset" value="Clear"/>
+            } else {
+            <label><span class="visuallyhidden">Update Results</span>
+            <input type="submit" value="Update Results" /><span class="icon icon-arrow-circle-right"></span></label> <input type="button" class="reset" value="Clear"/>
+            }
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="hidden" value="" name="Types" />
+            <select name="Types" id="Types" class="checkboxes" multiple data-placeholder="Type of Information">
+            	<optgroup label="Resource Type">
+				@foreach (var type in Model.TypesList)
+				{
+					<option value="@type.Value" @if (Model.Types != null && Model.Types.Contains(@type.Value)) { <text>selected="selected"</text> }>@type.Text</option>
+				}
+				 </optgroup>
+            </select>
+        </div>
+
+        <div class="form-actions hide-mobile">
+            @if (String.IsNullOrWhiteSpace(Model.Term))
+            {
+            <label class="cursor"><span class="visuallyhidden">Get Results</span>
+            <input type="submit" value="Get Results" /><span class="icon icon-arrow-circle-right"></span></label> <input type="button" class="reset" value="Clear" data-select="#Types"/>
+            } else {
+            <label class="cursor"><span class="visuallyhidden">Update Results</span>
+            <input type="submit" value="Update Results" /><span class="icon icon-arrow-circle-right"></span></label> <input type="button" class="reset" value="Clear" data-select="#Types"/>
+            }
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls category">
+            <input type="hidden" value="" name="Topics" />
+            <select name="Topics" id="Topics" class="checkboxes" multiple data-placeholder="Topics">
+            	<optgroup label="Topics">
+				@foreach (var topic in Model.TopicsList)
+				{
+					<option value="@topic.Value" @if (Model.Topics != null && Model.Topics.Contains(@topic.Value)) { <text>selected="selected"</text> }>@topic.Text</option>
+				}
+				 </optgroup>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            @if (String.IsNullOrWhiteSpace(Model.Term))
+            {
+            <label class="cursor"><span class="visuallyhidden">Get Results</span>
+            <input type="submit" value="Get Results" /><span class="icon icon-arrow-circle-right"></span></label> <input type="button" class="reset" value="Clear" data-select="#Topics"/>
+            } else {
+            <label class="cursor"><span class="visuallyhidden">UpdateResults</span>
+            <input type="submit" value="Update Results" /><span class="icon icon-arrow-circle-right"></span></label> <input type="button" class="reset" value="Clear" data-select="#Topics"/>
+            }
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls category">
+            <input type="hidden" value="" name="Authors" />
+            <select name="Authors" id="Authors" class="checkboxes" multiple data-placeholder="Authors">
+                <optgroup label="Organizational Authors">
+				@foreach (var author in Model.AuthorsList)
+				{
+					<option value="@author.Value" @if (Model.Authors != null && Model.Authors.Contains(@author.Value)) { <text>selected="selected"</text> }>@author.Text</option>
+				}
+				 </optgroup>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            @if (String.IsNullOrWhiteSpace(Model.Term))
+            {
+            <label class="cursor"><span class="visuallyhidden">Get Results</span>
+            <input type="submit" value="Get Results" /><span class="icon icon-arrow-circle-right"></span></label> <input type="button" class="reset" value="Clear" data-select="#Authors"/>
+            } else {
+            <label class="cursor"><span class="visuallyhidden">UpdateResults</span>
+            <input type="submit" value="Update Results" /><span class="icon icon-arrow-circle-right"></span></label> <input type="button" class="reset" value="Clear" data-select="#Authors"/>
+            }
+        </div>
+    </div>
+
+</div>

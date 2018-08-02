@@ -1,0 +1,51 @@
+﻿@using Mx.IAFC.Webapp.Data
+@using ServiceStack
+@model Mx.IAFC.Webapp.Data.GenericPaymentModel
+
+@{
+    List<TitleFunctionItem> sections = Model.Products as List<TitleFunctionItem> ?? new List<TitleFunctionItem>(); //Model.GenericTitleFunctionItem as List<TitleFunctionItem>;
+    GenericUserPaymentModel user = Model.User as GenericUserPaymentModel ?? new GenericUserPaymentModel();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmation</title>
+</head>
+<body>
+    <div>
+
+        <p>Dear @user.Title @user.LastName,</p>
+        <p>Welcome to the International Association of Fire Chiefs! We’re proud to have you as a member.</p>
+        <p>Your member number is @user.ContactId. This number will be printed on your membership card, which you should receive in the next 4 weeks.</p>
+    </div>
+    <div>
+        <p>
+            <strong>To ensure you'll receive all member communications, please set iafc.org as an approved domain with your email provider.</strong>
+        </p>
+
+        <h3>YOUR MEMBERSHIP PACKAGE</h3>
+        <p>
+            Your IAFC membership includes a membership in the <strong>Western Division</strong>.
+        </p>
+
+    </div>
+    @if (sections.Any())
+    {
+        <p>In addition, you are registered as a member in the following optional section(s):</p>
+        <p>IAFC sections are: @sections.Select(c => c.Title).ToList().Join(";")</p>
+
+    }
+    <div>
+        <p>If you need help, call Member Services at 866-385-9110 or email membership@iafc.org.</p>
+        <p>Again, welcome to the IAFC and thank you for your support!</p>
+        <p>Regards,</p>
+        <em>Terry Monroe</em>
+        <em>Director, Membership & External Relations</em>
+
+    </div>
+</body>
+</html>
+
+

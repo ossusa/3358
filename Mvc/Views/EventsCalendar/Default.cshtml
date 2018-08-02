@@ -1,0 +1,194 @@
+<div id="ng-app" ng-app="iafcCalendarApp">
+    <div ng-controller="CalendarController">
+
+        <fieldset class="calendar-filter" ng-cloak>
+          <div class="calendar-filter-title">
+            Select Filter(s):
+          </div>
+            <div class="filter-form-controls form-container">
+				      <ul class="list-across">
+	                <li ng-repeat="location in locations">
+	                  <input name="selectedLocations[]" type="checkbox"
+	                         value="{{ location.key }}"
+	                         ng-model="location.selected"
+	                         id="{{ location.key }}">
+	                    <label for="{{ location.key }}">
+	                        {{ location.name }}
+	                    </label>
+	                </li>
+	            </ul>
+                <div class="select filter-form-control">
+                    <select ng-model="search.location.state" class="calendar-dropdown" id="event-calendar-dropdown">
+                        <option value="">State</option>
+                        <option ng-repeat="state in states" value="{{state.value}}">{{ state.value }}</option>
+                    </select>
+					<div class="select__arrow"></div>
+                </div>
+				<a class="clear" href="#goto">
+					Go
+				</a>
+                <div class="filter-form-control" >
+                    <input ng-model="search.$" type="text" placeholder="Keyword" id="event-keyword-input"/>
+					<a class="clear" ng-click="clearFilter()">
+    					Clear
+					</a>
+
+                </div>
+
+                @* <div class="filter-form-control">
+                    <select ng-model="calendarView" class="calendar-dropdown">
+                        <option value="week">Week</option>
+                        <option value="month">Month</option>
+                        <option value="year">Year</option>
+                    </select>
+                </div> *@
+            </div>
+        </fieldset>
+
+        <div class="calendar-navigation">
+            @*<button class="prev btn" type="button" ng-click="calendarPrev()">Previous</button>
+            <button class="next btn" type="button" ng-click="calendarNext()">Next</button>
+            <button class="today btn" type="button" ng-click="calendarToday()">Today</button>*@
+        </div>
+
+        <ol class="calendar-list-main calendar-list-week" ng-show="calendarView == 'week'" ng-cloak>
+            @* <div class="calendar-list-group-date"> *@
+            <h3>
+                <span class="day-num">{{ weekDate.format('M/D') }}</span>
+                <span class="day-name">{{ weekDate.format('dddd') }}</span>
+            </h3>
+            <div class="calendar-categories">
+            <div class="calendar-categories">
+              <li class="calendar-categories__item"><h4>Date</h4></li>
+              <li class="calendar-categories__item"><h4>Title</h4></li>
+              <li class="calendar-categories__item"><h4>Topics</h4></li>
+              <li class="calendar-categories__item"><h4>Location</h4></li>
+            </div>
+            <li class="calendar-list-group" ng-repeat="weekDate in weekDates">
+                <ul class="calendar-list-group-events">
+                    <li ng-repeat="event in (events | onDate:weekDate | locationFilter:locationSelection | selectedCategories:categorySelection | filter:search)" eventresult>
+						<div class="calendar-categories__item">
+                            <div class="mg-date-icon">
+                              <span class="month">
+                                {{event.startMonth}}
+                              </span>
+                              <span class="day">
+                                {{event.startDay}}
+                              </span>
+                            </div>
+                        </div>
+                          <div class="blue-title">
+                            <a href="{{ event.url }}">{{ event.title }}</a>
+                          </div>
+                          <div class="calendar-categories__topics">
+              							<ul ng-repeat="topic in event.topics">
+              								<li class="red-title">{{topic}}</li>
+              							</ul>
+                          </div>
+                          <div class="calendar-categories__location">
+                            {{event.place}}
+                          </div>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <ol class="calendar-list-main calendar-list-month" ng-show="calendarView == 'month'" ng-cloak>
+          @* <div class="calendar-list-group-date"> *@
+          <h3 id="goto">
+              <span class="day-num">{{ currentDate.format('MMM') }}</span>
+              <span class="day-name">{{ currentDate.format('YYYY') }}</span>
+          </h3>
+          <div class="calendar-categories">
+            <li class="calendar-categories__item"><h4>Date</h4></li>
+            <li class="calendar-categories__item"><h4>Title</h4></li>
+            <li class="calendar-categories__item"><h4>Topics</h4></li>
+            <li class="calendar-categories__item"><h4>Location</h4></li>
+          </div>
+            <li class="calendar-list-group">
+                <ul class="calendar-list-group-events">
+                    <li ng-repeat="event in (events | onMonth:currentDate | locationFilter:locationSelection | selectedCategories:categorySelection | filter:search) | orderBy:'dateObject'" eventresult>
+						<div class="calendar-categories__item">
+                            <div class="mg-date-icon">
+                              <span class="month">
+                                {{event.startMonth}}
+                              </span>
+                              <span class="day">
+                                {{event.startDay}}
+                              </span>
+                            </div>
+                        </div>
+                          <div class="blue-title">
+                            <a href="{{ event.url }}">{{ event.title }}</a>
+                          </div>
+                          <div class="calendar-categories__topics">
+              							<ul ng-repeat="topic in event.topics">
+              								<li class="red-title">{{topic}}</li>
+              							</ul>
+                          </div>
+                          <div class="calendar-categories__location">
+                            {{event.place}}
+                          </div>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <ol class="calendar-list-main calendar-list-year" ng-show="calendarView == 'year'" ng-cloak>
+          @* <div class="calendar-list-group-date"> *@
+          <h3 id="goto">
+              @* <span class="day-num">{{ currentDate.format('YYYY') }}</span> *@
+          </h3>
+          <div class="calendar-categories">
+            <li class="calendar-categories__item"><h4>Date</h4></li>
+            <li class="calendar-categories__item"><h4>Title</h4></li>
+            <li class="calendar-categories__item"><h4>Topics</h4></li>
+            <li class="calendar-categories__item"><h4>Location</h4></li>
+          </div>
+            <li class="calendar-list-group">
+                <ul class="calendar-list-group-events">
+                    <li dir-paginate="event in (events| selfPaced | locationFilter:locationSelection:true | selectedCategories:categorySelection | filter:search) | orderBy:'dateObject' | itemsPerPage: 10" ng-class="{'hidden': (search.location.state.length === 2 && event.location.state.length > 2)}">
+                      <div class="calendar-categories__item">
+                          <div class="mg-date-icon">
+                            <span class="month">
+                              {{event.startMonthShort}}
+                            </span>
+                            <span class="day">
+                              {{event.startDay}}
+                            </span>
+                          </div>
+                      </div>
+                        <div class="blue-title">
+                          <a href="{{ event.url }}">{{ event.title }}</a>
+						  <div class="gray-text">
+						  {{event.eventSpan}}
+						  </div>
+                        </div>
+                        <div class="calendar-categories__topics">
+							<ul ng-repeat="topic in event.topics">
+								<li class="red-title">{{topic}}</li>
+							</ul>
+                        </div>
+                        <div class="calendar-categories__location">
+                          {{event.place}}
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+		<p ng-show="(events | selfPaced | locationFilter:locationSelection:true | selectedCategories:categorySelection | filter:search).length == 0">
+		  Sorry, no results found.
+		</p>
+        @* <p class="events-no-results">
+          Sorry, no results.
+        </p> *@
+
+        <div class="calendar-navigation">
+			<dir-pagination-controls></dir-pagination-controls>
+            @*<button class="prev btn" type="button" ng-click="calendarPrev()">Previous</button>
+            <button class="next btn" type="button" ng-click="calendarNext()">Next</button>
+			<button class="today btn" type="button" ng-click="calendarToday()">Today</button>*@
+        </div>
+
+    </div>
+</div>

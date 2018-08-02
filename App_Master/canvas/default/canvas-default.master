@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<%@ Register TagPrefix="sf" Namespace="Telerik.Sitefinity.Web.UI" Assembly="Telerik.Sitefinity" %>
+<%@ Register TagPrefix="asp" Namespace="System.Web.UI.HtmlControls" Assembly="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+	============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/Styles/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/style.css" type="text/css" />
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/Styles/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/Styles/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/Styles/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/Styles/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/Styles/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+</head>
+<body class="stretched">
+    <form id="aspnetForm" runat="server">
+        <div id="wrapper" class="clearfix">
+            <asp:ContentPlaceHolder ID="header_placeholder" runat="server" />
+            <asp:ContentPlaceHolder ID="body_placeholder" runat="server" />
+
+            <!-- Footer
+		    ============================================= -->
+            <footer id="footer" class="dark">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<asp:contentplaceholder id="footer_placeholder" runat="server" />
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<asp:contentplaceholder id="copyright_left_placeholder" runat="server" />
+					</div>
+
+					<div class="col_half col_last tright"> 
+                        <asp:contentplaceholder id="copyright_right_placeholder" runat="server" />
+					 </div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer>
+            <!-- #footer end -->
+        </div>
+
+        <!-- Go To Top
+	    ============================================= -->
+        <div id="gotoTop" class="icon-angle-up"></div>
+
+        <!-- External JavaScripts
+	    ============================================= -->
+
+        <!--<script type="text/javascript" src="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/js/jquery.js"></script>-->
+        <sf:ResourceLinks ID="ResourceLinks1" runat="server" UseEmbeddedThemes="false">
+            <sf:ResourceFile JavaScriptLibrary="JQuery" />
+        </sf:ResourceLinks>
+        <script type="text/javascript" src="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/js/plugins.js"></script>
+
+        <!-- Footer Scripts
+	    ============================================= -->
+        <script type="text/javascript" src="/Sitefinity/WebsiteTemplates/Canvas/App_Themes/Default/js/functions.js"></script>
+    </form>
+</body>
+</html>

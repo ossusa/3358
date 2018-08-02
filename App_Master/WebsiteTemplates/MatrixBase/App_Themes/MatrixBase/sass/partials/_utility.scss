@@ -1,0 +1,525 @@
+// these classes are and should be used heavily in the markup
+// the goal is to use more classes and write less css.
+
+.desktop-content {
+	@include bp(tablet){
+		display: none;
+	}
+}
+
+.tablet-content {
+	display: none;
+
+	@include bp(tablet){
+		display: block;
+	}
+}
+
+.mobile-content {
+	display: none;
+
+	@include bp(mobile){
+		display: block;
+	}
+}
+
+.mobile-hidden {
+	@include bp(mobile){
+		display: none;
+
+		&--active {
+			display: block;
+		}
+	}
+}
+
+// for tablet - undo float/margins/make full width
+.tablet-zero {
+	@extend %tablet-zero!optional;
+}
+// for mobile - undo float/margins/make full width
+.mobile-zero {
+	@extend %mobile-zero;
+}
+
+.mobile-centered {
+	@include bp(mobile){
+		text-align: center;
+	}
+}
+
+.relative {
+	position: relative !important;
+}
+
+.uppercase {
+	text-transform: uppercase !important;
+}
+
+.no-text-transform {
+	text-transform: none !important;
+}
+
+// when displaying bright/white text over a dark background...
+// this will help make the text more crisp and readable (webkit and firefox)
+.font-smooth {
+	@extend %font-smoothing;
+}
+
+.transparent-text {
+	color: rgba(white, 0.5);
+}
+
+.white-text {
+	color: white;
+}
+
+.black-text {
+	color: black;
+}
+
+.largest-text {
+	@include rem(font-size, 1.8);
+}
+
+.larger-text {
+	@include rem(font-size, 1.5);
+}
+
+.large-text {
+	@include rem(font-size, 1.2);
+}
+
+.small-text {
+	@include rem(font-size, 0.9);
+}
+
+.smaller-text {
+	@include rem(font-size, 0.8);
+}
+
+.smallest-text {
+	@include rem(font-size, 0.7);
+}
+
+.letter-space {
+	@include rem(letter-spacing, .2);
+}
+
+.sans-serif {
+	font-family: arial, helvetica, sans-serif;
+}
+
+.serif {
+	@extend %serif!optional;
+}
+
+.narrow-line-height {
+	line-height: 1;
+}
+
+.tighten-line-height {
+	line-height: 1.3;
+}
+
+.highlight-text {
+	color: $accent;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-none {
+	float: none !important;
+}
+
+.clearfix {
+	clear: both;
+	@extend %clearfix;
+}
+
+.center {
+	text-align: center;
+}
+
+.align-right {
+	text-align: right !important;
+}
+
+.vertical-align-top {
+	vertical-align: top;
+}
+
+.break-word {
+	word-wrap: break-word;
+}
+
+// this already exists in bootstrap css
+// .hide {
+//   display: none !important;
+// }
+
+.hidden {
+  display: none !important;
+
+  &--active {
+  	display: block !important;
+  }
+}
+
+.visuallyhidden {
+  @extend %visuallyHidden;
+}
+
+.border-gray{
+	border: 1px solid $gray;
+}
+.drop-shadow {
+	@extend %drop-shadow!optional;
+}
+
+.text-shadow {
+	@extend %text-shadow!optional;
+}
+
+.text-shadow--more {
+	text-shadow: 0 0 4px black;
+}
+
+.padded {
+	padding: $gutter;
+}
+
+.padded-less {
+	padding: ($gutter/2);
+}
+
+.padded-left{
+	padding-left: 1em;
+}
+
+.padded--mobile-narrow {
+	@include bp(mobile){
+		padding: ($gutter/4);
+	}
+}
+
+.border-bottom{
+	padding-bottom: 1em;
+    border-bottom: solid 1px #d6d6d6;
+    margin-top: 1em;
+}
+.no-border {
+	border: 0 !important;
+}
+
+.margin-bottom{
+	margin-bottom: 3em;
+}
+.margin-bottom--small{
+	margin-bottom: 1em;
+}
+.margin-vertical{
+	margin: 2em auto;
+}
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-margin-top {
+	margin-top: 0 !important;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+	margin-left: 0 !important;
+}
+
+.no-margin-right {
+	margin-right: 0 !important;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.no-padding-top {
+	padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0 !important;
+}
+
+.no-padding-left {
+	padding-left: 0 !important;
+}
+
+.no-padding-right {
+	padding-right: 0 !important;
+}
+
+.flex-box{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+// set for client to change column order
+.master-col{
+	display:flex;
+	@include bp(tablet){
+		flex-flow: column;
+	}
+}
+.order-1{
+	@include bp(tablet){
+		order:1;
+	}
+
+}
+.order-2{
+	@include bp(tablet){
+		order:2;
+	}
+}
+.order-3{
+	@include bp(tablet){
+		order:3;
+	}
+}
+.order-4{
+	@include bp(tablet){
+		order:4;
+	}
+}
+
+.flex-box--two-boxes{
+	align-items: baseline;
+}
+.form-group{
+	flex-basis: 50%;
+	padding: 6px 0;
+}
+.right-align {
+    text-align: right;
+    margin: 0 20%;
+}
+.gray-bkg{
+	background-color: #f9f9f9;
+}
+.large-padding{
+	padding: 2em 3em;
+}
+[type="text"], [type="priemail"]{
+	padding: 3px;
+}
+
+.for-print {
+	display: none !important;
+
+	@media print {
+		display: block !important;
+	}
+}
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline;
+}
+
+.inline-block,
+.links-inline-block a {
+	// these styles are the same as %inline-block
+	// but in this case we want these classes to over-rule anything previously declared
+	// *** extended styles appear near top of style sheet ***
+	// *** the contents of this file should appear near the end of the style sheet, thus over-ruling other styles ***
+	display: inline-block;
+	// vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+}
+
+.inline-block {
+	width: auto !important;
+}
+
+.overflow-hidden {
+	overflow: hidden !important;
+}
+
+.no-print {
+	@media print {
+		display: none !important;
+	}
+}
+
+.video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-bottom: $gutter;
+
+  .embed-floated & {
+	margin-bottom: 0;
+  }
+
+}
+
+.video-embed iframe,
+.video-embed object,
+.video-embed embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.mg-overlay,
+.overlay-content {
+	display: none;
+}
+
+.mg-overlay {
+	position: fixed;
+	background: lightgray;
+	background: rgba(lightgray, 0.8);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+
+}
+
+.mg-overlay__inner {
+	background: black;
+	background: rgba(black, 0.4);
+	color: white;
+	position: relative;
+	top: 50%;
+	width: 470px;
+	max-width: 470px;
+	margin: -330px auto 0;
+	overflow: hidden;
+	border-radius: 7px;
+
+	.banded {
+		background: white;
+		// color: $text-color;
+	}
+
+	@include modern-browsers {
+		margin: 0 auto;
+		transform: translateY( -50% );
+
+		@include bp(mobile){
+			transform: translateY( 0 );
+		}
+	}
+
+	@include bp(mobile){
+		width: 100% !important;
+		margin: 0;
+		top: $gutter;
+		left: 0;
+	}
+}
+
+.mg-overlay__content > * {
+    display: block;
+	margin: 0 auto;
+	max-width: 470px;
+
+	@include bp(mobile){
+		width: 100%;
+	}
+}
+
+.mg-overlay__close {
+	color: white;
+    padding: 5px 0px;
+    @include rem(font-size, 1.4);
+    display: block;
+
+    &:hover {
+    	text-decoration: none;
+    }
+}
+
+.border-radius {
+	border-radius: 5px;
+}
+
+.no-background {
+	background: transparent !important;
+}
+
+// spinner animation displayed when waiting for content load
+.spinner {
+	position: relative;
+	left: calc(50% - 32px);
+	width: 64px;
+	height: 64px;
+
+	// adjustments for main nav
+	.mega-menu & {
+		position: absolute;
+		top: calc(50% - 32px);
+	}
+
+	.research .mega-menu & {
+		left: calc(60% - 32px);
+	}
+}
+
+.spinner__inner {
+	position: absolute;
+	border-radius: 50%;
+	border: 8px solid transparent;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	border: 8px solid $secondary;
+	border-top-color: $primary;
+	animation: rotate-left 0.8s $cubic-bezier infinite;
+
+	.banded & {
+		border-color: $primary;
+		border-top-color: nth($ui-links, 1);
+	}
+}
+
+@keyframes rotate-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,25 @@
+/**
+ * Sitefinity Back-end Overrides
+ *
+ * Use this file to override front-end styling while using the back-end editor.
+ * This is particularly useful for hidden areas that should be displayed while editing (such as tabbed sections).
+ */
+
+.backend,
+.sfPageEditor {
+
+  .main-nav {
+    li ul {
+      display: none !important;
+    }
+  }
+
+  .mobile-nav-container {
+    display: block !important;
+  }
+
+  table {
+    font-size: 1em;
+  }
+
+}

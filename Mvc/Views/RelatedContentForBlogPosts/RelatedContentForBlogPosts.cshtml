@@ -1,0 +1,28 @@
+
+@model IList<SitefinityWebApp.Mvc.Models.BlendedListItem>
+
+@if (Model.Any())
+{
+    <ul class="sfnewsList sfnewsListTitleDateSummary sflist mg-list">
+
+        @foreach (var item in Model)
+        {
+			<li class="sfnewsListItem mg-list-item mg-list-item__no-padding">
+			  <div class="newstitle">
+			    <a href="@item.Link">@item.Title</a>
+				</div>
+				<div class="gray-text">
+					@item.PublicationDate.ToString("MMMM d, yyyy")
+				</div>
+				  <div class="news-summary">
+					<p>@item.Summary <a class="readmore" href="@item.Link">read more</a></p>
+				  </div>
+				
+			</li>
+        }
+    </ul>
+}
+else
+{
+	<h4>No result</h4>
+}

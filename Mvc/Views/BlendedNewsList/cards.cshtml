@@ -1,0 +1,17 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+@foreach (var result in Model.ResultSet)
+{
+    <div class="col">
+    	<div class="card">
+    		@if ( result.ImageUrl != null ) {
+				<img src="@result.ImageUrl" class="card-thumbnail"/>
+	    	}
+		    <div class="card-content">
+		    	<h4 class="heading"><a href="@result.Link">@result.Title</a></h4>
+		    	<p>@result.Summary</p>
+		    	<p><a href="@result.Link" class="more">Read more</a></p>
+		    </div>
+    	</div>
+    </div>
+}

@@ -1,0 +1,66 @@
+/**
+ * Fonts
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i');
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  font-family: $base-font-family;
+  color:$dark;
+}
+
+/* Headers */
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+.tertiary {
+  @include rem(font-size, .9);
+}
+.social-icn{
+  color: #0076a8;
+  font-size: 36px;
+  display: inline-block;
+  text-decoration: none;
+  margin: 20px 0;
+}
+.social-foot{
+  padding: 1em 0;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  a{
+    color: #0076a8;
+    font-size: 36px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 0 10px;
+  }
+}
+/* Placeholders */
+// ::-webkit-input-placeholder {
+//   color: $gray-light;
+// }
+// :-moz-placeholder {
+//   color: $gray-light;
+// }

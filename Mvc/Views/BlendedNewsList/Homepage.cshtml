@@ -1,0 +1,8 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<h1>HOMEpage</h1>
+
+@foreach (var result in Model.ResultSet)
+{
+    <a href="@result.Link">@result.Title</a><br />
+}

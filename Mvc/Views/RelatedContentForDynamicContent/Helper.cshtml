@@ -1,0 +1,43 @@
+@using ServiceStack;
+@model IList<SitefinityWebApp.Mvc.Models.BlendedListItem>
+
+	@if(Model.Any())
+	{
+		<h3>Related Posts</h3>
+	}
+<p>All Danny: @Model.SerializeToString()</p>
+
+<div class="box-slick">
+    <div class="slick-container">
+	<table>
+		<tr><th>Title</th>
+		<th>Summary</th>
+		<th>Content</th>
+		<th>Link</th>
+		<th>PublicationDate</th>
+		<th>Featured</th>
+		<th>Tags</th>
+		<th>Categories</th>
+		<th>ContentType</th>
+		<th>Image</th>
+
+		</tr>
+        @foreach (var item in Model)
+		{
+			<tr>
+			<td>@item.Title</td>
+			<td>@item.Summary</td>
+			<td>@item.Content</td>
+			<td>@item.Link</td>
+			<td>@item.PublicationDate</td>
+			<td>@item.Featured</td>
+			<td>@item.Tags</td>
+			<td>@item.Categories</td>
+			<td>@item.ContentType</td>
+			<td>@item.Image</td>
+			</tr>
+        }
+	</table>
+    </div>
+    <a href="/topics-and-tools/wildland/wildland-resource" class="major-link">MORE RESOURCES</a>
+</div>

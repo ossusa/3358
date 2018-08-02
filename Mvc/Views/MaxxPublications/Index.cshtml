@@ -1,0 +1,26 @@
+
+
+@if (Model.Any()){
+  <ul class="maxx-publications sfitemsList">
+    @foreach (var pub in Model)
+    {
+      <li class="sfitem">
+
+        @if( !String.IsNullOrEmpty( @pub.MiniImageUrl ) ){
+          <a href="@pub.LinkToStore">
+            <img src="@pub.MiniImageUrl.Replace("/data/asf/current/asf_org","")" alt="@pub.Name" class="alignleft">
+          </a>
+        } 
+        
+        <h4><a href="@pub.LinkToStore">@pub.Name</a></h4>
+        
+        @if( !String.IsNullOrEmpty( @pub.ShortDescription ) ){
+          <p class="description">
+            @pub.ShortDescription
+          </p>
+        }
+
+      </li>
+    }
+  </ul>
+}

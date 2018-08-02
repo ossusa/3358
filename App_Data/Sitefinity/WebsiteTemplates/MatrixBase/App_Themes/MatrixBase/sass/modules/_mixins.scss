@@ -1,0 +1,86 @@
+// ----------------------------------------------------------------------------
+// Mixins
+// ----------------------------------------------------------------------------
+
+// Breakpoints
+@mixin bp($point) {
+  @if $point == wide {
+    @media (max-width: $bp-wide) { @content; }
+  }
+  @else if $point == full {
+    @media (max-width: $bp-full) { @content; }
+  }
+  @else if $point == landscape {
+    @media (max-width: $bp-landscape) { @content; }
+  }
+  @else if $point == portrait {
+    @media (max-width: $bp-portrait) { @content; }
+  }
+  @else if $point == tablet {
+    @media (max-width: $bp-tab)  { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: $bp-mobile)  { @content; }
+  }
+}
+
+//Responsive fine tuning
+@mixin vp-min($viewport) {
+  @media screen and (min-width: $viewport) {@content;}
+}
+@mixin vp-max($viewport) {
+  @media screen and (max-width: $viewport) {@content;}
+}
+@mixin vp-min-max($v-min, $v-max) {
+  @media screen and (min-width: $v-min) and (max-width: $v-max) {@content;}
+}
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// Cross-browser rem
+@mixin rem($property, $values) {
+  $base-font-size: $base-font-size; // should be consistent with your html/body font-size
+  $px-values: ();
+  $rem-values: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == 0px {
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      $new-rem-value: $value / $base-font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else {
+      $px-values: join($px-values, round($value * $base-font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
+
+//no javascript fallback styles
+@mixin no-js {
+  html.no-js & {
+    @content;
+  }
+}
+
+//for ie-9 and up
+@mixin modern-browsers {
+  :root & {
+    @content;
+  }
+}

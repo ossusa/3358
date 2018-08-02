@@ -1,0 +1,121 @@
+//--------------------------latest news-------------------------------------------
+.iafcTitle{
+    margin: 1em 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000;
+    font-weight:300;
+    font-size: 1.8em;
+
+    &--primary-col {
+        margin-top: .1em;
+        padding-bottom: .5em;
+    }
+}
+.mg-list-item{
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 1em;
+}
+.mg-list-item__no-padding{
+  padding-bottom: 0;
+}
+.first-highlight .mg-list-item{
+    border: solid 1px $gray;
+    padding-bottom: 2em;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    overflow: hidden;
+	@include bp(tablet){
+		padding: 1em;
+	}
+    &:last-child{
+      margin-bottom: 3em;
+    }
+    .newstitle a{
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2em;
+      :hover{
+        text-decoration:none;
+      }
+    }
+    .news-summary
+    {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+    .wildland-news_pic {
+      //commented out styling from comp to use the large images uploaded to a feature
+        display: inline-block;
+        float: left;
+        margin-right: 1em;
+        // display: block;
+        // float: none;
+        // text-align: center;
+        // margin-bottom: 1em;
+        img{
+		width:100%;
+        height: auto;
+		border: 1px solid $gray;
+          @include bp(mobile){
+            width:100%;
+            height: auto;
+            margin: 0;
+          }
+        }
+    }
+}
+.newstitle a{
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin: 15px 0;
+  :hover{
+    text-decoration:none;
+  }
+}
+.news-summary
+{
+  font-size: 1em;
+  line-height: 1.4;
+  .major-link{
+    display:initial;
+    font-size: 1em;
+    line-height: 1;
+  }
+}
+.wildland-news_pic {
+    display: inline-block;
+    float: right;
+    @include bp(mobile) {
+      display:block;
+      float: none;
+      text-align: center;
+    }
+    img{
+      height: 120px;
+      border: 1px solid $gray;
+    }
+}
+.huge-btn {
+    background-color: #a6192e;
+	padding: 1.2rem;
+    border-radius: 18px;
+    transition: color .2s linear, background .2s linear !important;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .icon{
+      display: inline-block;
+      margin-left: 5px;
+    }
+}
+.huge-btn:hover{
+    background-color: $orange;
+}

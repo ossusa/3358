@@ -1,0 +1,640 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.DigitalExperienceCloud.Client</name>
+    </assembly>
+    <members>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ClientBase.Timeout">
+            <summary>Gets or sets the time-out value in milliseconds for the <see cref="M:System.Net.HttpWebRequest.GetResponse" /> and <see cref="M:System.Net.HttpWebRequest.GetRequestStream" /> methods.</summary>
+            <returns>The number of milliseconds to wait before the request times out. The default value is 100,000 milliseconds (100 seconds).</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than zero and is not <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ContactPropertiesClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.DigitalExperienceCloud.Client.ContactPropertiesClient"/> class.
+            </summary>
+            <param name="accessToken">The access token.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ContactPropertiesClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.DigitalExperienceCloud.Client.ContactPropertiesClient"/> class.
+            </summary>
+            <param name="accessToken">The access token.</param>
+            <param name="serverAddress">The server address.</param>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Attribution.AttributionValue">
+            <summary>
+            Defines the value of attribution for the given touchpoint
+            Attribution: ATT = CRT / CRA 
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Attribution.ConversionRateAllContacts">
+            <summary>
+            Number of metaclients that were classified in the timeframe compared to all metaclients available - Comes from GoalStatistics
+            Conversion rate all: CRA       =  GoalClassified / (GoalClients / 100)
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Attribution.ConversionRateTouchpoint">
+            <summary>
+            Number of metaclients that were classified after they hit the touchpoint, compared to all metaclients that were hitting the touchpoint in the timeframe
+            Conversion rate touchpoint: CRT: = GC / (TPR / 100) 
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Attribution.GoalCompletions">
+            <summary>
+            Metaclients that were classified for the referenced goal in the given timeframe, after they hit the touchpoint.
+            Abbr. GC
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Attribution.TouchpointHits">
+            <summary>
+            Number of hits for the touchpoint in the given timeframe
+            Abbr. TPR
+            </summary>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.Interaction">
+            <summary>
+            Represents an interaction 'Subject-Predicate-Object' for data intelligence purposes.
+            </summary>
+            <remarks>
+            An interaction represents a certain timestamped action of a subject (client from an interaction source) that 
+            potentially uses/affects an object. An interaction can also be used to represent a state of a subject.
+            </remarks>
+            <seealso cref="M:Telerik.DigitalExperienceCloud.Client.InteractionClient.ImportInteraction(System.String,Telerik.DigitalExperienceCloud.Client.Interaction)"/>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.Interaction.#ctor">
+            <summary>
+            Constructs a new interaction instance
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Interaction.Subject">
+            <summary>
+            The subject of the interaction, a.k.a. the client identifier of the source.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Interaction.Predicate">
+            <summary>
+            The predicate (verb) of the interaction.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Interaction.Object">
+            <summary>
+            The object of the interaction.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Interaction.Timestamp">
+            <summary>
+            The date and time when the activity occurred.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Interaction.IPAddress">
+            <summary>
+            The IP address from which the interaction is sent.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Interaction.SubjectMetadata">
+            <summary>
+            A dictionary representing the metadata associated with the subject. It could contain any number of key-value pairs where the key is an identifier for the metadata record and the value is the actuall metadata.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.PageSize">
+            <summary>
+            The page size to be used when reading Lead Scoring Threshold passes.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.FromDate">
+            <summary>
+            The date from which onwards the client would check for Lead Scoring Threshold passes.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.IsSubscribedTo">
+            <summary>
+            Indicates whether there is a subscriber to the current client instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.TimerIntervalInSeconds">
+            <summary>
+            The interval of time in seconds on which the client would check for Lead Scoring Threshold passes.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.LastOccurredException">
+            <summary>
+            Indicates the last exception that has occurred during operation.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.ThresholdPassCallbackErrorOccurred">
+            <summary>
+            A callback that would be invoked when an exception occurs in the Scoring Threshold Passed Callback specified via the Subscribe method.
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.Subscribe(System.Action{Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient,Telerik.DigitalExperienceCloud.Client.LeadScoringThresholdPassesInfo})">
+            <summary>
+            Subscribes to the client in order to receive notifications when there are Lead Scoring Threshold passes.
+            </summary>
+            <param name="scoringThresholdPassedCallback">The callback method which will be used to process Lead Scoring Threshold passes.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.Unsubscribe">
+            <summary>
+            Unsubscribe from the current instance and stops further checks for Lead Scoring Threshold passes.
+            It will wait for 30 seconds for pending checks to complete before unsubscribing.
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.ForceUnsubscribe">
+            <summary>
+            Unsubscribe from the current instance and stops further checks for Lead Scoring Threshold passes.
+            If a check is currently executing, it will be stopped immediately.
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.Unsubscribe(System.Int32)">
+            <summary>
+            Unsubscribe from the current instance and stops further checks for Lead Scoring Threshold passes.
+            It will wait for the specified timeout seconds for pending checks to complete before unsubscribing.
+            </summary>
+            <param name="timeoutInMilliseconds">The amount of time to wait for pending checks to complete before unsubscribing.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.GetLeadScoringThresholdPasses(Telerik.DigitalExperienceCloud.Client.LoadOptions)">
+            <summary>
+            Retrieves all Lead Scoring Threshold Passes according to the passed Load Options.
+            </summary>
+            <param name="loadOptions">LoadOptions object specifying how to load the Lead Scoring Threshold passes.</param>
+            <returns>Lead Scoring Threshold Passes according to the passed Load Options.</returns>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient.GetLeadScoringThresholdPasses(Telerik.DigitalExperienceCloud.Client.LoadOptions,System.DateTime)">
+            <summary>
+            Retrieves Lead Scoring Threshold Passes that have occurred from the specified date onwards and according to the passed
+            Load Options.
+            </summary>
+            <param name="loadOptions">LoadOptions object specifying how to load the Lead Scoring Threshold passes.</param>
+            <param name="fromDate">Specifies the date from which onward the Lead Scoring Threshold passes should have occurred.</param>
+            <returns>Lead Scoring Threshold Passes that have occurred from the specified date onwards.</returns>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.ThresholdPassCallbackErrorOccurred">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.LastOccurredException">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.PageSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.FromDate">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.IsSubscribedTo">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.TimerIntervalInSeconds">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String)">
+            <summary>
+            Creates an instance of the LeadScoringEventClient.
+            </summary>
+            <param name="accessToken">A DEC Access Token.</param>
+            <param name="datacenterKey">The API key of the targeted DEC data center.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String,System.Int32)">
+            <summary>
+            Creates an instance of the LeadScoringEventClient.
+            </summary>
+            <param name="accessToken">A DEC Access Token.</param>
+            <param name="datacenterKey">The API key of the targeted DEC data center.</param>
+            <param name="intervalInSeconds">The interval of time on which thresholds should be checked.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String,Telerik.DigitalExperienceCloud.Client.ILastReadTimestampProvider,Telerik.DigitalExperienceCloud.Client.IThreadingTimerService)">
+            <summary>
+            Creates an instance of the LeadScoringEventClient.
+            </summary>
+            <param name="accessToken">A DEC Access Token.</param>
+            <param name="datacenterKey">The API key of the targeted DEC data center.</param>
+            <param name="lastReadTimestampProvider"></param>
+            <param name="timerService"></param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String,System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            Creates an instance of the LeadScoringEventClient.
+            </summary>
+            <param name="accessToken">A DEC Access Token.</param>
+            <param name="datacenterKey">The API key of the targeted DEC data center.</param>
+            <param name="intervalInSeconds">The interval of time on which thresholds should be checked.</param>
+            <param name="pageSize">The page size used to read the Lead Scoring Threshold passes.</param>
+            <param name="defaultFromDate">The date that will be used to filter the Lead Scoring Threshold passes in case 
+            no previously read timestamp is available.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String,System.String,System.Int32,System.Int32,System.DateTime)">
+            <summary>
+            Creates an instance of the LeadScoringEventClient.
+            </summary>
+            <param name="accessToken">A DEC Access Token.</param>
+            <param name="datacenterKey">The API key of the targeted DEC data center.</param>
+            <param name="serverAddress">The address of the DEC API server.</param>
+            <param name="intervalInSeconds">The interval of time on which thresholds should be checked.</param>
+            <param name="pageSize">The page size used to read the Lead Scoring Threshold passes.</param>
+            <param name="defaultFromDate">The date that will be used to filter the Lead Scoring Threshold passes in case 
+            no previously read timestamp is available.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String,System.String,System.Int32,System.Int32,Telerik.DigitalExperienceCloud.Client.ILastReadTimestampProvider,Telerik.DigitalExperienceCloud.Client.IThreadingTimerService)">
+            <summary>
+            Creates an instance of the LeadScoringEventClient.
+            </summary>
+            <param name="accessToken">A DEC Access Token.</param>
+            <param name="datacenterKey">The API key of the targeted DEC data center.</param>
+            <param name="serverAddress">The address of the DEC API server.</param>
+            <param name="intervalInSeconds">The interval of time on which thresholds should be checked.</param>
+            <param name="pageSize">The page size used to read the Lead Scoring Threshold passes.</param>
+            <param name="lastReadTimestampProvider"></param>
+            <param name="timerService"></param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.#ctor(Telerik.DigitalExperienceCloud.Client.IAccessToken,System.String,System.Int32,System.Int32,Telerik.DigitalExperienceCloud.Client.ILastReadTimestampProvider,Telerik.DigitalExperienceCloud.Client.IThreadingTimerService)">
+            <summary>
+            Creates an instance of the LeadScoringEventClient.
+            </summary>
+            <param name="accessToken">A DEC Access Token.</param>
+            <param name="datacenterKey">The API key of the targeted DEC data center.</param>
+            <param name="intervalInSeconds">The interval of time on which thresholds should be checked.</param>
+            <param name="pageSize">The page size used to read the Lead Scoring Threshold passes.</param>
+            <param name="lastReadTimestampProvider"></param>
+            <param name="timerService"></param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.Subscribe(System.Action{Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient,Telerik.DigitalExperienceCloud.Client.LeadScoringThresholdPassesInfo})">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.Unsubscribe">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.ForceUnsubscribe">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.Unsubscribe(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.GetLeadScoringThresholdPasses(Telerik.DigitalExperienceCloud.Client.LoadOptions)">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.GetLeadScoringThresholdPasses(Telerik.DigitalExperienceCloud.Client.LoadOptions,System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.TimerCallback(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.ReadPage(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.EvaluatePageAndNotifySubscriber(System.Collections.Generic.IEnumerable{Telerik.DigitalExperienceCloud.Client.LeadScoringThresholdPass})">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LeadScoringEventClient.DefaultThresholdPassCallbackErrorHandler(Telerik.DigitalExperienceCloud.Client.ILeadScoringEventClient,Telerik.DigitalExperienceCloud.Client.ThresholdPassCallbackErrorInfo)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="capturedErrorInfo"></param>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.DecisionTree">
+            <summary>
+            A calculated decision tree.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.DecisionTree.Id">
+            <summary>
+            Identifier of this decision tree.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.DecisionTree.RootNode">
+            <summary>
+            Calculated decision in JSON representation.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.DecisionTree.TreeSettings">
+            <summary>
+            Settings that were used to calculate this decision tree.
+            </summary>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.DecisionTreeSettings">
+            <summary>
+            Settings for the calculation of a decision tree
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.DecisionTreeSettings.#ctor">
+            <summary>
+            Constructs a new DecisionTreeSettings instance
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.DecisionTreeSettings.Id">
+            <summary>
+            Identifier of this instance.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.DecisionTreeSettings.StartTime">
+            <summary>
+            Start time of the sentences to use for calculation.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.DecisionTreeSettings.EndTime">
+            <summary>
+            End time of the sentences to use for calculation.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.DecisionTreeSettings.StopFoldingRelevance">
+            <summary>
+            Defines a percentage value where a feature will never be folded if the percentage
+            is above the defined value
+            </summary>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.FeatureReuseMode">
+            <summary>
+            Describes how a feature can be used again in the calculation of a decision tree
+            </summary>
+        </member>
+        <member name="F:Telerik.DigitalExperienceCloud.Client.FeatureReuseMode.DifferentSubpath">
+            <summary>
+            Allow a feature to be used again, if it is in a different path starting from the root node. (Default)
+            </summary>
+        </member>
+        <member name="F:Telerik.DigitalExperienceCloud.Client.FeatureReuseMode.DifferentLevel">
+            <summary>
+            Allow a feature to be used again, if it is in a different level in the tree.
+            </summary>
+        </member>
+        <member name="F:Telerik.DigitalExperienceCloud.Client.FeatureReuseMode.Disallow">
+            <summary>
+            Do not allow a feature to be used again in the tree.
+            </summary>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.ObjectMetadata">
+            <summary>
+            Represents metadata for an Object.
+            </summary>
+            <remarks>
+            The ObjectMetadata instance is used to transport additional metadata associated with a given Object-Predicate combination
+            </remarks>
+            <seealso cref="T:Telerik.DigitalExperienceCloud.Client.SentenceClient"/>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ObjectMetadata.#ctor">
+            <summary>
+            Constructs a new ObjectMetadata instance
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ObjectMetadata.Object">
+            <summary>
+            The Object to associate the metadata with.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ObjectMetadata.Predicate">
+            <summary>
+            The Predicate to associate the metadata with.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ObjectMetadata.IPAddress">
+            <summary>
+            The IP address from which the Object Metadata is sent.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ObjectMetadata.Metadata">
+            <summary>
+            A dictionary representing the metadata associated with the subject. It could contain any number of key-value pairs where the key is an identifier for the metadata record and the value is the actuall metadata.
+            </summary>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.SubjectMetadata">
+            <summary>
+            Represents metadata for a Subject.
+            </summary>
+            <remarks>
+            The SubjectMetadata instance is used to transport additional metadata associated with a given Subject
+            </remarks>
+            <seealso cref="T:Telerik.DigitalExperienceCloud.Client.SentenceClient"/>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.SubjectMetadata.#ctor">
+            <summary>
+            Constructs a new SubjectMetadata instance
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.SubjectMetadata.Subject">
+            <summary>
+            The Subject to associate the metadata with.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.SubjectMetadata.IPAddress">
+            <summary>
+            The IP address from which the Subject Metadata is sent.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.SubjectMetadata.Metadata">
+            <summary>
+            A dictionary representing the metadata associated with the subject. It could contain any number of key-value pairs where the key is an identifier for the metadata record and the value is the actuall metadata.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.IThreadingTimerService.TimerCallback">
+            <summary>
+            The callback that will be executed when the timer elapses.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.IThreadingTimerService.TimerTimeout">
+            <summary>
+            The interval of time through which the timer would activate.
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.IThreadingTimerService.Initialize(System.Action{System.Object})">
+            <summary>
+            Initializes the timer with the given callback method.
+            </summary>
+            <param name="callbackMethod">A callback method that would be executed when the timer elapses.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.IThreadingTimerService.StartTimer(System.Int64)">
+            <summary>
+            Start the timer.
+            </summary>
+            <param name="timeout">The interval of time through which the timer would activate.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.IThreadingTimerService.StopTimer">
+            <summary>
+            Stops the Timer. If there is an execution running, it waits for it for 30 seconds.
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.IThreadingTimerService.StopTimer(System.Int32)">
+            <summary>
+            Stops the Timer. If there is an execution running, it waits for it for the specified timeout.
+            </summary>
+            <param name="timeoutInMilliseconds">The time in milliseconds it will wait for a running execution.</param>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ILastReadTimestampProvider.DefaultTimestamp">
+            <summary>
+            The default timestamp that would be returned by the Load method in case there is no previously saved timestamp.
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILastReadTimestampProvider.Save(System.DateTime)">
+            <summary>
+            Saves the passed last read timestamp to a file on the file system.
+            </summary>
+            <param name="lastReadTimestamp">The last read timestamp that will be saved.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ILastReadTimestampProvider.Load">
+            <summary>
+            Loads the saved last read timestamp from a file on the file system. In case such is not 
+            available the DefaultTimestamp will be used.
+            </summary>
+            <returns>A previously saved timestamp. If such is not available the DefaultTimestamp</returns>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.IClient.Timeout">
+            <summary>Gets or sets the time-out value in milliseconds for the <see cref="M:System.Net.HttpWebRequest.GetResponse" /> and <see cref="M:System.Net.HttpWebRequest.GetRequestStream" /> methods.</summary>
+            <returns>The number of milliseconds to wait before the request times out. The default value is 100,000 milliseconds (100 seconds).</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than zero and is not <see cref="F:System.Threading.Timeout.Infinite" />.</exception>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.Sentence">
+            <summary>
+            Represents a sentence 'Subject-Predicate-Object' for data intelligence purposes.
+            </summary>
+            <remarks>
+            A sentence represents a certain timestamped action of a subject (client from a sentence source) that 
+            potentially uses/affects an object. A sentence can also be used to represent a state of a subject.
+            </remarks>
+            <seealso cref="M:Telerik.DigitalExperienceCloud.Client.SentenceClient.ImportSentences(System.String,System.Collections.Generic.IEnumerable{Telerik.DigitalExperienceCloud.Client.Sentence})"/>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.Sentence.#ctor">
+            <summary>
+            Constructs a new sentence instance
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Sentence.Subject">
+            <summary>
+            The subject of the sentence, a.k.a. the client identifier of the source.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Sentence.SubjectMetadata">
+            <summary>
+            A dictionary representing the metadata associated with the subject. It could contain any number of key-value pairs where the key is an identifier for the metadata record and the value is the actuall metadata.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Sentence.Predicate">
+            <summary>
+            The predicate (verb) of the sentence.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Sentence.Object">
+            <summary>
+            The object of the sentence.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Sentence.ObjectMetadata">
+            <summary>
+            A dictionary representing the metadata associated with the subject. It could contain any number of key-value pairs where the key is an identifier for the metadata record and the value is the actuall metadata.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Sentence.Timestamp">
+            <summary>
+            The date and time when the activity occurred.
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.Sentence.IPAddress">
+            <summary>
+            The IP address from which the sentence is sent.
+            </summary>
+        </member>
+        <member name="T:Telerik.DigitalExperienceCloud.Client.ISubjectMappingClient">
+            <summary>
+            Represents an object exposing the functionality provided by the mappings restful service. It is used to import mappings between one and the same subjects coming from different sources.
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ISubjectMappingClient.ImportSubjectMappings(System.Collections.Generic.IEnumerable{Telerik.DigitalExperienceCloud.Client.SubjectMapping})">
+             <summary>
+             The method imports а collection of SubjectMapping objects to the Telerik.DataIntelligence server. The method sends the objects in batches with the most efficient chunk size. There are no limitations to the number of objects to be passed to the method.  The operation is asynchronous.
+             </summary>
+             <example>
+             Sample usage:
+             <code>
+             client.ImportSubjectMappings(mappings); //the mappings are imported in background, the method returns immediately.
+            
+             client.ImportSubjectMappings(mappings).Wait(); //the execution is blocked until all of the mappings are imported.
+            
+             int imported = client.ImportSubjectMappings(mappings).Result; //the execution is blocked until all of the mappings are imported. Returns the number of imported mappings.
+             </code>
+             </example>
+             <exception cref="T:System.AggregateException">The exception is thrown when one or more of the background tasks have failed. Check the InnerExceptions property for more details</exception>
+             <param name="mappings">a collection of SubjectMapping objects to be transmitted to the server</param>
+             <returns></returns>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ISubjectMappingClient.ImportSubjectMapping(Telerik.DigitalExperienceCloud.Client.SubjectMapping)">
+             <summary>
+             The method imports а single SubjectMapping object to the Telerik.DataIntelligence server. The operation is asynchronous.
+             </summary>
+             <example>
+             Sample usage:
+             <code>
+             client.ImportSubjectMappings(mapping); //the mapping is imported in background, the method returns immediately.
+            
+             client.ImportSubjectMappings(mapping).Wait(); //the execution is blocked until all of the mapping is imported.
+             </code>
+             </example>
+             <exception cref="T:System.AggregateException">The exception is thrown when there is server side or communication problem. Check the InnerExceptions property for more details</exception>
+             <param name="mapping">a SubjectMapping object to be transmitted to the server</param>
+             <returns></returns>
+        </member>
+        <member name="F:Telerik.DigitalExperienceCloud.Client.AppAccessToken.AuthorizationHeaderPrefix">
+            <summary>
+            The authorization header prefix
+            </summary>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.AppAccessToken.ApplicationKey">
+            <summary>
+            The application key
+            </summary>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.AppAccessToken.#ctor(System.Guid)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.DigitalExperienceCloud.Client.AppAccessToken"/> class.
+            </summary>
+            <param name="applicationKey">The application key.</param>
+            <exception cref="T:System.ArgumentNullException">applicationKey</exception>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.AppAccessToken.#ctor(System.Object,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.DigitalExperienceCloud.Client.AppAccessToken"/> class.
+            </summary>
+            <param name="applicationKey">The application key.</param>
+            <param name="doNotAppendPrefix">Instructs whether the appauth token will be prefixed to the token or not.</param>
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.AppAccessToken.GetAuthorizationHeader">
+            <summary>
+            Gets the authorization header.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ThreadingTimerService.TimerCallback">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.ThreadingTimerService.TimerTimeout">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ThreadingTimerService.Initialize(System.Action{System.Object})">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ThreadingTimerService.StartTimer(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ThreadingTimerService.StopTimer">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.ThreadingTimerService.StopTimer(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LastReadTimestampProvider.TargetFilePath">
+            <inheritdoc />
+        </member>
+        <member name="P:Telerik.DigitalExperienceCloud.Client.LastReadTimestampProvider.DefaultTimestamp">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LastReadTimestampProvider.Save(System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LastReadTimestampProvider.Load">
+            <inheritdoc />
+        </member>
+        <member name="M:Telerik.DigitalExperienceCloud.Client.LastReadTimestampProvider.GetDefaultFullFilePath">
+            <summary>
+            Gets the default path for the file where timestamps would be saved.
+            The path would point to the directory in which the application is located.
+            </summary>
+            <returns>The default path for the file where timestamps would be saved.</returns>
+        </member>
+    </members>
+</doc>

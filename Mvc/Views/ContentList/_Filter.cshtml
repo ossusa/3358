@@ -1,0 +1,226 @@
+@model SitefinityWebApp.Mvc.Models.ContentListSearchCriteria
+<div class="form-container search-library">
+    <div class="control-group searchbox">
+        <h4>Content List</h4>
+        <div class="controls">
+            @if (String.IsNullOrWhiteSpace(Model.Term) || true)
+            {
+            <text>
+            	<div class="searchwrap">
+					@Html.TextBoxFor(m => m.Term, new { placeholder = "Search Content" })
+					<input type="submit" value="Search" />
+				</div>
+			</text>
+            }
+            else
+            {
+			<text>
+				<div class="searchwrap">
+					@Html.TextBoxFor(m => m.Term, new { placeholder = "Search Content" })
+					<div class="secondarysearchwrap">
+						<span class="icon-wide-arrow-down"></span>
+						@Html.TextBoxFor(m => m.SecondTerm)
+						<input type="submit" value="Search" />
+					</div>
+				</div>
+			</text>
+            }
+        	@Html.LabelFor(m => m.OrderBy)
+            <select id="OrderBy" name="OrderBy">
+                <option value="ContentTypeOrdinal" @if (Model.OrderBy == "ContentTypeOrdinal")
+                                                   {<text>selected="selected"</text>}>Information Type</option>
+                <option value="PublishDate DESC" @if (Model.OrderBy == "PublishDate DESC")
+                                                 {<text>selected="selected"</text>}>Publication Date</option>\
+                <option value="SortTitle" @if (Model.OrderBy == "SortTitle")
+                                          {<text>selected="selected"</text>}>Title</option>
+            </select>
+        </div>
+    </div>
+
+            <select name="StartDateMonth" id="StartDateMonth" class="selects" >
+                    <option value="" @if (Model.StartDateMonth == null)
+                                 { <text>selected="selected"</text> }>Month</option> 
+                    <option value="1" @if (Model.StartDateMonth != null && Model.StartDateMonth == "1")
+                                 { <text>selected="selected"</text> }>Jan</option> 
+                    <option value="2" @if (Model.StartDateMonth != null && Model.StartDateMonth == "2")
+                                 { <text>selected="selected"</text> }>Feb</option> 
+                    <option value="3" @if (Model.StartDateMonth != null && Model.StartDateMonth == "3")
+                                 { <text>selected="selected"</text> }>Mar</option> 
+                    <option value="4" @if (Model.StartDateMonth != null && Model.StartDateMonth == "4")
+                                 { <text>selected="selected"</text> }>Apr</option> 
+                    <option value="5" @if (Model.StartDateMonth != null && Model.StartDateMonth == "5")
+                                 { <text>selected="selected"</text> }>May</option> 
+                    <option value="6" @if (Model.StartDateMonth != null && Model.StartDateMonth == "6")
+                                 { <text>selected="selected"</text> }>Jun</option> 
+                    <option value="7" @if (Model.StartDateMonth != null && Model.StartDateMonth == "7")
+                                 { <text>selected="selected"</text> }>Jul</option> 
+                    <option value="8" @if (Model.StartDateMonth != null && Model.StartDateMonth == "8")
+                                 { <text>selected="selected"</text> }>Aug</option>
+                     <option value="9" @if (Model.StartDateMonth != null && Model.StartDateMonth == "9")
+                                 { <text>selected="selected"</text> }>Sep</option> 
+                    <option value="10" @if (Model.StartDateMonth != null && Model.StartDateMonth == "10")
+                                 { <text>selected="selected"</text> }>Oct</option> 
+                    <option value="11" @if (Model.StartDateMonth != null && Model.StartDateMonth == "11")
+                                 { <text>selected="selected"</text> }>Nov</option> 
+                    <option value="12" @if (Model.StartDateMonth != null && Model.StartDateMonth == "12")
+                                 { <text>selected="selected"</text> }>Dec</option> 
+            </select>
+
+            <select name="StartDateDay" id="StartDateDay" class="selects" >
+                <option value="" @if (Model.StartDateDay == null)
+                                { <text>selected="selected"</text> }>Day</option> 
+				@foreach (var startDay in Enumerable.Range(1, 31).ToList())
+                {
+					<option value="@String.Format("{0:0}",startDay)" @if (Model.StartDateDay != null && Model.StartDateDay == startDay.ToString())
+                                { <text>selected="selected"</text> }>@startDay</option>
+                }
+            </select>
+
+            <select name="StartDateYear" id="StartDateYear" class="checkboxes" >
+                <option value="" @if (Model.StartDateYear == null)
+                                { <text>selected="selected"</text> }>Year</option> 
+				@foreach (var startYear in Enumerable.Range(1998, DateTime.Today.Year - 1998 + 1).Reverse().ToList())
+                {
+					<option value="@startYear" @if (Model.StartDateYear != null && Model.StartDateYear == startYear.ToString())
+                                { <text>selected="selected"</text> }>@startYear</option>
+                }
+            </select>
+        </div>
+    </div>
+	<!-- <div class="form-actions no-mobile">
+    	@if (String.IsNullOrWhiteSpace(Model.Term))
+     {
+        <label class="cursor"><span class="visuallyhidden">Get Results</span><input type="submit" value="Get Results" /><span class="icon-circle-arrow-right"></span></label><input type="button" class="reset" value="Clear"/>
+     }
+     else
+     {
+        <label><span class="visuallyhidden">Update Results</span>
+        <input type="submit" value="Update Results" /><span class="icon-circle-arrow-right"></span></label> <input type="button" class="reset" value="Clear"/>
+     }
+    </div> -->
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="hidden" value="" name="Types" />
+            <select name="Types" id="Types" class="checkboxes" multiple data-placeholder="Type of Information">
+            	<optgroup label="Type of Information">
+				@foreach (var type in Model.TypesList)
+    {
+					<option value="@type.Value" @if (Model.Types != null && Model.Types.Contains(@type.Value))
+                                 { <text>selected="selected"</text> }>@type.Value</option>
+    }
+				 </optgroup>
+            </select>
+        </div>
+    </div>
+
+    <!-- <div class="form-actions no-mobile">
+    	@if (String.IsNullOrWhiteSpace(Model.Term))
+     {
+        <label class="cursor"><span class="visuallyhidden">Get Results</span>
+        <input type="submit" value="Get Results" /><span class="icon-circle-arrow-right"></span></label> <input type="button" class="reset" value="Clear"/>
+     }
+     else
+     {
+        <label class="cursor"><span class="visuallyhidden">Update Results</span>
+        <input type="submit" value="Update Results" /><span class="icon-circle-arrow-right"></span></label> <input type="button" class="reset" value="Clear"/>
+     }
+    </div> -->
+
+    @if (Model.TopicsList.Length > 0)
+    {
+    <div class="control-group">
+        <div class="controls">
+            <input type="hidden" value="" name="Topics" />
+            <select name="Topics" id="Topics" class="checkboxes" multiple data-placeholder="Topics1">
+            	<optgroup label="Existing Laws & Regulations">
+				@foreach (var topic in Model.TopicsList[0])
+    {
+					<option value="@topic.Value" @if (Model.Topics != null && Model.Topics.Contains(@topic.Value))
+                                  { <text>selected="selected"</text> }>@topic.Text</option>
+    }
+				 </optgroup>
+            </select>
+        </div>
+    </div>
+    }
+
+    @if (Model.TopicsList.Length > 1)
+    {
+    <div class="control-group">
+        <div class="controls">
+            <input type="hidden" value="" name="Topics" />
+            <select name="Topics" id="Topics" class="checkboxes" multiple data-placeholder="Topics2">
+            	<optgroup label="Advocacy Issues">
+				@foreach (var topic in Model.TopicsList[1])
+    {
+					<option value="@topic.Value" @if (Model.Topics != null && Model.Topics.Contains(@topic.Value))
+                                  { <text>selected="selected"</text> }>@topic.Text</option>
+    }
+				 </optgroup>
+            </select>
+        </div>
+    </div>
+    }
+
+    @if (Model.TopicsList.Length > 2)
+    {
+    <div class="control-group">
+        <div class="controls">
+            <input type="hidden" value="" name="Topics" />
+            <select name="Topics" id="Topics" class="checkboxes" multiple data-placeholder="Topics3">
+            	<optgroup label="State">
+				@foreach (var topic in Model.TopicsList[2])
+    {
+					<option value="@topic.Value" @if (Model.Topics != null && Model.Topics.Contains(@topic.Value))
+                                  { <text>selected="selected"</text> }>@topic.Text</option>
+    }
+				 </optgroup>
+            </select>
+        </div>
+    </div>
+    }
+
+    <div class="form-actions">
+    	@if (String.IsNullOrWhiteSpace(Model.Term))
+     {
+        <label class="cursor"><span class="visuallyhidden">Get Results</span>
+        <input type="submit" value="Get Results" /><span class="icon-circle-arrow-right"></span></label> <input type="button" class="reset" value="Clear"/>
+     }
+     else
+     {
+        <label class="cursor"><span class="visuallyhidden">UpdateResults</span>
+        <input type="submit" value="Update Results" /><span class="icon-circle-arrow-right"></span></label> <input type="button" class="reset" value="Clear"/>
+     }
+    </div>
+</div>
+
+<script src="/Sitefinity/WebsiteTemplates/MatrixBase/App_Themes/MatrixBase/js/lib/jquery.matrix.selecttree.js"></script>
+<script>
+  $(window).on('resize', function(){
+    var documentwidth = $(window).outerWidth();
+    CTIA.resourceLib.showCheckboxes();
+  });
+
+  $(document).ready(function(){
+    $(window).trigger('resize');
+    $('.filter-column').show();
+  });
+
+  var CTIA = { 
+    resourceLib: {}
+  };
+
+  CTIA.resourceLib.showCheckboxes = function() {
+    $('.controls:not(:has(.mtx-select-tree-container)) select.checkboxes').removeClass('chzn-done').siblings('.chzn-container').remove().end().selectTree();
+    $('.reset').click(function() {
+      $('.mtx-select-tree-container .selected').removeClass('selected');
+      $(this).siblings('input[type="submit"]').click();
+    });
+  };
+
+  CTIA.resourceLib.unshowCheckboxes = function() {
+    $('select.checkboxes').siblings('.mtx-select-tree-container,.mtx-select-tree-values').remove().end().css('display','').chosen().css('display','none');
+  };
+
+</script>

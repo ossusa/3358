@@ -1,0 +1,39 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<div class="featured-news carousel slide"> <!-- Indicators -->
+
+  <ol class="carousel-indicators">
+    @for (var i = 0; i < Model.ResultSet.Count(); i++)
+    {
+      <li data-slide-to="@i"></li>
+    }
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    @foreach (var result in Model.ResultSet)
+    {
+      <div class="item">
+        <img src="@result.ImageUrl" />
+        <div class="carousel-caption">
+          <p class="news-date">@result.PublicationDate.ToString("MMMM dd, yyyy")</p>
+          <h3><a href="@result.Link">@result.Title</a></h3>
+          <p>@result.Summary</p>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="javascript:void(0);" data-slide="prev">
+    <span class="icon-caret-left icon-2x"></span>
+  </a>
+  <a class="right carousel-control" href="javascript:void(0);" data-slide="next">
+    <span class="icon-caret-right icon-2x"></span>
+  </a>
+
+</div>
+
+<script>
+  require(["mod/carousel"]);
+</script>

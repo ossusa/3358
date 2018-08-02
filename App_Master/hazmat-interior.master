@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" %>
+
+<!doctype html>
+<html  lang="en">
+<head  id="Head1" runat="server">
+<meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-76221774-1');
+</script>
+
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/hazmat-css/images/hazmatfc_apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hazmat-css/images/hazmatfc-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hazmat-css/images/hazmatfc_favicon-16x16.png">
+</head>
+
+<body class="stretched no-transition">
+<form id="form1" runat="server" style="margin-bottom:0">
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
+<asp:ContentPlaceHolder ID="JavaScript" runat="server">
+</asp:ContentPlaceHolder>
+
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper" class="clearfix"> 
+  
+  <!-- Header
+		============================================= -->
+  <header id="header" style="background-color: #c31e23 !important;">
+    <div id="header-wrap" style="background-color: #c31e23 !important;">
+      <div class="container clearfix yellowlink" style="background-color: #c31e23 !important;">
+        <div id="rwd-nav-trigger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        
+        <!-- Logo
+					============================================= -->
+        <div id="logo"><asp:contentplaceholder id="logosHolder" runat="server">
+                    </asp:contentplaceholder> </div>
+        <!-- #logo end --> 
+        
+        <!-- Primary Navigation
+					============================================= -->
+        <nav id="primary-menu" class="style-2">
+
+          <asp:contentplaceholder id="navHolder" runat="server">
+                    </asp:contentplaceholder>
+          
+          <!-- Top Search
+						============================================= -->
+          <div id="top-search"> <a href="#" id="top-search-trigger"><i class="fa fa-search" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i></a>
+
+          </div>
+          <div class="vtcschwrp">         
+            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.."><asp:contentplaceholder id="searchHolder" runat="server">
+			  </asp:contentplaceholder>
+			</div>
+		  <div class="rwd-nav"><asp:contentplaceholder id="rwdNavHolder" runat="server">
+                    </asp:contentplaceholder></div>
+          
+        </nav>
+        <!-- #primary-menu end --> 
+        
+      </div>
+    </div>
+  </header>
+  
+  <!-- #header end --> 
+
+  
+  <!-- Content
+		============================================= -->
+<section id="content">
+<div class="content-wrap">
+<!--Logo begins here -->
+
+<div class="container clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="fancy-title title-border">
+       
+          <asp:contentplaceholder id="pageTitleH1here" runat="server">
+                    </asp:contentplaceholder> 
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--logo ends here --> 
+
+<!--3 Column About Us begins -->
+
+<div class="container clearfix">
+  <div class="row">
+   
+          <asp:contentplaceholder id="contentOneHere" runat="server">
+                    </asp:contentplaceholder> 
+	</div></div></div></div>
+
+<!-- Hazmat mission banner begins -->
+
+
+  <!-- #content end --> 
+  
+  <!-- Footer
+		============================================= -->
+  <footer id="footer" class="light"> 
+    
+    <!-- Copyrights
+			============================================= -->
+    
+    <div id="copyrights" class="dark">
+      <div class="container clearfix">
+        <div class="col-md-6">
+          <asp:contentplaceholder id="footLeftColumnHolder" runat="server">
+                    </asp:contentplaceholder>
+        </div>
+        <div class="col-md-6 col_last">
+         <asp:contentplaceholder id="footRightColumnHolder" runat="server">
+                    </asp:contentplaceholder>
+        </div>
+      </div>
+    </div>
+    <!-- #copyrights end --> 
+    
+  </footer>
+  
+  <!-- #footer end --> 
+  
+	</div></section>
+<!-- #wrapper end --> 
+
+<!-- Go To Top
+	============================================= -->
+<div id="gotoTop" class="icon-angle-up"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+</form>
+<!-- VTCUS PAGE LOAD SUCCESSFUL -->
+</body>
+</html>

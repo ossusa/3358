@@ -1,0 +1,52 @@
+.vendor-content{
+  background-color: $gray-light;
+  padding:30px 0;
+}
+.vendor-carousel {
+     padding: 0 2em!important;
+    .slick-next,.slick-prev{
+      position: absolute!important;
+      margin:0!important;
+      padding:0!important;
+      width:40px!important;
+      height:40px!important;
+      border:0!important;
+      top:50%!important;
+      transform: translateY(-50%);
+      box-shadow: none!important;
+      border-radius: 0!important;
+      &:before{
+        color: $dark-blue;
+        opacity: 1!important;
+        margin:0!important;
+        padding: 0!important;
+      }
+    }
+  .slick-next{
+    right:-15px!important;
+    left: auto!important;
+    &:before{
+      content: "\e814";
+    }
+  }
+  .slick-prev{
+    left:-15px!important;
+    right: auto!important;
+    &:before{
+      content: "\e815";
+    }
+  }
+  .carousel-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+    padding:20px;
+    img{
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

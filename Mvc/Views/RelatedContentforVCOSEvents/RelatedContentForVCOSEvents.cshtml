@@ -1,0 +1,65 @@
+@model IList<SitefinityWebApp.Mvc.Models.BlendedListItem>
+
+@if(Model.Any())
+{
+<ul class="spost clearfix sfeventsListTitleCityDate mg-list">
+	@foreach (var item in Model.Reverse())
+	{
+		<li class="sfeventListItem">
+			<div class="mg-date-icon">
+				<span class="month">
+					@if(@item.SelfPaced == false){
+						@item.EventStartDate.ToString("MMM")
+					}
+					else{
+					}
+				</span>
+				<span class="day">
+					@if(@item.SelfPaced == true){
+						<div class="icon icon-laptop"></div>
+					}
+					else{
+						@item.EventStartDate.ToString(" d ")
+					}
+				</span>
+			</div>
+			<div class="blue-title">
+				<a href="@item.Link">@item.Title</a>
+				@if(@item.SelfPaced == true){
+					<div class="wildland-event_date">
+						Self-Paced
+					</div>
+				}
+				else{
+					<div class="wildland-event_date">
+						@if(item.EventStartDate.ToString("MMM d, yyyy") == item.EventEndDate.ToString("MMM d, yyyy"))
+							{
+								@item.EventStartDate.ToString("MMM d, yyyy")
+							}
+						else if(item.EventStartDate.ToString("MMM yyyy") == item.EventEndDate.ToString("MMM yyyy"))
+							{
+								@(item.EventStartDate.ToString("MMM d") + @item.EventEndDate.ToString("-d, yyyy"))
+							}
+						else if(item.EventStartDate.ToString("yyyy") != item.EventEndDate.ToString("yyyy"))
+							{
+								@(item.EventStartDate.ToString("MMM d, yyyy") + @item.EventEndDate.ToString("- MMM d, yyyy"))
+							}
+						else
+							{
+								@(item.EventStartDate.ToString("MMM d, yyyy") + @item.EventEndDate.ToString("MMM d, yyyy"))
+							}
+					</div>
+				}
+			<div class="wildland-event_location">
+				@item.LocationStreet
+				@if(item.LocationCity != "")
+				{
+					@item.LocationCity
+				}
+				@item.LocationState
+    		</div>
+			</div>
+		</li>
+	}
+</ul>
+}

@@ -1,0 +1,212 @@
+/**
+ * Forms
+ */
+
+button,
+[type="submit"],
+.button {
+  @extend %button;
+}
+
+.button-alt {
+  display: inline-block;
+  @extend %button;
+  background-color: $secondary;
+
+  &:after {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $tertiary;
+    border-color: $tertiary;
+  }
+}
+
+[type="text"],
+[type="email"],
+[type="phone"],
+[type="password"],
+textarea {
+  @include rem(padding, 0.3 0.5);
+}
+
+.mg-text,
+.mg-select,
+.mg-checks,
+.mg-radios,
+.mg-textarea,
+.mg-captcha,
+.mg-upload,
+.mg-submit {
+  margin-bottom: 1em;
+  max-width: 700px; // form fields larger than 700px are too large
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  select {
+    background: white;
+    @include rem(padding, 0.3 0.5);
+    border: 1px solid $gray;
+    border-radius: 3px;
+    width: 100%;
+  }
+}
+
+.mg-text,
+.mg-select,
+.mg-textarea,
+.mg-upload {
+  label,
+  .sfTxtLbl {
+    display: block;
+    font-weight: $bold;
+  }
+}
+
+/* Checks & Radios */
+.mg-checks,
+.mg-radios {
+
+  input {
+    margin-right: .3em;
+  }
+
+  .sfTxtLbl {
+    font-weight: $bold;
+  }
+}
+
+/* File Upload */
+.mg-upload {
+  .RadUpload {
+    width: auto;
+  }
+
+  .ruFileWrap {
+    display: block;
+    width: auto;
+  }
+
+  input[type=text] {
+    max-width: 200px;
+  }
+
+  [type=button] {
+    @extend %button;
+    color: $gray-heavy;
+
+    &:hover {
+      color: $gray-heavy;
+    }
+  }
+
+  input[type=file] {
+    width: auto !important;
+  }
+}
+
+/* Captcha */
+.mg-captcha {
+  background: $gray-light;
+  border: 1px solid darken($gray-light, 10%);
+  border-radius: 3px;
+  padding: .4em 1em;
+
+  input[type=text] {
+    max-width: 200px;
+    margin-right: 1em;
+  }
+
+  img {
+    background: $bright;
+    padding: .4em;
+    border: 1px solid darken($gray-light, 10%);
+    margin-bottom: .5em;
+  }
+
+  .rcRefreshImage {
+    @extend %button;
+    font-size: .8em;
+    display: inline-block !important;
+    text-decoration: none;
+    color: $gray-heavy;
+  }
+
+  .sfTxtLbl {
+    font-style: italic;
+  }
+}
+
+/* Submit */
+.mg-submit {
+  [type=submit] {
+    @extend %button;
+    background: nth($links-main, 1);
+    border-color: nth($links-main, 1);
+    font-weight: $bold;
+    font-size: 1.1em;
+
+    &:hover {
+      background: lighten(nth($links-main, 1), 10%);
+    }
+  }
+}
+.dues-list{
+	tr:nth-child(odd) {
+    	background-color: #fff;
+	}
+}
+
+/* Select */
+.select {
+	position: relative;
+	display: inline-block;
+}
+
+.select select {
+	display: inline-block;
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 0;
+	outline: 0;
+	appearance: none;
+	font-size: 20px;
+}
+.select select::-ms-expand {
+	display: none;
+}
+.select select:hover,
+.select select:focus {
+	color: #000;
+}
+
+.select select:disabled {
+	pointer-events: none;
+	opacity: .5;
+}
+
+.select__arrow {
+	position: absolute;
+	top: 14px;
+	right: 12px;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+	border-width: 8px 5px 0 5px;
+	border-style: solid;
+	border-color: $gray-heavy transparent transparent transparent;
+}
+.select select:hover ~ .select__arrow,
+.select select:focus ~ .select__arrow {
+	border-top-color: #000;
+}
+
+.select select:disabled ~ .select__arrow {
+	border-top-color: #ccc;
+}
+.search-result.best-bet{
+	background-color: $gray-light;
+}

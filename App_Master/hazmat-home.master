@@ -1,0 +1,169 @@
+﻿<%@ Master Language="C#" %>
+
+<!doctype html>
+<html  lang="en">
+<head  id="Head1" runat="server">
+<meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-76221774-1');
+</script>
+
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/hazmat-css/images/hazmatfc_apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/hazmat-css/images/hazmatfc-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/hazmat-css/images/hazmatfc_favicon-16x16.png">
+</head>
+
+<body class="stretched no-transition">
+<form id="form1" runat="server" style="margin-bottom:0">
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
+<asp:ContentPlaceHolder ID="JavaScript" runat="server">
+</asp:ContentPlaceHolder>
+
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper" class="clearfix"> 
+  
+  <!-- Header
+		============================================= -->
+  <header id="header" style="background-color: #c31e23 !important;">
+    <div id="header-wrap" style="background-color: #c31e23 !important;">
+      <div class="container clearfix yellowlink" style="background-color: #c31e23 !important;">
+        <div id="rwd-nav-trigger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        
+        <!-- Logo
+					============================================= -->
+        <div id="logo"><asp:contentplaceholder id="logosHolder" runat="server">
+                    </asp:contentplaceholder> </div>
+        <!-- #logo end --> 
+        
+        <!-- Primary Navigation
+					============================================= -->
+        <nav id="primary-menu" class="style-2">
+
+          <asp:contentplaceholder id="navHolder" runat="server">
+                    </asp:contentplaceholder>
+          
+          <!-- Top Search
+						============================================= -->
+          <div id="top-search"> <a href="#" id="top-search-trigger"><i class="fa fa-search" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i></a>
+
+          </div>
+          <div class="vtcschwrp">         
+            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.."><asp:contentplaceholder id="searchHolder" runat="server">
+			  </asp:contentplaceholder>
+			</div>
+		  <div class="rwd-nav"><asp:contentplaceholder id="rwdNavHolder" runat="server">
+                    </asp:contentplaceholder></div>
+          
+        </nav>
+        <!-- #primary-menu end --> 
+        
+      </div>
+    </div>
+  </header>
+  
+  <!-- #header end --> 
+  
+  <!-- Slider begins
+						============================================= -->
+  <section id="slider" class="slider-parallax swiper_wrapper clearfix" data-autoplay="7000" data-speed="650" data-loop="true" style="height: 500px;">
+<asp:contentplaceholder id="sliderHolder" runat="server">
+                    </asp:contentplaceholder>
+  </section>
+  
+  <!-- slider ends --> 
+  
+  <!-- Content
+		============================================= -->
+  <section id="content">
+    <div class="content-wrap">
+     
+      <div class="container clearfix">
+        <div class="row">
+          <div class="col-md-6 bottommargin-lg">
+<asp:contentplaceholder id="topLeftColumnHolder" runat="server">
+                    </asp:contentplaceholder>
+          </div>
+          <div class="col-md-6 col-last bottommargin-lg">
+ <asp:contentplaceholder id="topRightColumnHolder" runat="server">
+                    </asp:contentplaceholder>
+          </div>
+        </div>
+      </div>
+      <!--ending div for latest news container div --> 
+      
+     
+<!-- Hazmat mission banner begins -->
+
+<section id="content" style="margin: 0px auto">
+  <section class="bg-master-dark p-b-70 p-t-80; nomargin"><!-- style="background: url(https://www.iafc.org/images/default-source/1PHOTOS/hazmatfc_1263x310.jpg?sfvrsn=2); no-repeat center; background-size: cover" width="100%" height="auto"> -->
+    <div class="container clearfix text-center dark-color-overlay" style="background: #333333; overflow: hidden; height: 100%; z-index: 1; width: 100% !important; margin: 0px auto;">
+      <div class="row">
+        <div class="col-md-12 text-center" style="padding-left: 50px; padding-right: 50px;"><br>
+          <asp:contentplaceholder id="midcontentHolder" runat="server">
+                    </asp:contentplaceholder>
+        </div>
+      </div>
+	  </div>
+  </section>
+  
+  <!--Hazmat mission banner ends -->
+      
+      <!--Resources begins -->
+      <div class="container clearfix">
+<asp:contentplaceholder id="resourcesHolder" runat="server">
+                    </asp:contentplaceholder>
+        
+      </div>
+    </div>
+    <!-- removed ending div container  </div> --> 
+  </section>
+  <!-- #content end --> 
+  
+  <!-- Footer
+		============================================= -->
+  <footer id="footer" class="light"> 
+    
+    <!-- Copyrights
+			============================================= -->
+    
+    <div id="copyrights" class="dark">
+      <div class="container clearfix">
+        <div class="col-md-6">
+          <asp:contentplaceholder id="footLeftColumnHolder" runat="server">
+                    </asp:contentplaceholder>
+        </div>
+        <div class="col-md-6 col_last">
+         <asp:contentplaceholder id="footRightColumnHolder" runat="server">
+                    </asp:contentplaceholder>
+        </div>
+      </div>
+    </div>
+    <!-- #copyrights end --> 
+    
+  </footer>
+  
+  <!-- #footer end --> 
+  
+</div>
+<!-- #wrapper end --> 
+
+<!-- Go To Top
+	============================================= -->
+<div id="gotoTop" class="icon-angle-up"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+</form>
+<!-- VTCUS PAGE LOAD SUCCESSFUL -->
+</body>
+</html>

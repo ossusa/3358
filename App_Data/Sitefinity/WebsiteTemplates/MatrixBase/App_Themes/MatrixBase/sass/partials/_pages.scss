@@ -1,0 +1,481 @@
+/***********************************************/
+/************Conferences & events***************/
+/**********************************************/
+
+.upcomming-events-table{
+  table{
+    thead{
+      tr{
+        th{
+          font-size: 32px;
+          line-height: 1.1;
+          color:$dark-blue;
+          background-color: transparent;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          vertical-align: top;
+          .title{
+            a{
+              font-size: 24px;
+              line-height: 1.2;
+              color: $blue-heavy;
+              font-weight: 700;
+              text-decoration: none;
+            }
+          }
+          .event-topics{
+            a{
+              font-size: 18px;
+              line-height: 1.5;
+              color:$red;
+              float:left;
+              text-decoration: none;
+              font-weight: 700;
+            }
+            span{
+              float:left;
+              margin:0 5px;
+              color:$gray-mid;
+              &:last-child{
+                display: none;
+              }
+            }
+          }
+          &:nth-child(3){
+            max-width:390px;
+          }
+          &:nth-child(4){
+            font-size: 18px;
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+/***********************************************/
+/************Learn & develop***************/
+/**********************************************/
+
+.featured-article-block{
+  padding:30px;
+  width:100%;
+  margin-bottom:10px;
+  background-color: $bright;
+  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.07);
+  border: solid 1px $border;
+  float:left;
+  div{
+    float:left;
+    width:100%;
+  }
+  img{
+    max-width:300px;
+    max-height:250px;
+    float:left;
+    display:inline-block;
+    margin-right:30px;
+    margin-bottom:30px;
+  }
+  .date{
+    width:100%;
+    color:$gray-mid;
+    display: block;
+  }
+  p{
+    float:none;
+    font-size:20px;
+    line-height:1.4;
+    margin:0;
+  }
+  h1,h2,h3,h4,h5,h6{
+    display: inline;
+    float:none;
+    width:auto;
+  }
+  @include bp(portrait)
+  {
+    img{
+      max-width: 100%;
+
+    }
+    h1,h2,h3,h4,h5,h6,.date,p{
+      width:100%;
+      float:left;
+    }
+  }
+}
+.tags{
+  float:left;
+  width:100%;
+  margin-top:20px;
+  label{
+    color:$dark;
+    float:left;
+    display: inline-block;
+    font-size:18px;
+    line-height: 1.9;
+    margin-right:5px;
+  }
+  ul{
+    float:left;
+    display:block;
+    width:100%;
+    list-style: none;
+    border-top:1px solid $border;
+    padding-top:10px;
+    padding-left:0;
+    &:before{
+      content:"Topics:";
+      font-size:18px;
+      line-height: 1.9;
+      margin-right:5px;
+      float:left;
+    }
+    li{
+      float:left;
+      display:inline-block;
+      font-size:18px;
+      line-height: 1.9;
+      font-weight: 700;
+      color:$red;
+      border:0;
+      width: auto;
+      margin-bottom: 0;
+
+      &:after{
+        content:"|";
+        margin:0 3px;
+        color: $dark;
+      }
+      &:last-child{
+        &:after{
+          content:none;
+        }
+      }
+    }
+  }
+  a{
+    float:left;
+    display:inline-block;
+    font-size:18px;
+    line-height: 1.9;
+    font-weight: 700;
+    text-decoration: none;
+    &:after{
+      content:"|";
+      margin:0 3px;
+      color: $dark;
+    }
+    &:last-child{
+      &:after{
+        content:none;
+      }
+    }
+  }
+  .sys-template{
+    display: none;
+  }
+}
+.learning-library{
+  position: relative;
+  background: url(../images/learning-library.jpg) no-repeat center;
+  background-size: cover;
+  float:left;
+  width:100%;
+  display: block;
+  min-height: 318px;
+  margin: 0 1em;
+  div{
+    float:left;
+    position: absolute;
+    bottom:0;
+    height:35%;
+    width:100%;
+    background: $dark-blue;
+    a{
+      background: $red;
+      color:$bright;
+      text-transform: uppercase;
+      box-shadow: 1px 2px 0 0 #c4c1c1;
+      border-radius: 4px;
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      padding:10px;
+      text-decoration: none;
+      font-size: 21px;
+      width: 60%;
+      text-align: center;
+
+
+    }
+  }
+  @include bp(portrait){
+    //width:100%;
+	margin: 0;
+  }
+}
+
+//Membership Page
+.member-info{
+  .information-block{
+    min-height: 350px;
+    position: relative;
+    .button-wrapper{
+      position: absolute;
+      bottom:0px;
+      padding-top:20px;
+      width:calc(100% - 48px);
+    }
+  }
+}
+// .membership-wrapper{
+//   .sf_3cols_1_33,.sf_3cols_3_33,.sf_3cols_2_34{
+//     & > div{
+//       width:calc(100% - 20px);
+//     }
+//   }
+// }
+
+//Tools -topics - pages
+
+.tools-topics-pages{
+  .iafc-positions{
+    margin:0 0 3em 0;
+    float:left;
+    width:100%;
+  }
+  .first-highlight{
+    float:left;
+    width:100%;
+    li{
+      //box-shadow: none;
+      //border: 1px solid $border;
+      //margin:0!important;
+    }
+  }
+  .mg-promo__item{
+    text-align: center;
+    margin: 1em 0;
+    float: left;
+    width: 100%;
+  }
+}
+.event-single-list{
+  list-style: none;
+  h3{
+    padding-bottom:10px;
+    border-bottom:1px solid $border;
+  }
+}
+.inner-page-content{
+
+}
+.blog-pages-nav{
+  float:left;
+  margin-bottom: 2em;
+  width:100%;
+  ul{
+    float:left;
+    margin:0;
+    padding:0;
+    list-style: none;
+    width:100%;
+    li{
+      float:left;
+      width:100%;
+      margin-bottom:20px;
+      height: 86px;
+      border-radius: 4px;
+      background-color: $blue;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a{
+        width:100%;
+        height: 38px;
+        font-size: 31px;
+        font-weight: bold;
+        text-align: center;
+        color:$bright;
+        text-decoration: none;
+        text-transform: uppercase;
+		line-height: 1;
+      }
+    }
+  }
+}
+.long-major-link{
+  .major-link{
+    line-height: 30px;
+  }
+}
+.floating-element{
+  ul{
+    // float:left;
+  }
+}
+
+//Form Box
+.council-form{
+ .sfError{
+	 color:#ff0000;
+ }
+ .mg-hp{
+	 display:none;
+ }
+ .sfFormBox{
+   width:100%;
+   float:left;
+   margin-bottom:20px;
+   &>div{
+     display:inline-block;
+     float:left;
+     &:first-child{
+       width:200px;
+       margin-right:10px;
+     }
+   }
+   div.sfFieldWrp{
+       width:calc(100% - 250px);
+       input[type="text"]{
+         width:100%;
+         float:left;
+       }
+     }
+ }
+  .sfFormBlock{
+    float:left;
+    width:100%;
+    margin-top:25px;
+    margin-bottom:20px;
+    &>div{
+      float:left;
+      width:100%;
+      //margin-bottom:10px;
+      textarea{
+        width:100%;
+        height:100px;
+        float:left;
+        margin:15px 0;
+      }
+    }
+  }
+  .sfFormRadiolist{
+    margin-bottom:20px;
+    label{
+      position: relative;
+      left:10px;
+    }
+  }
+  .sfFormCheckboxlist{
+    margin-bottom:20px;
+    label{
+      position: relative;
+      left:10px;
+    }
+  }
+  .font-bold{
+    margin-bottom:10px;
+    float:left;
+    width:100%;
+    .sfTxtLbl{
+      font-weight:bold;
+      margin-bottom:10px;
+      margin-top:25px;
+    }
+  }
+  .sfFormFile{
+    float:left;
+    width:100%;
+    margin:20px 0;
+    &>div{
+      display: inline-block;
+      width:33%;
+    }
+  }
+  .sfFormSubmit{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    input{
+      background-color: $red;
+      color: $bright;
+      padding:10px 30px;
+      font-size: 31px;
+    }
+  }
+  .sfFormDropdown{
+    .sfTxtLbl{
+      float:left;
+      display: inline-block;
+      width:200px;
+      margin-right:10px;
+    }
+    .sfFieldWrp{
+      width:calc(100% - 250px);
+      float:left;
+      margin-bottom:20px;
+      select{
+        width:100%;
+        float:left;
+      }
+    }
+  }
+  .ruFileWrap{
+    height:64px;
+    .ruFakeInput{
+      width:160px;
+      height:23px;
+      border: 1px solid $border;
+    }
+    .ruButton{
+      background-color: $blue;
+      background-image: none;
+      font-size:14px;
+      color:$bright;
+      padding: 9px 17px;
+      height: auto;
+      width: auto;
+    }
+  }
+
+}
+.small-form-container{
+  width:auto;
+  max-width:700px;
+  margin:0 auto;
+  box-sizing: content-box;
+}
+.webinar{
+  .mg-list{
+    float:left;
+    margin:2em 0;
+  }
+}
+.pos-rel{
+  .information-block{
+    position: relative;
+    padding-bottom:100px;
+   .button-wrapper{
+     position: absolute;
+     bottom: 0px;
+     left: 50%;
+     width: 90%;
+     transform: translateX(-50%);
+   }
+  }
+}
+
+//Site Map
+.sfNavVerticalSiteMap>li>a{
+	color: $blue-heavy;
+}

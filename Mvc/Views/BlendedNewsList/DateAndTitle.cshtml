@@ -1,0 +1,25 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<ul class="sfnewsList sfnewsListTitleDateSummary sflist mg-list">
+@foreach (var result in Model.ResultSet)
+{
+    <li class="sfnewsListItem sflistitem mg-list-item">
+        <div class="red-title"><a href="@result.Link">@result.Title</a></div>
+        <div class="gray-text">
+        @if(!string.IsNullOrEmpty(result.DisplayDate))
+        {
+            @result.DisplayDate
+        }
+        else if(result.DateField != null && result.DateField != DateTime.MinValue)
+        {
+            @result.DateField.ToString("MMMM d, yyyy")
+        }
+        else if(result.PublicationDate != null && result.PublicationDate != DateTime.MinValue)
+        {
+            @result.PublicationDate.ToString("MMMM d, yyyy")
+        }
+		</div>
+
+    </li>
+}
+</ul>

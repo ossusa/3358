@@ -1,0 +1,67 @@
+﻿@using Mx.IAFC.Webapp.Data
+@using ServiceStack
+@model Mx.IAFC.Webapp.Data.GenericPaymentModel
+
+@{
+    List<TitleFunctionItem> sections = Model.Products as List<TitleFunctionItem> ?? new List<TitleFunctionItem>(); //Model.GenericTitleFunctionItem as List<TitleFunctionItem>;
+    GenericUserPaymentModel user = Model.User as GenericUserPaymentModel?? new GenericUserPaymentModel();
+    var totalAmt = sections.Select(c => c.MemberUnitPrice).Sum();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Confirmation</title>
+</head>
+<body>
+<div>
+
+    <p>Below is the receipt for a recent payment made for your membership or a payment you made on behalf of a member. </p>
+    <p><strong>All IAFC Members</strong>: You will receive your new or updated membership card within 4 to 6 weeks. </p>
+    <p><strong>New IAFC members</strong>: In addition to your member card, you’ll receive a separate welcome email.</p>
+</div>
+<div>
+    <p>Please let me know if I can be of further assistance.
+    </p>
+
+    <p>Have a good and safe day,
+    </p>
+
+</div>
+<div>
+    <p>Cathy Feyh</p>
+    <p>Member Relations Manager</p>
+<p>International Association of Fire Chiefs</p>
+    <p>Phone: (703) 537-4803</p>
+    <p>Fax: (703) 273-9363         </p>
+</div>
+
+<hr/>
+<p>@user.FirstName @user.LastName</p>
+<p>@user.Title</p>
+<p>Receipt for IAFC membership dues through 04/30/2017</p>
+<p>Member ID @user.ClientId</p>
+<p>Payment Received @DateTime.UtcNow.ToString("dd/MM/yyyy")</p>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>DESCRIPTION</th>
+            <th>AMOUNT</th>
+        </tr>
+            @foreach (var item in sections)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@String.Format("${0}.00", @item.MemberUnitPrice)</td>
+                </tr>
+            }
+        <tr><td>$nbsp;</td><td>@String.Format("${0}.00", totalAmt)</td></tr>
+        </thead>
+    </table>
+    <p>Thank you for your support of IAFC. </p>
+</div>
+
+</body>
+</html>

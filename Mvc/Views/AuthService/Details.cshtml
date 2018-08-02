@@ -1,0 +1,10 @@
+﻿@using ServiceStack
+@model MatrixGroup.Data.QueryDataResponse<MatrixGroup.Implementation.Helix.Model.HelixIndividual>
+
+@{
+    ViewBag.Title = "title";
+    //Layout = "~/Mvc";
+}
+
+<h2>Details</h2>
+@Model.SerializeToString()

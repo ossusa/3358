@@ -1,0 +1,145 @@
+//----------------------------------wildland events-----------------------------------
+
+.wildland-event_main {
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #dfdfdf;
+    padding: 2em;
+    margin-bottom: 2em;
+    overflow:hidden;
+    .major-link {
+        display: block;
+        text-align: right;
+        line-height: 1;
+        float: none;
+        text-transform: none;
+    }
+}
+
+.wildland-event_main .major-link:after {
+    content: "\e901";
+    font-family: $icon-font;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.wildland-event_pic {
+    display: inline-block;
+    float: left;
+    margin: 0 15px 15px 0;
+	max-width: 340px;
+}
+
+.wildland-event_date {
+    font-size: 18px;
+    line-height: 1.3;
+    color: $gray-mid;
+	@include bp(mobile){
+		font-size: 16px;
+	}
+}
+//
+// .wildland-event_title a {
+//     font-size: 2em;
+//     font-weight: 700;
+//     line-height: 1.3;
+//     color: $blue-heavy;
+//     text-decoration: none;
+// }
+
+.wildland-event_small_title {
+    margin: 0;
+
+    a {
+        font-size: 1em;
+        font-weight: 700;
+        color: $blue-heavy;
+        text-decoration: none;
+    }
+}
+
+.wildland-event_location {
+    font-size: 18px;
+    line-height: 1.3;
+    color: #97999b;
+	@include bp(mobile){
+		font-size: 16px;
+	}
+}
+
+.wildland-event_body {
+    font-size: 1em;
+    line-height: 1.4;
+    color: #3c3c3c;
+}
+
+.mg-list-item--event {
+    margin-bottom: 0;
+}
+.mg-list .sfeventListItem{
+  clear:both;
+  overflow:auto;
+  padding:1em 0;
+  border-bottom: solid 1px #e1e0e0;
+  display:flex;
+  @include bp(mobile){
+  	.blue-title, .blue-title a{
+    	width:200px;
+		font-size: 20px;
+  	}
+  }
+}
+// .mg-list {
+//     display: block;
+//     padding: 1em 1em 3em;
+//     border-bottom: solid 1px #e1e0e0;
+//
+//     &:first-child {
+//         padding: 0 1em 3em;
+//     }
+// }
+
+.mg-date-icon {
+    color: #fff;
+    float: left;
+    margin: 0 0.5em 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+	display: table;
+
+    .month {
+        background-color: #003c71;
+        display: block;
+        font-weight: bold;
+        font-size: 1em;
+        padding: 5px 0;
+        min-width: 80px;
+		@include bp(mobile){
+			font-size:.7em;
+			min-width: 60px;
+		}
+    }
+
+    .day {
+        display: block;
+        font-weight: bold;
+        font-size: 1.6em;
+        color: #3c3c3c;
+        padding: 0.5em;
+		@include bp(mobile){
+			font-size: 1em;
+		}
+    }
+}
+
+
+
+// ---------------------------end of wildland events----------------------------------------

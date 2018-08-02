@@ -1,0 +1,285 @@
+.button-default{
+  @extend %button-layout;
+  background-color: $bright;
+  box-shadow: 1px 2px 0 0 $shadow;
+  border: solid 1px $border;
+  color:$blue;
+}
+
+//Multi color button without arrow
+.blue-btn {
+    background-color: $blue;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 6%;
+    border-radius: 4px;
+    transition: color .2s linear, background .2s linear !important;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    margin-left: 5px;
+	clear: both;
+	text-align: center;
+	line-height: 3;
+	font-size: 1vw;
+    white-space: nowrap;
+	@include bp(portrait) {
+	  font-size: 16px;
+	  margin-left: 0;
+	}
+	a{
+		color:#fff;
+		text-decoration: none;
+	}
+    .icon{
+      display: inline-block;
+      margin-left: 5px;
+    }
+	&:after {
+    content: "\e906";
+    font-family: "icomoon";
+    margin-left: 3px;
+    font-size: 1vw;
+	@include bp(portrait) {
+	  font-size: 16px;
+	}
+}
+
+}
+
+.blue-btn:hover{
+    background-color: $red;
+}
+.blue-btn--bottom {
+    background-color: #0076a8;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    position: absolute;
+	white-space: nowrap;
+    bottom: -20px;
+    right: 0;
+    width: 100%;
+}
+.btn--small {
+    padding: 8px 2em;
+    line-height: 2;
+    margin-bottom: 0;
+    margin-left: 0;
+	box-shadow: none !important;
+	border: none !important;
+}
+// #Body_T324CB032050_Col01 div,
+// #Body_T324CB032124_Col01 div,
+// #Body_T324CB032054_Col01 div,
+// #Body_T324CB032058_Col01 div{
+// 	margin: 1em 0;
+// }
+.button-blue{
+  @extend %button-layout;
+  background-color: $blue;
+  color:$bright;
+}
+
+.button-blue-heavy{
+  @extend %button-layout;
+  background-color: $blue-heavy;
+  color:$bright;
+}
+
+.button-red{
+  @extend %button-layout;
+  background-color: $red;
+  color:$bright;
+}
+
+.button-red-heavy{
+  @extend %button-layout;
+  background-color: $red-heavy;
+  color:$bright;
+}
+
+//Multi color button with arrow
+
+.ibutton-blue{
+  @extend %button-layout;
+  background-color: $blue;
+  color:$bright;
+  text-transform: none;
+  font-size: 18px;
+  &:after
+  {
+    content: "\e906";
+    font-family: "icomoon";
+    margin-left:3px;
+    font-size: 15px;
+}
+}
+
+.ibutton-blue-heavy{
+  @extend %button-layout;
+  background-color: $blue-heavy;
+  color:$bright;
+  text-transform: none;
+  font-size: 18px;
+  &:after
+  {
+    content: "\e906";
+    font-family: "icomoon";
+    margin-left:3px;
+    font-size: 15px;
+}
+}
+
+.ibutton-red{
+  @extend %button-layout;
+  background-color: $red;
+  color:$bright;
+  text-transform: none;
+  font-size: 18px;
+  &:after
+  {
+    content: "\e906";
+    font-family: "icomoon";
+    margin-left:3px;
+    font-size: 15px;
+}
+}
+
+.ibutton-red-heavy{
+  @extend %button-layout;
+  background-color: $red-heavy;
+  color:$bright;
+  text-transform: none;
+  font-size: 18px;
+  &:after
+  {
+    content: "\e906";
+    font-family: "icomoon";
+    margin-left:3px;
+    font-size: 15px;
+}
+}
+
+
+.button-red-jumbo{
+  //width: 365px;
+  //float:left;
+  display:block;
+  //margin-bottom:20px;
+  text-decoration: none;
+  border-radius: 4px;
+  background-color: $red;
+  box-shadow: 1px 2px 0 0 #c4c1c1;
+  font-size: 31px;
+  text-align: center;
+  font-weight: 700;
+  color: $bright;
+  padding:20px 10px;
+  text-transform:uppercase;
+  @include bp(tablet){
+	  display: block;
+	  float: none;
+	  margin-bottom: 0;
+	  margin: 0 auto;
+  }
+}
+ @include bp(tablet){
+	.col50{
+		margin:1em 0;
+	}
+}
+.button-blue-jumbo{
+  width: 100%;
+  float:left;
+  margin-bottom:20px;
+  text-decoration: none;
+  border-radius: 4px;
+  background-color: $blue;
+  box-shadow: 1px 2px 0 0 #c4c1c1;
+  font-size: 31px;
+  text-align: center;
+  font-weight: 700;
+  color: $bright;
+  padding:20px 10px;
+  text-transform:uppercase;
+}
+.readmore{
+  color: $blue-heavy;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left:10px;
+  &:after
+  {
+    content: "\e906";
+    font-family: "icomoon";
+    margin-left:3px;
+    font-size: 15px;
+  }
+}
+.all-link{
+  font-size: 1em;
+  text-transform: uppercase;
+  color:$blue-heavy;
+  float: right;
+  margin-top:20px;
+  text-decoration: none;
+  font-weight: 700;
+  &:after{
+    content: "\e901";
+    font-family: "icomoon";
+    //font-size:24px;
+    font-weight: 300;
+    margin-left:5px;
+  }
+  @include bp(portrait){
+    // width:100%;
+    // float:left;
+	// font-size: 16px;
+	float: none;
+	font-size: 16px;
+	display: block;
+	text-align: right;
+  }
+}
+.button-orange,%button-orange{
+  @extend %button-layout;
+  background-color: $orange;
+  //box-shadow: 1px 2px 0 0 $shadow;
+  color:$bright;
+}
+.button-arrow{
+  @extend %button-orange;
+  &:after{
+    content: "\e901";
+    font-family: "icomoon";
+    margin-left:10px;
+
+  }
+}
+.button-wrapper{
+  float:left;
+  width:100%;
+  text-align:center;
+  margin-bottom:30px;
+  margin-top:15px;
+}
+.print-share{
+	margin-top: 1.3em;
+	a{
+		color: $blue;
+		text-decoration: none;
+		font-size: 1.6em;
+		margin: 0 10px;
+	}
+	@include bp(portrait){
+		margin: 1em 0;
+	}
+}
+.stButton .stLarge{
+	width: 0 !important;
+}

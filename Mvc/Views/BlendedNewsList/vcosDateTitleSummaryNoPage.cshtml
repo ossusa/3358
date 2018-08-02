@@ -1,0 +1,69 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<div class="vcosCustom topmargin">
+        @foreach (var result in Model.ResultSet)
+        {
+            <div class="spost clearfix">
+                @if (!String.IsNullOrEmpty(result.ImageUrl))
+                {
+                    <div class="entry-image">
+                        <a href="@result.Link" target="_blank"><img src="@result.ImageUrl" alt="@HttpUtility.HtmlEncode(result.ImageCaption)" /></a>
+</div>
+                }
+
+                
+
+                        <div class="entry-c">
+
+                            @if (!String.IsNullOrEmpty(result.ImageUrl)){
+                               @:<div class="image-mgn">
+                                   
+                            }
+                            <div class="entry-title">
+
+                                <h3 class="sfitemTitle sftitle" style="margin: 0 0 15px 0;">
+                                    <a href="@result.Link" target="_blank">@result.Title</a>
+                                </h3>
+                            </div>
+                            <div class="entry-meta">
+                                <div>
+                                    @if (!string.IsNullOrEmpty(result.DisplayDate))
+                                    {
+                                        @result.DisplayDate
+                                    }
+                                    else if (result.DateField != null && result.DateField != DateTime.MinValue)
+                                    {
+                                        @result.DateField.ToString("MMMM d, yyyy")
+                                    }
+                                    else if (result.PublicationDate != null && result.PublicationDate != DateTime.MinValue)
+                                    {
+                                        @result.PublicationDate.ToString("MMMM d, yyyy")
+                                    }
+                                </div>
+                            </div><div class="entry-content">
+                                @result.Summary
+                            </div>
+                            <div style="margin-top:10px !important;">
+                                <a class="button button-3d button button-rounded" href="@result.Link" target="_blank">Read More</a>
+                               
+                            </div>
+                        </div>
+
+                        @if (!String.IsNullOrEmpty(result.ImageUrl))
+                        {
+                           @:</div>
+
+                                }
+
+                            </div>
+
+
+
+
+
+
+
+
+                        }
+    </div>
+

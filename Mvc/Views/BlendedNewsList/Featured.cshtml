@@ -1,0 +1,33 @@
+@model SitefinityWebApp.Mvc.Models.BlendedNewsListModel
+
+<ul class="sfnewsList sfnewsListTitleDateSummary sflist mg-list first-highlight">
+    @foreach (var result in Model.ResultSet)
+    {
+    <li class="sfnewsListItem sflistitem mg-list-item">
+		<div class="newstitle"><a href="@result.Link">@result.Title</a></div>
+		<div class="gray-text">
+        @if(!string.IsNullOrEmpty(result.DisplayDate))
+        {
+            @result.DisplayDate
+        }
+        else if(result.DateField != null && result.DateField != DateTime.MinValue)
+        {
+            @result.DateField.ToString("MMMM d, yyyy")
+        }
+        else if(result.PublicationDate != null && result.PublicationDate != DateTime.MinValue)
+        {
+            @result.PublicationDate.ToString("MMMM d, yyyy")
+        }
+		</div>
+		@if(result.ImageUrl != null){
+			<div class="wildland-news_pic">
+	            <img src="@result.ImageUrl" alt="@HttpUtility.HtmlEncode(result.ImageCaption)" />
+			</div>
+		}
+        <div class="news-summary">
+            @result.Summary
+            <a href="@result.Link" class="readmore">read more</a>
+        </div>
+    </li>
+    }
+</ul>

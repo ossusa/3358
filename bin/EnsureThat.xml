@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EnsureThat</name>
+    </assembly>
+    <members>
+        <member name="M:EnsureThat.Ensure.That``1(System.Linq.Expressions.Expression{System.Func{``0}},System.String)">
+            <summary>
+            Defines what to validate. Please read remarks.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expression">Resolves the value to validate and if no <paramref name="name"/> is specified, also the name of the param by looking at the calling path in the expression, to get which member that is being validated.</param>
+            <param name="name">If specified, used as the name instead of being extracted from the expression.</param>
+            <returns></returns>
+            <remarks>
+            When using the <paramref name="expression"/> for value resolving, a compile
+            is done to get the value of the argument. This leads to worse performance compared to overloads
+            where you pass the value explicitly.
+            </remarks>
+        </member>
+        <member name="M:EnsureThat.Ensure.That``1(``0,System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Defines what to validate.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="expression">Used to extract the calling path, to get which member that is being validated. Used as param name.</param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.Annotations.NoEnumerationAttribute">
+            <summary>
+            Indicates that IEnumarable, passed as parameter, is not enumerated.
+            </summary>
+        </member>
+    </members>
+</doc>

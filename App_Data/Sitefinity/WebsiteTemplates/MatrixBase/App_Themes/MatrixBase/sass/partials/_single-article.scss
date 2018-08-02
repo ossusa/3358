@@ -1,0 +1,165 @@
+.big-huge-title {
+    font-size: 2.4em;
+    color: $dark-blue;
+    font-weight: 700;
+	@include bp(mobile){
+		font-size: 1.5em;
+	}
+}
+.gray-text{
+  font-size: .9em;
+  color: $gray-mid;
+  div{
+    display:inline-block;
+  }
+  ul {
+      @extend %horizontal-list-divided;
+  }
+  &--medium{
+	  font-size: 1em;
+  }
+}
+.article-meta {
+    font-size: .9em;
+    color: $gray-mid;
+    &--date{
+      margin: 1em 0 2em;
+      font-size: .9em;
+      color: $gray-mid;
+      ul {
+          @extend %horizontal-list-divided;
+      }
+    }
+    img {
+        margin: 2em 0;
+		border: 1px solid $gray;
+    }
+
+    ul {
+        @extend %horizontal-list-divided;
+    }
+}
+
+.article-content {
+    font-size: 1em;
+    line-height: 1.4;
+    margin: 1em 0;
+
+}
+
+.article-subhead {
+    font-size: .8em;
+    color: #1b3858;
+    font-weight: 700;
+}
+.about-section{
+	font-size: 16px;
+	line-height: 20px;
+	margin: 1em 0;
+}
+// .resource-desc {
+//     display: inline-block;
+//     padding: 0;
+//     // margin: 10px 0;
+//     li {
+//         display: block;
+//         font-size: 1.5em;
+//         color: $dark;
+//         div{
+//           display:inline-block;
+//         }
+//     }
+//
+//     .sfCategoriesList {
+//         list-style: none;
+//         display: inline-block;
+//         padding: 0;
+//         margin: 0;
+//         font-size: 0.7em;
+//     }
+//
+//     .sfCategoriesList li {
+//         display: inline-block;
+//         color: $red;
+//         font-weight: 700;
+//         font-size: 1.2em;
+//
+//         &:after {
+//             color: $dark;
+//             content: '|';
+//         }
+//
+//         &:last-child:after {
+//             content: none;
+//         }
+//     }
+// }
+
+.wildland-source_item {
+    margin: 1em 0;
+}
+
+.wildland-resource_pic {
+    display: inline-block;
+    width: 160px;
+    height: 125px;
+    border: 1px solid gray;
+    overflow: hidden;
+    margin-left: 1em;
+    vertical-align: top;
+	float: right;
+    img {
+        height: 100%;
+        width: auto;
+        max-width: none;
+        transform: translateX(-15%);
+    }
+}
+
+.wildland-resource_list-text {
+    display: inline-block;
+    font-size: 0.9em;
+    vertical-align: bottom;
+    width: 70%;
+    .blue-title a {
+        font-weight: bold;
+    }
+}
+
+.resource-desc {
+    display: inline-block;
+    font-size: 1em;
+	font-weight: 700;
+	padding: 0;
+    li {
+        display: block;
+        color: $dark;
+        div{
+          display:inline-block;
+        }
+    }
+    .sfCategoriesList {
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sfCategoriesList li {
+        display: inline-block;
+        color: $red;
+		padding-bottom: 0;
+        &:after {
+            color: $dark;
+            content: '|';
+        }
+
+        &:last-child:after {
+            content: none;
+        }
+    }
+}
+
+.wildland-source_item {
+    margin: 1em 0;
+}

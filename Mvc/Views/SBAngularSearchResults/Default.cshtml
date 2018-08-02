@@ -1,0 +1,29 @@
+@model SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel
+
+    @*========================================================================\
+     |   LOOKING TO MAKE CHANGES TO THIS WIDGET? CHECK OUT THE CONTROLLER!    |
+     `=======================================================================*@
+
+<div class="searchblox-search-results-container">
+    <script>
+        var IAFCSearch = {
+            collectionId: "@Model.CollectionId",
+            searchBloxServerIp: "@Model.SearchBloxServerIp",
+            @*This is done because FacetNames is a multiline field*@
+            facetNames: "@Html.Encode(Model.FacetNames).Replace("\n", "\\n")",
+            dateRangeName: "@Model.DateRangeName",
+            showSearchBox: "@Model.ShowSearchBox",
+            categoryLimiter: "@Model.CategoryLimiter",
+            metatagLimiter: "@Model.MetatagLimiter",
+            excludedCategories: "@Model.ExcludedCategories"
+        };
+    </script>
+    <script src="/MvcAssets/SBAngularSearchResults/public/js/build/app.min.js"></script>
+    <link rel="stylesheet" href="/MvcAssets/SBAngularSearchResults/public/css/main.css">
+
+    <div id="ng-app" ng-app="searchbloxSearchResultsApp">
+        <div>
+            <div id="app-content-container" ui-view="content"></div>
+        </div>
+    </div>
+</div>

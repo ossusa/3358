@@ -1,0 +1,321 @@
+﻿s<%@ Master Language="C#" %>
+
+<!doctype html>
+<html  dir="ltr" lang="en">
+<head  id="Head1" runat="server">
+<meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- favicon begins -->
+<link rel="apple-touch-icon" sizes="60x60" href="https://www.iafc.org/LMAconfAssets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.iafc.org/LMAconfAssets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.iafc.org/LMAconfAssets/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.iafc.org/LMAconfAssets/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.iafc.org/LMAconfAssets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+<!-- favicon ends -->
+
+	<!-- Stylesheets
+	============================================= -->
+		<link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://www.iafc.org/LMAconfAssets/css/bootstrap.css" type="text/css" />
+
+	<link rel="stylesheet" href="https://www.iafc.org/LMAconfAssets/css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.iafc.org/LMAconfAssets/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.iafc.org/LMAconfAssets/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.iafc.org/LMAconfAssets/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="https://www.iafc.org/LMAconfAssets/css/magnific-popup.css" type="text/css" />
+
+	
+    
+
+</head>
+
+<body class="stretched no-transition">
+<form id="form1" runat="server" style="margin-bottom:0">
+<asp:ContentPlaceHolder ID="JavaScript2" runat="server">
+	</asp:ContentPlaceHolder>
+<!-- Document Wrapper
+	============================================= -->
+		<div id="wrapper" class="clearfix">
+
+		<!-- Top Bar
+		============================================= -->
+		<div id="top-bar">
+
+			<div class="container clearfix">
+
+				<div class="col_half nobottommargin">
+
+					<!-- Top Links
+					============================================= -->
+					<div class="top-links">
+						
+					</div><!-- .top-links end -->
+
+				</div>
+
+				<div class="col_half fright col_last nobottommargin">
+
+				</div>
+
+			</div>
+
+		</div><!-- #top-bar end -->
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="sticky-style-2">
+
+			<div class="container clearfix">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo">
+				<asp:ContentPlaceHolder ID="logo" runat="server">
+    </asp:ContentPlaceHolder> 
+				</div><!-- #logo end -->
+
+				<div class="header-extras-date">
+						
+										<asp:ContentPlaceHolder ID="headerdate" runat="server">
+    </asp:ContentPlaceHolder> 
+							
+					
+
+			</div>
+			</div>
+
+			<div id="header-wrap">
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav id="primary-menu" class="style-2">
+
+					<div class="container clearfix">
+
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+				 <asp:ContentPlaceHolder ID="navholder" runat="server">
+    </asp:ContentPlaceHolder>
+
+						
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							
+							<div class="vcosch"><input type="text" name="q" class="form-control" value="" placeholder="Type here and click enter..."></div>
+							
+						</div>
+						<script type="text/javascript">
+							$( document ).ready(function() {
+$(".form-control").keyup(function(event){
+    if(event.keyCode == 13){
+                    event.preventDefault();
+            var q = $('.form-control').val().replace("?", "%3F");
+
+            location.href = '/events/lma-conf/search-results/#/' + q + "/page=1";
+
+    }
+});
+});
+						</script><!-- #top-search end -->
+
+					</div>
+
+				</nav><!-- #primary-menu end -->
+
+			</div>
+
+		 </header>
+  <!-- #header end --> 
+  
+  <!-- Page Sub Menu
+		============================================= -->
+  <div id="page-menu">
+    <div id="page-menu-wrap">
+      <div class="container clearfix">
+        <div class="menu-title"><span></span></div>
+        <nav>
+   				<asp:ContentPlaceHolder ID="pagemenu" runat="server">
+    </asp:ContentPlaceHolder> 
+        </nav>
+        <!-- 171107 CBB hiding submenu per conferences direction
+        <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+		-->
+      </div>
+    </div>
+  </div>
+  <!-- #page-menu end --> 
+  
+  <!-- Slider begins
+						============================================= -->
+  <section id="slider" class="slider-parallax swiper_wrapper clearfix" height="500" data-autoplay="7000" data-speed="650" data-loop="true">
+				<asp:ContentPlaceHolder ID="slider" runat="server">
+    </asp:ContentPlaceHolder> 
+  </section>
+  
+  <!-- slider ends --> 
+  
+  
+  <!-- Content
+		============================================= -->
+  <section id="content">
+    <div class="content-wrap"> 
+      
+      <!-- Action icons begin
+		============================================= -->
+      
+      <div class="container clearfix">
+        <div class="col-md-3 bottommargin-lg">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+				<asp:ContentPlaceHolder ID="action1" runat="server">
+    </asp:ContentPlaceHolder> 
+          </div>
+        </div>
+        <div class="col-md-3 bottommargin-lg">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+				<asp:ContentPlaceHolder ID="action2" runat="server">
+    </asp:ContentPlaceHolder> 
+          </div>
+        </div>
+        <div class="col-md-3 bottommargin-lg">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+				<asp:ContentPlaceHolder ID="action3" runat="server">
+    </asp:ContentPlaceHolder> 
+          </div>
+        </div>
+        <div class="col-md-3 bottommargin-lg col_last">
+          <div class="feature-box fbox-center fbox-light fbox-effect nobottomborder">
+             				<asp:ContentPlaceHolder ID="action4" runat="server">
+    </asp:ContentPlaceHolder>            
+          </div>
+        </div>
+      </div>
+      
+      <!-- Action icons end-->
+      
+      <div class="line bottommargin-lg"></div>
+     
+      
+      <!-- Video begins -->
+      
+      <div class="container clearfix bottommargin-sm">
+        <div class="col-md-6">				<asp:ContentPlaceHolder ID="vidL" runat="server">
+    </asp:ContentPlaceHolder> 
+ </div>
+        <div class="col-md-6 col_last">
+                 				<asp:ContentPlaceHolder ID="vidR" runat="server">
+    </asp:ContentPlaceHolder>     
+        </div>
+      </div>
+      
+      <!-- Video ends -->
+      
+      <div class="line bottommargin-lg"></div>
+      
+      <!--Testimonies and updates begins-->
+      
+      <div class="container clearfix bottommargin-sm">
+        <div class="row divcenter clearfix">
+          <div class="col-md-4 col-sm-6 bottommargin-lg">
+            <div class="widget clearfix">
+                     				<asp:ContentPlaceHolder ID="attendeeComments" runat="server">
+    </asp:ContentPlaceHolder>            
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 bottommargin-lg">
+            <div class="widget clearfix">
+                   				<asp:ContentPlaceHolder ID="confUpdates" runat="server">
+    </asp:ContentPlaceHolder> 
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 bottommargin-lg">
+            <div class="widget clearfix">
+           				<asp:ContentPlaceHolder ID="volunteers" runat="server">
+    </asp:ContentPlaceHolder> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonies and Volunteer Updates end -->
+      
+      <div class="line bottommargin-lg"></div>
+      
+      <!-- Powered by and sponsors begin -->
+	  <!-- begin not displaying powered by & sponsor row --><div style="display: none;">
+      <div class="container clearfix">
+        <div class="col-md-6">
+          <div class="heading bottommargin-sm text-center">       				<asp:ContentPlaceHolder ID="power" runat="server">
+    </asp:ContentPlaceHolder> 
+           
+</div>
+        </div>
+        <div class="col-md-6 col_last">
+          <div class="heading bottommargin-sm text-center">       				<asp:ContentPlaceHolder ID="sponsor" runat="server">
+    </asp:ContentPlaceHolder> 
+</div>
+        </div>
+      </div>
+      <div class="clear"></div>
+		</div><!-- end not displaying powered by & sponsor row -->
+      <!-- Powered by and sponsors end --> 
+      
+    </div>
+  </section>
+  <!-- #content end --> 
+  
+  <!-- Footer
+		============================================= -->
+  <footer id="footer" class="light"> 
+    
+    <!-- Copyrights
+			============================================= -->
+    
+    <div id="copyrights" class="dark" style="background: #0071bc;">
+      <div class="container clearfix">
+        <div class="col-md-6 text-center hidden-md hidden-lg hidden-xl visible-xs visible-sm">
+       				<asp:ContentPlaceHolder ID="footer1" runat="server">
+    </asp:ContentPlaceHolder> 
+        </div>
+ <div class="col-md-6 tleft hidden-xs hidden-sm visible-md visible-lg visible-xl">
+             				<asp:ContentPlaceHolder ID="footer2" runat="server">
+    </asp:ContentPlaceHolder> 
+        </div>
+        <div class="col-md-6 col_last text-center hidden-md hidden-lg hidden-xl visible-xs visible-sm">
+       				<asp:ContentPlaceHolder ID="footer3" runat="server">
+    </asp:ContentPlaceHolder> 
+        </div>
+        <div class="col-md-6 col_last tright hidden-xs hidden-sm visible-md visible-lg visible-xl">
+       				<asp:ContentPlaceHolder ID="footer4" runat="server">
+    </asp:ContentPlaceHolder> 
+        </div>
+      </div>
+    </div>
+    <!-- #copyrights end --> 
+    
+
+<asp:ContentPlaceHolder ID="JavaScript" runat="server">
+</asp:ContentPlaceHolder>
+
+    
+  </footer>
+  
+  <!-- #footer end --> 
+  
+</div>
+<!-- #wrapper end --> 
+
+<!-- Go To Top
+	============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+<!-- External JavaScripts
+	============================================= --> 
+
+</form>
+<!-- VTCUS PAGE LOAD SUCCESSFUL -->
+</body>
+</html>

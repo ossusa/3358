@@ -1,0 +1,45 @@
+@model SitefinityWebApp.Mvc.Models.ContentListResultsViewModel
+<div class="sf_cols">
+    <div class="sf_colsOut sf_2cols_1_25 secondary filter-column">
+        <div class="sf_colsIn sf_2cols_1in_25">
+            @Html.Partial("_Filter", Model.Criteria)
+        </div>
+    </div>
+    <div class="sf_colsOut sf_2cols_2_75 primary results-column">
+        <div class="sf_colsIn sf_2cols_2in_75">
+            <ul class="resource-results">
+                @foreach (var result in Model.Results)
+                {
+                    <li class="search-result">
+                        @if ( Model.Criteria.FieldsToShow.Contains("Type") ){
+                            <div class="type-label">@result.Type</div>
+                        }
+
+                        @if ( Model.Criteria.FieldsToShow.Contains("PublicationDate") ){
+                        <div class="publication-date">
+                            @(result.EventStart.HasValue ? result.EventStart.Value.ToString("MMMM d, yyyy") : result.PublicationDate.ToString("MMMM d, yyyy"))
+                        </div>
+                        }
+
+                        @if ( Model.Criteria.FieldsToShow.Contains("Title") ){
+                            <h3 class="title">
+                            @if (Model.Criteria.FieldsToShow.Contains("Link"))
+                            {
+                                <a href="@result.Link">@result.Title</a>   
+                            }
+                            </h3>
+                        }
+
+                        <p class="summary">@result.Summary</p>
+                         @if ( ! Model.Criteria.FieldsToShow.Contains("Title") && Model.Criteria.FieldsToShow.Contains("Link") ){
+                            <h3 class="read-more-link">
+                                <a href="@result.Link">Read More</a>   
+                            </h3>
+                        }
+                    </li>
+                }
+            </ul>
+            @Html.Partial("_Pagination", Model.Pagination)
+        </div>
+    </div>
+</div>
