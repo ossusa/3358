@@ -813,7 +813,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetResourcesPerCategory
 		public IAFCHandBookResourcesPerCatergoryModel GetResourcesPerCategory(String categoryName, ResourcesOrderBy orderBy)
 		{
-			log.Info("Helper RPC Start");
+			log.Info("Helper RPC Start = " + categoryName + orderBy.ToString());
+
 			Guid categoryID = GetCategoryGuidByName(categoryName);
 			IAFCHandBookResourcesPerCatergoryModel model = new IAFCHandBookResourcesPerCatergoryModel();
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -854,7 +855,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			else if (orderBy == ResourcesOrderBy.MostPopular)
 			{
-				recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
+				log.Info("Helper RPC MP1");
+				try
+				{
+					log.Info("Helper RPC MP2");
+					recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
 							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
 							ToList().
 							Where(i => (((i.GetValue<DynamicContent>("ExternalResources") != null) &&
@@ -863,6 +868,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 										(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryID))))).
 							OrderByDescending(r => int.Parse(r.GetValue<DynamicContent>("Likes").GetValue("AmountOfLikes").ToString())).
 							ToList();
+					log.Info("Helper RPC MP3");
+				}
+				catch (Exception e)
+				{
+					log.Info("Helper exeption " + e.Message);
+				}
 			}
 			else if (orderBy == ResourcesOrderBy.AlphabeticalAZ)
 			{
@@ -888,10 +899,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							OrderByDescending(r => r.GetValue("Title").ToString()).
 							ToList();
 			}
-			
 
+			log.Info("Helper RPC After Select");
 
-				var listOfMyResources = new List<IAFCHandBookResourceModel>();
+			var listOfMyResources = new List<IAFCHandBookResourceModel>();
 			TimeSpan totalDuration = new TimeSpan(0, 0, 0);
 			int resourcesAmount = 0;
 			foreach (var item in recentlyAddedResources)
@@ -901,6 +912,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				totalDuration = totalDuration.Add(handBookResource.ResourceDetails.Duration);
 				resourcesAmount++;
 			}
+			log.Info("Helper RPC After 5");
 			model.Resources = listOfMyResources;
 			model.Category.ResourcesTotalDuration = totalDuration.ToString();
 			model.Category.ResourcesAmount = resourcesAmount;
