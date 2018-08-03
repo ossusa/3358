@@ -67,20 +67,19 @@
 <div>
 	<h2>More @Model.Category.ParentCategoryTitle Topics</h2>
 
-	<div class="box">
-		<ul class="topics__ul">
+	
+		<ul>
 			@foreach (var mcItem in Model.MoreCategories)
 			{
-				<li class="topics__list">
+				<li >
 					<a href="@mcItem.CategoryUrl">
-						<img class="topics__content-last" src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" style="width:100px;height:100px;" />
-						<p class="topics__img-text">@mcItem.CategoryTitle</p>
-						<span class="topics__img-back topics__img-back-green">
-							<p class="topics__img-back-info">
+						<img src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" style="width:100px;height:100px;" />
+						<p>@mcItem.CategoryTitle</p>						
+							<p>
 								@mcItem.CategoryDescription;
 							</p>
-							<p class="topics__img-back-text">@mcItem.ResourcesAmount Resources</p>
-						</span>
+							<p>@mcItem.ResourcesAmount Resources</p>
+						
 					</a>
 				</li>
 			}

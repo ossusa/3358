@@ -565,7 +565,6 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetResourceDetails
 		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resoucre, Boolean addCategories =false)
 		{
-			log.Info("GetResoyrceDetails Start");
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
 			String resourceTypeTitle = String.Empty;
@@ -573,19 +572,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			String resourceCategoryUrl = String.Empty;
 			String resourceParentCategoryTitle = String.Empty;
 			String resourceParentCategoryUrl = String.Empty;
-			log.Info("GetResoyrceDetails Start 1");
+
 			var handBookResource = new IAFCHandBookResourceModel(resoucre.Id,
 												resoucre.GetValue("Title").ToString(),
 												resoucre.DateCreated,
 												ResourceDetailsUrl+resoucre.Id.ToString());
-			log.Info("GetResoyrceDetails Start 2");
-
+			
 			#region GetResource
-			log.Info("GetResoyrceDetails Start3");
+			
 			var externalResourcesExist = resoucre.GetRelatedItems("ExternalResources").Cast<DynamicContent>().Count();
 			if (externalResourcesExist > 0)
 			{
-				log.Info("GetResoyrceDetails Start 4");
 				var externalResourceItem = resoucre.GetRelatedItems("ExternalResources").Cast<DynamicContent>().First();
 
 				//Get single field
@@ -593,30 +590,37 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				handBookResource.ResourceDetails.ResourceTitle = externalResourceItem.GetValue("Title").ToString();
 				handBookResource.ResourceDetails.ResourceText = externalResourceItem.GetValue("shortsummary").ToString();
 
-				log.Info("GetResoyrceDetails Start 5");
-
-				log.Info("Time= " + externalResourceItem.GetValue("Time").ToString());
-				var durationList = externalResourceItem.GetValue("Time").ToString().Split(',');
-				TimeSpan duration = new TimeSpan(0,0,0);
-				switch (durationList.Count())
+				TimeSpan duration = new TimeSpan(0, 0, 0);
+				try
 				{
-					case 1:
-						duration = new TimeSpan(0, 0, int.Parse(durationList[0]));
-						break;
-					case 2:
-						duration= new TimeSpan(0, int.Parse(durationList[0]), int.Parse(durationList[1]));
-						
-						break;
-					case 3:
-						duration = new TimeSpan(int.Parse(durationList[0]), int.Parse(durationList[1]), int.Parse(durationList[2]));
-						
-						break;
+					var durationList = externalResourceItem.GetValue("Time").ToString().Split(',');
+					switch (durationList.Count())
+					{
+						case 1:
+							duration = new TimeSpan(0, 0, int.Parse(durationList[0]));
+							break;
+						case 2:
+							duration = new TimeSpan(0, int.Parse(durationList[0]), int.Parse(durationList[1]));
+
+							break;
+						case 3:
+							duration = new TimeSpan(int.Parse(durationList[0]), int.Parse(durationList[1]), int.Parse(durationList[2]));
+
+							break;
+					}
 				}
-				log.Info("GetResoyrceDetails Start 6");
+				catch (Exception e)
+				{
+					log.Error("GetResourceDetails cant parse duration time = '" + externalResourceItem.GetValue("Time").ToString() + "'");
+				}
+				
+				
+				
+				
 				handBookResource.ResourceDetails.Duration = duration;
 				handBookResource.ResourceDetails.DurationStr = duration.ToString();
 				handBookResource.ResourceDetails.VideoEmbedCode = externalResourceItem.GetValue("VideoEmbedCode").ToString();
-				log.Info("GetResoyrceDetails Start 7");
+				
 				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 				//get first resource type
 				var resourceTypesID = externalResourceItem.GetPropertyValue<TrackedList<Guid>>("resourcetypes").FirstOrDefault();
@@ -624,7 +628,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					resourceTypeTitle = taxonomyManager.GetTaxon(resourceTypesID).Title.ToString();
 				}
-				log.Info("GetResoyrceDetails Start 8");
+				
 				//get first category
 				var resourceCategoriesIDs = externalResourceItem.GetPropertyValue<TrackedList<Guid>>("Category");
 				var categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).FirstOrDefault();
@@ -642,7 +646,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					}
 				}
 
-				log.Info("GetResoyrceDetails Start 9");
+				
 				var img = externalResourceItem.GetRelatedItems<Image>("featuredimage").SingleOrDefault();
 
 				handBookResource.ResourceDetails.Category.CategoryTitle = resourceCategoryTitle;
@@ -651,15 +655,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				handBookResource.ResourceDetails.Category.ParentCategoryUrl = resourceParentCategoryUrl;
 				handBookResource.ResourceDetails.ResourceType = resourceTypeTitle;
 				handBookResource.ResourceDetails.ImageUrl = img.Url;
-				log.Info("GetResoyrceDetails Start 10 ");
+				
 			}
 			else
-			{
-				log.Info("GetResoyrceDetails Start 11");
+			{				
 				var resourcesExist = resoucre.GetRelatedItems("Resources").Cast<DynamicContent>().Count();
 				if (resourcesExist > 0)
 				{
-					log.Info("GetResoyrceDetails Start 12 ");
+					
 					var resourceItem = resoucre.GetRelatedItems("Resources").Cast<DynamicContent>().First();
 
 					handBookResource.ResourceDetails.id = resourceItem.Id;
@@ -667,7 +670,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					handBookResource.ResourceDetails.ResourceText = resourceItem.GetValue("shortsummary").ToString();
 					handBookResource.ResourceDetails.Duration = new TimeSpan();
 					handBookResource.ResourceDetails.VideoEmbedCode = String.Empty;
-					log.Info("GetResoyrceDetails Start 13");
+					
 					TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 					//get first resource type
 					var resourceTypesID = resourceItem.GetPropertyValue<TrackedList<Guid>>("resourcetypes").FirstOrDefault();
@@ -675,7 +678,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					{
 						resourceTypeTitle = taxonomyManager.GetTaxon(resourceTypesID).Title.ToString();
 					}
-					log.Info("GetResoyrceDetails Start 14");
+					
 					//get first category
 					var resourceCategoriesIDs = resourceItem.GetPropertyValue<TrackedList<Guid>>("Category");
 					var categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).FirstOrDefault();
@@ -692,7 +695,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						}
 					}
 
-					log.Info("GetResoyrceDetails Start 15");
+					
 					var img = resourceItem.GetRelatedItems<Image>("featuredimage").SingleOrDefault();
 
 					handBookResource.ResourceDetails.Category.CategoryTitle = resourceCategoryTitle;
@@ -704,11 +707,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 			}
 			#endregion GetResource
-			log.Info("GetResoyrceDetails Start 16");
+			
 			#region GetLikes
 			try
-			{
-				log.Info("GetResoyrceDetails Start 17");
+			{				
 				var likeExists = resoucre.GetRelatedItems("Likes").Cast<DynamicContent>().Count();
 				var like = new DynamicContent();
 				if (likeExists > 0)
@@ -716,8 +718,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					like = resoucre.GetRelatedItems("Likes").Cast<DynamicContent>().First();
 				}
 				else
-				{
-					log.Info("GetResoyrceDetails Start 18");
+				{					
 					//Create like for Resource
 					Type mylikesmoduleType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookLikes.Iafchandbooklikes");
 					like = dynamicModuleManager.CreateDataItem(mylikesmoduleType);
@@ -742,28 +743,24 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					dynamicModuleManager.Lifecycle.Publish(checkInMyresourcesItem);
 
 				}
-				log.Info("GetResoyrceDetails Start 19");
+				
 				var resourceLike = new IAFCHandBookLikesModel();
 				resourceLike.LikeTitle = like.GetValue("Title").ToString();
 				resourceLike.Likes = Convert.ToInt32(like.GetValue("AmountOfLikes"));
 				resourceLike.Dislikes = Convert.ToInt32(like.GetValue("AmountOfDislikes"));
-
 				handBookResource.Likes = resourceLike;
 
 				var resourceCommentsAmount = resoucre.GetRelatedItems("Comment").Count();
 				handBookResource.CommentsAmount = resourceCommentsAmount;
-				handBookResource.AddToMyHandBook = false;
-				log.Info("GetResoyrceDetails Start 20 ");
+				handBookResource.AddToMyHandBook = false;				
 			}
 			catch (Exception e)
-			{
-				log.Info("GetResoyrceDetails Start 21");
+			{				
 				var msg = e.Message;
 			}
-			#endregion GetLikes
-			log.Info("GetResoyrceDetails Start 22");
+			#endregion GetLikes			
 			dynamicModuleManager.SaveChanges();
-			log.Info("GetResoyrceDetails Start 23");
+			
 
 			return handBookResource;
 		}
@@ -826,9 +823,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#region GetResourcesPerCategory
 		public IAFCHandBookResourcesPerCatergoryModel GetResourcesPerCategory(String categoryName, ResourcesOrderBy orderBy)
-		{
-			log.Info("Helper RPC Start = " + categoryName + orderBy.ToString());
-
+		{			
 			Guid categoryID = GetCategoryGuidByName(categoryName);
 			IAFCHandBookResourcesPerCatergoryModel model = new IAFCHandBookResourcesPerCatergoryModel();
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -842,16 +837,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Category.CategoryTitle = resourceCategory.Title.ToString();
 			model.Category.ParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
 			model.Category.CategoryDescription = resourceCategory.Description.ToString();
-
-			log.Info("Helper RPC 1");
+			
 
 			var recentlyAddedResources = new List<DynamicContent>();
 
 			if (orderBy == ResourcesOrderBy.MostRecent)
-			{
-				log.Info("Helper RPC 2");
-				try
-				{
+			{				
 					recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
 							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
 							ToList().
@@ -859,20 +850,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 										(i.GetValue<DynamicContent>("ExternalResources").GetValue<IList<Guid>>("Category").Contains(categoryID)))
 										|| ((i.GetValue<DynamicContent>("Resources") != null) &&
 										(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryID))))).
-							OrderByDescending(r => r.DateCreated).ToList();
-					log.Info("Helper RPC 3");
-				}
-				catch (Exception e)
-				{
-					log.Info("Helper exeption " + e.Message);
-				}
+							OrderByDescending(r => r.DateCreated).ToList();					
+				
 			}
 			else if (orderBy == ResourcesOrderBy.MostPopular)
 			{
-				log.Info("Helper RPC MP1");
-				try
-				{
-					log.Info("Helper RPC MP2");
+								
 					recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
 							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
 							ToList().
@@ -882,12 +865,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 										(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryID))))).
 							OrderByDescending(r => int.Parse(r.GetValue<DynamicContent>("Likes").GetValue("AmountOfLikes").ToString())).
 							ToList();
-					log.Info("Helper RPC MP3");
-				}
-				catch (Exception e)
-				{
-					log.Info("Helper exeption " + e.Message);
-				}
+				
 			}
 			else if (orderBy == ResourcesOrderBy.AlphabeticalAZ)
 			{
@@ -914,7 +892,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							ToList();
 			}
 
-			log.Info("Helper RPC After Select");
+			
 
 			var listOfMyResources = new List<IAFCHandBookResourceModel>();
 			TimeSpan totalDuration = new TimeSpan(0, 0, 0);
@@ -926,12 +904,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				totalDuration = totalDuration.Add(handBookResource.ResourceDetails.Duration);
 				resourcesAmount++;
 			}
-			log.Info("Helper RPC After 5");
+			
 			model.Resources = listOfMyResources;
 			model.Category.ResourcesTotalDuration = totalDuration.ToString();
 			model.Category.ResourcesAmount = resourcesAmount;
 			model.MoreCategories = GetMoreCategories(model.Category.Id);
-			log.Info("Helper RPC End");
+			
 			return model;
 		}
 		#endregion GetResourcesPerCategory
