@@ -1,0 +1,161 @@
+﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookResourcesPerCatergoryModel
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<div>
+	<table border="1">
+		<tr>
+			<th>
+				<h3>@Model.Category.ParentCategoryTitle</h3>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<select id="UrlList" onchange="doNavigate()">
+					<option value=@Model.Category.CategoryUrl>@Model.Category.CategoryTitle</option>
+					@foreach (var item in Model.MoreCategories)
+					{
+						<option value=@item.CategoryUrl>@item.CategoryTitle</option>
+					}
+
+				</select>
+
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<h3>@Model.Category.CategoryDescription</h3>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<h3>@Model.Category.ResourcesAmount Resources  </h3>
+			</th>
+			<th>
+				@Model.Category.ResourcesTotalDuration
+			</th>
+			<th>
+				@Html.DropDownList("Sortby", new SelectListItem[]
+		  {   new SelectListItem() { Text = "Most Popular", Value = "0" },
+									new SelectListItem() { Text = "Most Recent", Value = "1" },
+									new SelectListItem() { Text = "Alphabetical A-Z", Value = "2" },
+									new SelectListItem() { Text = "Alphabetical Z-A", Value = "3" }
+		  },
+		  new { id = "sortByChanged" }
+		  )
+			</th>
+			<th>
+				<div id="addAllToMyHandBook">
+					<button type="button" class="addAllToMyHandBook" data-id="@Model.Category.Id.ToString()"> +Add All to MyHandBook </button>
+				</div>
+			</th>
+			<th>
+				<div id="followCategory">
+					<button type="button" class="followCategory" data-id="@Model.Category.Id.ToString()"> Follow </button>
+				</div>
+			</th>
+		</tr>
+	</table>
+</div>
+
+
+
+<div id="partViewID">
+	@Html.Partial("_ResourcesPerCategoryDetails", Model.Resources)
+</div>
+
+<div>
+	<h2>More @Model.Category.ParentCategoryTitle Topics</h2>
+
+	<div class="box">
+		<ul class="topics__ul">
+			@foreach (var mcItem in Model.MoreCategories)
+			{
+				<li class="topics__list">
+					<a href="@mcItem.CategoryUrl">
+						<img class="topics__content-last" src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" style="width:100px;height:100px;" />
+						<p class="topics__img-text">@mcItem.CategoryTitle</p>
+						<span class="topics__img-back topics__img-back-green">
+							<p class="topics__img-back-info">
+								@mcItem.CategoryDescription;
+							</p>
+							<p class="topics__img-back-text">@mcItem.ResourcesAmount Resources</p>
+						</span>
+					</a>
+				</li>
+			}
+		</ul>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+
+	$(document).ready(function () {
+
+		//Add All ToMyHandBook
+		$('.addAllToMyHandBook').on('click', function () {
+
+			var categoryId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddAllToMyHandBook", "IAFCHBResourcesPerCategory")',
+				data: { categoryId },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$("#addAllToMyHandBook").html("Added to MyHandBook");
+					}
+				}
+			});
+		});
+
+		//Follow
+		$('.followCategory').on('click', function () {
+
+			var categoryId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("FollowCategory", "IAFCHBResourcesPerCategory")',
+				data: { categoryId },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$("#followCategory").html("Followed");
+					}
+				}
+			});
+		});
+
+
+		$('#sortByChanged').on('change', function () {
+
+				var orderByValue = $('#sortByChanged').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GetOrderedResources", "IAFCHBResourcesPerCategory")',
+					data: { orderBy: parseInt(orderByValue) },
+                    success: function (response) {
+						$("#partViewID").html(response);
+
+                    }
+                })
+            });
+
+	});
+
+
+	function doNavigate() {
+		window.location.href = document.getElementById("UrlList").value;
+	}
+
+</script>
+
+ 

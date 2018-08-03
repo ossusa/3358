@@ -1,0 +1,30 @@
+﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel
+
+<div><a href="@Model.ResourceDetails.Category.ParentCategoryUrl"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@Model.ResourceDetails.Category.CategoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
+<table>
+	<tr>
+		<td style="width:70%">
+			<table>
+				<tr>
+					<td>
+						@if (Model.ResourceDetails.VideoEmbedCode != null && Model.ResourceDetails.VideoEmbedCode != String.Empty )
+						{
+							<iframe width="420" height="315"
+								src=@Model.ResourceDetails.VideoEmbedCode>
+							</iframe>
+						}
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td style="width:30%">
+			<table>
+				<tr>
+					<td>
+						More Resources in @Model.ResourceDetails.Category.CategoryTitle
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

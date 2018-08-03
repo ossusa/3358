@@ -1,0 +1,144 @@
+﻿@model  List<SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<table border="0">
+
+		@{int columnCounter = 0; }
+
+		@foreach (var item in Model)
+		{
+			if (columnCounter == 0)
+			{
+				@Html.Raw("<tr>");
+			}
+			
+			<td>
+				<table border="1">
+					<tr>
+						<td>
+							<img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
+							<br />
+							<a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
+							<span> @item.ResourceDetails.DurationStr</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div> @item.ResourceDetails.ResourceType</div>
+							<a href='@item.ResourceUrl'>@item.ResourceTitle</a>
+							<div>@Html.Raw(item.ResourceDetails.ResourceText)</div>
+							<br />
+					<td>
+					</tr>
+					<tr>
+						<td>							
+							<div id="@string.Format("{0}_{1}", "addToMyHandBook" , item.Id.ToString())">
+									<div id="addToMyHandBook">
+										@if (item.AddToMyHandBook == true)
+										{
+											<span>Added to MyHandBook</span>
+										}
+										else
+										{
+											<button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
+										}
+									</div>
+								</div>
+						</td>
+						<td>
+							<a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
+						</td>
+						<td>
+							<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
+							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+								<span>@item.Likes.Likes</span>
+							</div>
+						</td>
+						<td>
+							<button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
+							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+								<span>@item.Likes.Dislikes</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+
+			if (columnCounter == 1)
+			{
+				columnCounter = 0;
+				@Html.Raw("</tr>")
+			}
+			else
+			{
+				columnCounter++;
+			}
+		}
+		@{
+			if (columnCounter != 0)
+			{
+				@Html.Raw("</tr>")
+			}
+		}
+	</table>
+</div>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+
+		//Add Like
+		$('.addLike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddLike", "IAFCHBResourcesPerCategory")',
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceLikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add Dislike
+		$('.addDislike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddDislike", "IAFCHBResourcesPerCategory")',
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceDislikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add ToMyHandBook
+		$('.addToMyHandBook').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+			var tag_id = "#addToMyHandBook_" + resourceId;
+			
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddToMyHandBook", "IAFCHBResourcesPerCategory")',
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {										
+					if (response == true) {						
+						$(tag_id).html("Added to MyHandBook");
+					}					
+				}
+			});
+		});
+	});
+
+
+</script>

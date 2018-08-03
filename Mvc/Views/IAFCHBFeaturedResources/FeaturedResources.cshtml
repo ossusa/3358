@@ -1,0 +1,70 @@
+﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+@Html.Script("https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js", "top", false)
+
+
+
+<div>
+	@if (Model.Id != Guid.Empty)
+	{		
+	<table border="1">
+		<tr>
+			<td>
+				<span>Featured @Model.ResourceDetails.ResourceType . @Model.ResourceDetails.Category.CategoryTitle</span>
+				<div>@Model.ResourceDetails.ResourceTitle</div>
+				<div>@Html.Raw(Model.ResourceDetails.ResourceText)</div>
+				<button type="submit" formaction="@Model.ResourceUrl" > View </button>
+				<span id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
+					@if (Model.AddToMyHandBook == true)
+					{
+						<span>Added to MyHandBook</span>
+					}
+					else
+					{
+						<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
+					}
+				</span>
+
+			</td>
+			<td>
+				<img src='@Model.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
+				@Model.ResourceDetails.Duration
+				
+
+			</td>
+		</tr>
+	</table>
+	}
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		
+		//Add ToMyHandBook
+		$('.addToMyHandBook').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddToMyHandBook", "IAFCHBFeaturedResourcesController")',
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
+					}
+				}
+			});
+		});
+
+	});
+
+</script>
+
+
+
+
