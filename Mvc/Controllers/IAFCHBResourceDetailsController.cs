@@ -17,23 +17,22 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			
 
-		public IAFCHandBookResourceModel GetData(Guid resourceId)
+		public IAFCHandBookResourceModel GetData(string name)
 		{
 
-			return handBookHelper.GetResourceDetails(resourceId);
+			return handBookHelper.GetResourceDetails(name);
 
 		}
 
-		[RelativeRoute("{id}")]
-		public ActionResult GetResourceDetails(string id)
-		{
-			var resourceId = Guid.Parse(id);
-			var model = GetData(resourceId);
-			return View("ResourceDetails", model);
-			
+		[RelativeRoute("{name}")]
+		public ActionResult GetResourceDetails(string name)
+		{			
+			var model = GetData(name);
+			return View("ResourceDetails", model);			
 		}
 
 		
+
 
 
 

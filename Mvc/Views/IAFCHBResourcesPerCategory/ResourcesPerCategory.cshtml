@@ -35,14 +35,28 @@
 				@Model.Category.ResourcesTotalDuration
 			</th>
 			<th>
-				@Html.DropDownList("Sortby", new SelectListItem[]
-		  {   new SelectListItem() { Text = "Most Popular", Value = "0" },
-									new SelectListItem() { Text = "Most Recent", Value = "1" },
-									new SelectListItem() { Text = "Alphabetical A-Z", Value = "2" },
-									new SelectListItem() { Text = "Alphabetical Z-A", Value = "3" }
-		  },
-		  new { id = "sortByChanged" }
-		  )
+				
+				@{	var MostPopularUrl = Model.Category.CategoryUrl + "/MostPopular";
+					var MostRecentUrl = Model.Category.CategoryUrl + "/MostRecent";
+					var AlphabeticalAZUrl = Model.Category.CategoryUrl + "/AlphabeticalAZ";
+					var AlphabeticalZAUrl = Model.Category.CategoryUrl + "/AlphabeticalZA";
+				}
+
+				<select id="UrlOrderByList" onchange="doOrderByNavigate()">
+					@foreach (var orderByItem in Model.OrderBy)
+					{
+						if (orderByItem.Selected)
+						{
+							<option value=@orderByItem.Url selected>@orderByItem.Title</option>
+						}
+						else
+						{
+							<option value=@orderByItem.Url >@orderByItem.Title</option>
+						}
+
+					}
+				</select>
+		
 			</th>
 			<th>
 				<div id="addAllToMyHandBook">
@@ -66,7 +80,6 @@
 
 <div>
 	<h2>More @Model.Category.ParentCategoryTitle Topics</h2>
-
 	
 		<ul>
 			@foreach (var mcItem in Model.MoreCategories)
@@ -84,7 +97,6 @@
 				</li>
 			}
 		</ul>
-	</div>
 </div>
 
 
@@ -153,6 +165,9 @@
 
 	function doNavigate() {
 		window.location.href = document.getElementById("UrlList").value;
+	}
+	function doOrderByNavigate() {
+		window.location.href = document.getElementById("UrlOrderByList").value;
 	}
 
 </script>

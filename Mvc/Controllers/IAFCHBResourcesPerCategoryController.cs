@@ -16,46 +16,45 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[Category("General")]
 		public String CategoryName { get; set; }
 
-
 		private ILog log = LogManager.GetLogger(typeof(IAFCHBResourcesPerCategoryController));
-
-		public ResourcesOrderBy OrderBy { get; set; }
+		
 
 		public IAFCHBResourcesPerCategoryController()
 		{
-			
-			OrderBy = ResourcesOrderBy.MostPopular;
+						
 		}
-
 
 		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
 
-		public IAFCHandBookResourcesPerCatergoryModel GetData(ResourcesOrderBy orderBy)
+		public IAFCHandBookResourcesPerCatergoryModel GetData(String orderBy)
 		{
 
 			return handBookHelper.GetResourcesPerCategory(CategoryName, orderBy);
 			
 		}
 
-		public ActionResult Index()
-        {			
-			var model = GetData(OrderBy);
-			var view = View("ResourcesPerCategory", model);			
+				
+		[RelativeRoute("{orderby?}")]
+		public ActionResult GetOrderedResources(string orderby)
+		{
+			string orderByItem = "MostPopular";
+			if (orderby !=null &&(
+				orderby == "MostPopular" ||
+				orderby == "MostRecent" ||
+				orderby == "AlphabeticalAZ" ||
+				orderby == "AlphabeticalZA"))
+			{
+
+				orderByItem = orderby;
+			}
+			
+			var model = GetData(orderByItem);
+			var view = View("ResourcesPerCategory", model);
 			return view;
 		}
 
-	
-
-		[HttpPost]	
-		public ActionResult GetOrderedResources(int orderBy)
-		{			
-			var newOrderBy = (ResourcesOrderBy)Enum.ToObject(typeof(ResourcesOrderBy), orderBy);
-			var model = GetData(newOrderBy);
-			
-			return View("_ResourcesPerCategoryDetails", model.Resources);
-			
-
-		}
+		
+		
 
 		[HttpPost]
 		public ActionResult AddLike(String resourceId)

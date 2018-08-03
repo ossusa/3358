@@ -15,12 +15,11 @@ namespace SitefinityWebApp.Mvc.Models
 			ResourceDetails = new IAFCHandBookResourceDetailsModel();
 		}
 
-		public IAFCHandBookResourceModel(Guid id, string resourceTitle, DateTime dateCreated, string url)
+		public IAFCHandBookResourceModel(Guid id, string resourceTitle, DateTime dateCreated)
 		{
 			Id = id;
 			ResourceTitle = resourceTitle;
-			DateCreated = dateCreated;
-			ResourceUrl = url;
+			DateCreated = dateCreated;			
 			AddToMyHandBook = false;
 			Comments = new List<IAFCHandBookCommentModel>();
 			Likes = new IAFCHandBookLikesModel();

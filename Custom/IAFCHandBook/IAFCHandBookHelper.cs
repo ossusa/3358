@@ -23,19 +23,11 @@ using Telerik.Sitefinity.Data;
 using ServiceStack.Logging;
 
 namespace SitefinityWebApp.Custom.IAFCHandBook
-{
-	
-	public enum ResourcesOrderBy
-	{
-		MostPopular = 0,
-		MostRecent = 1,
-		AlphabeticalAZ = 2,
-		AlphabeticalZA = 3
-	}
+{		
 
 	public class IAFCHandBookHelper
 	{
-		private ILog log = LogManager.GetLogger(typeof(ResourcesOrderBy));
+		private ILog log = LogManager.GetLogger(typeof(IAFCHandBookHelper));
 
 		#region Structs
 		private struct Categories
@@ -56,6 +48,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string CommunityCategoryTitle = "Community";
 		private const string FinanceCategoryTitle = "Finance";
 		private const string PersonnelCategoryTitle = "Personnel";
+
+		private const string OrderByMostPopular = "MostPopular";
+		private const string OrderByMostRecent = "MostRecent";
+		private const string OrderByAlphabeticalAZ = "AlphabeticalAZ";
+		private const string OrderByAlphabeticalZA = "AlphabeticalZA";
 
 		#region DynamicTypes
 		Type handBookResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookResourcesData.Iafchandbookresourcesdata");																	   
@@ -575,8 +572,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			var handBookResource = new IAFCHandBookResourceModel(resoucre.Id,
 												resoucre.GetValue("Title").ToString(),
-												resoucre.DateCreated,
-												ResourceDetailsUrl+resoucre.Id.ToString());
+												resoucre.DateCreated);
 			
 			#region GetResource
 			
@@ -614,9 +610,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					log.Error("GetResourceDetails cant parse duration time = '" + externalResourceItem.GetValue("Time").ToString() + "'");
 				}
 				
-				
-				
-				
+								
 				handBookResource.ResourceDetails.Duration = duration;
 				handBookResource.ResourceDetails.DurationStr = duration.ToString();
 				handBookResource.ResourceDetails.VideoEmbedCode = externalResourceItem.GetValue("VideoEmbedCode").ToString();
@@ -820,7 +814,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetRecentlyAddedResources
 
 		#region GetResourcesPerCategory
-		public IAFCHandBookResourcesPerCatergoryModel GetResourcesPerCategory(String categoryName, ResourcesOrderBy orderBy)
+		public IAFCHandBookResourcesPerCatergoryModel GetResourcesPerCategory(String categoryName, String orderBy)
 		{			
 			Guid categoryID = GetCategoryGuidByName(categoryName);
 			IAFCHandBookResourcesPerCatergoryModel model = new IAFCHandBookResourcesPerCatergoryModel();
@@ -833,13 +827,51 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			model.Category.Id = categoryID;
 			model.Category.CategoryTitle = resourceCategory.Title.ToString();
+			model.Category.CategoryUrl = topicCategory.ResourceCategoryUrl;
 			model.Category.ParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
 			model.Category.CategoryDescription = resourceCategory.Description.ToString();
-			
+
+			var orderByList = new List<IAFCHandBookTopicOrderBy>();
+			var orderByItem = new IAFCHandBookTopicOrderBy();
+			orderByItem.Url = topicCategory.ResourceCategoryUrl + "/" + OrderByMostPopular;
+			orderByItem.Title = OrderByMostPopular;
+			if (orderBy==OrderByMostPopular)
+			{
+				orderByItem.Selected = true; 
+			}
+			orderByList.Add(orderByItem);
+
+			orderByItem = new IAFCHandBookTopicOrderBy();
+			orderByItem.Url = topicCategory.ResourceCategoryUrl + "/"+ OrderByMostRecent;
+			orderByItem.Title = OrderByMostRecent;
+			if (orderBy == OrderByMostRecent)
+			{
+				orderByItem.Selected = true;
+			}
+			orderByList.Add(orderByItem);
+
+			orderByItem = new IAFCHandBookTopicOrderBy();
+			orderByItem.Url = topicCategory.ResourceCategoryUrl + "/" + OrderByAlphabeticalAZ;
+			orderByItem.Title = OrderByAlphabeticalAZ;
+			if (orderBy == OrderByAlphabeticalAZ)
+			{
+				orderByItem.Selected = true;
+			}
+			orderByList.Add(orderByItem);
+
+			orderByItem = new IAFCHandBookTopicOrderBy();
+			orderByItem.Url = topicCategory.ResourceCategoryUrl + "/" + OrderByAlphabeticalZA;
+			orderByItem.Title = OrderByAlphabeticalZA;
+			if (orderBy == OrderByAlphabeticalZA)
+			{
+				orderByItem.Selected = true;
+			}
+			orderByList.Add(orderByItem);
+			model.OrderBy = orderByList;
 
 			var recentlyAddedResources = new List<DynamicContent>();
 
-			if (orderBy == ResourcesOrderBy.MostRecent)
+			if (orderBy == OrderByMostRecent)
 			{				
 					recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
 							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
@@ -851,7 +883,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							OrderByDescending(r => r.DateCreated).ToList();					
 				
 			}
-			else if (orderBy == ResourcesOrderBy.MostPopular)
+			else if (orderBy == OrderByMostPopular)
 			{
 								
 					recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
@@ -865,7 +897,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							ToList();
 				
 			}
-			else if (orderBy == ResourcesOrderBy.AlphabeticalAZ)
+			else if (orderBy == OrderByAlphabeticalAZ)
 			{
 				recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
 							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
@@ -877,7 +909,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							OrderBy(r => r.GetValue("Title").ToString()).
 							ToList();
 			}
-			else if (orderBy == ResourcesOrderBy.AlphabeticalZA)
+			else if (orderBy == OrderByAlphabeticalZA)
 			{
 				recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
 							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
@@ -913,11 +945,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetResourcesPerCategory
 
 		#region GetResourceDetails
-		public IAFCHandBookResourceModel GetResourceDetails(Guid resourceID)
+		public IAFCHandBookResourceModel GetResourceDetails(String name)
 		{
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();			
 			var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType).
-						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceID).
+						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName.ToString() == name).
 						First();
 
 			var model = GetResourceDetails(resourceItem);			

@@ -905,6 +905,7 @@
     <Compile Include="Mvc\Models\IAFCHandBookResourceDetailsModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookResourceModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookResourcesPerCatergoryModel.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookTopicOrderBy.cs" />
     <Compile Include="Mvc\Models\NewsResult.cs" />
     <Compile Include="Mvc\Models\Pagination.cs" />
     <Compile Include="Mvc\Models\ResultsViewModel.cs" />
