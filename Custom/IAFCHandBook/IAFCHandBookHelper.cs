@@ -563,7 +563,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetCategories
 
 		#region GetResourceDetails
-		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resoucre, Boolean addCategories =false)
+		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resoucre)
 		{
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
@@ -637,13 +637,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					var resourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Id == categoryItem).FirstOrDefault();
 					resourceCategoryTitle = resourceCategory.Title.ToString();
 
-					if (addCategories)
-					{
-						var topicCategory = GetTopicCategories(categoryItem);
-						resourceParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
-						resourceParentCategoryUrl = topicCategory.ResourceParentCategoryUrl;
-						resourceCategoryUrl = topicCategory.ResourceCategoryUrl;
-					}
+
+					var topicCategory = GetTopicCategories(categoryItem);
+					resourceParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
+					resourceParentCategoryUrl = topicCategory.ResourceParentCategoryUrl;
+					resourceCategoryUrl = topicCategory.ResourceCategoryUrl;
+
 				}
 
 				
@@ -686,13 +685,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					{
 						var resourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Id == categoryItem).FirstOrDefault();
 						resourceCategoryTitle = resourceCategory.Title.ToString();
-						if (addCategories)
-						{
-							var topicCategory = GetTopicCategories(categoryItem);
-							resourceParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
-							resourceParentCategoryUrl = topicCategory.ResourceParentCategoryUrl;
-							resourceCategoryUrl = topicCategory.ResourceCategoryUrl;
-						}
+
+						var topicCategory = GetTopicCategories(categoryItem);
+						resourceParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
+						resourceParentCategoryUrl = topicCategory.ResourceParentCategoryUrl;
+						resourceCategoryUrl = topicCategory.ResourceCategoryUrl;
+
 					}
 
 					
@@ -813,7 +811,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var listOfMyResources = new List<IAFCHandBookResourceModel>();
 			foreach (var item in recentlyAddedResources)
 			{
-				handBookResource = GetResourceDetails(item, true);
+				handBookResource = GetResourceDetails(item);
 				listOfMyResources.Add(handBookResource);
 			}
 
@@ -899,7 +897,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			int resourcesAmount = 0;
 			foreach (var item in recentlyAddedResources)
 			{
-				var handBookResource = GetResourceDetails(item, true);
+				var handBookResource = GetResourceDetails(item);
 				listOfMyResources.Add(handBookResource);
 				totalDuration = totalDuration.Add(handBookResource.ResourceDetails.Duration);
 				resourcesAmount++;
@@ -922,7 +920,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceID).
 						First();
 
-			var model = GetResourceDetails(resourceItem, true);			
+			var model = GetResourceDetails(resourceItem);			
 			
 			return model;			
 		}
