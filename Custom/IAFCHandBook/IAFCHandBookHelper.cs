@@ -565,6 +565,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetResourceDetails
 		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resoucre, Boolean addCategories =false)
 		{
+			log.Info("GetResoyrceDetails Start");
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
 			String resourceTypeTitle = String.Empty;
@@ -572,26 +573,28 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			String resourceCategoryUrl = String.Empty;
 			String resourceParentCategoryTitle = String.Empty;
 			String resourceParentCategoryUrl = String.Empty;
-
+			log.Info("GetResoyrceDetails Start 1");
 			var handBookResource = new IAFCHandBookResourceModel(resoucre.Id,
 												resoucre.GetValue("Title").ToString(),
 												resoucre.DateCreated,
 												ResourceDetailsUrl+resoucre.Id.ToString());
-			
+			log.Info("GetResoyrceDetails Start 2");
+
 			#region GetResource
+			log.Info("GetResoyrceDetails Start3");
 			var externalResourcesExist = resoucre.GetRelatedItems("ExternalResources").Cast<DynamicContent>().Count();
 			if (externalResourcesExist > 0)
 			{
-
+				log.Info("GetResoyrceDetails Start 4");
 				var externalResourceItem = resoucre.GetRelatedItems("ExternalResources").Cast<DynamicContent>().First();
 
 				//Get single field
 				handBookResource.ResourceDetails.id = externalResourceItem.Id;
 				handBookResource.ResourceDetails.ResourceTitle = externalResourceItem.GetValue("Title").ToString();
 				handBookResource.ResourceDetails.ResourceText = externalResourceItem.GetValue("shortsummary").ToString();
-				
 
-				
+				log.Info("GetResoyrceDetails Start 5");
+
 				var durationList = externalResourceItem.GetValue("Time").ToString().Split(',');
 				TimeSpan duration = new TimeSpan(0,0,0);
 				switch (durationList.Count())
@@ -608,11 +611,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						
 						break;
 				}
-
+				log.Info("GetResoyrceDetails Start 6");
 				handBookResource.ResourceDetails.Duration = duration;
 				handBookResource.ResourceDetails.DurationStr = duration.ToString();
 				handBookResource.ResourceDetails.VideoEmbedCode = externalResourceItem.GetValue("VideoEmbedCode").ToString();
-
+				log.Info("GetResoyrceDetails Start 7");
 				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 				//get first resource type
 				var resourceTypesID = externalResourceItem.GetPropertyValue<TrackedList<Guid>>("resourcetypes").FirstOrDefault();
@@ -620,7 +623,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					resourceTypeTitle = taxonomyManager.GetTaxon(resourceTypesID).Title.ToString();
 				}
-
+				log.Info("GetResoyrceDetails Start 8");
 				//get first category
 				var resourceCategoriesIDs = externalResourceItem.GetPropertyValue<TrackedList<Guid>>("Category");
 				var categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).FirstOrDefault();
@@ -638,6 +641,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					}
 				}
 
+				log.Info("GetResoyrceDetails Start 9");
 				var img = externalResourceItem.GetRelatedItems<Image>("featuredimage").SingleOrDefault();
 
 				handBookResource.ResourceDetails.Category.CategoryTitle = resourceCategoryTitle;
@@ -646,12 +650,15 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				handBookResource.ResourceDetails.Category.ParentCategoryUrl = resourceParentCategoryUrl;
 				handBookResource.ResourceDetails.ResourceType = resourceTypeTitle;
 				handBookResource.ResourceDetails.ImageUrl = img.Url;
+				log.Info("GetResoyrceDetails Start 10 ");
 			}
 			else
 			{
+				log.Info("GetResoyrceDetails Start 11");
 				var resourcesExist = resoucre.GetRelatedItems("Resources").Cast<DynamicContent>().Count();
 				if (resourcesExist > 0)
 				{
+					log.Info("GetResoyrceDetails Start 12 ");
 					var resourceItem = resoucre.GetRelatedItems("Resources").Cast<DynamicContent>().First();
 
 					handBookResource.ResourceDetails.id = resourceItem.Id;
@@ -659,7 +666,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					handBookResource.ResourceDetails.ResourceText = resourceItem.GetValue("shortsummary").ToString();
 					handBookResource.ResourceDetails.Duration = new TimeSpan();
 					handBookResource.ResourceDetails.VideoEmbedCode = String.Empty;
-
+					log.Info("GetResoyrceDetails Start 13");
 					TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 					//get first resource type
 					var resourceTypesID = resourceItem.GetPropertyValue<TrackedList<Guid>>("resourcetypes").FirstOrDefault();
@@ -667,7 +674,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					{
 						resourceTypeTitle = taxonomyManager.GetTaxon(resourceTypesID).Title.ToString();
 					}
-
+					log.Info("GetResoyrceDetails Start 14");
 					//get first category
 					var resourceCategoriesIDs = resourceItem.GetPropertyValue<TrackedList<Guid>>("Category");
 					var categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).FirstOrDefault();
@@ -684,6 +691,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						}
 					}
 
+					log.Info("GetResoyrceDetails Start 15");
 					var img = resourceItem.GetRelatedItems<Image>("featuredimage").SingleOrDefault();
 
 					handBookResource.ResourceDetails.Category.CategoryTitle = resourceCategoryTitle;
@@ -695,10 +703,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 			}
 			#endregion GetResource
-
+			log.Info("GetResoyrceDetails Start 16");
 			#region GetLikes
 			try
 			{
+				log.Info("GetResoyrceDetails Start 17");
 				var likeExists = resoucre.GetRelatedItems("Likes").Cast<DynamicContent>().Count();
 				var like = new DynamicContent();
 				if (likeExists > 0)
@@ -707,6 +716,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 				else
 				{
+					log.Info("GetResoyrceDetails Start 18");
 					//Create like for Resource
 					Type mylikesmoduleType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookLikes.Iafchandbooklikes");
 					like = dynamicModuleManager.CreateDataItem(mylikesmoduleType);
@@ -731,7 +741,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					dynamicModuleManager.Lifecycle.Publish(checkInMyresourcesItem);
 
 				}
-
+				log.Info("GetResoyrceDetails Start 19");
 				var resourceLike = new IAFCHandBookLikesModel();
 				resourceLike.LikeTitle = like.GetValue("Title").ToString();
 				resourceLike.Likes = Convert.ToInt32(like.GetValue("AmountOfLikes"));
@@ -742,14 +752,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var resourceCommentsAmount = resoucre.GetRelatedItems("Comment").Count();
 				handBookResource.CommentsAmount = resourceCommentsAmount;
 				handBookResource.AddToMyHandBook = false;
+				log.Info("GetResoyrceDetails Start 20 ");
 			}
 			catch (Exception e)
 			{
+				log.Info("GetResoyrceDetails Start 21");
 				var msg = e.Message;
 			}
 			#endregion GetLikes
-
+			log.Info("GetResoyrceDetails Start 22");
 			dynamicModuleManager.SaveChanges();
+			log.Info("GetResoyrceDetails Start 23");
 
 			return handBookResource;
 		}
