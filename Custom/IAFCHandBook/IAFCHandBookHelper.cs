@@ -595,6 +595,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				log.Info("GetResoyrceDetails Start 5");
 
+				log.Info("Time= " + externalResourceItem.GetValue("Time").ToString());
 				var durationList = externalResourceItem.GetValue("Time").ToString().Split(',');
 				TimeSpan duration = new TimeSpan(0,0,0);
 				switch (durationList.Count())
