@@ -20,10 +20,11 @@ using Telerik.Sitefinity.Utilities.TypeConverters;
 using Telerik.Sitefinity.Libraries.Model;
 using Telerik.Sitefinity.Data.Linq.Dynamic;
 using Telerik.Sitefinity.Data;
-
+using ServiceStack.Logging;
 
 namespace SitefinityWebApp.Custom.IAFCHandBook
 {
+	
 	public enum ResourcesOrderBy
 	{
 		MostPopular = 0,
@@ -34,6 +35,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 	public class IAFCHandBookHelper
 	{
+		private ILog log = LogManager.GetLogger(typeof(ResourcesOrderBy));
+
 		#region Structs
 		private struct Categories
 		{			
@@ -810,6 +813,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetResourcesPerCategory
 		public IAFCHandBookResourcesPerCatergoryModel GetResourcesPerCategory(String categoryName, ResourcesOrderBy orderBy)
 		{
+			log.Info("Helper RPC Start");
 			Guid categoryID = GetCategoryGuidByName(categoryName);
 			IAFCHandBookResourcesPerCatergoryModel model = new IAFCHandBookResourcesPerCatergoryModel();
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -823,20 +827,30 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Category.CategoryTitle = resourceCategory.Title.ToString();
 			model.Category.ParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
 			model.Category.CategoryDescription = resourceCategory.Description.ToString();
-			
+
+			log.Info("Helper RPC 1");
 
 			var recentlyAddedResources = new List<DynamicContent>();
 
 			if (orderBy == ResourcesOrderBy.MostRecent)
 			{
-				recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
-						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
-						ToList().
-						Where(i => (((i.GetValue<DynamicContent>("ExternalResources") != null) &&
-									(i.GetValue<DynamicContent>("ExternalResources").GetValue<IList<Guid>>("Category").Contains(categoryID)))
-									|| ((i.GetValue<DynamicContent>("Resources") != null) &&
-									(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryID))))).
-						OrderByDescending(r => r.DateCreated).ToList();
+				log.Info("Helper RPC 2");
+				try
+				{
+					recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType).
+							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
+							ToList().
+							Where(i => (((i.GetValue<DynamicContent>("ExternalResources") != null) &&
+										(i.GetValue<DynamicContent>("ExternalResources").GetValue<IList<Guid>>("Category").Contains(categoryID)))
+										|| ((i.GetValue<DynamicContent>("Resources") != null) &&
+										(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryID))))).
+							OrderByDescending(r => r.DateCreated).ToList();
+					log.Info("Helper RPC 3");
+				}
+				catch (Exception e)
+				{
+					log.Info("Helper exeption " + e.Message);
+				}
 			}
 			else if (orderBy == ResourcesOrderBy.MostPopular)
 			{
@@ -891,7 +905,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Category.ResourcesTotalDuration = totalDuration.ToString();
 			model.Category.ResourcesAmount = resourcesAmount;
 			model.MoreCategories = GetMoreCategories(model.Category.Id);
-			
+			log.Info("Helper RPC End");
 			return model;
 		}
 		#endregion GetResourcesPerCategory

@@ -1,4 +1,5 @@
-﻿using SitefinityWebApp.Custom.IAFCHandBook;
+﻿using ServiceStack.Logging;
+using SitefinityWebApp.Custom.IAFCHandBook;
 using SitefinityWebApp.Mvc.Models;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,9 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[Category("General")]
 		public String CategoryName { get; set; }
 
-		
+
+		private ILog log = LogManager.GetLogger(typeof(IAFCHBResourcesPerCategoryController));
+
 		public ResourcesOrderBy OrderBy { get; set; }
 
 		public IAFCHBResourcesPerCategoryController()
@@ -36,8 +39,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 		public ActionResult Index()
         {
+			log.Info("Get Resouces Per Category Index Start");
 			var model = GetData(OrderBy);
 			var view = View("ResourcesPerCategory", model);
+			log.Info("Get Resouces Per Category Index End");
 			return view;
 		}
 
@@ -46,10 +51,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[HttpPost]	
 		public ActionResult GetOrderedResources(int orderBy)
 		{
+			log.Info("Get Resouces Per Category Start");
 			var newOrderBy = (ResourcesOrderBy)Enum.ToObject(typeof(ResourcesOrderBy), orderBy);
 			var model = GetData(newOrderBy);
+			log.Info("Get Resouces Per Category End");
 			return View("_ResourcesPerCategoryDetails", model.Resources);
 			
+
 		}
 
 		[HttpPost]
