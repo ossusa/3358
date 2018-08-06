@@ -25,7 +25,7 @@
 					<tr>
 						<td>
 							<div> @item.ResourceDetails.ResourceType</div>
-							<a href='@item.ResourceUrl'>@item.ResourceTitle</a>
+							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
 							<div>@Html.Raw(item.ResourceDetails.ResourceText)</div>
 							<br />
 					<td>
@@ -96,7 +96,7 @@
 			$.ajax({
 				type: 'POST',
 				url: '@Url.Action("AddLike", "IAFCHBResourcesPerCategory")',
-				data: { resourceId },
+				data: { resourceId: resourceId },
 				dataType: "json",
 				success: function (response) {
 					$("#resourceLikes_" + resourceId).html(response);
@@ -112,7 +112,7 @@
 			$.ajax({
 				type: 'POST',
 				url: '@Url.Action("AddDislike", "IAFCHBResourcesPerCategory")',
-				data: { resourceId },
+				data: { resourceId: resourceId },
 				dataType: "json",
 				success: function (response) {
 					$("#resourceDislikes_" + resourceId).html(response);
@@ -129,7 +129,7 @@
 			$.ajax({
 				type: 'POST',
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBResourcesPerCategory")',
-				data: { resourceId },
+				data: { resourceId: resourceId },
 				dataType: "json",
 				success: function (response) {										
 					if (response == true) {						

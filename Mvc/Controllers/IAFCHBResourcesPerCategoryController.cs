@@ -53,10 +53,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return view;
 		}
 
-		
-		
 
-		[HttpPost]
+
+
+		[RelativeRoute("AddLike"), HttpPost]
 		public ActionResult AddLike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
@@ -66,7 +66,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 
-		[HttpPost]
+		[RelativeRoute("AddDislike"), HttpPost]
 		public ActionResult AddDislike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
@@ -75,7 +75,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return Json(dislikes);
 		}
 
-		[HttpPost]
+		[RelativeRoute("AddToMyHandBook"), HttpPost]
 		public ActionResult AddToMyHandBook(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
@@ -84,7 +84,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return Json(addToMyHandBook);
 		}
 
-		[HttpPost]
+		[RelativeRoute("AddAllToMyHandBook"), HttpPost]
 		public ActionResult AddAllToMyHandBook(String categoryId)
 		{
 			var id = Guid.Parse(categoryId);
@@ -92,7 +92,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return Json(addAllToMyHandBook);
 		}
 
-		[HttpPost]
+		[RelativeRoute("FollowCategory"), HttpPost]
 		public ActionResult FollowCategory(String categoryId)
 		{
 			var id = Guid.Parse(categoryId);

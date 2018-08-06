@@ -31,8 +31,38 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return View("ResourceDetails", model);			
 		}
 
-		
+		[RelativeRoute("AddLike"), HttpPost]
+		public ActionResult AddLike(String resourceId)
+		{
+			var id = Guid.Parse(resourceId);
+			var likes = AddLikeForResource(id).ToString();
 
+			return Json(likes);
+		}
+
+
+		[RelativeRoute("AddDislike"), HttpPost]
+		public ActionResult AddDislike(String resourceId)
+		{
+			var id = Guid.Parse(resourceId);
+			var dislikes = AddDislikeForResource(id).ToString();
+
+			return Json(dislikes);
+		}
+
+		#region Likes
+		public int AddLikeForResource(Guid resourceID)
+		{
+			var currentLikes = handBookHelper.AddLikeForResource(resourceID);
+			return currentLikes;
+		}
+
+		public int AddDislikeForResource(Guid resourceID)
+		{
+			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID);
+			return currentDislikes;
+		}
+		#endregion AddLikes
 
 
 

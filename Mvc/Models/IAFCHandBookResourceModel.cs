@@ -13,23 +13,25 @@ namespace SitefinityWebApp.Mvc.Models
 			Comments = new List<IAFCHandBookCommentModel>();
 			Likes = new IAFCHandBookLikesModel();
 			ResourceDetails = new IAFCHandBookResourceDetailsModel();
+			MoreResources = new List<IAFCHandBookMoreResourcesModel>();
 		}
 
 		public IAFCHandBookResourceModel(Guid id, string resourceTitle, DateTime dateCreated)
 		{
 			Id = id;
 			ResourceTitle = resourceTitle;
-			DateCreated = dateCreated;			
+			DateCreated = dateCreated;
 			AddToMyHandBook = false;
 			Comments = new List<IAFCHandBookCommentModel>();
 			Likes = new IAFCHandBookLikesModel();
 			ResourceDetails = new IAFCHandBookResourceDetailsModel();
-		}		
+			MoreResources = new List<IAFCHandBookMoreResourcesModel>();
+		}
 
 		public System.Guid Id { get; set; }
-		public string ResourceTitle { get; set; }		
+		public string ResourceTitle { get; set; }
 		public DateTime DateCreated { get; set; }
-		public string ResourceUrl { get; set; }		
+		public string ResourceUrl { get; set; }
 		public int CommentsAmount { get; set; }
 		public Boolean AddToMyHandBook { get; set; }
 		public List<IAFCHandBookCommentModel> Comments { get; set; }
@@ -37,6 +39,8 @@ namespace SitefinityWebApp.Mvc.Models
 		public IAFCHandBookLikesModel Likes { get; set; }
 
 		public IAFCHandBookResourceDetailsModel ResourceDetails { get; set; }
+
+		public List<IAFCHandBookMoreResourcesModel> MoreResources {get;set;}
 
 		
 	}

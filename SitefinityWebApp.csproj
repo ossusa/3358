@@ -899,6 +899,7 @@
     <Compile Include="Mvc\Models\ContentListSearchCriteria.cs" />
     <Compile Include="Mvc\Models\ContentListSearchResult.cs" />
     <Compile Include="Mvc\Models\EventsCalendarModel.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookMoreResourcesModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookTopicCategoryModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookCommentModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookLikesModel.cs" />

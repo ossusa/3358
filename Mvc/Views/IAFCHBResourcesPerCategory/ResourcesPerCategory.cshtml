@@ -116,7 +116,7 @@
 			$.ajax({
 				type: 'POST',
 				url: '@Url.Action("AddAllToMyHandBook", "IAFCHBResourcesPerCategory")',
-				data: { categoryId },
+				data: { categoryId: categoryId },
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
@@ -134,7 +134,7 @@
 			$.ajax({
 				type: 'POST',
 				url: '@Url.Action("FollowCategory", "IAFCHBResourcesPerCategory")',
-				data: { categoryId },
+				data: { categoryId: categoryId },
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
