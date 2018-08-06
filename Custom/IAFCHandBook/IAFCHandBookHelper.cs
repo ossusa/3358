@@ -574,6 +574,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 												resoucre.GetValue("Title").ToString(),
 												resoucre.DateCreated);
 			
+			
 			#region GetResource
 			
 			var externalResourcesExist = resoucre.GetRelatedItems("ExternalResources").Cast<DynamicContent>().Count();
@@ -648,7 +649,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				handBookResource.ResourceDetails.Category.ParentCategoryUrl = resourceParentCategoryUrl;
 				handBookResource.ResourceDetails.ResourceType = resourceTypeTitle;
 				handBookResource.ResourceDetails.ImageUrl = img.Url;
-				
+				handBookResource.ResourceUrl = resourceCategoryUrl + "/resourcedetails/" + resoucre.UrlName.ToString();
+
 			}
 			else
 			{				
@@ -949,7 +951,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();			
 			var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType).
-						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName.ToString() == name).
+						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name).
 						First();
 
 			var model = GetResourceDetails(resourceItem);			
