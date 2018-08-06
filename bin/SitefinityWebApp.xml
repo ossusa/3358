@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SitefinityWebApp</name>
+    </assembly>
+    <members>
+        <member name="M:SitefinityWebApp.Api.Controller.EventsController.GetAll">
+            Get all events.
+        </member>
+        <member name="M:SitefinityWebApp.Api.Controller.EventsController.GetFuture">
+            Get all future events.
+        </member>
+        <member name="T:SitefinityWebApp.Api.Models.EventsViewModel">
+            <summary>
+            Wrapper for list of events and metadata on the list
+            @TODO: Implement paging, consider adding taxonomy summary.
+            </summary>
+        </member>
+        <member name="F:SitefinityWebApp.App_Master.Base.aspnetForm">
+            <summary>
+            aspnetForm control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SitefinityWebApp.App_Master.Base.ResourceLinks1">
+            <summary>
+            ResourceLinks1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SitefinityWebApp.App_Master.Base.PublicWrapper">
+            <summary>
+            PublicWrapper control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SitefinityWebApp.App_Master.Base.Body">
+            <summary>
+            Body control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SitefinityWebApp.App_Master.Base.iMisFrm">
+            <summary>
+            iMisFrm control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:SitefinityWebApp.AzureWebRole">
+            <summary>
+            Sitefinity's Windows Azure role entry point.
+            </summary>
+            <remarks>
+            Windows Azure looks for RoleEntryPoint inheritors only in the web role assembly and that is why this class is defined here.
+            The functionality goes into the base class - <see cref="T:Telerik.Sitefinity.Cloud.WindowsAzure.AzureWebRoleBase"/>.
+            </remarks>
+        </member>
+        <member name="M:SitefinityWebApp.Custom.Control.MetaDataTags.OnInit(System.EventArgs)">
+            <summary>
+                In-order for this to work with 
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:SitefinityWebApp.Custom.Utilities.Extensions.GetWidget(System.Web.UI.Page,System.Type)">
+            <summary>
+            Caution: uses reflection. Also, only use in PreRender events - the controls won't have values until then
+            </summary>
+            <param name="page"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SitefinityWebApp.Custom.Utilities.Extensions.AddCustomMetaTags(System.Web.UI.Page,System.String,System.String,System.Boolean)" -->
+        <member name="M:SitefinityWebApp.Custom.Utilities.Extensions.RemoveExistingPublishedTags(System.Web.UI.Page)">
+            <summary>
+            Removes any exsisting meta tags on the page with a name of "published". Note this does not include 
+            "og:article:published_time" tags. This is intended to override a published date set by the page
+            this widget is on with the published date of this widget's content item.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.Custom.News.BlendedNewsHelper.BuildQuery(System.Guid[],System.String[],System.String)">
+            <summary>
+            Sitfinity update after 7.3 requires ISearchQuery Object to be passed into ISearchService. 
+            In order to accommodate the change, based on prior string definition the required changes
+            have been meet.
+            
+            Ex.
+                Prior setup produced 
+                            "(Provider:OpenAccessDataProvider OR Provider:NewsReleaseProvider OR Provider:TodaysHeadlinesProvider) AND (CategoryIds:b97e989c41746fcd88eaff000002c0f4)"
+                    when passed in
+                        categories => {System.Guid[1]}
+                                    [0]: {b97e989c-4174-6fcd-88ea-ff000002c0f4}
+            
+                        providers => {string[3]}
+                                    [0]: "OpenAccessDataProvider"
+                                    [1]: "NewsReleaseProvider"
+                                    [2]: "TodaysHeadlinesProvider"
+                
+                the breaking changed required the string produced to be changed to ISearchQuery
+                which has been converted to SearchQueryGroup.
+            
+                for more info on the object definition, please refer to sitefinity definition. 
+            
+            </summary>
+            <param name="categories"> Categories to target </param>
+            <param name="providers"> Providers to uses </param>
+            <param name="terms"> Optional terms </param>
+            <returns></returns>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.EventsCalendarController.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.Mvc.Controllers.EventsCalendarController.Index">
+            <summary>
+            This is the default Action.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.CollectionId">
+            <summary>
+              String containing a comma-separated series of integers, each
+            representing a database of crawled information.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.SearchBloxServerIp">
+            <summary>
+              String containing an IP Address or URL pointing to the Searchblox
+            instance.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.FacetNames">
+            <summary>
+              String containing a series of facet names, comma separated.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.DateRangeName">
+            <summary>
+              String containing the name of the special date ranges facet.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.ShowSearchBox">
+            <summary>
+              If set to true, will display a search box alongside the search
+            results.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.CategoryLimiter">
+            <summary>
+            Gets or sets the category limiter.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.MetatagLimiter">
+            <summary>
+            Gets or sets the metatag limiter.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.ExcludedCategories">
+            <summary>
+            Gets or sets the excluded categories comma-delimited string.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.Index">
+            <summary>
+            This is the default Action.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.Mvc.Controllers.ResourceLibraryController.Index(SitefinityWebApp.Mvc.Models.SearchCriteria,System.Int32)">
+            <summary>
+            This is the default Action.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.Mvc.Controllers.SharedController.SiteAppRunner">
+            <summary>
+            A convenience to get connected to app
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SitefinityWebApp.Mvc.Controllers.SharedController.SetAppSiteUser(System.Guid,Mx.IAFC.Webapp.Data.GenericResultSerialized)">
+            <summary>
+            Can be null if container doesnot have visitUser
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.AccountModel.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.AuthServiceModel.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.EventsCalendarModel.Message">
+            <summary>
+            Gets or sets the message.
+            </summary>
+        </member>
+        <member name="T:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.CollectionId">
+            <summary>
+              String containing a comma-separated series of integers, each
+            representing a database of crawled information.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.SearchBloxServerIp">
+            <summary>
+              String containing an IP Address or URL pointing to the Searchblox
+            instance.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.FacetNames">
+            <summary>
+              String containing a series of facet names, comma separated.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.DateRangeName">
+            <summary>
+              String containing the name of the special date ranges facet.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.ShowSearchBox">
+            <summary>
+              If set to true, will display a search box alongside the search
+            results.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.CategoryLimiter">
+            <summary>
+              Gets or sets the message.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.MetatagLimiter">
+            <summary>
+              Gets or sets the metatag limiter, whatever that means.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.Mvc.Models.SBAngularSearchResultsModel.ExcludedCategories">
+            <summary>
+              String containing each category to exclude, comma separated.
+            </summary>
+        </member>
+        <member name="T:SitefinityWebApp.WidgetDesigners.Account.AccountDesigner">
+            <summary>
+            Represents a designer for the <typeparamref name="SitefinityWebApp.Mvc.Controllers.AccountController.Mvc.Controllers.AccountController"/> widget
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.Account.AccountDesigner.LayoutTemplateName">
+            <summary>
+            Obsolete. Use LayoutTemplatePath instead.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.Account.AccountDesigner.LayoutTemplatePath">
+            <summary>
+            Gets the layout template's relative or virtual path.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.Account.AccountDesigner.Message">
+            <summary>
+            Gets the control that is bound to the Message property
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.Account.AccountDesigner.ViewTemplate">
+            <summary>
+            Gets the control that is bound to the Message property
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.Account.AccountDesigner.GetScriptDescriptors">
+            <summary>
+            Gets a collection of script descriptors that represent ECMAScript (JavaScript) client components.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.Account.AccountDesigner.GetScriptReferences">
+            <summary>
+            Gets a collection of ScriptReference objects that define script resources that the control requires.
+            </summary>
+        </member>
+        <member name="T:SitefinityWebApp.WidgetDesigners.AuthService.AuthServiceDesigner">
+            <summary>
+            Represents a designer for the <typeparamref name="SitefinityWebApp.Mvc.Controllers.AuthServiceController.Mvc.Controllers.AuthServiceController"/> widget
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.AuthService.AuthServiceDesigner.LayoutTemplateName">
+            <summary>
+            Obsolete. Use LayoutTemplatePath instead.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.AuthService.AuthServiceDesigner.LayoutTemplatePath">
+            <summary>
+            Gets the layout template's relative or virtual path.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.AuthService.AuthServiceDesigner.Message">
+            <summary>
+            Gets the control that is bound to the Message property
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.AuthService.AuthServiceDesigner.GetScriptDescriptors">
+            <summary>
+            Gets a collection of script descriptors that represent ECMAScript (JavaScript) client components.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.AuthService.AuthServiceDesigner.GetScriptReferences">
+            <summary>
+            Gets a collection of ScriptReference objects that define script resources that the control requires.
+            </summary>
+        </member>
+        <member name="T:SitefinityWebApp.WidgetDesigners.BlendedNewsDesigner">
+            <summary>
+            Represents a designer for the <typeparamref name="SitefinityWebApp.Mvc.Controllers.BlendedNewsListController.Mvc.Controllers.BlendedNewsListController"/> widget
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.BlendedNewsDesigner.LayoutTemplateName">
+            <summary>
+            Obsolete. Use LayoutTemplatePath instead.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.BlendedNewsDesigner.LayoutTemplatePath">
+            <summary>
+            Gets the layout template's relative or virtual path.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.BlendedNewsDesigner.ItemsPerPage">
+            <summary>
+            Gets the control that is bound to the ItemsPerPage property
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.BlendedNewsDesigner.Limit">
+            <summary>
+            Gets the control that is bound to the Limit property
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.BlendedNewsDesigner.GetScriptDescriptors">
+            <summary>
+            Gets a collection of script descriptors that represent ECMAScript (JavaScript) client components.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.BlendedNewsDesigner.GetScriptReferences">
+            <summary>
+            Gets a collection of ScriptReference objects that define script resources that the control requires.
+            </summary>
+        </member>
+        <member name="T:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner">
+            <summary>
+            Represents a designer for the <typeparamref name="SitefinityWebApp.Mvc.Controllers.SBAngularSearchResultsController.Mvc.Controllers.SBAngularSearchResultsController"/> widget
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.LayoutTemplateName">
+            <summary>
+            Obsolete. Use LayoutTemplatePath instead.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.LayoutTemplatePath">
+            <summary>
+            Gets the layout template's relative or virtual path.
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.CollectionId">
+            <summary>
+            Gets the control that is bound to the CollectionId property
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.DateRangeName">
+            <summary>
+            Gets the control that is bound to the DateRangeName property
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.FacetNames">
+            <summary>
+            Gets the control that is bound to the FacetNames property
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.SearchBloxServerIp">
+            <summary>
+            Gets the control that is bound to the SearchBloxServerIp property
+            </summary>
+        </member>
+        <member name="P:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.ShowSearchBox">
+            <summary>
+            Gets the control that is bound to the ShowSearchBox property
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.GetScriptDescriptors">
+            <summary>
+            Gets a collection of script descriptors that represent ECMAScript (JavaScript) client components.
+            </summary>
+        </member>
+        <member name="M:SitefinityWebApp.WidgetDesigners.SBAngularSearchResultsDesigner.GetScriptReferences">
+            <summary>
+            Gets a collection of ScriptReference objects that define script resources that the control requires.
+            </summary>
+        </member>
+    </members>
+</doc>
