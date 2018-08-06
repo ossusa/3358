@@ -35,7 +35,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddLike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
-			var likes = AddLikeForResource(id).ToString();
+			var likes = AddLikeForResource(id, "Resource").ToString();
 
 			return Json(likes);
 		}
@@ -45,21 +45,39 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddDislike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
-			var dislikes = AddDislikeForResource(id).ToString();
+			var dislikes = AddDislikeForResource(id, "Resourse").ToString();
 
 			return Json(dislikes);
 		}
 
-		#region Likes
-		public int AddLikeForResource(Guid resourceID)
+		[RelativeRoute("AddToMyHandBook"), HttpPost]
+		public ActionResult AddToMyHandBook(String resourceId)
 		{
-			var currentLikes = handBookHelper.AddLikeForResource(resourceID);
+			var id = Guid.Parse(resourceId);
+			Boolean addToMyHandBook = true;
+
+			return Json(addToMyHandBook);
+		}
+
+		[RelativeRoute("AddComment"), HttpPost]
+		public ActionResult AddComment(String commentTxt, String resourceId)
+		{
+			var id = Guid.Parse(resourceId);
+			string CommentTxt = commentTxt;
+
+			return Json(CommentTxt);
+		}
+
+		#region Likes
+		public int AddLikeForResource(Guid resourceID, string resourceType)
+		{
+			var currentLikes = handBookHelper.AddLikeForResource(resourceID, resourceType);
 			return currentLikes;
 		}
 
-		public int AddDislikeForResource(Guid resourceID)
+		public int AddDislikeForResource(Guid resourceID, string resourceType)
 		{
-			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID);
+			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID, resourceType);
 			return currentDislikes;
 		}
 		#endregion AddLikes

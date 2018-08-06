@@ -11,7 +11,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 	[ControllerToolboxItem(Name = "IAFCHBRecentlyAddedResources", Title = "Recently Added Resources", SectionName = "Hand Book MVC Widgets")]
 	public class IAFCHBRecentlyAddedResourcesController : Controller
     {
-
+		
 		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
 
 		public IAFCHBRecentlyAddedResourcesController()
@@ -64,13 +64,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 		#region Likes
 		public int AddLikeForResource(Guid resourceID)
 		{
-			var currentLikes = handBookHelper.AddLikeForResource(resourceID);
+			var currentLikes = handBookHelper.AddLikeForResource(resourceID, "Resource");
 			return currentLikes;
 		}
 
 		public int AddDislikeForResource(Guid resourceID)
 		{			
-			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID);
+			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID, "Resource");
 			return currentDislikes;
 		}
 		#endregion AddLikes

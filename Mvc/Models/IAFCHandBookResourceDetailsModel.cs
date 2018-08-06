@@ -8,8 +8,12 @@ namespace SitefinityWebApp.Mvc.Models
 	public class IAFCHandBookResourceDetailsModel
 	{
 		public Guid id { get; set; }
-		public string ResourceTitle { get; set; }		
-		public string ResourceText { get; set; }
+		public string ResourceTitle { get; set; }
+
+		public string ResourceSummary { get; set; }
+
+		public string ResourceDescription { get; set; }
+
 		public IAFCHandBookTopicCategoryModel Category { get; set; }		
 		public string ResourceType { get; set; }
 		public TimeSpan Duration { get; set; }

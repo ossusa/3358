@@ -10,7 +10,7 @@
 			<td>
 				<span>Featured @Model.ResourceDetails.ResourceType . @Model.ResourceDetails.Category.CategoryTitle</span>
 				<div>@Model.ResourceDetails.ResourceTitle</div>
-				<div>@Html.Raw(Model.ResourceDetails.ResourceText)</div>
+				<div>@Html.Raw(Model.ResourceDetails.ResourceSummary)</div>
 				<button type="submit" formaction="@Model.ResourceUrl" > View </button>
 				<span id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 					@if (Model.AddToMyHandBook == true)

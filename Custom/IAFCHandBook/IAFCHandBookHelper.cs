@@ -579,7 +579,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				//Get single field
 				resourceInfo.id = externalResourceItem.Id;
 				resourceInfo.ResourceTitle = externalResourceItem.GetValue("Title").ToString();
-				resourceInfo.ResourceText = externalResourceItem.GetValue("shortsummary").ToString();
+				resourceInfo.ResourceSummary = externalResourceItem.GetValue("shortsummary").ToString();
+				resourceInfo.ResourceDescription = externalResourceItem.GetValue("ResourceDescription").ToString();
 
 				TimeSpan duration = new TimeSpan(0, 0, 0);
 				try
@@ -657,7 +658,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 					resourceInfo.id = resourceItem.Id;
 					resourceInfo.ResourceTitle = resourceItem.GetValue("Title").ToString();
-					resourceInfo.ResourceText = resourceItem.GetValue("shortsummary").ToString();
+					resourceInfo.ResourceSummary = resourceItem.GetValue("shortsummary").ToString();
+					resourceInfo.ResourceDescription = resourceItem.GetValue("Article").ToString();
 					resourceInfo.Duration = new TimeSpan();
 					resourceInfo.VideoEmbedCode = String.Empty;
 
@@ -1091,7 +1093,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion Categories Methods
 
 		#region Likes
-		public int AddLikeForResource(Guid resourceID)
+		public int AddLikeForResource(Guid resourceID, String resourceType)
 		{
 
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -1120,7 +1122,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			
 		}
 
-		public int AddDislikeForResource(Guid resourceID)
+		public int AddDislikeForResource(Guid resourceID, String resourceType)
 		{
 
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();

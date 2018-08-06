@@ -103,13 +103,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 		#region Likes
 		public int AddLikeForResource(Guid resourceID)
 		{
-			var currentLikes = handBookHelper.AddLikeForResource(resourceID);
+			var currentLikes = handBookHelper.AddLikeForResource(resourceID, "Resource");
 			return currentLikes;
 		}
 
 		public int AddDislikeForResource(Guid resourceID)
 		{
-			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID);
+			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID, "Resource");
 			return currentDislikes;
 		}
 		#endregion AddLikes
