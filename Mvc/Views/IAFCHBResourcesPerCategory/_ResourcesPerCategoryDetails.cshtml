@@ -1,7 +1,7 @@
 ﻿@model  List<SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-	<div class="table">
+	<table border="0">
 
 		@{int columnCounter = 0; }
 
@@ -9,29 +9,22 @@
 		{
 			if (columnCounter == 0)
 			{
-				@Html.Raw("<div class="spec">");
+				@Html.Raw("<tr>");
 			}
 
-			<div class="td">
-				<div class="table">
-					<div class="tr">
-						<div class="td">
-							<img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
+			<td>
+				<table border="0">
 
+							<img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
+							<br />
 							<a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
 							<span> @item.ResourceDetails.DurationStr</span>
-						</div>
-					</div>
-					<div class="tr">
-						<div class="td">
+
 							<div> @item.ResourceDetails.ResourceType</div>
 							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
 							<div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
 							<br />
-					<div>
-					</div>
-					<div class="tr">
-						<div class="td">
+
 							<div id="@string.Format("{0}_{1}", "addToMyHandBook" , item.Id.ToString())">
 									<div id="addToMyHandBook">
 										@if (item.AddToMyHandBook == true)
@@ -44,30 +37,27 @@
 										}
 									</div>
 								</div>
-						</div>
-						<div class="td">
+
 							<a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
-						</div>
-						<div class="td">
+
 							<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
 							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 								<span>@item.Likes.Likes</span>
 							</div>
-						</div>
-						<div class="td">
+
 							<button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
 							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 								<span>@item.Likes.Dislikes</span>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+
+					</tr>
+				</table>
+			</td>
 
 			if (columnCounter == 1)
 			{
 				columnCounter = 0;
-				@Html.Raw("</div>")
+				@Html.Raw("</tr>")
 			}
 			else
 			{
@@ -77,11 +67,11 @@
 		@{
 			if (columnCounter != 0)
 			{
-				@Html.Raw("</div>")
+				@Html.Raw("</tr>")
 			}
 		}
-	</div>
-</div>
+	</table>
+
 
 
 <script type="text/javascript">
