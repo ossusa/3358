@@ -1509,7 +1509,7 @@ p{
 .resources__community-label{
     display: none;
 }
-.community__section{
+.community__section section{
     display: flex;
     justify-content: center;
     align-items: flex-start;
