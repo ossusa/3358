@@ -1495,7 +1495,7 @@ p{
     position: relative;
     width: 100%;
 }
-resources__community-label{
+.resources__community-label{
     display: none;
 }
 .resources__community-label a{
