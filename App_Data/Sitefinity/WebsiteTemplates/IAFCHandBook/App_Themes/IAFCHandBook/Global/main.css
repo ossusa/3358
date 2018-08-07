@@ -1467,4 +1467,7 @@ p{
     color: #fff;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
