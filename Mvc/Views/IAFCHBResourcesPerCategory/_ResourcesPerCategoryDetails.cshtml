@@ -16,10 +16,16 @@
 <div class="resources__slide-img">
 							<img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
 							<br />
-  <a href="@item.ResourceDetails.Category.ParentCategoryUrl" class="resources__slide-label">                    <span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a>
-              <a href="@item.ResourceDetails.Category.CategoryUrl" class="resources__slide-time">
-               <span class="resources--time">@item.ResourceDetails.Category.CategoryTitle</span>
-							<span> @item.ResourceDetails.DurationStr</span></a>
+  <div class="resources__slide-label">
+  <a href="@item.ResourceDetails.Category.ParentCategoryUrl">                    <span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a>
+              <a href="@item.ResourceDetails.Category.CategoryUrl">
+               <span>@item.ResourceDetails.Category.CategoryTitle</span>
+							</a>
+    </div>
+     <div class="resources__slide-time">
+    <div class="resources--time">&nbsp;</div>
+       @item.ResourceDetails.DurationStr
+    </div>
 </div>
 							<div> @item.ResourceDetails.ResourceType</div>
 							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
