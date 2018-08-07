@@ -3,14 +3,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <div>
-	<table border="1">
-		<tr>
-			<th>
-				<h3>@Model.Category.ParentCategoryTitle</h3>
-			</th>
-		</tr>
-		<tr>
-			<th>
+	<div class="community__head">
+		<div class="breadcrumbs">@Model.Category.ParentCategoryTitle</div>
+		<div class="community__head-title">
 				<select id="UrlList" onchange="doNavigate()">
 					<option value=@Model.Category.CategoryUrl>@Model.Category.CategoryTitle</option>
 					@foreach (var item in Model.MoreCategories)
@@ -19,60 +14,55 @@
 					}
 
 				</select>
+				<h5>@Model.Category.CategoryDescription</h5>
+			</div>
 
-			</th>
-		</tr>
-		<tr>
-			<th>
-				<h3>@Model.Category.CategoryDescription</h3>
-			</th>
-		</tr>
-		<tr>
-			<th>
-				<h3>@Model.Category.ResourcesAmount Resources  </h3>
-			</th>
-			<th>
-				@Model.Category.ResourcesTotalDuration
-			</th>
-			<th>
-				
-				@{	var MostPopularUrl = Model.Category.CategoryUrl + "/MostPopular";
-					var MostRecentUrl = Model.Category.CategoryUrl + "/MostRecent";
-					var AlphabeticalAZUrl = Model.Category.CategoryUrl + "/AlphabeticalAZ";
-					var AlphabeticalZAUrl = Model.Category.CategoryUrl + "/AlphabeticalZA";
-				}
 
-				<select id="UrlOrderByList" onchange="doOrderByNavigate()">
-					@foreach (var orderByItem in Model.OrderBy)
-					{
-						if (orderByItem.Selected)
-						{
-							<option value=@orderByItem.Url selected>@orderByItem.Title</option>
-						}
-						else
-						{
-							<option value=@orderByItem.Url >@orderByItem.Title</option>
-						}
 
-					}
-				</select>
-		
-			</th>
-			<th>
-				<div id="addAllToMyHandBook">
-					<button type="button" class="addAllToMyHandBook" data-id="@Model.Category.Id.ToString()"> +Add All to MyHandBook </button>
-				</div>
-			</th>
-			<th>
-				<div id="followCategory">
-					<button type="button" class="followCategory" data-id="@Model.Category.Id.ToString()"> Follow </button>
-				</div>
-			</th>
-		</tr>
-	</table>
+		<div class="community__head-button-group">
+		    <div class="community__head-buttons">
+		        <div class="community__head-button">
+				    <h3>@Model.Category.ResourcesAmount Resources  </h3>
+			    </div>
+			    <div class="community__head-button">
+			        @Model.Category.ResourcesTotalDuration
+			    </div>
+            </div>
+            <div class="community__head-buttons">
+                <div class="community__head-btn">
+
+                    @{	var MostPopularUrl = Model.Category.CategoryUrl + "/MostPopular";
+                        var MostRecentUrl = Model.Category.CategoryUrl + "/MostRecent";
+                        var AlphabeticalAZUrl = Model.Category.CategoryUrl + "/AlphabeticalAZ";
+                        var AlphabeticalZAUrl = Model.Category.CategoryUrl + "/AlphabeticalZA";
+                    }
+
+                    <select id="UrlOrderByList" onchange="doOrderByNavigate()">
+                        @foreach (var orderByItem in Model.OrderBy)
+                        {
+                            if (orderByItem.Selected)
+                            {
+                                <option value=@orderByItem.Url selected>@orderByItem.Title</option>
+                            }
+                            else
+                            {
+                                <option value=@orderByItem.Url >@orderByItem.Title</option>
+                            }
+
+                        }
+                    </select>
+            	</div>
+            	<div id="addAllToMyHandBook" class="community__head-btn">
+                    <button type="button" class="addAllToMyHandBook" data-id="@Model.Category.Id.ToString()"> +Add All to MyHandBook </button>
+                </div>
+            	<div id="followCategory" class="community__head-btn">
+                    <button type="button" class="followCategory" data-id="@Model.Category.Id.ToString()"> Follow </button>
+                </div>
+            </div>
+
+		</div>
+	</div>
 </div>
-
-
 
 <div id="partViewID">
 	@Html.Partial("_ResourcesPerCategoryDetails", Model.Resources)
