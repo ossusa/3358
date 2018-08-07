@@ -1514,3 +1514,12 @@ p{
     justify-content: center;
     align-items: flex-start;
 }
+.community__topics{
+    background-color: #2b4b6b;
+    width: 100%;
+    margin-top: 64px;
+    margin-bottom: 72px;
+}
+.community__topics-title{
+    color: #fff;
+}
