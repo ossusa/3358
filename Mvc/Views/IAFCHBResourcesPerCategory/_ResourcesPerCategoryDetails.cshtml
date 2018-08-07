@@ -51,10 +51,12 @@
                         <div class="resources__slide-social">
 							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount Comments</a>
 
-							<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-								<span>@item.Likes.Likes</span>
-							</div>
+							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()"> Add Like
+							 <div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+                                <span>@item.Likes.Likes</span>
+                             </div>
+                             </button>
+
 
 							<button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
 							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
