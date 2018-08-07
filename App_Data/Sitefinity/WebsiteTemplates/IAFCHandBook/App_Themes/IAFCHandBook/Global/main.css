@@ -1491,3 +1491,18 @@ p{
 .community__head-btn:nth-of-type(1) select{
     margin-left: 0;
 }
+.resources__community-img {
+    position: relative;
+    width: 100%;
+}
+.resources__community-label a{
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+    background: #fff;
+    padding: 7px 9px;
+    border-radius: 3px;
+    color: #666;
+    font-weight: 600;
+    font-size: 0.938em;
+}
