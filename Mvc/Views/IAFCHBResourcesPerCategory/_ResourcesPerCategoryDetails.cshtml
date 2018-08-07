@@ -48,8 +48,8 @@
 										}
 									</div>
 								</div>
-
-							<a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
+                        <div class="resources__slide-social">
+							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount Comments</a>
 
 							<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
 							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
@@ -60,6 +60,7 @@
 							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 								<span>@item.Likes.Dislikes</span>
 							</div>
+                        </div>
                         </div>
                     </div>
 				</div>
