@@ -1459,14 +1459,9 @@ p{
     align-items: center;
     font-size: 20px;
     justify-content: center;
+    flex-direction: column;
     margin-right: 24px;
 }
 .community__head-button:nth-of-type(2){
     margin-right: 0;
-}
-.community__head-button p{
-    color: #fff;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 700;
-    text-align: center;
 }
