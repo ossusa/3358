@@ -12,26 +12,26 @@
 				@Html.Raw("<tr>");
 			}
 
-
-				<table border="1">
+			<td>
+				<table border="0">
 					<tr>
-
+						<td>
 							<img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
 							<br />
 							<a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
 							<span> @item.ResourceDetails.DurationStr</span>
-
+						</td>
 					</tr>
 					<tr>
-
+						<td>
 							<div> @item.ResourceDetails.ResourceType</div>
 							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
 							<div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
 							<br />
-
+					<td>
 					</tr>
 					<tr>
-
+						<td>
 							<div id="@string.Format("{0}_{1}", "addToMyHandBook" , item.Id.ToString())">
 									<div id="addToMyHandBook">
 										@if (item.AddToMyHandBook == true)
@@ -44,19 +44,22 @@
 										}
 									</div>
 								</div>
-
+						</td>
+						<td>
 							<a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
-
+						</td>
+						<td>
 							<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
 							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 								<span>@item.Likes.Likes</span>
 							</div>
-
+						</td>
+						<td>
 							<button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
 							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 								<span>@item.Likes.Dislikes</span>
 							</div>
-
+						</td>
 					</tr>
 				</table>
 			</td>
