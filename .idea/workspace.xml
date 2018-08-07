@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e924ca23-0456-4e1a-9364-57f64ca22318" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,16 +22,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_ResourcesPerCategoryDetails.cshtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_ResourcesPerCategoryDetails.cshtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="425">
+              <caret line="46" column="200" selection-start-line="46" selection-start-column="200" selection-end-line="46" selection-end-column="200" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="788">
@@ -57,8 +57,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/ResourcesPerCategory.cshtml" />
-        <option value="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml" />
         <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" />
+        <option value="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml" />
       </list>
     </option>
   </component>
@@ -739,12 +739,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1533650078170</updated>
-      <workItem from="1533650081359" duration="10699000" />
+      <workItem from="1533650081359" duration="10969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10699000" />
+    <option name="totallyTimeSpent" value="10969000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -792,17 +792,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" column="42" lean-forward="true" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="788">
           <caret line="1510" column="1" selection-start-line="1510" selection-start-column="1" selection-end-line="1510" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="46" column="200" selection-start-line="46" selection-start-column="200" selection-end-line="46" selection-end-column="200" />
         </state>
       </provider>
     </entry>
