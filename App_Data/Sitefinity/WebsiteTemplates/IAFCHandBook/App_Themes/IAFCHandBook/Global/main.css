@@ -1451,5 +1451,20 @@ p{
     width: 124px;
     height: 60px;
     border-radius: 3px;
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
     background-color: #2b4b6b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 24px;
+}
+.community__head-button:nth-of-type(2){
+    margin-right: 0;
+}
+.community__head-button p{
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
 }
