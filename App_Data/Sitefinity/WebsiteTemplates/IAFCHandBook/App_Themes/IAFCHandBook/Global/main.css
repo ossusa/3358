@@ -1509,3 +1509,8 @@ p{
 .resources__community-label{
     display: none;
 }
+.community__section{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

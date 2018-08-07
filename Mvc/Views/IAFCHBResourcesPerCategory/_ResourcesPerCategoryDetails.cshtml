@@ -9,13 +9,12 @@
 		{
 			if (columnCounter == 0)
 			{
-				@Html.Raw("<section>");
+				@Html.Raw("<section class="community__section">");
 			}
 
 				<div class="resources__slide">
 <div class="resources__community-img">
 							<img src='@item.ResourceDetails.ImageUrl' style="width:100%;height:407px;" />
-							<br />
   <div class="resources__community-label">
   <a href="@item.ResourceDetails.Category.ParentCategoryUrl">                    <span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a>
               <a href="@item.ResourceDetails.Category.CategoryUrl">
