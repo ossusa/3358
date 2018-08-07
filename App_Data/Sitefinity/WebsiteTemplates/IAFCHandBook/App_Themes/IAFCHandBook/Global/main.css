@@ -1479,6 +1479,15 @@ p{
     padding: 12px;
     margin-left: 16px;
 }
-.community__head-btn:nth-of-type(1) button{
+.community__head-btn select{
+    border: 1px solid #2b4b6b;
+    border-radius: 3px;
+    color: #2b4b6b;
+    font-size: 1em;
+    background: transparent;
+    padding: 12px;
+    margin-left: 16px;
+}
+.community__head-btn:nth-of-type(1){
     margin-left: 0;
 }
