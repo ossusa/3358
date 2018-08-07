@@ -1495,9 +1495,6 @@ p{
     position: relative;
     width: 100%;
 }
-.resources__community-label{
-    display: none;
-}
 .resources__community-label a{
     position: absolute;
     bottom: 11px;
@@ -1508,4 +1505,7 @@ p{
     color: #666;
     font-weight: 600;
     font-size: 0.938em;
+}
+.resources__community-label{
+    display: none;
 }
