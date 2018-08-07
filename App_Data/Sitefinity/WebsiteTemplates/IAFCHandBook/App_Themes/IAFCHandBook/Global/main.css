@@ -1414,3 +1414,23 @@ p{
     height: 50px;
     display: block;
 }
+
+
+/*Community*/
+.community__breadcrumbs{
+    margin-top: 54px;
+    font-family: 'Zilla Slab', serif;
+    color: #9b9b9b;
+    margin-left: 0;
+}
+.community__head-title select{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    color: #5591AA;
+}
+.community__head-desc{
+    color: #4a4a4a;
+    font-family: 'Zilla Slab', serif;
+    font-size: 24px;
+    font-weight: 300;
+}

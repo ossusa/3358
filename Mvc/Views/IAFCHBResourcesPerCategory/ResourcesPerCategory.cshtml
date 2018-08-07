@@ -4,7 +4,7 @@
 
 <div>
 	<div class="community__head">
-		<div class="breadcrumbs">@Model.Category.ParentCategoryTitle</div>
+		<div class="community__breadcrumbs">@Model.Category.ParentCategoryTitle</div>
 		<div class="community__head-title">
 				<select id="UrlList" onchange="doNavigate()">
 					<option value=@Model.Category.CategoryUrl>@Model.Category.CategoryTitle</option>
@@ -14,7 +14,7 @@
 					}
 
 				</select>
-				<h5>@Model.Category.CategoryDescription</h5>
+				<h5 class="community__head-desc">@Model.Category.CategoryDescription</h5>
 			</div>
 
 
