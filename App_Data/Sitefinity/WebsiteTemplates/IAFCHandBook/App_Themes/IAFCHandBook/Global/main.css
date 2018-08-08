@@ -1427,6 +1427,9 @@ p{
     .topics__text{
         padding: 0 0 13px;
     }
+    mobile-br-none{
+        display: none;
+    }
     .box-about{
         padding-left: 90px;
         padding-right: 90px;
