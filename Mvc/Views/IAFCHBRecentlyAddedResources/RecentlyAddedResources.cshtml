@@ -8,8 +8,8 @@
         @foreach (var item in Model)
         {
             <div class="resources__slide">
-                <div class="resources__slide-img" style=""background: none>
-                    <img src='@item.ResourceDetails.ImageUrl' style="object-fit: cover" />
+                <div class="resources__slide-img" style="background: none; overflow: hidden">
+                    <img src='@item.ResourceDetails.ImageUrl' />
 
                         <div class="resources__slide-label">
                            <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
