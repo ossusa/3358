@@ -1605,14 +1605,11 @@ p{
     width: 200px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-radius: 3px;
     background: transparent;
-    padding: 0 12px;
+    padding: 0 0 0 12px;
     height: 40px;
-    border: 1px solid #2b4b6b;
-}
-.selectric-community__category-select .selectric-open .selectric{
-    border-color: #2b4b6b;
 }
 .selectric-community__category-select .selectric .label{
     font-family: 'Nunito Sans', sans-serif;
@@ -1633,6 +1630,21 @@ p{
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1em;
     font-weight: 400;
-    color: #2b4b6b;
+    color: #2b4b6b !important;
     line-height: 24px;
+    padding: 8px 0;
+}
+
+.selectric-community__category-select > .selectric-items li{
+    padding: 4px 12px;
+}
+.selectric-community__category-select > .selectric-items li.selected{
+    font-weight: 700;
+}
+.selectric-community__category-select > .selectric .button:before{
+    color: #2b4b6b;
+}
+.community__head-btn .selectric-wrapper{
+    border: 1px solid #2b4b6b;
+    border-radius: 3px;
 }
