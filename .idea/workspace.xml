@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e924ca23-0456-4e1a-9364-57f64ca22318" name="Default" comment="">
+<<<<<<< HEAD
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+=======
+      <change beforePath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" afterDir="false" />
+>>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,12 +66,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="1646" column="22" selection-start-line="1646" selection-start-column="22" selection-end-line="1646" selection-end-column="22" />
               <folding />
+=======
+            <state relative-caret-position="471">
+              <caret line="1483" column="27" selection-start-line="1483" selection-start-column="21" selection-end-line="1483" selection-end-column="27" />
+>>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
             </state>
           </provider>
         </entry>
@@ -95,8 +104,13 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+=======
+            <state relative-caret-position="764">
+              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+>>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1533734036437" expanded="true" signature="3578:3780" placeholder="{...}" />
@@ -108,8 +122,48 @@
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsBuildToolPackageJson" detection-done="true" />
+=======
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>zilla</find>
+      <find>nunit</find>
+      <find>resources__slide-img</find>
+      <find>resources__slide-label</find>
+      <find>commun</find>
+      <find>topics__ul</find>
+      <find>main.js</find>
+      <find>main.css</find>
+      <find>community__topics-img</find>
+      <find>nunito</find>
+      <find>.selectric .button:after</find>
+      <find>community__title</find>
+      <find>.selectric-hover</find>
+      <find>#wrapper</find>
+      <find>btn</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml" />
+        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js" />
+        <option value="$PROJECT_DIR$/App_Master/IAFCHandBook.master" />
+        <option value="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/ResourcesPerCategory.cshtml" />
+        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css" />
+        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js" />
+        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+>>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
@@ -227,8 +281,25 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
+<<<<<<< HEAD
     <servers />
   </component>
+=======
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e924ca23-0456-4e1a-9364-57f64ca22318" name="Default" comment="" />
+      <created>1533650078170</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533650078170</updated>
+      <workItem from="1533650081359" duration="13525000" />
+      <workItem from="1533720785054" duration="12652000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="26177000" />
+  </component>
+>>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
@@ -384,6 +455,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -404,6 +476,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+=======
+    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+>>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1533734036437" expanded="true" signature="3578:3780" placeholder="{...}" />
@@ -412,6 +490,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -425,6 +504,12 @@
         <state vertical-scroll-proportion="0.78547853">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="1483" column="27" selection-start-line="1483" selection-start-column="21" selection-end-line="1483" selection-end-column="27" />
+>>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
         </state>
       </provider>
     </entry>

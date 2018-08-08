@@ -1470,7 +1470,7 @@ p{
 .community__head-button span{
     font-size: 15px;
 }
-.community__head-btn button{
+.community__head-btn{
     border: 1px solid #2b4b6b;
     border-radius: 3px;
     color: #2b4b6b;
