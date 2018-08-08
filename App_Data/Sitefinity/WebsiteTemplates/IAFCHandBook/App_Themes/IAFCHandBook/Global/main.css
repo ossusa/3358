@@ -1740,3 +1740,7 @@ p{
     border: 1px solid #2b4b6b;
     border-radius: 3px;
 }
+
+.resources__slide-label a {
+    color: #666;
+}
