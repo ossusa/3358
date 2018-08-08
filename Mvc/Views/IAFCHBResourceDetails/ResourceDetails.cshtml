@@ -44,13 +44,13 @@
 					</td>
 
 					<td>
-						<button type="button" class="addLike" data-id="@Model.Id.ToString()"> Add Like </button>
+						<button type="button" class="addCommentLike" data-id="@Model.Id.ToString()"> Add Like </button>
 						<div id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())">
 							<span>@Model.Likes.Likes</span>
 						</div>
 					</td>
 					<td>
-						<button type="button" class="addDislike" data-id="@Model.Id.ToString()"> Add Dislike </button>
+						<button type="button" class="addCommentDislike" data-id="@Model.Id.ToString()"> Add Dislike </button>
 						<div id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())">
 							<span>@Model.Likes.Dislikes</span>
 						</div>
@@ -59,36 +59,38 @@
 				<tr>
 
 					<td>
-						
-						<div id="@string.Format("{0}_{1}","commentsBlock", Model.Id)">
-							<div class="AddComment">
-							<div>
-									<textarea 
-										   cols="40" 
-										   rows ="5" 
-										   style="width:700px; height:100px"
-										   name="commentName"
-										   id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())" 
-										   value="">
+						@if (Model.UserAuthorized)
+						{
+						<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
+							<div class="replyAddComment">
+								<div>
+									<textarea cols="40"
+											  rows="5"
+											  style="width:700px; height:100px"
+											  name="commentName"
+											  id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())"
+											  value="">
 									</textarea>
 								</div>
 								<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
 							</div>
-						</div>
+						</div>				
+						}
 					</td>
 				</tr>
 
-				
+				<tr>
+					<td>@Model.CommentsAmount Comments</td>
+				</tr>
+
 				<tr>
 					<td>
+						
 						<div id="refTable">
-							
+							@Html.Partial("_IAFCHBComments", Model.Comments)
 						</div>
 					</td>
-
 				</tr>
-
-
 			</table>			
 		</td>
 		<td style="width:30%">
@@ -199,15 +201,15 @@
 			var commentMsg = $('#comment_' + resourceId).val();
 			var comment = commentMsg;
 
-			$.ajax({
+			$.ajax({			
 				type: 'POST',
 				url: '@Url.Action("AddComment", "IAFCHBResourceDetailsController")',
 				data: { commentTxt: comment, resourceId:resourceId },
 				success: function (commentsResults) {
 					$("#refTable").removeData();
-					$("#refTable").html(commentsResults);
+					$("#refTable").html(commentsResults);							
 					var inputTxt = $('#comment_' + resourceId);
-					inputTxt.replaceWith(inputTxt.val('').clone(true));
+					inputTxt.replaceWith(inputTxt.val('').clone(true));					
 				}
 
 			});

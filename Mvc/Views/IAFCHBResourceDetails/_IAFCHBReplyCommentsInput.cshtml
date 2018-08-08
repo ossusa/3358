@@ -1,0 +1,45 @@
+﻿@model Guid
+
+<div id="@string.Format("{0}_{1}","replyCommentsBlock", Model.ToString())">
+	<div class="replyAddComment">
+		<div>
+			<textarea cols="40"
+					  rows="5"
+					  style="width:700px; height:100px"
+					  name="commentName"
+					  id="@string.Format("{0}_{1}", "replyComment", Model.ToString())"
+					  value="">
+				</textarea>
+		</div>
+		<button type="button" class="addReplyCommentBtn" data-id="@Model.ToString()"> Add Reply </button>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+
+
+		//Add Reply Comment Button Pressed
+		$('.addReplyCommentBtn').on('click', function () {
+
+			var commentId = $(this).attr('data-id');
+			var commentMsg = $('#replyComment_' + commentId).val();
+			var comment = commentMsg;
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddReplyComment", "IAFCHBResourceDetailsController")',
+				data: { commentTxt: comment, commentId: commentId},
+				success: function (commentsResults) {
+					$("#commentRepliesInputView_" + commentId).html(" ");
+					$("#commentRepliesView_" + commentId).html(commentsResults);
+					$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="'+commentId+'"> Reply </button>');
+				}
+
+			});
+		});
+
+	});
+
+</script>

@@ -14,6 +14,7 @@ using Telerik.Sitefinity.Model;
 using Telerik.Sitefinity.Publishing;
 using Telerik.Sitefinity.RelatedData;
 using Telerik.Sitefinity.Security;
+using Telerik.Sitefinity.Security.Model;
 using Telerik.Sitefinity.Taxonomies;
 using Telerik.Sitefinity.Taxonomies.Model;
 using Telerik.Sitefinity.Utilities.TypeConverters;
@@ -21,6 +22,7 @@ using Telerik.Sitefinity.Libraries.Model;
 using Telerik.Sitefinity.Data.Linq.Dynamic;
 using Telerik.Sitefinity.Data;
 using ServiceStack.Logging;
+using System.Threading.Tasks;
 
 namespace SitefinityWebApp.Custom.IAFCHandBook
 {		
@@ -55,9 +57,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string OrderByAlphabeticalZA = "AlphabeticalZA";
 
 		#region DynamicTypes
-		Type handBookResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookResourcesData.Iafchandbookresourcesdata");																	   
-		Type externalResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.HandbookResources.ResourcesExternal");																		
-		Type resourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.Resources.Resource");
+		private Type handBookResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookResourcesData.Iafchandbookresourcesdata");																	   
+		private Type externalResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.HandbookResources.ResourcesExternal");																		
+		private Type resourceType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.Resources.Resource");
+		private Type resourceLikesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookLikes.Iafchandbooklikes");
+		private Type resourceCommentsType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookComments.Iafchandbookcomments");
 		#endregion DynamicTypes
 
 		#region CategoriesName
@@ -644,8 +648,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				resourceInfo.Category.ParentCategoryTitle = resourceParentCategoryTitle;
 				resourceInfo.Category.ParentCategoryUrl = resourceParentCategoryUrl;
 				resourceInfo.ResourceType = resourceTypeTitle;
-				resourceInfo.ImageUrl = img.Url;
-				//resourceInfo.handBookResource.ResourceUrl = resourceCategoryUrl + "/resourcedetails/" + resoucre.UrlName.ToString();
+				resourceInfo.ImageUrl = img.Url;				
 
 			}
 			else
@@ -721,9 +724,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 				else
 				{
-					//Create like for Resource
-					Type mylikesmoduleType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookLikes.Iafchandbooklikes");
-					like = dynamicModuleManager.CreateDataItem(mylikesmoduleType);
+					//Create like for Resource					
+					like = dynamicModuleManager.CreateDataItem(resourceLikesType);
 					var liketitle = resource.GetValue("Title").ToString() + "_like";
 					like.SetValue("Title", liketitle);
 					like.SetValue("AmountOfLikes", 0);
@@ -762,6 +764,107 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return resourceLike;
 		}
 		#endregion GetResourceLikesInfo
+
+		#region GetResourceComments
+		public List<IAFCHandBookCommentModel> GetResourceComments(Guid resourceId, string resourceType = "resource")
+		{
+			var comments = new List<IAFCHandBookCommentModel>();
+
+			var resourceTypeItem = handBookResourcesType;
+			if (resourceType == "comment")
+			{
+				resourceTypeItem = resourceCommentsType;
+			}
+
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			var resourceItem = dynamicModuleManager.GetDataItems(resourceTypeItem).
+						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceId).
+						First();
+			comments = GetResourceComments(resourceItem, resourceType);
+
+
+			return comments;
+		}
+
+		public List<IAFCHandBookCommentModel> GetResourceComments(DynamicContent resource, string resourceType = "resource")
+		{
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			UserProfileManager profileManager = UserProfileManager.GetManager();
+			UserManager userManager = UserManager.GetManager();
+
+
+			
+			string commentFieldName = "Comment";
+			if (resourceType=="comment")
+			{
+				commentFieldName = "Reply";
+			}
+			var resourceComments = resource.GetRelatedItems(commentFieldName).Cast<DynamicContent>().ToArray();
+			var resourceCommentList = new List<IAFCHandBookCommentModel>();
+			foreach (var commentItem in resourceComments.OrderByDescending(c => c.DateCreated))
+			{
+				var commentDetails = new IAFCHandBookCommentModel();
+				commentDetails.Id = commentItem.Id;
+				commentDetails.CommentText = commentItem.GetValue("CommentText").ToString();
+				commentDetails.DateCreated = commentItem.DateCreated;
+				commentDetails.Author.Id = commentItem.Owner;
+				User user = userManager.GetUser(commentItem.Owner);
+				SitefinityProfile profile = null;
+
+
+				if (user != null)
+				{
+					profile = profileManager.GetUserProfile<SitefinityProfile>(user);
+					if (profile != null)
+					{
+						commentDetails.Author.UserName = profile.FirstName + " " + profile.LastName;
+					}
+					else
+					{
+						commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
+					}
+				}
+				commentDetails.Likes = GetResourceLikesInfo(commentItem);
+
+
+				var replyComments = commentItem.GetRelatedItems("Reply").Cast<DynamicContent>().ToArray();
+				var replyCommentList = new List<IAFCHandBookCommentModel>();
+				foreach (var replyCommentItem in replyComments.OrderByDescending(c => c.DateCreated))
+				{
+					var replyCommentDetails = new IAFCHandBookCommentModel();
+					replyCommentDetails.Id = replyCommentItem.Id;
+					replyCommentDetails.CommentText = replyCommentItem.GetValue("CommentText").ToString();
+					replyCommentDetails.DateCreated = replyCommentItem.DateCreated;
+					replyCommentDetails.Author.Id = replyCommentItem.Owner;
+					user = userManager.GetUser(replyCommentItem.Owner);
+					profile = null;
+
+					if (user != null)
+					{
+						profile = profileManager.GetUserProfile<SitefinityProfile>(user);
+						if (profile != null)
+						{
+							commentDetails.Author.UserName = profile.FirstName + " " + profile.LastName;
+						}
+						else
+						{
+							commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
+						}
+					}
+					replyCommentDetails.Likes = GetResourceLikesInfo(commentItem);
+
+					replyCommentList.Add(replyCommentDetails);
+
+				}
+
+				commentDetails.RepliedComments = replyCommentList;
+
+				resourceCommentList.Add(commentDetails);
+			}
+
+			return resourceCommentList;
+		}
+		#endregion GetResourceComments
 
 		#region GetResourceDetails
 		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resource)
@@ -977,6 +1080,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetResourceDetails
 		public IAFCHandBookResourceModel GetResourceDetails(String name)
 		{
+
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();			
 			var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType).
 						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name).
@@ -984,6 +1088,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			var model = GetResourceDetails(resourceItem);
 			model.MoreResources = GetMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
+			model.Comments = GetResourceComments(resourceItem);
 			
 			return model;			
 		}
@@ -1152,21 +1257,32 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion Likes
 
 		#region Comments
-		public void CreateNewCommentForResource(Guid resourceID, string comment)
+		public void CreateNewCommentForResource(Guid resourceID, string comment, string resourceType = "resource")
 		{
 
 			var providerName = String.Empty;
 			var transactionName = "commentTransaction";
+			string commentType = "Comment";
+			var resourceTypeItem = handBookResourcesType;
+			if (resourceType == "comment")
+			{
+				resourceTypeItem = resourceCommentsType;
+				commentType = "Reply";
+			}
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
 
-			//Create like for comment
-			Type mylikesmoduleType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookLikes.Iafchandbooklikes");
-			DynamicContent mylikesmoduleItem = dynamicModuleManager.CreateDataItem(mylikesmoduleType);
+			var resource = dynamicModuleManager.GetDataItem(resourceTypeItem, resourceID);
+			var commentsAmount = resource.GetRelatedItems(commentType).Cast<DynamicContent>().Count()+1;
+			var commentTtitle = resource.GetValue("Title").ToString() + "_comment_" + commentsAmount.ToString();
+			var likeTtitle = resource.GetValue("Title").ToString() + "_comment_" + commentsAmount.ToString()+"_like";
 
-			mylikesmoduleItem.SetValue("Title", comment);
+			//Create like for comment			
+			DynamicContent mylikesmoduleItem = dynamicModuleManager.CreateDataItem(resourceLikesType);
+
+			mylikesmoduleItem.SetValue("Title", likeTtitle);
 			mylikesmoduleItem.SetValue("AmountOfLikes", 0);
 			mylikesmoduleItem.SetValue("AmountOfDislikes", 0);
-			mylikesmoduleItem.SetString("UrlName", new Lstring(Regex.Replace("Like-" + comment, UrlNameCharsToReplace, UrlNameReplaceString)));
+			mylikesmoduleItem.SetString("UrlName", new Lstring(Regex.Replace(likeTtitle, UrlNameCharsToReplace, UrlNameReplaceString)));
 			mylikesmoduleItem.SetValue("Owner", SecurityManager.GetCurrentUserId());
 			mylikesmoduleItem.SetValue("PublicationDate", DateTime.UtcNow);
 
@@ -1174,12 +1290,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			mylikesmoduleItem.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
 			//Create new Comment
-			Type mycommentsType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookComments.Iafchandbookcomments");
-			DynamicContent mycommentsItem = dynamicModuleManager.CreateDataItem(mycommentsType);
-
-			mycommentsItem.SetValue("Title", comment);
+			DynamicContent mycommentsItem = dynamicModuleManager.CreateDataItem(resourceCommentsType);
+			mycommentsItem.SetValue("Title", commentTtitle);
 			mycommentsItem.SetValue("CommentText", comment);
-			mycommentsItem.SetString("UrlName", new Lstring(Regex.Replace(comment, UrlNameCharsToReplace, UrlNameReplaceString)));
+			mycommentsItem.SetString("UrlName", new Lstring(Regex.Replace(commentTtitle, UrlNameCharsToReplace, UrlNameReplaceString)));
 			mycommentsItem.SetValue("Owner", SecurityManager.GetCurrentUserId());
 			mycommentsItem.SetValue("PublicationDate", DateTime.UtcNow);
 
@@ -1189,18 +1303,20 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			mycommentsItem.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
 			//Add Comment to resource
-			Type myResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookResourcesData.Iafchandbookresourcesdata");
-			var resource = dynamicModuleManager.GetDataItem(myResourcesType, resourceID);
 			var masterResource = dynamicModuleManager.Lifecycle.GetMaster(resource);
 
 			DynamicContent checkOutResourceItem = dynamicModuleManager.Lifecycle.CheckOut(masterResource) as DynamicContent;
-			checkOutResourceItem.CreateRelation(mycommentsItem, "Comment");
+			checkOutResourceItem.CreateRelation(mycommentsItem, commentType);
+			
 			ILifecycleDataItem checkInMyresourcesItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutResourceItem);
 			dynamicModuleManager.Lifecycle.Publish(checkInMyresourcesItem);
 
 			TransactionManager.CommitTransaction(transactionName);
+
 		}
 		#endregion Comments
+
+
 		
 	}
 }

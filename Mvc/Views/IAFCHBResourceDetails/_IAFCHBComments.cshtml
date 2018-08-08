@@ -1,0 +1,129 @@
+﻿@model List<SitefinityWebApp.Mvc.Models.IAFCHandBookCommentModel>
+<div id="commentsView">
+	<table border="1">
+		@foreach (var commentItem in Model)
+		{
+			<tr>
+				<td>
+					@commentItem.Author.UserName
+				</td>
+			</tr>
+			<tr>
+				<td>
+					@Html.Raw(commentItem.CommentText)
+				</td>
+			</tr>
+			<tr>
+				<td>
+					@if (commentItem.UserAuthorized)
+					{
+					<span id="@string.Format("{0}_{1}", "replyCommentBtn", commentItem.Id.ToString())">
+						@if (commentItem.RelpyButtonPressed == true)
+						{
+							<span>Reply Pressed </span>
+						}
+						else
+						{
+							<button type="button" class="commentReplyBtn" data-id="@commentItem.Id.ToString()"> Reply </button>
+						}
+					</span>
+					}
+				</td>
+				<td>
+					<button type="button" class="addCommentLike" data-id="@commentItem.Id.ToString()"> Add Like </button>
+					<div id="@string.Format("{0}_{1}", "commentLikes" , commentItem.Id.ToString())">
+						<span>@commentItem.Likes.Likes</span>
+					</div>
+				</td>
+				<td>
+					<button type="button" class="addCommentDislike" data-id="@commentItem.Id.ToString()"> Add Dislike </button>
+					<div id="@string.Format("{0}_{1}", "commentDislikes" , commentItem.Id.ToString())">
+						<span>@commentItem.Likes.Dislikes</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+
+				</td>
+				<td>
+					<div id="@string.Format("{0}_{1}", "commentRepliesInputView", commentItem.Id.ToString())">
+						@if (commentItem.RelpyButtonPressed == true)
+						{
+							@Html.Partial("_IAFCHBReplyCommentsInput", commentItem.Id)
+						}
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+
+				</td>
+				<td>
+					<div id="@string.Format("{0}_{1}", "commentRepliesView" , commentItem.Id.ToString())">
+						@Html.Partial("_IAFCHBComments", commentItem.RepliedComments)
+					</div>
+				</td>
+			</tr>
+
+		}
+	</table>
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {		
+
+		//Add Comment Like
+		$('.addCommentLike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddCommentLike", "IAFCHBResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#commentLikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add Comment Dislike
+		$('.addCommentDislike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("AddCommentDislike", "IAFCHBResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#commentDislikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Comment Reply btn t1
+		$('.commentReplyBtn').on('click', function () {
+
+			var commentId = $(this).attr('data-id');
+			
+			$.ajax({
+				type: 'POST',
+				url: '@Url.Action("PressReplyCommentBtn", "IAFCHBResourceDetailsController")',
+				data: { commentId: commentId },				
+				success: function (response) {					
+					$("#replyCommentBtn_" + commentId).html("");
+					$("#commentRepliesInputView_" + commentId).html(response);																	
+				}
+			});
+		});
+
+
+	});
+
+
+</script>

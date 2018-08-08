@@ -1,10 +1,13 @@
-﻿using SitefinityWebApp.Custom.IAFCHandBook;
+﻿using ServiceStack.Logging;
+using SitefinityWebApp.Custom.IAFCHandBook;
 using SitefinityWebApp.Mvc.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Telerik.Sitefinity.Mvc;
+using Telerik.Sitefinity.Mvc.ActionFilters;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -60,14 +63,56 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 		[RelativeRoute("AddComment"), HttpPost]
+		[StandaloneResponseFilter]
 		public ActionResult AddComment(String commentTxt, String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
 			string CommentTxt = commentTxt;
 
-			return Json(CommentTxt);
+			handBookHelper.CreateNewCommentForResource(id, commentTxt);
+			var model = handBookHelper.GetResourceComments(id);
+			return PartialView("_IAFCHBComments", model);						
+		}
+	
+
+		[RelativeRoute("AddCommentLike"), HttpPost]
+		public ActionResult AddCommentLike(String resourceId)
+		{
+			var id = Guid.Parse(resourceId);
+			var likes = AddLikeForResource(id, "Comment").ToString();
+
+			return Json(likes);
 		}
 
+
+		[RelativeRoute("AddCommentDislike"), HttpPost]
+		public ActionResult AddCommentDislike(String resourceId)
+		{
+			var id = Guid.Parse(resourceId);
+			var dislikes = AddDislikeForResource(id, "Comment").ToString();
+
+			return Json(dislikes);
+		}
+
+		[RelativeRoute("PressReplyCommentBtn"), HttpPost]
+		[StandaloneResponseFilter]
+		public ActionResult PressReplyCommentBtn(String commentId)
+		{
+			var id = Guid.Parse(commentId);
+			return PartialView("_IAFCHBReplyCommentsInput", id);
+		}
+
+		
+		[RelativeRoute("AddReplyComment"), HttpPost]
+		[StandaloneResponseFilter]
+		public ActionResult AddReplyComment(String commentTxt, String commentId)
+		{
+			var id = Guid.Parse(commentId);
+			handBookHelper.CreateNewCommentForResource(id, commentTxt, "comment");
+			var model = handBookHelper.GetResourceComments(id,"comment");
+			return PartialView("_IAFCHBComments", model);
+
+		}
 		#region Likes
 		public int AddLikeForResource(Guid resourceID, string resourceType)
 		{
