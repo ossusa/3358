@@ -1550,3 +1550,29 @@ p{
     height:188px;
     border-radius: 3px;
 }
+/*Select title*/
+.community__title-select .selectric{
+    width: 384px;
+    background: transparent;
+    border: none;
+}
+.community__title-select .community__title-select .selectric .button {
+    background-color: transparent;
+}
+.community__title-select .selectric-items{
+    width: 384px;
+    height: 212px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 18px 24px;
+    background: #fff;
+}
+.community__title-select .selectric-items li.highlighted{
+    background: #fff;
+}
+.community__title-select .selectric-items li:hover{
+    background: #fff;
+}
+.community__title-select .selectric-items li{
+    padding: 6px 0
+}

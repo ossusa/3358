@@ -6,7 +6,7 @@
 	<div class="community__head">
 		<div class="community__breadcrumbs">@Model.Category.ParentCategoryTitle</div>
 		<div class="community__head-title">
-				<select id="UrlList" onchange="doNavigate()">
+				<select class="community__title-select" id="UrlList" onchange="doNavigate()">
 					<option value=@Model.Category.CategoryUrl>@Model.Category.CategoryTitle</option>
 					@foreach (var item in Model.MoreCategories)
 					{
@@ -37,7 +37,7 @@
                         var AlphabeticalZAUrl = Model.Category.CategoryUrl + "/AlphabeticalZA";
                     }
 
-                    <select class="community__title-select" id="UrlOrderByList" onchange="doOrderByNavigate()">
+                    <select id="UrlOrderByList" onchange="doOrderByNavigate()">
                         @foreach (var orderByItem in Model.OrderBy)
                         {
                             if (orderByItem.Selected)
