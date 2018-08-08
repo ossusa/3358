@@ -296,7 +296,7 @@ p{
     margin-left: -19px;
 }
 .header__nav > ul > li:nth-of-type(5) > a{
-    padding-right: 0 !important;
+    padding-right: 0;
 }
 .header__table-tr{
     display: flex;
