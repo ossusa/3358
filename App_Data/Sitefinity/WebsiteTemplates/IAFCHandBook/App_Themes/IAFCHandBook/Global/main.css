@@ -1553,6 +1553,8 @@ p{
 /*Select title*/
 .selectric-community__title-select .selectric{
     width: 384px;
+    display: flex;
+    align-items: center;
     background: transparent;
     border: none;
 }
