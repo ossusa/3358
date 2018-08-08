@@ -117,7 +117,7 @@ $(document).ready(function() {
         $('.button').toggleClass('rotated').toggle('community__category-select');
     });
     $('.community__category-select').selectric();
-    $('.community__category-select').find('.button').addClass('community__arrow');
+    $('.selectric-community__category-select').find('.button').addClass('community__arrow');
     $('.community__category-select').click(function(){
         $('.button').toggleClass('rotated');
     });
