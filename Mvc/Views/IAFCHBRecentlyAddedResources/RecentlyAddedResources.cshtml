@@ -11,66 +11,53 @@
                 <div class="resources__slide-img" style="background: none; overflow: hidden">
                     <img src='@item.ResourceDetails.ImageUrl' style="height: 100%; min-width: 100%;"/>
 
-                        <div class="resources__slide-label">
-                           <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
-                            <span>@item.ResourceDetails.Category.ParentCategoryTitle
-                            </span>
-                        </a> >
-                         <a class="" href="@item.ResourceDetails.Category.CategoryUrl">
-                            <span>@item.ResourceDetails.Category.CategoryTitle</span>
-                        </a>
-                        </div>
-                        <div class="resources__slide-time">
-                            <div class="resources--time">&nbsp;</div>
-                                <span> @item.ResourceDetails.DurationStr</span>
-                            </div>
-                        </div>
+                    <div class="resources__slide-label">
+                     <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+                        <span>@item.ResourceDetails.Category.ParentCategoryTitle
+                        </span>
+                    </a> >
+                    <a class="" href="@item.ResourceDetails.Category.CategoryUrl">
+                        <span>@item.ResourceDetails.Category.CategoryTitle</span>
+                    </a>
+                </div>
+                <div class="resources__slide-time">
+                    <div class="resources--time">&nbsp;</div>
+                    <span> @item.ResourceDetails.DurationStr</span>
+                </div>
+            </div>
+            <div class="resources__slide-info">
+                <div class="resources__slide-box">
+                    <p class="resources__slide-article">@item.ResourceDetails.ResourceType</p>
+                    <a href="@item.ResourceUrl">
+                        <h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+                    </a>
+                    <p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+                </div>
+                <div id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
+                    @if (item.AddToMyHandBook == true)
+                    {
+                        <span>Added to MyHandBook</span>
+                    }
+                    else
+                    {
+                        <button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
+                    }
+                </div>
+                <a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
+                <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
+                <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                    <span>@item.Likes.Likes</span>
+                </div>
+                <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
+                <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+                    <span>@item.Likes.Dislikes</span>
+                </div>
+            </div>
+        </div>
+    }
 
-
-                        <div class="resources__slide-info"></div>
-                <tr>
-                    <td>
-                        <div> @item.ResourceDetails.ResourceType</div>
-                        <a href="@item.ResourceUrl"><span>@item.ResourceDetails.ResourceTitle</span></a>
-                        <div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
-                        <br />
-                        <td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
-                                    @if (item.AddToMyHandBook == true)
-                                    {
-                                        <span>Added to MyHandBook</span>
-                                    }
-                                    else
-                                    {
-                                        <button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
-                                    }
-                                </div>
-                            </td>
-                            <td>
-                                <a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
-                            </td>
-                            <td>
-                                <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-                                <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
-                                    <span>@item.Likes.Likes</span>
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
-                                <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
-                                    <span>@item.Likes.Dislikes</span>
-                                </div>
-                            </td>
-                        </tr>
-                    </div>
-
-                }
-
-     </div>
- </div>
+</div>
+</div>
 
 <script type="text/javascript">
 
