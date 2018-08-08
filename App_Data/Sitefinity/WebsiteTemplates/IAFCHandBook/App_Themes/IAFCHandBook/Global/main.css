@@ -1761,3 +1761,7 @@ p{
     transform: translateX(-50%);
 }
 
+.anticon:before {
+    display: inline-block;
+}
+
