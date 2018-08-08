@@ -1634,9 +1634,17 @@ p{
     line-height: 24px;
     padding: 8px 0;
 }
-.selectric-community__category-select > .selectric .button{
-    color: #2b4b6b;
-}
+
 .selectric-community__category-select > .selectric-items li{
     padding: 4px 12px;
+}
+.selectric-community__category-select > .selectric-items li.selected{
+    font-weight: 700;
+}
+.selectric-community__category-select > .selectric .button:before{
+    color: #2b4b6b;
+}
+.community__head-btn .selectric-wrapper{
+    border: 1px solid #2b4b6b;
+    border-radius: 3px;
 }
