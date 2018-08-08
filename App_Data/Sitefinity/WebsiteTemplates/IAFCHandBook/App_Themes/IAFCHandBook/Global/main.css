@@ -1535,9 +1535,17 @@ p{
 .community__topics-link{
     display: block;
     position: relative;
-    border-radius: 3px;
     height: 188px;
 }
 .community__topics-text{
     white-space: normal;
+}
+.community__topics-list{
+    list-style: none;
+    margin-right: 24px;
+}
+.community__topics-img{
+    width:282px;
+    height:188px;
+    border-radius: 3px;
 }

@@ -73,16 +73,16 @@
 		<ul class="community__topics-ul">
 			@foreach (var mcItem in Model.MoreCategories)
 			{
-				<li class="topics__list">
+				<li class="community__topics-list">
                     <a href="@mcItem.CategoryUrl" class="community__topics-link">
-                        <img src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" style="width:282px;height:188px;" />
+                        <img src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" class="community__topics-img" />
                         <p class="topics__img-text community__topics-text">@mcItem.CategoryTitle</p>
-                        <span class="topics__img-back">
+                        <div class="topics__img-back">
                             <p class="topics__img-back-info">
                                 @mcItem.CategoryDescription;
                             </p>
                             <p class="topics__img-back-text">@mcItem.ResourcesAmount Resources</p>
-                        </span>
+                        </div>
                     </a>
                 </li>
 			}
