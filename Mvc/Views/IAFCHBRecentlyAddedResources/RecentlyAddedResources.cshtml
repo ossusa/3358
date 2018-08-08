@@ -8,25 +8,25 @@
         @foreach (var item in Model)
         {
 
-            <div>
-                <div>
-                    <div>
+            <table border="1">
+                <tr>
+                    <td>
                         <img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
                         <br />
                         <a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
                         <span> @item.ResourceDetails.DurationStr</span>
-                    </div>
-                </div>
-                <div>
-                    <div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <div> @item.ResourceDetails.ResourceType</div>
                         <a href="@item.ResourceUrl"><span>@item.ResourceDetails.ResourceTitle</span></a>
                         <div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
                         <br />
-                        <div>
-                        </div>
-                        <div>
-                            <div>
+                        <td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <div id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
                                     @if (item.AddToMyHandBook == true)
                                     {
@@ -37,24 +37,24 @@
                                         <button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
                                     }
                                 </div>
-                            </div>
-                            <div>
+                            </td>
+                            <td>
                                 <a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
-                            </div>
-                            <div>
+                            </td>
+                            <td>
                                 <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
                                 <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
                                     <span>@item.Likes.Likes</span>
                                 </div>
-                            </div>
-                            <div>
+                            </td>
+                            <td>
                                 <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
                                 <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
                                     <span>@item.Likes.Dislikes</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </td>
+                        </tr>
+                    </table>
 
                 }
 
