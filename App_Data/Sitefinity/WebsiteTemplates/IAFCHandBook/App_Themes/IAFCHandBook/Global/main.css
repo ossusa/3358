@@ -1043,7 +1043,7 @@ p{
         display: block;
     }
     .header__text{
-        padding: 0 90px;
+        padding: 0 27px;
     }
     .header__nav > ul > li:nth-of-type(5) > a{
         padding-right: 22px !important ;
@@ -1433,7 +1433,7 @@ p{
     .topics__content{
         padding: 0 0 75px;
     }
-    .topics__content:nth-of-type(2){
+    .topics__ul:nth-of-type(2){
         margin: 20px 0 0 0;
     }
     .mobile-br-none{
