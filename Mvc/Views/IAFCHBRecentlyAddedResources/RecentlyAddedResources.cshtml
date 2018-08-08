@@ -5,9 +5,9 @@
 
 <div class="sfContentBlock resources">
     <h2 class="resources__title">Recently Added Resources</h2>
+    <button class="slick-prev slick-arrow">Previous</button>
     <div class="resources__slider slick-initialized slick-slider">
         <table border="0" aria-live="polite" class="slick-list draggable">
-
             <tr class="slick-track">
                 @foreach (var item in Model)
                 {
@@ -64,6 +64,7 @@
                     </tr>
                 </table>
             </div>
+            <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button>
         </div>
 
 
