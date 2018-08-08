@@ -55,7 +55,9 @@
     z-index: 9999;
 }
 .selectric-open .selectric {
-    border-color: #c4c4c4;
+    border-color: #2b4b6b;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .selectric-open .selectric-items {
     display: block;

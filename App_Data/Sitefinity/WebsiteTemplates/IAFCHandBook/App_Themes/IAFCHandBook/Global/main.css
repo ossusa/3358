@@ -1611,9 +1611,6 @@ p{
     height: 40px;
     border: 1px solid #2b4b6b;
 }
-.selectric-community__category-select .selectric-open .selectric{
-    border-color: #2b4b6b;
-}
 .selectric-community__category-select .selectric .label{
     font-family: 'Nunito Sans', sans-serif;
     margin: 0;
