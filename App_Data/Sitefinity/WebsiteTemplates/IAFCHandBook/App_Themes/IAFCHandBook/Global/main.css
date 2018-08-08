@@ -296,7 +296,7 @@ p{
     margin-left: -19px;
 }
 .header__nav > ul > li:nth-of-type(5) > a{
-    padding-right: 0;
+    padding-right: 0 !important;
 }
 .header__table-tr{
     display: flex;
@@ -1046,7 +1046,7 @@ p{
         padding: 0 90px;
     }
     .header__nav > ul > li:nth-of-type(5) > a{
-        padding-right: 22px;
+        padding-right: 22px !important ;
     }
     .k-link{
         padding: .5em 22px .4em !important;
