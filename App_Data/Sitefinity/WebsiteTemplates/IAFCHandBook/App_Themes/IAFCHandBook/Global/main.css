@@ -1471,6 +1471,8 @@ p{
     font-size: 15px;
 }
 .community__head-btn{
+    display: flex;
+    justify-content: center;
     border: 1px solid #2b4b6b;
     border-radius: 3px;
     color: #2b4b6b;
