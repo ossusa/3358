@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e924ca23-0456-4e1a-9364-57f64ca22318" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css" beforeDir="false" afterPath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,20 +49,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="1592" column="22" selection-start-line="1592" selection-start-column="22" selection-end-line="1592" selection-end-column="22" />
+            <state relative-caret-position="244">
+              <caret line="1563" column="24" selection-start-line="1563" selection-start-column="24" selection-end-line="1563" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectric.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="selectric.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="152" column="22" lean-forward="true" selection-start-line="152" selection-start-column="24" selection-end-line="154" selection-end-column="23" />
+            <state relative-caret-position="81">
+              <caret line="156" column="21" lean-forward="true" selection-start-line="156" selection-start-column="21" selection-end-line="156" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -116,8 +116,8 @@
         <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js" />
         <option value="$PROJECT_DIR$/App_Master/IAFCHandBook.master" />
         <option value="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/ResourcesPerCategory.cshtml" />
-        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" />
         <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css" />
+        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" />
       </list>
     </option>
   </component>
@@ -278,12 +278,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533650078170</updated>
       <workItem from="1533650081359" duration="13525000" />
-      <workItem from="1533720785054" duration="4214000" />
+      <workItem from="1533720785054" duration="4522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17739000" />
+    <option name="totallyTimeSpent" value="18047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -411,17 +411,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
+    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="1592" column="22" selection-start-line="1592" selection-start-column="22" selection-end-line="1592" selection-end-column="22" />
+        <state relative-caret-position="81">
+          <caret line="156" column="21" lean-forward="true" selection-start-line="156" selection-start-column="21" selection-end-line="156" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
+    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="152" column="22" lean-forward="true" selection-start-line="152" selection-start-column="24" selection-end-line="154" selection-end-column="23" />
+        <state relative-caret-position="244">
+          <caret line="1563" column="24" selection-start-line="1563" selection-start-column="24" selection-end-line="1563" selection-end-column="24" />
         </state>
       </provider>
     </entry>
