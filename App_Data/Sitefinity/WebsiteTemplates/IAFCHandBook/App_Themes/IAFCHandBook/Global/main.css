@@ -1418,6 +1418,18 @@ p{
     .resources__slide-info{
         height: 153px;
     }
+    .topics__content img{
+        height: 145px;
+    }
+    .tablet-br-none{
+        display: none;
+    }
+    .topics__text{
+        padding: 0 0 13px;
+    }
+    mobile-br-none{
+        display: none;
+    }
     .box-about{
         padding-left: 90px;
         padding-right: 90px;
