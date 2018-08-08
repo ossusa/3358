@@ -2,124 +2,123 @@
 
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
 
+<div class="sfContentBlock resources">
+    <h2>Recently Added Resources</h2>
+    <div>
+        @foreach (var item in Model)
+        {
 
-    <h2 class="resources__title">Recently Added Resources</h2>
-    <div class="resources__slider">
-                @foreach (var item in Model)
-                {
-                    <div class="resources__slide>
+            <table border="1">
+                <tr>
+                    <td>
+                        <img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
+                        <br />
+                        <a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
+                        <span> @item.ResourceDetails.DurationStr</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div> @item.ResourceDetails.ResourceType</div>
+                        <a href="@item.ResourceUrl"><span>@item.ResourceDetails.ResourceTitle</span></a>
+                        <div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
+                        <br />
                         <td>
-                        <table border="1">
-                            <tr>
-                                <td>
-                                    <img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
-                                    <br />
-                                    <a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
-                                    <span> @item.ResourceDetails.DurationStr</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div> @item.ResourceDetails.ResourceType</div>
-                                    <a href="@item.ResourceUrl"><span>@item.ResourceDetails.ResourceTitle</span></a>
-                                    <div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
-                                    <br />
-                                    <td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
-                                                @if (item.AddToMyHandBook == true)
-                                                {
-                                                    <span>Added to MyHandBook</span>
-                                                }
-                                                else
-                                                {
-                                                    <button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
-                                                }
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-                                            <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
-                                                <span>@item.Likes.Likes</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
-                                            <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
-                                                <span>@item.Likes.Dislikes</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
+                                    @if (item.AddToMyHandBook == true)
+                                    {
+                                        <span>Added to MyHandBook</span>
+                                    }
+                                    else
+                                    {
+                                        <button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
+                                    }
+                                </div>
                             </td>
-                    </div>
-                        }
-            </div>
+                            <td>
+                                <a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
+                            </td>
+                            <td>
+                                <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
+                                <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                                    <span>@item.Likes.Likes</span>
+                                </div>
+                            </td>
+                            <td>
+                                <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
+                                <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+                                    <span>@item.Likes.Dislikes</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
 
-
-        <script type="text/javascript">
-
-            $(document).ready(function () {
-
-        //Add Like
-        $('.addLike').on('click', function () {
-
-            var resourceId = $(this).attr('data-id');
-
-            $.ajax({
-                type: 'POST',
-                cache: false,
-                url: '@Url.Action("AddLike", "IAFCHBRecentlyAddedResources")',
-                data: { resourceId },
-                dataType: "json",
-                success: function (response) {
-                    $("#resourceLikes_" + resourceId).html(response);
                 }
-            });
-        });
 
-        //Add Dislike
-        $('.addDislike').on('click', function () {
+     </div>
+ </div>]
 
-            var resourceId = $(this).attr('data-id');
+<script type="text/javascript">
 
-            $.ajax({
-                type: 'POST',
-                cache: false,
-                url: '@Url.Action("AddDislike", "IAFCHBRecentlyAddedResources")',
-                data: { resourceId },
-                dataType: "json",
-                success: function (response) {
-                    $("#resourceDislikes_" + resourceId).html(response);
-                }
-            });
-        });
+	$(document).ready(function () {
 
-        //Add ToMyHandBook
-        $('.addToMyHandBook').on('click', function () {
+		//Add Like
+		$('.addLike').on('click', function () {
 
-            var resourceId = $(this).attr('data-id');
+			var resourceId = $(this).attr('data-id');
 
-            $.ajax({
-                type: 'POST',
-                cache: false,
-                url: '@Url.Action("AddToMyHandBook", "IAFCHBRecentlyAddedResources")',
-                data: { resourceId },
-                dataType: "json",
-                success: function (response) {
-                    if (response == true) {
-                        $("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
-                    }
-                }
-            });
-        });
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddLike", "IAFCHBRecentlyAddedResources")',
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceLikes_" + resourceId).html(response);
+				}
+			});
+		});
 
-    });
+		//Add Dislike
+		$('.addDislike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddDislike", "IAFCHBRecentlyAddedResources")',
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceDislikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add ToMyHandBook
+		$('.addToMyHandBook').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddToMyHandBook", "IAFCHBRecentlyAddedResources")',
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
+					}	
+				}
+			});
+		});
+		
+	});
 
 </script>
 
