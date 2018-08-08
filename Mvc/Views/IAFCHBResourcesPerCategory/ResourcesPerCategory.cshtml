@@ -74,7 +74,7 @@
 			@foreach (var mcItem in Model.MoreCategories)
 			{
 				<li class="topics__list">
-                    <a href="@mcItem.CategoryUrl">
+                    <a href="@mcItem.CategoryUrl" class="community__topics-link">
                         <img src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" style="width:282px;height:188px;" />
                         <p class="topics__img-text">@mcItem.CategoryTitle</p>
                         <span class="topics__img-back">

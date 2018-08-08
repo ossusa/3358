@@ -1532,3 +1532,7 @@ p{
     justify-content: flex-start;
     align-items: flex-start;
 }
+.community__topics-link{
+    display: block;
+    position: relative;
+}
