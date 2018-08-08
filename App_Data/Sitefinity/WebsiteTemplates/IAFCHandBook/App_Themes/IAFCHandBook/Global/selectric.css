@@ -6,8 +6,6 @@
     width: 100%;
 }
 .selectric {
-    border: 1px solid #ddd;
-    border-radius: 0px;
     background: #f8f8f8;
     position: relative;
     overflow: hidden;

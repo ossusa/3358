@@ -50,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="1612" column="1" selection-start-line="1612" selection-start-column="1" selection-end-line="1612" selection-end-column="1" />
+            <state relative-caret-position="788">
+              <caret line="1636" column="23" selection-start-line="1636" selection-start-column="23" selection-end-line="1636" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -68,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectric.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="selectric.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="119">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -104,9 +104,9 @@
       <find>community__topics-img</find>
       <find>nunito</find>
       <find>.selectric .button:after</find>
-      <find>.selectric-hover</find>
       <find>community__title</find>
       <find>#wrapper</find>
+      <find>.selectric-hover</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,8 +120,8 @@
         <option value="$PROJECT_DIR$/App_Master/IAFCHandBook.master" />
         <option value="$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/ResourcesPerCategory.cshtml" />
         <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js" />
-        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" />
         <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css" />
+        <option value="$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css" />
       </list>
     </option>
   </component>
@@ -289,12 +289,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533650078170</updated>
       <workItem from="1533650081359" duration="13525000" />
-      <workItem from="1533720785054" duration="9634000" />
+      <workItem from="1533720785054" duration="9946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23159000" />
+    <option name="totallyTimeSpent" value="23471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -429,17 +429,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
+    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="1612" column="1" selection-start-line="1612" selection-start-column="1" selection-end-line="1612" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
+    <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        <state relative-caret-position="788">
+          <caret line="1636" column="23" selection-start-line="1636" selection-start-column="23" selection-end-line="1636" selection-end-column="23" />
         </state>
       </provider>
     </entry>
