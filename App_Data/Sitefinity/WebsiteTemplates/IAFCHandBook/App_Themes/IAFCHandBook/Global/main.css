@@ -1761,7 +1761,7 @@ p{
     transform: translateX(-50%);
 }
 
-.anticon:before {
+.anticon:before, .resources--like:hover:before, .resources--like:focus:before, .resources--dislike:hover:before, .resources--dislike:focus:before {
     display: inline-block;
 }
 
