@@ -70,6 +70,7 @@
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="1646" column="22" selection-start-line="1646" selection-start-column="22" selection-end-line="1646" selection-end-column="22" />
               <folding />
@@ -77,6 +78,10 @@
             <state relative-caret-position="471">
               <caret line="1483" column="27" selection-start-line="1483" selection-start-column="21" selection-end-line="1483" selection-end-column="27" />
 >>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
+=======
+            <state relative-caret-position="284">
+              <caret line="1472" column="20" selection-start-line="1472" selection-start-column="20" selection-end-line="1472" selection-end-column="20" />
+>>>>>>> e7a8f8c616fa6af2d06691d970cae39e82ecc46a
             </state>
           </provider>
         </entry>
@@ -292,12 +297,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533650078170</updated>
       <workItem from="1533650081359" duration="13525000" />
-      <workItem from="1533720785054" duration="12652000" />
+      <workItem from="1533720785054" duration="12764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26177000" />
+    <option name="totallyTimeSpent" value="26289000" />
   </component>
 >>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
   <component name="ToolWindowManager">
@@ -507,9 +512,14 @@
 =======
     <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="471">
           <caret line="1483" column="27" selection-start-line="1483" selection-start-column="21" selection-end-line="1483" selection-end-column="27" />
 >>>>>>> e50255918e97131addfec30a32f5e6d8769b6617
+=======
+        <state relative-caret-position="284">
+          <caret line="1472" column="20" selection-start-line="1472" selection-start-column="20" selection-end-line="1472" selection-end-column="20" />
+>>>>>>> e7a8f8c616fa6af2d06691d970cae39e82ecc46a
         </state>
       </provider>
     </entry>
