@@ -1045,6 +1045,9 @@ p{
     .header__text{
         padding: 0 90px;
     }
+    .header__nav > ul > li:nth-of-type(5) > a{
+        padding-right: auto;
+    }
     .k-link{
         padding: .5em 22px .4em !important;
     }
