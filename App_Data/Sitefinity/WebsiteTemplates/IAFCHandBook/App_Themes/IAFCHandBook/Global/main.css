@@ -1659,6 +1659,9 @@ p{
 .selectric-community__category-select > .selectric .button:before{
     color: #2b4b6b;
 }
+.selectric-community__category-select > .selectric-items li:hover{
+    font-weight: 700;
+}
 .community__head-btn-select .selectric-wrapper{
     border: 1px solid #2b4b6b;
     border-radius: 3px;
