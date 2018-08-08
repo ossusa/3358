@@ -112,5 +112,8 @@ $(document).ready(function() {
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
     /*Select*/
     $('.community__title-select').selectric();
+    $('.selectric').click(function(){
+        $('.button').toggleClass('rotated');
+    });
 });
 
