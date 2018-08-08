@@ -1328,6 +1328,9 @@ p{
     .footer__info-col:nth-of-type(2){
         margin-top: 8px;
     }
+    .resources__slide-info{
+        height: 173px;
+    }
 }
 @media (max-width: 370px){
     .header__logo img{
@@ -1412,6 +1415,9 @@ p{
 }
 
 @media (max-width: 1109px) {
+    .resources__slide-info{
+        height: 153px;
+    }
     .box-about{
         padding-left: 90px;
         padding-right: 90px;
