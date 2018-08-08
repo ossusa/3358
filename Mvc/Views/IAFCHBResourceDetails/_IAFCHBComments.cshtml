@@ -81,6 +81,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddCommentLike", "IAFCHBResourceDetailsController")',
 				data: { resourceId: resourceId },
 				dataType: "json",
@@ -97,6 +98,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddCommentDislike", "IAFCHBResourceDetailsController")',
 				data: { resourceId: resourceId },
 				dataType: "json",
@@ -113,6 +115,7 @@
 			
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("PressReplyCommentBtn", "IAFCHBResourceDetailsController")',
 				data: { commentId: commentId },				
 				success: function (response) {					

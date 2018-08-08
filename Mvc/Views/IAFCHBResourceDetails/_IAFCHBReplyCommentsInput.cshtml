@@ -29,6 +29,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddReplyComment", "IAFCHBResourceDetailsController")',
 				data: { commentTxt: comment, commentId: commentId},
 				success: function (commentsResults) {

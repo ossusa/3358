@@ -40,7 +40,9 @@
 						Share
 					</td>
 					<td>
-						@Model.CommentsAmount Comments
+						<div id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
+							@Model.CommentsAmount Comments
+						</div>
 					</td>
 
 					<td>
@@ -80,7 +82,11 @@
 				</tr>
 
 				<tr>
-					<td>@Model.CommentsAmount Comments</td>
+					<td>
+						<div id="commentsAmountBottomID" data-id="@Model.CommentsAmount.ToString()">
+							@Model.CommentsAmount Comments
+						</div>
+					</td>
 				</tr>
 
 				<tr>
@@ -150,6 +156,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBResourceDetailsController")',
 				data: { resourceId: resourceId },
 				dataType: "json",
@@ -166,6 +173,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBResourceDetailsController")',
 				data: { resourceId: resourceId },
 				dataType: "json",
@@ -183,6 +191,7 @@
 			
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBResourceDetailsController")',
 				data: { resourceId: resourceId },
 				dataType: "json",
@@ -200,16 +209,20 @@
 			var resourceId = $(this).attr('data-id');
 			var commentMsg = $('#comment_' + resourceId).val();
 			var comment = commentMsg;
+			var commentAmount = parseInt($('#commentsAmountHeaderID').attr('data-id'))+1;
 
 			$.ajax({			
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddComment", "IAFCHBResourceDetailsController")',
 				data: { commentTxt: comment, resourceId:resourceId },
 				success: function (commentsResults) {
 					$("#refTable").removeData();
 					$("#refTable").html(commentsResults);							
 					var inputTxt = $('#comment_' + resourceId);
-					inputTxt.replaceWith(inputTxt.val('').clone(true));					
+					inputTxt.replaceWith(inputTxt.val('').clone(true));
+					$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");							
+					$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");							
 				}
 
 			});
