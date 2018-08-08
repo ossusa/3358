@@ -292,6 +292,9 @@ p{
 .header__logo{
     padding: 8px 0;
 }
+.header__logo img{
+    margin-left: -19px;
+}
 .header__nav > ul > li:nth-of-type(5) > a{
     padding-right: 0 !important;
 }
@@ -424,7 +427,7 @@ p{
     color: #666666;
     font-size: 1.00em;
     z-index: 1000;
-    padding: 12px 24px 12px !important;
+    padding: 12px 16px 12px !important;
     transition: .1s ease-in-out;
 }
 .k-link:hover,
@@ -994,7 +997,7 @@ p{
     color: #666666;
     font-size: 1.00em;
     z-index: 1000;
-    padding: .5em 12px .4em !important;
+    padding: .5em 15px .4em !important;
     transition: .1s ease-in-out;
 }
 
