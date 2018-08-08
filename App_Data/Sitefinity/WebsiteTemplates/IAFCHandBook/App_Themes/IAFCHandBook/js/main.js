@@ -112,14 +112,19 @@ $(document).ready(function() {
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
     /*Select*/
     $('.community__title-select').selectric();
-
-    $('.community__title-select').click(function(){
-        $('.button').toggleClass('rotated').toggle('community__category-select');
-    });
     $('.community__category-select').selectric();
-    $('.selectric-community__category-select').find('.button').addClass('community__arrow');
-    $('.community__category-select').click(function(){
-        $('.community__arrow').toggleClass('rotated');
+    $('.selectric').click(function(){
+        $('.button').toggleClass('rotated');
     });
 });
 
+// $('.community__title-select').selectric();
+//
+// $('.community__title-select').click(function(){
+//     $('.button').toggleClass('rotated').toggle('community__category-select');
+// });
+// $('.community__category-select').selectric();
+// $('.selectric-community__category-select').find('.button').addClass('community__arrow');
+// $('.community__category-select').click(function(){
+//     $('.community__arrow').toggleClass('rotated');
+// });
