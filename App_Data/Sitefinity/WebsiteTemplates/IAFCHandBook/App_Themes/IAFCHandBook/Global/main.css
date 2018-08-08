@@ -1750,3 +1750,9 @@ p{
 .resources__slide-label a {
     color: #666;
 }
+
+.resources__slide-img img {
+    height: 100%;
+    min-width: 100%;
+}
+
