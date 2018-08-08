@@ -52,8 +52,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="1484" column="34" selection-start-line="1484" selection-start-column="34" selection-end-line="1484" selection-end-column="34" />
+            <state relative-caret-position="1349">
+              <caret line="1632" column="23" selection-start-line="1632" selection-start-column="23" selection-end-line="1632" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -291,12 +291,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533650078170</updated>
       <workItem from="1533650081359" duration="13525000" />
-      <workItem from="1533720785054" duration="13466000" />
+      <workItem from="1533720785054" duration="13620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26991000" />
+    <option name="totallyTimeSpent" value="27145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -440,8 +440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="1484" column="34" selection-start-line="1484" selection-start-column="34" selection-end-line="1484" selection-end-column="34" />
+        <state relative-caret-position="1349">
+          <caret line="1632" column="23" selection-start-line="1632" selection-start-column="23" selection-end-line="1632" selection-end-column="23" />
         </state>
       </provider>
     </entry>

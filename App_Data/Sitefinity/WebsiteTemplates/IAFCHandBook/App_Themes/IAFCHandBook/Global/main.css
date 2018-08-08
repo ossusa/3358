@@ -1475,7 +1475,7 @@ p{
     border-radius: 3px;
     color: #2b4b6b;
     width: 200px;
-    font-size: 1em;
+    font-size: 0.938em;
     height: 40px;
     background: transparent;
     padding: 12px;
@@ -1630,7 +1630,7 @@ p{
     font-family: 'Nunito Sans', sans-serif;
     margin: 0;
     line-height: 38px;
-    font-size: 1em;
+    font-size: 0.938em;
     font-weight: 400;
     color: #2b4b6b;
 }
@@ -1643,7 +1643,7 @@ p{
 }
 .selectric-community__category-select .selectric-items ul, .selectric-items li{
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1em;
+    font-size: 0.938em;
     font-weight: 400;
     color: #2b4b6b !important;
     line-height: 24px;
