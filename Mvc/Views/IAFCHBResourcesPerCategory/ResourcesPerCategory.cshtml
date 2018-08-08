@@ -37,7 +37,7 @@
                         var AlphabeticalZAUrl = Model.Category.CategoryUrl + "/AlphabeticalZA";
                     }
 
-                    <select id="UrlOrderByList" onchange="doOrderByNavigate()">
+                    <select class="community__title-select" id="UrlOrderByList" onchange="doOrderByNavigate()">
                         @foreach (var orderByItem in Model.OrderBy)
                         {
                             if (orderByItem.Selected)
@@ -89,7 +89,7 @@
 		</ul>
 </div>
 
-
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
 
 
 <script type="text/javascript">

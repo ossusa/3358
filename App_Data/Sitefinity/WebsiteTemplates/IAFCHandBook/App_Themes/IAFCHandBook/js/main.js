@@ -110,4 +110,7 @@ $(function() {
 $(document).ready(function() {
     $arrowRight = '<div class="anticon anticon-right"></div>';
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
+    /*Select*/
+    $('.community__title-select').selectric();
 });
+
