@@ -112,12 +112,14 @@ $(document).ready(function() {
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
     /*Select*/
     $('.community__title-select').selectric();
+
     $('.community__title-select').click(function(){
-        $('.community__head-btn .button').toggleClass('rotated');
+        $('.button').toggleClass('rotated').toggle('community__category-select');
     });
     $('.community__category-select').selectric();
+
     $('.community__category-select').click(function(){
-        $('.community__head-btn .button').toggleClass('rotated');
+        $('.button').toggleClass('rotated').toggle('community__title-select');
     });
 });
 
