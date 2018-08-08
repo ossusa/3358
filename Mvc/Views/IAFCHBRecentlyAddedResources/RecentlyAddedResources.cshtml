@@ -11,23 +11,21 @@
                 <div class="resources__slide-img" style="background: none; overflow: hidden">
                     <img src='@item.ResourceDetails.ImageUrl' style="height: 100%; min-width: 100%;"/>
 
-                        <div class="resources__slide-label">
-                           <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
-                            <span>@item.ResourceDetails.Category.ParentCategoryTitle
-                            </span>
-                        </a> >
-                         <a class="" href="@item.ResourceDetails.Category.CategoryUrl">
-                            <span>@item.ResourceDetails.Category.CategoryTitle</span>
-                        </a>
-                        </div>
-                        <div class="resources__slide-time">
-                            <div class="resources--time">&nbsp;</div>
-                                <span> @item.ResourceDetails.DurationStr</span>
-                            </div>
-                        </div>
-
-
-                        <div class="resources__slide-info"></div>
+                    <div class="resources__slide-label">
+                     <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+                        <span>@item.ResourceDetails.Category.ParentCategoryTitle
+                        </span>
+                    </a> >
+                    <a class="" href="@item.ResourceDetails.Category.CategoryUrl">
+                        <span>@item.ResourceDetails.Category.CategoryTitle</span>
+                    </a>
+                </div>
+                <div class="resources__slide-time">
+                    <div class="resources--time">&nbsp;</div>
+                    <span> @item.ResourceDetails.DurationStr</span>
+                </div>
+            </div>
+            <div class="resources__slide-info">
                 <tr>
                     <td>
                         <div> @item.ResourceDetails.ResourceType</div>
@@ -66,15 +64,15 @@
                             </td>
                         </tr>
                     </div>
+                </div>
+            }
 
-                }
+        </div>
+    </div>
 
-     </div>
- </div>
+    <script type="text/javascript">
 
-<script type="text/javascript">
-
-    $(document).ready(function () {
+        $(document).ready(function () {
 
         //Add Like
         $('.addLike').on('click', function () {
