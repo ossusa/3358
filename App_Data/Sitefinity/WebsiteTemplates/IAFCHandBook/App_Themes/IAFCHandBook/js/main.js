@@ -112,14 +112,24 @@ $(document).ready(function() {
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
     /*Select*/
     $('.community__title-select').selectric();
-
-    $('.community__title-select').click(function(){
-        $('.button').toggleClass('rotated').toggle('community__category-select');
+    $('.selectric-community__title-select').find('.button').addClass('title__arrow');
+    $('.selectric-community__title-select .selectric').click(function(){
+        $('.title__arrow').toggleClass('rotated');
     });
-    $('.community__category-select').selectric();
 
-    $('.community__category-select').click(function(){
-        $('.button').toggleClass('rotated').toggle('community__title-select');
+    $('.community__category-select').selectric();
+    $('.selectric').click(function(){
+        // $('.button').toggleClass('rotated');
     });
 });
 
+// $('.community__title-select').selectric();
+//
+// $('.community__title-select').click(function(){
+//     $('.button').toggleClass('rotated').toggle('community__category-select');
+// });
+// $('.community__category-select').selectric();
+// $('.selectric-community__category-select').find('.button').addClass('community__arrow');
+// $('.community__category-select').click(function(){
+//     $('.community__arrow').toggleClass('rotated');
+// });
