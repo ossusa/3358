@@ -118,18 +118,8 @@ $(document).ready(function() {
     });
 
     $('.community__category-select').selectric();
-    $('.selectric').click(function(){
-        // $('.button').toggleClass('rotated');
+    $('.selectric-community__category-select').find('.button').addClass('category__arrow');
+    $('.selectric-community__category-select .selectric').click(function(){
+        $('.category__arrow').toggleClass('rotated');
     });
 });
-
-// $('.community__title-select').selectric();
-//
-// $('.community__title-select').click(function(){
-//     $('.button').toggleClass('rotated').toggle('community__category-select');
-// });
-// $('.community__category-select').selectric();
-// $('.selectric-community__category-select').find('.button').addClass('community__arrow');
-// $('.community__category-select').click(function(){
-//     $('.community__arrow').toggleClass('rotated');
-// });
