@@ -12,7 +12,8 @@
             <tr class="slick-track" style="opacity: 1; width: 4200px; transform: translate3d(-1200px, 0px, 0px);" role="listbox">
                 @foreach (var item in Model)
                 {
-                    <td class="resources__slide slick-slide">
+                    <div class="resources__slide slick-slide" style="width: 576px;" tabindex="-1>
+                        <td>
                         <table border="1">
                             <tr>
                                 <td>
@@ -61,6 +62,7 @@
                                     </tr>
                                 </table>
                             </td>
+                    </div>
                         }
                     </tr>
                 </table>
