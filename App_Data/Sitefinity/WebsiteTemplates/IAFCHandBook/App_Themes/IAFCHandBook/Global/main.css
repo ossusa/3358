@@ -186,7 +186,7 @@ body {
     width: auto;
     margin: 0 auto;
     max-width: 1440px;
-    overflow-x: hidden;
+    overflow: hidden;
     box-sizing: content-box;
 }
 .box {
@@ -1528,7 +1528,81 @@ p{
 .community__topics-ul{
     padding: 0;
     margin: 0;
+    margin-top: 16px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+}
+.community__topics-link{
+    display: block;
+    position: relative;
+    height: 188px;
+}
+.community__topics-text{
+    white-space: normal;
+}
+.community__topics-list{
+    list-style: none;
+    margin-right: 24px;
+}
+.community__topics-img{
+    width:282px;
+    height:188px;
+    border-radius: 3px;
+}
+/*Select title*/
+.selectric-community__title-select .selectric{
+    width: 384px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+}
+.selectric-community__title-select .selectric .label{
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    white-space: normal;
+    line-height: 48px;
+    color: #5591aa;
+    height: auto;
+}
+.selectric-community__title-select .selectric .button {
+    background-color: transparent;
+    color: #fff !important;
+}
+.selectric-community__title-select .selectric-items{
+    width: 384px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 3px;
+    padding: 18px 24px;
+    background: #fff;
+}
+.selectric-community__title-select .selectric-items li.highlighted{
+    background: #fff;
+}
+.selectric-community__title-select .selectric-items li:hover{
+    background: #fff;
+}
+.selectric-community__title-select .selectric-items li{
+    padding: 6px 0
+}
+.selectric-community__title-select .selectric-items ul, .selectric-items li{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+}
+.rotated{
+    transform: rotate(180deg);
+}
+/*Selectric category*/
+.selectric-community__category-select .selectric{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
 }
