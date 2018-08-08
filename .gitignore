@@ -2,3 +2,4 @@
 /App_Data/Sitefinity/Configuration/DataConfig.config
 /App_Data/logs/*
 /App_Data/Sitefinity/Logs/*
+/.idea/*
