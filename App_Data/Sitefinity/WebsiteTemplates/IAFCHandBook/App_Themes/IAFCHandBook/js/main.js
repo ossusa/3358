@@ -119,7 +119,7 @@ $(document).ready(function() {
     $('.community__category-select').selectric();
     $('.selectric-community__category-select').find('.button').addClass('community__arrow');
     $('.community__category-select').click(function(){
-        $('.button').toggleClass('rotated');
+        $('.community__arrow').toggleClass('rotated');
     });
 });
 
