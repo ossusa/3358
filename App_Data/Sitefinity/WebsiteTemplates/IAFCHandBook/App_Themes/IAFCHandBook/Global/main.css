@@ -1047,7 +1047,7 @@ p{
         padding-right: 22px !important ;
     }
     .k-link{
-        padding: .5em 22px .4em !important;
+        padding: .5em 17px .4em !important;
     }
     .box-mobile{
         padding-left: 0 !important;
@@ -1431,7 +1431,7 @@ p{
     .topics__content{
         padding: 0 0 75px;
     }
-    .topics__ul:nth-of-type(2){
+    .topics__ul-second{
         margin: 20px 0 0 0;
     }
     .mobile-br-none{
