@@ -42,6 +42,7 @@
     content: "\E61D";
     display: block;
     font-family: anticon!important;
+    color: #9b9b9b;
 }
 .selectric-focus .selectric {
     border-color: #aaa;
