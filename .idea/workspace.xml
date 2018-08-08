@@ -68,6 +68,8 @@
             <state vertical-scroll-proportion="-27.76923">
               <caret line="1657" column="21" selection-start-line="1657" selection-start-column="1" selection-end-line="1657" selection-end-column="21" />
               <folding />
+            <state relative-caret-position="1349">
+              <caret line="1632" column="23" selection-start-line="1632" selection-start-column="23" selection-end-line="1632" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -124,6 +126,7 @@
       <find>#wrapper</find>
       <find>btn</find>
       <find>community__head-b</find>
+      <find>community__head-btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -244,12 +247,12 @@
       <option name="number" value="Default" />
       <updated>1533650078170</updated>
       <workItem from="1533650081359" duration="13525000" />
-      <workItem from="1533720785054" duration="13268000" />
+      <workItem from="1533720785054" duration="13620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26793000" />
+    <option name="totallyTimeSpent" value="27145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -449,6 +452,8 @@
         <state vertical-scroll-proportion="0.30858085">
           <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
           <folding />
+        <state relative-caret-position="1349">
+          <caret line="1632" column="23" selection-start-line="1632" selection-start-column="23" selection-end-line="1632" selection-end-column="23" />
         </state>
       </provider>
     </entry>
