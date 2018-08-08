@@ -1476,6 +1476,12 @@ p{
     }
 }
 @media (max-width: 370px){
+    .footer__info-col > div > ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
     .box-about{
         padding-left: 14px;
         padding-right: 14px;
