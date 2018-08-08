@@ -14,6 +14,9 @@ namespace SitefinityWebApp.Mvc.Controllers
 	[ControllerToolboxItem(Name = "IAFCHBResourceDetails", Title = "Resource Details", SectionName = "Hand Book MVC Widgets")]
 	public class IAFCHBResourceDetailsController:Controller
 	{
+		private const string commentResource = "Comment";
+		private const string resourceResource = "Resource";
+
 		[Category("General")]
 		public Guid ResourceID { get; set; }
 		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
@@ -38,7 +41,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddLike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
-			var likes = AddLikeForResource(id, "Resource").ToString();
+			var likes = AddLikeForResource(id, resourceResource).ToString();
 
 			return Json(likes);
 		}
@@ -48,7 +51,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddDislike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
-			var dislikes = AddDislikeForResource(id, "Resourse").ToString();
+			var dislikes = AddDislikeForResource(id, resourceResource).ToString();
 
 			return Json(dislikes);
 		}
@@ -79,7 +82,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddCommentLike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
-			var likes = AddLikeForResource(id, "Comment").ToString();
+			var likes = AddLikeForResource(id, commentResource).ToString();
 
 			return Json(likes);
 		}
@@ -89,7 +92,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddCommentDislike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
-			var dislikes = AddDislikeForResource(id, "Comment").ToString();
+			var dislikes = AddDislikeForResource(id, commentResource).ToString();
 
 			return Json(dislikes);
 		}
@@ -108,8 +111,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddReplyComment(String commentTxt, String commentId)
 		{
 			var id = Guid.Parse(commentId);
-			handBookHelper.CreateNewCommentForResource(id, commentTxt, "comment");
-			var model = handBookHelper.GetResourceComments(id,"comment");
+			handBookHelper.CreateNewCommentForResource(id, commentTxt, commentResource);
+			var model = handBookHelper.GetResourceComments(id, commentResource);
 			return PartialView("_IAFCHBComments", model);
 
 		}

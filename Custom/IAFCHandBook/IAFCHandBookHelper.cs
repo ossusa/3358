@@ -56,6 +56,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string OrderByAlphabeticalAZ = "AlphabeticalAZ";
 		private const string OrderByAlphabeticalZA = "AlphabeticalZA";
 
+		private const string commentResource = "Comment";
+		private const string resourceResource = "Resource";
+
 		#region DynamicTypes
 		private Type handBookResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookResourcesData.Iafchandbookresourcesdata");																	   
 		private Type externalResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.HandbookResources.ResourcesExternal");																		
@@ -709,18 +712,23 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetResourceDetailsInfo
 
 		#region GetResourceLikesInfo
-		public IAFCHandBookLikesModel GetResourceLikesInfo(DynamicContent resource)
+		public IAFCHandBookLikesModel GetResourceLikesInfo(DynamicContent resource , string resourceType = resourceResource)
 		{
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 			var resourceLike = new IAFCHandBookLikesModel();
 
 			try
 			{
-				var likeExists = resource.GetRelatedItems("Likes").Cast<DynamicContent>().Count();
+				string commentFieldText = "Likes";
+				if (resourceType == commentResource)
+				{
+					commentFieldText = "CommentLikes";
+				}
+				var likeExists = resource.GetRelatedItems(commentFieldText).Cast<DynamicContent>().Count();
 				var like = new DynamicContent();
 				if (likeExists > 0)
 				{
-					like = resource.GetRelatedItems("Likes").Cast<DynamicContent>().First();
+					like = resource.GetRelatedItems(commentFieldText).Cast<DynamicContent>().First();
 				}
 				else
 				{
@@ -738,11 +746,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					like.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
 					//Add Like to resource						
-					var liveResource = dynamicModuleManager.GetDataItem(handBookResourcesType, resource.Id);
+					var resourceTypeItem = handBookResourcesType;
+					if (resourceType == commentResource)
+					{
+						resourceTypeItem = resourceCommentsType;
+					}
+
+					var liveResource = dynamicModuleManager.GetDataItem(resourceTypeItem, resource.Id);
 					var masterResource = dynamicModuleManager.Lifecycle.GetMaster(liveResource);
 
 					DynamicContent checkOutResourceItem = dynamicModuleManager.Lifecycle.CheckOut(masterResource) as DynamicContent;
-					checkOutResourceItem.CreateRelation(like, "Likes");
+					checkOutResourceItem.CreateRelation(like, commentFieldText);
 					ILifecycleDataItem checkInMyresourcesItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutResourceItem);
 					dynamicModuleManager.Lifecycle.Publish(checkInMyresourcesItem);
 
@@ -766,12 +780,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetResourceLikesInfo
 
 		#region GetResourceComments
-		public List<IAFCHandBookCommentModel> GetResourceComments(Guid resourceId, string resourceType = "resource")
+		public List<IAFCHandBookCommentModel> GetResourceComments(Guid resourceId, string resourceType = resourceResource)
 		{
 			var comments = new List<IAFCHandBookCommentModel>();
 
 			var resourceTypeItem = handBookResourcesType;
-			if (resourceType == "comment")
+			if (resourceType == commentResource)
 			{
 				resourceTypeItem = resourceCommentsType;
 			}
@@ -786,7 +800,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return comments;
 		}
 
-		public List<IAFCHandBookCommentModel> GetResourceComments(DynamicContent resource, string resourceType = "resource")
+		public List<IAFCHandBookCommentModel> GetResourceComments(DynamicContent resource, string resourceType = resourceResource)
 		{
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 			UserProfileManager profileManager = UserProfileManager.GetManager();
@@ -795,7 +809,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			
 			string commentFieldName = "Comment";
-			if (resourceType=="comment")
+			if (resourceType== commentResource)
 			{
 				commentFieldName = "Reply";
 			}
@@ -824,7 +838,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
 					}
 				}
-				commentDetails.Likes = GetResourceLikesInfo(commentItem);
+				commentDetails.Likes = GetResourceLikesInfo(commentItem, commentResource);
 
 
 				var replyComments = commentItem.GetRelatedItems("Reply").Cast<DynamicContent>().ToArray();
@@ -851,7 +865,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
 						}
 					}
-					replyCommentDetails.Likes = GetResourceLikesInfo(commentItem);
+					replyCommentDetails.Likes = GetResourceLikesInfo(commentItem, commentResource);
 
 					replyCommentList.Add(replyCommentDetails);
 
@@ -1200,17 +1214,26 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Likes
 		public int AddLikeForResource(Guid resourceID, String resourceType)
 		{
-
-			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
-
-			//Add Like to resource						      
-			var resource = dynamicModuleManager.GetDataItem(handBookResourcesType, resourceID);
-			var resourceLike = resource.GetRelatedItems("Likes").Cast<DynamicContent>().First();
-			var masterResourceLike = dynamicModuleManager.Lifecycle.GetMaster(resourceLike);
-
-			var currentLikes = Convert.ToInt32(resourceLike.GetValue("AmountOfLikes")) + 1;
+			int currentLikes = 7;
 			try
 			{
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+
+
+				string commentFieldText = "Likes";				
+				var resourceTypeItem = handBookResourcesType;
+				if (resourceType == commentResource)
+				{
+					resourceTypeItem = resourceCommentsType;
+					commentFieldText = "CommentLikes";
+				}
+
+				var resource = dynamicModuleManager.GetDataItem(resourceTypeItem, resourceID);
+				var resourceLike = resource.GetRelatedItems(commentFieldText).Cast<DynamicContent>().First();
+				var masterResourceLike = dynamicModuleManager.Lifecycle.GetMaster(resourceLike);
+
+				currentLikes = Convert.ToInt32(resourceLike.GetValue("AmountOfLikes")) + 1;
+
 				DynamicContent checkOutLikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceLike) as DynamicContent;
 				checkOutLikeItem.SetValue("AmountOfLikes", currentLikes);
 				ILifecycleDataItem checkInLikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutLikeItem);
@@ -1219,37 +1242,46 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				var msg = e.Message;
+				log.Error("add like error " + e.Message);
 			}
-			
-			
+
+
 			return currentLikes;
-			
+
 		}
 
 		public int AddDislikeForResource(Guid resourceID, String resourceType)
 		{
-
-			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
-
-			//Add DisLike to resource
-			var resource = dynamicModuleManager.GetDataItem(handBookResourcesType, resourceID);
-			var resourceDislike = resource.GetRelatedItems("Likes").Cast<DynamicContent>().First();
-			var masterResourceDislike = dynamicModuleManager.Lifecycle.GetMaster(resourceDislike);
-
-			var currentDislikes = Convert.ToInt32(resourceDislike.GetValue("AmountOfDislikes")) + 1;
+			int currentDislikes = 7;
 			try
 			{
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+
+				string commentFieldText = "Likes";
+				var resourceTypeItem = handBookResourcesType;
+				if (resourceType == commentResource)
+				{
+					resourceTypeItem = resourceCommentsType;
+					commentFieldText = "CommentLikes";
+				}
+
+				//Add DisLike to resource
+				var resource = dynamicModuleManager.GetDataItem(resourceTypeItem, resourceID);
+				var resourceDislike = resource.GetRelatedItems(commentFieldText).Cast<DynamicContent>().First();
+				var masterResourceDislike = dynamicModuleManager.Lifecycle.GetMaster(resourceDislike);
+
+				currentDislikes = Convert.ToInt32(resourceDislike.GetValue("AmountOfDislikes")) + 1;
+
 				DynamicContent checkOutDislikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceDislike) as DynamicContent;
-				checkOutDislikeItem.SetValue("AmountOfLikes", currentDislikes);
+				checkOutDislikeItem.SetValue("AmountOfDislikes", currentDislikes);
 				ILifecycleDataItem checkInDislikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutDislikeItem);
 				dynamicModuleManager.Lifecycle.Publish(checkInDislikeItem);
 				dynamicModuleManager.SaveChanges();
-				
+
 			}
 			catch (Exception e)
 			{
-				var msg = e.Message;
+				log.Error("add dislike error " + e.Message);
 			}
 
 			return currentDislikes;
@@ -1257,14 +1289,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion Likes
 
 		#region Comments
-		public void CreateNewCommentForResource(Guid resourceID, string comment, string resourceType = "resource")
+		public void CreateNewCommentForResource(Guid resourceID, string comment, string resourceType = resourceResource)
 		{
 
 			var providerName = String.Empty;
 			var transactionName = "commentTransaction";
 			string commentType = "Comment";
 			var resourceTypeItem = handBookResourcesType;
-			if (resourceType == "comment")
+			if (resourceType == commentResource)
 			{
 				resourceTypeItem = resourceCommentsType;
 				commentType = "Reply";

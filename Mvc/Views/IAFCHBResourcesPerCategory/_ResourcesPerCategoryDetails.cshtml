@@ -99,6 +99,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBResourcesPerCategory")',
 				data: { resourceId: resourceId },
 				dataType: "json",
@@ -115,6 +116,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBResourcesPerCategory")',
 				data: { resourceId: resourceId },
 				dataType: "json",
@@ -132,6 +134,7 @@
 			
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBResourcesPerCategory")',
 				data: { resourceId: resourceId },
 				dataType: "json",

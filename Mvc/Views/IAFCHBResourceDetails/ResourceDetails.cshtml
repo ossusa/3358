@@ -46,13 +46,13 @@
 					</td>
 
 					<td>
-						<button type="button" class="addCommentLike" data-id="@Model.Id.ToString()"> Add Like </button>
+						<button type="button" class="addLike" data-id="@Model.Id.ToString()"> Add Like </button>
 						<div id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())">
 							<span>@Model.Likes.Likes</span>
 						</div>
 					</td>
 					<td>
-						<button type="button" class="addCommentDislike" data-id="@Model.Id.ToString()"> Add Dislike </button>
+						<button type="button" class="addDislike" data-id="@Model.Id.ToString()"> Add Dislike </button>
 						<div id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())">
 							<span>@Model.Likes.Dislikes</span>
 						</div>
