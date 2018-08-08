@@ -290,7 +290,10 @@ p{
     font-family: 'Lato', sans-serif;
 }
 .header__logo{
-    padding: 24px 0;
+    padding: 8px 0;
+}
+.header__nav > ul > li:nth-of-type(3) > a{
+    padding-right: 0 !important;
 }
 .header__table-tr{
     display: flex;
