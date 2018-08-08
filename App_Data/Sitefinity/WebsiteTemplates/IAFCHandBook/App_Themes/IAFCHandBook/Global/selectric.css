@@ -137,14 +137,10 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    /*font-size: 12px;*/
-    /*line-height: 20px;*/
-    /*min-height: 20px;*/
 }
 .selectric-items li {
     display: block;
     padding: 10px;
-    color: #666;
     cursor: pointer;
 }
 .selectric-items li.selected {
@@ -152,12 +148,10 @@
     color: #444;
 }
 .selectric-items li.highlighted {
-    background: #d0d0d0;
-    color: #444;
+    background: #fff;
 }
 .selectric-items li:hover {
-    background: #d5d5d5;
-    color: #444;
+    background: #fff;
 }
 .selectric-items .disabled {
     filter: alpha(opacity=50);

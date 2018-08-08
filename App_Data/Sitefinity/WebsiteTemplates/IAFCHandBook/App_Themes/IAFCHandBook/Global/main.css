@@ -1479,6 +1479,7 @@ p{
     background: transparent;
     padding: 12px;
     margin-left: 16px;
+    line-height: 16px;
 }
 .community__head-btn select{
     border: 1px solid #2b4b6b;
@@ -1616,7 +1617,7 @@ p{
 .selectric-community__category-select .selectric .label{
     font-family: 'Nunito Sans', sans-serif;
     margin: 0;
-    line-height: 20px;
+    line-height: 38px;
     font-size: 1em;
     font-weight: 400;
     color: #2b4b6b;
