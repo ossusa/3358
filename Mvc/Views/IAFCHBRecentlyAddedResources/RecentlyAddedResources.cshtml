@@ -9,7 +9,7 @@
         {
             <div class="resources__slide">
                 <div class="resources__slide-img" style="background: none; overflow: hidden">
-                    <img src='@item.ResourceDetails.ImageUrl' />
+                    <img src='@item.ResourceDetails.ImageUrl' style="height: 100%; min-width: 100%;" />
 
                         <div class="resources__slide-label">
                            <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
@@ -24,13 +24,11 @@
                             <div class="resources--time">&nbsp;</div>
                                 <span> @item.ResourceDetails.DurationStr</span>
                             </div>
-
-
                          </div>
 
-                <tr>
-                    <td>
-                        <div> @item.ResourceDetails.ResourceType</div>
+
+
+                            <div> @item.ResourceDetails.ResourceType</div>
                         <a href="@item.ResourceUrl"><span>@item.ResourceDetails.ResourceTitle</span></a>
                         <div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
                         <br />
@@ -63,8 +61,8 @@
                                 <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
                                     <span>@item.Likes.Dislikes</span>
                                 </div>
-                            </td>
-                        </tr>
+
+
                     </div>
 
                 }
