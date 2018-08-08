@@ -1597,7 +1597,7 @@ p{
     font-weight: 700;
     line-height: 24px;
 }
-.rotated{
+.community__arrow.rotated{
     transform: rotate(180deg);
 }
 /*Selectric category*/
