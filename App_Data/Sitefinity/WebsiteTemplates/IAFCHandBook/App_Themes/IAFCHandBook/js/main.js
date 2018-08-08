@@ -113,11 +113,11 @@ $(document).ready(function() {
     /*Select*/
     $('.community__title-select').selectric();
     $('.community__title-select').click(function(){
-        $('.community__title-select > .button').toggleClass('rotated');
+        $('.community__title-select .button').toggleClass('rotated');
     });
     $('.community__category-select').selectric();
     $('.community__category-select').click(function(){
-        $('.community__category-select > .button').toggleClass('rotated');
+        $('.community__category-select .button').toggleClass('rotated');
     });
 });
 
