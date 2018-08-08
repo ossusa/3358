@@ -947,6 +947,7 @@ p{
 .topics__list:active .topics__img-back-red {
     background: #cf794a;
 }
+
 .topics__content-last{
     margin-bottom: 0 !important;
 }
