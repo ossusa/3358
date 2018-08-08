@@ -7,12 +7,12 @@
     <h2 class="resources__title">Recently Added Resources</h2>
     <div class="resources__slider slick-initialized slick-slider">
         <button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
-        <table border="0" aria-live="polite" class="slick-list draggable">
+        <div border="0" aria-live="polite" class="slick-list draggable">
 
-            <tr class="slick-track" style="opacity: 1; width: 4200px; transform: translate3d(-1200px, 0px, 0px);" role="listbox">
+            <div class="slick-track" style="opacity: 1; width: 4200px; transform: translate3d(-1200px, 0px, 0px);" role="listbox">
                 @foreach (var item in Model)
                 {
-                    <td>
+                    <div class="resources__slide slick-slide>
                         <table border="1">
                             <tr>
                                 <td>
@@ -60,10 +60,10 @@
                                         </td>
                                     </tr>
                                 </table>
-                            </td>
+                            </div>
                         }
-                    </tr>
-                </table>
+                    </div>
+                </div>
                 <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button>
             </div>
         </div>
