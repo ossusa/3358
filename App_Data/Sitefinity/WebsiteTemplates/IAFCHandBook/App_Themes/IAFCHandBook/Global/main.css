@@ -1595,9 +1595,7 @@ p{
     font-weight: 700;
     line-height: 24px;
 }
-.selectric-community__title-select .selectric-hover .selectric {
-    border-color: transparent;
-}
-.selectric-community__title-select .selectric-hover .selectric .button {
-    color: transparent;
+
+.selectric-community__title-select .selectric-hover{
+    display: none;
 }
