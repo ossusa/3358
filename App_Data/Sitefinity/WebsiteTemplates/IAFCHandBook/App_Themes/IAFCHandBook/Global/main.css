@@ -1028,6 +1028,14 @@ p{
     }
 }
 @media (max-width: 1109px) {
+    .header__logo {
+        padding: 14px 0;
+    }
+    .header__logo img{
+        width: 315px;
+        height: 71px;
+        margin-left: 7px;
+    }
     .header__search{
         display: none;
     }
@@ -1038,7 +1046,7 @@ p{
         padding: 0 90px;
     }
     .k-link{
-        padding: .5em 16px .4em !important;
+        padding: .5em 22px .4em !important;
     }
     .box-mobile{
         padding-left: 0 !important;
