@@ -943,6 +943,10 @@ p{
 .topics__list:active .topics__img-back-green {
     background: #73AA56;
 }
+.topics__list:hover .topics__img-back-red,
+.topics__list:active .topics__img-back-red {
+    background: #cf794a;
+}
 .topics__content-last{
     margin-bottom: 0 !important;
 }
