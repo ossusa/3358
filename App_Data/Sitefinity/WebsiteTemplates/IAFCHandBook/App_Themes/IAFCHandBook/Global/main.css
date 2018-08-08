@@ -1474,12 +1474,16 @@ p{
     border: 1px solid #2b4b6b;
     border-radius: 3px;
     color: #2b4b6b;
+    width: 200px;
     font-size: 1em;
     height: 40px;
     background: transparent;
     padding: 12px;
     margin-left: 16px;
     line-height: 16px;
+}
+.community__head-btn:nth-of-type(2){
+    width: 90px;
 }
 .community__head-btn button{
     border: none;

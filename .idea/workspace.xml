@@ -52,8 +52,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1332">
-              <caret line="1657" column="21" selection-start-line="1657" selection-start-column="1" selection-end-line="1657" selection-end-column="21" />
+            <state relative-caret-position="454">
+              <caret line="1485" column="15" selection-start-line="1485" selection-start-column="15" selection-end-line="1485" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -108,6 +108,7 @@
       <find>#wrapper</find>
       <find>btn</find>
       <find>community__head-b</find>
+      <find>community__head-btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -290,12 +291,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533650078170</updated>
       <workItem from="1533650081359" duration="13525000" />
-      <workItem from="1533720785054" duration="13268000" />
+      <workItem from="1533720785054" duration="13379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26793000" />
+    <option name="totallyTimeSpent" value="26904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -439,8 +440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="1657" column="21" selection-start-line="1657" selection-start-column="1" selection-end-line="1657" selection-end-column="21" />
+        <state relative-caret-position="454">
+          <caret line="1485" column="15" selection-start-line="1485" selection-start-column="15" selection-end-line="1485" selection-end-column="15" />
         </state>
       </provider>
     </entry>
