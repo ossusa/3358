@@ -1759,6 +1759,8 @@ p{
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .anticon:before, .resources--like:hover:before, .resources--like:focus:before, .resources--dislike:hover:before, .resources--dislike:focus:before {
