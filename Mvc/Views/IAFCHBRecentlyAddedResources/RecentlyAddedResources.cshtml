@@ -27,7 +27,7 @@
                          </div>
 
 
-                        <div class="resources__slide-info">
+
                             <div> @item.ResourceDetails.ResourceType</div>
                         <a href="@item.ResourceUrl"><span>@item.ResourceDetails.ResourceTitle</span></a>
                         <div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
@@ -61,7 +61,7 @@
                                 <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
                                     <span>@item.Likes.Dislikes</span>
                                 </div>
-                        </div>
+
 
                     </div>
 
