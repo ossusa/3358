@@ -35,8 +35,6 @@
     background-color: #f8f8f8;
     color: #bbb;
     text-align: center;
-    font: 0/0 a;
-    *font: 20px/38px Lucida Sans Unicode, Arial Unicode MS, Arial;
 }
 .selectric .button:before {
     content: "\E61D";
