@@ -227,6 +227,78 @@
 
 			});
 		});
+
+		//Add Comment Like
+		$('.addCommentLike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddCommentLike", "IAFCHBResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#commentLikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add Comment Dislike
+		$('.addCommentDislike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddCommentDislike", "IAFCHBResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#commentDislikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Comment Reply btn t1
+		$('.commentReplyBtn').on('click', function () {
+
+			var commentId = $(this).attr('data-id');
+			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("PressReplyCommentBtn", "IAFCHBResourceDetailsController")',
+				data: { commentId: commentId },				
+				success: function (response) {					
+					$("#replyCommentBtn_" + commentId).html("");
+					$("#commentRepliesInputView_" + commentId).html(response);																	
+				}
+			});
+		});
+
+		//Add Reply Comment Button Pressed
+		$('.addReplyCommentBtn').on('click', function () {
+
+			var commentId = $(this).attr('data-id');
+			var commentMsg = $('#replyComment_' + commentId).val();
+			var comment = commentMsg;
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddReplyComment", "IAFCHBResourceDetailsController")',
+				data: { commentTxt: comment, commentId: commentId},
+				success: function (commentsResults) {
+					$("#commentRepliesInputView_" + commentId).html(" ");
+					$("#commentRepliesView_" + commentId).html(commentsResults);
+					$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="'+commentId+'"> Reply </button>');
+				}
+
+			});
+		});
 		
 	});
 

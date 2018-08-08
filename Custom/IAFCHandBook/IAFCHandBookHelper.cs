@@ -1214,7 +1214,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Likes
 		public int AddLikeForResource(Guid resourceID, String resourceType)
 		{
-			int currentLikes = 7;
+			int currentLikes = 0;
 			try
 			{
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -1252,7 +1252,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public int AddDislikeForResource(Guid resourceID, String resourceType)
 		{
-			int currentDislikes = 7;
+			int currentDislikes = 0;
 			try
 			{
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
