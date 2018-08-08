@@ -1605,9 +1605,10 @@ p{
     width: 200px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-radius: 3px;
     background: transparent;
-    padding: 0 12px;
+    padding: 0 0 0 12px;
     height: 40px;
 }
 .selectric-community__category-select .selectric .label{
@@ -1631,4 +1632,11 @@ p{
     font-weight: 400;
     color: #2b4b6b;
     line-height: 24px;
+    padding: 8px 0;
+}
+.selectric-community__category-select > .selectric .button{
+    color: #2b4b6b;
+}
+.selectric-community__category-select > .selectric-items li{
+    padding: 4px 12px;
 }
