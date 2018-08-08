@@ -112,9 +112,12 @@ $(document).ready(function() {
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
     /*Select*/
     $('.community__title-select').selectric();
+    $('.community__title-select').click(function(){
+        $('.community__title-select > .button').toggleClass('rotated');
+    });
     $('.community__category-select').selectric();
-    $('.selectric').click(function(){
-        $('.button').toggleClass('rotated');
+    $('.community__category-select').click(function(){
+        $('.community__category-select > .button').toggleClass('rotated');
     });
 });
 
