@@ -12,7 +12,7 @@
                     <img src='@item.ResourceDetails.ImageUrl'/>
 
                     <div class="resources__slide-label">
-                     <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+                       <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
                         <span>@item.ResourceDetails.Category.ParentCategoryTitle
                         </span>
                     </a> >
@@ -50,10 +50,19 @@
                             <span class="resources--comments"></span>
                             <span>@item.CommentsAmount Comments</span>
                         </a>
-                        <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-                        <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
-                            <span>@item.Likes.Likes</span>
-                        </div>
+
+
+                        <button type="button" class="resources__slide-btn addLike" data-id="@item.Id.ToString()">
+                            <span class="resources--like anticon anticon-like-o" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                                <span>@item.Likes.Likes</span>
+                            </span>
+                        </button>
+
+
+
+
+
+
                         <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
                         <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
                             <span>@item.Likes.Dislikes</span>
