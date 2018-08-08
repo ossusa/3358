@@ -7,16 +7,27 @@
     <div class="resources__slider">
         @foreach (var item in Model)
         {
+            <div class="resources__slide">
+                <div class="resources__slide-img">
+                    <img src='@item.ResourceDetails.ImageUrl' style="width:100%" />
 
-            <div class="resources__slide" border="1">
-                <tr>
-                    <td>
-                        <img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
-                        <br />
-                        <a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
-                        <span> @item.ResourceDetails.DurationStr</span>
-                    </td>
-                </tr>
+                        <div class="resources__slide-label">
+                           <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+                            <span>@item.ResourceDetails.Category.ParentCategoryTitle
+                            </span>
+                        </a> >
+                         <a class="" href="@item.ResourceDetails.Category.CategoryUrl">
+                            <span>@item.ResourceDetails.Category.CategoryTitle</span>
+                        </a>
+                        </div>
+                        <div class="resources__slide-time">
+                            <div class="resources--time">&nbsp;</div>
+                                <span> @item.ResourceDetails.DurationStr</span>
+                            </div>
+
+
+                         </div>
+
                 <tr>
                     <td>
                         <div> @item.ResourceDetails.ResourceType</div>
@@ -63,62 +74,62 @@
 
 <script type="text/javascript">
 
-	$(document).ready(function () {
+    $(document).ready(function () {
 
-		//Add Like
-		$('.addLike').on('click', function () {
+        //Add Like
+        $('.addLike').on('click', function () {
 
-			var resourceId = $(this).attr('data-id');
+            var resourceId = $(this).attr('data-id');
 
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddLike", "IAFCHBRecentlyAddedResources")',
-				data: { resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceLikes_" + resourceId).html(response);
-				}
-			});
-		});
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                url: '@Url.Action("AddLike", "IAFCHBRecentlyAddedResources")',
+                data: { resourceId },
+                dataType: "json",
+                success: function (response) {
+                    $("#resourceLikes_" + resourceId).html(response);
+                }
+            });
+        });
 
-		//Add Dislike
-		$('.addDislike').on('click', function () {
+        //Add Dislike
+        $('.addDislike').on('click', function () {
 
-			var resourceId = $(this).attr('data-id');
+            var resourceId = $(this).attr('data-id');
 
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddDislike", "IAFCHBRecentlyAddedResources")',
-				data: { resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceDislikes_" + resourceId).html(response);
-				}
-			});
-		});
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                url: '@Url.Action("AddDislike", "IAFCHBRecentlyAddedResources")',
+                data: { resourceId },
+                dataType: "json",
+                success: function (response) {
+                    $("#resourceDislikes_" + resourceId).html(response);
+                }
+            });
+        });
 
-		//Add ToMyHandBook
-		$('.addToMyHandBook').on('click', function () {
+        //Add ToMyHandBook
+        $('.addToMyHandBook').on('click', function () {
 
-			var resourceId = $(this).attr('data-id');
+            var resourceId = $(this).attr('data-id');
 
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddToMyHandBook", "IAFCHBRecentlyAddedResources")',
-				data: { resourceId },
-				dataType: "json",
-				success: function (response) {
-					if (response == true) {
-						$("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
-					}	
-				}
-			});
-		});
-		
-	});
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                url: '@Url.Action("AddToMyHandBook", "IAFCHBRecentlyAddedResources")',
+                data: { resourceId },
+                dataType: "json",
+                success: function (response) {
+                    if (response == true) {
+                        $("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
+                    }
+                }
+            });
+        });
+
+    });
 
 </script>
 
