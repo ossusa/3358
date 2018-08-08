@@ -104,6 +104,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddAllToMyHandBook", "IAFCHBResourcesPerCategory")',
 				data: { categoryId: categoryId },
 				dataType: "json",
@@ -122,6 +123,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("FollowCategory", "IAFCHBResourcesPerCategory")',
 				data: { categoryId: categoryId },
 				dataType: "json",
@@ -139,7 +141,8 @@
 				var orderByValue = $('#sortByChanged').val();
 
                 $.ajax({
-                    type: 'POST',
+					type: 'POST',
+					cache: false,
                     url: '@Url.Action("GetOrderedResources", "IAFCHBResourcesPerCategory")',
 					data: { orderBy: parseInt(orderByValue) },
                     success: function (response) {

@@ -46,6 +46,7 @@
 
 			$.ajax({
 				type: 'POST',
+				cache: false,
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBFeaturedResourcesController")',
 				data: { resourceId },
 				dataType: "json",
