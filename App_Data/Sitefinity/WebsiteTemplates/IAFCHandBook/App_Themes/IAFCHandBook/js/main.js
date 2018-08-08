@@ -66,11 +66,9 @@ $(document).on('click', '#site-search-submit', event => {
 });
 $(".header__mob-open").click(function(){
     $('.header__mob-nav').css({ width: "100vw" });
-    // $('#main').css({ marginRight: "100vw" });
 });
 $(".header__mob-close").click(function(){
     $('.header__mob-nav').css({ width: "0" });
-    // $('#main').css({ marginRight: "0" });
 });
 $(function() {
 

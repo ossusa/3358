@@ -292,9 +292,9 @@ p{
 .header__logo{
     padding: 8px 0;
 }
-.header__nav > ul > li:nth-of-type(3) > a{
-    padding-right: 0 !important;
-}
+/*.header__nav > ul > li:nth-of-type(4) > a{*/
+    /*padding-right: 0 !important;*/
+/*}*/
 .header__table-tr{
     display: flex;
     justify-content: space-between;
@@ -493,7 +493,7 @@ p{
 .hb-jumbo__search{
     position: relative;
     z-index: 2;
-    margin: 29px 0 0 0;
+    margin: 34px 0 0 0;
 }
 .hb-jumbo__search fieldset{
     position: relative;
@@ -854,10 +854,10 @@ p{
     height: 18px;
 }
 .topics__text-first{
-    padding: 100px 0 36px !important;
+    padding: 83px 0 36px !important;
 }
 .topics__text{
-    padding: 0 0 36px;
+    padding: 0 0 6px;
 }
 .topics__text h2{
     color: #5591AA;
@@ -877,7 +877,7 @@ p{
     margin-left: 6px;
 }
 .topics__content{
-    padding: 0 0 100px;
+    padding: 0 0 71px;
 }
 .topics__content a{
     display: block;
@@ -1008,7 +1008,15 @@ p{
 .header__mob{
     display: none;
 }
+@media (min-width: 1109px) {
+    .tablet-br{
+        display: none;
+    }
+}
 @media (max-width: 1109px) {
+    .tablet-br{
+        display: block;
+    }
     .header__text{
         padding: 0 90px;
     }
