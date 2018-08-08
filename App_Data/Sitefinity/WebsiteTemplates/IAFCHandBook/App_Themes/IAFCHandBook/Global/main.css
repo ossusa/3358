@@ -292,9 +292,9 @@ p{
 .header__logo{
     padding: 8px 0;
 }
-/*.header__nav > ul > li:nth-of-type(4) > a{*/
-    /*padding-right: 0 !important;*/
-/*}*/
+.header__nav > ul > li:nth-of-type(4) > a{
+    padding-right: 0 !important;
+}
 .header__table-tr{
     display: flex;
     justify-content: space-between;
@@ -385,7 +385,7 @@ p{
 .mg-search-box{
     background-color: #fff;
     position: absolute;
-    top: 75px;
+    top: 63px;
     right: 0;
     z-index: 2;
     padding: 20px;
