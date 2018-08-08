@@ -854,10 +854,16 @@ p{
     height: 18px;
 }
 .topics__text-first{
-    padding: 83px 0 36px !important;
+    padding: 82px 0 37px !important;
+}
+.topics__text-space{
+    padding: 26px 0 36px 0px;
+}
+.topics__content--last{
+    padding: 100px 0 0 0;
 }
 .topics__text{
-    padding: 0 0 6px;
+    padding: 0 0 35px;
 }
 .topics__text h2{
     color: #5591AA;
@@ -877,7 +883,7 @@ p{
     margin-left: 6px;
 }
 .topics__content{
-    padding: 0 0 71px;
+    padding: 0 0 70px;
 }
 .topics__content a{
     display: block;
