@@ -37,7 +37,7 @@
                         var AlphabeticalZAUrl = Model.Category.CategoryUrl + "/AlphabeticalZA";
                     }
 
-                    <select id="UrlOrderByList" onchange="doOrderByNavigate()">
+                    <select class="community__category-select" id="UrlOrderByList" onchange="doOrderByNavigate()">
                         @foreach (var orderByItem in Model.OrderBy)
                         {
                             if (orderByItem.Selected)
