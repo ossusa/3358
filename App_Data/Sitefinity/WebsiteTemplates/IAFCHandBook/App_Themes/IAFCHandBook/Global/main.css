@@ -1570,7 +1570,7 @@ p{
 }
 .selectric-community__title-select .selectric .button {
     background-color: transparent;
-    color: #fff;
+    color: #fff !important;
 }
 .selectric-community__title-select .selectric-items{
     width: 384px;
@@ -1596,6 +1596,3 @@ p{
     line-height: 24px;
 }
 
-.selectric-community__title-select .selectric-hover .selectric .button{
-    color: transparent;
-}
