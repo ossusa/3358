@@ -26,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/Mvc/Views/SBAngularSearchResults/Default.cshtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -52,8 +52,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="1575" column="11" selection-start-line="1575" selection-start-column="11" selection-end-line="1575" selection-end-column="11" />
+            <state relative-caret-position="754">
+              <caret line="1592" column="22" selection-start-line="1592" selection-start-column="22" selection-end-line="1592" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="846">
-              <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
+              <caret line="197" selection-start-line="197" selection-end-line="197" />
             </state>
           </provider>
         </entry>
@@ -102,6 +102,7 @@
       <find>main.css</find>
       <find>community__topics-img</find>
       <find>community__title</find>
+      <find>nunito</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -277,12 +278,12 @@
       <option name="presentableId" value="Default" />
       <updated>1533650078170</updated>
       <workItem from="1533650081359" duration="13525000" />
-      <workItem from="1533720785054" duration="3561000" />
+      <workItem from="1533720785054" duration="4117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17086000" />
+    <option name="totallyTimeSpent" value="17642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -368,7 +369,7 @@
     <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="846">
-          <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
         </state>
       </provider>
     </entry>
@@ -392,7 +393,7 @@
     <entry file="file://$PROJECT_DIR$/Mvc/Views/SBAngularSearchResults/Default.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -406,7 +407,7 @@
     <entry file="file://$PROJECT_DIR$/Mvc/Views/IAFCHBResourcesPerCategory/_ResourcesPerCategoryDetails.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -419,8 +420,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="1575" column="11" selection-start-line="1575" selection-start-column="11" selection-end-line="1575" selection-end-column="11" />
+        <state relative-caret-position="754">
+          <caret line="1592" column="22" selection-start-line="1592" selection-start-column="22" selection-end-line="1592" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -1556,6 +1556,15 @@ p{
     background: transparent;
     border: none;
 }
+.selectric-community__title-select .selectric .label{
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    color: #5591aa;
+    height: auto;
+}
 .selectric-community__title-select .selectric .button {
     background-color: transparent;
 }
@@ -1563,6 +1572,7 @@ p{
     width: 384px;
     height: 212px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border: none;
     border-radius: 3px;
     padding: 18px 24px;
     background: #fff;
@@ -1575,4 +1585,10 @@ p{
 }
 .selectric-community__title-select .selectric-items li{
     padding: 6px 0
+}
+.selectric-community__title-select .selectric-items ul, .selectric-items li{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
 }
