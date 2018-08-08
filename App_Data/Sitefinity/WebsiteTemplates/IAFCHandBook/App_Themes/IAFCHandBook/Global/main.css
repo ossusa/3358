@@ -1082,7 +1082,7 @@ p{
         padding-right: 90px;
     }
     .topics__img-text{
-        white-space: normal;
+        white-space: nowrap;
     }
 }
 @media (max-width: 767px) {
@@ -1425,7 +1425,16 @@ p{
         display: none;
     }
     .topics__text{
-        padding: 0 0 13px;
+        padding: 0 0 14px;
+    }
+    .topics__text-space{
+        padding: 18px 0 42px 0 !important;
+    }
+    .topics__content{
+        padding: 0 0 75px;
+    }
+    .topics__content:nth-of-type(2){
+        margin: 20px 0 0 0;
     }
     .mobile-br-none{
         display: none;
