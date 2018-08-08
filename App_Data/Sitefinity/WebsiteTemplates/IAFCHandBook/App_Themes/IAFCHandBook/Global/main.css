@@ -1598,3 +1598,11 @@ p{
 .rotated{
     transform: rotate(180deg);
 }
+/*Selectric category*/
+.selectric-community__category-select .selectric{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+}
