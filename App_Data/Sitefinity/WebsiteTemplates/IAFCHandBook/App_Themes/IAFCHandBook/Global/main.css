@@ -857,10 +857,10 @@ p{
     padding: 82px 0 37px !important;
 }
 .topics__text-space{
-    padding: 26px 0 36px 0px;
+    padding: 26px 0 36px 0 !important;
 }
 .topics__content--last{
-    padding: 100px 0 0 0;
+    padding: 100px 0 0 0 !important;
 }
 .topics__text{
     padding: 0 0 35px;
