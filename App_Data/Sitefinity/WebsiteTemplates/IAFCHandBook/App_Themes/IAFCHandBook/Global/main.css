@@ -1474,7 +1474,7 @@ p{
     border: 1px solid #2b4b6b;
     border-radius: 3px;
     color: #2b4b6b;
-    width: 200px;
+    width: 210px;
     font-size: 0.938em;
     height: 40px;
     background: transparent;
@@ -1487,14 +1487,9 @@ p{
 }
 .community__head-btn button{
     border: none;
-    /*border-radius: 3px;*/
-    /*color: #2b4b6b;*/
-    /*font-size: 1em;*/
-    /*height: 40px;*/
+    outline: none;
     background: transparent;
     padding: 0;
-    /*margin-left: 16px;*/
-    /*line-height: 16px;*/
 }
 .community__head-btn-select select{
     border: 1px solid #2b4b6b;
