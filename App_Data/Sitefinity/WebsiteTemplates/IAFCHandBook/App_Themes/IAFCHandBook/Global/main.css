@@ -1519,6 +1519,20 @@ p{
         color: #CF794A;
         text-shadow: 1px 0 #CF794A;
     }
+    .community__head-button-group{
+        margin-bottom: 36px;
+    }
+    .community__head-buttons:nth-of-type(2){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .community__head-btn-select{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .selectric-community__category-select .selectric{
+        width: 100%;
+    }
 }
 @media (max-width: 370px){
     .resources__logged-buttons{
