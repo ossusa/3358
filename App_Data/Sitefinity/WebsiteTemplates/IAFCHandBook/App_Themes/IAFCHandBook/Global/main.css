@@ -1052,8 +1052,10 @@ p{
     align-items: center;
     margin-top: 24px;
 }
-.resources__img-box{
+.resources__logged-img-box{
     position: relative;
+    width: 384px;
+    height:266px;
 }
 .resources__logged-title{
     font-size: 1.5em;
@@ -1069,6 +1071,11 @@ p{
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+.resources__logged-time{
+    padding: 3px 9px 3px 7px;
+    bottom: 12px;
+    right: 12px;
 }
 .resources__logged-btn{
     width: 120px !important;
