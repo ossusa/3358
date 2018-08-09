@@ -13,7 +13,7 @@
 
 				<div class="resources__slide">
 <div class="resources__community-img">
-							<img src='@item.ResourceDetails.ImageUrl' />
+							<img src='@item.ResourceDetails.ImageUrl'  />
   <div class="resources__community-label">
   <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
   <span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a>
@@ -26,7 +26,7 @@
        @item.ResourceDetails.DurationStr
     </div>
 </div>
-                    <div class="resources__slide-info resources__community-slide-info">
+                    <div class="resources__slide-info">
                         <div class="resources__slide-box">
 							<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
 							<a href='@item.ResourceUrl'>
