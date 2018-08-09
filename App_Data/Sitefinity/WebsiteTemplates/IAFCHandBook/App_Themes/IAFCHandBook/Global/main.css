@@ -1128,11 +1128,11 @@ p{
         font-size: 1.7em;
     }
     .community__topics-img{
-        width: 270px;
-        height: 145px;
+        width: 270px !important;
+        height: 145px !important;
     }
     .community__topics-link{
-        height: 145px;
+        height: 145px !important;
     }
     .community__topics-ul{
         flex-wrap: wrap;
@@ -1649,7 +1649,7 @@ p{
         padding-right: 90px;
     }
     .community__head-desc{
-        width: auto;
+        width: auto !important;
     }
 }
 @media (max-width: 767px){
