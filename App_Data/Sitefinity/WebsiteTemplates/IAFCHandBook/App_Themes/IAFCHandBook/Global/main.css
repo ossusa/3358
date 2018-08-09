@@ -1044,9 +1044,9 @@ p{
     width: 100%;
     position: relative;
     z-index: 1;
-    top: -78px;
+    top: -118px;
     left: 50%;
-    margin-bottom: -7px;
+    margin-bottom: -50px;
     transform: translateX(-50%);
 }
 .resources__logged-buttons{
