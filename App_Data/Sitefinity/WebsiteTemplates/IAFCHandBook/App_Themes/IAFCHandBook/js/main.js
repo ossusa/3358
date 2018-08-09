@@ -114,13 +114,17 @@ $(document).ready(function() {
         $(event.currentTarget).addClass('community__head-btn-active');
     });
     /*Select*/
-    $('.community__title-select').selectric();
+    $('.community__title-select').selectric({
+        nativeOnMobile: false
+    });
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
     $('.selectric-community__title-select .selectric').click(function(){
         $('.title__arrow').toggleClass('rotated');
     });
 
-    $('.community__category-select').selectric();
+    $('.community__category-select').selectric({
+        nativeOnMobile: false
+    });
     $('.selectric-community__category-select').find('.button').addClass('category__arrow');
     $('.selectric-community__category-select .selectric').click(function(){
         $('.category__arrow').toggleClass('rotated');
