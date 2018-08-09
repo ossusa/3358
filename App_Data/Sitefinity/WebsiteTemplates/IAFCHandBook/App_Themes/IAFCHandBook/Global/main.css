@@ -1524,7 +1524,8 @@ p{
         text-shadow: 1px 0 #CF794A;
     }
     .community__head-button-group{
-        margin-bottom: 36px;
+        margin-bottom: 36px !important;
+        margin-top: 30px !important;
     }
     .community__head-buttons:nth-of-type(2){
         flex-direction: column;
@@ -1557,6 +1558,7 @@ p{
     }
     .community__section > .box > section > .resources__slide{
         width: 100%;
+        margin-bottom: 10px;
     }
     .resources__community-slide-info{
         height: 154px !important;
@@ -1700,7 +1702,7 @@ p{
         font-size: 2.750em;
     }
     .community__head-desc{
-        font-size: 1.250em;
+        font-size: 1.250em !important;
     }
     .community__head-button:nth-of-type(2){
         width: 150px;
@@ -1717,6 +1719,9 @@ p{
     }
     .maps, .about{
         padding: 0 0 42px 0;
+    }
+    .community__breadcrumbs{
+        margin-top: 14px;
     }
 }
 @media (max-width: 370px){
