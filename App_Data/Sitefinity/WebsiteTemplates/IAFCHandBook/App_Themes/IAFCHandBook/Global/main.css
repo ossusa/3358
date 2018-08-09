@@ -1403,7 +1403,6 @@ p{
         position: absolute;
         right: 28px;
         display: inline-block;
-        color: #666;
         font-size: 1.125em;
         -webkit-transition: all 0.2s ease-out;
         transition: all 0.2s ease-out;
@@ -1447,6 +1446,7 @@ p{
     }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__title:hover,
     .accordion > .accordion__item:nth-of-type(1) > .accordion__title:focus,
+    .accordion > .accordion__item:nth-of-type(1) > .accordion__title:visited,
     .accordion > .accordion__item:nth-of-type(1) > .accordion__arrow.accordion__sub-title:hover{
         color: #2b4b6b;
         text-shadow: 1px 0 #2b4b6b;
@@ -1472,7 +1472,7 @@ p{
     .accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title:hover,
     .accordion > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title:focus,
     .accordion > .accordion__sub-item:nth-of-type(4) > .accordion__sub-arrow.accordion__sub-title:hover{
-        color: #5591AA;
+        color: #CF794A;
         text-shadow: 1px 0 #CF794A;
     }
 }
