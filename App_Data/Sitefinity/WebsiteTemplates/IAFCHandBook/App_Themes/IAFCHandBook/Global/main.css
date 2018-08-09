@@ -1084,6 +1084,10 @@ p{
     margin-left: 0 !important;
     margin: 0 20px 0 0;
 }
+.resources__logged-img-box img{
+    width:384px;
+    height:266px;
+}
 @media (min-width: 1109px) {
     .tablet-br{
         display: none;
