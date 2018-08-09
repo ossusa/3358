@@ -19,7 +19,7 @@
 					}
 					else
 					{
-						<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
+						<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
 					}
 				</span>
 
@@ -53,7 +53,7 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
+						$("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-plus'></span>Added to MyHandBook");
 					}
 				}
 			});
