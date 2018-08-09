@@ -1930,12 +1930,17 @@ p{
     .community__head-btns-grp{
         width: 100%;
     }
+
     .community__head-buttons{
         width: 100%;
     }
     .community__head-button{
         height: 41px;
+        width: 50%;
         flex-direction: row;
+    }
+    .community__head-button:nth-of-type(2){
+        width: 50%;
     }
     .community__head-button span{
         margin-left: 8px;
