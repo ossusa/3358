@@ -1094,6 +1094,32 @@ p{
     }
 }
 @media (max-width: 1109px) {
+    .community__head-button-group{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .community__head-buttons{
+        margin-bottom: 20px;
+    }
+    .community__head-buttons:nth-of-type(2){
+        margin-bottom: 0;
+    }
+    #partViewID div section{
+        flex-direction: column;
+    }
+    .resources__slide-padding{
+        margin-bottom: 48px;
+    }
+    .community__topics{
+        margin-top: 52px;
+        padding-bottom: 48px;
+    }
+    .community__topics-ul{
+        flex-wrap: wrap;
+    }
+    .community__topics-list{
+        margin-bottom: 24px;
+    }
     .resources__logged{
         flex-direction: column;
         justify-content: space-between;
