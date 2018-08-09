@@ -120,4 +120,5 @@ $(document).ready(function() {
     $('.selectric-community__category-select .selectric').click(function(){
         $('.category__arrow').toggleClass('rotated');
     });
+    $('.resources__title').before('.resources__logged');
 });
