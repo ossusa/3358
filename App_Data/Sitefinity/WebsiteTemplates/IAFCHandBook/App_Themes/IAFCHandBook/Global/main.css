@@ -1091,6 +1091,10 @@ p{
 .community__head-btns-grp{
     display: flex;
 }
+.resources__community-img img{
+    width: 100%;
+    height: 407px;
+}
 @media (min-width: 1109px) {
     .tablet-br{
         display: none;
@@ -1550,6 +1554,12 @@ p{
     }
     .community__head-btn:nth-of-type(2){
         width: 37% !important;
+    }
+    .community__section > .box > section > .resources__slide{
+        width: 100%;
+    }
+    .resources__community-img img{
+        height: 221px;
     }
 }
 @media (max-width: 370px){
