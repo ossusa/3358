@@ -1227,7 +1227,7 @@ p{
         padding: 0;
     }
     .community__topics-list{
-        margin-right:  !important;
+        margin-right: 0 !important;
     }
     .community__topics-img{
         width: 100% !important;
