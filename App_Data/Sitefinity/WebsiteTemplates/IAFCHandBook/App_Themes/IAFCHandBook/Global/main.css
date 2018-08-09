@@ -302,6 +302,12 @@ p{
     display: flex;
     justify-content: space-between;
 }
+.topics__img-back-info{
+    font-size: 14px !important;
+}
+.topics__img-back-text{
+    font-size: 14px;
+}
 .header__table-td{
     display: flex;
     justify-content: flex-end;
