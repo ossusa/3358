@@ -109,10 +109,10 @@ $(document).ready(function() {
     $arrowRight = '<div class="anticon anticon-right"></div>';
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
 
-    $('.resources').prepend( $( ".resources__logged" ) );
-    $('.community__head-btn').on('click', event => {
-        $(event.currentTarget).addClass('community__head-btn-active');
-    });
+    // $('.resources').prepend( $( ".resources__logged" ) );
+    // $('.community__head-btn').on('click', event => {
+    //     $(event.currentTarget).addClass('community__head-btn-active');
+    // });
     /*Select*/
     $('.community__title-select').selectric();
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');

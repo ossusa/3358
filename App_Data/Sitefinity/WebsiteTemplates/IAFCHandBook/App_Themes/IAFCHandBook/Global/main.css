@@ -562,7 +562,7 @@ p{
     outline: none;
 }
 
-.resources__slide:nth-of-type(odd){
+.resources__slide:nth-of-type(even){
     margin: 0;
 }
 .resources__slide:hover {
