@@ -1451,7 +1451,7 @@ p{
     }
     .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover,
     .accordion > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:focus,
-    .accordion > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover > .accordion__sub-arrow{
+    .accordion > .accordion__sub-item:nth-of-type(1) > .accordion__sub-arrow.accordion__sub-title:hover{
         color: #5591AA;
         text-shadow: 1px 0 #5591AA;
     }
