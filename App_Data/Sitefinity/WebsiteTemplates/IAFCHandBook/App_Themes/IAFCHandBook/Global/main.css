@@ -997,7 +997,6 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 72px;
 }
 .footer__info-cols{
     display: flex;
@@ -1421,7 +1420,6 @@ p{
         height: 124px !important;
     }
     .footer__info{
-        height: 148px;
         padding: 16px 0 24px;
         justify-content: center;
         flex-direction: column;
