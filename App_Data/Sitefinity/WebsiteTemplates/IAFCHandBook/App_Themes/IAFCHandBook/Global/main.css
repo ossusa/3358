@@ -1540,17 +1540,16 @@ p{
         width: 100%;
     }
     .community__head-button{
-        width: 50%;
+        width: 50% !important;
     }
     .community__head-btn:nth-of-type(1){
         margin-left: 0 !important;
     }
     .community__head-btn{
-        margin-left: 12px;
-        width: 81%;
+        margin-left: 12px !important;;
     }
     .community__head-btn:nth-of-type(2){
-        width: 37%;
+        width: 37% !important;
     }
 }
 @media (max-width: 370px){
