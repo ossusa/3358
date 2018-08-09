@@ -9,10 +9,10 @@
         {
             <div class="resources__slide">
                 <div class="resources__slide-img" style="background: none; overflow: hidden">
-                    <img src='@item.ResourceDetails.ImageUrl' style="height: 100%; min-width: 100%;"/>
+                    <img src='@item.ResourceDetails.ImageUrl'/>
 
                     <div class="resources__slide-label">
-                     <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+                       <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
                         <span>@item.ResourceDetails.Category.ParentCategoryTitle
                         </span>
                     </a> >
@@ -33,24 +33,34 @@
                     </a>
                     <p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
                 </div>
-                <div id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
-                    @if (item.AddToMyHandBook == true)
-                    {
-                        <span>Added to MyHandBook</span>
-                    }
-                    else
-                    {
-                        <button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
-                    }
-                </div>
-                <a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
-                <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-                <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
-                    <span>@item.Likes.Likes</span>
-                </div>
-                <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
-                <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
-                    <span>@item.Likes.Dislikes</span>
+
+                <div class="resources__slide-footer">
+                    <div class="resources__slide-btn" id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
+                        @if (item.AddToMyHandBook == true)
+                        {
+                            <span>Added to MyHandBook</span>
+                        }
+                        else
+                        {
+                            <button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook</button>
+                        }
+                    </div>
+                    <div class="resources__slide-social">
+                        <a class="resources__slide-btn resources__slide-btn-comment" href="@item.ResourceUrl">
+                            <span class="resources--comments"></span>
+                            <span>@item.CommentsAmount Comments</span>
+                        </a>
+                        <button type="button" class="resources__slide-btn addLike" data-id="@item.Id.ToString()">
+                            <span class="resources--like anticon anticon-like-o" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                                <span>@item.Likes.Likes</span>
+                            </span>
+                        </button>
+                        <button type="button" class="resources__slide-btn addDislike" data-id="@item.Id.ToString()">
+                            <span class="resources--dislike  anticon anticon-dislike-o" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+                                <span>@item.Likes.Dislikes</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

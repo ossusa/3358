@@ -1752,3 +1752,24 @@ p{
     border: 1px solid #2b4b6b;
     border-radius: 3px;
 }
+
+.resources__slide-label a {
+    color: #666;
+}
+
+.resources__slide-img img {
+    height: 100%;
+    min-width: 100%;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.anticon:before, .resources--like:hover:before, .resources--like:focus:before, .resources--dislike:hover:before, .resources--dislike:focus:before {
+    display: inline-block;
+}
+
