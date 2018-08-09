@@ -1707,7 +1707,6 @@ p{
     font-size: 0.938em;
     height: 40px;
     background: transparent;
-    padding: 9px;
     margin-left: 16px;
 }
 .community__head-btn-active{
@@ -1718,6 +1717,8 @@ p{
     width: 108px;
 }
 .community__head-btn button{
+    width: 100%;
+    height: 100%;
     border: none;
     outline: none;
     background: transparent;
