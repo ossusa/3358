@@ -110,6 +110,9 @@ $(document).ready(function() {
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
 
     $('.resources').prepend( $( ".resources__logged" ) );
+    $('.community__head-btn').click(function(){
+        $('.community__head-btn').addClass('community__head-btn-active');
+    });
     /*Select*/
     $('.community__title-select').selectric();
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
