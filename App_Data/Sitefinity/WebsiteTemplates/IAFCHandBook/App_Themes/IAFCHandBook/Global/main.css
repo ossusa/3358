@@ -1124,6 +1124,13 @@ p{
     .topics__img-text{
         font-size: 1.7em;
     }
+    .community__topics-img{
+        width: 270px;
+        height: 145px;
+    }
+    .community__topics-link{
+        height: 145px;
+    }
     .community__topics-ul{
         flex-wrap: wrap;
     }
