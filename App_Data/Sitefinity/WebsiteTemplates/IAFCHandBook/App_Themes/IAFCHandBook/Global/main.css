@@ -1115,6 +1115,15 @@ p{
         margin-top: 52px !important;
         padding-bottom: 48px !important;
     }
+    .topics__img-back-info{
+        font-size: 14px !important;
+    }
+    .topics__img-back-text{
+        font-size: 14px;
+    }
+    .topics__img-text{
+        font-size: 1.7em;
+    }
     .community__topics-ul{
         flex-wrap: wrap;
     }
@@ -1209,15 +1218,7 @@ p{
     .resources__slide-title{
         font-size: 1.23em;
     }
-    .topics__img-back-info{
-        font-size: 14px !important;
-    }
-    .topics__img-back-text{
-        font-size: 14px;
-    }
-    .topics__img-text{
-        font-size: 1.7em;
-    }
+
     .topics__list:hover .topics__img-back, .topics__list:active .topics__img-back{
         padding: 10px 15px;
     }
