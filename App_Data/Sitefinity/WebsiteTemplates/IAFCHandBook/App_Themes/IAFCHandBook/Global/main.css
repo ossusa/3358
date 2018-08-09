@@ -1023,6 +1023,23 @@ p{
 .header__mob{
     display: none;
 }
+.logged-section{
+    display: flex;
+    justify-content: center;
+}
+.resources__logged{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 48px 48px 72px;
+    box-shadow: 0 2px 15px 10px rgba(0,0,0,0.10);
+    border-radius: 3px;
+    background: #fff;
+    width: 83.3%;
+}
+.resources__logged-buttons{
+    display: flex;
+}
 @media (min-width: 1109px) {
     .tablet-br{
         display: none;
