@@ -7,11 +7,11 @@
 	<div class="resources__logged">
 
 			<div class="resources__logged-info">
-				<p class="resources__slide-article">Featured @Model.ResourceDetails.ResourceType . @Model.ResourceDetails.Category.CategoryTitle</p>
+				<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span> @Model.ResourceDetails.Category.CategoryTitle</span></p>
 				<h6 class="resources__slide-title">@Model.ResourceDetails.ResourceTitle</h6>
 				<p class="resources__slide-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
 			<div class="resources__logged-buttons">
-				<button type="submit" formaction="@Model.ResourceUrl" class="community__head-btn" > View </button>
+				<button type="submit" formaction="@Model.ResourceUrl" class="community__head-btn resources__logged-btn" > View </button>
 				<span id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 					@if (Model.AddToMyHandBook == true)
 					{

@@ -620,9 +620,18 @@ p{
     font-family: 'Zilla Slab', serif;
     font-weight: 500;
     margin: 0 0 1px 0;
+    letter-spacing: 1.2px;
     color: #666;
     text-transform: uppercase;
     font-size: 0.750em;
+}
+.resources__logged-article{
+    font-size: 13px;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+}
+.resources__logged-article > span{
+    font-weight: 500;
 }
 .resources__slide-title {
     margin: 0 0 3px 0;
@@ -650,6 +659,7 @@ p{
     background: transparent;
     color: #9B9B9B;
     display: flex;
+    align-items: center;
     cursor: pointer;
     margin-left: 16px;
 }
@@ -1039,6 +1049,11 @@ p{
 }
 .resources__logged-buttons{
     display: flex;
+    align-items: center;
+}
+.resources__logged-btn{
+    width: 120px;
+    margin: 24px 20px 0 0;
 }
 @media (min-width: 1109px) {
     .tablet-br{
