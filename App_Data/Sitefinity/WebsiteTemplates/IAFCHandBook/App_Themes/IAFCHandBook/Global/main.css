@@ -633,6 +633,9 @@ p{
     cursor: pointer;
     margin-left: 16px;
 }
+.resources__slide-btn div{
+    font-size: 13px;
+}
 .resources__slide-btn:first-child {
     margin-left: 0;
     padding: 0;
