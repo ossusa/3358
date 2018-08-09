@@ -1252,13 +1252,19 @@ p{
         padding-right: 28px;
     }
     .topics__text-first{
-        padding: 48px 0 32px !important;
+        padding: 23px 0 29px !important;
     }
     .topics__ul{
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
         grid-template-columns: repeat(1, 1fr);
     }
     .topics__content{
-        padding: 0 0 8px;
+        padding: 0 0 13px !important;
+    }
+    .topics__text h2 img{
+        margin-left: -5px;
+        transform: scale(0.8);
     }
     .topics__text{
         padding: 0 0 32px;
