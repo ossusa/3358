@@ -4,12 +4,12 @@
 <div>
 	@if (Model.Id != Guid.Empty)
 	{		
-	<table border="1">
-		<tr>
-			<td>
-				<span>Featured @Model.ResourceDetails.ResourceType . @Model.ResourceDetails.Category.CategoryTitle</span>
-				<div>@Model.ResourceDetails.ResourceTitle</div>
-				<div>@Html.Raw(Model.ResourceDetails.ResourceSummary)</div>
+	<div>
+
+			<div class="resources__logged-info">
+				<p class="resources__slide-article">Featured @Model.ResourceDetails.ResourceType . @Model.ResourceDetails.Category.CategoryTitle</p>
+				<h6 class="resources__slide-title">@Model.ResourceDetails.ResourceTitle</h6>
+				<p class="resources__slide-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
 				<button type="submit" formaction="@Model.ResourceUrl" > View </button>
 				<span id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 					@if (Model.AddToMyHandBook == true)
@@ -18,19 +18,19 @@
 					}
 					else
 					{
-						<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
+						<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
 					}
 				</span>
 
-			</td>
-			<td>
-				<img src='@Model.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
+			</div>
+			<div class="resources__img-box">
+				<img src='@Model.ResourceDetails.ImageUrl' style="width:384px;height:266px;" />
 				@Model.ResourceDetails.Duration
 
 
-			</td>
-		</tr>
-	</table>
+			</div>
+
+	</div>
 	}
 </div>
 
