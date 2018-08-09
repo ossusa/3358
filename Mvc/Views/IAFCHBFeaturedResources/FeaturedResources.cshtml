@@ -4,9 +4,9 @@
 <div>
 	@if (Model.Id != Guid.Empty)
 	{		
-	<div>
-		<div>
-			<div>
+	<table border="1">
+		<tr>
+			<td>
 				<span>Featured @Model.ResourceDetails.ResourceType . @Model.ResourceDetails.Category.CategoryTitle</span>
 				<div>@Model.ResourceDetails.ResourceTitle</div>
 				<div>@Html.Raw(Model.ResourceDetails.ResourceSummary)</div>
@@ -14,7 +14,7 @@
 				<span id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 					@if (Model.AddToMyHandBook == true)
 					{
-						<span class="resources--plus anticon anticon-check"></span>Added to MyHandBook</span>
+						<span>Added to MyHandBook</span>
 					}
 					else
 					{
@@ -22,15 +22,15 @@
 					}
 				</span>
 
-			</div>
-			<div>
+			</td>
+			<td>
 				<img src='@Model.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
 				@Model.ResourceDetails.Duration
 
 
-			</div>
-		</div>
-	</div>
+			</td>
+		</tr>
+	</table>
 	}
 </div>
 
