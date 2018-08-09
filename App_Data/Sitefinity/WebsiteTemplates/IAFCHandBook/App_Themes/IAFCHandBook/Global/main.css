@@ -558,13 +558,11 @@ p{
     border-radius: 3px;
     border: 1px solid #efefef;
     transition: .3s ease-in-out;
-    margin: 0 12px;
+    margin: 0 24px 0 0;
     outline: none;
 }
-.resources__slide-padding{
-    margin: 0 24px 0 0;
-}
-.resources__slide-padding:nth-of-type(odd){
+
+.resources__slide:nth-of-type(odd){
     margin: 0;
 }
 .resources__slide:hover {
