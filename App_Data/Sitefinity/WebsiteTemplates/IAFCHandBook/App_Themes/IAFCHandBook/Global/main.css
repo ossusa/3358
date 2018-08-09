@@ -1103,6 +1103,9 @@ p{
     .topics__img-back-text{
         font-size: 14px;
     }
+    .topics__img-text{
+        font-style: 1.7em;
+    }
     .topics__list:hover .topics__img-back, .topics__list:active .topics__img-back{
         padding: 10px 15px;
     }
