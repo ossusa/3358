@@ -302,12 +302,7 @@ p{
     display: flex;
     justify-content: space-between;
 }
-.topics__img-back-info{
-    font-size: 14px !important;
-}
-.topics__img-back-text{
-    font-size: 14px;
-}
+
 .header__table-td{
     display: flex;
     justify-content: flex-end;
@@ -1101,6 +1096,12 @@ p{
     }
     .resources__slide-title{
         font-size: 1.23em;
+    }
+    .topics__img-back-info{
+        font-size: 14px !important;
+    }
+    .topics__img-back-text{
+        font-size: 14px;
     }
     .resources__slide-desc{
         font-size: 15px;
