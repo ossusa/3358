@@ -1107,8 +1107,9 @@ p{
     #partViewID div section{
         flex-direction: column;
     }
-    .community__section > .resources__slide{
+    .community__section > .box > section > .resources__slide{
         margin-bottom: 48px;
+        margin-left: 0;
     }
     .community__topics{
         margin-top: 52px !important;
