@@ -1446,6 +1446,9 @@ p{
     .resources__logged-buttons button{
         margin: 0 0 10px 0;
     }
+    .resources__logged{
+        top: -65px;
+    }
     .header__logo img{
         width: 270px;
     }
