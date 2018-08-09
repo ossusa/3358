@@ -1696,6 +1696,15 @@ p{
     .community__head-desc{
         width: auto !important;
     }
+    .selectric-community__title-select .selectric .label{
+        font-size: 2.750em;
+    }
+    .community__head-desc{
+        font-size: 1.250em;
+    }
+    .community__head-button:nth-of-type(2){
+        width: 150px;
+    }
 }
 @media (max-width: 767px){
     .box-about{
@@ -1736,7 +1745,7 @@ p{
 
 /*Community*/
 .community__breadcrumbs{
-    margin-top: 54px;
+    margin-top: 34px;
     font-family: 'Zilla Slab', serif;
     color: #9b9b9b;
     margin-left: 0;
@@ -1795,7 +1804,7 @@ p{
     border: 1px solid #2b4b6b;
     border-radius: 3px;
     color: #2b4b6b;
-    width: 210px;
+    width: 199px;
     font-size: 0.938em;
     height: 40px;
     background: transparent;
@@ -1806,7 +1815,7 @@ p{
     color: #fff;
 }
 .community__head-btn:nth-of-type(2){
-    width: 108px;
+    width: 91px;
 }
 .community__head-btn button{
     width: 100%;
