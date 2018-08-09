@@ -109,7 +109,7 @@ $(document).ready(function() {
     $arrowRight = '<div class="anticon anticon-right"></div>';
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
 
-    $('.resources__title').before('.resources__logged');
+    $('.resources__title').before('resources__logged');
     /*Select*/
     $('.community__title-select').selectric();
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
