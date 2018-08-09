@@ -1934,11 +1934,11 @@ p{
         width: 100%;
     }
     .community__head-button{
-        width: 50% !important;
         height: 41px;
     }
     .community__head-btn:nth-of-type(1){
         margin-left: 0 !important;
+        width: 62% !important;
     }
     .community__head-btn:nth-of-type(2){
         width: 37% !important;
