@@ -1033,10 +1033,7 @@ p{
 .header__mob{
     display: none;
 }
-.logged-section{
-    display: flex;
-    justify-content: center;
-}
+
 .resources__logged{
     display: flex;
     justify-content: space-between;
@@ -1047,6 +1044,7 @@ p{
     background: #fff;
     width: 83.3%;
     position: relative;
+    z-index: 1;
     top: -118px;
     left: 50%;
     margin-bottom: -50px;
