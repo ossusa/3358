@@ -112,7 +112,6 @@ $(document).ready(function() {
     $('.resources').prepend( $( ".resources__logged" ) );
     $('.community__head-btn').on('click', event => {
         $(event.currentTarget).addClass('community__head-btn-active');
-        $(event.currentTarget).siblings().removeClass('community__head-btn-active');
     });
     /*Select*/
     $('.community__title-select').selectric();
