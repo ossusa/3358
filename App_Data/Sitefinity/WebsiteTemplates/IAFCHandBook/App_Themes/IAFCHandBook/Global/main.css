@@ -1088,6 +1088,9 @@ p{
     width:384px;
     height:266px;
 }
+.community__head-btns-grp{
+    display: flex;
+}
 @media (min-width: 1109px) {
     .tablet-br{
         display: none;
@@ -1644,6 +1647,9 @@ p{
     .breadcrumbs{
         padding-left: 90px;
         padding-right: 90px;
+    }
+    .community__head-desc{
+        width: auto;
     }
 }
 @media (max-width: 767px){
