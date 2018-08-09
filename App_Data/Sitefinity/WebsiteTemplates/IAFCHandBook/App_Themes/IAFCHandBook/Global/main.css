@@ -1050,10 +1050,15 @@ p{
 .resources__logged-buttons{
     display: flex;
     align-items: center;
+    margin-top: 24px;
+}
+.resources__img-box{
+    position: relative;
 }
 .resources__logged-btn{
-    width: 120px;
-    margin: 24px 20px 0 0;
+    width: 120px !important;
+    margin-left: 0 !important;
+    margin: 0 20px 0 0;
 }
 @media (min-width: 1109px) {
     .tablet-br{
