@@ -1445,6 +1445,16 @@ p{
     .resources__slide-info{
         height: 190px !important;
     }
+    .header__nav > ul > li > div > ul > li:nth-of-type(1) > a:hover,
+    .header__nav > ul > li > div > ul > li:nth-of-type(1) > a:focus{
+
+    }
+    .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover,
+    .accordion > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:focus,
+    .accordion > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover > .accordion__sub-arrow{
+        color: #5591AA;
+        text-shadow: 1px 0 #5591AA;
+    }
 }
 @media (max-width: 370px){
     .resources__logged-buttons{
