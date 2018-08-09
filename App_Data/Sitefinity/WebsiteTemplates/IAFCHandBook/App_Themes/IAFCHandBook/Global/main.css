@@ -1227,10 +1227,10 @@ p{
         padding: 0;
     }
     .community__topics-list{
-        margin-right: 0;
+        margin-right:  !important;
     }
     .community__topics-img{
-        width: 100%;
+        width: 100% !important;
     }
     .resources__slide-img{
         height: 221px;
@@ -1557,6 +1557,9 @@ p{
     }
     .community__section > .box > section > .resources__slide{
         width: 100%;
+    }
+    .resources__community-slide-info{
+        height: 154px !important;
     }
     .resources__community-img img{
         height: 221px;
