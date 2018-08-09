@@ -1972,6 +1972,9 @@ p{
     .community__breadcrumbs{
         margin-top: 14px;
     }
+    .selectric-community__title-select .selectric-items{
+        width: 318px;
+    }
 }
 
 @media (max-width: 382px){
