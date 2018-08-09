@@ -1046,6 +1046,11 @@ p{
     border-radius: 3px;
     background: #fff;
     width: 83.3%;
+    position: relative;
+    top: -118px;
+    left: 50%;
+    margin-bottom: -50px;
+    transform: translateX(-50%);
 }
 .resources__logged-buttons{
     display: flex;
