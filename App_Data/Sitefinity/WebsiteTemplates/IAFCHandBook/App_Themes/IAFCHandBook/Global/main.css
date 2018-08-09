@@ -1914,7 +1914,7 @@ p{
     }
     .community__head-button-group{
         margin-bottom: 36px !important;
-        margin-top: 30px !important;
+        margin-top: 32px !important;
     }
     .community__head-buttons:nth-of-type(2){
         flex-direction: column;
@@ -1935,6 +1935,7 @@ p{
     }
     .community__head-button{
         width: 50% !important;
+        height: 41px;
     }
     .community__head-btn:nth-of-type(1){
         margin-left: 0 !important;
