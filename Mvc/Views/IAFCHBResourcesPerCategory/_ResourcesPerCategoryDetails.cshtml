@@ -35,11 +35,11 @@
 							<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					    </div>
 					    <div class="resources__slide-footer">
-							<div id="@string.Format("{0}_{1}", "addToMyHandBook" , item.Id.ToString())">
+							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook" , item.Id.ToString())">
 									<div id="addToMyHandBook">
 										@if (item.AddToMyHandBook == true)
 										{
-											<span>Added toooo MyHandBook</span>
+											<span>Added to MyHandBook</span>
 										}
 										else
 										{
