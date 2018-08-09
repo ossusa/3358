@@ -629,7 +629,7 @@ p{
     background: transparent;
     color: #9B9B9B;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     cursor: pointer;
     margin-left: 16px;
 }
@@ -1935,6 +1935,10 @@ p{
     }
     .community__head-button{
         height: 41px;
+        flex-direction: row;
+    }
+    .community__head-button span{
+        margin-left: 8px;
     }
     .community__head-btn:nth-of-type(1){
         margin-left: 0 !important;
@@ -2026,5 +2030,8 @@ p{
     .breadcrumbs{
         padding-left: 14px;
         padding-right: 14px;
+    }
+    .community__head-btn:nth-of-type(1){
+        width: 82%;
     }
 }
