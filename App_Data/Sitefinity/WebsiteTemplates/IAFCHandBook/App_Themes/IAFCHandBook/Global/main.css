@@ -1055,6 +1055,21 @@ p{
 .resources__img-box{
     position: relative;
 }
+.resources__logged-title{
+    font-size: 1.5em;
+}
+.resources__logged-desc{
+    font-size: 1.125em;
+}
+.resources__logged-added{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #9B9B9B;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
 .resources__logged-btn{
     width: 120px !important;
     margin-left: 0 !important;
