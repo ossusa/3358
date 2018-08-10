@@ -2,76 +2,81 @@
 
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
 
-
 <div class="sfContentBlock resources">
-    <h2 class="resources__title">Recently Added Resources</h2>
-    <div class="resources__slider slick-initialized slick-slider">
-        <button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
-        <table border="0" aria-live="polite" class="slick-list draggable">
 
-            <tr>
-                @foreach (var item in Model)
-                {
-                    <td>
-                        <table border="1">
-                            <tr>
-                                <td>
-                                    <img src='@item.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
-                                    <br />
-                                    <a href="@item.ResourceDetails.Category.ParentCategoryUrl"><span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@item.ResourceDetails.Category.CategoryUrl"><span>@item.ResourceDetails.Category.CategoryTitle</span></a>
-                                    <span> @item.ResourceDetails.DurationStr</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div> @item.ResourceDetails.ResourceType</div>
-                                    <a href="@item.ResourceUrl"><span>@item.ResourceDetails.ResourceTitle</span></a>
-                                    <div>@Html.Raw(item.ResourceDetails.ResourceSummary)</div>
-                                    <br />
-                                    <td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
-                                                @if (item.IsResourceAddedToMyHandBook == true)
-                                                {
-                                                    <span>Added to MyHandBook</span>
-                                                }
-                                                else
-                                                {
-                                                    <button type="button" class="addToMyHandBook" data-id="@item.Id.ToString()"> +Add to MyHandBook </button>
-                                                }
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="@item.ResourceUrl"><span>@item.CommentsAmount Comments</span></a>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-                                            <div id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
-                                                <span>@item.Likes.Likes</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
-                                            <div id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
-                                                <span>@item.Likes.Dislikes</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
+    <h2 class="resources__title">Recently Added Resources</h2>
+    <div class="resources__slider">
+        @foreach (var item in Model)
+        {
+            <div class="resources__slide">
+                <div class="resources__slide-img" style="background: none; overflow: hidden">
+                    <img src='@item.ResourceDetails.ImageUrl'/>
+
+                    <div class="resources__slide-label">
+                       <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+                        <span>@item.ResourceDetails.Category.ParentCategoryTitle
+                        </span>
+                    </a> >
+                    <a class="" href="@item.ResourceDetails.Category.CategoryUrl">
+                        <span>@item.ResourceDetails.Category.CategoryTitle</span>
+                    </a>
+                </div>
+                <div class="resources__slide-time">
+                    <div class="resources--time">&nbsp;</div>
+                    <span> @item.ResourceDetails.DurationStr</span>
+                </div>
+            </div>
+            <div class="resources__slide-info">
+                <div class="resources__slide-box">
+                    <p class="resources__slide-article">@item.ResourceDetails.ResourceType</p>
+                    <a href="@item.ResourceUrl">
+                        <h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+                    </a>
+                    <p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+                </div>
+
+                <div class="resources__slide-footer">
+                    <div class="resources__slide-btn" id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
+                        @if (item.IsResourceAddedToMyHandBook == true)
+                        {
+                            <span>Added to MyHandBook</span>
                         }
-                    </tr>
-                </table>
-                <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button>
+                        else
+                        {
+                            <button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook</button>
+                        }
+                    </div>
+                    <div class="resources__slide-social">
+                        <a class="resources__slide-btn resources__slide-btn-comment" href="@item.ResourceUrl">
+                            <span class="resources--comments"></span>
+                            <span>@item.CommentsAmount Comments</span>
+                        </a>
+                        <button type="button" class="resources__slide-btn addLike" data-id="@item.Id.ToString()">
+                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like.png" alt="" class="resources--dislike-img">
+                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like-color.png" alt="" class="resources--dislike-img">
+                            <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                                <span>@item.Likes.Likes</span>
+                            </span>
+                        </button>
+                        <button type="button" class="resources__slide-btn addDislike" data-id="@item.Id.ToString()">
+                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/dislike.png" alt="" class="resources--dislike-img">
+                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/dislike-color.png" alt="" class="resources--dislike-img">
+                            <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+                                <span>@item.Likes.Dislikes</span>
+                                </span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+    }
 
+</div>
+</div>
 
-        <script type="text/javascript">
+<script type="text/javascript">
 
-            $(document).ready(function () {
+    $(document).ready(function () {
 
         //Add Like
         $('.addLike').on('click', function () {
@@ -120,7 +125,7 @@
                 dataType: "json",
                 success: function (response) {
                     if (response == true) {
-                        $("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
+                        $("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
                     }
                 }
             });
