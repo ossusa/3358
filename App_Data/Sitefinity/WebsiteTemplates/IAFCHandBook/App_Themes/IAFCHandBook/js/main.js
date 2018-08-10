@@ -44,7 +44,9 @@ $(document).ready(function() {
     });
 });
 $( document ).ready(function() {
-  
+    $('.resources--like').hover(
+        function(){$(this).toggleClass('');}
+    );
   
 });
 $(function () {
