@@ -52,14 +52,13 @@
                             <span>@item.CommentsAmount Comments</span>
                         </a>
                         <button type="button" class="resources__slide-btn addLike" data-id="@item.Id.ToString()">
-                            <span class="resources--like anticon anticon-like-o" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                            <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
                                 <span>@item.Likes.Likes</span>
                             </span>
                         </button>
                         <button type="button" class="resources__slide-btn addDislike" data-id="@item.Id.ToString()">
-                            <span class="resources--dislike  anticon anticon-dislike-o" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+                            <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())"></span>
                                 <span>@item.Likes.Dislikes</span>
-                            </span>
                         </button>
                     </div>
                 </div>

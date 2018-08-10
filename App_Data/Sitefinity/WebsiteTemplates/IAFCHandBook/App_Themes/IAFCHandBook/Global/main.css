@@ -817,23 +817,21 @@ p{
     display: flex;
 }
 
-.resources--like:hover:before,
-.resources--like:focus:before{
-    display: block;
-    font-family: anticon!important;
-    content: "\E64C";
-}
-.resources--dislike:hover:before,
-.resources--dislike:focus:before{
-    display: block;
-    font-family: anticon!important;
-    content: "\E64B";
-}
 .resources--plus{
     margin-right: 5px;
 }
 .resources--like, .resources--dislike, resources--comment{
     margin-right: 4px;
+}
+.resources--dislike{
+    background: url("../images/dislike.png");
+    width: 15px;
+    height: 16px;
+}
+.resources--dislike:hover{
+    background: url("../images/dislike-color.png");
+    width: 15px;
+    height: 16px;
 }
 .resources--comments{
     background: url('../images/comment.png') no-repeat 50% 50%;
