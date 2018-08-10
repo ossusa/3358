@@ -1420,7 +1420,10 @@ p{
 .anticon:before, .resources--like:hover:before, .resources--like:focus:before, .resources--dislike:hover:before, .resources--dislike:focus:before {
     display: inline-block;
 }
-
+.about__page-textlink{
+    color: #2B4B6B;
+    font-weight: 600;
+}
 
 @media (max-width: 1352px) {
     .resources__slide-empty{
