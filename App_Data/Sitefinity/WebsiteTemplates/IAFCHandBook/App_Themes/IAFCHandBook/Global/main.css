@@ -824,13 +824,13 @@ p{
     margin-right: 4px;
 }
 
-.resources--dislike img:nth-of-type(even) {
+.resources__slide-btn img:nth-of-type(even) {
     display: none;
 }
-.resources--dislike:hover img:first-of-type {
+.resources__slide-btn:hover img:first-of-type {
     display: none;
 }
-.resources--dislike:hover img:last-of-type {
+.resources__slide-btn:hover img:last-of-type {
     display: block;
 }
 
