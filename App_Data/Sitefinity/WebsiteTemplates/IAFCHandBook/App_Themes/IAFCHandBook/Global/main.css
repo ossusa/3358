@@ -1026,7 +1026,7 @@ p{
     margin-bottom: -49px;
     transform: translateX(-50%);
 }
-.slick-current{
+.slick-current .slick-active{
     margin-right: 24px;
 }
 .resources__logged-buttons{
