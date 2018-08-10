@@ -554,10 +554,10 @@ p{
 }
 .resources__slide-label {
     position: absolute;
-    bottom: 11px;
+    bottom: 14px;
     left: 12px;
     background: #fff;
-    padding: 7px 9px;
+    padding: 3px 8px;
     border-radius: 3px;
     color: #666;
     font-weight: 600;
@@ -567,10 +567,10 @@ p{
     position: absolute;
     display: flex;
     align-items: center;
-    bottom: 11px;
+    bottom: 15px;
     right: 12px;
     background: rgba(74, 74, 74, 0.65);
-    padding: 7px 9px;
+    padding: 3px 8px;
     border-radius: 3px;
     color: #fff;
     font-weight: 600;
@@ -578,7 +578,7 @@ p{
 }
 .resources__slide-info {
     padding: 20px;
-    height: 155px;
+    height: 152px;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -631,6 +631,7 @@ p{
     background: transparent;
     color: #9B9B9B;
     display: flex;
+    font-size: 13px;
     align-items: flex-end;
     cursor: pointer;
     margin-left: 16px;
@@ -642,7 +643,7 @@ p{
     margin-left: 0;
     padding: 0;
 }
-.resources__slide-btn i {
+.resources__slide-btn span {
     font-size: 1em;
     margin-right: 4px;
 }
@@ -842,7 +843,7 @@ p{
 .resources--comments{
     background: url('../images/comment.png') no-repeat 50% 50%;
     width: 18px;
-    height: 18px;
+    height: 19px;
 }
 .topics__text-first{
     padding: 82px 0 37px !important;
