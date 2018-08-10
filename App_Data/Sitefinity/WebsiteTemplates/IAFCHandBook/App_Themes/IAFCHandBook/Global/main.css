@@ -817,25 +817,16 @@ p{
     display: flex;
 }
 
-.resources--like:hover:before{
+span.resources--like:hover:before,
+span.resources--like:focus:before{
     display: block;
-    font-family: anticon!important;
+    font-family: anticon !important;
     content: "\E64C";
 }
-.resources--like:focus:before{
+span.resources--dislike:hover:before,
+span.resources--dislike:focus:before{
     display: block;
-    font-family: anticon!important;
-    content: "\E64C";
-}
-.resources--dislike:hover:before{
-    display: block;
-    font-family: anticon!important;
-    content: "\E64B";
-}
-
-.resources--dislike:focus:before{
-    display: block;
-    font-family: anticon!important;
+    font-family: anticon !important;
     content: "\E64B";
 }
 .resources--plus{
