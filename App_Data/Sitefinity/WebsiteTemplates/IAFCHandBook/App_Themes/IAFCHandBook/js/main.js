@@ -3,7 +3,7 @@
     var newNode = document.createElement('div');
     newNode.className = 'textNode news content';
     newNode.innerHTML = 'this created div contains class while created!!!';
-    document.getElementsByClassName('hb-jumbo').appendChild(newNode);
+    document.getElementById('hb-jumbo').appendChild(newNode);
 })();
     $( document ).ready(function() {
     /*Jumbo Search*/
