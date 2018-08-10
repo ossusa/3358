@@ -2,38 +2,40 @@
 
 @using Telerik.Sitefinity.Frontend.Mvc.Helpers;
 
-<div>
 	@if (Model.Id != Guid.Empty)
 	{		
-	<table border="1">
-		<tr>
-			<td>
-				<span>Featured @Model.ResourceDetails.ResourceType . @Model.ResourceDetails.Category.CategoryTitle</span>
-				<div>@Model.ResourceDetails.ResourceTitle</div>
-				<div>@Html.Raw(Model.ResourceDetails.ResourceSummary)</div>
-				<button type="submit" formaction="@Model.ResourceUrl" > View </button>
+	<div class="resources__logged">
+
+			<div class="resources__logged-info">
+				<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span> @Model.ResourceDetails.Category.CategoryTitle</span></p>
+				<h6 class="resources__slide-title resources__logged-title">@Model.ResourceDetails.ResourceTitle</h6>
+				<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
+			<div class="resources__logged-buttons">
+				<button type="submit" formaction="@Model.ResourceUrl" class="community__head-btn resources__logged-btn" > View </button>
 				<span id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 					@if (Model.IsResourceAddedToMyHandBook == true)
 					{
-						<span>Added to MyHandBook</span>
+						<span class="resources__logged-added">Added to MyHandBook</span>
 					}
 					else
 					{
-						<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
+						<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
 					}
 				</span>
+            </div>
+			</div>
+			<div class="resources__logged-img-box">
+				<img src='@Model.ResourceDetails.ImageUrl' />
+				<div class="resources__slide-time resources__logged-time">
+                                    <div class="resources--time">&nbsp;</div>
+				<span>@Model.ResourceDetails.Duration</span>
+                </div>
 
-			</td>
-			<td>
-				<img src='@Model.ResourceDetails.ImageUrl' style="width:400px;height:300px;" />
-				@Model.ResourceDetails.Duration
-				
+			</div>
 
-			</td>
-		</tr>
-	</table>
+	</div>
 	}
-</div>
+
 
 <script type="text/javascript">
 
@@ -52,7 +54,7 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$("#addToMyHandBook_" + resourceId).html("Added to MyHandBook");
+						$("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
 					}
 				}
 			});
