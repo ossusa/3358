@@ -1,4 +1,4 @@
-document.getElementsByClassName("hb-jumbo__title").innerHTML = "Hello JavaScript!";
+
 $( document ).ready(function() {
     /*Jumbo Search*/
     $('.hb-jumbo__search').appendTo(".hb-jumbo");
