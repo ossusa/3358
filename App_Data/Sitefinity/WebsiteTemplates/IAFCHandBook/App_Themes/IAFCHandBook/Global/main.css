@@ -1026,8 +1026,11 @@ p{
     margin-bottom: -49px;
     transform: translateX(-50%);
 }
-.slick-current .slick-active{
-    margin-right: 24px;
+.slick-slide {
+    margin: 0 12px;
+}
+.slick-list {
+    margin: 0 -12px;
 }
 .resources__logged-buttons{
     display: flex;
