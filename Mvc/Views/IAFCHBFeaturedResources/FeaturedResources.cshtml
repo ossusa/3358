@@ -13,7 +13,7 @@
 				<div>@Html.Raw(Model.ResourceDetails.ResourceSummary)</div>
 				<button type="submit" formaction="@Model.ResourceUrl" > View </button>
 				<span id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
-					@if (Model.AddToMyHandBook == true)
+					@if (Model.IsResourceAddedToMyHandBook == true)
 					{
 						<span>Added to MyHandBook</span>
 					}

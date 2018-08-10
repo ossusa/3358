@@ -881,6 +881,7 @@
     <Compile Include="Mvc\Controllers\BlendedNewsListController.cs" />
     <Compile Include="Mvc\Controllers\EventsCalendarController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBFeaturedResourcesController.cs" />
+    <Compile Include="Mvc\Controllers\IAFCHBMyHandBookController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBRecentlyAddedResourcesController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourcesPerCategoryController.cs" />
@@ -900,6 +901,8 @@
     <Compile Include="Mvc\Models\ContentListSearchResult.cs" />
     <Compile Include="Mvc\Models\EventsCalendarModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMoreResourcesModel.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookMyHandBookCategoryModel.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookMyHandBookModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookTopicCategoryModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookCommentModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookLikesModel.cs" />
@@ -1263,6 +1266,7 @@
     <Content Include="Mvc\Views\IAFCHBResourceDetails\ResourceDetails.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourceDetails\_IAFCHBComments.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourceDetails\_IAFCHBReplyCommentsInput.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBMyHandBook\MyHandBook.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
