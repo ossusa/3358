@@ -584,6 +584,8 @@ p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 
