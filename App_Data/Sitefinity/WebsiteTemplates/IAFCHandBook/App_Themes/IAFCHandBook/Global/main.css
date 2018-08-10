@@ -447,7 +447,7 @@ p{
 .hb-jumbo{
     background: url('../images/hb-jumbo.png') 50% 50% no-repeat;
     background-size: cover;
-    padding: 127px 0 148px;
+    padding: 127px 0 189px;
     text-align: center;
     display: block;
     position: relative;
@@ -1022,10 +1022,13 @@ p{
     width: 100%;
     position: relative;
     z-index: 1;
-    top: -78px;
+    top: -119px;
     left: 50%;
-    margin-bottom: -8px;
+    margin-bottom: -49px;
     transform: translateX(-50%);
+}
+.slick-current{
+    margin-right: 24px;
 }
 .resources__logged-buttons{
     display: flex;
