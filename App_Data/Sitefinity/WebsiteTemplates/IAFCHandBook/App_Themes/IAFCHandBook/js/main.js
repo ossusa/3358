@@ -1,4 +1,5 @@
-
+var cities = ["Sydney", "London", "Auckland", "Tokyo", "Bangkok"];
+document.getElementById("content").innerHTML = cities;
 $( document ).ready(function() {
     /*Jumbo Search*/
     $('.hb-jumbo__search').appendTo(".hb-jumbo");
