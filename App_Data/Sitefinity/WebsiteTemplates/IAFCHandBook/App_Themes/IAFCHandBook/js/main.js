@@ -1,26 +1,32 @@
-/*Jumbo Search*/
-$('.hb-jumbo__search').appendTo(".hb-jumbo");
-$(".k-input").attr("placeholder", "Search");
+(function(){
+    var countup = this;
+    var newNode = document.createElement('div');
+    newNode.className = 'textNode news content';
+    newNode.innerHTML = 'this created div contains class while created!!!';
+    document.getElementsByClassName('hb-jumbo').appendChild(newNode);
+})();
+    $( document ).ready(function() {
+    /*Jumbo Search*/
+    $('.hb-jumbo__search').appendTo(".hb-jumbo");
+    $(".k-input").attr("placeholder", "Search");
 
 /*Slider*/
-$('.resources__slider').slick({
-    dots: false,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 1109,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
+    $('.resources__slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1109,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
             }
-        }
-    ]
+]
 });
-
-$( document ).ready(function() {
 
 /*Search in header*/
     var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
