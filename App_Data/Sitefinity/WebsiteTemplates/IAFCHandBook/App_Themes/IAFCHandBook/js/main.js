@@ -1,9 +1,13 @@
-$(document).ready(function () {
-/*Search*/
-    $('.hb-jumbo__search').appendTo(".hb-jumbo");
 
+$( document ).ready(function() {
+    $('.hb-jumbo__search').appendTo(".hb-jumbo");
+});
+
+$(document).ready(function() {
     $(".k-input").attr("placeholder", "Search");
-/*Slider*/
+});
+
+$(document).ready(function() {
     $('.resources__slider').slick({
         dots: false,
         infinite: true,
@@ -20,8 +24,11 @@ $(document).ready(function () {
             }
         ]
     });
+});
+$( document ).ready(function() {
 
-/*Search 2*/
+
+});
 $(function () {
     var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $( ".sfNavHorizontalDropDownWrp li:contains('Account')" );
@@ -32,22 +39,21 @@ $(function () {
     	event.preventDefault();
     	$('.mg-search-box').toggleClass('hidden');
     });
-    $(document).on('click', '#site-search-submit', event => {
+$(document).on('click', '#site-search-submit', event => {
         event.preventDefault();
         var q = $('#site-search').val();
         location.href = '/search-results/#/' + q + "/page=1";
    });
 
 });
-/*Off canvas*/
 $(".header__mob-open").click(function(){
     $('.header__mob-nav').css({ width: "100vw" });
 });
 $(".header__mob-close").click(function(){
     $('.header__mob-nav').css({ width: "0" });
 });
-/*Accordion*/
 $(function() {
+
     //BEGIN
     $(".accordion__title").on("click", function(e) {
 
@@ -81,15 +87,15 @@ $(function() {
         $('.accordion__sub-arrow',this).toggleClass('accordion__rotate');
     });
 });
-/*Arrow*/
+$(document).ready(function() {
     $arrowRight = '<div class="anticon anticon-right"></div>';
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
-/*Resources logged widget*/
+
     $('.resources').prepend( $( ".resources__logged" ) );
     $('.community__head-btn').on('click', event => {
         $(event.currentTarget).addClass('community__head-btn-active');
     });
-/*Select*/
+    /*Select*/
     $('.community__title-select').selectric({
         nativeOnMobile: false
     });
@@ -105,7 +111,5 @@ $(function() {
     $('.selectric-community__category-select .selectric').click(function(){
         $('.category__arrow').toggleClass('rotated');
     });
-
-
 
 });
