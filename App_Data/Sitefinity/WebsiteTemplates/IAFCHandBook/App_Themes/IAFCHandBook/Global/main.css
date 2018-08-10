@@ -1529,10 +1529,18 @@ p{
         padding: 72px 90px;
     }
     .slick-next{
-        right: -27px;
+        right: -56px;
     }
     .slick-prev{
-        left: -40px;
+        left: -60px;
+    }
+    .resources__slide-time{
+        bottom: 12px;
+        padding: 6px 8px;
+    }
+    .resources__slide-label{
+        bottom: 12px;
+        padding: 3px 8px;
     }
     .topics__ul{
         grid-template-columns: repeat(2, 1fr);
@@ -1590,6 +1598,10 @@ p{
     }
     .community__head-button:nth-of-type(2){
         width: 150px;
+    }
+    .slick-prev, .slick-next{
+        top: 44%;
+        transform: translateY(44%);
     }
 }
 
