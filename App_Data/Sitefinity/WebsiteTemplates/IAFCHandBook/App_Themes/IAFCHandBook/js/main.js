@@ -45,9 +45,11 @@ $(document).ready(function() {
 });
 $( document ).ready(function() {
     $('.resources--like').hover(
-        function(){$(this).toggleClass('');}
+        function(){$(this).toggleClass('resources--like-hover');}
     );
-  
+    $('.resources--dislike').hover(
+        function(){$(this).toggleClass('resources--dislike-hover');}
+    );
 });
 $(function () {
     var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
