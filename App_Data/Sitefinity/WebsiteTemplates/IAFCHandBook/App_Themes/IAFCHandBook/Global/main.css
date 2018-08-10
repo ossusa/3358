@@ -817,14 +817,14 @@ p{
     display: flex;
 }
 
-.resources--like:before:hover,
-.resources--like:before:focus{
+.resources--like:hover:before,
+.resources--like:focus:before{
     display: block;
     font-family: anticon!important;
     content: "\E64C";
 }
-.resources--dislike:before:hover,
-.resources--dislike:before:focus{
+.resources--dislike:hover:before,
+.resources--dislike:focus:before{
     display: block;
     font-family: anticon!important;
     content: "\E64B";
