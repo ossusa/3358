@@ -79,7 +79,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult AddToMyHandBook(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
-			Boolean addToMyHandBook = true;
+
+			var addToMyHandBook = handBookHelper.AddToMyHandBook(id);
 
 			return Json(addToMyHandBook);
 		}

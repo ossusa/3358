@@ -25,7 +25,7 @@
 					<td>
 						<div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
 							<div id="addToMyHandBook">
-								@if (Model.AddToMyHandBook == true)
+								@if (Model.IsResourceAddedToMyHandBook == true)
 								{
 									<span>Added to MyHandBook</span>
 								}

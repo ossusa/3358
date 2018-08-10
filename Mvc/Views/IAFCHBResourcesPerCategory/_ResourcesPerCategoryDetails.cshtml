@@ -37,7 +37,7 @@
 					    <div class="resources__slide-footer">
 							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook" , item.Id.ToString())">
 									<div id="addToMyHandBook">
-										@if (item.AddToMyHandBook == true)
+										@if (item.IsResourceAddedToMyHandBook == true)
 										{
 											<span>Added to MyHandBook</span>
 										}
