@@ -1,11 +1,4 @@
-(function(){
-    var countup = this;
-    var newNode = document.createElement('div');
-    newNode.className = 'textNode news content';
-    newNode.innerHTML = 'this created div contains class while created!!!';
-    document.getElementById('hb-jumbo').appendChild(newNode);
-})();
-    $( document ).ready(function() {
+ $( document ).ready(function() {
     /*Jumbo Search*/
     $('.hb-jumbo__search').appendTo(".hb-jumbo");
     $(".k-input").attr("placeholder", "Search");
