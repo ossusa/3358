@@ -871,8 +871,15 @@ p{
 .topics__text-red h2{
     color: #CF794A;
 }
-.topics__text h2 img{
-    margin-left: 6px;
+.topics__text-first h2 img{
+    margin-left: 4px;
+}
+.topics__text-yellow h2 img,
+.topics__text-green h2 img{
+    margin-left: -11px;
+}
+.topics__text-red h2 img{
+    margin-left: -3px;
 }
 .topics__content{
     padding: 0 0 75px;
