@@ -24,7 +24,6 @@ $( document ).ready(function() {
     });
 
 
-$(function () {
     var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $( ".sfNavHorizontalDropDownWrp li:contains('Account')" );
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
@@ -40,14 +39,14 @@ $(document).on('click', '#site-search-submit', event => {
         location.href = '/search-results/#/' + q + "/page=1";
    });
 
-});
+
 $(".header__mob-open").click(function(){
     $('.header__mob-nav').css({ width: "100vw" });
 });
 $(".header__mob-close").click(function(){
     $('.header__mob-nav').css({ width: "0" });
 });
-$(function() {
+
 
     //BEGIN
     $(".accordion__title").on("click", function(e) {
@@ -81,7 +80,7 @@ $(function() {
         $this.next().slideToggle();
         $('.accordion__sub-arrow',this).toggleClass('accordion__rotate');
     });
-});
+
 
     $arrowRight = '<div class="anticon anticon-right"></div>';
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
