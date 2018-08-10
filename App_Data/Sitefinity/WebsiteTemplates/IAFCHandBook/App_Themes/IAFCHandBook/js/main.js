@@ -1,13 +1,11 @@
 
 $( document ).ready(function() {
     $('.hb-jumbo__search').appendTo(".hb-jumbo");
-});
 
-$(document).ready(function() {
+
     $(".k-input").attr("placeholder", "Search");
-});
 
-$(document).ready(function() {
+
     $('.resources__slider').slick({
         dots: false,
         infinite: true,
@@ -24,11 +22,8 @@ $(document).ready(function() {
             }
         ]
     });
-});
-$( document ).ready(function() {
 
 
-});
 $(function () {
     var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $( ".sfNavHorizontalDropDownWrp li:contains('Account')" );
@@ -87,7 +82,7 @@ $(function() {
         $('.accordion__sub-arrow',this).toggleClass('accordion__rotate');
     });
 });
-$(document).ready(function() {
+
     $arrowRight = '<div class="anticon anticon-right"></div>';
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
 
@@ -111,5 +106,6 @@ $(document).ready(function() {
     $('.selectric-community__category-select .selectric').click(function(){
         $('.category__arrow').toggleClass('rotated');
     });
+
 
 });
