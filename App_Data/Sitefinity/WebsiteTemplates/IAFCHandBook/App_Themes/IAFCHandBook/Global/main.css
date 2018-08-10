@@ -606,7 +606,7 @@ p{
     font-weight: 500;
 }
 .resources__slide-title {
-    margin: 0 0 3px 0;
+    margin: 0;
     color: #2B4B6B;
     font-size: 1.25em;
 }
@@ -635,6 +635,7 @@ p{
     align-items: flex-end;
     cursor: pointer;
     margin-left: 16px;
+    padding: 0;
 }
 .resources__slide-btn div{
     font-size: 13px;
@@ -644,8 +645,7 @@ p{
     padding: 0;
 }
 .resources__slide-btn span {
-    font-size: 1em;
-    margin-right: 4px;
+    margin-right: -1px;
 }
 
 /*Slider*/
@@ -738,14 +738,14 @@ p{
     position: absolute;
     display: block;
     height: 33px;
-    width: 23px;
+    width: 33px;
     line-height: 0;
     font-size: 0;
     cursor: pointer;
     background: transparent;
     color: transparent;
-    top: 50%;
-    margin-top: -10px;
+    top: 37%;
+    transform: translateY(40%);
     opacity: 0.25;
     padding: 0;
     border: none;
@@ -776,14 +776,14 @@ p{
 
 
 .slick-prev {
-    left: -52px;
+    left: -78px;
 }
 .slick-prev:before {
     content: "\E620";
 }
 
 .slick-next {
-    right: -52px;
+    right: -75px;
 }
 .slick-next:before {
     content: "\E61F";
@@ -809,7 +809,7 @@ p{
  }
 .resources--plus{
     font-size: 16px;
-    margin-right: 5px;
+    margin-right: 5px !important;
 }
 .resources--time{
     font-size: 18px;
@@ -846,16 +846,16 @@ p{
     height: 19px;
 }
 .topics__text-first{
-    padding: 82px 0 37px !important;
+    padding: 94px 0 35px !important;
 }
 .topics__text-space{
-    padding: 26px 0 36px 0 !important;
+    padding: 20px 0 36px 0 !important;
 }
 .topics__content--last{
     padding: 0 0 100px 0 !important;
 }
 .topics__text{
-    padding: 0 0 35px;
+    padding: 0 0 32px;
 }
 .topics__text h2{
     color: #5591AA;
@@ -875,7 +875,7 @@ p{
     margin-left: 6px;
 }
 .topics__content{
-    padding: 0 0 70px;
+    padding: 0 0 75px;
 }
 .topics__content a{
     display: block;
