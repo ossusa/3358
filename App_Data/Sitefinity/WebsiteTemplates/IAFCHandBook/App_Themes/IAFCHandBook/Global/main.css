@@ -1022,9 +1022,9 @@ p{
     width: 100%;
     position: relative;
     z-index: 1;
-    top: -118px;
+    top: -78px;
     left: 50%;
-    margin-bottom: -50px;
+    margin-bottom: -8px;
     transform: translateX(-50%);
 }
 .resources__logged-buttons{
