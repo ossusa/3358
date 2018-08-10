@@ -57,8 +57,9 @@
                             </span>
                         </button>
                         <button type="button" class="resources__slide-btn addDislike" data-id="@item.Id.ToString()">
-                            <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())"></span>
+                            <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
                                 <span>@item.Likes.Dislikes</span>
+                                </span>
                         </button>
                     </div>
                 </div>
