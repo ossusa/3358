@@ -32,7 +32,7 @@ $(function () {
     	event.preventDefault();
     	$('.mg-search-box').toggleClass('hidden');
     });
-$(document).on('click', '#site-search-submit', event => {
+    $(document).on('click', '#site-search-submit', event => {
         event.preventDefault();
         var q = $('#site-search').val();
         location.href = '/search-results/#/' + q + "/page=1";
