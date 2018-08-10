@@ -52,6 +52,8 @@
                             <span>@item.CommentsAmount Comments</span>
                         </a>
                         <button type="button" class="resources__slide-btn addLike" data-id="@item.Id.ToString()">
+                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like.png" alt="" class="resources--dislike-img">
+                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like-color.png" alt="" class="resources--dislike-img">
                             <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
                                 <span>@item.Likes.Likes</span>
                             </span>

@@ -804,8 +804,9 @@ p{
      margin-left: 8px;
      text-indent: 0;
  }
-.resources--plus, .resources--like, .resources--dislike{
+.resources--plus{
     font-size: 16px;
+    margin-right: 5px;
 }
 .resources--time{
     font-size: 18px;
@@ -816,9 +817,9 @@ p{
 .resources__slide-social{
     display: flex;
 }
-
-.resources--plus{
-    margin-right: 5px;
+.resources--dislike-img{
+    margin-right: 4px;
+    font-size: 16px;
 }
 .resources--like, .resources--dislike, resources--comment{
     margin-right: 4px;
