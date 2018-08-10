@@ -823,16 +823,17 @@ p{
 .resources--like, .resources--dislike, resources--comment{
     margin-right: 4px;
 }
-.resources--dislike{
-    background: url("../images/dislike.png");
-    width: 15px;
-    height: 16px;
+
+.resources--dislike img:nth-of-type(even) {
+    display: none;
 }
-.resources--dislike:hover{
-    background: url("../images/dislike-color.png");
-    width: 15px;
-    height: 16px;
+.resources--dislike:hover img:first-of-type {
+    display: none;
 }
+.resources--dislike:hover img:last-of-type {
+    display: block;
+}
+
 .resources--comments{
     background: url('../images/comment.png') no-repeat 50% 50%;
     width: 18px;
