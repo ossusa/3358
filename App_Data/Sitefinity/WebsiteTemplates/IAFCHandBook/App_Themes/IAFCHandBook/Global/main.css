@@ -816,15 +816,36 @@ p{
 .resources__slide-social{
     display: flex;
 }
-
-span.resources--like:hover:before,
-span.resources--like:focus:before{
+.resources--like,
+.resources--dislike{
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.resources--like:before{
+    content: "\E69D";
+    display: block;
+    font-family: anticon!important;
+}
+.resources--dislike:before{
+    content: "\E69E";
+    display: block;
+    font-family: anticon!important;
+}
+.resources--like:hover:before,
+.resources--like:focus:before{
     display: block;
     font-family: anticon !important;
     content: "\E64C";
 }
-span.resources--dislike:hover:before,
-span.resources--dislike:focus:before{
+.resources--dislike:hover:before,
+.resources--dislike:focus:before{
     display: block;
     font-family: anticon !important;
     content: "\E64B";
