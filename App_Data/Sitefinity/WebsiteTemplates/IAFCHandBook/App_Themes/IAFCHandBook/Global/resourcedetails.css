@@ -1,3 +1,14 @@
+.resources-breadcrumbs {
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: #666666;
+  font-weight: 500;
+  letter-spacing: 0.5px; }
+  .resources-breadcrumbs a {
+    color: #9b9b9b;
+    font-weight: 400;
+    letter-spacing: 0.5px; }
+
 .resources-single {
   display: -ms-flexbox;
   display: flex; }
