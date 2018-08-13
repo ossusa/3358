@@ -740,6 +740,22 @@ p {
     margin-left: 16px;
     padding: 0;
 }
+.resources__logged-buttons > span{
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #9B9B9B;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 13px;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+    cursor: pointer;
+    margin-left: 16px;
+    padding: 0;
+}
 .resources__slide-btn div {
     font-size: 13px;
 }
