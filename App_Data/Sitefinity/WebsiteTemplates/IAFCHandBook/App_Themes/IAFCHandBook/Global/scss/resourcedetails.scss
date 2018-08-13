@@ -23,9 +23,56 @@
         width: 100%;
         &_video{
           width: 100%;
+          margin-bottom: 20px;
           iframe{
             width: 100% !important;
             height: 415px !important;
+          }
+        }
+        &_title{
+          margin-bottom: 40px;
+          h5{
+            color: #2b4b6b;
+            font-family: "Nunito Sans";
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+          }
+          p{
+            margin: 0;
+            color: #4a4a4a;
+            font-size: 18px;
+            font-weight: 300;
+          }
+        }
+        &_comment{
+          &_header{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            &_left{
+              &_checkbox{
+                input{
+                  background: #fff;
+                  border: 1px solid #9b9b9b;
+                }
+                lable{
+                  color: #9b9b9b;
+                  font-family: "Nunito Sans";
+                  font-size: 13px;
+                  font-weight: 400;
+                }
+              }
+              &_share{
+                color: #9b9b9b;
+                font-family: "Nunito Sans";
+                font-size: 13px;
+                font-weight: 400;
+              }
+            }
+            &_right{
+
+            }
           }
         }
       }
