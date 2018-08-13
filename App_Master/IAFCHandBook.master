@@ -186,6 +186,7 @@ $(document).ready(function() {
 $("#copyrightIAFC").text(currentYear);
 });
 </script>
+
 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
 </body>
