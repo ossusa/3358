@@ -1,5 +1,5 @@
 .resources-breadcrumbs {
-  margin-bottom: 25px;
+  margin: 40px 0 25px;
   font-size: 16px;
   color: #666666;
   font-weight: 500;
@@ -14,9 +14,22 @@
     max-width: 790px;
     width: 100%;
     margin-right: 50px; }
+    .resources-single__left_post {
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      .resources-single__left_post_video {
+        display: flex;
+        flex-direction: column;
+        max-height: 415px;
+        height: 100%;
+        width: 100%; }
+        .resources-single__left_post_video iframe {
+          width: 100% !important;
+          height: 100% !important; }
   .resources-single__right {
     max-width: 360px;
-    min-width: 300px;
+    min-width: 200px;
     width: 100%;
     background-color: #efefef;
     padding: 32px 40px; }
