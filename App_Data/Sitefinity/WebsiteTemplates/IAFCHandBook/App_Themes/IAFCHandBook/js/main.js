@@ -1,28 +1,29 @@
 
 try {
-
+    /*Slider*/
+    $('.resources__slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1109,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
     $(document).ready(function() {
         /*Jumbo Search*/
         $('.hb-jumbo__search').appendTo(".hb-jumbo");
         $(".k-input").attr("placeholder", "Search");
 
-        /*Slider*/
-        $('.resources__slider').slick({
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 1109,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
+
+
 
         /*Search in header*/
         var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
