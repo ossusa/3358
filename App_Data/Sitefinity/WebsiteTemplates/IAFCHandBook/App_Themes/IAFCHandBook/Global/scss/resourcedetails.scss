@@ -51,12 +51,18 @@
             justify-content: space-between;
             width: 100%;
             &_left{
+              display: flex;
+              align-items: center;
               &_checkbox{
+                display: flex;
+                align-items: center;
+                margin-right: 25px;
                 input{
                   background: #fff;
                   border: 1px solid #9b9b9b;
+                  margin-right: 5px;
                 }
-                lable{
+                label{
                   color: #9b9b9b;
                   font-family: "Nunito Sans";
                   font-size: 13px;
