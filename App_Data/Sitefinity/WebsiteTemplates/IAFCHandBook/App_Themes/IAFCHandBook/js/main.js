@@ -89,9 +89,9 @@ $(".header__mob-close").click(function(){
         $(event.currentTarget).addClass('community__head-btn-active');
     });
     /*Select*/
-    $('.community__title-select').selectric({
-        nativeOnMobile: false
-    });
+    // $('.community__title-select').selectric({
+    //     nativeOnMobile: false
+    // });
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
     $('.selectric-community__title-select .selectric').click(function(){
         $('.title__arrow').toggleClass('rotated');
