@@ -99,9 +99,9 @@ try {
             $('.title__arrow').toggleClass('rotated');
         });
 
-        $('.community__category-select').selectric({
-            nativeOnMobile: false
-        });
+        // $('.community__category-select').selectric({
+        //     nativeOnMobile: false
+        // });
         $('.selectric-community__category-select').find('.button').addClass('category__arrow');
         $('.selectric-community__category-select .selectric').click(function(){
             $('.category__arrow').toggleClass('rotated');
