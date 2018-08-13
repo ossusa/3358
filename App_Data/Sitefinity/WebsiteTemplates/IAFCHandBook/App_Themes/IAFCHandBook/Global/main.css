@@ -1043,6 +1043,8 @@ p {
   display: none;
   margin: 0 12px; }
   .slick-slide img {
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     display: block; }
 
 .slick-loading .slick-track {
@@ -1171,7 +1173,7 @@ p {
       margin-left: -3px; }
 
 .topics__content--last {
-  padding: 0 0 100px 0 !important; }
+  padding: 0 0 76px 0 !important; }
 
 .topics__content {
   padding: 0 0 75px; }
@@ -1780,7 +1782,7 @@ p {
   .resources__slide-info {
     height: 153px; }
   .topics__content {
-    padding: 0 0 75px; }
+    padding: 0 0 52px; }
     .topics__content img {
       height: 145px; }
   .tablet-br-none {
