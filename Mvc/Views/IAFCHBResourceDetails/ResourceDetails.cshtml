@@ -104,8 +104,8 @@
 							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
 						</div>
 						<div class="resources-single__right_list_item_statistic">
-							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
-							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
+							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike anticon-like-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
+							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike anticon-dislike-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
 						</div>
 					</li>
 				}

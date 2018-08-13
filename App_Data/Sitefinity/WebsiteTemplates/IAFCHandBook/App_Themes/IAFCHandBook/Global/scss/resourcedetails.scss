@@ -53,16 +53,16 @@
             color: #9b9b9b;
             font-size: 13px;
             font-weight: 400;
-            &.addLike{
-              &:before{
-                content: "\E69D";
-              }
-            }
-            &.addDislike{
-              &:before{
-                content: "\E69E";
-              }
-            }
+            //&.addLike{
+            //  &:before{
+            //    content: "\E69D";
+            //  }
+            //}
+            //&.addDislike{
+            //  &:before{
+            //    content: "\E69E";
+            //  }
+            //}
             &:not(:last-child){
               margin-right: 15px;
             }
