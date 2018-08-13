@@ -187,22 +187,6 @@ $("#copyrightIAFC").text(currentYear);
 });
 </script>
 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
-    $('.resources__slider').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1109,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-]
-});
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
 </body>
 </html>
