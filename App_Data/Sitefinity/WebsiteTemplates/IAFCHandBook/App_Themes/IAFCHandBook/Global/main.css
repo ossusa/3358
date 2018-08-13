@@ -1043,8 +1043,6 @@ p {
   display: none;
   margin: 0 12px; }
   .slick-slide img {
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
     display: block; }
 
 .slick-loading .slick-track {
