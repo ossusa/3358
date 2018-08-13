@@ -683,6 +683,9 @@ p {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
+.resources__community-slide-info{
+    padding: 15px 20px 20px;
+}
 .resources__slide-article {
     font-family: 'Zilla Slab', serif;
     font-weight: 500;
@@ -1295,7 +1298,7 @@ p {
 /*Community*/
 
 .community__breadcrumbs {
-    margin-top: 34px;
+    margin-top: 38px;
     font-family: 'Zilla Slab', serif;
     color: #9b9b9b;
     margin-left: 0;
@@ -1322,9 +1325,9 @@ p {
     -webkit-box-pack: space-between;
     -ms-flex-pack: distribute;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     margin-top: 24px;
     margin-bottom: 48px;
 }
@@ -1434,9 +1437,9 @@ p {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: distribute;
+    justify-content: space-between;
     -webkit-box-align: flex-start;
     -ms-flex-align: flex-start;
     align-items: flex-start;
@@ -1495,6 +1498,9 @@ p {
     align-items: center;
     background: transparent;
     border: none;
+}
+.selectric-community__title-select{
+    margin: 7px 0 9px;
 }
 .selectric-community__title-select .selectric .label {
     margin: 0;
@@ -1623,6 +1629,12 @@ p {
 .about__page-textlink {
     color: #2B4B6B;
     font-weight: 600;
+}
+.resources__slide-btn-comment{
+    font-size: 13px;
+}
+.resources__community-slide-btn{
+    font-size: 16px;
 }
 @media (max-width: 1352px) {
     .resources__slide-empty {
@@ -2369,9 +2381,3 @@ p {
     }
 }
 
-.test__new{
-    background: red;
-}
-.new__info{
-    color: #000;
-}

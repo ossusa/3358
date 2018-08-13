@@ -50,7 +50,7 @@
                         <div class="resources__slide-social">
 							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount Comments</a>
 
-							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
+							<button type="button" class="addLike resources__slide-btn resources__community-slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
 							 <div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
                                 <span>@item.Likes.Likes</span>
                              </div>
