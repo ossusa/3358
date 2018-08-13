@@ -2368,12 +2368,7 @@ p {
         width: 82%;
     }
 }
-.test__new{
-    background: #000;
-}
-.new__info{
-    color: #000;
-}
+
 .test__new{
     background: red;
 }
