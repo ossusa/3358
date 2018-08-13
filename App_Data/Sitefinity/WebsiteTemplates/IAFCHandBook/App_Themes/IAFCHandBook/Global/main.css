@@ -1275,7 +1275,7 @@ p {
   flex-wrap: wrap;
   -ms-flex-wrap: wrap; }
 
-.topics__last-desktop-link {
+.topics__ul-flex .topics__list:nth-of-type(3) a {
   margin-right: 0; }
 
 .footer {
@@ -1771,7 +1771,8 @@ p {
     display: none; } }
 
 @media (max-width: 1109px) {
-  .topics__last-tablet-link {
+  .topics__ul-flex .topics__list:nth-of-type(2),
+  .topics__ul-flex .topics__list:nth-of-type(4) {
     margin-right: 0; }
   .community__head-button-group {
     -ms-flex-direction: column;
