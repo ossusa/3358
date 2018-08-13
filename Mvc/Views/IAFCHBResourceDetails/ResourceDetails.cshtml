@@ -3,7 +3,7 @@
 
 
 <div class="box">
-	<div><a href="@Model.ResourceDetails.Category.ParentCategoryUrl"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@Model.ResourceDetails.Category.CategoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
+	<div class="resources-breadcrumbs"><a href="@Model.ResourceDetails.Category.ParentCategoryUrl"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@Model.ResourceDetails.Category.CategoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
 
 	<div class="resources-single">
 		<div class="resources-single__left">
@@ -104,8 +104,8 @@
 							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
 						</div>
 						<div class="resources-single__right_list_item_statistic">
-							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike anticon-like-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
-							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike anticon-dislike-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
+							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
+							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
 						</div>
 					</li>
 				}
