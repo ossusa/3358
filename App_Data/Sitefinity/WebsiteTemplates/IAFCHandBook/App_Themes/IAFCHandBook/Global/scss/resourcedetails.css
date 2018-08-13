@@ -1,0 +1,51 @@
+.resources-single {
+  display: flex; }
+  .resources-single_left {
+    max-width: 790px;
+    width: 100%;
+    margin-right: 50px; }
+  .resources-single_right {
+    max-width: 360px;
+    min-width: 300px;
+    width: 100%;
+    background-color: #efefef;
+    padding: 32px 40px; }
+    .resources-single_right_header {
+      color: #2b4b6b;
+      font-family: "Nunito Sans";
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px; }
+    .resources-single_right_list {
+      display: flex;
+      flex-direction: column; }
+      .resources-single_right_list_item {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+        .resources-single_right_list_item_type {
+          color: #666666;
+          font-size: 12px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1.2px; }
+        .resources-single_right_list_item_title * {
+          color: #2b4b6b;
+          font-family: "Nunito Sans";
+          font-size: 16px;
+          font-weight: 700; }
+        .resources-single_right_list_item_statistic button {
+          display: inline-block;
+          background: transparent;
+          border: none;
+          color: #9b9b9b;
+          font-size: 13px;
+          font-weight: 400; }
+          .resources-single_right_list_item_statistic button.addLike:before {
+            content: "\E69D"; }
+          .resources-single_right_list_item_statistic button.addDislike:before {
+            content: "\E69E"; }
+          .resources-single_right_list_item_statistic button:not(:last-child) {
+            margin-right: 15px; }
+
+/*# sourceMappingURL=resourcedetails.css.map */
