@@ -27,15 +27,15 @@ $( document ).ready(function() {
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
     $( $liSearch ).appendTo('.k-item-search');
-    $(document).on('click', '.header__search', event => {
-    	event.preventDefault();
-    	$('.mg-search-box').toggleClass('hidden');
-    });
-$(document).on('click', '#site-search-submit', event => {
-        event.preventDefault();
-        var q = $('#site-search').val();
-        location.href = '/search-results/#/' + q + "/page=1";
-   });
+//     $(document).on('click', '.header__search', event => {
+//     	event.preventDefault();
+//     	$('.mg-search-box').toggleClass('hidden');
+//     });
+// $(document).on('click', '#site-search-submit', event => {
+//         event.preventDefault();
+//         var q = $('#site-search').val();
+//         location.href = '/search-results/#/' + q + "/page=1";
+//    });
 
 /*Off canvas menu*/
 $(".header__mob-open").click(function(){
@@ -84,21 +84,21 @@ $(".header__mob-close").click(function(){
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
 /*Resources Widget*/
     $('.resources').prepend( $( ".resources__logged" ) );
-    $('.community__head-btn').on('click', event => {
-        $(event.currentTarget).addClass('community__head-btn-active');
-    });
+    // $('.community__head-btn').on('click', event => {
+    //     $(event.currentTarget).addClass('community__head-btn-active');
+    // });
     /*Select*/
-    $('.community__title-select').selectric({
-        nativeOnMobile: false
-    });
+    // $('.community__title-select').selectric({
+    //     nativeOnMobile: false
+    // });
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
     $('.selectric-community__title-select .selectric').click(function(){
         $('.title__arrow').toggleClass('rotated');
     });
 
-    $('.community__category-select').selectric({
-        nativeOnMobile: false
-    });
+    // $('.community__category-select').selectric({
+    //     nativeOnMobile: false
+    // });
     $('.selectric-community__category-select').find('.button').addClass('category__arrow');
     $('.selectric-community__category-select .selectric').click(function(){
         $('.category__arrow').toggleClass('rotated');
