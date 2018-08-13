@@ -85,7 +85,7 @@ $(".header__mob-close").click(function(){
 /*Resources Widget*/
     $('.resources').prepend( $( ".resources__logged" ) );
     $('.community__head-btn').click(function(){
-        $('.community__head-btn').addClass('community__head-btn-active');
+        $(this).addClass('community__head-btn-active');
     });
     /*Select*/
     // $('.community__title-select').selectric({
