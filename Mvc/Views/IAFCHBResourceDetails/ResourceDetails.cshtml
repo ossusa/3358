@@ -2,6 +2,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <div><a href="@Model.ResourceDetails.Category.ParentCategoryUrl"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@Model.ResourceDetails.Category.CategoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
+
+<div class="box">
+	<div class="resources-single">
+		<div class="resources-single__left">
+
+		</div>
+		<div class="resources-single__right">
+			<div class="resources-single__right_header">
+				<p>More Resources in <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
+			</div>
+			<ul class="resources-single__right_list">
+				@foreach (var item in Model.MoreResources)
+				{
+					<li class="resources-single__right_list_item">
+						<div class="resources-single__right_list_item_type">
+							@item.ResourceDetails.ResourceType
+						</div>
+						<div class="resources-single__right_list_item_title">
+							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
+						</div>
+						<div class="resources-single__right_list_item_statistic">
+							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
+							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
+						</div>
+					</li>
+				}
+			</ul>
+		</div>
+	</div>
+</div>
+
 <table>
 	<tr>
 		<td style="width:70%">
@@ -108,30 +139,30 @@
 				</tr>
 				@foreach (var item in Model.MoreResources)
 				{
-					<tr>
-						<td>
-							@item.ResourceDetails.ResourceType
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-								<span>@item.Likes.Likes</span>
-							</div>
-						</td>
-						<td>
-							<button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
-							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-								<span>@item.Likes.Dislikes</span>
-							</div>
-						</td>
-					</tr>
+							<tr>
+								<td>
+									@item.ResourceDetails.ResourceType
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
+									<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+										<span>@item.Likes.Likes</span>
+									</div>
+								</td>
+								<td>
+									<button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
+									<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+										<span>@item.Likes.Dislikes</span>
+									</div>
+								</td>
+							</tr>
 
 				}
 				<tr>
