@@ -2198,6 +2198,11 @@ p {
 .hello {
   background: pink;
 }
+@media(max-width: 1500px){
+  .topics__img-text{
+    font-size: 2.2vw;
+  }
+}
 @media (max-width: 1352px) {
   .resources__slide-empty {
     display: none;
