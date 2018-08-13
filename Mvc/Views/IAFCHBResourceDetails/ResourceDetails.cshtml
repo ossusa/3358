@@ -8,7 +8,11 @@
 		<div class="resources-single__left">
 			<div class="resources-single__left_post">
 				<div class="resources-single__left_post_video">
-
+						@if (Model.ResourceDetails.VideoEmbedCode != null && Model.ResourceDetails.VideoEmbedCode != String.Empty)
+						{
+							<iframe width="420" height="315"
+									src=@Model.ResourceDetails.VideoEmbedCode></iframe>
+						}
 				</div>
 				<div class="resources-single__left_post_title">
 					<h5>@Model.ResourceDetails.ResourceTitle</h5>
