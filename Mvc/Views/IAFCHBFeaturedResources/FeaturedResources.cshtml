@@ -48,9 +48,7 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBFeaturedResourcesController")',
-				data: {
-				    resourceId
-				 },
+				data: { resourceId }
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {

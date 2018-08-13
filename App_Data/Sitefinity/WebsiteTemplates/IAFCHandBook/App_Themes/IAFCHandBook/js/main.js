@@ -87,9 +87,9 @@
         $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
         /*Resources Widget*/
         $('.resources').prepend( $( ".resources__logged" ) );
-        $('.community__head-btn').on('click', event => {
-            $(event.currentTarget).addClass('community__head-btn-active');
-        });
+        // $('.community__head-btn').on('click', event => {
+        //     $(event.currentTarget).addClass('community__head-btn-active');
+        // });
         /*Select*/
         // $('.community__title-select').selectric({
         //     nativeOnMobile: false
