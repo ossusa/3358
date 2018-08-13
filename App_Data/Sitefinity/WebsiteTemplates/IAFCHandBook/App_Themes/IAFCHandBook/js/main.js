@@ -98,11 +98,11 @@ $(".header__mob-close").click(function(){
         $('.category__arrow').toggleClass('rotated');
     });
     /*Select*/
-    // $('.community__title-select').selectric({
-    //     nativeOnMobile: false
-    // });
-    // $('.community__category-select').selectric({
-    //     nativeOnMobile: false
-    // });
+    $('.community__title-select').selectric({
+        nativeOnMobile: false
+    });
+    $('.community__category-select').selectric({
+        nativeOnMobile: false
+    });
 
 });
