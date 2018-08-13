@@ -12,11 +12,13 @@
     background-color: #efefef;
     padding: 32px 40px;
     &_header{
-      color: #2b4b6b;
-      font-family: "Nunito Sans";
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 15px;
+      *{
+        color: #2b4b6b;
+        font-family: "Nunito Sans";
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 15px;
+      }
     }
     &_list{
       display: flex;
