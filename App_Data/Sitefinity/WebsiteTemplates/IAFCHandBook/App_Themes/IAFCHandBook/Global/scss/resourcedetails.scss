@@ -1,11 +1,11 @@
 .resources-single{
   display: flex;
-  &_left{
+  &__left{
     max-width: 790px;
     width: 100%;
     margin-right: 50px;
   }
-  &_right{
+  &__right{
     max-width: 360px;
     min-width: 300px;
     width: 100%;
@@ -21,10 +21,13 @@
     &_list{
       display: flex;
       flex-direction: column;
+      margin-bottom: 15px;
       &_item{
         display: flex;
         flex-direction: column;
         width: 100%;
+        padding: 25px 0;
+        border-bottom: 1px solid #d8d8d8;
         &_type{
           color: #666666;
           font-size: 12px;
@@ -63,6 +66,15 @@
             }
           }
         }
+      }
+    }
+    &_more{
+      text-align: center;
+      a{
+        color: #666666;
+        font-family: "Nunito Sans";
+        font-size: 16px;
+        font-weight: 700;
       }
     }
   }
