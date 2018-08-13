@@ -12,7 +12,7 @@
 				<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
 			<div class="resources__logged-buttons">
 				<button type="submit" formaction="@Model.ResourceUrl" class="community__head-btn resources__logged-btn" > View </button>
-				<span class="resources__slide-btn " id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
+				<span class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 					@if (Model.IsResourceAddedToMyHandBook == true)
 					{
 						<span class="resources__logged-added">Added to MyHandBook</span>
@@ -36,11 +36,9 @@
 	</div>
 	}
 
-
 <script type="text/javascript">
 
 	$(document).ready(function () {
-		
 		//Add ToMyHandBook
 		$('.addToMyHandBook').on('click', function () {
 
@@ -61,7 +59,6 @@
 		});
 
 	});
-
 </script>
 
 
