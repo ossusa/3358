@@ -107,7 +107,7 @@
         $('.selectric-community__category-select .selectric').click(function(){
             $('.category__arrow').toggleClass('rotated');
         });
-
+console.log('Test')
 
     });
 
