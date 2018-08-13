@@ -1168,7 +1168,6 @@ p {
   .topics__content a {
     display: block;
     position: relative;
-    width: 384px;
     margin-bottom: 24px;
     margin-right: 24px; }
   .topics__content img {
@@ -1274,9 +1273,12 @@ p {
   justify-content: flex-start;
   flex-wrap: wrap;
   -ms-flex-wrap: wrap; }
-
-.topics__ul-flex .topics__list:nth-of-type(3) a {
-  margin-right: 0; }
+  .topics__ul-flex {
+    width: 1200px; }
+    .topics__ul-flex .topics__list {
+      width: 33%; }
+      .topics__ul-flex .topics__list:nth-of-type(3) a {
+        margin-right: 0; }
 
 .footer {
   border-top: 1px solid #9B9B9B; }

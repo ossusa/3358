@@ -1443,7 +1443,7 @@ p {
   a {
     display: block;
     position: relative;
-    width: 384px;
+    //width: 384px;
     margin-bottom: 24px;
     margin-right: 24px;
   }
@@ -1569,10 +1569,17 @@ p {
   justify-content: flex-start;
   flex-wrap: wrap;
   -ms-flex-wrap: wrap;
+  &-flex{
+    width: 1200px;
+    .topics__list{
+      width: 33%;
+      &:nth-of-type(3) a{
+        margin-right: 0;
+      }
+    }
+  }
 }
-.topics__ul-flex .topics__list:nth-of-type(3) a{
-  margin-right: 0;
-}
+
 
 .footer {
   border-top: 1px solid #9B9B9B;
