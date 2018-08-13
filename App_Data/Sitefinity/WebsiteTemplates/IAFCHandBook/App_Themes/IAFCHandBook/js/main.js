@@ -1,4 +1,5 @@
-$( document ).ready(function() {
+
+$(document).ready(function() {
 /*Jumbo Search*/
     $('.hb-jumbo__search').appendTo(".hb-jumbo");
     $(".k-input").attr("placeholder", "Search");
