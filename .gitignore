@@ -3,3 +3,4 @@
 /App_Data/logs/*
 /App_Data/Sitefinity/Logs/*
 /.idea/*
+/App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/node_modules
