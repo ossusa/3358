@@ -113,5 +113,5 @@ try {
 } catch(e) {
 
     alert('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack); // (3) <--
-
+    console.log('Test!!');
 }
