@@ -87,9 +87,7 @@
                 type: 'POST',
                 cache: false,
                 url: '@Url.Action("AddLike", "IAFCHBRecentlyAddedResources")',
-                data: {
-                    resourceId
-                },
+                data: { resourceId },
                 dataType: "json",
                 success: function (response) {
                     $("#resourceLikes_" + resourceId).html(response);

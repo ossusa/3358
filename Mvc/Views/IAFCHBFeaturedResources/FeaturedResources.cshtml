@@ -36,9 +36,11 @@
 	</div>
 	}
 
+
 <script type="text/javascript">
 
 	$(document).ready(function () {
+
 		//Add ToMyHandBook
 		$('.addToMyHandBook').on('click', function () {
 
@@ -48,9 +50,7 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBFeaturedResourcesController")',
-				data: {
-				    resourceId
-				 },
+				data: { resourceId },
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
@@ -61,6 +61,7 @@
 		});
 
 	});
+
 </script>
 
 
