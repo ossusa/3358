@@ -9,8 +9,6 @@
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/anticon.min.css">
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
-	<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
-    <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>	
 
@@ -188,6 +186,7 @@ $(document).ready(function() {
 $("#copyrightIAFC").text(currentYear);
 });
 </script>
-
+<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
 </body>
 </html>

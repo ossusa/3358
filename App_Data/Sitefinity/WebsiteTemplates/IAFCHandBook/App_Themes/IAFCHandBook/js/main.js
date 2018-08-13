@@ -1,28 +1,27 @@
 
-try {
-    /*Slider*/
-    $('.resources__slider').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1109,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
+
     $(document).ready(function() {
         /*Jumbo Search*/
         $('.hb-jumbo__search').appendTo(".hb-jumbo");
         $(".k-input").attr("placeholder", "Search");
 
-
+        /*Slider*/
+        $('.resources__slider').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 1109,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
 
 
         /*Search in header*/
@@ -31,15 +30,15 @@ try {
         var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
         $($search).insertAfter($li);
         $( $liSearch ).appendTo('.k-item-search');
-        $(document).on('click', '.header__search', event => {
-            event.preventDefault();
-            $('.mg-search-box').toggleClass('hidden');
-        });
-        $(document).on('click', '#site-search-submit', event => {
-            event.preventDefault();
-            var q = $('#site-search').val();
-            location.href = '/search-results/#/' + q + "/page=1";
-        });
+        // $(document).on('click', '.header__search', event => {
+        //     event.preventDefault();
+        //     $('.mg-search-box').toggleClass('hidden');
+        // });
+        // $(document).on('click', '#site-search-submit', event => {
+        //     event.preventDefault();
+        //     var q = $('#site-search').val();
+        //     location.href = '/search-results/#/' + q + "/page=1";
+        // });
 
         /*Off canvas menu*/
         $(".header__mob-open").click(function(){
@@ -111,8 +110,3 @@ try {
 
     });
 
-} catch(e) {
-
-    alert('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack); // (3) <--
-    console.log('Test!!');
-}
