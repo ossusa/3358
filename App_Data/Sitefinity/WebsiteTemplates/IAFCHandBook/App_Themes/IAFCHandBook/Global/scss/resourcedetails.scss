@@ -22,14 +22,10 @@
         flex-direction: column;
         width: 100%;
         &_video{
-          display: flex;
-          flex-direction: column;
-          max-height: 415px;
-          height: 100%;
           width: 100%;
           iframe{
             width: 100% !important;
-            height: 100% !important;
+            height: 415px !important;
           }
         }
       }

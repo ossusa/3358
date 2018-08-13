@@ -23,16 +23,10 @@
       flex-direction: column;
       width: 100%; }
       .resources-single__left_post_video {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        max-height: 415px;
-        height: 100%;
         width: 100%; }
         .resources-single__left_post_video iframe {
           width: 100% !important;
-          height: 100% !important; }
+          height: 415px !important; }
   .resources-single__right {
     max-width: 360px;
     min-width: 200px;
