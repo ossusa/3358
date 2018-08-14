@@ -151,13 +151,14 @@
           &_textarea{
             > div{
               width: 100%;}
-            .textarea-container{
+
+            .textarea-container,
+            .replyAddComment{
               display: flex;
               flex-direction: column;
               align-items: flex-end;
               width: 100%;
             }
-
             display: flex;
             flex-direction: column;
             align-items: flex-end;
@@ -173,8 +174,8 @@
               margin-bottom: 16px;
               resize: none;
               &::placeholder{
-                color: #9b9b9b;
-                font-family: "Nunito Sans";
+                //color: #9b9b9b;
+                //font-family: "Nunito Sans";
                 font-size: 13px;
                 font-weight: 400;
               }

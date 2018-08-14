@@ -137,7 +137,8 @@
         margin-top: 30px; }
         .resources-single__left_post_comment_textarea > div {
           width: 100%; }
-        .resources-single__left_post_comment_textarea .textarea-container {
+        .resources-single__left_post_comment_textarea .textarea-container,
+        .resources-single__left_post_comment_textarea .replyAddComment {
           display: -ms-flexbox;
           display: flex;
           -ms-flex-direction: column;
@@ -155,18 +156,12 @@
           margin-bottom: 16px;
           resize: none; }
           .resources-single__left_post_comment_textarea textarea::-webkit-input-placeholder {
-            color: #9b9b9b;
-            font-family: "Nunito Sans";
             font-size: 13px;
             font-weight: 400; }
           .resources-single__left_post_comment_textarea textarea:-ms-input-placeholder {
-            color: #9b9b9b;
-            font-family: "Nunito Sans";
             font-size: 13px;
             font-weight: 400; }
           .resources-single__left_post_comment_textarea textarea::placeholder {
-            color: #9b9b9b;
-            font-family: "Nunito Sans";
             font-size: 13px;
             font-weight: 400; }
         .resources-single__left_post_comment_textarea .addCommentBtn {
