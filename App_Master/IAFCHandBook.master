@@ -154,7 +154,7 @@
 
 			<!-- Footer ============================================= -->
 			<footer class="footer">
-			<div class="box">
+				<div class="box">
 				<div class="footer__info">
                   <div class="footer__info-col">
                     <asp:ContentPlaceHolder ID="footerImage" runat="server">
