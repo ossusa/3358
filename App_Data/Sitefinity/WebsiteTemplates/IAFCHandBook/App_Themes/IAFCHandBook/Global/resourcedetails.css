@@ -28,6 +28,21 @@
     font-size: 13px;
     color: #9b9b9b; }
 
+.single-post-add {
+  margin-right: 24px; }
+  .single-post-add button {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background: transparent;
+    padding: 0;
+    border: none;
+    color: #9b9b9b;
+    font-family: "Nunito Sans";
+    font-size: 13px;
+    font-weight: 400; }
+
 .resources-breadcrumbs {
   margin: 40px 0 24px;
   font-size: 16px;

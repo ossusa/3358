@@ -24,14 +24,14 @@
 					<div class="resources-single__left_post_comment_header">
 						<div class="resources-single__left_post_comment_header_left">
 							<div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
-								<div id="addToMyHandBook">
+								<div id="addToMyHandBook" class="single-post-add">
 									@if (Model.IsResourceAddedToMyHandBook == true)
 									{
 										<span>Added to MyHandBook</span>
 									}
 									else
 									{
-										<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> <i class="anticon anticon-plus-circle-o"></i> Add to MyHandBook </button>
+										<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> <i class="anticon anticon-plus"></i> Add to MyHandBook </button>
 									}
 								</div>
 							</div>
