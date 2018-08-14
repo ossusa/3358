@@ -243,6 +243,9 @@
     width: 100%;
     background-color: #efefef;
     padding: 32px 40px; }
+    @media screen and (min-width: 768px) {
+      .resources-single__right {
+        display: block !important; } }
     @media screen and (max-width: 768px) {
       .resources-single__right {
         display: none;
@@ -292,6 +295,9 @@
         font-weight: 700; }
   .resources-single__comments_list {
     margin-top: 15px; }
+    @media screen and (min-width: 768px) {
+      .resources-single__comments_list {
+        display: block !important; } }
     @media screen and (max-width: 768px) {
       .resources-single__comments_list {
         max-width: 588px;
