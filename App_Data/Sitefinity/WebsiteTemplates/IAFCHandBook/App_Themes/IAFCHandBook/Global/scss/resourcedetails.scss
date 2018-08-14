@@ -226,17 +226,18 @@
             display: none;
             border-top: 1px solid #d8d8d8;
             border-bottom: 1px solid #d8d8d8;
+            margin-top: 32px;
             @media screen and (max-width: 768px){
               display: flex;
             }
             div{
               flex: 1;
-              margin-top: 32px;
               padding: 16px;
               color: #9b9b9b;
               font-family: "Nunito Sans";
               font-size: 18px;
               font-weight: 700;
+              text-align: center;
               cursor: pointer;
               &:not(:last-child){
                 border-right: 1px solid #d8d8d8;
