@@ -137,6 +137,14 @@
         margin-top: 30px; }
         .resources-single__left_post_comment_textarea > div {
           width: 100%; }
+        .resources-single__left_post_comment_textarea .textarea-container {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          width: 100%; }
         .resources-single__left_post_comment_textarea textarea {
           width: 100%;
           min-height: 100px;

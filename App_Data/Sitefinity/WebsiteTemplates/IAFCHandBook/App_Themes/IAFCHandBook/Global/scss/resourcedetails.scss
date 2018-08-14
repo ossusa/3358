@@ -151,6 +151,13 @@
           &_textarea{
             > div{
               width: 100%;}
+            .textarea-container{
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              width: 100%;
+            }
+
             display: flex;
             flex-direction: column;
             align-items: flex-end;
