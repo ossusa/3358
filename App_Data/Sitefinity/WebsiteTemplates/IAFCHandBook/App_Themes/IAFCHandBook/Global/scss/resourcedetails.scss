@@ -24,6 +24,9 @@
         }
       }
     }
+    &:before{
+      font-size: 15px;
+    }
   }
 }
 
@@ -31,11 +34,13 @@
   display: flex;
   align-items: center;
   font-family: "Nunito Sans";
-  font-size: 13px;
+  font-size: 14px;
+  letter-spacing: -0.6px;
   color: #9b9b9b;
   font-weight: 400;
   i{
     margin-right: 5px;
+    font-size: 15px;
   }
   *{
     font-size: 13px;
@@ -106,17 +111,17 @@
         width: 100%;
         &_video{
           width: 100%;
-          margin-bottom: 20px;
+          margin-bottom: 14px;
           iframe{
             width: 100% !important;
-            height: 415px !important;
+            height: 455px !important;
             @media screen and (max-width: 540px){
               height: 250px !important;
             }
           }
         }
         &_title{
-          margin-bottom: 40px;
+          margin-bottom: 38px;
           @media screen and (max-width: 768px){
             max-width: 588px;
             width: 100%;
@@ -177,7 +182,7 @@
             &_right{
               display: flex;
               .single-post-comments{
-                margin-right: 15px;
+                margin-right: 18px;
               }
             }
           }
@@ -280,12 +285,15 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
+        margin-top: 14px;
         padding: 0;
         &_item{
           display: flex;
           flex-direction: column;
           width: 100%;
-          padding: 25px 0;
+          max-width: 250px;
+          padding: 25px 0 22px;
+          margin-bottom: 8px;
           border-bottom: 1px solid #d8d8d8;
           &:first-child{
             padding-top: 0;
@@ -339,6 +347,7 @@
         &_items{
           padding: 0;
           list-style: none;
+          margin: 0;
           &_item{
             padding: 16px 0 0;
             border-bottom: 1px solid #d8d8d8;
@@ -374,7 +383,10 @@
             &_bottom{
               display: flex;
               justify-content: space-between;
-              margin-bottom: 16px;
+              margin-bottom: 14px;
+              .single-post-statistic button:not(:last-child){
+                margin-right: 23px;
+              }
               &_reply{
                 display: flex;
                 align-items: center;
