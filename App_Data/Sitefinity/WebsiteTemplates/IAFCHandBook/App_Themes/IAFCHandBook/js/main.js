@@ -1,31 +1,9 @@
-/* Adding the script tag to the head as suggested before */
-
-var head = document.getElementsByTagName('head')[0];
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = "https://code.jquery.com/jquery-2.2.1.min.js";
-
-// Then bind the event to the callback function.
-// There are several events for cross browser compatibility.
-script.onreadystatechange = handler;
-script.onload = handler;
-
-// Fire the loading
-head.appendChild(script);
-
-function handler(){
-    console.log('jquery added :)');
-}
-
 $( document ).ready(function() {
+/*Jumbo Search*/
     $('.hb-jumbo__search').appendTo(".hb-jumbo");
-});
-
-$(document).ready(function() {
     $(".k-input").attr("placeholder", "Search");
-});
 
-$(document).ready(function() {
+/*Slider*/
     $('.resources__slider').slick({
         dots: false,
         infinite: true,
@@ -40,39 +18,35 @@ $(document).ready(function() {
                     slidesToScroll: 1
                 }
             }
-        ]
-    });
+]
 });
-$( document ).ready(function() {
-  
-  
-});
-$(function () {
+
+/*Search in header*/
     var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $( ".sfNavHorizontalDropDownWrp li:contains('Account')" );
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
     $( $liSearch ).appendTo('.k-item-search');
-    $(document).on('click', '.header__search', event => {
-    	event.preventDefault();
+    $(".header__search").click(function(e){
+    	e.preventDefault();
     	$('.mg-search-box').toggleClass('hidden');
     });
-$(document).on('click', '#site-search-submit', event => {
-        event.preventDefault();
+    $("#site-search-submit").click(function(e){
+        e.preventDefault();
         var q = $('#site-search').val();
         location.href = '/search-results/#/' + q + "/page=1";
    });
 
-});
+/*Off canvas menu*/
 $(".header__mob-open").click(function(){
     $('.header__mob-nav').css({ width: "100vw" });
 });
 $(".header__mob-close").click(function(){
     $('.header__mob-nav').css({ width: "0" });
 });
-$(function() {
 
-    //BEGIN
+
+    /*Accordion*/
     $(".accordion__title").on("click", function(e) {
 
         e.preventDefault();
@@ -88,7 +62,7 @@ $(function() {
         $this.next().slideToggle();
         $('.accordion__arrow',this).toggleClass('accordion__rotate');
     });
-    //END
+
     $(".accordion__sub-title").on("click", function(e) {
 
         e.preventDefault();
@@ -104,20 +78,31 @@ $(function() {
         $this.next().slideToggle();
         $('.accordion__sub-arrow',this).toggleClass('accordion__rotate');
     });
-});
-$(document).ready(function() {
+
+    /*Arrow*/
     $arrowRight = '<div class="anticon anticon-right"></div>';
     $(".header__nav > ul > li > div > ul > li > a").append( $arrowRight );
-    /*Select*/
-    $('.community__title-select').selectric();
+/*Resources Widget*/
+    $('.resources').prepend( $( ".resources__logged" ) );
+    $('.community__head-btn').click(function(){
+        $(this).addClass('community__head-btn-active');
+    });
+
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
     $('.selectric-community__title-select .selectric').click(function(){
         $('.title__arrow').toggleClass('rotated');
     });
 
-    $('.community__category-select').selectric();
     $('.selectric-community__category-select').find('.button').addClass('category__arrow');
     $('.selectric-community__category-select .selectric').click(function(){
         $('.category__arrow').toggleClass('rotated');
     });
+    /*Select*/
+    $('.community__title-select').selectric({
+        nativeOnMobile: false
+    });
+    $('.community__category-select').selectric({
+        nativeOnMobile: false
+    });
+
 });

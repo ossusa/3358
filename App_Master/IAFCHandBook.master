@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/anticon.min.css">
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
+	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/resourcedetails.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>	
 
@@ -166,7 +167,7 @@
                       </asp:ContentPlaceHolder>
                     </div>
                     <div class="footer__info-col">
-		      <span>&copy 2017</span> <span id="copyrightIAFC"></span> <span> IAFC <span>
+		      <span>&copy</span> <span id="copyrightIAFC"> </span> <span> IAFC </span>
                       <asp:ContentPlaceHolder ID="footerCurentYear" runat="server">
                       </asp:ContentPlaceHolder>
                     </div>

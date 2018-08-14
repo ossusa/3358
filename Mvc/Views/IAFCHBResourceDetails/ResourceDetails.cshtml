@@ -1,149 +1,117 @@
 ﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-<div><a href="@Model.ResourceDetails.Category.ParentCategoryUrl"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@Model.ResourceDetails.Category.CategoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
-<table>
-	<tr>
-		<td style="width:70%">
-			<table>
-				<tr>
-					<td>
+
+<div class="box">
+	<div class="resources-breadcrumbs"><a href="@Model.ResourceDetails.Category.ParentCategoryUrl"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> > <a href="@Model.ResourceDetails.Category.CategoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
+
+	<div class="resources-single">
+		<div class="resources-single__left">
+			<div class="resources-single__left_post">
+				<div class="resources-single__left_post_video">
 						@if (Model.ResourceDetails.VideoEmbedCode != null && Model.ResourceDetails.VideoEmbedCode != String.Empty)
 						{
 							<iframe width="420" height="315"
 									src=@Model.ResourceDetails.VideoEmbedCode></iframe>
 						}
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div>@Model.ResourceDetails.ResourceTitle</div>
-						<div>@Model.ResourceDetails.ResourceDescription</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
-							<div id="addToMyHandBook">
-								@if (Model.AddToMyHandBook == true)
-								{
-									<span>Added to MyHandBook</span>
-								}
-								else
-								{
-									<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
-								}
-							</div>
-						</div>
-					</td>
-					<td>
-						Share
-					</td>
-					<td>
-						<div id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
-							@Model.CommentsAmount Comments
-						</div>
-					</td>
-
-					<td>
-						<button type="button" class="addLike" data-id="@Model.Id.ToString()"> Add Like </button>
-						<div id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())">
-							<span>@Model.Likes.Likes</span>
-						</div>
-					</td>
-					<td>
-						<button type="button" class="addDislike" data-id="@Model.Id.ToString()"> Add Dislike </button>
-						<div id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())">
-							<span>@Model.Likes.Dislikes</span>
-						</div>
-					</td>
-				</tr>
-				<tr>
-
-					<td>
-						@if (Model.UserAuthorized)
-						{
-						<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
-							<div class="replyAddComment">
-								<div>
-									<textarea cols="40"
-											  rows="5"
-											  style="width:700px; height:100px"
-											  name="commentName"
-											  id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())"
-											  value="">
-									</textarea>
+				</div>
+				<div class="resources-single__left_post_title">
+					<h5>@Model.ResourceDetails.ResourceTitle</h5>
+					<p>@Model.ResourceDetails.ResourceDescription</p>
+				</div>
+				
+				<div class="resources-single__left_post_comment">
+					<div class="resources-single__left_post_comment_header">
+						<div class="resources-single__left_post_comment_header_left">
+							<div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
+								<div id="addToMyHandBook">
+									@if (Model.IsResourceAddedToMyHandBook == true)
+									{
+										<span>Added to MyHandBook</span>
+									}
+									else
+									{
+										<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
+									}
 								</div>
-								<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
 							</div>
-						</div>				
-						}
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<div id="commentsAmountBottomID" data-id="@Model.CommentsAmount.ToString()">
-							@Model.CommentsAmount Comments
+							<div class="resources-single__left_post_comment_header_left_share anticon anticon-share-alt">
+								Share
+							</div>
+							
 						</div>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						
-						<div id="refTable">
-							@Html.Partial("_IAFCHBComments", Model.Comments)
+						<div class="resources-single__left_post_comment_header_right">
+							<div class="single-post-comments" id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
+								<i class="material-icons">chat_bubble_outline</i>
+								@Model.CommentsAmount Comments
+							</div>
+							<div class="single-post-statistic">
+                                <button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"> <span>@Model.Likes.Likes</span> </button>
+                                <button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"> <span>@Model.Likes.Dislikes</span> </button>
+							</div>
 						</div>
-					</td>
-				</tr>
-			</table>			
-		</td>
-		<td style="width:30%">
-			<table>
-				<tr>
-					<td>
-						More Resources in <span>@Model.ResourceDetails.Category.CategoryTitle</span>
-					</td>
-				</tr>
+					</div>
+
+
+					<div class="resources-single__left_post_comment_textarea">
+							@if (Model.UserAuthorized)
+							{
+							<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
+								<div class="replyAddComment">
+									<div>
+										<textarea cols="40"
+												rows="5"
+												style="width:700px; height:100px"
+												name="commentName"
+												id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())"
+												value="">
+										</textarea>
+									</div>
+									<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
+								</div>
+							</div>		
+							}
+					</div>				
+				</div>
+
+				<div class="resources-single__comments_list">
+					<div class="resources-single__comments_list_header" id="commentsAmountBottomID" data-id="@Model.CommentsAmount.ToString()">
+								@Model.CommentsAmount Comments
+							</div>		
+					<div class="resources-single__comments_list_container" id="refTable">
+						@Html.Partial("_IAFCHBComments", Model.Comments)
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="resources-single__right">
+			<div class="resources-single__right_header">
+				<p>More Resources in <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
+			</div>
+			<ul class="resources-single__right_list">
 				@foreach (var item in Model.MoreResources)
 				{
-					<tr>
-						<td>
+					<li class="resources-single__right_list_item">
+						<div class="resources-single__right_list_item_type">
 							@item.ResourceDetails.ResourceType
-						</td>
-					</tr>
-					<tr>
-						<td>
+						</div>
+						<div class="resources-single__right_list_item_title">
 							<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button type="button" class="addLike" data-id="@item.Id.ToString()"> Add Like </button>
-							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-								<span>@item.Likes.Likes</span>
-							</div>
-						</td>
-						<td>
-							<button type="button" class="addDislike" data-id="@item.Id.ToString()"> Add Dislike </button>
-							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-								<span>@item.Likes.Dislikes</span>
-							</div>
-						</td>
-					</tr>
-
+						</div>
+						<div class="single-post-statistic">
+							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
+							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
+						</div>
+					</li>
 				}
-				<tr>
-					<td>
-						<a href='@Model.ResourceDetails.Category.CategoryUrl'>See More</a>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
-
+			</ul>
+			<div class="resources-single__right_more">
+					<a href='@Model.ResourceDetails.Category.CategoryUrl'>See More</a>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 
