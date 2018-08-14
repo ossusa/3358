@@ -270,7 +270,24 @@
 
 			});
 		});
-		
+
+		$('.resources-single-comment').on('click', function(){
+			if(!$(this).hasClass('active')){
+				$(this).addClass('active');
+				$('.resources-single-resources').removeClass('active');
+				$('.resources-single__right').hide();
+				$('.resources-single__comments_list').show();
+			}
+		})
+
+		$('.resources-single-resources').on('click', function(){
+			if(!$(this).hasClass('active')){
+				$(this).addClass('active');
+				$('.resources-single-comment').removeClass('active');
+				$('.resources-single__right').show();
+				$('.resources-single__comments_list').hide();
+			}
+		})
 	});
 
 
