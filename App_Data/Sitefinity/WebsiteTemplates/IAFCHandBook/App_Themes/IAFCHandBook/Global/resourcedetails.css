@@ -250,12 +250,14 @@
       .resources-single__right {
         display: none;
         max-width: 100%; } }
-    .resources-single__right_header * {
-      color: #2b4b6b;
-      font-family: "Nunito Sans";
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0 0 15px; }
+    .resources-single__right_header {
+      background: red; }
+      .resources-single__right_header * {
+        color: #2b4b6b;
+        font-family: "Nunito Sans";
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 15px; }
     .resources-single__right_list {
       display: -ms-flexbox;
       display: flex;
