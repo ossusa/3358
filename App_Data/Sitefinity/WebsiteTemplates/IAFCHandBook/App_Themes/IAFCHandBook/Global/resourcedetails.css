@@ -57,7 +57,9 @@
   letter-spacing: 0.5px; }
   @media screen and (max-width: 768px) {
     .resources-breadcrumbs {
-      margin: 40px 54px 24px; } }
+      max-width: 588px;
+      width: 100%;
+      margin: 40px auto 24px; } }
   .resources-breadcrumbs a {
     color: #9b9b9b;
     font-weight: 400;
@@ -78,7 +80,8 @@
     margin-right: 50px; }
     @media screen and (max-width: 768px) {
       .resources-single__left {
-        min-width: auto; } }
+        min-width: auto;
+        margin-right: 0; } }
     .resources-single__left_post {
       display: -ms-flexbox;
       display: flex;
@@ -218,7 +221,8 @@
         @media screen and (max-width: 768px) {
           .resources-single__left_post_comment_changer {
             display: -ms-flexbox;
-            display: flex; } }
+            display: flex;
+            margin: 32px -28px 0; } }
         .resources-single__left_post_comment_changer div {
           -ms-flex: 1;
           flex: 1;

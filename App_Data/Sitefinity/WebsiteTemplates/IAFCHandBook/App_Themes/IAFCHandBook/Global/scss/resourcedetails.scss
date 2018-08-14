@@ -75,7 +75,9 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     @media screen and (max-width: 768px){
-      margin: 40px 54px 24px;
+      max-width: 588px;
+      width: 100%;
+      margin: 40px auto 24px;
     }
     a{
       color: #9b9b9b;
@@ -96,6 +98,7 @@
       margin-right: 50px;
       @media screen and (max-width: 768px){
         min-width: auto;
+        margin-right: 0;
       }
       &_post{
         display: flex;
@@ -229,6 +232,7 @@
             margin-top: 32px;
             @media screen and (max-width: 768px){
               display: flex;
+              margin: 32px -28px 0;
             }
             div{
               flex: 1;
