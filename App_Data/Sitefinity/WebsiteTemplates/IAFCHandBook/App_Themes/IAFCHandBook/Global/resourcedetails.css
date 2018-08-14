@@ -12,6 +12,21 @@
   .single-post-statistic button.anticon-dislike-o:hover:before {
     content: "\E64B"; }
 
+.single-post-comments {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Nunito Sans";
+  font-size: 13px;
+  color: #9b9b9b;
+  font-weight: 400; }
+  .single-post-comments i {
+    margin-right: 5px; }
+  .single-post-comments * {
+    font-size: 13px;
+    color: #9b9b9b; }
+
 .resources-breadcrumbs {
   margin: 40px 0 25px;
   font-size: 16px;
@@ -87,6 +102,11 @@
             font-family: "Nunito Sans";
             font-size: 13px;
             font-weight: 400; }
+        .resources-single__left_post_comment_header_right {
+          display: -ms-flexbox;
+          display: flex; }
+          .resources-single__left_post_comment_header_right .single-post-comments {
+            margin-right: 15px; }
   .resources-single__right {
     max-width: 360px;
     min-width: 200px;
