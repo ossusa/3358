@@ -148,6 +148,50 @@
               }
             }
           }
+          &_textarea{
+            > div{
+              width: 100%;}
+
+            .textarea-container,
+            .replyAddComment{
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              width: 100%;
+            }
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 100%;
+            margin-top: 32px;
+            textarea{
+              width: 100%;
+              min-height: 100px;
+              padding: 18px;
+              border-radius: 3px;
+              border: 1px solid #9b9b9b;
+              background-color: #ffffff;
+              margin-bottom: 16px;
+              resize: none;
+              &::placeholder{
+                color: #9b9b9b;
+                font-family: "Nunito Sans";
+                font-size: 13px;
+                font-weight: 400;
+              }
+            }
+            .addCommentBtn{
+              background: transparent;
+              padding: 10px 24px;
+              margin: 0;
+              color: #434f68;
+              font-family: "Nunito Sans";
+              font-size: 14px;
+              font-weight: 400;
+              border-radius: 3px;
+              border: 1px solid #434f68;
+            }
+          }
         }
       }
     }
@@ -215,14 +259,14 @@
         font-family: "Nunito Sans";
         font-size: 20px;
         font-weight: 700;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
       &_container{
         &_items{
           padding: 0;
           list-style: none;
           &_item{
-            padding: 17px 0 0;
+            padding: 16px 0 0;
             border-bottom: 1px solid #d8d8d8;
             &:first-child{
               border-top: 1px solid #d8d8d8;
@@ -244,6 +288,7 @@
               font-family: "Nunito Sans";
               font-size: 16px;
               font-weight: 400;
+              margin-bottom: 4px;
             }
             .resources-single__comments_list_container_items{
               margin-left: 40px;
@@ -255,8 +300,10 @@
             &_bottom{
               display: flex;
               justify-content: space-between;
-              margin-bottom: 17px;
+              margin-bottom: 16px;
               &_reply{
+                display: flex;
+                align-items: center;
                 color: #9b9b9b;
                 font-family: "Nunito Sans";
                 font-size: 13px;

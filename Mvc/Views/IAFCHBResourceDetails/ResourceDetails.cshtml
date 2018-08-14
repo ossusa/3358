@@ -54,23 +54,21 @@
 
 
 					<div class="resources-single__left_post_comment_textarea">
-						<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
+					
+							@if (Model.UserAuthorized)
+							{
+					<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
 								<div class="replyAddComment">
-									<div>
-										<textarea cols="40"
-												rows="5"
-												style="width:700px; height:100px"
+									<div class="textarea-container">
+										<textarea
+										placeholder="Add a comment…"
 												name="commentName"
-												id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())"
-												value="">
+												id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())">
 										</textarea>
 									</div>
 									<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
 								</div>
-							</div>		
-							@if (Model.UserAuthorized)
-							{
-							
+							</div>				
 							}
 					</div>				
 				</div>
