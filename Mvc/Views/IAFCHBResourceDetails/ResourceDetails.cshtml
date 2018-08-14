@@ -54,7 +54,10 @@
 
 
 					<div class="resources-single__left_post_comment_textarea">
-						<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
+					
+							@if (Model.UserAuthorized)
+							{
+					<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
 								<div class="replyAddComment">
 									<div class="textarea-container">
 										<textarea
@@ -65,10 +68,7 @@
 									</div>
 									<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
 								</div>
-							</div>		
-							@if (Model.UserAuthorized)
-							{
-							
+							</div>				
 							}
 					</div>				
 				</div>
