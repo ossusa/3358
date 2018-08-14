@@ -85,6 +85,7 @@
             margin-bottom: 8px;
           }
           p{
+            font-face: ZillaSlab-Light;
             margin: 0;
             color: #4a4a4a;
             font-size: 18px;
@@ -102,7 +103,7 @@
               &_checkbox{
                 display: flex;
                 align-items: center;
-                margin-right: 25px;
+                margin-right: 24px;
                 input{
                   background: #fff;
                   border: 1px solid #9b9b9b;

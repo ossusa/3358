@@ -23,9 +23,17 @@
 				<div class="resources-single__left_post_comment">
 					<div class="resources-single__left_post_comment_header">
 						<div class="resources-single__left_post_comment_header_left">
-							<div class="resources-single__left_post_comment_header_left_checkbox">
-								<input type="checkbox" id="maskAsComplete">
-								<label for="maskAsComplete">Mask as Complete</label>
+							<div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
+								<div id="addToMyHandBook">
+									@if (Model.IsResourceAddedToMyHandBook == true)
+									{
+										<span>Added to MyHandBook</span>
+									}
+									else
+									{
+										<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
+									}
+								</div>
 							</div>
 							<div class="resources-single__left_post_comment_header_left_share anticon anticon-share-alt">
 								Share
@@ -64,19 +72,6 @@
 							</div>		
 							}
 					</div>				
-
-					<div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
-							<div id="addToMyHandBook">
-								@if (Model.IsResourceAddedToMyHandBook == true)
-								{
-									<span>Added to MyHandBook</span>
-								}
-								else
-								{
-									<button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
-								}
-							</div>
-						</div>
 				</div>
 
 				<div class="resources-single__comments_list">

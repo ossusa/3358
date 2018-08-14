@@ -68,6 +68,7 @@
           font-weight: 700;
           margin-bottom: 8px; }
         .resources-single__left_post_title p {
+          font-face: ZillaSlab-Light;
           margin: 0;
           color: #4a4a4a;
           font-size: 18px;
@@ -88,7 +89,7 @@
             display: flex;
             -ms-flex-align: center;
             align-items: center;
-            margin-right: 25px; }
+            margin-right: 24px; }
             .resources-single__left_post_comment_header_left_checkbox input {
               background: #fff;
               border: 1px solid #9b9b9b;
