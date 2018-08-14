@@ -51,13 +51,17 @@
 							</div>
 						</div>
 					</div>
-
+					
+					<div class="resources-single__left_post_comment_changer">
+						<div class="resources-single-comment active">Comments</div>
+						<div class="resources-single-resources">More Resources</div>
+					</div>
 
 					<div class="resources-single__left_post_comment_textarea">
 					
 							@if (Model.UserAuthorized)
 							{
-					<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
+								<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
 								<div class="replyAddComment">
 									<div class="textarea-container">
 										<textarea

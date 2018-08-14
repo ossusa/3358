@@ -76,6 +76,9 @@
     min-width: 430px;
     width: 100%;
     margin-right: 50px; }
+    @media screen and (max-width: 768px) {
+      .resources-single__left {
+        min-width: auto; } }
     .resources-single__left_post {
       display: -ms-flexbox;
       display: flex;
@@ -88,6 +91,9 @@
         .resources-single__left_post_video iframe {
           width: 100% !important;
           height: 415px !important; }
+          @media screen and (max-width: 540px) {
+            .resources-single__left_post_video iframe {
+              height: 250px !important; } }
       .resources-single__left_post_title {
         margin-bottom: 40px; }
         @media screen and (max-width: 768px) {
@@ -115,6 +121,8 @@
         width: 100%; }
         @media screen and (max-width: 768px) {
           .resources-single__left_post_comment_header {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
             max-width: 588px;
             width: 100%;
             margin: 0 auto; } }
@@ -202,12 +210,38 @@
           font-weight: 400;
           border-radius: 3px;
           border: 1px solid #434f68; }
+      .resources-single__left_post_comment_changer {
+        display: none;
+        border-top: 1px solid #d8d8d8;
+        border-bottom: 1px solid #d8d8d8; }
+        @media screen and (max-width: 768px) {
+          .resources-single__left_post_comment_changer {
+            display: -ms-flexbox;
+            display: flex; } }
+        .resources-single__left_post_comment_changer div {
+          -ms-flex: 1;
+          flex: 1;
+          margin-top: 32px;
+          padding: 16px;
+          color: #9b9b9b;
+          font-family: "Nunito Sans";
+          font-size: 18px;
+          font-weight: 700;
+          cursor: pointer; }
+          .resources-single__left_post_comment_changer div:not(:last-child) {
+            border-right: 1px solid #d8d8d8; }
+          .resources-single__left_post_comment_changer div.active {
+            color: #2b4b6b; }
   .resources-single__right {
     max-width: 360px;
     min-width: 200px;
     width: 100%;
     background-color: #efefef;
     padding: 32px 40px; }
+    @media screen and (max-width: 768px) {
+      .resources-single__right {
+        display: none;
+        max-width: 100%; } }
     .resources-single__right_header * {
       color: #2b4b6b;
       font-family: "Nunito Sans";
