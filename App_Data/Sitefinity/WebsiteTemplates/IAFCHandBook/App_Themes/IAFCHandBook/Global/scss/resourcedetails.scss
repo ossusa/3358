@@ -13,6 +13,7 @@
   }
   &-single{
     display: flex;
+    padding-bottom: 100px;
     &__left{
       max-width: 790px;
       width: 100%;
@@ -145,6 +146,20 @@
               &:not(:last-child){
                 margin-right: 15px;
               }
+              &.anticon-like-o{
+                &:hover{
+                  &:before{
+                    content: "\E64C";
+                  }
+                }
+              }
+               &.anticon-dislike-o{
+                 &:hover{
+                   &:before{
+                     content: "\E64B";
+                   }
+                 }
+               }
             }
           }
         }
@@ -168,7 +183,13 @@
         margin-bottom: 15px;
       }
       &_container{
+        &_items{
+          padding: 0;
+          list-style: none;
+          &_item{
 
+          }
+        }
       }
     }
   }

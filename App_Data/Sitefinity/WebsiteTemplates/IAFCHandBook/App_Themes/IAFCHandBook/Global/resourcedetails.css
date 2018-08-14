@@ -11,7 +11,8 @@
 
 .resources-single {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  padding-bottom: 100px; }
   .resources-single__left {
     max-width: 790px;
     width: 100%;
@@ -119,6 +120,10 @@
           font-weight: 400; }
           .resources-single__right_list_item_statistic button:not(:last-child) {
             margin-right: 15px; }
+          .resources-single__right_list_item_statistic button.anticon-like-o:hover:before {
+            content: "\E64C"; }
+          .resources-single__right_list_item_statistic button.anticon-dislike-o:hover:before {
+            content: "\E64B"; }
     .resources-single__right_more {
       text-align: center; }
       .resources-single__right_more a {
@@ -132,3 +137,6 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 15px; }
+  .resources-single__comments_list_container_items {
+    padding: 0;
+    list-style: none; }
