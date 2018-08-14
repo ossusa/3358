@@ -1,3 +1,31 @@
+.single-post-statistic{
+  button{
+    display: inline-block;
+    background: transparent;
+    border: none;
+    color: #9b9b9b;
+    font-size: 13px;
+    font-weight: 400;
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+    &.anticon-like-o{
+      &:hover{
+        &:before{
+          content: "\E64C";
+        }
+      }
+    }
+    &.anticon-dislike-o{
+      &:hover{
+        &:before{
+          content: "\E64B";
+        }
+      }
+    }
+  }
+}
+
 .resources{
   &-breadcrumbs{
     margin: 40px 0 25px;
@@ -123,43 +151,6 @@
               font-family: "Nunito Sans";
               font-size: 16px;
               font-weight: 700;
-            }
-          }
-          &_statistic{
-            button{
-              display: inline-block;
-              background: transparent;
-              border: none;
-              color: #9b9b9b;
-              font-size: 13px;
-              font-weight: 400;
-              //&.addLike{
-              //  &:before{
-              //    content: "\E69D";
-              //  }
-              //}
-              //&.addDislike{
-              //  &:before{
-              //    content: "\E69E";
-              //  }
-              //}
-              &:not(:last-child){
-                margin-right: 15px;
-              }
-              &.anticon-like-o{
-                &:hover{
-                  &:before{
-                    content: "\E64C";
-                  }
-                }
-              }
-               &.anticon-dislike-o{
-                 &:hover{
-                   &:before{
-                     content: "\E64B";
-                   }
-                 }
-               }
             }
           }
         }

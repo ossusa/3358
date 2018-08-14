@@ -1,3 +1,17 @@
+.single-post-statistic button {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  color: #9b9b9b;
+  font-size: 13px;
+  font-weight: 400; }
+  .single-post-statistic button:not(:last-child) {
+    margin-right: 15px; }
+  .single-post-statistic button.anticon-like-o:hover:before {
+    content: "\E64C"; }
+  .single-post-statistic button.anticon-dislike-o:hover:before {
+    content: "\E64B"; }
+
 .resources-breadcrumbs {
   margin: 40px 0 25px;
   font-size: 16px;
@@ -111,19 +125,6 @@
           font-family: "Nunito Sans";
           font-size: 16px;
           font-weight: 700; }
-        .resources-single__right_list_item_statistic button {
-          display: inline-block;
-          background: transparent;
-          border: none;
-          color: #9b9b9b;
-          font-size: 13px;
-          font-weight: 400; }
-          .resources-single__right_list_item_statistic button:not(:last-child) {
-            margin-right: 15px; }
-          .resources-single__right_list_item_statistic button.anticon-like-o:hover:before {
-            content: "\E64C"; }
-          .resources-single__right_list_item_statistic button.anticon-dislike-o:hover:before {
-            content: "\E64B"; }
     .resources-single__right_more {
       text-align: center; }
       .resources-single__right_more a {
