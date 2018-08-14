@@ -156,12 +156,18 @@
           margin-bottom: 16px;
           resize: none; }
           .resources-single__left_post_comment_textarea textarea::-webkit-input-placeholder {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
             font-size: 13px;
             font-weight: 400; }
           .resources-single__left_post_comment_textarea textarea:-ms-input-placeholder {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
             font-size: 13px;
             font-weight: 400; }
           .resources-single__left_post_comment_textarea textarea::placeholder {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
             font-size: 13px;
             font-weight: 400; }
         .resources-single__left_post_comment_textarea .addCommentBtn {
