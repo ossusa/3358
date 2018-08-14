@@ -1,5 +1,113 @@
 ﻿@model List<SitefinityWebApp.Mvc.Models.IAFCHandBookCommentModel>
-<div id="commentsView">
+<ul class="resources-single__comments_list_container_items">
+    @foreach (var commentItem in Model)
+    		{
+    		<li class="resources-single__comments_list_container_items_item">
+				<div class="resources-single__comments_list_container_items_item_title">
+					<h5>@commentItem.Author.UserName</h5>
+				</div>
+				<div class="resources-single__comments_list_container_items_item_text">
+					@Html.Raw(commentItem.CommentText)
+				</div>
+				<div class="resources-single__comments_list_container_items_item_bottom">
+					<div class="resources-single__comments_list_container_items_item_bottom_reply">
+						@if (commentItem.UserAuthorized)
+    					{
+    					<span id="@string.Format("{0}_{1}", "replyCommentBtn", commentItem.Id.ToString())">
+    						@if (commentItem.RelpyButtonPressed == true)
+    						{
+    							<span>Reply Pressed </span>
+    						}
+    						else
+    						{
+    							<button type="button" class="commentReplyBtn" data-id="@commentItem.Id.ToString()"> Reply </button>
+    						}
+    					</span>
+    					}
+					</div>
+					<div class="resources-single__comments_list_container_items_item_bottom_statistic">
+						<button id="@string.Format("{0}_{1}", "commentLikes" , commentItem.Id.ToString())" type="button" class="addCommentLike" data-id="@commentItem.Id.ToString()" title="Add Like"> <span>@commentItem.Likes.Likes</span> </button>
+						<button id="@string.Format("{0}_{1}", "commentDislikes" , commentItem.Id.ToString())" type="button" class="addCommentDislike" data-id="@commentItem.Id.ToString()" title="Add Dislike"> <span>@commentItem.Likes.Dislikes</span> </button>
+					</div>
+				</div>
+				<div class="resources-single__comments_list_container_items_item_replay_container">
+					<div id="@string.Format("{0}_{1}", "commentRepliesInputView", commentItem.Id.ToString())">
+    						@if (commentItem.RelpyButtonPressed == true)
+    						{
+    							@Html.Partial("_IAFCHBReplyCommentsInput", commentItem.Id)
+    						}
+    				</div>
+					<div id="@string.Format("{0}_{1}", "commentRepliesView" , commentItem.Id.ToString())">
+    						@Html.Partial("_IAFCHBComments", commentItem.RepliedComments)
+    				</div>
+				</div>
+    			<!-- <tr>
+    				<td>
+    					@commentItem.Author.UserName
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					@Html.Raw(commentItem.CommentText)
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+    					@if (commentItem.UserAuthorized)
+    					{
+    					<span id="@string.Format("{0}_{1}", "replyCommentBtn", commentItem.Id.ToString())">
+    						@if (commentItem.RelpyButtonPressed == true)
+    						{
+    							<span>Reply Pressed </span>
+    						}
+    						else
+    						{
+    							<button type="button" class="commentReplyBtn" data-id="@commentItem.Id.ToString()"> Reply </button>
+    						}
+    					</span>
+    					}
+    				</td>
+    				<td>
+    					<button type="button" class="addCommentLike" data-id="@commentItem.Id.ToString()"> Add Like </button>
+    					<div id="@string.Format("{0}_{1}", "commentLikes" , commentItem.Id.ToString())">
+    						<span>@commentItem.Likes.Likes</span>
+    					</div>
+    				</td>
+    				<td>
+    					<button type="button" class="addCommentDislike" data-id="@commentItem.Id.ToString()"> Add Dislike </button>
+    					<div id="@string.Format("{0}_{1}", "commentDislikes" , commentItem.Id.ToString())">
+    						<span>@commentItem.Likes.Dislikes</span>
+    					</div>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+
+    				</td>
+    				<td>
+    					<div id="@string.Format("{0}_{1}", "commentRepliesInputView", commentItem.Id.ToString())">
+    						@if (commentItem.RelpyButtonPressed == true)
+    						{
+    							@Html.Partial("_IAFCHBReplyCommentsInput", commentItem.Id)
+    						}
+    					</div>
+    				</td>
+    			</tr>
+    			<tr>
+    				<td>
+
+    				</td>
+    				<td>
+    					<div id="@string.Format("{0}_{1}", "commentRepliesView" , commentItem.Id.ToString())">
+    						@Html.Partial("_IAFCHBComments", commentItem.RepliedComments)
+    					</div>
+    				</td>
+    			</tr> -->
+               </li>
+    		}
+</ul>
+
+<!-- <div id="commentsView">
 	<table border="1">
 		@foreach (var commentItem in Model)
 		{
@@ -68,4 +176,4 @@
 
 		}
 	</table>
-</div>
+</div> -->

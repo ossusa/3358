@@ -159,6 +159,18 @@
         }
       }
     }
+    &__comments_list{
+      &_header{
+        color: #2b4b6b;
+        font-family: "Nunito Sans";
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+      &_container{
+
+      }
+    }
   }
 }
 
