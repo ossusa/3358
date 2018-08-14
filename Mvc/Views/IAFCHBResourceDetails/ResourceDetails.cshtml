@@ -37,8 +37,8 @@
 								@Model.CommentsAmount Comments
 							</div>
 							<div class="single-post-statistic">
-                                <button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" class="addLike" data-id="@Model.Id.ToString()" title="Add Like"> <span>@Model.Likes.Likes</span> </button>
-                                <button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" class="addDislike" data-id="@Model.Id.ToString()" title="Add Dislike"> <span>@Model.Likes.Dislikes</span> </button>
+                                <button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"> <span>@Model.Likes.Likes</span> </button>
+                                <button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"> <span>@Model.Likes.Dislikes</span> </button>
 							</div>
 						</div>
 					</div>
