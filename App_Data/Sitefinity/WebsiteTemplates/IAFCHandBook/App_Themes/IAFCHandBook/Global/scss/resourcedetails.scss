@@ -6,8 +6,9 @@
     color: #9b9b9b;
     font-size: 13px;
     font-weight: 400;
+    padding: 0;
     &:not(:last-child){
-      margin-right: 15px;
+      margin-right: 18px;
     }
     &.anticon-like-o{
       &:hover{
@@ -44,7 +45,7 @@
 
 .resources{
   &-breadcrumbs{
-    margin: 40px 0 25px;
+    margin: 40px 0 24px;
     font-size: 16px;
     color: #666666;
     font-weight: 500;
@@ -157,6 +158,9 @@
           width: 100%;
           padding: 25px 0;
           border-bottom: 1px solid #d8d8d8;
+          &:first-child{
+            padding-top: 0;
+          }
           &_type{
             color: #666666;
             font-size: 12px;
@@ -165,6 +169,7 @@
             letter-spacing: 1.2px;
           }
           &_title{
+            margin-bottom: 10px;
             *{
               color: #2b4b6b;
               font-family: "Nunito Sans";
