@@ -61,6 +61,12 @@
   }
 }
 
+.box-container{
+  @media screen and(min-width: 768px) and (max-width: 992px){
+    padding: 0 15px;
+  }
+}
+
 .resources{
   &-breadcrumbs{
     margin: 40px 0 24px;
@@ -68,6 +74,9 @@
     color: #666666;
     font-weight: 500;
     letter-spacing: 0.5px;
+    @media screen and (max-width: 768px){
+      margin: 40px 54px 24px;
+    }
     a{
       color: #9b9b9b;
       font-weight: 400;
@@ -77,8 +86,12 @@
   &-single{
     display: flex;
     padding-bottom: 100px;
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+    }
     &__left{
       max-width: 790px;
+      min-width: 430px;
       width: 100%;
       margin-right: 50px;
       &_post{
@@ -95,6 +108,11 @@
         }
         &_title{
           margin-bottom: 40px;
+          @media screen and (max-width: 768px){
+            max-width: 588px;
+            width: 100%;
+            margin: 0 auto 40px;
+          }
           h5{
             color: #2b4b6b;
             font-family: "Nunito Sans";
@@ -115,6 +133,11 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
+            @media screen and (max-width: 768px){
+              max-width: 588px;
+              width: 100%;
+              margin: 0 auto;
+            }
             &_left{
               display: flex;
               align-items: center;
@@ -254,6 +277,11 @@
     }
     &__comments_list{
       margin-top: 15px;
+      @media screen and (max-width: 768px){
+        max-width: 588px;
+        width: 100%;
+        margin: 15px auto 0;
+      }
       &_header{
         color: #2b4b6b;
         font-family: "Nunito Sans";
