@@ -135,6 +135,8 @@
         align-items: flex-end;
         width: 100%;
         margin-top: 30px; }
+        .resources-single__left_post_comment_textarea > div {
+          width: 100%; }
         .resources-single__left_post_comment_textarea textarea {
           width: 100%;
           min-height: 100px;
