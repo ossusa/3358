@@ -1,0 +1,365 @@
+.single-post-statistic button {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  color: #9b9b9b;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0; }
+  .single-post-statistic button:not(:last-child) {
+    margin-right: 18px; }
+  .single-post-statistic button.anticon-like-o:hover:before {
+    content: "\E64C"; }
+  .single-post-statistic button.anticon-dislike-o:hover:before {
+    content: "\E64B"; }
+  .single-post-statistic button:before {
+    font-size: 15px; }
+
+.single-post-comments {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  letter-spacing: -0.6px;
+  color: #9b9b9b;
+  font-weight: 400; }
+  .single-post-comments i {
+    margin-right: 5px;
+    font-size: 15px; }
+  .single-post-comments * {
+    font-size: 13px;
+    color: #9b9b9b; }
+
+.single-post-add {
+  margin-right: 24px; }
+  .single-post-add button {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background: transparent;
+    padding: 0;
+    border: none;
+    color: #9b9b9b;
+    font-family: "Nunito Sans";
+    font-size: 13px;
+    font-weight: 400; }
+    .single-post-add button i {
+      margin-right: 5px; }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .box-container {
+    padding: 0 15px; } }
+
+.resources-breadcrumbs {
+  margin: 40px 0 24px;
+  font-size: 16px;
+  color: #666666;
+  font-weight: 500;
+  letter-spacing: 0.5px; }
+  @media screen and (max-width: 768px) {
+    .resources-breadcrumbs {
+      max-width: 588px;
+      width: 100%;
+      margin: 40px auto 24px; } }
+  .resources-breadcrumbs a {
+    color: #9b9b9b;
+    font-weight: 400;
+    letter-spacing: 0.5px; }
+
+.resources-single {
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 100px; }
+  @media screen and (max-width: 768px) {
+    .resources-single {
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+  .resources-single__left {
+    max-width: 790px;
+    min-width: 430px;
+    width: 100%;
+    margin-right: 50px; }
+    @media screen and (max-width: 768px) {
+      .resources-single__left {
+        min-width: auto;
+        margin-right: 0; } }
+    .resources-single__left_post {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%; }
+      .resources-single__left_post_video {
+        width: 100%;
+        margin-bottom: 14px; }
+        .resources-single__left_post_video iframe {
+          width: 100% !important;
+          height: 444px !important; }
+          @media screen and (max-width: 540px) {
+            .resources-single__left_post_video iframe {
+              height: 250px !important; } }
+      .resources-single__left_post_title {
+        margin-bottom: 38px; }
+        @media screen and (max-width: 768px) {
+          .resources-single__left_post_title {
+            max-width: 588px;
+            width: 100%;
+            margin: 0 auto 40px; } }
+        .resources-single__left_post_title h5 {
+          color: #2b4b6b;
+          font-family: "Nunito Sans";
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 8px; }
+        .resources-single__left_post_title p {
+          font-face: ZillaSlab-Light;
+          margin: 0;
+          color: #4a4a4a;
+          font-size: 18px;
+          font-weight: 300; }
+      .resources-single__left_post_comment_header {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 100%; }
+        @media screen and (max-width: 768px) {
+          .resources-single__left_post_comment_header {
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            max-width: 588px;
+            width: 100%;
+            margin: 0 auto; } }
+        .resources-single__left_post_comment_header_left {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: center;
+          align-items: center; }
+          .resources-single__left_post_comment_header_left_checkbox {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-right: 24px; }
+            .resources-single__left_post_comment_header_left_checkbox input {
+              background: #fff;
+              border: 1px solid #9b9b9b;
+              margin-right: 5px; }
+            .resources-single__left_post_comment_header_left_checkbox label {
+              color: #9b9b9b;
+              font-family: "Nunito Sans";
+              font-size: 13px;
+              font-weight: 400; }
+          .resources-single__left_post_comment_header_left_share {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
+            font-size: 13px;
+            font-weight: 400; }
+        .resources-single__left_post_comment_header_right {
+          display: -ms-flexbox;
+          display: flex; }
+          .resources-single__left_post_comment_header_right .single-post-comments {
+            margin-right: 18px; }
+      .resources-single__left_post_comment_textarea {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        width: 100%;
+        margin-top: 32px; }
+        .resources-single__left_post_comment_textarea > div {
+          width: 100%; }
+        .resources-single__left_post_comment_textarea .textarea-container,
+        .resources-single__left_post_comment_textarea .replyAddComment {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          width: 100%; }
+        .resources-single__left_post_comment_textarea textarea {
+          width: 100%;
+          min-height: 100px;
+          padding: 18px;
+          border-radius: 3px;
+          border: 1px solid #9b9b9b;
+          background-color: #ffffff;
+          margin-bottom: 16px;
+          resize: none; }
+          .resources-single__left_post_comment_textarea textarea::-webkit-input-placeholder {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
+            font-size: 13px;
+            font-weight: 400; }
+          .resources-single__left_post_comment_textarea textarea:-ms-input-placeholder {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
+            font-size: 13px;
+            font-weight: 400; }
+          .resources-single__left_post_comment_textarea textarea::placeholder {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
+            font-size: 13px;
+            font-weight: 400; }
+        .resources-single__left_post_comment_textarea .addCommentBtn {
+          background: transparent;
+          padding: 10px 24px;
+          margin: 0;
+          color: #434f68;
+          font-family: "Nunito Sans";
+          font-size: 14px;
+          font-weight: 400;
+          border-radius: 3px;
+          border: 1px solid #434f68; }
+      .resources-single__left_post_comment_changer {
+        display: none;
+        border-top: 1px solid #d8d8d8;
+        border-bottom: 1px solid #d8d8d8;
+        margin-top: 32px; }
+        @media screen and (max-width: 768px) {
+          .resources-single__left_post_comment_changer {
+            display: -ms-flexbox;
+            display: flex;
+            margin: 32px -28px 0; } }
+        .resources-single__left_post_comment_changer div {
+          -ms-flex: 1;
+          flex: 1;
+          padding: 16px;
+          color: #9b9b9b;
+          font-family: "Nunito Sans";
+          font-size: 18px;
+          font-weight: 700;
+          text-align: center;
+          cursor: pointer; }
+          .resources-single__left_post_comment_changer div:not(:last-child) {
+            border-right: 1px solid #d8d8d8; }
+          .resources-single__left_post_comment_changer div.active {
+            color: #2b4b6b; }
+  .resources-single__right {
+    max-width: 360px;
+    min-width: 200px;
+    width: 100%;
+    background-color: #efefef;
+    padding: 32px 40px; }
+    @media screen and (min-width: 768px) {
+      .resources-single__right {
+        display: block !important; } }
+    @media screen and (max-width: 768px) {
+      .resources-single__right {
+        display: none;
+        max-width: 100%; } }
+    .resources-single__right_header * {
+      color: #2b4b6b;
+      font-family: "Nunito Sans";
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 15px; }
+    .resources-single__right_list {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-bottom: 15px;
+      margin-top: 14px;
+      padding: 0; }
+      .resources-single__right_list_item {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        max-width: 250px;
+        padding: 25px 0 22px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #d8d8d8; }
+        .resources-single__right_list_item:first-child {
+          padding-top: 0; }
+        .resources-single__right_list_item_type {
+          color: #666666;
+          font-size: 12px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1.2px; }
+        .resources-single__right_list_item_title {
+          margin-bottom: 10px; }
+          .resources-single__right_list_item_title * {
+            color: #2b4b6b;
+            font-family: "Nunito Sans";
+            font-size: 16px;
+            font-weight: 700; }
+    .resources-single__right_more {
+      text-align: center; }
+      .resources-single__right_more a {
+        color: #666666;
+        font-family: "Nunito Sans";
+        font-size: 16px;
+        font-weight: 700; }
+  .resources-single__comments_list {
+    margin-top: 15px; }
+    @media screen and (min-width: 768px) {
+      .resources-single__comments_list {
+        display: block !important; } }
+    @media screen and (max-width: 768px) {
+      .resources-single__comments_list {
+        max-width: 588px;
+        width: 100%;
+        margin: 15px auto 0; } }
+    .resources-single__comments_list_header {
+      color: #2b4b6b;
+      font-family: "Nunito Sans";
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px; }
+    .resources-single__comments_list_container_items {
+      padding: 0;
+      list-style: none;
+      margin: 0; }
+      .resources-single__comments_list_container_items_item {
+        padding: 16px 0 0;
+        border-bottom: 1px solid #d8d8d8; }
+        .resources-single__comments_list_container_items_item:first-child {
+          border-top: 1px solid #d8d8d8; }
+        .resources-single__comments_list_container_items_item_title {
+          max-width: 690px;
+          width: 100%; }
+          .resources-single__comments_list_container_items_item_title * {
+            color: #2b4b6b;
+            font-family: "Nunito Sans";
+            font-size: 16px;
+            font-weight: 700; }
+        .resources-single__comments_list_container_items_item_text {
+          max-width: 690px;
+          width: 100%;
+          color: #666666;
+          font-family: "Nunito Sans";
+          font-size: 16px;
+          font-weight: 400;
+          margin-bottom: 4px; }
+        .resources-single__comments_list_container_items_item .resources-single__comments_list_container_items {
+          margin-left: 40px; }
+          .resources-single__comments_list_container_items_item .resources-single__comments_list_container_items_item {
+            border-top: 1px solid #d8d8d8 !important;
+            border-bottom: 0; }
+        .resources-single__comments_list_container_items_item_bottom {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          margin-bottom: 14px; }
+          .resources-single__comments_list_container_items_item_bottom .single-post-statistic button:not(:last-child) {
+            margin-right: 23px; }
+          .resources-single__comments_list_container_items_item_bottom_reply {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
+            font-size: 13px;
+            font-weight: 400; }

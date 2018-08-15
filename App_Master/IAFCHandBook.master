@@ -7,8 +7,10 @@
 	<meta name="viewport" content="initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/main.css">
+	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/container.css">
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/anticon.min.css">
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/selectric.css">
+	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/resourcedetails.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>	
 
@@ -153,8 +155,7 @@
 			<!-- Content End ============================================= -->
 
 			<!-- Footer ============================================= -->
-			<footer class="footer">
-			<div class="box">
+			<footer class="footer box">
 				<div class="footer__info">
                   <div class="footer__info-col">
                     <asp:ContentPlaceHolder ID="footerImage" runat="server">
@@ -172,7 +173,6 @@
                     </div>
                 		</div>
                 </div>
-				</div>
 			</footer>
 			<!-- Footer End ============================================= -->
 </div>

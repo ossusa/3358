@@ -70,25 +70,25 @@
 	@Html.Partial("_ResourcesPerCategoryDetails", Model.Resources)
 </div>
 
-<div class="box community__topics">
-	<h2 class="community__topics-title">More @Model.Category.ParentCategoryTitle Topics</h2>
-		<ul class="community__topics-ul">
-			@foreach (var mcItem in Model.MoreCategories)
-			{
-				<li class="topics__list community__topics-list">
-                    <a href="@mcItem.CategoryUrl" class="community__topics-link">
-                        <img src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" class="community__topics-img" />
-                        <p class="topics__img-text community__topics-text">@mcItem.CategoryTitle</p>
-                        <div class="topics__img-back">
-                            <p class="topics__img-back-info">
-                                @mcItem.CategoryDescription;
-                            </p>
-                            <p class="topics__img-back-text">@mcItem.ResourcesAmount Resources</p>
-                        </div>
-                    </a>
-                </li>
-			}
-		</ul>
+<div class="community__topics box">
+	    <h2 class="community__topics-title">More @Model.Category.ParentCategoryTitle Topics</h2>
+        		<ul class="community__topics-ul">
+        			@foreach (var mcItem in Model.MoreCategories)
+        			{
+        				<li class="topics__list community__topics-list">
+                            <a href="@mcItem.CategoryUrl" class="community__topics-link">
+                                <img src="@mcItem.TopicCategoryImageUrl" title="@mcItem.CategoryTitle" alt="@mcItem.CategoryTitle" class="community__topics-img" />
+                                <p class="topics__img-text community__topics-text">@mcItem.CategoryTitle</p>
+                                <div class="topics__img-back">
+                                    <p class="topics__img-back-info">
+                                        @mcItem.CategoryDescription;
+                                    </p>
+                                    <p class="topics__img-back-text">@mcItem.ResourcesAmount Resources</p>
+                                </div>
+                            </a>
+                        </li>
+        			}
+        		</ul>
 </div>
 
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>

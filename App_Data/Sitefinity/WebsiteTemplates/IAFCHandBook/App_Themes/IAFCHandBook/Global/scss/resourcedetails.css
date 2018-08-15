@@ -1,0 +1,116 @@
+.resources-breadcrumbs {
+  margin: 40px 0 25px;
+  font-size: 16px;
+  color: #666666;
+  font-weight: 500;
+  letter-spacing: 0.5px; }
+  .resources-breadcrumbs a {
+    color: #9b9b9b;
+    font-weight: 400;
+    letter-spacing: 0.5px; }
+.resources-single {
+  display: flex; }
+  .resources-single__left {
+    max-width: 790px;
+    width: 100%;
+    margin-right: 50px; }
+    .resources-single__left_post {
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      .resources-single__left_post_video {
+        width: 100%;
+        margin-bottom: 20px; }
+        .resources-single__left_post_video iframe {
+          width: 100% !important;
+          height: 415px !important; }
+      .resources-single__left_post_title {
+        margin-bottom: 40px; }
+        .resources-single__left_post_title h5 {
+          color: #2b4b6b;
+          font-family: "Nunito Sans";
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 8px; }
+        .resources-single__left_post_title p {
+          margin: 0;
+          color: #4a4a4a;
+          font-size: 18px;
+          font-weight: 300; }
+      .resources-single__left_post_comment_header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%; }
+        .resources-single__left_post_comment_header_left {
+          display: flex;
+          align-items: center; }
+          .resources-single__left_post_comment_header_left_checkbox {
+            display: flex;
+            align-items: center;
+            margin-right: 25px; }
+            .resources-single__left_post_comment_header_left_checkbox input {
+              background: #fff;
+              border: 1px solid #9b9b9b;
+              margin-right: 5px; }
+            .resources-single__left_post_comment_header_left_checkbox label {
+              color: #9b9b9b;
+              font-family: "Nunito Sans";
+              font-size: 13px;
+              font-weight: 400; }
+          .resources-single__left_post_comment_header_left_share {
+            color: #9b9b9b;
+            font-family: "Nunito Sans";
+            font-size: 13px;
+            font-weight: 400; }
+  .resources-single__right {
+    max-width: 360px;
+    min-width: 200px;
+    width: 100%;
+    background-color: #efefef;
+    padding: 32px 40px; }
+    .resources-single__right_header * {
+      color: #2b4b6b;
+      font-family: "Nunito Sans";
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0 0 15px; }
+    .resources-single__right_list {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      padding: 0; }
+      .resources-single__right_list_item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 25px 0;
+        border-bottom: 1px solid #d8d8d8; }
+        .resources-single__right_list_item_type {
+          color: #666666;
+          font-size: 12px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1.2px; }
+        .resources-single__right_list_item_title * {
+          color: #2b4b6b;
+          font-family: "Nunito Sans";
+          font-size: 16px;
+          font-weight: 700; }
+        .resources-single__right_list_item_statistic button {
+          display: inline-block;
+          background: transparent;
+          border: none;
+          color: #9b9b9b;
+          font-size: 13px;
+          font-weight: 400; }
+          .resources-single__right_list_item_statistic button:not(:last-child) {
+            margin-right: 15px; }
+    .resources-single__right_more {
+      text-align: center; }
+      .resources-single__right_more a {
+        color: #666666;
+        font-family: "Nunito Sans";
+        font-size: 16px;
+        font-weight: 700; }
+
+/*# sourceMappingURL=resourcedetails.css.map */
