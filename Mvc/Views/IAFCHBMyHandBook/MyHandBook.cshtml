@@ -12,7 +12,7 @@
 		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
 	</div>
 		<table class="handbook_category__wrapper">
-		    <tr>
+			<tr>
 				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
 					<td class="handbook_category__item">
@@ -29,9 +29,10 @@
 									<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
 								</p>
 							}
-						</td>
-					</tr>
+					</td>
+
 				}
+			</tr>
 		</table>
 	}
 </div>

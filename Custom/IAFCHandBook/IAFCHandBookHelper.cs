@@ -1812,6 +1812,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					myHandBookResourcesItem.MyChildHandBookResources.Add(myChildHandBookResourcesItem);
 				}
 				model.MyHandBookResurces.Add(myHandBookResourcesItem);
+				log.Info("GetMyHandBook: End");
 			}
 			catch (Exception e)
 			{
@@ -2099,7 +2100,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("GetMyHandBook Error: " + e.Message);
+				log.Error("GetMyHandBookResourcesPerCategory Error: " + e.Message);
 			}
 			return model;
 		}
@@ -2170,7 +2171,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("GetMyHandBook Error: " + e.Message);
+				log.Error("GetCategoryResources Error: " + e.Message);
 			}
 			return model;
 		}
