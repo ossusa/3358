@@ -1041,8 +1041,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				resourceInfo.Duration = duration;
 				resourceInfo.DurationStr = duration.ToString();
-				resourceInfo.VideoEmbedCode = externalResourceItem.GetValue("VideoEmbedCode").ToString();
-
+				resourceInfo.VideoEmbedCode = externalResourceItem.GetValue("VideoEmbedCode").ToString();				
 				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 				//get first resource type
 				var resourceTypesID = externalResourceItem.GetPropertyValue<TrackedList<Guid>>("resourcetypes").First();
@@ -1251,7 +1250,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			IAFCHandBookResourceModel handBookResource = new IAFCHandBookResourceModel();
 
 			var recentlyAddedResourcesList = dynamicModuleManager.GetDataItems(handBookResourcesType).
-						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live ).
+						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).
 						OrderByDescending(i => i.DateCreated).ToArray();
 
 
@@ -1666,8 +1665,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			var model = new IAFCHandBookMyHandBookModel();
 			var identity = ClaimsManager.GetCurrentIdentity();
-			var currentUserGuid = identity.UserId;
 
+			var currentUserGuid = identity.UserId;
+			log.Info("GetOrCreateMyHandBook:" + currentUserGuid.ToString());
 			try
 			{
 				if (currentUserGuid != Guid.Empty)
@@ -1731,8 +1731,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			try
 			{				
 				var myHandBookItem = GetOrCreateMyHandBook();
+				log.Info("GetMyHandBook:" + myHandBookItem.Id.ToString());
 				model.Id = myHandBookItem.Id;
 				model.UserId = myHandBookItem.GetValue<Guid>("UserId");
+				log.Info("GetMyHandBook:" + model.UserId);
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().ToList();
 				var myCompletedHandBookResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>().ToList();
@@ -1818,7 +1820,6 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			
 			return model;
 		}
-
 		#endregion GetMyHandBook
 
 		#region GetTotalDuration
@@ -2105,9 +2106,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion MyHandBookGetResourcesPerCategory
 
 		#region GetCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(String categoryGuid, String markCompleteBtnText = "Marked as Complete")
+		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, String markCompleteBtnText = "Marked as Complete")
 		{
-			var categoryId = Guid.Parse(categoryGuid);
+			
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
 			try
 			{
@@ -2136,8 +2137,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					Where(i => (((i.GetValue<DynamicContent>("ExternalResources") != null) &&
 								(i.GetValue<DynamicContent>("ExternalResources").GetValue<IList<Guid>>("Category").Contains(categoryId)))
 								|| ((i.GetValue<DynamicContent>("Resources") != null) &&
-								(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryId))))).ToList()
-								;
+								(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryId))))).ToList();
+
 				var hbCategoryResTotalDuration = GetTotalDuration(categoryResources);
 				var hbCategoryComplResTotalDuration = GetTotalDuration(categoryCompletedResources);
 				var categoryTotalDuration = new TimeSpan();
@@ -2148,6 +2149,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				category.MyHandBookInCompletedResources = myHandBookResourcesAmount;
 
 				model.Category = category;
+				model.MoreCategories = GetMoreCategories(categoryId);
+
 				var myChildResourceItem = new IAFCHandBookResourceModel();
 				foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
 				{
@@ -2173,10 +2176,19 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 		#endregion GetCategoryResources
 
-		#endregion MyHandBook
+		#region GetMyHandBookCategoryResources
+		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId)
+		{
+			var model = new IAFCHandBookMyHandBookResourceModelModel();
+
+			return model;
+		}
+		#endregion GetMyHandBookCategoryResources
+
+			#endregion MyHandBook
 
 
-	}
+			}
 }
 
 

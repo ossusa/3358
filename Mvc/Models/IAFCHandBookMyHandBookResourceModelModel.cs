@@ -19,6 +19,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public int IncompletedResourcesAmount { get; set; }
 		public TimeSpan TotalDuration { get; set; }
 		public IAFCHandBookTopicCategoryModel Category { get; set; }
+		public List<IAFCHandBookTopicCategoryModel> MoreCategories { get; set; }
 		public List<IAFCHandBookResourceModel> MyResources { get; set; }
 		public List<IAFCHandBookResourceModel> MyCompletedResources { get; set; }
 

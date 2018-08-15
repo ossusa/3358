@@ -1,0 +1,29 @@
+﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
+<p> MY HANDBOOK</p>
+
+<div>
+	My HandBook >
+	<a href='@Model.Category.MyHandBookParentCategoryUrl'>
+		<h6 class="resources__slide-title">@Model.Category.ParentCategoryTitle/h6>
+	</a>
+</div>
+
+<div class="community__head-title">
+	<select class="community__title-select" id="UrlList" onchange="doNavigate()">
+		<option value=@Model.Category.MyHandBookCategoryUrl>@Model.Category.CategoryTitle</option>
+		@foreach (var item in Model.MoreCategories)
+		{
+			<option value=@item.MyHandBookCategoryUrl>@item.CategoryTitle</option>
+		}
+
+	</select>
+	<h5 class="community__head-desc">@Model.Category.CategoryDescription</h5>
+</div>
+
+
+<script type="text/javascript">
+	function doNavigate() {
+		window.location.href = document.getElementById("UrlList").value;
+	}
+</script>
+

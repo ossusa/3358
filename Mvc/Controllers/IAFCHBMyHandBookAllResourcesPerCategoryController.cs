@@ -64,16 +64,17 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult MarkAsComplete(String operation, String resourceId, String categoryId)
 		{
 			var id = Guid.Parse(resourceId);
+			var categoryGuid = Guid.Parse(categoryId);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
 			if (operation.Equals("Remove"))
 			{				
 				var markAsComplete = handBookHelper.RemoveResource(id);
-				model = handBookHelper.GetCategoryResources(categoryId, "Remove");
+				model = handBookHelper.GetCategoryResources(categoryGuid, "Remove");
 			}
 			else
 			{				
 				var markAsComplete = handBookHelper.MarkAsComplete(id);
-				model = handBookHelper.GetCategoryResources(categoryId);
+				model = handBookHelper.GetCategoryResources(categoryGuid);
 			}
 			
 			var view =  PartialView("_MyHandBookAllResourcesPerCategoryDetails", model);			
