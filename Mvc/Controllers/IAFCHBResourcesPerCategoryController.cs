@@ -28,7 +28,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 		public IAFCHandBookResourcesPerCatergoryModel GetData(String orderBy)
 		{
-
+			var a1 = 1;
 			return handBookHelper.GetResourcesPerCategory(CategoryName, orderBy);
 			
 		}
@@ -78,6 +78,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[RelativeRoute("AddToMyHandBook"), HttpPost]
 		public ActionResult AddToMyHandBook(String resourceId)
 		{
+
 			var id = Guid.Parse(resourceId);
 
 			var addToMyHandBook = handBookHelper.AddToMyHandBook(id);
