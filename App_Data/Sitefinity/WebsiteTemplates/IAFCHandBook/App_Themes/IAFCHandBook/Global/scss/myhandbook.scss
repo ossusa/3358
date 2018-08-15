@@ -16,9 +16,13 @@
     margin: 0;
   }
 }
+.handbook_container{
+  width: 88.3%;
+  margin: 0 auto;
+}
 .progressindicator{
   &__wrapper{
-    margin: 48px 8.35%;
+    margin: 48px 0;
     display: flex;
   }
   &__label{
