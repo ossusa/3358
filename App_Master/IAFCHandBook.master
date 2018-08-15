@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/resourcedetails.css">
 	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/myhandbook.css">
 
-	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/common.css">
+	<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/css/common.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>	
