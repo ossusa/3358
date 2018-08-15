@@ -530,7 +530,7 @@ p {
     font-size: 1.250em;
     background: transparent; }
   .header__logo {
-    padding: 24px 0; }
+    padding: 8px 0; }
     .header__logo img {
       margin-left: -19px; }
   .header__nav > ul > li:nth-of-type(5) > a {
@@ -2616,6 +2616,14 @@ p {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto; }
+
+.header__logo {
+  padding: 24px 0; }
+
+.footer__info {
+  height: 72px; }
+  .footer__info img {
+    height: 40px; }
 
 .single-post-statistic button {
   display: inline-block;
