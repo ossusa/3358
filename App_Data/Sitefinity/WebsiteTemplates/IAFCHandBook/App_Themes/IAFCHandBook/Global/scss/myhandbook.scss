@@ -3,6 +3,9 @@
   height: 160px;
   background-color: rgba(191, 55, 78, 0.85);
   margin: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   h1{
     color: #fff;
     font-family: 'Zilla Slab', serif;
@@ -10,5 +13,6 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2.3px;
+    margin: 0;
   }
 }
