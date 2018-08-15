@@ -16,3 +16,24 @@
     margin: 0;
   }
 }
+.progressindicator{
+  &__wrapper{
+  margin: 8.35% 48px;
+  }
+  &__label{
+    width: 124px;
+    height: 60px;
+    border-radius: 3px;
+    background-color: #2b4b6b;
+    margin-left: 24px;
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    .time{
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+}
