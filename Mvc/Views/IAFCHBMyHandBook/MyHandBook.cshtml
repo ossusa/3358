@@ -11,10 +11,11 @@
 		<div class="progressindicator__label"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
 		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
 	</div>
-		<div class="handbook_category__wrapper">
+		<table class="handbook_category__wrapper">
+		    <tr>
 				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
-					<div class="handbook_category__item">
+					<td class="handbook_category__item">
 						<a href="@categories.Category.MyHandBookCategoryUrl"> @categories.Category.CategoryTitle</a>
 						<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />
 						<div>@categories.Category.MyHandBookCompletedResources Complete</div>
@@ -28,8 +29,8 @@
 									<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
 								</p>
 							}
-						</div>
-					</dvi>
+						</td>
+					</tr>
 				}
 		</table>
 	}
