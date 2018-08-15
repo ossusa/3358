@@ -1,0 +1,101 @@
+﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
+
+<div class="community__section">
+	<div class="box">
+		<div>@Model.Category.CategoryTitle</div>
+		<div>@Model.Category.MyHandBookCompletedResources Complete</div>
+		<div>@Model.Category.MyHandBookInCompletedResources Incomplete</div>
+		<div>@Model.Category.TotalDuration.ToString() Time Remaining</div>
+
+		@{int columnCounter = 0; }
+		@{int columnCounterForMoreResources = 0; }
+
+		@foreach (var item in Model.MyResources)
+		{
+			if (columnCounter == 0)
+			{
+				@Html.Raw("<section>");
+			}
+			{ columnCounterForMoreResources++; }
+			<div class="resources__slide">
+				<div class="resources__community-img">
+					<img src='@item.ResourceDetails.ImageUrl' />
+					<div class="resources__slide-time">
+						<div class="resources--time">&nbsp;</div>
+						@item.ResourceDetails.DurationStr
+					</div>
+				</div>
+				<div class="resources__slide-info resources__community-slide-info">
+					<div class="resources__slide-box">
+						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+						<a href='@item.ResourceUrl'>
+							<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+						</a>
+						<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+					</div>
+					<div class="resources__slide-footer">
+						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete" , item.Id.ToString())">
+							<div id="markAsComplete">
+								@if (item.IsResourceCompleted == true)
+								{
+									<span>Completed</span>
+								}
+								else
+								{
+									<button type="button" class="markAsCompleteBtn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">@item.MarkCompleteBtnText</button>
+								}
+							</div>
+						</div>
+						<div class="resources__slide-social">
+							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount Comments</a>
+
+							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
+								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+									<span>@item.Likes.Likes</span>
+								</div>
+							</button>
+
+
+							<button type="button" class="addDislike resources__slide-btn resources--dislike  anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+									<span>@item.Likes.Dislikes</span>
+								</div>
+							</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			if (columnCounterForMoreResources == 5)
+			{
+				if (item.MoreThen5Resources > 0)
+				{
+					<div>+ @item.MoreThen5Resources More</div>
+					<a href="@item.ResourceDetails.Category.CategoryUrl">
+						<span>@item.ResourceDetails.Category.CategoryTitle</span>
+					</a>
+				}
+			}
+
+			if (columnCounter == 2)
+			{
+				columnCounter = 0;
+				@Html.Raw("</section>")
+			}
+			else
+			{
+				columnCounter++;
+
+			}
+		}
+		@{
+			if (columnCounter != 0)
+			{
+				@Html.Raw("</section>")
+			}
+		}
+
+	</div>
+</div>
+

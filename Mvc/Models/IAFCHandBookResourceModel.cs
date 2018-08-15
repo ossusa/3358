@@ -16,6 +16,7 @@ namespace SitefinityWebApp.Mvc.Models
 			ResourceDetails = new IAFCHandBookResourceDetailsModel();
 			MoreResources = new List<IAFCHandBookMoreResourcesModel>();
 			UserAuthorized = IsUserAuthorized();
+			MarkCompleteBtnText = "Mark as Complete";
 		}
 
 		public IAFCHandBookResourceModel(Guid id, string resourceTitle, DateTime dateCreated)
@@ -24,11 +25,13 @@ namespace SitefinityWebApp.Mvc.Models
 			ResourceTitle = resourceTitle;
 			DateCreated = dateCreated;
 			IsResourceAddedToMyHandBook = false;
+			IsResourceCompleted = false;
 			Comments = new List<IAFCHandBookCommentModel>();
 			Likes = new IAFCHandBookLikesModel();
 			ResourceDetails = new IAFCHandBookResourceDetailsModel();
 			MoreResources = new List<IAFCHandBookMoreResourcesModel>();
 			UserAuthorized = IsUserAuthorized();
+			MarkCompleteBtnText = "Mark as Complete";
 		}
 
 		public System.Guid Id { get; set; }
@@ -37,11 +40,14 @@ namespace SitefinityWebApp.Mvc.Models
 		public string ResourceUrl { get; set; }
 		public int CommentsAmount { get; set; }
 		public Boolean IsResourceAddedToMyHandBook { get; set; }
+		public Boolean IsResourceCompleted { get; set; }
 		public Boolean UserAuthorized { get; set; }
+		public String MarkCompleteBtnText { get; set; }
 		public List<IAFCHandBookCommentModel> Comments { get; set; }
 		public IAFCHandBookLikesModel Likes { get; set; }	
 		public IAFCHandBookResourceDetailsModel ResourceDetails { get; set; }
 		public List<IAFCHandBookMoreResourcesModel> MoreResources {get;set;}
+		public int MoreThen5Resources { get; set; }
 
 		private Boolean IsUserAuthorized()
 		{

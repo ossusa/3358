@@ -1,0 +1,138 @@
+﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookModel
+
+<p>MY HANDBOOK</p>
+
+<div>
+	@foreach (var myHandBookResource in Model.MyHandBookResurces)
+	{
+		<div>@myHandBookResource.Category.CategoryTitle</div>
+		<div id="edit">
+			<button type="button" class="editBtn"> Edit </button>
+		</div>
+
+		<div id="share">
+			<button type="button" class="shareBtn"> Share </button>
+		</div>		
+		<div>
+			@foreach (var myChildResources in myHandBookResource.MyChildHandBookResources)
+			{
+				<div id="@string.Format("{0}_{1}", "myHandBookResourcesDetails", myChildResources.Category.Id.ToString())">
+					@Html.Partial("_MyHandBookAllResourcesPerCategoryDetails", myChildResources)
+				</div>
+				<br />
+			}
+		</div>
+	}
+</div>
+
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		bindEdit();
+	});
+	$(document).ajaxComplete(function (event, xhr, settings) {
+		bindEdit();
+	});
+
+	function bindEdit(){
+
+		//Add Like
+		$('.addLike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddLike", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceLikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add Dislike
+		$('.addDislike').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceDislikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//mark As Complete
+		$('.markAsCompleteBtn').on('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+			var categoryId = $(this).attr('data-id2');
+			var markAsCompleteCaption = $(this).text();
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { operation: markAsCompleteCaption, resourceId: resourceId, categoryId: categoryId},
+				success: function (response) {
+					console.log("MSG");
+					console.log("MSG" + response);
+					$('#myHandBookResourcesDetails_' + categoryId).html(response);
+
+				}
+			});
+		});
+
+		//Edit
+		$('.editBtn').on('click', function () {
+			var editCaption = $(this).text();
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Edit", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { operation: editCaption },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$('.editBtn').text("Cancel");
+						$('.markAsCompleteBtn').text("Remove");
+					}
+					else
+					{
+						$('.editBtn').text("Edit");
+						$('.markAsCompleteBtn').text("Mark as Complete");
+					}
+				}
+			});
+		});
+
+		//share
+		$('.shareBtn').on('click', function () {
+			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Share", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$('#share').html("Shared");
+						
+					}					
+				}
+			});
+		});
+	}
+
+</script>

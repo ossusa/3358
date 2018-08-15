@@ -1,27 +1,36 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookModel
 
-<p>MY HANDBOOK</p>
-<div>@Model.CompletedResourcesAmount Complete</div>
-<div>@Model.IncompletedResourcesAmount Incomplete</div>
-<div>@Model.TotalDuration.ToString() Time Remaining</div>
-<table>
-	<tr>
-		@foreach(var categories in Model.MayHandBookCategories)
-		{
-			<th>
-				<a href="@categories.MyHandBookCategoryUrl"> @categories.CategoryTitle</a>
-				<img src="@categories.TopicCategoryImageUrl" title="@categories.CategoryTitle" alt="@categories.CategoryTitle" height="100" width="200" />
-				<div>@categories.MyHandBookCompletedResources Complete</div>
-				<div>@categories.MyHandBookInCompletedResources Incomplete</div>
-				<div>@categories.TotalDuration.ToString() Time Remaining</div>
-				@categories.CategoryDescription;
-				@foreach (var childCategoryItem in categories.ChildCategories)
+<div class="handbook__title">
+    <h1>MY HANDBOOK</h1>
+</div>
+<div class="handbook_container">
+	@foreach (var myHandBookResource in Model.MyHandBookResurces)
+	{
+	<div class="progressindicator__wrapper">
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.CompletedResourcesAmount</div> Complete</div>
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
+	</div>
+		<div class="handbook_category__wrapper">
+				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
-				<p>
-					<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
-				</p>
-				 }
-			</th>	
-		}
-	</tr>
-</table>
+					<div class="handbook_category__item">
+						<a href="@categories.Category.MyHandBookCategoryUrl"> @categories.Category.CategoryTitle</a>
+						<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />
+						<div>@categories.Category.MyHandBookCompletedResources Complete</div>
+						<div>@categories.Category.MyHandBookInCompletedResources Incomplete</div>
+						<div>@categories.Category.TotalDuration.ToString() Time Remaining</div>
+						<div>@categories.Category.CategoryDescription;</div>
+						<div>
+							@foreach (var childCategoryItem in categories.Category.ChildCategories)
+							{
+								<p>
+									<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
+								</p>
+							}
+						</div>
+					</dvi>
+				}
+		</table>
+	}
+</div>

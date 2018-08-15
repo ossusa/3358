@@ -1,0 +1,43 @@
+.handbook__title {
+  width: 100%;
+  padding: 0 8.35%;
+  height: 160px;
+  background-color: rgba(191, 55, 78, 0.85);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+  .handbook__title h1 {
+    color: #fff;
+    font-family: 'Zilla Slab', serif;
+    font-size: 2.250em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2.3px;
+    margin: 0; }
+
+.handbook_container {
+  width: 83.3%;
+  margin: 0 auto; }
+
+.progressindicator__wrapper {
+  margin: 48px 0;
+  display: -ms-flexbox;
+  display: flex; }
+
+.progressindicator__label {
+  width: 124px;
+  height: 60px;
+  border-radius: 3px;
+  background-color: #2b4b6b;
+  margin-right: 24px;
+  color: #ffffff;
+  font-family: 'Zilla Slab', serif;
+  font-weight: 400;
+  font-size: 0.813em;
+  text-align: center;
+  padding-top: 8px; }
+  .progressindicator__label .time {
+    font-weight: 700;
+    font-size: 1.250em;
+    font-family: 'Nunito Sans', sans-serif; }
