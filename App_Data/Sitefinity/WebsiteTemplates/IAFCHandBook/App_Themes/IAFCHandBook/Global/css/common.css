@@ -2277,6 +2277,7 @@ p {
     white-space: nowrap;
     color: #666; }
   .footer__info {
+    height: 72px;
     padding: 16px 0 24px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -2285,6 +2286,8 @@ p {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+    .footer__info img {
+      height: 40px; }
   .footer__info-cols {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
