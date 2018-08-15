@@ -6,10 +6,10 @@
 <div>
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
-	<div class="progressindicator progressindicator__wrapper">
-		<div class="labels"><div class="time">@myHandBookResource.CompletedResourcesAmount</div> Complete</div>
-		<div class="labels"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
-		<div class="labels"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
+	<div class="progressindicator__wrapper">
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.CompletedResourcesAmount</div> Complete</div>
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
 	</div>
 		<table>
 			<tr>
