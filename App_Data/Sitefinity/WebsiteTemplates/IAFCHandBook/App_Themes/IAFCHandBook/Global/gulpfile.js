@@ -9,11 +9,11 @@ var gulp            = require('gulp'),
 gulp.task('scss', function () {
     return gulp.src('scss/common.scss')
         .pipe(scss())
-        // .pipe(autoprefixer({
-        //     browsers: ['last 5 versions'],
-        //     cascade: false
-        // }))
-        .pipe(gulp.dest('css'))
+        .pipe(autoprefixer({
+            browsers: ['last 5 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(''))
         .pipe(browserSync.reload({stream: true}))
         .pipe(livereload());
 });
