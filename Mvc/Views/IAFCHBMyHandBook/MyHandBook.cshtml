@@ -1,18 +1,21 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookModel
 
-<p>MY HANDBOOK</p>
-
-<div>
+<div class="handbook__title">
+    <h1>MY HANDBOOK</h1>
+</div>
+<div class="handbook_container">
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
-		<div>@myHandBookResource.CompletedResourcesAmount Complete</div>
-		<div>@myHandBookResource.IncompletedResourcesAmount Incomplete</div>
-		<div>@myHandBookResource.TotalDuration.ToString() Time Remaining</div>
-		<table>
-			<tr>
+	<div class="progressindicator__wrapper">
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.CompletedResourcesAmount</div> Complete</div>
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
+		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
+	</div>
+		<table class="handbook_category__wrapper">
+		    <tr>
 				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
-					<th>
+					<td class="handbook_category__item">
 						<a href="@categories.Category.MyHandBookCategoryUrl"> @categories.Category.CategoryTitle</a>
 						<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />
 						<div>@categories.Category.MyHandBookCompletedResources Complete</div>
@@ -26,10 +29,9 @@
 									<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
 								</p>
 							}
-						</div>
-					</th>
+						</td>
+					</tr>
 				}
-			</tr>
 		</table>
 	}
 </div>

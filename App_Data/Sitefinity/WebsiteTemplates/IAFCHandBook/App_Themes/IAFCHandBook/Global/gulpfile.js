@@ -7,7 +7,7 @@ var gulp            = require('gulp'),
 
 /*TASK*/
 gulp.task('scss', function () {
-    return gulp.src('scss/*.scss')
+    return gulp.src('scss/common.scss')
         .pipe(scss())
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],
