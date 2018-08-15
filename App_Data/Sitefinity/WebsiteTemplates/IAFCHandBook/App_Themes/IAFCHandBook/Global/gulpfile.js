@@ -31,23 +31,3 @@ gulp.task('watch',['browser-sync', 'scss'], function(){
     livereload.listen();
     gulp.watch('scss/*.scss', ['scss'], browserSync.reload);
 });
-
-
-
-// var gulp = require('gulp');
-// var browserSync = require('browser-sync');
-// var sass = require('gulp-sass');
-// var autoprefixer = require('gulp-autoprefixer');
-//
-//
-// // compile styles
-// gulp.task('styles', function() {
-//     gulp.src(['scss/common.scss'])
-//         .pipe(sass())
-//         .pipe(autoprefixer())
-//         .pipe(gulp.dest('css/'))
-// });
-//
-// gulp.task('default', function(){
-//     gulp.watch("scss/**/*.scss", ['styles']);
-// });
