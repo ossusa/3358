@@ -2799,3 +2799,6 @@ p {
     font-weight: 700;
     font-size: 1.250em;
     font-family: 'Nunito Sans', sans-serif; }
+
+.test {
+  color: red; }
