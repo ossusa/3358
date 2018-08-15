@@ -17,18 +17,23 @@
     margin: 0; }
 
 .progressindicator__wrapper {
-  margin: 8.35% 48px; }
+  margin: 48px 8.35%;
+  display: -ms-flexbox;
+  display: flex; }
 
 .progressindicator__label {
   width: 124px;
   height: 60px;
   border-radius: 3px;
   background-color: #2b4b6b;
-  margin-left: 24px;
+  margin-right: 24px;
   color: #ffffff;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 400; }
+  font-family: 'Zilla Slab', serif;
+  font-weight: 400;
+  font-size: 0.813em;
+  text-align: center;
+  padding-top: 8px; }
   .progressindicator__label .time {
-    font-size: 20px;
-    font-weight: 700; }
+    font-weight: 700;
+    font-size: 1.250em;
+    font-family: 'Nunito Sans', sans-serif; }
