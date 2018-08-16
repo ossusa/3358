@@ -230,7 +230,10 @@
               border-radius: 3px;
               border: 1px solid #434f68;
               transition: 0.3s ease-in-out;
-              &:hover,
+              &:hover{
+                background: #2b4b6b;
+                color: #fff;
+              }
               &:focus{
                 background: #2b4b6b;
                 color: #fff;
