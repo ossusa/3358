@@ -1586,14 +1586,13 @@ p {
       height: 200px;
       border-radius: 3px;
     }
-    img {
-      background: url('../images/community-multiply.svg');
-      width: 148px;
-      height: 135px;
-      display: block;
-      position: absolute;
-      
-    }
+  }
+  &__placeholder {
+    background: url('../images/community-multiply.svg');
+    width: 148px;
+    height: 135px;
+    display: block;
+    position: absolute;
   }
   &__img{
     &-back {
