@@ -1251,7 +1251,7 @@ p {
     display: block;
     position: relative;
     margin-bottom: 24px;
-    background: #5591aa;
+    background: #5591aa url("../images/community-multiply.svg");
     margin-right: 24px;
     height: 200px;
     border-radius: 3px; }
