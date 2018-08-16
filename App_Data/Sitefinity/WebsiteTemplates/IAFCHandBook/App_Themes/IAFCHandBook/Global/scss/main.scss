@@ -1587,14 +1587,14 @@ p {
       border-radius: 3px;
     }
   }
-  &__placeholder {
-    background-image: url('../images/community-multiply.svg') 50% 50% no-repeat;
-    background-size: contain;
-    width: 148px;
-    height: 135px;
-    display: block;
-    position: absolute;
-  }
+  //&__placeholder {
+  //  background-image: url('../images/community-multiply.svg') 50% 50% no-repeat;
+  //  background-size: contain;
+  //  width: 148px;
+  //  height: 135px;
+  //  display: block;
+  //  position: absolute;
+  //}
   &__img{
     &-back {
       display: -webkit-box;
@@ -1669,6 +1669,12 @@ p {
       .topics__img-back-red {
         background: #cf794a;
       }
+    }
+    svg{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
     }
     &:active {
       .topics__img-back {
