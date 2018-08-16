@@ -1536,7 +1536,7 @@ p {
     &-first {
       padding: 94px 0 35px !important;
       h2 {
-        img {
+        svg {
           margin-left: 4px;
         }
       }
@@ -1547,7 +1547,7 @@ p {
     &-yellow {
       h2 {
         color: $color_leadership;
-        img {
+        svg {
           margin-left: -11px;
         }
       }
@@ -1555,7 +1555,7 @@ p {
     &-green {
       h2 {
         color: $color_finance;
-        img {
+        svg {
           margin-left: -11px;
         }
       }
@@ -1563,7 +1563,7 @@ p {
     &-red {
       h2 {
         color: $color_personnel;
-        img {
+        svg {
           margin-left: -3px;
         }
       }
@@ -1596,14 +1596,6 @@ p {
       background: #cf794a;
     }
   }
-  //&__placeholder {
-  //  background-image: url('../images/community-multiply.svg') 50% 50% no-repeat;
-  //  background-size: contain;
-  //  width: 148px;
-  //  height: 135px;
-  //  display: block;
-  //  position: absolute;
-  //}
   &__img{
     &-back {
       display: -webkit-box;
