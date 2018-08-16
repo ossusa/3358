@@ -2893,15 +2893,40 @@ p {
     width: 282px;
     height: 200px;
     border-radius: 3px 3px 0 0;
-    color: white; }
+    color: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column; }
     .handbook_category__item__image a {
-      display: block; }
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    .handbook_category__item__image h3 {
+      color: white; }
   .handbook_category__item__time {
     font-family: "Zilla Slab", serif;
     font-size: 13px;
     font-weight: 400;
-    color: white; }
+    color: white;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    padding: 17px 10px;
+    cursor: default; }
     .handbook_category__item__time span {
       font-family: "Nunito Sans", sans-serif;
       font-size: 15px;
-      font-weight: 700; }
+      font-weight: 700;
+      display: block; }
