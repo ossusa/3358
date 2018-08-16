@@ -103,6 +103,8 @@ $(document).ready(function () {
         e.stopPropagation();
         $('.category__arrow').toggleClass('rotated');
     });
-
+    $(document).on("click", function () {
+        $(".rotated").hide();
+    });
 
 });
