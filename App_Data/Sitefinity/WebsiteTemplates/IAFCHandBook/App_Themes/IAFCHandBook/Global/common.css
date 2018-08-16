@@ -687,7 +687,7 @@ p {
   color: #666666;
   font-size: 1.00em;
   z-index: 1000;
-  padding: 8px 10px 8px 10px !important;
+  padding: 8px 20px 8px !important;
   transition: .1s ease-in-out; }
   .k-link:hover {
     text-shadow: 1px 0 #2B4B6B;
@@ -2475,6 +2475,9 @@ p {
   height: 72px; }
   .footer__info img {
     height: 40px; }
+
+.resources--like, .resources--dislike {
+  display: inline-block; }
 
 @media (max-width: 1109px) {
   .header__table-tr {
