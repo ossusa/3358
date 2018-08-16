@@ -51,20 +51,18 @@
                             <span class="resources--comments"></span>
                             <span>@item.CommentsAmount Comments</span>
                         </a>
-                        <button type="button" class="resources__slide-btn addLike" data-id="@item.Id.ToString()">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like.png" alt="" class="resources--dislike-img">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like-color.png" alt="" class="resources--dislike-img">
-                            <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                        <div class="single-post-statistic">
+                            <button type="button" class="resources__slide-btn addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+                                <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
                                 <span>@item.Likes.Likes</span>
-                            </span>
-                        </button>
-                        <button type="button" class="resources__slide-btn addDislike" data-id="@item.Id.ToString()">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/dislike.png" alt="" class="resources--dislike-img">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/dislike-color.png" alt="" class="resources--dislike-img">
-                            <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+                                </span>
+                            </button>
+                            <button type="button" class="resources__slide-btn addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+                                <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
                                 <span>@item.Likes.Dislikes</span>
                                 </span>
-                        </button>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

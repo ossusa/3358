@@ -2714,11 +2714,9 @@ p {
           font-size: 14px;
           font-weight: 400;
           border-radius: 3px;
-          border: 1px solid #434f68; }
-          .resources-single__left_post_comment_textarea .addCommentBtn:hover {
-            background: #2b4b6b;
-            color: #fff; }
-          .resources-single__left_post_comment_textarea .addCommentBtn:focus {
+          border: 1px solid #434f68;
+          transition: 0.3s ease-in-out; }
+          .resources-single__left_post_comment_textarea .addCommentBtn:hover, .resources-single__left_post_comment_textarea .addCommentBtn:focus {
             background: #2b4b6b;
             color: #fff; }
       .resources-single__left_post_comment_changer {
