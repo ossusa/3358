@@ -2471,6 +2471,17 @@ p {
   .footer__info img {
     height: 40px; }
 
+@media (max-width: 1109px) {
+  .box .box-mobile {
+    height: 72px;
+    padding: 16px 0 16px 16px; }
+  .header__logo {
+    padding: 0; }
+    .header__logo img {
+      width: auto;
+      height: 40px;
+      margin-left: 0; } }
+
 .single-post-statistic button {
   display: inline-block;
   background: transparent;
