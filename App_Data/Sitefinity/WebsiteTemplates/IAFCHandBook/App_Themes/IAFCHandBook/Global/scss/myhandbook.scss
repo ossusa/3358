@@ -114,6 +114,20 @@
         font-size: 16px;
         font-weight: 400;
         padding-bottom: 4px;
+        &:hover{
+          &.community{
+            color: $color_community;
+          }
+          &.leadership{
+            color: $color_leadership;
+          }
+          &.finance{
+            color: $color_finance;
+          }
+          &.personnel{
+            color: $color_personnel;
+          }
+        }
 
       }
     }
