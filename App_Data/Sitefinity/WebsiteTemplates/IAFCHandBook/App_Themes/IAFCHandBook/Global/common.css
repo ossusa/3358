@@ -2934,8 +2934,10 @@ p {
     width: 282px;
     border-radius: 0 0 3px 3px;
     border: 1px solid #efefef;
-    background-color: white;
-    color: #666666;
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 16px;
-    font-weight: 400; }
+    background-color: white; }
+    .handbook_category__item__link a {
+      display: block;
+      color: #666666;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 400; }

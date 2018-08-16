@@ -101,10 +101,13 @@
       border-radius: 0 0 3px 3px;
       border: 1px solid #efefef;
       background-color: $color_15;
-      color: $color_5;
-      font-family: $font_family_4;
-      font-size: 16px;
-      font-weight: 400;
+      a{
+        display: block;
+        color: $color_5;
+        font-family: $font_family_4;
+        font-size: 16px;
+        font-weight: 400;
+      }
     }
   }
 
