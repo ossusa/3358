@@ -28,10 +28,10 @@
 								<!--<div>@categories.Category.CategoryDescription</div>-->
 
 						</div>
-						<div class="handbook_category__item__links">
+						<div class="handbook_category__item__links @categories.Category.CategoryTitle">
 							@foreach (var childCategoryItem in categories.Category.ChildCategories)
 							{
-								<a href="@childCategoryItem.MyHandBookCategoryUrl" class="@categories.Category.CategoryTitle"> @childCategoryItem.CategoryTitle</a>
+								<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
 							}
 						</div>
 					</div>
