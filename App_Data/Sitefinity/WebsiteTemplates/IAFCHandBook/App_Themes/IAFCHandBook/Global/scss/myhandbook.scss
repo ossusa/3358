@@ -8,7 +8,7 @@
 
   h1{
     color: #fff;
-    font-family: 'Zilla Slab', serif;
+    font-family: $font_family_5;
     font-size: 2.250em;
     font-weight: 500;
     text-transform: uppercase;
@@ -17,7 +17,7 @@
   }
 }
 .handbook_container{
-  width: 88.3%;
+  width: 83.3%;
   margin: 0 auto;
 }
 .progressindicator{
@@ -31,8 +31,8 @@
     border-radius: 3px;
     background-color: #2b4b6b;
     margin-right: 24px;
-    color: #ffffff;
-    font-family: 'Zilla Slab', serif;
+    color: $color_15;
+    font-family: $font_family_5;
     //font-size: 13px;
     font-weight: 400;
     font-size: 0.813em;
@@ -42,12 +42,112 @@
       //font-size: 20px;
       font-weight: 700;
       font-size: 1.250em;
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: $font_family_4;
 
     }
   }
 
 }
-.test{
-  color:red;
+.handbook_category{
+  &__wrapper {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: flex-start;
+  }
+  &__item{
+      margin-right: 24px;
+      &:hover {
+      box-shadow: 0 6px 15px 0 rgba(0,0,0,0.15);
+    }
+    &__image{
+      background-size: cover;
+      background-position: center center;
+      width: 282px;
+      height: 200px;
+      border-radius: 3px 3px 0 0;
+      color: $color_15;
+      display: flex;
+      flex-direction: column;
+      a{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      h3{
+        color: $color_15;
+      }
+      .community{
+
+      }
+    }
+    &__time{
+      font-family: $font_family_5;
+      font-size: 13px;
+      font-weight: 400;
+      color: $color_15;
+      display: flex;
+      text-align: center;
+      flex: 1;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding: 17px 10px;
+      cursor: default;
+      span{
+        font-family: $font_family_4;
+        font-size: 15px;
+        font-weight: 700;
+        display: block;
+      }
+      }
+    &__links{
+      width: 282px;
+      border-radius: 0 0 3px 3px;
+      border: 1px solid #efefef;
+      background-color: $color_15;
+      padding: 16px 20px;
+      a{
+        display: block;
+        color: $color_5;
+        font-family: $font_family_4;
+        font-size: 16px;
+        font-weight: 400;
+        padding-bottom: 4px;
+        &:hover{
+          &:after{
+            content: "\E61F";
+            font-family: $font_family_8;
+            padding-left: 8px;
+            font-size: 1em;
+            display: inline-block;
+          }
+        }
+
+      }
+      &.Community{
+        a:hover{
+          color: $color_community;
+        }
+      }
+      &.Leadership{
+        a:hover{
+          color: $color_leadership;
+        }
+      }
+      &.Finance{
+        a:hover{
+          color: $color_finance;
+        }
+      }
+      &.Personnel{
+        a:hover{
+          color: $color_personnel;
+        }
+      }
+    }
+  }
 }
+
+
+

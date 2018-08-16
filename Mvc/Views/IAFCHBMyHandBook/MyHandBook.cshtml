@@ -11,28 +11,31 @@
 		<div class="progressindicator__label"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
 		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
 	</div>
-		<table class="handbook_category__wrapper">
-			<tr>
+		<div class="handbook_category__wrapper">
 				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
-					<td class="handbook_category__item">
-						<a href="@categories.Category.MyHandBookCategoryUrl"> @categories.Category.CategoryTitle</a>
-						<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />
-						<div>@categories.Category.MyHandBookCompletedResources Complete</div>
-						<div>@categories.Category.MyHandBookInCompletedResources Incomplete</div>
-						<div>@categories.Category.TotalDuration.ToString() Time Remaining</div>
-						<div>@categories.Category.CategoryDescription;</div>
-						<div>
+					<div class="handbook_category__item">
+						<div class="handbook_category__item__image" style='background-image: url("@categories.Category.TopicCategoryImageUrl")'>
+							<a href="@categories.Category.MyHandBookCategoryUrl">
+								<h3>@categories.Category.CategoryTitle</h3>
+							</a>
+								<!--<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />-->
+							<div class="handbook_category__item__time">
+								<div><span>@categories.Category.MyHandBookCompletedResources</span> Complete</div>
+								<div><span>@categories.Category.MyHandBookInCompletedResources</span> Incomplete</div>
+								<div><span>@categories.Category.TotalDuration.ToString()</span> Time Remaining</div>
+							</div>
+								<!--<div>@categories.Category.CategoryDescription</div>-->
+
+						</div>
+						<div class="handbook_category__item__links @categories.Category.CategoryTitle">
 							@foreach (var childCategoryItem in categories.Category.ChildCategories)
 							{
-								<p>
-									<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
-								</p>
+								<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
 							}
-					</td>
-
+						</div>
+					</div>
 				}
-			</tr>
-		</table>
+		</div>
 	}
 </div>

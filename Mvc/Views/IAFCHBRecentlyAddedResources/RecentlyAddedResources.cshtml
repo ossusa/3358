@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="resources__slide-footer">
-                    <div class="resources__slide-btn" id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
+                    <div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
                         @if (item.IsResourceAddedToMyHandBook == true)
                         {
                             <span>Added to MyHandBook</span>
@@ -46,25 +46,23 @@
                             <button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook</button>
                         }
                     </div>
-                    <div class="resources__slide-social">
-                        <a class="resources__slide-btn resources__slide-btn-comment" href="@item.ResourceUrl">
-                            <span class="resources--comments"></span>
+                    <div class="resources-single__left_post_comment_header_right">
+                        <a class="single-post-comments" href="@item.ResourceUrl">
+                            <i class="material-icons">chat_bubble_outline</i>
                             <span>@item.CommentsAmount Comments</span>
                         </a>
-                        <button type="button" class="resources__slide-btn addLike" data-id="@item.Id.ToString()">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like.png" alt="" class="resources--dislike-img">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/like-color.png" alt="" class="resources--dislike-img">
-                            <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
+                        <div class="single-post-statistic">
+                            <button type="button" class="resources__slide-btn addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+                                <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
                                 <span>@item.Likes.Likes</span>
-                            </span>
-                        </button>
-                        <button type="button" class="resources__slide-btn addDislike" data-id="@item.Id.ToString()">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/dislike.png" alt="" class="resources--dislike-img">
-                        <img src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/dislike-color.png" alt="" class="resources--dislike-img">
-                            <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+                                </span>
+                            </button>
+                            <button type="button" class="resources__slide-btn addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+                                <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
                                 <span>@item.Likes.Dislikes</span>
                                 </span>
-                        </button>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

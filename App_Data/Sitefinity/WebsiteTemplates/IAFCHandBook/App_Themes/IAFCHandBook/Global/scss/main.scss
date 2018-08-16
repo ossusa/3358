@@ -4,11 +4,11 @@
 //$color_4: #4a4a4a;
 //$color_5: #666666;
 //$color_6: #fff;
-//$color_7: #5591AA;
-//$color_8: #BDA15F;
-//$color_9: #73AA56;
-//$color_10: #CF794A;
-//$color_11: #2B4B6B;
+//$color_community: #5591AA;
+//$color_leadership: #BDA15F;
+//$color_finance: #73AA56;
+//$color_personnel: #CF794A;
+//$color_blue: #2B4B6B;
 //$color_12: #9B9B9B;
 //$color_13: transparent;
 //$color_14: #666;
@@ -284,19 +284,7 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-  margin: 0;
-  font-family: $font_family_4;
-  font-weight: 700;
-  font-size: 3.00em;
-  color: $color_4;
-  a {
-    color: $color_2;
-    text-decoration: none;
-  }
-}
+
 mark {
   background: #ff0;
   color: $color_1;
@@ -499,6 +487,19 @@ body {
   padding-left: 120px;
   padding-right: 120px;
 }
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  margin: 0;
+  font-family: $font_family_4;
+  font-weight: 700;
+  font-size: 3.00em;
+  color: $color_4;
+  a {
+    color: $color_2;
+    text-decoration: none;
+  }
+}
 h2 {
   margin: 0;
   font-family: $font_family_4;
@@ -556,13 +557,6 @@ h6 {
     text-decoration: none;
   }
 }
-.h7 {
-  margin: 0;
-  a {
-    color: $color_2;
-    text-decoration: none;
-  }
-}
 h7 {
   margin: 0;
   a {
@@ -571,6 +565,14 @@ h7 {
     text-decoration: none;
   }
 }
+.h7 {
+  margin: 0;
+  a {
+    color: $color_2;
+    text-decoration: none;
+  }
+}
+
 p {
   font-family: $font_family_5;
   font-weight: 400;
@@ -632,11 +634,11 @@ p {
                   padding-top: 20px !important;
                   &:hover {
                     text-shadow: 1px 0 #5591AA;
-                    color: $color_7;
+                    color: $color_community;
                   }
                   &:focus {
                     text-shadow: 1px 0 #5591AA;
-                    color: $color_7;
+                    color: $color_community;
                   }
                 }
                 >div {
@@ -655,11 +657,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #5591AA;
-                          color: $color_7;
+                          color: $color_community;
                         }
                         &:focus {
                           text-shadow: 1px 0 #5591AA;
-                          color: $color_7;
+                          color: $color_community;
                         }
                       }
                     }
@@ -683,11 +685,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #BDA15F;
-                          color: $color_8;
+                          color: $color_leadership;
                         }
                         &:focus {
                           text-shadow: 1px 0 #BDA15F;
-                          color: $color_8;
+                          color: $color_leadership;
                         }
                       }
                     }
@@ -696,11 +698,11 @@ p {
                 >a {
                   &:hover {
                     text-shadow: 1px 0 #BDA15F;
-                    color: $color_8;
+                    color: $color_leadership;
                   }
                   &:focus {
                     text-shadow: 1px 0 #BDA15F;
-                    color: $color_8;
+                    color: $color_leadership;
                   }
                 }
               }
@@ -721,11 +723,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #73AA56;
-                          color: $color_9;
+                          color: $color_finance;
                         }
                         &:focus {
                           text-shadow: 1px 0 #73AA56;
-                          color: $color_9;
+                          color: $color_finance;
                         }
                       }
                     }
@@ -734,11 +736,11 @@ p {
                 >a {
                   &:hover {
                     text-shadow: 1px 0 #73AA56;
-                    color: $color_9;
+                    color: $color_finance;
                   }
                   &:focus {
                     text-shadow: 1px 0 #73AA56;
-                    color: $color_9;
+                    color: $color_finance;
                   }
                 }
               }
@@ -759,11 +761,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #CF794A;
-                          color: $color_10;
+                          color: $color_personnel;
                         }
                         &:focus {
                           text-shadow: 1px 0 #CF794A;
-                          color: $color_10;
+                          color: $color_personnel;
                         }
                       }
                     }
@@ -773,11 +775,11 @@ p {
                   padding-bottom: 20px !important;
                   &:hover {
                     text-shadow: 1px 0 #CF794A;
-                    color: $color_10;
+                    color: $color_personnel;
                   }
                   &:focus {
                     text-shadow: 1px 0 #CF794A;
-                    color: $color_10;
+                    color: $color_personnel;
                   }
                 }
               }
@@ -826,6 +828,7 @@ p {
   margin-top: unset !important;
   position: relative !important;
   right: unset !important;
+  font-size: 1.250em;
   &:before {
     content: "\E61F";
     display: block;
@@ -874,27 +877,30 @@ p {
 .k-item {
   border: 0px solid transparent;
 }
+.header__nav > ul > li > a{
+  padding: 12px !important;
+}
 .k-link {
   font-family: $font_family_4;
-  font-weight: 400;
+  font-weight: 400 !important;
   color: $color_5;
   font-size: 1.00em;
   z-index: 1000;
-  padding: 12px 16px 12px !important;
+  padding: 8px 20px 8px !important;
   -webkit-transition: .1s ease-in-out;
   -o-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
   &:hover {
     text-shadow: 1px 0 #2B4B6B;
-    color: $color_11;
+    color: $color_blue;
   }
   &:focus {
     text-shadow: 1px 0 #2B4B6B;
-    color: $color_11;
+    color: $color_blue;
   }
   &:active {
     text-shadow: 1px 0 #2B4B6B;
-    color: $color_11;
+    color: $color_blue;
   }
 }
 .k-popup {
@@ -907,7 +913,8 @@ p {
       -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
       box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
       overflow: visible !important;
-      margin-left: 4px;
+      width: 245px;
+      margin-left: 0px;
       &:before {
         content: "";
         position: absolute;
@@ -1107,7 +1114,7 @@ p {
     }
     &-title {
       margin: 0;
-      color: $color_11;
+      color: $color_blue;
       font-size: 1.25em;
     }
     &-social {
@@ -1200,8 +1207,8 @@ p {
 
 
   &--plus {
-    font-size: 16px;
-    margin-right: 5px !important;
+    font-size: 1.00em;
+    margin-right: 3px !important;
   }
   &--time {
     font-size: 18px;
@@ -1518,7 +1525,7 @@ p {
   &__text{
     padding: 0 0 32px;
     h2 {
-      color: $color_7;
+      color: $color_community;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1539,7 +1546,7 @@ p {
     }
     &-yellow {
       h2 {
-        color: $color_8;
+        color: $color_leadership;
         img {
           margin-left: -11px;
         }
@@ -1547,7 +1554,7 @@ p {
     }
     &-green {
       h2 {
-        color: $color_9;
+        color: $color_finance;
         img {
           margin-left: -11px;
         }
@@ -1555,7 +1562,7 @@ p {
     }
     &-red {
       h2 {
-        color: $color_10;
+        color: $color_personnel;
         img {
           margin-left: -3px;
         }
@@ -1573,9 +1580,11 @@ p {
     a {
       display: block;
       position: relative;
-      //width: 384px;
       margin-bottom: 24px;
+      background: #5591aa url("../images/community-multiply.svg");
       margin-right: 24px;
+      height: 200px;
+      border-radius: 3px;
     }
     img {
       width: 100%;
@@ -1700,7 +1709,7 @@ p {
     -ms-flex-wrap: wrap;
     &-flex{
       .topics__list{
-        width: 33.3%;
+        width: 32%;
         &:nth-of-type(3) a{
           margin-right: 0;
         }
@@ -1741,11 +1750,11 @@ p {
             transition: .1s ease-in-out;
             &:hover {
               text-shadow: 1px 0 #2B4B6B;
-              color: $color_11;
+              color: $color_blue;
             }
             &:focus {
               text-shadow: 1px 0 #2B4B6B;
-              color: $color_11;
+              color: $color_blue;
             }
           }
         }
@@ -1806,7 +1815,7 @@ p {
   margin: 0 auto;
   padding: 0;
   &__title {
-    color: $color_11;
+    color: $color_blue;
   }
 }
 .maps {
@@ -1845,7 +1854,7 @@ p {
     }
     &-link {
       font-weight: 600;
-      color: $color_11;
+      color: $color_blue;
     }
   }
 }
@@ -1867,7 +1876,7 @@ p {
         font-family: $font_family_4;
         font-weight: 700;
         font-size: 3em;
-        color: $color_7;
+        color: $color_community;
         border: none;
         outline: none;
       }
@@ -1944,7 +1953,7 @@ p {
       border-radius: 3px;
       color: $color_19;
       width: 199px;
-      font-size: 0.938em;
+      font-size: 0.875em;
       height: 40px;
       background: transparent;
       margin-left: 16px;
@@ -2116,10 +2125,11 @@ p {
     padding: 8px 0;
   }
 }
-.rotated {
+.selectric-community__category-select .rotated {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 .selectric-community__category-select {
   .selectric {
@@ -2211,7 +2221,7 @@ p {
   }
 }
 .about__page-textlink {
-  color: $color_11;
+  color: $color_blue;
   font-weight: 600;
 }
 .resources__slide-btn-comment {
@@ -2761,13 +2771,13 @@ p {
       &:nth-of-type(1) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_7;
+            color: $color_community;
             text-shadow: 1px 0 #5591AA;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_7;
+            color: $color_community;
             text-shadow: 1px 0 #5591AA;
           }
         }
@@ -2775,13 +2785,13 @@ p {
       &:nth-of-type(2) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_8;
+            color: $color_leadership;
             text-shadow: 1px 0 #BDA15F;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_8;
+            color: $color_leadership;
             text-shadow: 1px 0 #BDA15F;
           }
         }
@@ -2789,13 +2799,13 @@ p {
       &:nth-of-type(3) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_9;
+            color: $color_finance;
             text-shadow: 1px 0 #73AA56;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_9;
+            color: $color_finance;
             text-shadow: 1px 0 #73AA56;
           }
         }
@@ -2803,13 +2813,13 @@ p {
       &:nth-of-type(4) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_10;
+            color: $color_personnel;
             text-shadow: 1px 0 #CF794A;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_10;
+            color: $color_personnel;
             text-shadow: 1px 0 #CF794A;
           }
         }
@@ -2948,7 +2958,7 @@ p {
       &:nth-of-type(1) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_7;
+            color: $color_community;
             text-shadow: 1px 0 #5591AA;
           }
         }
@@ -2956,7 +2966,7 @@ p {
       &:nth-of-type(2) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_8;
+            color: $color_leadership;
             text-shadow: 1px 0 #BDA15F;
           }
         }
@@ -2964,7 +2974,7 @@ p {
       &:nth-of-type(3) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_9;
+            color: $color_finance;
             text-shadow: 1px 0 #73AA56;
           }
         }
@@ -2972,7 +2982,7 @@ p {
       &:nth-of-type(4) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_10;
+            color: $color_personnel;
             text-shadow: 1px 0 #CF794A;
           }
         }
