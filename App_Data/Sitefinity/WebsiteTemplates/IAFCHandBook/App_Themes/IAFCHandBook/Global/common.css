@@ -630,7 +630,8 @@ p {
   text-indent: unset !important;
   margin-top: unset !important;
   position: relative !important;
-  right: unset !important; }
+  right: unset !important;
+  font-size: 1.250em; }
   .k-i-arrow-60-right:before {
     content: "\E61F";
     display: block;
@@ -1208,7 +1209,10 @@ p {
     display: block;
     position: relative;
     margin-bottom: 24px;
-    margin-right: 24px; }
+    background: #5591aa;
+    margin-right: 24px;
+    height: 200px;
+    border-radius: 3px; }
   .topics__content img {
     width: 100%;
     height: 200px;
@@ -1308,7 +1312,7 @@ p {
   flex-wrap: wrap;
   -ms-flex-wrap: wrap; }
   .topics__ul-flex .topics__list {
-    width: 33.3%; }
+    width: 32%; }
     .topics__ul-flex .topics__list:nth-of-type(3) a {
       margin-right: 0; }
 
