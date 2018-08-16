@@ -2885,12 +2885,14 @@ p {
   display: -ms-flexbox;
   display: flex; }
 
-.handbook_category__item__image {
-  background-size: cover;
-  background-position: center center;
-  width: 282px;
-  height: 200px;
-  border-radius: 3px 3px 0 0;
-  color: white; }
-  .handbook_category__item__image a {
-    display: block; }
+.handbook_category__item {
+  margin-right: 24px; }
+  .handbook_category__item__image {
+    background-size: cover;
+    background-position: center center;
+    width: 282px;
+    height: 200px;
+    border-radius: 3px 3px 0 0;
+    color: white; }
+    .handbook_category__item__image a {
+      display: block; }
