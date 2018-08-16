@@ -114,20 +114,19 @@
         font-size: 16px;
         font-weight: 400;
         padding-bottom: 4px;
-        &:hover{
-          &.community{
-            color: $color_community;
-          }
-          &.leadership{
-            color: $color_leadership;
-          }
-          &.finance{
-            color: $color_finance;
-          }
-          &.personnel{
-            color: $color_personnel;
-          }
+        &.community:hover{
+          color: $color_community;
         }
+        &.leadership:hover{
+          color: $color_leadership;
+        }
+        &.finance:hover{
+          color: $color_finance;
+        }
+        &.personnel:hover{
+          color: $color_personnel;
+        }
+
 
       }
     }
