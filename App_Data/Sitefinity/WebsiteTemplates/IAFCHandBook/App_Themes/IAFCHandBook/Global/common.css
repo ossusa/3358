@@ -2898,7 +2898,8 @@ p {
 
 .handbook_category__wrapper {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  margin-bottom: 50px; }
 
 .handbook_category__item {
   margin-right: 24px; }
@@ -2945,16 +2946,17 @@ p {
       font-size: 15px;
       font-weight: 700;
       display: block; }
-  .handbook_category__item__links {
-    width: 282px;
-    border-radius: 0 0 3px 3px;
-    border: 1px solid #efefef;
-    background-color: white;
-    padding: 16px 20px; }
-    .handbook_category__item__links a {
-      display: block;
-      color: #666666;
-      font-family: "Nunito Sans", sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      padding-bottom: 4px; }
+
+.handbook_category__links {
+  width: 282px;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid #efefef;
+  background-color: white;
+  padding: 16px 20px; }
+  .handbook_category__links a {
+    display: block;
+    color: #666666;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 4px; }

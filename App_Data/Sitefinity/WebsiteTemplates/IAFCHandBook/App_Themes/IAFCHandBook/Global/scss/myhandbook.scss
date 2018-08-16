@@ -51,6 +51,7 @@
 .handbook_category{
   &__wrapper {
     display: flex;
+    margin-bottom: 50px;
   }
   &__item{
       margin-right: 24px;
@@ -95,6 +96,7 @@
         font-weight: 700;
         display: block;
       }
+      }
     }
     &__links{
       width: 282px;
@@ -109,12 +111,9 @@
         font-size: 16px;
         font-weight: 400;
         padding-bottom: 4px;
-
       }
     }
   }
-
-}
 
 
 
