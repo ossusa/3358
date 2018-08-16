@@ -2893,7 +2893,8 @@ p {
           border: 1px solid #9b9b9b;
           background-color: #ffffff;
           margin-bottom: 16px;
-          resize: none; }
+          resize: none;
+          outline: none; }
           .resources-single__left_post_comment_textarea textarea::placeholder {
             color: #9b9b9b;
             font-family: "Nunito Sans";
@@ -2909,6 +2910,9 @@ p {
           font-weight: 400;
           border-radius: 3px;
           border: 1px solid #434f68; }
+          .resources-single__left_post_comment_textarea .addCommentBtn:hover, .resources-single__left_post_comment_textarea .addCommentBtn:focus {
+            background: #2b4b6b;
+            color: #fff; }
       .resources-single__left_post_comment_changer {
         display: none;
         border-top: 1px solid #d8d8d8;
