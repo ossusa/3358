@@ -876,13 +876,16 @@ p {
 .k-item {
   border: 0px solid transparent;
 }
+.header__nav > ul > li > a.k-link{
+  padding: 12px !important;
+}
 .k-link {
   font-family: $font_family_4;
-  font-weight: 400;
+  font-weight: 400 !important;
   color: $color_5;
   font-size: 1.00em;
   z-index: 1000;
-  padding: 12px 16px 12px !important;
+  padding: 8px 10px 8px !important;
   -webkit-transition: .1s ease-in-out;
   -o-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
@@ -909,7 +912,8 @@ p {
       -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
       box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
       overflow: visible !important;
-      margin-left: 4px;
+      width: 245px;
+      margin-left: 0px;
       &:before {
         content: "";
         position: absolute;
