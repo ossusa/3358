@@ -114,6 +114,12 @@
         font-size: 16px;
         font-weight: 400;
         padding-bottom: 4px;
+        &:hover{
+          content: "\E61F";
+          font-family: $font_family_8;
+          padding-left: 8px;
+          font-size: 1em;
+        }
       }
       &.Community{
         a:hover{
