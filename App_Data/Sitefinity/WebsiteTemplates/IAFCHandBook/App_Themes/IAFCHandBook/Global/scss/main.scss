@@ -284,19 +284,7 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-  margin: 0;
-  font-family: $font_family_4;
-  font-weight: 700;
-  font-size: 3.00em;
-  color: $color_4;
-  a {
-    color: $color_2;
-    text-decoration: none;
-  }
-}
+
 mark {
   background: #ff0;
   color: $color_1;
@@ -499,6 +487,19 @@ body {
   padding-left: 120px;
   padding-right: 120px;
 }
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  margin: 0;
+  font-family: $font_family_4;
+  font-weight: 700;
+  font-size: 3.00em;
+  color: $color_4;
+  a {
+    color: $color_2;
+    text-decoration: none;
+  }
+}
 h2 {
   margin: 0;
   font-family: $font_family_4;
@@ -556,13 +557,6 @@ h6 {
     text-decoration: none;
   }
 }
-.h7 {
-  margin: 0;
-  a {
-    color: $color_2;
-    text-decoration: none;
-  }
-}
 h7 {
   margin: 0;
   a {
@@ -571,6 +565,14 @@ h7 {
     text-decoration: none;
   }
 }
+.h7 {
+  margin: 0;
+  a {
+    color: $color_2;
+    text-decoration: none;
+  }
+}
+
 p {
   font-family: $font_family_5;
   font-weight: 400;
@@ -1200,8 +1202,8 @@ p {
 
 
   &--plus {
-    font-size: 16px;
-    margin-right: 5px !important;
+    font-size: 1.00em;
+    margin-right: 3px !important;
   }
   &--time {
     font-size: 18px;
@@ -1944,7 +1946,7 @@ p {
       border-radius: 3px;
       color: $color_19;
       width: 199px;
-      font-size: 0.938em;
+      font-size: 0.875em;
       height: 40px;
       background: transparent;
       margin-left: 16px;
@@ -2116,7 +2118,7 @@ p {
     padding: 8px 0;
   }
 }
-.rotated {
+.selectric-community__category-select.rotated {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
