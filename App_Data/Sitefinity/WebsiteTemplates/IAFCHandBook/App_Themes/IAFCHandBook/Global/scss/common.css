@@ -1214,7 +1214,7 @@ p {
   text-indent: 0; }
 
 .topics__text {
-  padding: 0 0 32px; }
+  padding: 0 0 36px; }
   .topics__text h2 {
     color: #5591AA;
     display: -webkit-box;
@@ -1224,11 +1224,9 @@ p {
     -ms-flex-align: center;
     align-items: center; }
   .topics__text-first {
-    padding: 94px 0 35px !important; }
+    padding: 100px 0 36px !important; }
     .topics__text-first h2 svg {
       margin-left: 16px; }
-  .topics__text-space {
-    padding: 20px 0 36px 0 !important; }
   .topics__text-yellow h2 {
     color: #BDA15F; }
     .topics__text-yellow h2 svg {
@@ -1244,7 +1242,7 @@ p {
 .topics__content--last {
   padding: 0 0 76px 0 !important; }
 .topics__content {
-  padding: 0 0 52px; }
+  padding: 0 0 76px; }
   .topics__content-last {
     margin-bottom: 0 !important; }
   .topics__content a {
@@ -1929,9 +1927,6 @@ p {
 
   .topics__text {
     padding: 0 0 14px; }
-
-  .topics__text-space {
-    padding: 18px 0 35px 0 !important; }
 
   .tablet-wrap {
     white-space: normal !important; }

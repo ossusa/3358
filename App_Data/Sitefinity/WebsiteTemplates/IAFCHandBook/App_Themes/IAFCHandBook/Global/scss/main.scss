@@ -1523,7 +1523,7 @@ p {
 }
 .topics{
   &__text{
-    padding: 0 0 32px;
+    padding: 0 0 36px;
     h2 {
       color: $color_community;
       display: -webkit-box;
@@ -1534,15 +1534,12 @@ p {
       align-items: center;
     }
     &-first {
-      padding: 94px 0 35px !important;
+      padding: 100px 0 36px !important;
       h2 {
         svg {
           margin-left: 16px;
         }
       }
-    }
-    &-space {
-      padding: 20px 0 36px 0 !important;
     }
     &-yellow {
       h2 {
@@ -1573,7 +1570,7 @@ p {
     padding: 0 0 76px 0 !important;
   }
   &__content {
-    padding: 0 0 52px;
+    padding: 0 0 76px;
     &-last {
       margin-bottom: 0 !important;
     }
@@ -2437,9 +2434,6 @@ p {
   }
   .topics__text {
     padding: 0 0 14px;
-  }
-  .topics__text-space {
-    padding: 18px 0 35px 0 !important;
   }
   .tablet-wrap{
     white-space: normal !important;
