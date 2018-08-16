@@ -33,28 +33,22 @@
 					</div>
 					<!-- Header Text End ============================================= -->
 					<div class="box box-mobile">
-					<table width="100%">
-						<tr class="header__table-tr">
-							<td>
-
+						<div class="header__table-tr">
 								<!-- Logo ============================================= -->
 								<div id="logo" class="header__logo">
 									<asp:ContentPlaceHolder ID="logoHolder" runat="server">
 									</asp:ContentPlaceHolder>
 								</div>
 								<!-- Logo ============================================= -->
-							</td>
-							<td class="header__table-td">
+							<div class="header__table-td">
 								<!-- Menu ============================================= -->
-								<div>
 									<nav id="primaryMenu">
 										<asp:ContentPlaceHolder ID="menuHolder" runat="server">
 										</asp:ContentPlaceHolder>
 									</nav>
-								</div>
-							</td>
+							</div>
 							<!-- Menu end ============================================= -->
-							<td class="header__mob">
+							<div class="header__mob">
                                 <div class="header__mob-nav">
                                     <div class="header__mob-box">
                                         <a href="#" class="header__mob-close anticon anticon-menu-unfold"></a>
@@ -134,9 +128,8 @@
                                     </ul>
                                 </div>
                                 <span class="header__mob-open anticon anticon-menu-fold"></span>
-                            </td>
-						</tr>
-					</table>
+                            </div>
+						</div>
 </div>
 			</header>
 			<!-- End Header ============================================= -->
