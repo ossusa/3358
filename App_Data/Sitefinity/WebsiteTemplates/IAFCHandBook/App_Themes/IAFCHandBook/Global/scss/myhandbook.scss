@@ -115,12 +115,12 @@
         font-weight: 400;
         padding-bottom: 4px;
         &:hover{
-          &:before{
+          &:after{
             content: "\E61F";
             font-family: $font_family_8;
-            padding-left: 8px;
+            padding-left: 4px;
             font-size: 1em;
-            display:block;
+            display: inline-block;
           }
         }
 
