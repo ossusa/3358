@@ -31,9 +31,7 @@
 						<div class="handbook_category__item__links">
 							@foreach (var childCategoryItem in categories.Category.ChildCategories)
 							{
-								<p>
-									<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
-								</p>
+								<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
 							}
 						</div>
 					</div>
