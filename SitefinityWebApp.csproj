@@ -1273,6 +1273,7 @@
     <Content Include="Mvc\Views\IAFCHBMyHandBookAllResourcesPerCategory\MyHandBookAllResourcesPerCategory.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookAllResourcesPerCategory\_MyHandBookAllResourcesPerCategoryDetails.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\MyHandBookCategoryResources.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\_MyHandBookCategoryResourcesDetails.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
