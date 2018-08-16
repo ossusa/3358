@@ -1215,7 +1215,8 @@ p {
     border-radius: 3px; }
 
 .topics__placeholder {
-  background: url("../images/community-multiply.svg");
+  background-image: url("../images/community-multiply.svg") 50% 50% no-repeat;
+  background-size: contain;
   width: 148px;
   height: 135px;
   display: block;
