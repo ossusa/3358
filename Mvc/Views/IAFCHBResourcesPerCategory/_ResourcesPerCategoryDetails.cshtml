@@ -52,16 +52,15 @@
 
 							<div class="single-post-statistic">
 								<button type="button" class="addLike resources__slide-btn resources__community-slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
-									<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-									<span>@item.Likes.Likes</span>
-									</div>
+									<span id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+									<span>@item.Likes.Likes</span></span>
 								</button>
 
 
 							<button type="button" class="addDislike resources__slide-btn resources--dislike  anticon anticon-dislike-o" data-id="@item.Id.ToString()">
-								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+								<span id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 								<span>@item.Likes.Dislikes</span>
-								</div>
+								</span>
 							</button>
 							</div>
 
