@@ -2486,9 +2486,7 @@ p {
   height: 100%;
   min-width: 100%;
   position: relative;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
+  object-fit: cover; }
 
 @media (max-width: 767px) {
   .footer__info {
