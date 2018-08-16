@@ -2907,10 +2907,15 @@ p {
 
 .handbook_category__wrapper {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  margin-bottom: 50px;
+  -ms-flex-align: start;
+  align-items: flex-start; }
 
 .handbook_category__item {
   margin-right: 24px; }
+  .handbook_category__item:hover {
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15); }
   .handbook_category__item__image {
     background-size: cover;
     background-position: center center;
@@ -2967,3 +2972,11 @@ p {
       font-size: 16px;
       font-weight: 400;
       padding-bottom: 4px; }
+      .handbook_category__item__links a.community:hover {
+        color: #5591AA; }
+      .handbook_category__item__links a.leadership:hover {
+        color: #BDA15F; }
+      .handbook_category__item__links a.finance:hover {
+        color: #73AA56; }
+      .handbook_category__item__links a.personnel:hover {
+        color: #CF794A; }

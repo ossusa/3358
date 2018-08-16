@@ -15,7 +15,7 @@
 				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
 					<div class="handbook_category__item">
-						<div class="handbook_category__item__image @categories.Category.CategoryTitle" style='background-image: url("@categories.Category.TopicCategoryImageUrl")'>
+						<div class="handbook_category__item__image" style='background-image: url("@categories.Category.TopicCategoryImageUrl")'>
 							<a href="@categories.Category.MyHandBookCategoryUrl">
 								<h3>@categories.Category.CategoryTitle</h3>
 							</a>
@@ -31,7 +31,7 @@
 						<div class="handbook_category__item__links">
 							@foreach (var childCategoryItem in categories.Category.ChildCategories)
 							{
-								<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
+								<a href="@childCategoryItem.MyHandBookCategoryUrl" class="@categories.Category.CategoryTitle"> @childCategoryItem.CategoryTitle</a>
 							}
 						</div>
 					</div>
