@@ -1320,7 +1320,9 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  width: 148px;
+  height: 135px; }
 .topics__list:active .topics__img-back {
   visibility: visible;
   opacity: 1;
