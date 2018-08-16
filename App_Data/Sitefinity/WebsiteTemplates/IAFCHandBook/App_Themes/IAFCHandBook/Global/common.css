@@ -680,11 +680,11 @@ p {
 
 .k-link {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 400 !important;
   color: #666666;
   font-size: 1.00em;
   z-index: 1000;
-  padding: 12px 16px 12px !important;
+  padding: 8px 10px 8px 10px !important;
   transition: .1s ease-in-out; }
   .k-link:hover {
     text-shadow: 1px 0 #2B4B6B;
@@ -703,7 +703,8 @@ p {
   .k-popup .k-animation-container .k-popup {
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.1);
     overflow: visible !important;
-    margin-left: 4px; }
+    width: 245px;
+    margin-left: 0px; }
     .k-popup .k-animation-container .k-popup:before {
       content: "";
       position: absolute;
@@ -2471,6 +2472,9 @@ p {
   height: 72px; }
   .footer__info img {
     height: 40px; }
+
+.resources--like, .resources--dislike {
+  display: inline-block; }
 
 @media (max-width: 1109px) {
   .header__table-tr {
