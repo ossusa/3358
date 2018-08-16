@@ -1255,6 +1255,12 @@ p {
     margin-right: 24px;
     height: 200px;
     border-radius: 3px; }
+  .topics__content-yellow a {
+    background: #BDA15F; }
+  .topics__content-green a {
+    background: #73AA56; }
+  .topics__content-red a {
+    background: #cf794a; }
 .topics__img-back {
   display: -webkit-box;
   display: -ms-flexbox;

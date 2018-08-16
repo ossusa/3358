@@ -1586,6 +1586,15 @@ p {
       height: 200px;
       border-radius: 3px;
     }
+    &-yellow a{
+      background: #BDA15F;
+    }
+    &-green a{
+      background: #73AA56;
+    }
+    &-red a{
+      background: #cf794a;
+    }
   }
   //&__placeholder {
   //  background-image: url('../images/community-multiply.svg') 50% 50% no-repeat;
