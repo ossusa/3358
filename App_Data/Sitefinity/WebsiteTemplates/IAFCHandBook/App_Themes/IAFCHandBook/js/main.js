@@ -104,7 +104,7 @@ $(document).ready(function () {
         $('.category__arrow').toggleClass('rotated');
     });
     $(document).on("click", function () {
-        $(".rotated").hide();
+        $(".rotated").toggleClass();
     });
 
 });
