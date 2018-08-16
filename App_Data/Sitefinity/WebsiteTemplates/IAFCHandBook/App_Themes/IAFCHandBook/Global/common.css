@@ -678,13 +678,16 @@ p {
 .k-item {
   border: 0px solid transparent; }
 
+.header__nav > ul > li > a {
+  padding: 12px !important; }
+
 .k-link {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400 !important;
   color: #666666;
   font-size: 1.00em;
   z-index: 1000;
-  padding: 8px 10px 8px 10px !important;
+  padding: 8px 20px 8px !important;
   transition: .1s ease-in-out; }
   .k-link:hover {
     text-shadow: 1px 0 #2B4B6B;
@@ -2721,7 +2724,10 @@ p {
           border-radius: 3px;
           border: 1px solid #434f68;
           transition: 0.3s ease-in-out; }
-          .resources-single__left_post_comment_textarea .addCommentBtn:hover, .resources-single__left_post_comment_textarea .addCommentBtn:focus {
+          .resources-single__left_post_comment_textarea .addCommentBtn:hover {
+            background: #2b4b6b;
+            color: #fff; }
+          .resources-single__left_post_comment_textarea .addCommentBtn:focus {
             background: #2b4b6b;
             color: #fff; }
       .resources-single__left_post_comment_changer {
