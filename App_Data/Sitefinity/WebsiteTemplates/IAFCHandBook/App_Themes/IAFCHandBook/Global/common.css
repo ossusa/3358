@@ -2883,3 +2883,11 @@ p {
 
 .test {
   color: red; }
+
+.handbook_category__item__image {
+  background-size: cover;
+  width: 282px;
+  height: 200px;
+  border-radius: 3px 3px 0 0; }
+  .handbook_category__item__image a {
+    display: block; }

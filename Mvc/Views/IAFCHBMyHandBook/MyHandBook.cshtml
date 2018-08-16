@@ -17,12 +17,14 @@
 				{
 					<div class="handbook_category__item">
 						<div class="handbook_category__item__image" style='background-image: url("@categories.Category.TopicCategoryImageUrl")'>
-							<a href="@categories.Category.MyHandBookCategoryUrl"> @categories.Category.CategoryTitle</a>
-							<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />
-							<div>@categories.Category.MyHandBookCompletedResources Complete</div>
-							<div>@categories.Category.MyHandBookInCompletedResources Incomplete</div>
-							<div>@categories.Category.TotalDuration.ToString() Time Remaining</div>
-							<!--<div>@categories.Category.CategoryDescription</div>-->
+							<a href="@categories.Category.MyHandBookCategoryUrl">
+								<h3>@categories.Category.CategoryTitle</h3>
+								<!--<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />-->
+								<div>@categories.Category.MyHandBookCompletedResources Complete</div>
+								<div>@categories.Category.MyHandBookInCompletedResources Incomplete</div>
+								<div>@categories.Category.TotalDuration.ToString() Time Remaining</div>
+								<!--<div>@categories.Category.CategoryDescription</div>-->
+							</a>
 						</div>
 						<div class="handbook_category__item__links">
 							@foreach (var childCategoryItem in categories.Category.ChildCategories)

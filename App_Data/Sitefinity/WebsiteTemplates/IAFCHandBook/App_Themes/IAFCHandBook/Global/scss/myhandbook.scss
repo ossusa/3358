@@ -51,3 +51,23 @@
 .test{
   color:red;
 }
+.handbook_category{
+  &__wrapper {}
+  &__item{
+
+    &__image{
+      background-size: cover;
+      width: 282px;
+      height: 200px;
+      border-radius: 3px 3px 0 0;
+      a{
+        display: block;
+      }
+    }
+    &__link{}
+  }
+
+}
+
+
+
