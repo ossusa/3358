@@ -92,7 +92,7 @@ $(document).ready(function () {
         $('.title__arrow').toggleClass('rotated');
     });
 
-    $('.community__head-btn-select').find('.button').addClass('category__arrow');
+    $('.community__head-btn-select .selectric-community__category-select .selectric').find('.button').addClass('category__arrow');
     $('.selectric-community__category-select .selectric').click(function () {
         $('.category__arrow').toggleClass('rotated');
     });
