@@ -57,11 +57,15 @@
 
     &__image{
       background-size: cover;
+      background-position: center center;
       width: 282px;
       height: 200px;
       border-radius: 3px 3px 0 0;
       a{
         display: block;
+      }
+      .community{
+
       }
     }
     &__link{}

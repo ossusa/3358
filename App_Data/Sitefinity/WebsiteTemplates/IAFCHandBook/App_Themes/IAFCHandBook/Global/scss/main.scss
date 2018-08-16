@@ -4,11 +4,11 @@
 //$color_4: #4a4a4a;
 //$color_5: #666666;
 //$color_6: #fff;
-//$color_7: #5591AA;
-//$color_8: #BDA15F;
-//$color_9: #73AA56;
-//$color_10: #CF794A;
-//$color_11: #2B4B6B;
+//$color_community: #5591AA;
+//$color_leadership: #BDA15F;
+//$color_finance: #73AA56;
+//$color_personnel: #CF794A;
+//$color_blue: #2B4B6B;
 //$color_12: #9B9B9B;
 //$color_13: transparent;
 //$color_14: #666;
@@ -632,11 +632,11 @@ p {
                   padding-top: 20px !important;
                   &:hover {
                     text-shadow: 1px 0 #5591AA;
-                    color: $color_7;
+                    color: $color_community;
                   }
                   &:focus {
                     text-shadow: 1px 0 #5591AA;
-                    color: $color_7;
+                    color: $color_community;
                   }
                 }
                 >div {
@@ -655,11 +655,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #5591AA;
-                          color: $color_7;
+                          color: $color_community;
                         }
                         &:focus {
                           text-shadow: 1px 0 #5591AA;
-                          color: $color_7;
+                          color: $color_community;
                         }
                       }
                     }
@@ -683,11 +683,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #BDA15F;
-                          color: $color_8;
+                          color: $color_leadership;
                         }
                         &:focus {
                           text-shadow: 1px 0 #BDA15F;
-                          color: $color_8;
+                          color: $color_leadership;
                         }
                       }
                     }
@@ -696,11 +696,11 @@ p {
                 >a {
                   &:hover {
                     text-shadow: 1px 0 #BDA15F;
-                    color: $color_8;
+                    color: $color_leadership;
                   }
                   &:focus {
                     text-shadow: 1px 0 #BDA15F;
-                    color: $color_8;
+                    color: $color_leadership;
                   }
                 }
               }
@@ -721,11 +721,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #73AA56;
-                          color: $color_9;
+                          color: $color_finance;
                         }
                         &:focus {
                           text-shadow: 1px 0 #73AA56;
-                          color: $color_9;
+                          color: $color_finance;
                         }
                       }
                     }
@@ -734,11 +734,11 @@ p {
                 >a {
                   &:hover {
                     text-shadow: 1px 0 #73AA56;
-                    color: $color_9;
+                    color: $color_finance;
                   }
                   &:focus {
                     text-shadow: 1px 0 #73AA56;
-                    color: $color_9;
+                    color: $color_finance;
                   }
                 }
               }
@@ -759,11 +759,11 @@ p {
                       >a {
                         &:hover {
                           text-shadow: 1px 0 #CF794A;
-                          color: $color_10;
+                          color: $color_personnel;
                         }
                         &:focus {
                           text-shadow: 1px 0 #CF794A;
-                          color: $color_10;
+                          color: $color_personnel;
                         }
                       }
                     }
@@ -773,11 +773,11 @@ p {
                   padding-bottom: 20px !important;
                   &:hover {
                     text-shadow: 1px 0 #CF794A;
-                    color: $color_10;
+                    color: $color_personnel;
                   }
                   &:focus {
                     text-shadow: 1px 0 #CF794A;
-                    color: $color_10;
+                    color: $color_personnel;
                   }
                 }
               }
@@ -886,15 +886,15 @@ p {
   transition: .1s ease-in-out;
   &:hover {
     text-shadow: 1px 0 #2B4B6B;
-    color: $color_11;
+    color: $color_blue;
   }
   &:focus {
     text-shadow: 1px 0 #2B4B6B;
-    color: $color_11;
+    color: $color_blue;
   }
   &:active {
     text-shadow: 1px 0 #2B4B6B;
-    color: $color_11;
+    color: $color_blue;
   }
 }
 .k-popup {
@@ -1107,7 +1107,7 @@ p {
     }
     &-title {
       margin: 0;
-      color: $color_11;
+      color: $color_blue;
       font-size: 1.25em;
     }
     &-social {
@@ -1518,7 +1518,7 @@ p {
   &__text{
     padding: 0 0 32px;
     h2 {
-      color: $color_7;
+      color: $color_community;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1539,7 +1539,7 @@ p {
     }
     &-yellow {
       h2 {
-        color: $color_8;
+        color: $color_leadership;
         img {
           margin-left: -11px;
         }
@@ -1547,7 +1547,7 @@ p {
     }
     &-green {
       h2 {
-        color: $color_9;
+        color: $color_finance;
         img {
           margin-left: -11px;
         }
@@ -1555,7 +1555,7 @@ p {
     }
     &-red {
       h2 {
-        color: $color_10;
+        color: $color_personnel;
         img {
           margin-left: -3px;
         }
@@ -1741,11 +1741,11 @@ p {
             transition: .1s ease-in-out;
             &:hover {
               text-shadow: 1px 0 #2B4B6B;
-              color: $color_11;
+              color: $color_blue;
             }
             &:focus {
               text-shadow: 1px 0 #2B4B6B;
-              color: $color_11;
+              color: $color_blue;
             }
           }
         }
@@ -1806,7 +1806,7 @@ p {
   margin: 0 auto;
   padding: 0;
   &__title {
-    color: $color_11;
+    color: $color_blue;
   }
 }
 .maps {
@@ -1845,7 +1845,7 @@ p {
     }
     &-link {
       font-weight: 600;
-      color: $color_11;
+      color: $color_blue;
     }
   }
 }
@@ -1867,7 +1867,7 @@ p {
         font-family: $font_family_4;
         font-weight: 700;
         font-size: 3em;
-        color: $color_7;
+        color: $color_community;
         border: none;
         outline: none;
       }
@@ -2211,7 +2211,7 @@ p {
   }
 }
 .about__page-textlink {
-  color: $color_11;
+  color: $color_blue;
   font-weight: 600;
 }
 .resources__slide-btn-comment {
@@ -2761,13 +2761,13 @@ p {
       &:nth-of-type(1) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_7;
+            color: $color_community;
             text-shadow: 1px 0 #5591AA;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_7;
+            color: $color_community;
             text-shadow: 1px 0 #5591AA;
           }
         }
@@ -2775,13 +2775,13 @@ p {
       &:nth-of-type(2) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_8;
+            color: $color_leadership;
             text-shadow: 1px 0 #BDA15F;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_8;
+            color: $color_leadership;
             text-shadow: 1px 0 #BDA15F;
           }
         }
@@ -2789,13 +2789,13 @@ p {
       &:nth-of-type(3) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_9;
+            color: $color_finance;
             text-shadow: 1px 0 #73AA56;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_9;
+            color: $color_finance;
             text-shadow: 1px 0 #73AA56;
           }
         }
@@ -2803,13 +2803,13 @@ p {
       &:nth-of-type(4) {
         >.accordion__sub-title {
           &:focus {
-            color: $color_10;
+            color: $color_personnel;
             text-shadow: 1px 0 #CF794A;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
-            color: $color_10;
+            color: $color_personnel;
             text-shadow: 1px 0 #CF794A;
           }
         }
@@ -2948,7 +2948,7 @@ p {
       &:nth-of-type(1) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_7;
+            color: $color_community;
             text-shadow: 1px 0 #5591AA;
           }
         }
@@ -2956,7 +2956,7 @@ p {
       &:nth-of-type(2) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_8;
+            color: $color_leadership;
             text-shadow: 1px 0 #BDA15F;
           }
         }
@@ -2964,7 +2964,7 @@ p {
       &:nth-of-type(3) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_9;
+            color: $color_finance;
             text-shadow: 1px 0 #73AA56;
           }
         }
@@ -2972,7 +2972,7 @@ p {
       &:nth-of-type(4) {
         >.accordion__sub-title {
           &:hover {
-            color: $color_10;
+            color: $color_personnel;
             text-shadow: 1px 0 #CF794A;
           }
         }
