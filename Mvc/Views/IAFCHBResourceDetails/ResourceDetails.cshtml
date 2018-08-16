@@ -19,7 +19,7 @@
 					<h5>@Model.ResourceDetails.ResourceTitle</h5>
 					<p>@Model.ResourceDetails.ResourceDescription</p>
 				</div>
-				
+
 				<div class="resources-single__left_post_comment">
 					<div class="resources-single__left_post_comment_header">
 						<div class="resources-single__left_post_comment_header_left">
@@ -38,7 +38,7 @@
 							<div class="resources-single__left_post_comment_header_left_share anticon anticon-share-alt">
 								Share
 							</div>
-							
+
 						</div>
 						<div class="resources-single__left_post_comment_header_right">
 							<div class="single-post-comments" id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
@@ -51,36 +51,36 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="resources-single__left_post_comment_changer">
 						<div class="resources-single-comment active">Comments</div>
 						<div class="resources-single-resources">More Resources</div>
 					</div>
 
 					<div class="resources-single__left_post_comment_textarea">
-					
+
 							@if (Model.UserAuthorized)
 							{
-								<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
-								<div class="replyAddComment">
-									<div class="textarea-container">
-										<textarea
-										placeholder="Add a comment…"
-												name="commentName"
-												id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())">
-										</textarea>
-									</div>
-									<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
-								</div>
-							</div>				
+								div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
+                                    <div id="addToMyHandBook">
+                                        @if (Model.AddToMyHandBook == true)
+                                        {
+                                            <span>Added to MyHandBook</span>
+                                        }
+                                        else
+                                        {
+                                            <button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
+                                        }
+                                    </div>
+                                </div>
 							}
-					</div>				
+					</div>
 				</div>
 
 				<div class="resources-single__comments_list">
 					<div class="resources-single__comments_list_header" id="commentsAmountBottomID" data-id="@Model.CommentsAmount.ToString()">
 								@Model.CommentsAmount Comments
-							</div>		
+							</div>
 					<div class="resources-single__comments_list_container" id="refTable">
 						@Html.Partial("_IAFCHBComments", Model.Comments)
 					</div>
@@ -159,17 +159,17 @@
 
 			var resourceId = $(this).attr('data-id');
 			var tag_id = "#addToMyHandBook_" + resourceId;
-			
+
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBResourceDetailsController")',
 				data: { resourceId: resourceId },
 				dataType: "json",
-				success: function (response) {										
-					if (response == true) {						
+				success: function (response) {
+					if (response == true) {
 						$(tag_id).html("Added to MyHandBook");
-					}					
+					}
 				}
 			});
 		});
@@ -182,18 +182,18 @@
 			var comment = commentMsg;
 			var commentAmount = parseInt($('#commentsAmountHeaderID').attr('data-id'))+1;
 
-			$.ajax({			
+			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddComment", "IAFCHBResourceDetailsController")',
 				data: { commentTxt: comment, resourceId:resourceId },
 				success: function (commentsResults) {
 					$("#refTable").removeData();
-					$("#refTable").html(commentsResults);							
+					$("#refTable").html(commentsResults);
 					var inputTxt = $('#comment_' + resourceId);
 					inputTxt.replaceWith(inputTxt.val('').clone(true));
-					$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");							
-					$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");							
+					$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
+					$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
 				}
 
 			});
@@ -237,15 +237,15 @@
 		$('.commentReplyBtn').on('click', function () {
 
 			var commentId = $(this).attr('data-id');
-			
+
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("PressReplyCommentBtn", "IAFCHBResourceDetailsController")',
-				data: { commentId: commentId },				
-				success: function (response) {					
+				data: { commentId: commentId },
+				success: function (response) {
 					$("#replyCommentBtn_" + commentId).html("");
-					$("#commentRepliesInputView_" + commentId).html(response);																	
+					$("#commentRepliesInputView_" + commentId).html(response);
 				}
 			});
 		});
