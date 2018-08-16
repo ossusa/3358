@@ -876,7 +876,7 @@ p {
 .k-item {
   border: 0px solid transparent;
 }
-.header__nav > ul > li > a.k-link{
+.header__nav > ul > li > a{
   padding: 12px !important;
 }
 .k-link {
@@ -885,7 +885,7 @@ p {
   color: $color_5;
   font-size: 1.00em;
   z-index: 1000;
-  padding: 8px 10px 8px !important;
+  padding: 8px 10px 8px 10px !important;
   -webkit-transition: .1s ease-in-out;
   -o-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
