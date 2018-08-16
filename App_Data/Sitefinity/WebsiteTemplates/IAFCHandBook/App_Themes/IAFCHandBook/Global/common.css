@@ -2870,7 +2870,7 @@ p {
   border-radius: 3px;
   background-color: #2b4b6b;
   margin-right: 24px;
-  color: #ffffff;
+  color: white;
   font-family: 'Zilla Slab', serif;
   font-weight: 400;
   font-size: 0.813em;
@@ -2881,14 +2881,16 @@ p {
     font-size: 1.250em;
     font-family: 'Nunito Sans', sans-serif; }
 
-.test {
-  color: red; }
+.handbook_category__wrapper {
+  display: -ms-flexbox;
+  display: flex; }
 
 .handbook_category__item__image {
   background-size: cover;
   background-position: center center;
   width: 282px;
   height: 200px;
-  border-radius: 3px 3px 0 0; }
+  border-radius: 3px 3px 0 0;
+  color: white; }
   .handbook_category__item__image a {
     display: block; }

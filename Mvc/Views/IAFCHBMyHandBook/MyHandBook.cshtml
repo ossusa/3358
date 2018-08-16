@@ -12,7 +12,6 @@
 		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
 	</div>
 		<div class="handbook_category__wrapper">
-			<div>
 				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
 					<div class="handbook_category__item">
@@ -35,9 +34,7 @@
 							}
 						</div>
 					</div>
-
 				}
-			</div>
 		</div>
 	}
 </div>
