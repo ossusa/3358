@@ -21,9 +21,9 @@ namespace SitefinityWebApp.Mvc.Models
 		public IAFCHandBookTopicCategoryModel Category { get; set; }
 		public List<IAFCHandBookTopicCategoryModel> MoreCategories { get; set; }
 		public List<IAFCHandBookResourceModel> MyResources { get; set; }
-		public List<IAFCHandBookResourceModel> MyCompletedResources { get; set; }
-
+		public List<IAFCHandBookResourceModel> MyCompletedResources { get; set; }	
 		public List<IAFCHandBookMyHandBookResourceModelModel> MyChildHandBookResources { get; set; }
+		public List<IAFCHandBookTopicOrderBy> OrderBy { get; set; }
 
 	}
 }
