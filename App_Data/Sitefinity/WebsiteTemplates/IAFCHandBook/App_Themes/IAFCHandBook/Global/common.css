@@ -2909,6 +2909,8 @@ p {
 
 .handbook_category__item {
   margin-right: 24px; }
+  .handbook_category__item:hover {
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15); }
   .handbook_category__item__image {
     background-size: cover;
     background-position: center center;
