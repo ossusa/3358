@@ -1209,17 +1209,16 @@ p {
     display: block;
     position: relative;
     margin-bottom: 24px;
-    background: #5591aa url("../images/community-multiply.svg");
+    background: #5591aa;
     margin-right: 24px;
     height: 200px;
     border-radius: 3px; }
   .topics__content img {
-    width: 100%;
-    height: 200px;
+    background: url("../images/community-multiply.svg");
+    width: 148px;
+    height: 135px;
     display: block;
-    border-radius: 3px;
-    object-fit: fill;
-    -o-object-fit: fill; }
+    position: absolute; }
 
 .topics__img-back {
   display: -ms-flexbox;
