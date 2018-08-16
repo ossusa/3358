@@ -52,10 +52,11 @@
   &__wrapper {
     display: flex;
     margin-bottom: 50px;
+    align-items: flex-start;
   }
   &__item{
       margin-right: 24px;
-    &:hover {
+      &:hover {
       box-shadow: 0 6px 15px 0 rgba(0,0,0,0.15);
     }
     &__image{

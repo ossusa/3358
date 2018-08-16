@@ -2905,7 +2905,9 @@ p {
 .handbook_category__wrapper {
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  -ms-flex-align: start;
+  align-items: flex-start; }
 
 .handbook_category__item {
   margin-right: 24px; }
