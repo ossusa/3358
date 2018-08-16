@@ -2848,7 +2848,7 @@ p {
   align-items: center; }
   .handbook__title h1 {
     color: #fff;
-    font-family: 'Zilla Slab', serif;
+    font-family: "Zilla Slab", serif;
     font-size: 2.250em;
     font-weight: 500;
     text-transform: uppercase;
@@ -2871,7 +2871,7 @@ p {
   background-color: #2b4b6b;
   margin-right: 24px;
   color: white;
-  font-family: 'Zilla Slab', serif;
+  font-family: "Zilla Slab", serif;
   font-weight: 400;
   font-size: 0.813em;
   text-align: center;
@@ -2879,7 +2879,7 @@ p {
   .progressindicator__label .time {
     font-weight: 700;
     font-size: 1.250em;
-    font-family: 'Nunito Sans', sans-serif; }
+    font-family: "Nunito Sans", sans-serif; }
 
 .handbook_category__wrapper {
   display: -ms-flexbox;
@@ -2896,3 +2896,12 @@ p {
     color: white; }
     .handbook_category__item__image a {
       display: block; }
+  .handbook_category__item__time {
+    font-family: "Zilla Slab", serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: white; }
+    .handbook_category__item__time span {
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 15px;
+      font-weight: 700; }

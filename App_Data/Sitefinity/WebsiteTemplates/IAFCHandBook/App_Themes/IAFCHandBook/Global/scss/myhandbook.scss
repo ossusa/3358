@@ -8,7 +8,7 @@
 
   h1{
     color: #fff;
-    font-family: 'Zilla Slab', serif;
+    font-family: $font_family_5;
     font-size: 2.250em;
     font-weight: 500;
     text-transform: uppercase;
@@ -32,7 +32,7 @@
     background-color: #2b4b6b;
     margin-right: 24px;
     color: $color_15;
-    font-family: 'Zilla Slab', serif;
+    font-family: $font_family_5;
     //font-size: 13px;
     font-weight: 400;
     font-size: 0.813em;
@@ -42,7 +42,7 @@
       //font-size: 20px;
       font-weight: 700;
       font-size: 1.250em;
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: $font_family_4;
 
     }
   }
@@ -66,6 +66,17 @@
       }
       .community{
 
+      }
+    }
+    &__time{
+      font-family: $font_family_5;
+      font-size: 13px;
+      font-weight: 400;
+      color: $color_15;
+      span{
+        font-family: $font_family_4;
+        font-size: 15px;
+        font-weight: 700;
       }
     }
     &__link{}
