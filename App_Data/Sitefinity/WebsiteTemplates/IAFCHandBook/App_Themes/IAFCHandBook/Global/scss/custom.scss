@@ -39,6 +39,8 @@
   position: relative;
   -o-object-fit: cover;
   object-fit: cover;
+  transform: translateX(-50%);
+  left: 50%;
 }
 
 @media (max-width: 767px) {
