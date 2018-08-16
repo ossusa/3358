@@ -107,18 +107,6 @@
       border: 1px solid #efefef;
       background-color: $color_15;
       padding: 16px 20px;
-      &.community:hover{
-      color: $color_community;
-      }
-      &.leadership:hover{
-        color: $color_leadership;
-      }
-      &.finance:hover{
-        color: $color_finance;
-      }
-      &.personnel:hover{
-        color: $color_personnel;
-      }
       a{
         display: block;
         color: $color_5;
@@ -126,10 +114,28 @@
         font-size: 16px;
         font-weight: 400;
         padding-bottom: 4px;
-
-
-
       }
+      &.community{
+        a:hover{
+          color: $color_community;
+        }
+      }
+      &.leadership{
+        a :hover{
+          color: $color_leadership;
+        }
+      }
+      &.finance{
+        a:hover{
+          color: $color_finance;
+        }
+      }
+      &.personnel{
+        a:hover{
+          color: $color_personnel;
+        }
+      }
+
     }
   }
 }
