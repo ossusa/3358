@@ -2910,7 +2910,10 @@ p {
           font-weight: 400;
           border-radius: 3px;
           border: 1px solid #434f68; }
-          .resources-single__left_post_comment_textarea .addCommentBtn:hover, .resources-single__left_post_comment_textarea .addCommentBtn:focus {
+          .resources-single__left_post_comment_textarea .addCommentBtn:hover {
+            background: #2b4b6b;
+            color: #fff; }
+          .resources-single__left_post_comment_textarea .addCommentBtn:focus {
             background: #2b4b6b;
             color: #fff; }
       .resources-single__left_post_comment_changer {
@@ -3145,6 +3148,12 @@ p {
       font-size: 16px;
       font-weight: 400;
       padding-bottom: 4px; }
+      .handbook_category__item__links a:hover:after {
+        content: "\E61F";
+        font-family: anticon;
+        padding-left: 8px;
+        font-size: 1em;
+        display: inline-block; }
     .handbook_category__item__links.Community a:hover {
       color: #5591AA; }
     .handbook_category__item__links.Leadership a:hover {

@@ -229,7 +229,10 @@
               font-weight: 400;
               border-radius: 3px;
               border: 1px solid #434f68;
-              &:hover,
+              &:hover{
+                background: #2b4b6b;
+                color: #fff;
+              }
               &:focus{
                 background: #2b4b6b;
                 color: #fff;
