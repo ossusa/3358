@@ -61,20 +61,21 @@
 
 							@if (Model.UserAuthorized)
 							{
-								div id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
-                                    <div id="addToMyHandBook">
-                                        @if (Model.AddToMyHandBook == true)
-                                        {
-                                            <span>Added to MyHandBook</span>
-                                        }
-                                        else
-                                        {
-                                            <button type="button" class="addToMyHandBook" data-id="@Model.Id.ToString()"> +Add to MyHandBook </button>
-                                        }
-                                    </div>
-                                </div>
+
 							}
+						<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
+						<div class="replyAddComment">
+							<div class="textarea-container">
+										<textarea
+												placeholder="Add a comment…"
+												name="commentName"
+												id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())">
+								</textarea>
+							</div>
+							<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
+						</div>
 					</div>
+			</div>
 				</div>
 
 				<div class="resources-single__comments_list">
