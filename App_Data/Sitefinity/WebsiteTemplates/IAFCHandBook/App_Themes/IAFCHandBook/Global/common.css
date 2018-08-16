@@ -2482,6 +2482,14 @@ p {
       height: 40px;
       margin-left: 0; } }
 
+.resources__slide-img img {
+  height: 100%;
+  min-width: 100%;
+  position: relative;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 @media (max-width: 767px) {
   .footer__info {
     height: auto; } }
