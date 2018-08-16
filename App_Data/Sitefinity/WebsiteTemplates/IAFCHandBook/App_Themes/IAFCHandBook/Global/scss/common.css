@@ -1609,7 +1609,10 @@ p {
   .community__topics-link {
     display: block;
     position: relative;
-    height: 188px; }
+    height: 188px;
+    width: 282px;
+    border-radius: 3px;
+    background: #5591aa; }
   .community__topics-text {
     white-space: normal; }
   .community__topics-list {
