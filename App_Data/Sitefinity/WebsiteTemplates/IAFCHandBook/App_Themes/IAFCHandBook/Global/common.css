@@ -2962,6 +2962,14 @@ p {
     border: 1px solid #efefef;
     background-color: white;
     padding: 16px 20px; }
+    .handbook_category__item__links.community:hover {
+      color: #5591AA; }
+    .handbook_category__item__links.leadership:hover {
+      color: #BDA15F; }
+    .handbook_category__item__links.finance:hover {
+      color: #73AA56; }
+    .handbook_category__item__links.personnel:hover {
+      color: #CF794A; }
     .handbook_category__item__links a {
       display: block;
       color: #666666;
@@ -2969,11 +2977,3 @@ p {
       font-size: 16px;
       font-weight: 400;
       padding-bottom: 4px; }
-      .handbook_category__item__links a.community:hover {
-        color: #5591AA; }
-      .handbook_category__item__links a.leadership:hover {
-        color: #BDA15F; }
-      .handbook_category__item__links a.finance:hover {
-        color: #73AA56; }
-      .handbook_category__item__links a.personnel:hover {
-        color: #CF794A; }
