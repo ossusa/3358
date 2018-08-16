@@ -2472,7 +2472,7 @@ p {
     height: 40px; }
 
 @media (max-width: 1109px) {
-  .box .box-mobile {
+  .header__table-tr {
     height: 72px;
     padding: 16px 0 16px 16px !important; }
   .header__logo {
