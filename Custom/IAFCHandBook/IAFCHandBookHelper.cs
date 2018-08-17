@@ -2115,48 +2115,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion MyHandBookGetResourcesPerCategory
 
 		#region GetCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, String markCompleteBtnText = "Marked as Complete", String orderBy= OrderByMostRecent)
+		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, Boolean showAllResources, String markCompleteBtnText = "Marked as Complete", String orderBy= OrderByMostRecent)
 		{
 			
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
 			try
 			{
-				var myHandBookItem = GetOrCreateMyHandBook();
-
-				
+				var myHandBookItem = GetOrCreateMyHandBook();				
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().ToList();
 				var myCompletedHandBookResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>().ToList();
-
-
-				if (orderBy == OrderByMostRecent)
-				{
-
-					myHandBookResources.OrderByDescending(r => r.DateCreated).ToList();
-					myCompletedHandBookResources.OrderByDescending(r => r.DateCreated).ToList();
-				}
-				else if (orderBy == OrderByMostPopular)
-				{
-
-					myHandBookResources.OrderByDescending(r => int.Parse(r.GetValue<DynamicContent>("Likes").GetValue("AmountOfLikes").ToString())).
-							ToList();
-					myCompletedHandBookResources.OrderByDescending(r => int.Parse(r.GetValue<DynamicContent>("Likes").GetValue("AmountOfLikes").ToString())).
-							ToList();
-
-				}
-				else if (orderBy == OrderByAlphabeticalAZ)
-				{
-
-					myHandBookResources.OrderBy(r => r.GetValue("Title").ToString()).ToList();
-					myCompletedHandBookResources.OrderBy(r => r.GetValue("Title").ToString()).ToList();
-				}
-				else if (orderBy == OrderByAlphabeticalZA)
-				{
-					myHandBookResources.OrderByDescending(r => r.GetValue("Title").ToString()).ToList();
-					myCompletedHandBookResources.OrderByDescending(r => r.GetValue("Title").ToString()).ToList();
-				}
-
-
+				
 				var category = new IAFCHandBookTopicCategoryModel();
 				var categoryDetails = GetTopicCategories(categoryId);
 
@@ -2167,18 +2136,44 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				category.CategoryTitle = categoryDetails.ResourceCategoryTile;
 				category.CategoryDescription = categoryDetails.ResourceCategoryDescription;
 				category.ParentCategoryTitle = categoryDetails.ResourceParentCategoryTitle;
-
-				var categoryCompletedResources = myCompletedHandBookResources.
+				
+				var categoryResourcesList = myHandBookResources.
 					Where(i => (((i.GetValue<DynamicContent>("ExternalResources") != null) &&
 								(i.GetValue<DynamicContent>("ExternalResources").GetValue<IList<Guid>>("Category").Contains(categoryId)))
 								|| ((i.GetValue<DynamicContent>("Resources") != null) &&
 								(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryId))))).ToList();
 
-				var categoryResources = myHandBookResources.
+				var categoryCompletedResourcesList = myCompletedHandBookResources.
 					Where(i => (((i.GetValue<DynamicContent>("ExternalResources") != null) &&
 								(i.GetValue<DynamicContent>("ExternalResources").GetValue<IList<Guid>>("Category").Contains(categoryId)))
 								|| ((i.GetValue<DynamicContent>("Resources") != null) &&
 								(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryId))))).ToList();
+
+
+				var categoryResources = new List<DynamicContent>();
+				var categoryCompletedResources = new List<DynamicContent>();
+				if (orderBy == OrderByMostRecent)
+				{
+					categoryResources = categoryResourcesList.OrderByDescending(r => r.DateCreated).ToList();
+					categoryCompletedResources = categoryCompletedResourcesList.OrderByDescending(r => r.DateCreated).ToList();
+				}
+				else if (orderBy == OrderByMostPopular)
+				{
+					categoryResources = categoryResourcesList.OrderByDescending(r => int.Parse(r.GetValue<DynamicContent>("Likes").GetValue("AmountOfLikes").ToString())).
+							ToList();
+					categoryCompletedResources = categoryCompletedResourcesList.OrderByDescending(r => int.Parse(r.GetValue<DynamicContent>("Likes").GetValue("AmountOfLikes").ToString())).
+							ToList();
+				}
+				else if (orderBy == OrderByAlphabeticalAZ)
+				{
+					categoryResources = categoryResourcesList.OrderBy(r => r.GetValue("Title").ToString()).ToList();
+					categoryCompletedResources = categoryCompletedResourcesList.OrderBy(r => r.GetValue("Title").ToString()).ToList();
+				}
+				else if (orderBy == OrderByAlphabeticalZA)
+				{
+					categoryResources = categoryResourcesList.OrderByDescending(r => r.GetValue("Title").ToString()).ToList();
+					categoryCompletedResources = categoryCompletedResourcesList.OrderByDescending(r => r.GetValue("Title").ToString()).ToList();
+				}
 
 				var hbCategoryResTotalDuration = GetTotalDuration(categoryResources);
 				var hbCategoryComplResTotalDuration = GetTotalDuration(categoryCompletedResources);
@@ -2193,7 +2188,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				model.MoreCategories = GetMoreCategories(categoryId);
 
 				var myChildResourceItem = new IAFCHandBookResourceModel();
-				foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
+				foreach (var resourceItem in showAllResources? categoryResources: categoryResources.Take(5))
 				{
 					myChildResourceItem = GetResourceDetails(resourceItem, true);
 					myChildResourceItem.MarkCompleteBtnText = markCompleteBtnText;
@@ -2202,7 +2197,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 
 				var myChildCompletedResourceItem = new IAFCHandBookResourceModel();
-				foreach (var resourceCompletedItem in categoryCompletedResources.OrderByDescending(r => r.DateCreated).Take(5))
+				foreach (var resourceCompletedItem in showAllResources? categoryCompletedResources: categoryCompletedResources.Take(5))
 				{
 
 					myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, true);
@@ -2231,7 +2226,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			var categoryId = GetCategoryGuidByName(categoryName);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
-			model = GetCategoryResources(categoryId, orderBy);
+			model = GetCategoryResources(categoryId,false, markCompleteBtnText, orderBy);
 			return model;
 		}
 		#endregion GetMyHandBookCategoryResources
