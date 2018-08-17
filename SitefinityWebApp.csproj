@@ -884,6 +884,7 @@
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookAllResourcesPerCategoryController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookCategoryResourcesController.cs" />
+    <Compile Include="Mvc\Controllers\IAFCHBMyHandBookResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBRecentlyAddedResourcesController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourcesPerCategoryController.cs" />
@@ -1274,6 +1275,7 @@
     <Content Include="Mvc\Views\IAFCHBMyHandBookAllResourcesPerCategory\_MyHandBookAllResourcesPerCategoryDetails.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\MyHandBookCategoryResources.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\_MyHandBookCategoryResourcesDetails.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBMyHandBookResourceDetails\MyHandBookResourceDetail.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

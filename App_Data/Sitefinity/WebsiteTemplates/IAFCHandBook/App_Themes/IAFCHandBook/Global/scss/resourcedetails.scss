@@ -8,7 +8,7 @@
     font-weight: 400;
     padding: 0;
     &:not(:last-child){
-      margin-right: 18px;
+      margin-right: 16px;
     }
     &.anticon-like-o{
       &:hover{
@@ -45,6 +45,9 @@
   *{
     font-size: 13px;
     color: #9b9b9b;
+  }
+  @media screen and (max-width: 767px){
+    display: none;
   }
 }
 
@@ -182,7 +185,7 @@
             &_right{
               display: flex;
               .single-post-comments{
-                margin-right: 18px;
+                margin-right: 16px;
               }
             }
           }
