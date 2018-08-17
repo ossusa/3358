@@ -823,13 +823,14 @@ p {
         object-fit: cover; }
     .resources__slide-label {
       position: absolute;
-      bottom: 14px;
+      bottom: 12px;
       left: 12px;
       background: #fff;
-      padding: 3px 8px;
+      padding: 2px 8px;
+      height: 26px;
       border-radius: 3px;
       color: #666;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.938em; }
       .resources__slide-label a {
         color: #666; }
@@ -839,17 +840,18 @@ p {
       display: flex;
       -ms-flex-align: center;
       align-items: center;
-      bottom: 15px;
+      bottom: 12px;
       right: 12px;
+      height: 26px;
       background: rgba(74, 74, 74, 0.65);
-      padding: 3px 8px;
+      padding: 0 6px 0 4px;
       border-radius: 3px;
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.938em; }
     .resources__slide-info {
       padding: 20px;
-      height: 152px;
+      height: 154px;
       background: #fff;
       display: -ms-flexbox;
       display: flex;
@@ -928,7 +930,7 @@ p {
       font-weight: 500; }
   .resources--plus {
     font-size: 1.00em;
-    margin-right: 3px !important; }
+    margin-right: 8px !important; }
   .resources--time {
     font-size: 18px;
     background: url(../images/time.png) no-repeat 50% 50%;
@@ -1763,6 +1765,7 @@ p {
   .community__topics-list {
     margin-bottom: 24px; }
   .resources__logged {
+    display: none;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: distribute;
@@ -1807,19 +1810,13 @@ p {
     top: 44%;
     -ms-transform: translateY(44%);
     transform: translateY(44%); }
-  .resources__slide-time {
-    bottom: 12px;
-    padding: 6px 8px; }
-  .resources__slide-label {
-    bottom: 12px;
-    padding: 3px 8px; }
   .topics__ul-flex .topics__list {
     width: 50%; }
   .box {
     padding-left: 90px;
     padding-right: 90px; }
   .resources__slide-info {
-    height: 153px; }
+    height: 154px; }
   .topics__content {
     padding: 0 0 53px; }
     .topics__content img {
@@ -2536,7 +2533,7 @@ p {
   font-weight: 400;
   padding: 0; }
   .single-post-statistic button:not(:last-child) {
-    margin-right: 18px; }
+    margin-right: 16px; }
   .single-post-statistic button.anticon-like-o:hover:before {
     content: "\E64C"; }
   .single-post-statistic button.anticon-dislike-o:hover:before {
@@ -2691,7 +2688,7 @@ p {
           display: -ms-flexbox;
           display: flex; }
           .resources-single__left_post_comment_header_right .single-post-comments {
-            margin-right: 18px; }
+            margin-right: 16px; }
       .resources-single__left_post_comment_textarea {
         display: -ms-flexbox;
         display: flex;
