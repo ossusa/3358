@@ -2489,7 +2489,13 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  max-width: 1440px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #fff; }
 
 .footer__info {
   height: 72px; }
