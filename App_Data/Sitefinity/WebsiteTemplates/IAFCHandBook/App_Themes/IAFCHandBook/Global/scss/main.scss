@@ -1638,6 +1638,12 @@ p {
   display: block;
 }
 .community{
+  &__section{
+    margin-bottom: 100px;
+    @media (max-width: 1109px){
+      margin-bottom: 52px;
+    }
+  }
   &__head{
     &-btns-grp {
       display: -webkit-box;
@@ -1782,9 +1788,7 @@ p {
     &-title {
       color: $color_6;
     }
-    &__section{
-      margin-bottom: 100px;
-    }
+
     &-ul {
       padding: 0;
       margin: 0;
@@ -2075,7 +2079,6 @@ p {
     }
   }
   .community__topics {
-    margin-top: 52px !important;
     padding-bottom: 48px !important;
   }
   .topics__img-back-info {

@@ -116,7 +116,6 @@ $(document).ready(function () {
         if ($(window).scrollTop() >= headerText.height()) {
             wrapper.css("margin-top", stickyHeader.height());
             stickyHeader.addClass('sticky');
-
         }
         else {
             stickyHeader.removeClass('sticky');

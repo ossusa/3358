@@ -1314,6 +1314,12 @@ p {
   height: 50px;
   display: block; }
 
+.community__section {
+  margin-bottom: 100px; }
+  @media (max-width: 1109px) {
+    .community__section {
+      margin-bottom: 52px; } }
+
 .community__head-btns-grp {
   display: -ms-flexbox;
   display: flex; }
@@ -1427,8 +1433,6 @@ p {
   margin-bottom: 100px; }
   .community__topics-title {
     color: #fff; }
-  .community__topics__section {
-    margin-bottom: 100px; }
   .community__topics-ul {
     padding: 0;
     margin: 0;
@@ -1633,7 +1637,6 @@ p {
     margin-bottom: 48px;
     margin-left: 0; }
   .community__topics {
-    margin-top: 52px !important;
     padding-bottom: 48px !important; }
   .topics__img-back-info {
     font-size: 14px !important; }
