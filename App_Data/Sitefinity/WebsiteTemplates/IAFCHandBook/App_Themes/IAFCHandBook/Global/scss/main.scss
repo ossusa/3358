@@ -1090,7 +1090,7 @@ p {
     }
     &-info {
       padding: 20px;
-      height: 154px;
+      height: 156px;
       background: #fff;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1194,9 +1194,6 @@ p {
       -ms-flex-pack: distribute;
       justify-content: space-between;
     }
-  }
-  &__community-slide-info {
-    padding: 15px 20px 20px;
   }
   &__logged-article {
     font-size: 13px;
@@ -2011,10 +2008,12 @@ p {
     width: 100%;
     padding-top: 64px;
     padding-bottom: 72px;
-    margin-top: 100px;
     margin-bottom: 100px;
     &-title {
       color: $color_6;
+    }
+    &__section{
+      margin-bottom: 100px;
     }
     &-ul {
       padding: 0;
