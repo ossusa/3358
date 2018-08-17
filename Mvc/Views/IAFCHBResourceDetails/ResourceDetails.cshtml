@@ -267,7 +267,7 @@
 			});
 		});
 
-		$('.resources-single-comment').on('click', function(){
+		$('.resources-single-comment').on('click tap', function(){
 			if(!$(this).hasClass('active')){
 				$(this).addClass('active');
 				$('.resources-single-resources').removeClass('active');
@@ -276,7 +276,7 @@
 			}
 		})
 
-		$('.resources-single-resources').on('click', function(){
+		$('.resources-single-resources').on('click tap', function(){
 			if(!$(this).hasClass('active')){
 				$(this).addClass('active');
 				$('.resources-single-comment').removeClass('active');
