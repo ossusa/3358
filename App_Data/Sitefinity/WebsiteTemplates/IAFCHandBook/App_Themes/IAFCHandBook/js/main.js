@@ -1,4 +1,4 @@
-"use strict";
+
 
 $(document).ready(function () {
     /*Jumbo Search*/
@@ -105,6 +105,25 @@ $(document).ready(function () {
     });
     $(document).on("click", function () {
         $(".rotated").toggleClass('rotated');
+    });
+
+
+    //sticky header
+    var headerText = $('#headerText');
+    var wrapper = $('#wrapper');
+    var stickyHeader = $('.box-mobile');
+    $(window).scroll(function(){
+        if ($(window).scrollTop() >= headerText.height()) {
+            headerText.hide();
+            wrapper.css("margin-top", stickyHeader.height());
+            stickyHeader.addClass('sticky');
+
+        }
+        else {
+            headerText.show();
+            stickyHeader.removeClass('sticky');
+            wrapper.css("margin-top", 0);
+        }
     });
 
 });

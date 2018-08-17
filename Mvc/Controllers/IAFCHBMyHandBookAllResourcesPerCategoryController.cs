@@ -69,12 +69,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 			if (operation.Equals("Remove"))
 			{				
 				var markAsComplete = handBookHelper.RemoveResource(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid, "Remove");
+				model = handBookHelper.GetCategoryResources(categoryGuid, false, "Remove");
 			}
 			else
 			{				
 				var markAsComplete = handBookHelper.MarkAsComplete(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid);
+				model = handBookHelper.GetCategoryResources(categoryGuid, false);
 			}
 			
 			var view =  PartialView("_MyHandBookAllResourcesPerCategoryDetails", model);			

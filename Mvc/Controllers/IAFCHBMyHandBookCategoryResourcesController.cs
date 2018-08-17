@@ -74,14 +74,14 @@ namespace SitefinityWebApp.Mvc.Controllers
 			if (operation.Equals("Remove"))
 			{
 				var markAsComplete = handBookHelper.RemoveResource(id);
-				
+				model = handBookHelper.GetCategoryResources(categoryGuid, true, "Remove");
 			}
 			else
 			{
 				var markAsComplete = handBookHelper.MarkAsComplete(id);
-				
-			}
-			model = handBookHelper.GetCategoryResources(categoryGuid);
+				model = handBookHelper.GetCategoryResources(categoryGuid, true);
+
+			}			
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
 		}
@@ -94,7 +94,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			var model = new IAFCHandBookMyHandBookResourceModelModel();			
 			var markAsComplete = handBookHelper.RemoveResource(id, "MyCompletedResources");
 			
-			model = handBookHelper.GetCategoryResources(categoryGuid);
+			model = handBookHelper.GetCategoryResources(categoryGuid, true);
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
 		}
@@ -107,7 +107,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
 			
 
-			model = handBookHelper.GetCategoryResources(categoryGuid, "Marked as Commplete", orderBy);
+			model = handBookHelper.GetCategoryResources(categoryGuid, true, "Mark as Commplete", orderBy);
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
 		}

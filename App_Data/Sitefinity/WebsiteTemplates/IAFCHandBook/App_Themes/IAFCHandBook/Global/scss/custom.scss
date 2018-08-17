@@ -4,8 +4,24 @@
   margin-right: auto;
 }
 
-.header__logo {
+.header__table-tr {
   padding: 24px 0;
+}
+
+.header__logo {
+  padding: 0;
+
+  img {
+    height: 52px;
+    margin-left: 0;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer__info {
@@ -13,6 +29,7 @@
 
   img {
     height: 40px;
+    margin-left: 0;
   }
 }
 
