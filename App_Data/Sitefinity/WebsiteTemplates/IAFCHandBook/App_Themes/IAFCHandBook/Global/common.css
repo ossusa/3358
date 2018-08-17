@@ -2606,11 +2606,14 @@ p {
   color: #666666;
   font-weight: 500;
   letter-spacing: 0.5px; }
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 992px) {
     .resources-breadcrumbs {
       max-width: 588px;
       width: 100%;
       margin: 40px auto 24px; } }
+  @media screen and (max-width: 767px) {
+    .resources-breadcrumbs {
+      margin: 20px auto; } }
   .resources-breadcrumbs a {
     color: #9b9b9b;
     font-weight: 400;
@@ -2624,6 +2627,9 @@ p {
     .resources-single {
       -ms-flex-direction: column;
       flex-direction: column; } }
+  @media screen and (max-width: 767px) {
+    .resources-single__single {
+      margin: 0 -28px; } }
   .resources-single__left {
     max-width: 790px;
     min-width: 430px;
@@ -2650,17 +2656,23 @@ p {
               height: 250px !important; } }
       .resources-single__left_post_title {
         margin-bottom: 40px; }
-        @media screen and (max-width: 768px) {
+        @media screen and (min-width: 768px) and (max-width: 992px) {
           .resources-single__left_post_title {
             max-width: 588px;
             width: 100%;
-            margin: 0 auto 40px; } }
+            margin: 0 auto 37px; } }
+        @media screen and (max-width: 767px) {
+          .resources-single__left_post_title {
+            margin: 0 auto 16px; } }
         .resources-single__left_post_title h5 {
           color: #2b4b6b;
           font-family: "Nunito Sans";
           font-size: 24px;
           font-weight: 700;
           margin-bottom: 8px; }
+          @media screen and (max-width: 767px) {
+            .resources-single__left_post_title h5 {
+              margin-bottom: 4px; } }
         .resources-single__left_post_title p {
           font-family: 'Zilla Slab', serif;
           margin: 0;
@@ -2735,9 +2747,12 @@ p {
             .resources-single__left_post_comment_textarea .replyAddComment {
               max-width: 588px;
               margin: 0 auto; } }
-        @media screen and (max-width: 768px) {
+        @media screen and (min-width: 768px) and (max-width: 992px) {
           .resources-single__left_post_comment_textarea {
             margin-top: 36px; } }
+        @media screen and (max-width: 767px) {
+          .resources-single__left_post_comment_textarea {
+            margin-top: 0; } }
         .resources-single__left_post_comment_textarea textarea {
           width: 100%;
           min-height: 100px;
@@ -2797,13 +2812,13 @@ p {
           color: #9b9b9b;
           font-family: "Nunito Sans";
           font-size: 18px;
-          font-weight: 700;
           text-align: center;
           cursor: pointer; }
           .resources-single__left_post_comment_changer div:not(:last-child) {
             border-right: 1px solid #d8d8d8; }
           .resources-single__left_post_comment_changer div.active {
-            color: #2b4b6b; }
+            color: #2b4b6b;
+            font-weight: 700; }
   .resources-single__right {
     max-width: 360px;
     min-width: 200px;
@@ -2817,6 +2832,9 @@ p {
       .resources-single__right {
         display: none;
         max-width: 100%; } }
+    @media screen and (max-width: 767px) {
+      .resources-single__right {
+        padding: 24px 28px 21px; } }
     .resources-single__right_header * {
       color: #2b4b6b;
       font-family: "Nunito Sans";
@@ -2873,6 +2891,9 @@ p {
         max-width: 588px;
         width: 100%;
         margin: 15px auto 0; } }
+    @media screen and (max-width: 767px) {
+      .resources-single__comments_list {
+        margin: 24px auto 0; } }
     .resources-single__comments_list_header {
       color: #2b4b6b;
       font-family: "Nunito Sans";
