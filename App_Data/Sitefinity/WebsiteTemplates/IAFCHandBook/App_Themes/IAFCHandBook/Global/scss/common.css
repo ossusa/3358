@@ -2356,7 +2356,7 @@ p {
     margin-top: 8px; }
 
   .resources__slide-info {
-    height: 177px !important; }
+    height: 176px !important; }
 
   .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover {
     color: #5591AA;
@@ -2778,6 +2778,9 @@ p {
   .single-post-comments * {
     font-size: 13px;
     color: #9b9b9b; }
+  @media screen and (max-width: 767px) {
+    .single-post-comments {
+      display: none; } }
 
 .single-post-add {
   margin-right: 24px; }

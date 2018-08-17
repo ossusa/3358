@@ -46,6 +46,9 @@
     font-size: 13px;
     color: #9b9b9b;
   }
+  @media screen and (max-width: 767px){
+    display: none;
+  }
 }
 
 .single-post-add{
