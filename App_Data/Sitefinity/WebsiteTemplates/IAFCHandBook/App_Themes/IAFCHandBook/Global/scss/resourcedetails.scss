@@ -279,7 +279,7 @@
       background-color: #efefef;
       padding: 32px 40px;
       @media screen and (min-width: 768px){
-        display: block !important;
+        display: block;
       }
       @media screen and (max-width: 768px){
         display: none;
@@ -341,7 +341,7 @@
     &__comments_list{
       margin-top: 15px;
       @media screen and (min-width: 768px){
-        display: block !important;
+        display: block;
       }
       @media screen and (max-width: 768px){
         max-width: 588px;
