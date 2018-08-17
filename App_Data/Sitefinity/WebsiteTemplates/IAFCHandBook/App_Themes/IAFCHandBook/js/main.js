@@ -110,19 +110,19 @@ $(document).ready(function () {
 
     //sticky header
     var headerText = $('#headerText');
-    var content = $('#content');
+    var wrapper = $('#wrapper');
     var stickyHeader = $('.box-mobile');
     $(window).scroll(function(){
         if ($(window).scrollTop() >= headerText.height()) {
             headerText.hide();
-            content.css("padding-top", stickyHeader.height());
+            wrapper.css("padding-top", stickyHeader.height());
             stickyHeader.addClass('sticky');
 
         }
         else {
             headerText.show();
             stickyHeader.removeClass('sticky');
-            content.css("padding-top", 0);
+            wrapper.css("padding-top", 0);
         }
     });
 
