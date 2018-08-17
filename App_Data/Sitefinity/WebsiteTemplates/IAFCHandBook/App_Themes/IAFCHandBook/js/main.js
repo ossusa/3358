@@ -111,7 +111,7 @@ $(document).ready(function () {
     //sticky header
     var headerText = $('#headerText');
     var content = $('#content');
-    var stickyHeader = $('.box .box-mobile');
+    var stickyHeader = $('.box-mobile');
     $(window).scroll(function(){
         if ($(window).scrollTop() >= headerText.height()) {
             headerText.hide();
