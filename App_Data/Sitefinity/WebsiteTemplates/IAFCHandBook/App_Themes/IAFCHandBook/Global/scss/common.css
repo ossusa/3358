@@ -1473,6 +1473,8 @@ p {
   height: 50px;
   display: block; }
 
+.community__section {
+  margin-bottom: 100px; }
 .community__head-btns-grp {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1592,8 +1594,6 @@ p {
   margin-bottom: 100px; }
   .community__topics-title {
     color: #fff; }
-  .community__topics__section {
-    margin-bottom: 100px; }
   .community__topics-ul {
     padding: 0;
     margin: 0;

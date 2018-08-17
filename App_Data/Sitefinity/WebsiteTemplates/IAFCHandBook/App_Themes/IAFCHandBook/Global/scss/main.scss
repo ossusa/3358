@@ -1868,6 +1868,9 @@ p {
   display: block;
 }
 .community{
+  &__section{
+    margin-bottom: 100px;
+  }
   &__head{
     &-btns-grp {
       display: -webkit-box;
@@ -2012,9 +2015,7 @@ p {
     &-title {
       color: $color_6;
     }
-    &__section{
-      margin-bottom: 100px;
-    }
+
     &-ul {
       padding: 0;
       margin: 0;
