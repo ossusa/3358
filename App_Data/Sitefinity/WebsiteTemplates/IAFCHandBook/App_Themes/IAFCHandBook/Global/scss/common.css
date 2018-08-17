@@ -1475,6 +1475,9 @@ p {
 
 .community__section {
   margin-bottom: 100px; }
+  @media (max-width: 1109px) {
+    .community__section {
+      margin-bottom: 52px; } }
 .community__head-btns-grp {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1813,7 +1816,6 @@ p {
     margin-left: 0; }
 
   .community__topics {
-    margin-top: 52px !important;
     padding-bottom: 48px !important; }
 
   .topics__img-back-info {
@@ -2712,13 +2714,18 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  max-width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #fff; }
 
 .footer__info {
   height: 72px; }
   .footer__info img {
     height: 40px;
-    margin-left: 0; }
+    margin-left: 0 !important; }
 
 .resources--like, .resources--dislike {
   display: inline-block; }
