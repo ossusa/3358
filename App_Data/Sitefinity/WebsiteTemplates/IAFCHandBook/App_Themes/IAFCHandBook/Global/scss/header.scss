@@ -1,0 +1,230 @@
+.header {
+  border-bottom: 1px solid #d8d8d8;
+  &__text {
+    background: #B5354A;
+    padding: 0 120px;
+    height: 38px;
+    &-link {
+      color: $color_6;
+      font-size: 0.875em;
+      font-family: $font_family_6;
+    }
+  }
+  &__search {
+    border: none;
+    outline: none;
+    font-size: 1.250em;
+    background: transparent;
+  }
+  &__logo {
+    padding: 8px 0;
+    img {
+      margin-left: -19px;
+    }
+  }
+  &__nav {
+    >ul {
+      >li {
+        &:nth-of-type(5) {
+          >a {
+            padding-right: 0 !important;
+          }
+        }
+        >div {
+          >ul {
+            >li {
+              >a {
+                display: -webkit-box !important;
+                display: -ms-flexbox !important;
+                display: flex !important;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                width: 135px;
+                -webkit-box-pack: space-between;
+                -ms-flex-pack: distribute;
+                justify-content: space-between;
+                -webkit-transition: .1s ease-in-out;
+                -o-transition: .1s ease-in-out;
+                transition: .1s ease-in-out;
+              }
+              &:nth-of-type(1) {
+                >a {
+                  padding-top: 20px !important;
+                  &:hover {
+                    text-shadow: 1px 0 #5591AA;
+                    color: $color_community;
+                  }
+                  &:focus {
+                    text-shadow: 1px 0 #5591AA;
+                    color: $color_community;
+                  }
+                }
+                >div {
+                  >ul {
+                    >li {
+                      &:first-child {
+                        >a {
+                          padding-top: 20px !important;
+                        }
+                      }
+                      &:last-child {
+                        >a {
+                          padding-bottom: 20px !important;
+                        }
+                      }
+                      >a {
+                        &:hover {
+                          text-shadow: 1px 0 #5591AA;
+                          color: $color_community;
+                        }
+                        &:focus {
+                          text-shadow: 1px 0 #5591AA;
+                          color: $color_community;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              &:nth-of-type(2) {
+                >div {
+                  >ul {
+                    >li {
+                      &:first-child {
+                        >a {
+                          padding-top: 20px !important;
+                        }
+                      }
+                      &:last-child {
+                        >a {
+                          padding-bottom: 20px !important;
+                        }
+                      }
+                      >a {
+                        &:hover {
+                          text-shadow: 1px 0 #BDA15F;
+                          color: $color_leadership;
+                        }
+                        &:focus {
+                          text-shadow: 1px 0 #BDA15F;
+                          color: $color_leadership;
+                        }
+                      }
+                    }
+                  }
+                }
+                >a {
+                  &:hover {
+                    text-shadow: 1px 0 #BDA15F;
+                    color: $color_leadership;
+                  }
+                  &:focus {
+                    text-shadow: 1px 0 #BDA15F;
+                    color: $color_leadership;
+                  }
+                }
+              }
+              &:nth-of-type(3) {
+                >div {
+                  >ul {
+                    >li {
+                      &:first-child {
+                        >a {
+                          padding-top: 20px !important;
+                        }
+                      }
+                      &:last-child {
+                        >a {
+                          padding-bottom: 20px !important;
+                        }
+                      }
+                      >a {
+                        &:hover {
+                          text-shadow: 1px 0 #73AA56;
+                          color: $color_finance;
+                        }
+                        &:focus {
+                          text-shadow: 1px 0 #73AA56;
+                          color: $color_finance;
+                        }
+                      }
+                    }
+                  }
+                }
+                >a {
+                  &:hover {
+                    text-shadow: 1px 0 #73AA56;
+                    color: $color_finance;
+                  }
+                  &:focus {
+                    text-shadow: 1px 0 #73AA56;
+                    color: $color_finance;
+                  }
+                }
+              }
+              &:nth-of-type(4) {
+                >div {
+                  >ul {
+                    >li {
+                      &:first-child {
+                        >a {
+                          padding-top: 20px !important;
+                        }
+                      }
+                      &:last-child {
+                        >a {
+                          padding-bottom: 20px !important;
+                        }
+                      }
+                      >a {
+                        &:hover {
+                          text-shadow: 1px 0 #CF794A;
+                          color: $color_personnel;
+                        }
+                        &:focus {
+                          text-shadow: 1px 0 #CF794A;
+                          color: $color_personnel;
+                        }
+                      }
+                    }
+                  }
+                }
+                >a {
+                  padding-bottom: 20px !important;
+                  &:hover {
+                    text-shadow: 1px 0 #CF794A;
+                    color: $color_personnel;
+                  }
+                  &:focus {
+                    text-shadow: 1px 0 #CF794A;
+                    color: $color_personnel;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__table-tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: distribute;
+    justify-content: space-between;
+  }
+  &__table-td {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: flex-end;
+    -ms-flex-pack: flex-end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
