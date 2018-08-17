@@ -2115,7 +2115,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion MyHandBookGetResourcesPerCategory
 
 		#region GetCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, Boolean showAllResources, String markCompleteBtnText = "Marked as Complete", String orderBy= OrderByMostRecent)
+		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, Boolean showAllResources, String markCompleteBtnText = "Mark as Complete", String orderBy= OrderByMostRecent)
 		{
 			
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
