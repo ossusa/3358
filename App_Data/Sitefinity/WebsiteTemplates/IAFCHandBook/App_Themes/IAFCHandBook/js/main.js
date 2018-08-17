@@ -115,7 +115,7 @@ $(document).ready(function () {
     $(window).scroll(function(){
         if ($(window).scrollTop() >= headerText.height()) {
             headerText.hide();
-            content.css("padding-top", content.height());
+            content.css("padding-top", headerText.height());
             stickyHeader.addClass('sticky');
 
         }
