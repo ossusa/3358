@@ -33,22 +33,28 @@
 					</div>
 					<!-- Header Text End ============================================= -->
 					<div class="box box-mobile">
-						<div class="header__table-tr">
+					<table width="100%">
+						<tr class="header__table-tr">
+							<td>
+
 								<!-- Logo ============================================= -->
 								<div id="logo" class="header__logo">
 									<asp:ContentPlaceHolder ID="logoHolder" runat="server">
 									</asp:ContentPlaceHolder>
 								</div>
 								<!-- Logo ============================================= -->
-							<div class="header__table-td">
+							</td>
+							<td class="header__table-td">
 								<!-- Menu ============================================= -->
+								<div>
 									<nav id="primaryMenu">
 										<asp:ContentPlaceHolder ID="menuHolder" runat="server">
 										</asp:ContentPlaceHolder>
 									</nav>
-							</div>
+								</div>
+							</td>
 							<!-- Menu end ============================================= -->
-							<div class="header__mob">
+							<td class="header__mob">
                                 <div class="header__mob-nav">
                                     <div class="header__mob-box">
                                         <a href="#" class="header__mob-close anticon anticon-menu-unfold"></a>
@@ -128,8 +134,9 @@
                                     </ul>
                                 </div>
                                 <span class="header__mob-open anticon anticon-menu-fold"></span>
-                            </div>
-						</div>
+                            </td>
+						</tr>
+					</table>
 </div>
 			</header>
 			<!-- End Header ============================================= -->
@@ -170,9 +177,8 @@
 
 		<!-- Document Wrapper end ============================================= -->
 	</form>
-<!--<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
-    <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
-<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>-->
+<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
 <script type="text/javascript">
 var currentYear = (new Date()).getFullYear();
 $(document).ready(function() {
