@@ -2362,65 +2362,6 @@ p {
 .selectric-items .selectric-group li {
   padding-left: 25px; }
 
-.community__topics, .footer {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.header__table-tr {
-  padding: 24px 0; }
-
-.header__logo {
-  padding: 0; }
-  .header__logo img {
-    height: 52px;
-    margin-left: 0; }
-
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 1440px;
-  left: 50%;
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 9999;
-  background: #fff; }
-
-.footer__info {
-  height: 72px; }
-  .footer__info img {
-    height: 40px;
-    margin-left: 0 !important; }
-
-.resources--like, .resources--dislike {
-  display: inline-block; }
-
-@media (max-width: 1109px) {
-  .header__table-tr {
-    height: 72px;
-    padding: 16px 0 16px 16px !important; }
-  .header__logo {
-    padding: 0; }
-    .header__logo img {
-      width: auto;
-      height: 40px;
-      margin-left: 0; } }
-
-.resources__slide-img img {
-  height: 100%;
-  min-width: 100%;
-  position: relative;
-  object-fit: cover;
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  left: 50%; }
-
-@media (max-width: 767px) {
-  .footer__info {
-    height: auto; } }
-
 .header {
   border-bottom: 1px solid #d8d8d8; }
   .header__text {
@@ -2531,6 +2472,65 @@ p {
     justify-content: flex-end;
     -ms-flex-align: center;
     align-items: center; }
+
+.community__topics, .footer {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.header__table-tr {
+  padding: 24px 0; }
+
+.header__logo {
+  padding: 0; }
+  .header__logo img {
+    height: 52px;
+    margin-left: 0; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1440px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: #fff; }
+
+.footer__info {
+  height: 72px; }
+  .footer__info img {
+    height: 40px;
+    margin-left: 0 !important; }
+
+.resources--like, .resources--dislike {
+  display: inline-block; }
+
+@media (max-width: 1109px) {
+  .header__table-tr {
+    height: 72px;
+    padding: 16px 0 16px 16px !important; }
+  .header__logo {
+    padding: 0; }
+    .header__logo img {
+      width: auto;
+      height: 40px;
+      margin-left: 0; } }
+
+.resources__slide-img img {
+  height: 100%;
+  min-width: 100%;
+  position: relative;
+  object-fit: cover;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  left: 50%; }
+
+@media (max-width: 767px) {
+  .footer__info {
+    height: auto; } }
 
 .single-post-statistic button {
   display: inline-block;
