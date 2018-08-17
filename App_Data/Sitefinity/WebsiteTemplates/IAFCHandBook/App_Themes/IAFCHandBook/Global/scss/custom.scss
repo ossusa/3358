@@ -4,8 +4,16 @@
   margin-right: auto;
 }
 
-.header__logo {
+.header__table-tr {
   padding: 24px 0;
+}
+
+.header__logo {
+  padding: 0;
+
+  img {
+    height: 52px;
+  }
 }
 
 .footer__info {
