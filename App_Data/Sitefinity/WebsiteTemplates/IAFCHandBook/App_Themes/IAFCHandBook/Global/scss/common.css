@@ -1648,6 +1648,9 @@ p {
 .hello {
   background: pink; }
 
+.community__section {
+  margin-bottom: 100px; }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
@@ -1692,8 +1695,10 @@ p {
     margin-bottom: 48px;
     margin-left: 0; }
 
+  .community__section {
+    margin-bottom: 52px !important; }
+
   .community__topics {
-    margin-top: 52px !important;
     padding-bottom: 48px !important; }
 
   .topics__img-back-info {
@@ -2807,7 +2812,7 @@ p {
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .box-container {
-    padding: 0 15px; } }
+    padding: 0 36px; } }
 
 .resources-breadcrumbs {
   margin: 40px 0 24px;

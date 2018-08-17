@@ -2013,6 +2013,9 @@ p {
 .hello {
   background: pink;
 }
+.community__section{
+  margin-bottom: 100px;
+}
 @media(max-width: 1500px){
   .topics__img-text{
     font-size: 2.2vw;
@@ -2076,8 +2079,10 @@ p {
       }
     }
   }
+  .community__section{
+    margin-bottom: 52px;
+  }
   .community__topics {
-    margin-top: 52px !important;
     padding-bottom: 48px !important;
   }
   .topics__img-back-info {
