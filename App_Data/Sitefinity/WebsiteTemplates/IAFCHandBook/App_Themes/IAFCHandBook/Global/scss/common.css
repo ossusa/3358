@@ -1843,13 +1843,6 @@ p {
 
   .resources__logged {
     display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: space-between;
-    -ms-flex-pack: distribute;
-    justify-content: space-between;
     padding: 48px;
     text-align: center; }
 
