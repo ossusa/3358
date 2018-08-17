@@ -17,13 +17,20 @@
   }
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .footer__info {
   height: 72px;
 
   img {
     height: 40px;
     margin-left: 0;
-  }]
+  }
 }
 
 .resources--like, .resources--dislike {
