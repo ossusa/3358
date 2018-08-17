@@ -21,7 +21,7 @@
 		<div id="wrapper">
 
 			<!-- Header ============================================= -->
-			<header id="header" style="background-color: #00A000">
+			<header id="header">
 				<div>
 					<!-- Header Text ============================================= -->
 					<div id="headerText">
