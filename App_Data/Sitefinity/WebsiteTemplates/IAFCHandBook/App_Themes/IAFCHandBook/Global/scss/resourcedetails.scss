@@ -124,7 +124,7 @@
           }
         }
         &_title{
-          margin-bottom: 38px;
+          margin-bottom: 40px;
           @media screen and (max-width: 768px){
             max-width: 588px;
             width: 100%;
@@ -199,12 +199,19 @@
               flex-direction: column;
               align-items: flex-end;
               width: 100%;
+              @media screen and (max-width: 768px){
+                max-width: 588px;
+                margin: 0 auto;
+              }
             }
             display: flex;
             flex-direction: column;
             align-items: flex-end;
             width: 100%;
             margin-top: 32px;
+            @media screen and (max-width: 768px){
+              margin-top: 36px;
+            }
             textarea{
               width: 100%;
               min-height: 100px;
@@ -250,7 +257,7 @@
             margin-top: 32px;
             @media screen and (max-width: 768px){
               display: flex;
-              margin: 32px -28px 0;
+              margin: 36px -28px 0;
             }
             div{
               flex: 1;
@@ -291,31 +298,32 @@
           font-family: "Nunito Sans";
           font-size: 20px;
           font-weight: 700;
-          margin: 0 0 15px;
+          margin: 0 0 16px;
         }
       }
       &_list{
         display: flex;
         flex-direction: column;
         margin-bottom: 15px;
-        margin-top: 14px;
+        margin-top: 16px;
         padding: 0;
         &_item{
           display: flex;
           flex-direction: column;
           width: 100%;
-          padding: 25px 0 22px;
-          margin-bottom: 8px;
+          padding: 25px 0 24px;
           border-bottom: 1px solid #d8d8d8;
           &:first-child{
             padding-top: 0;
           }
           &_type{
             color: #666666;
-            font-size: 12px;
+            font-family: 'Zilla Slab', serif;
             font-weight: 500;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1.2px;
+            margin-bottom: 2px;
           }
           &_title{
             margin-bottom: 10px;
