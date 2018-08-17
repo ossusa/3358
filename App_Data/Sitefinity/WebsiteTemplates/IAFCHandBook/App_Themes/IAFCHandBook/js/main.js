@@ -115,14 +115,14 @@ $(document).ready(function () {
     $(window).scroll(function(){
         if ($(window).scrollTop() >= headerText.height()) {
             headerText.hide();
-            wrapper.css("padding-top", stickyHeader.height());
+            wrapper.css("margin-top", stickyHeader.height());
             stickyHeader.addClass('sticky');
 
         }
         else {
             headerText.show();
             stickyHeader.removeClass('sticky');
-            wrapper.css("padding-top", 0);
+            wrapper.css("margin-top", 0);
         }
     });
 
