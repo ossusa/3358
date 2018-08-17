@@ -2485,12 +2485,14 @@ p {
 .header__logo {
   padding: 0; }
   .header__logo img {
-    height: 52px; }
+    height: 52px;
+    margin-left: 0; }
 
 .footer__info {
   height: 72px; }
   .footer__info img {
-    height: 40px; }
+    height: 40px;
+    margin-left: 0; }
 
 .resources--like, .resources--dislike {
   display: inline-block; }
