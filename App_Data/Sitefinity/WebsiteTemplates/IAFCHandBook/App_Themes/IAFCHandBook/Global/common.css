@@ -2500,7 +2500,7 @@ p {
   height: 72px; }
   .footer__info img {
     height: 40px;
-    margin-left: 0; }
+    margin-left: 0 !important; }
 
 .resources--like, .resources--dislike {
   display: inline-block; }
