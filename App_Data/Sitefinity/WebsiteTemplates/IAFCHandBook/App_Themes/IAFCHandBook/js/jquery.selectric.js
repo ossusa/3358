@@ -1108,3 +1108,14 @@
         }
     };
 }));
+
+$(function () {
+    $('.community__title-select').selectric({
+        nativeOnMobile: false
+    });
+});
+$(function () {
+    $('.community__category-select').selectric({
+        nativeOnMobile: false
+    });
+});
