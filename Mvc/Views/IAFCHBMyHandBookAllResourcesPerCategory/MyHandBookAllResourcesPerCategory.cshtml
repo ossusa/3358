@@ -86,9 +86,7 @@
 				cache: false,
 				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookAllResourcesPerCategory")',
 				data: { operation: markAsCompleteCaption, resourceId: resourceId, categoryId: categoryId},
-				success: function (response) {
-					console.log("MSG");
-					console.log("MSG" + response);
+				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 
 				}
