@@ -86,8 +86,10 @@ $(document).ready(function () {
     $('.community__head-btn').click(function () {
         $(this).addClass('community__head-btn-active');
     });
+    global.jQuery = require('jquery');
+    var selectric = require('selectric')(jQuery);
     /*Select*/
-    $('.community__title-select').selectric({
+    jQuery('.community__title-select').selectric({
         nativeOnMobile: false
     });
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
@@ -95,7 +97,7 @@ $(document).ready(function () {
         e.stopPropagation();
         $('.title__arrow').toggleClass('rotated');
     });
-    $('.community__category-select').selectric({
+    jQuery('.community__category-select').selectric({
         nativeOnMobile: false
     });
     $('.selectric-community__category-select').find('.button').addClass('category__arrow');
