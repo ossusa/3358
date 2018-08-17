@@ -2864,7 +2864,7 @@ p {
           font-weight: 700;
           margin-bottom: 8px; }
         .resources-single__left_post_title p {
-          font-face: ZillaSlab-Light;
+          font-family: 'Zilla Slab', serif;
           margin: 0;
           color: #4a4a4a;
           font-size: 18px;
@@ -3001,7 +3001,6 @@ p {
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 250px;
         padding: 25px 0 22px;
         margin-bottom: 8px;
         border-bottom: 1px solid #d8d8d8; }
