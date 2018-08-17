@@ -1210,7 +1210,7 @@ p {
 
   &--plus {
     font-size: 1.00em;
-    margin-right: 3px !important;
+    margin-right: 8px !important;
   }
   &--time {
     font-size: 18px;
@@ -2411,14 +2411,6 @@ p {
     -ms-transform: translateY(44%);
     transform: translateY(44%);
   }
-  .resources__slide-time {
-    bottom: 12px;
-    padding: 6px 8px;
-  }
-  .resources__slide-label {
-    bottom: 12px;
-    padding: 3px 8px;
-  }
   .topics__ul-flex .topics__list{
     width: 50%;
   }
@@ -2427,7 +2419,7 @@ p {
     padding-right: 90px;
   }
   .resources__slide-info {
-    height: 153px;
+    height: 154px;
   }
   .topics__content {
     img {
