@@ -93,16 +93,16 @@
       letter-spacing: 0.5px;
     }
   }
+  &__single{
+    @media screen and (max-width: 767px){
+      margin: 0 -28px;
+    }
+  }
   &-single{
     display: flex;
     padding-bottom: 100px;
     @media screen and (max-width: 768px){
       flex-direction: column;
-    }
-    &__single{
-      @media screen and (max-width: 767px){
-        margin: 0 -28px;
-      }
     }
     &__left{
       max-width: 790px;
@@ -211,7 +211,11 @@
           }
           &_textarea{
             > div{
-              width: 100%;}
+              width: 100%;
+              @media screen and(max-width: 767px) {
+                margin-top: 24px;
+              }
+            }
 
             .textarea-container,
             .replyAddComment{

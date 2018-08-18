@@ -2829,15 +2829,15 @@ p {
     color: #9b9b9b;
     font-weight: 400;
     letter-spacing: 0.5px; }
+@media screen and (max-width: 767px) {
+  .resources__single {
+    margin: 0 -28px; } }
 .resources-single {
   display: flex;
   padding-bottom: 100px; }
   @media screen and (max-width: 768px) {
     .resources-single {
       flex-direction: column; } }
-  @media screen and (max-width: 767px) {
-    .resources-single__single {
-      margin: 0 -28px; } }
   .resources-single__left {
     max-width: 790px;
     min-width: 430px;
@@ -2937,6 +2937,9 @@ p {
         margin-top: 32px; }
         .resources-single__left_post_comment_textarea > div {
           width: 100%; }
+          @media screen and (max-width: 767px) {
+            .resources-single__left_post_comment_textarea > div {
+              margin-top: 24px; } }
         .resources-single__left_post_comment_textarea .textarea-container,
         .resources-single__left_post_comment_textarea .replyAddComment {
           display: flex;
