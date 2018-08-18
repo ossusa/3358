@@ -3145,7 +3145,7 @@ p {
   align-items: center; }
   @media screen and (max-width: 767px) {
     .handbook__title {
-      height: 160px; } }
+      height: 100px; } }
   .handbook__title h1 {
     color: #fff;
     font-family: "Zilla Slab", serif;
