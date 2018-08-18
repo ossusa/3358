@@ -3221,11 +3221,21 @@ p {
       justify-content: center;
       max-width: 100%;
       margin: 0 auto 100px; } }
+  @media screen and (max-width: 767px) {
+    .handbook_category__wrapper {
+      flex-direction: column;
+      align-items: center; } }
 .handbook_category__item {
   margin-right: 24px; }
   @media screen and (max-width: 1109px) {
     .handbook_category__item:nth-of-type(even) {
-      margin-right: 0; } }
+      margin-right: 0; }
+    .handbook_category__item:nth-of-type(2) {
+      margin-bottom: 48px; } }
+  @media screen and (max-width: 767px) {
+    .handbook_category__item {
+      margin-right: 0;
+      margin-bottom: 24px; } }
   .handbook_category__item:hover {
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15); }
   .handbook_category__item__image {
@@ -3311,9 +3321,6 @@ p {
       color: #5591AA; }
     .handbook_category__item__links.Leadership {
       background: #b89c5c; }
-      @media screen and (max-width: 1109px) {
-        .handbook_category__item__links.Leadership {
-          margin-bottom: 48px; } }
       .handbook_category__item__links.Leadership a:hover {
         color: #BDA15F; }
     .handbook_category__item__links.Finance {
