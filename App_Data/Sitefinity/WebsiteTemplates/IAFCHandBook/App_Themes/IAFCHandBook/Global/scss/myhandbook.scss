@@ -21,7 +21,7 @@
   width: 83.3%;
   margin: 0 auto;
   @media screen and (max-width: 1109px){
-    width: 54.5%;
+    width: 588px;
   }
 }
 .progressindicator{
@@ -128,9 +128,6 @@
       }
       &.Leadership{
         background: #b89c5c;
-        @media screen and (max-width: 1109px){
-          margin-bottom: 48px;
-        }
         .category_image{
           width: 79px;
         }
@@ -218,6 +215,9 @@
       }
       &.Leadership{
         background: #b89c5c;
+        @media screen and (max-width: 1109px){
+          margin-bottom: 48px;
+        }
         a:hover{
           color: $color_leadership;
         }
