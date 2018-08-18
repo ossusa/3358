@@ -3023,7 +3023,7 @@ p {
     @media screen and (min-width: 768px) {
       .resources-single__right {
         display: block; } }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1109px) {
       .resources-single__right {
         display: none;
         max-width: 100%; } }
