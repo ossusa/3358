@@ -2980,7 +2980,7 @@ p {
 .complete_section {
   background-color: #efefef;
   padding: 64px 0 72px;
-  margin-bottom: 100px; }
+  margin: 100px 0; }
   .complete_section-title {
     margin-bottom: 16px;
     font-size: 40px;
