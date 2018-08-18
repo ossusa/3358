@@ -2993,6 +2993,11 @@ p {
   justify-content: space-between;
   -ms-flex-align: center;
   align-items: center; }
+  @media screen and (max-width: 1109px) {
+    .progressindicator__wrapper {
+      margin-top: 0;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse; } }
   .progressindicator__wrapper-col {
     display: -ms-flexbox;
     display: flex; }
@@ -3005,6 +3010,18 @@ p {
   .progressindicator_share i {
     margin-right: 10px;
     font-size: 18px; }
+  @media screen and (max-width: 1109px) {
+    .progressindicator_share {
+      height: 54px;
+      border-bottom: 1px solid #D8D8D8;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100vw;
+      margin-bottom: 48px; } }
 
 .progressindicator__label {
   width: 124px;
@@ -3031,6 +3048,10 @@ p {
   margin-bottom: 50px;
   -ms-flex-align: start;
   align-items: flex-start; }
+  @media screen and (max-width: 1109px) {
+    .handbook_category__wrapper {
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .handbook_category__item {
   margin-right: 24px; }
