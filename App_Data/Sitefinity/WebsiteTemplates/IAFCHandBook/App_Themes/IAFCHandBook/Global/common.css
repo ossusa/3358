@@ -2624,7 +2624,7 @@ p {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 100px; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
     .resources-single {
       -ms-flex-direction: column;
       flex-direction: column; } }
