@@ -3031,12 +3031,32 @@ p {
     flex-direction: column; }
     .handbook_category__item__image.Community {
       background: #5591aa; }
+      .handbook_category__item__image.Community .category_image {
+        height: 95px;
+        width: 111px;
+        -ms-transform: translate(-50%, -50%) scale(1.3);
+        transform: translate(-50%, -50%) scale(1.3); }
     .handbook_category__item__image.Leadership {
       background: #b89c5c; }
+      .handbook_category__item__image.Leadership .category_image {
+        height: 95px;
+        width: 111px;
+        -ms-transform: translate(-50%, -50%) scale(1.3);
+        transform: translate(-50%, -50%) scale(1.3); }
     .handbook_category__item__image.Finance {
       background: #6ea352; }
+      .handbook_category__item__image.Finance .category_image {
+        height: 95px;
+        width: 111px;
+        -ms-transform: translate(-50%, -50%) scale(1.3);
+        transform: translate(-50%, -50%) scale(1.3); }
     .handbook_category__item__image.Personnel {
       background: #bf754d; }
+      .handbook_category__item__image.Personnel .category_image {
+        height: 95px;
+        width: 111px;
+        -ms-transform: translate(-50%, -50%) scale(1.3);
+        transform: translate(-50%, -50%) scale(1.3); }
     .handbook_category__item__image a {
       display: -ms-flexbox;
       display: flex;
@@ -3050,13 +3070,9 @@ p {
       color: white; }
     .handbook_category__item__image .category_image {
       position: absolute;
-      height: 95px;
-      width: 111px;
       overflow: hidden;
       left: 50%;
-      top: 50%;
-      -ms-transform: translate(-50%, -50%) scale(1.3);
-      transform: translate(-50%, -50%) scale(1.3); }
+      top: 50%; }
   .handbook_category__item__time {
     font-family: "Zilla Slab", serif;
     font-size: 13px;
