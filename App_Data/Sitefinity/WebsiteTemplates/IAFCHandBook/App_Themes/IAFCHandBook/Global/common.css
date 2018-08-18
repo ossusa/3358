@@ -2987,6 +2987,9 @@ p {
   @media screen and (max-width: 1109px) {
     .handbook_container {
       width: 588px; } }
+  @media screen and (max-width: 767px) {
+    .handbook_container {
+      width: 100%; } }
 
 .progressindicator__wrapper {
   margin: 48px 0;

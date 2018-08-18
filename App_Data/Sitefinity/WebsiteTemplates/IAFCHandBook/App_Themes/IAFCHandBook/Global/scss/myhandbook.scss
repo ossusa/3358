@@ -23,6 +23,9 @@
   @media screen and (max-width: 1109px){
     width: 588px;
   }
+  @media screen and (max-width: 767px){
+    width: 100%;
+  }
 }
 .progressindicator{
   &__wrapper{
