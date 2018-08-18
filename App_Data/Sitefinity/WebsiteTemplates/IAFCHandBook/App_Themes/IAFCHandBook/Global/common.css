@@ -2628,6 +2628,9 @@ p {
     .resources-single {
       -ms-flex-direction: column;
       flex-direction: column; } }
+  @media screen and (max-width: 767px) {
+    .resources-single {
+      padding-bottom: 57px; } }
   .resources-single__left {
     max-width: 790px;
     min-width: 430px;
