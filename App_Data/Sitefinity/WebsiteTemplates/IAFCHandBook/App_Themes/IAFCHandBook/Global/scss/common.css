@@ -3135,6 +3135,10 @@ p {
             font-size: 13px;
             font-weight: 400; }
 
+.community_indicator_col {
+  display: flex;
+  justify-content: space-between; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
@@ -3227,7 +3231,8 @@ p {
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column; }
   .progressindicator__label:nth-of-type(3) {
     width: 148px; }
   @media screen and (max-width: 767px) {
@@ -3238,7 +3243,8 @@ p {
       align-items: center;
       justify-content: center;
       padding-top: 0;
-      margin-right: 0; }
+      margin-right: 0;
+      flex-direction: row; }
       .progressindicator__label:nth-of-type(3) {
         width: 100%; }
       .progressindicator__label:nth-of-type(1) {

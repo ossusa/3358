@@ -4,9 +4,10 @@
 	<h1>MY HANDBOOK</h1>
 </div>
 
-<div>
+<div class="box">
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
+	<div class="community_indicator_col">
 	<div class="community__head-title">@myHandBookResource.Category.CategoryTitle</div>
 
 		<div id="edit">
@@ -15,7 +16,8 @@
 
 		<div id="share">
 			<button type="button" class="shareBtn"> Share </button>
-		</div>		
+		</div>
+	</div>
 		<div>
 			@foreach (var myChildResources in myHandBookResource.MyChildHandBookResources)
 			{
