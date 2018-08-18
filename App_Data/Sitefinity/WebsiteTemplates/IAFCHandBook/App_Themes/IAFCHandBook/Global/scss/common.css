@@ -3176,7 +3176,8 @@ p {
     @media screen and (max-width: 767px) {
       .progressindicator__wrapper-col {
         max-width: 320px;
-        flex-wrap: wrap; } }
+        flex-wrap: wrap;
+        margin: 0 auto; } }
 .progressindicator_share {
   color: #9b9b9b;
   font-family: "Nunito Sans", sans-serif;
@@ -3206,16 +3207,22 @@ p {
   font-size: 0.813em;
   text-align: center;
   padding-top: 8px; }
+  .progressindicator__label:nth-of-type(3) {
+    width: 148px; }
   @media screen and (max-width: 767px) {
     .progressindicator__label {
-      margin-right: 0;
-      width: 151px; }
+      width: 151px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 0;
+      margin-right: 0; }
       .progressindicator__label:nth-of-type(3) {
         width: 100%; }
       .progressindicator__label:nth-of-type(1) {
-        margin-right: 0; } }
-  .progressindicator__label:nth-of-type(3) {
-    width: 148px; }
+        margin-right: 16px;
+        margin-bottom: 16px; } }
   .progressindicator__label .time {
     font-weight: 700;
     font-size: 1.250em;
