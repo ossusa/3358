@@ -3157,7 +3157,11 @@ p {
 
 .progressindicator__wrapper {
   margin: 48px 0;
-  display: flex; }
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .progressindicator__wrapper-col {
+    display: flex; }
 .progressindicator__label {
   width: 124px;
   height: 60px;

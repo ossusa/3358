@@ -24,6 +24,11 @@
   &__wrapper{
     margin: 48px 0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-col{
+      display: flex;
+    }
   }
   &__label{
     width: 124px;

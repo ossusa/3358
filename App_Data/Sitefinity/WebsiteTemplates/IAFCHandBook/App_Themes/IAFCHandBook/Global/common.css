@@ -2987,7 +2987,14 @@ p {
 .progressindicator__wrapper {
   margin: 48px 0;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center; }
+  .progressindicator__wrapper-col {
+    display: -ms-flexbox;
+    display: flex; }
 
 .progressindicator__label {
   width: 124px;
