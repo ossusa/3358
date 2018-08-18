@@ -3200,14 +3200,6 @@ p {
       align-items: center; }
     .handbook_category__item__image h3 {
       color: white; }
-    .handbook_category__item__image.Community {
-      background: #5591aa; }
-    .handbook_category__item__image.Leadership {
-      background: #b89c5c; }
-    .handbook_category__item__image.Finance {
-      background: #6ea352; }
-    .handbook_category__item__image.Personnel {
-      background: #bf754d; }
   .handbook_category__item__time {
     font-family: "Zilla Slab", serif;
     font-size: 13px;

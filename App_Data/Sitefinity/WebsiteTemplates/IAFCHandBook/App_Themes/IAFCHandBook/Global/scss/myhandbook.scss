@@ -68,16 +68,6 @@
       color: $color_15;
       display: flex;
       flex-direction: column;
-      a{
-        display: flex;
-        height: 100%;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-      }
-      h3{
-        color: $color_15;
-      }
       &.Community{
         background: #5591aa;
       }
@@ -89,7 +79,17 @@
       }
       &.Personnel{
         background: #bf754d;
-        }
+      }
+      a{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      h3{
+        color: $color_15;
+      }
     }
     &__time{
       font-family: $font_family_5;
