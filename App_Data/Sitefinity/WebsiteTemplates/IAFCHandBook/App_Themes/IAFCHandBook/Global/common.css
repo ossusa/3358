@@ -3081,7 +3081,9 @@ p {
   @media screen and (max-width: 767px) {
     .handbook_category__item {
       margin-right: 0;
-      margin-bottom: 24px; } }
+      margin-bottom: 24px; }
+      .handbook_category__item:nth-of-type(2) {
+        margin-bottom: 24px; } }
   .handbook_category__item:hover {
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15); }
   .handbook_category__item__image {
