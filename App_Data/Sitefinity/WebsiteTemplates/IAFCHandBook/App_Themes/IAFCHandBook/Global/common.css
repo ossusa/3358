@@ -2984,6 +2984,9 @@ p {
 .handbook_container {
   width: 83.3%;
   margin: 0 auto; }
+  @media screen and (max-width: 1109px) {
+    .handbook_container {
+      width: 57%; } }
 
 .progressindicator__wrapper {
   margin: 48px 0;
@@ -3001,6 +3004,9 @@ p {
   .progressindicator__wrapper-col {
     display: -ms-flexbox;
     display: flex; }
+    @media screen and (max-width: 1109px) {
+      .progressindicator__wrapper-col {
+        margin: 0 auto 0 0; } }
 
 .progressindicator_share {
   color: #9b9b9b;
@@ -3048,10 +3054,16 @@ p {
   margin-bottom: 50px;
   -ms-flex-align: start;
   align-items: flex-start; }
+  @media screen and (max-width: 1600px) {
+    .handbook_category__wrapper {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; } }
   @media screen and (max-width: 1109px) {
     .handbook_category__wrapper {
       -ms-flex-pack: center;
-      justify-content: center; } }
+      justify-content: center;
+      max-width: 100%;
+      margin: 0 auto; } }
 
 .handbook_category__item {
   margin-right: 24px; }
