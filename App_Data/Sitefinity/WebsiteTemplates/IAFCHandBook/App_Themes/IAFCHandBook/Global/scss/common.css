@@ -3161,6 +3161,10 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media screen and (max-width: 1109px) {
+    .progressindicator__wrapper {
+      margin-top: 0;
+      flex-direction: column-reverse; } }
   .progressindicator__wrapper-col {
     display: flex; }
 .progressindicator_share {
@@ -3171,6 +3175,15 @@ p {
   .progressindicator_share i {
     margin-right: 10px;
     font-size: 18px; }
+  @media screen and (max-width: 1109px) {
+    .progressindicator_share {
+      height: 54px;
+      border-bottom: 1px solid #D8D8D8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      margin-bottom: 48px; } }
 .progressindicator__label {
   width: 124px;
   height: 60px;
@@ -3194,6 +3207,9 @@ p {
   display: flex;
   margin-bottom: 50px;
   align-items: flex-start; }
+  @media screen and (max-width: 1109px) {
+    .handbook_category__wrapper {
+      justify-content: center; } }
 .handbook_category__item {
   margin-right: 24px; }
   .handbook_category__item:hover {

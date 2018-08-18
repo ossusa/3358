@@ -27,6 +27,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 1109px){
+      margin-top: 0;
+      flex-direction: column-reverse;
+    }
     &-col{
       display: flex;
     }
@@ -39,6 +43,15 @@
     i{
       margin-right: 10px;
       font-size: 18px;
+    }
+    @media screen and (max-width: 1109px){
+      height: 54px;
+      border-bottom: 1px solid #D8D8D8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      margin-bottom: 48px;
     }
   }
   &__label{
@@ -72,6 +85,9 @@
     display: flex;
     margin-bottom: 50px;
     align-items: flex-start;
+    @media screen and (max-width: 1109px){
+      justify-content: center;
+    }
   }
   &__item{
       margin-right: 24px;
