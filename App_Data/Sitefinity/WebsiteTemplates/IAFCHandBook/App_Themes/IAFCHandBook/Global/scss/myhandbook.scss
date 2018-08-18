@@ -78,9 +78,18 @@
       h3{
         color: $color_15;
       }
-      .community{
-
+      &.Community{
+        background: #5591aa;
       }
+      &.Leadership{
+        background: #b89c5c;
+      }
+      &.Finance{
+        background: #6ea352;
+      }
+      &.Personnel{
+        background: #bf754d;
+        }
     }
     &__time{
       font-family: $font_family_5;
@@ -126,7 +135,6 @@
 
       }
       &.Community{
-        background: #5591aa;
         a:hover{
           color: $color_community;
         }
