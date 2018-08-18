@@ -3145,6 +3145,10 @@ p {
   justify-content: space-between;
   align-items: center; }
 
+.complete_section {
+  background-color: #efefef;
+  padding: 64px 0 72px; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
