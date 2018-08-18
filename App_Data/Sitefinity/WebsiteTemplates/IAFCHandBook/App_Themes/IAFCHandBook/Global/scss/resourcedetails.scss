@@ -472,4 +472,8 @@
 .complete_section{
   background-color: #efefef;
   padding: 64px 0 72px;
+  &-title{
+    margin-bottom: 16px;
+    font-size: 40px;
+  }
 }

@@ -3148,6 +3148,9 @@ p {
 .complete_section {
   background-color: #efefef;
   padding: 64px 0 72px; }
+  .complete_section-title {
+    margin-bottom: 16px;
+    font-size: 40px; }
 
 .handbook__title {
   width: 100%;
