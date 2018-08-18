@@ -1,11 +1,12 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
 
-
-
-		<div>@Model.Category.MyHandBookCompletedResources Complete</div>
-		<div>@Model.Category.MyHandBookInCompletedResources Incomplete</div>
-		<div>@Model.Category.TotalDuration.ToString() Time Remaining</div>
-
+<div class="community__head-title">
+<div class="progressindicator__wrapper">
+	<div class="progressindicator__wrapper-col">
+		<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookCompletedResources </div> Complete</div>
+		<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookInCompletedResources </div> Incomplete</div>
+		<div class="progressindicator__label"><div class="time">@Model.Category.TotalDuration.ToString() </div> Time Remaining</div>
+	</div>
 		<select class="community__category-select" id="orderByList" data-id="@Model.Category.Id.ToString()" onchange="doOrderBy()">
 			@foreach (var orderByItem in Model.OrderBy)
 			{
@@ -19,7 +20,7 @@
 				}
 			}
 		</select>
-
+</div>
 		@{int columnCounter = 0; }
 
 		@foreach (var item in Model.MyResources)
