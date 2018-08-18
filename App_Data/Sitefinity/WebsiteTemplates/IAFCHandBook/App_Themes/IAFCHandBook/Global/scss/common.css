@@ -3236,13 +3236,21 @@ p {
         padding-left: 8px;
         font-size: 1em;
         display: inline-block; }
-    .handbook_category__item__links.Community a:hover {
-      color: #5591AA; }
-    .handbook_category__item__links.Leadership a:hover {
-      color: #BDA15F; }
-    .handbook_category__item__links.Finance a:hover {
-      color: #73AA56; }
-    .handbook_category__item__links.Personnel a:hover {
-      color: #CF794A; }
+    .handbook_category__item__links.Community {
+      background: #5591aa; }
+      .handbook_category__item__links.Community a:hover {
+        color: #5591AA; }
+    .handbook_category__item__links.Leadership {
+      background: #b89c5c; }
+      .handbook_category__item__links.Leadership a:hover {
+        color: #BDA15F; }
+    .handbook_category__item__links.Finance {
+      background: #6ea352; }
+      .handbook_category__item__links.Finance a:hover {
+        color: #73AA56; }
+    .handbook_category__item__links.Personnel {
+      background: #bf754d; }
+      .handbook_category__item__links.Personnel a:hover {
+        color: #CF794A; }
 
 /*# sourceMappingURL=common.css.map */

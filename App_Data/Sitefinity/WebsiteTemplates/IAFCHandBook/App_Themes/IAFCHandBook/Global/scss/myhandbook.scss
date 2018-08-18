@@ -126,21 +126,25 @@
 
       }
       &.Community{
+        background: #5591aa;
         a:hover{
           color: $color_community;
         }
       }
       &.Leadership{
+        background: #b89c5c;
         a:hover{
           color: $color_leadership;
         }
       }
       &.Finance{
+        background: #6ea352;
         a:hover{
           color: $color_finance;
         }
       }
       &.Personnel{
+        background: #bf754d;
         a:hover{
           color: $color_personnel;
         }
