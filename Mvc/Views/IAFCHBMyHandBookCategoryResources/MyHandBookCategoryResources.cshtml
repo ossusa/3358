@@ -3,7 +3,7 @@
 <div class="handbook__title">
 	<h1>MY HANDBOOK</h1>
 </div>
-
+<div class="box box-container">
 <div class="community__breadcrumbs">My HandBook ><a href='@Model.Category.MyHandBookParentCategoryUrl'><span>@Model.Category.ParentCategoryTitle </span></a></div>
 <div class="community__head-title">
 	<select class="community__title-select" id="UrlList" onchange="doNavigate()">
@@ -26,7 +26,7 @@
 <div id="@string.Format("{0}_{1}", "myHandBookResourcesDetails", Model.Category.Id.ToString())">
 	@Html.Partial("_MyHandBookCategoryResourcesDetails", Model)
 </div>
-
+</div>
 
 
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
