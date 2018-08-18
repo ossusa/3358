@@ -3143,6 +3143,9 @@ p {
   background-size: cover;
   display: flex;
   align-items: center; }
+  @media screen and (max-width: 767px) {
+    .handbook__title {
+      height: 160px; } }
   .handbook__title h1 {
     color: #fff;
     font-family: "Zilla Slab", serif;
@@ -3151,6 +3154,9 @@ p {
     text-transform: uppercase;
     letter-spacing: 2.3px;
     margin: 0; }
+    @media screen and (max-width: 767px) {
+      .handbook__title h1 {
+        margin: 0 auto; } }
 
 .handbook_container {
   width: 83.3%;
@@ -3158,6 +3164,9 @@ p {
   @media screen and (max-width: 1109px) {
     .handbook_container {
       width: 588px; } }
+  @media screen and (max-width: 767px) {
+    .handbook_container {
+      width: 100%; } }
 
 .progressindicator__wrapper {
   margin: 48px 0;
@@ -3233,6 +3242,10 @@ p {
     font-weight: 700;
     font-size: 1.250em;
     font-family: "Nunito Sans", sans-serif; }
+    @media screen and (max-width: 767px) {
+      .progressindicator__label .time {
+        margin-right: 8px;
+        font-size: 20px; } }
 
 .handbook_category__wrapper {
   display: flex;

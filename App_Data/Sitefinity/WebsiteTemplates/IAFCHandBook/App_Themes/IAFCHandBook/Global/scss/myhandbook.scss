@@ -6,7 +6,9 @@
   background-size: cover;
   display: flex;
   align-items: center;
-
+  @media screen and (max-width: 767px){
+    height: 160px;
+  }
   h1{
     color: #fff;
     font-family: $font_family_5;
@@ -15,6 +17,9 @@
     text-transform: uppercase;
     letter-spacing: 2.3px;
     margin: 0;
+    @media screen and (max-width: 767px){
+      margin: 0 auto;
+    }
   }
 }
 .handbook_container{
@@ -111,7 +116,10 @@
       font-weight: 700;
       font-size: 1.250em;
       font-family: $font_family_4;
-
+      @media screen and (max-width: 767px){
+        margin-right: 8px;
+        font-size: 20px;
+      }
     }
   }
 
