@@ -15,11 +15,14 @@
 				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
 				{
 					<div class="handbook_category__item">
-						<div class="handbook_category__item__image" style='background-image: url("@categories.Category.TopicCategoryImageUrl")'>
+						<div class="handbook_category__item__image @categories.Category.CategoryTitle" >
 							<a href="@categories.Category.MyHandBookCategoryUrl">
 								<h3>@categories.Category.CategoryTitle</h3>
 							</a>
-								<!--<img src="@categories.Category.TopicCategoryImageUrl" title="@categories.Category.CategoryTitle" alt="@categories.Category.CategoryTitle" height="100" width="200" />-->
+							<object type="image/svg+xml" data="@categories.Category.TopicCategoryImageUrl" class="category_image">
+								Category_image <!-- fallback image in CSS -->
+							</object>
+
 							<div class="handbook_category__item__time">
 								<div><span>@categories.Category.MyHandBookCompletedResources</span> Complete</div>
 								<div><span>@categories.Category.MyHandBookInCompletedResources</span> Incomplete</div>
