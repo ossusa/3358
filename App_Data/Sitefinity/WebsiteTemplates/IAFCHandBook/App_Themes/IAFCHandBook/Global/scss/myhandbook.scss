@@ -34,6 +34,9 @@
       margin-top: 0;
       flex-direction: column-reverse;
     }
+    @media screen and (max-width: 767px){
+      margin-bottom: 36px;
+    }
     &-col{
       display: flex;
       @media screen and (max-width: 1109px){
@@ -42,7 +45,7 @@
       @media screen and (max-width: 767px){
         max-width: 320px;
         flex-wrap: wrap;
-        margin: 0 auto 36px;
+        margin: 0 auto;
       }
     }
   }

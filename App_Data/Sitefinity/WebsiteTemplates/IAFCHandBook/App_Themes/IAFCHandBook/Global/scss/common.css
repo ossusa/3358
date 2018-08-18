@@ -3168,6 +3168,9 @@ p {
     .progressindicator__wrapper {
       margin-top: 0;
       flex-direction: column-reverse; } }
+  @media screen and (max-width: 767px) {
+    .progressindicator__wrapper {
+      margin-bottom: 36px; } }
   .progressindicator__wrapper-col {
     display: flex; }
     @media screen and (max-width: 1109px) {
@@ -3177,7 +3180,7 @@ p {
       .progressindicator__wrapper-col {
         max-width: 320px;
         flex-wrap: wrap;
-        margin: 0 auto 36px; } }
+        margin: 0 auto; } }
 .progressindicator_share {
   color: #9b9b9b;
   font-family: "Nunito Sans", sans-serif;

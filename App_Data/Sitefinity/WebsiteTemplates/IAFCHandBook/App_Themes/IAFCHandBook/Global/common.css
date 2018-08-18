@@ -3001,6 +3001,9 @@ p {
       margin-top: 0;
       -ms-flex-direction: column-reverse;
       flex-direction: column-reverse; } }
+  @media screen and (max-width: 767px) {
+    .progressindicator__wrapper {
+      margin-bottom: 36px; } }
   .progressindicator__wrapper-col {
     display: -ms-flexbox;
     display: flex; }
@@ -3012,7 +3015,7 @@ p {
         max-width: 320px;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        margin: 0 auto 36px; } }
+        margin: 0 auto; } }
 
 .progressindicator_share {
   color: #9b9b9b;
