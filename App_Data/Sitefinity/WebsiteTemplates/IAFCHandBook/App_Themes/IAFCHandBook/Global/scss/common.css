@@ -3162,12 +3162,12 @@ p {
   align-items: center; }
   .progressindicator__wrapper-col {
     display: flex; }
-.progressindicator__share {
+.progressindicator_share {
   color: #9b9b9b;
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   font-weight: 400; }
-  .progressindicator__share i {
+  .progressindicator_share i {
     margin-right: 10px;
     font-size: 18px; }
 .progressindicator__label {
