@@ -3047,6 +3047,16 @@ p {
       align-items: center; }
     .handbook_category__item__image h3 {
       color: white; }
+    .handbook_category__item__image .category_image {
+      position: absolute; }
+      .handbook_category__item__image .category_image svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        height: 135px;
+        width: auto; }
   .handbook_category__item__time {
     font-family: "Zilla Slab", serif;
     font-size: 13px;
