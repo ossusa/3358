@@ -3012,7 +3012,7 @@ p {
         max-width: 320px;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        margin: 0 auto; } }
+        margin: 0 auto 36px; } }
 
 .progressindicator_share {
   color: #9b9b9b;
@@ -3034,6 +3034,9 @@ p {
       justify-content: center;
       width: 100vw;
       margin-bottom: 48px; } }
+  @media screen and (max-width: 767px) {
+    .progressindicator_share {
+      margin-bottom: 36px; } }
 
 .progressindicator__label {
   width: 124px;
@@ -3122,6 +3125,9 @@ p {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column; }
+    @media screen and (max-width: 767px) {
+      .handbook_category__item__image {
+        width: 320px; } }
     .handbook_category__item__image.Community {
       background: #5591aa; }
       .handbook_category__item__image.Community .category_image {
@@ -3186,6 +3192,9 @@ p {
     border: 1px solid #efefef;
     background-color: white !important;
     padding: 16px 20px; }
+    @media screen and (max-width: 767px) {
+      .handbook_category__item__links {
+        width: 320px; } }
     .handbook_category__item__links a {
       display: block;
       color: #666666;

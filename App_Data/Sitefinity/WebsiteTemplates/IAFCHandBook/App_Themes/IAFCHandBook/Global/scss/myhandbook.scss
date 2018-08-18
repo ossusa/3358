@@ -42,7 +42,7 @@
       @media screen and (max-width: 767px){
         max-width: 320px;
         flex-wrap: wrap;
-        margin: 0 auto;
+        margin: 0 auto 36px;
       }
     }
   }
@@ -63,6 +63,9 @@
       justify-content: center;
       width: 100vw;
       margin-bottom: 48px;
+    }
+    @media screen and (max-width: 767px){
+      margin-bottom: 36px;
     }
   }
   &__label{
@@ -156,6 +159,9 @@
       color: $color_15;
       display: flex;
       flex-direction: column;
+      @media screen and (max-width: 767px){
+        width: 320px;
+      }
       &.Community{
         background: #5591aa;
         .category_image{
@@ -226,6 +232,9 @@
       border: 1px solid #efefef;
       background-color: $color_15 !important;
       padding: 16px 20px;
+      @media screen and (max-width: 767px){
+        width: 320px;
+      }
       a{
         display: block;
         color: $color_5;
