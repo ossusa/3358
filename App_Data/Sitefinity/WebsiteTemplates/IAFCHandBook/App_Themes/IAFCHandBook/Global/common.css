@@ -2985,7 +2985,8 @@ p {
     margin: 0; }
     @media screen and (max-width: 767px) {
       .handbook__title h1 {
-        margin: 0 auto; } }
+        margin: 0 auto;
+        font-size: 28px; } }
 
 .handbook_container {
   width: 83.3%;
