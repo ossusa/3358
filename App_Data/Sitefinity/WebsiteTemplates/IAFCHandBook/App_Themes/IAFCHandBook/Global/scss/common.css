@@ -3192,6 +3192,14 @@ p {
     color: white;
     display: flex;
     flex-direction: column; }
+    .handbook_category__item__image.Community {
+      background: #5591aa; }
+    .handbook_category__item__image.Leadership {
+      background: #b89c5c; }
+    .handbook_category__item__image.Finance {
+      background: #6ea352; }
+    .handbook_category__item__image.Personnel {
+      background: #bf754d; }
     .handbook_category__item__image a {
       display: flex;
       height: 100%;
@@ -3200,6 +3208,15 @@ p {
       align-items: center; }
     .handbook_category__item__image h3 {
       color: white; }
+    .handbook_category__item__image .category_image {
+      position: absolute; }
+      .handbook_category__item__image .category_image svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 135px;
+        width: auto; }
   .handbook_category__item__time {
     font-family: "Zilla Slab", serif;
     font-size: 13px;
@@ -3221,7 +3238,7 @@ p {
     width: 282px;
     border-radius: 0 0 3px 3px;
     border: 1px solid #efefef;
-    background-color: white;
+    background-color: white !important;
     padding: 16px 20px; }
     .handbook_category__item__links a {
       display: block;

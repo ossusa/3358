@@ -3072,7 +3072,7 @@ p {
     width: 282px;
     border-radius: 0 0 3px 3px;
     border: 1px solid #efefef;
-    background-color: white;
+    background-color: white !important;
     padding: 16px 20px; }
     .handbook_category__item__links a {
       display: block;

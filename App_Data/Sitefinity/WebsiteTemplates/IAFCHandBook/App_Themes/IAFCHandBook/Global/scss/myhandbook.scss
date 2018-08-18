@@ -90,6 +90,17 @@
       h3{
         color: $color_15;
       }
+      .category_image{
+        position: absolute;
+        svg{
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          height: 135px;
+          width: auto;
+        }
+      }
     }
     &__time{
       font-family: $font_family_5;
@@ -114,7 +125,7 @@
       width: 282px;
       border-radius: 0 0 3px 3px;
       border: 1px solid #efefef;
-      background-color: $color_15;
+      background-color: $color_15 !important;
       padding: 16px 20px;
       a{
         display: block;
