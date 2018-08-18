@@ -46,9 +46,6 @@
     font-size: 13px;
     color: #9b9b9b;
   }
-  @media screen and (max-width: 767px){
-    display: none;
-  }
 }
 
 .single-post-add{
@@ -139,7 +136,7 @@
             margin: 0 auto 37px;
           }
           @media screen and (max-width: 767px){
-            margin: 0 auto 16px;
+            margin: 0 auto 24px 0;
           }
           h5{
             color: #2b4b6b;
@@ -164,11 +161,14 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-            @media screen and (max-width: 768px){
+            @media screen and(min-width: 768px) and (max-width: 992px){
               flex-wrap: wrap;
               max-width: 588px;
               width: 100%;
               margin: 0 auto;
+            }
+            @media screen and (max-width: 767px){
+              flex-direction: column;
             }
             &_left{
               display: flex;
@@ -198,8 +198,14 @@
             }
             &_right{
               display: flex;
+              @media screen and (max-width: 767px){
+                margin-top: 16px;
+              }
               .single-post-comments{
                 margin-right: 16px;
+                @media screen and (max-width: 767px){
+                  margin-right: 24px;
+                }
               }
             }
           }
