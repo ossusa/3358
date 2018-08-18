@@ -2969,6 +2969,14 @@ p {
   justify-content: space-between;
   margin: 48px 0 20px 0; }
 
+.community__head-title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;

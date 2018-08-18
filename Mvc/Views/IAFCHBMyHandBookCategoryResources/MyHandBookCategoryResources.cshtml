@@ -13,16 +13,19 @@
 			<option value=@item.MyHandBookCategoryUrl>@item.CategoryTitle</option>
 		}
 	</select>
-</div>
 	<div id="edit">
 		<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
 		<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
 	</div>
+</div>
 
 
-<div id="@string.Format("{0}_{1}", "myHandBookResourcesDetails", Model.Category.Id.ToString())">
+
+	<div id="@string.Format("{0}_{1}", "myHandBookResourcesDetails", Model.Category.Id.ToString())">
 	@Html.Partial("_MyHandBookCategoryResourcesDetails", Model)
 </div>
+
+
 </div>
 
 
