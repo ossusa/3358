@@ -2962,6 +2962,12 @@ p {
             font-size: 13px;
             font-weight: 400; }
 
+.community_indicator_col {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
@@ -3070,7 +3076,9 @@ p {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  -ms-flex-direction: column;
+  flex-direction: column; }
   .progressindicator__label:nth-of-type(3) {
     width: 148px; }
   @media screen and (max-width: 767px) {
@@ -3084,7 +3092,9 @@ p {
       -ms-flex-pack: center;
       justify-content: center;
       padding-top: 0;
-      margin-right: 0; }
+      margin-right: 0;
+      -ms-flex-direction: row;
+      flex-direction: row; }
       .progressindicator__label:nth-of-type(3) {
         width: 100%; }
       .progressindicator__label:nth-of-type(1) {
