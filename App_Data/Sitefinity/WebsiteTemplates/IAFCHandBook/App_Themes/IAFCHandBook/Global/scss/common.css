@@ -3225,7 +3225,9 @@ p {
   font-weight: 400;
   font-size: 0.813em;
   text-align: center;
-  padding-top: 8px; }
+  display: flex;
+  align-items: center;
+  justify-content: center; }
   .progressindicator__label:nth-of-type(3) {
     width: 148px; }
   @media screen and (max-width: 767px) {
