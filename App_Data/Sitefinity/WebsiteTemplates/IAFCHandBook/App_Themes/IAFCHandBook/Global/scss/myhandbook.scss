@@ -21,7 +21,7 @@
   width: 83.3%;
   margin: 0 auto;
   @media screen and (max-width: 1109px){
-    width: 57%;
+    width: 54.5%;
   }
 }
 .progressindicator{
@@ -97,13 +97,13 @@
     @media screen and (max-width: 1109px){
       justify-content: center;
       max-width: 100%;
-      margin: 0 auto;
+      margin: 0 auto 100px;
     }
   }
   &__item{
       margin-right: 24px;
       @media screen and (max-width: 1109px){
-        &:nth-of-type(odd){
+        &:nth-of-type(even){
           margin-right: 0;
         }
       }
@@ -128,6 +128,9 @@
       }
       &.Leadership{
         background: #b89c5c;
+        @media screen and (max-width: 1109px){
+          margin-bottom: 48px;
+        }
         .category_image{
           width: 79px;
         }
