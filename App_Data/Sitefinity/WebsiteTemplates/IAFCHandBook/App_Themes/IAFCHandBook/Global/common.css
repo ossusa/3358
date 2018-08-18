@@ -2996,6 +2996,15 @@ p {
     display: -ms-flexbox;
     display: flex; }
 
+.progressindicator__share {
+  color: #9b9b9b;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+  .progressindicator__share i {
+    margin-right: 10px;
+    font-size: 18px; }
+
 .progressindicator__label {
   width: 124px;
   height: 60px;
