@@ -2972,6 +2972,9 @@ p {
   display: flex;
   -ms-flex-align: center;
   align-items: center; }
+  @media screen and (max-width: 1109px) {
+    .handbook__title {
+      height: 140px; } }
   @media screen and (max-width: 767px) {
     .handbook__title {
       height: 100px; } }
