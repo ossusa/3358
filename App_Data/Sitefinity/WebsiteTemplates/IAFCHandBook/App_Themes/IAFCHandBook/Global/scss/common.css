@@ -3139,7 +3139,8 @@ p {
   width: 100%;
   padding: 0 8.35%;
   height: 160px;
-  background-color: rgba(191, 55, 78, 0.85);
+  background: url(../images/handbook-bg.jpg);
+  background-size: cover;
   display: flex;
   align-items: center; }
   .handbook__title h1 {
@@ -3228,7 +3229,8 @@ p {
       height: 100%;
       width: 100%;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      z-index: 2; }
     .handbook_category__item__image h3 {
       color: white; }
     .handbook_category__item__image .category_image {
@@ -3237,7 +3239,8 @@ p {
       left: 50%;
       top: 50%;
       height: 92px;
-      transform: translate(-50%, -50%) scale(1.8); }
+      transform: translate(-50%, -50%) scale(1.8);
+      z-index: 0; }
   .handbook_category__item__time {
     font-family: "Zilla Slab", serif;
     font-size: 13px;
