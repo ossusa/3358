@@ -3032,6 +3032,9 @@ p {
   -ms-flex-align: center;
   align-items: center; }
 
+.complete__progressindicator_wrapper {
+  margin: 17px 0 48px; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
