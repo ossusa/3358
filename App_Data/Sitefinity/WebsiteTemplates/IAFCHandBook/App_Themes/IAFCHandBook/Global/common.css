@@ -2401,12 +2401,6 @@ p {
     padding: 0 27px; }
   .header__nav > ul > li:nth-of-type(5) > a {
     padding-right: 22px !important; }
-  .header__logo {
-    padding: 14px 0; }
-    .header__logo img {
-      width: 315px;
-      height: 71px;
-      margin-left: 7px; }
   .header__table-tr {
     height: 72px;
     padding: 16px 0 16px 16px !important; }
@@ -2423,7 +2417,6 @@ p {
   .header__logo {
     padding: 0; }
     .header__logo img {
-      width: 283px;
       margin-left: 0px; }
   .header__table-td {
     display: none; }
