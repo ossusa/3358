@@ -3191,6 +3191,16 @@ p {
       align-items: flex-start; } }
 .complete__head-btn-select {
   margin-top: 20px; }
+.complete__head-buttons {
+  display: flex; }
+  @media screen and (max-width: 1109px) {
+    .complete__head-buttons {
+      display: none; } }
+.complete__tablet_head-buttons {
+  display: none; }
+  @media screen and (max-width: 1109px) {
+    .complete__tablet_head-buttons {
+      display: flex; } }
 
 .handbook__title {
   width: 100%;

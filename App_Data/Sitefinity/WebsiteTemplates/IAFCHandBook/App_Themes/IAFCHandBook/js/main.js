@@ -119,4 +119,5 @@ $(document).ready(function () {
         }
     });
 
+    $('.complete-box').prepend($(".complete__tablet_head-buttons"));
 });
