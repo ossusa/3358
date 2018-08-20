@@ -2516,11 +2516,11 @@ p {
       padding: .5em 15px .4em !important;
       transition: .1s ease-in-out; }
       .footer__info-col ul li a:hover {
-        text-shadow: 1px 0 #2B4B6B;
-        color: #2B4B6B; }
+        color: #2B4B6B;
+        font-weight: bold; }
       .footer__info-col ul li a:focus {
-        text-shadow: 1px 0 #2B4B6B;
-        color: #2B4B6B; }
+        color: #2B4B6B;
+        font-weight: bold; }
 
 .footer__info {
   height: 72px; }
