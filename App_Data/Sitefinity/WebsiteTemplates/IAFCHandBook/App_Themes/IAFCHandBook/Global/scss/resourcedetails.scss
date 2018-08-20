@@ -500,14 +500,14 @@
       margin-bottom: 48px;
       @media screen and (max-width: 1109px) {
         width: 282px;
+        &:nth-of-type(even) {
+          margin-right: 0;
+        }
       }
       @media screen and (max-width: 767px) {
         width: 320px;
         margin-right: 0;
         margin-bottom: 24px;
-      }
-      &:nth-of-type(even) {
-        margin-right: 0;
       }
       img {
         height: 266px;

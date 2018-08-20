@@ -3158,14 +3158,14 @@ p {
   margin-bottom: 48px; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
-      width: 282px; } }
+      width: 282px; }
+      .complete__resources_slide:nth-of-type(even) {
+        margin-right: 0; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
       width: 320px;
       margin-right: 0;
       margin-bottom: 24px; } }
-  .complete__resources_slide:nth-of-type(even) {
-    margin-right: 0; }
   .complete__resources_slide img {
     height: 266px; }
     @media screen and (max-width: 1109px) {
