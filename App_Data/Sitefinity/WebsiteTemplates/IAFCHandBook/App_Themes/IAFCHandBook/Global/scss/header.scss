@@ -257,6 +257,20 @@
       margin-left: 7px;
     }
   }
+  .header__table-tr {
+    height: 72px;
+    padding: 16px 0 16px 16px !important;
+  }
+
+  .header__logo {
+    padding: 0;
+
+    img {
+      width: auto;
+      height: 40px;
+      margin-left: 0;
+    }
+  }
 }
 
 .community__topics, .footer  {
@@ -341,6 +355,7 @@
     -o-transition: 0.5s;
     transition: 0.5s;
   }
+
   .header__mob-open {
     font-size: 1.250em;
     color: $color_14;
@@ -394,6 +409,11 @@
     outline: none;
     border: none;
   }
+}
+
+.sticky .header__mob-nav {
+  height: 100vh;
+  top: 0;
 }
 
 @media (max-width: 370px) {
