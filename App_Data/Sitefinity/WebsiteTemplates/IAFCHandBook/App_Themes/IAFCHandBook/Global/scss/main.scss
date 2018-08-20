@@ -659,7 +659,7 @@ p {
   -o-transition: .1s ease-in-out;
   transition: .1s ease-in-out;
   &:hover {
-    text-shadow: 1px 0 #2B4B6B;
+    //text-shadow: 1px 0 #2B4B6B;
     color: $color_blue;
   }
   &:focus {
@@ -2377,7 +2377,8 @@ p {
         >.accordion__title {
           &:hover {
             color: $color_19;
-            text-shadow: 1px 0 #2b4b6b;
+            //text-shadow: 1px 0 #2b4b6b;
+            font-weight: bold;
           }
           &:focus {
             color: $color_19;
@@ -2391,7 +2392,8 @@ p {
         >.accordion__arrow.accordion__sub-title {
           &:hover {
             color: $color_19;
-            text-shadow: 1px 0 #2b4b6b;
+            font-weight: bold;
+            //text-shadow: 1px 0 #2b4b6b;
           }
         }
       }

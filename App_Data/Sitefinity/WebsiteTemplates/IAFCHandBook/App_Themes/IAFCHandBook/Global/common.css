@@ -577,7 +577,6 @@ p {
   padding: 8px 20px 8px !important;
   transition: .1s ease-in-out; }
   .k-link:hover {
-    text-shadow: 1px 0 #2B4B6B;
     color: #2B4B6B; }
   .k-link:focus {
     text-shadow: 1px 0 #2B4B6B;
@@ -1831,7 +1830,7 @@ p {
     border: 1px solid #D8D8D8; }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__title:hover {
       color: #2b4b6b;
-      text-shadow: 1px 0 #2b4b6b; }
+      font-weight: bold; }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__title:focus {
       color: #2b4b6b;
       text-shadow: 1px 0 #2b4b6b; }
@@ -1840,7 +1839,7 @@ p {
       text-shadow: 1px 0 #2b4b6b; }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__arrow.accordion__sub-title:hover {
       color: #2b4b6b;
-      text-shadow: 1px 0 #2b4b6b; }
+      font-weight: bold; }
     .accordion > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:focus {
       color: #5591AA;
       text-shadow: 1px 0 #5591AA; }
@@ -2289,7 +2288,6 @@ p {
   .header__nav > ul > li > div > ul > li:nth-of-type(1) > a {
     padding-top: 20px !important; }
     .header__nav > ul > li > div > ul > li:nth-of-type(1) > a:hover {
-      text-shadow: 1px 0 #5591AA;
       color: #5591AA; }
     .header__nav > ul > li > div > ul > li:nth-of-type(1) > a:focus {
       text-shadow: 1px 0 #5591AA;
