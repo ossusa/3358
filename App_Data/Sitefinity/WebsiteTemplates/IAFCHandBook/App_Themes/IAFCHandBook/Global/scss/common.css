@@ -2642,9 +2642,9 @@ p {
     right: 0;
     background-color: transparent;
     overflow-x: hidden;
-    -webkit-transition: 0.5s, top 0s;
-    -o-transition: 0.5s, top 0s;
-    transition: 0.5s, top 0s; }
+    -webkit-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s; }
 
   .header__mob-open {
     font-size: 1.250em;
@@ -2701,9 +2701,6 @@ p {
   .sticky .header__mob-nav {
     top: 0; } }
 @media (max-width: 370px) {
-  .header__logo img {
-    width: 270px; }
-
   .header__text {
     padding: 0 14px; }
 
@@ -3175,10 +3172,9 @@ p {
   border: none;
   background: transparent;
   outline: none;
-  padding: 0; }
-  .complete_btn-group {
-    display: flex;
-    align-items: center; }
+  padding: 0;
+  display: flex;
+  align-items: center; }
 
 .handbook__title {
   width: 100%;

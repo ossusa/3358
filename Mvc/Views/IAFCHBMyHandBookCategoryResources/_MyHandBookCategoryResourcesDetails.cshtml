@@ -55,26 +55,24 @@
 								}
 								else
 								{
-									<div class="complete_btn-group"><div class="complete_box"></div><button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">@item.MarkCompleteBtnText</button></div>
+									<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>@item.MarkCompleteBtnText</button>
 								}
 							</div>
 						</div>
 						<div class="resources__slide-social">
 							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
-
-							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
+							<div class="single-post-statistic">
+							<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
 								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 									<span>@item.Likes.Likes</span>
 								</div>
 							</button>
-
-
-							<button type="button" class="addDislike resources__slide-btn resources--dislike  anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+							<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
 								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 									<span>@item.Likes.Dislikes</span>
 								</div>
 							</button>
-
+						</div>
 						</div>
 					</div>
 				</div>
@@ -111,7 +109,7 @@
 		{
 			if (columnCounter == 0)
 			{
-				@Html.Raw("<section>");
+				@Html.Raw("<section class='complete_section'>");
 			}
 			<div class="resources__slide complete__resources_slide">
 				<div class="resources__community-img">
@@ -132,25 +130,25 @@
 					<div class="resources__slide-footer">
 						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete" , item.Id.ToString())">
 							<div id="completeMarkAsComplete">
-								<div class="complete_btn-group"><div class="complete_box anticon anticon-check"></div><button type="button" class="complete_btn" @(item.IsResourceCompleted? "disabled": "") class="completeMarkAsCompleteBtn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">@item.MarkCompleteBtnText</button></div>
+								<button type="button" class="complete_btn" @(item.IsResourceCompleted? "disabled": "") class="completeMarkAsCompleteBtn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box anticon anticon-check"></div>@item.MarkCompleteBtnText</button>
 							</div>
 						</div>
 						<div class="resources__slide-social">
 							<a href="@item.ResourceUrl"  class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
-
-							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
+							<div class="single-post-statistic">
+							<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
 								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 									<span>@item.Likes.Likes</span>
 								</div>
 							</button>
 
 
-							<button type="button" class="addDislike resources__slide-btn resources--dislike  anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+							<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
 								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 									<span>@item.Likes.Dislikes</span>
 								</div>
 							</button>
-
+				</div>
 						</div>
 					</div>
 				</div>
