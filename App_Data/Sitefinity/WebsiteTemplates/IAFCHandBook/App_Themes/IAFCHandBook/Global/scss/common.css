@@ -1808,6 +1808,16 @@ p {
 
   .community__head-button:nth-of-type(2) {
     width: 150px; } }
+.topic__title {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  white-space: normal;
+  line-height: 48px;
+  color: #5591aa;
+  height: auto; }
+
 @media (max-width: 767px) {
   h1 {
     line-height: 50px;
