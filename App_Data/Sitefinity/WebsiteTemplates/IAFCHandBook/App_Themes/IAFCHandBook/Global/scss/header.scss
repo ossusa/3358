@@ -257,6 +257,20 @@
       margin-left: 7px;
     }
   }
+  .header__table-tr {
+    height: 72px;
+    padding: 16px 0 16px 16px !important;
+  }
+
+  .header__logo {
+    padding: 0;
+
+    img {
+      width: auto;
+      height: 40px;
+      margin-left: 0;
+    }
+  }
 }
 
 .community__topics, .footer  {
