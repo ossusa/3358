@@ -761,7 +761,9 @@ p {
       font-size: 1.25em; }
     .resources__slide-social {
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center; }
     .resources__slide-btn {
       border: none;
       outline: none;
