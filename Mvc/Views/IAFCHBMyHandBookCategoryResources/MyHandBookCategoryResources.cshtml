@@ -3,7 +3,7 @@
 <div class="handbook__title">
 	<h1>MY HANDBOOK</h1>
 </div>
-<div class="box box-container">
+<div class="box box-container complete-box">
 <div class="resources-breadcrumbs">My HandBook > <a href='@Model.Category.MyHandBookParentCategoryUrl'><span>@Model.Category.ParentCategoryTitle </span></a></div>
 <div class="community__head-title">
 	<select class="community__title-select" id="UrlList" onchange="doNavigate()">
@@ -13,7 +13,7 @@
 			<option value=@item.MyHandBookCategoryUrl>@item.CategoryTitle</option>
 		}
 	</select>
-	<div id="edit">
+	<div class="complete__head-buttons">
 		<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
 		<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
 	</div>
