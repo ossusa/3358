@@ -1855,7 +1855,7 @@ p {
       font-weight: bold; }
     .accordion > .accordion__sub-item:nth-of-type(3) > .accordion__sub-title:focus {
       color: #73AA56;
-      text-shadow: 1px 0 #73AA56; }
+      font-weight: bold; }
     .accordion > .accordion__sub-item:nth-of-type(3) > .accordion__sub-arrow.accordion__sub-title:hover {
       color: #73AA56;
       font-weight: bold; }

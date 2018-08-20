@@ -2440,7 +2440,8 @@ p {
         >.accordion__sub-title {
           &:focus {
             color: $color_finance;
-            text-shadow: 1px 0 #73AA56;
+            //text-shadow: 1px 0 #73AA56;
+            font-weight: bold;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
