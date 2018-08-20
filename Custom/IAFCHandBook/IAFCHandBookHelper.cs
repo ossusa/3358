@@ -2202,7 +2202,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 					myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, true);
 					var completedResourceBtnText = "Complete";
-					if (markCompleteBtnText != "Marked as Complete")
+					if (markCompleteBtnText != "Mark as Complete")
 					{
 						completedResourceBtnText = markCompleteBtnText;
 					}
@@ -2222,7 +2222,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetCategoryResources
 
 		#region GetMyHandBookCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetMyHandBookCategoryResourcesByName(String  categoryName, String markCompleteBtnText = "Marked as Complete", String orderBy = OrderByMostRecent)
+		public IAFCHandBookMyHandBookResourceModelModel GetMyHandBookCategoryResourcesByName(String  categoryName, String markCompleteBtnText = "Mark as Complete", String orderBy = OrderByMostRecent)
 		{
 			var categoryId = GetCategoryGuidByName(categoryName);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
@@ -2273,6 +2273,57 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#endregion GetMyHandBookCategoryResources
 
+		#region Get My Hnadbook ResourceDetails by Name
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(String name)
+		{
+
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType).
+						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name).
+						First();
+
+			var model = GetResourceDetails(resourceItem, true);
+			model.MoreResources = GetMyHandBookMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
+			model.Comments = GetResourceComments(resourceItem);
+
+			return model;
+		}
+		#endregion Get My Hnadbook ResourceDetails by Name
+
+		#region Get My Hand Book MoreResources
+		public List<IAFCHandBookMoreResourcesModel> GetMyHandBookMoreResources(Guid resourceId, Guid categoryID)
+		{
+			List<IAFCHandBookMoreResourcesModel> moreResources = new List<IAFCHandBookMoreResourcesModel>();
+
+			var myHandBookItem = GetOrCreateMyHandBook();
+			var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().
+				Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id != resourceId).
+				ToArray();
+			var myCompletedHandBookResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>().
+				Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id != resourceId).
+				ToArray();
+			
+			var allMyHandBookResources = myHandBookResources.Union(myCompletedHandBookResources);
+
+			var moreResourcesItems = allMyHandBookResources.Where(i => (((i.GetValue<DynamicContent>("ExternalResources") != null) &&
+										(i.GetValue<DynamicContent>("ExternalResources").GetValue<IList<Guid>>("Category").Contains(categoryID)))
+										|| ((i.GetValue<DynamicContent>("Resources") != null) &&
+										(i.GetValue<DynamicContent>("Resources").GetValue<IList<Guid>>("Category").Contains(categoryID))))).
+							OrderByDescending(r => r.DateCreated).Take(5);
+
+			foreach (var item in moreResourcesItems)
+			{
+				var moreResourcesItem = new IAFCHandBookMoreResourcesModel();
+				moreResourcesItem.Id = item.Id;
+				moreResourcesItem.ResourceDetails = GetResourceDetailsInfo(item, true);
+				moreResourcesItem.Likes = GetResourceLikesInfo(item);
+				moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceDetails.Category.MyHandBookCategoryUrl + "/resourcedetails/" + item.UrlName.ToString();
+				moreResources.Add(moreResourcesItem);
+			}
+
+			return moreResources;
+		}
+		#endregion Get My Hand Book MoreResources
 		#endregion MyHandBook
 
 
