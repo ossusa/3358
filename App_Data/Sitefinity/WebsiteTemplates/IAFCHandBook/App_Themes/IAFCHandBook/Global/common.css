@@ -2017,7 +2017,9 @@ p {
   .selectric-community__title-select .selectric-items {
     width: 318px; }
   .resources__slide-footer {
-    margin-top: 6px; } }
+    margin-top: 6px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
