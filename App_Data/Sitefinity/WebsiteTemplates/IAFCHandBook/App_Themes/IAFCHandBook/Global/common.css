@@ -1728,6 +1728,12 @@ p {
   color: #5591aa;
   height: auto; }
 
+.topic__subtitle {
+  font-size: 2.00em;
+  color: #4A4A4A;
+  font-weight: 300;
+  font-family: "Zilla Slab", "Arial", "Helvetica", sans-serif; }
+
 @media (max-width: 767px) {
   h1 {
     line-height: 50px;
