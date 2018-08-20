@@ -570,7 +570,7 @@ p {
 
 .k-link {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 400 !important;
+  font-weight: 400;
   color: #666666;
   font-size: 1.00em;
   z-index: 1000;
