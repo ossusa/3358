@@ -528,5 +528,13 @@
   }
   &__progressindicator_wrapper{
     margin: 17px 0 48px;
+    @media screen and (max-width: 1109px){
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__head-btn-select{
+    margin-top: 20px;
   }
 }

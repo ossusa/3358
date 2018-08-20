@@ -3034,6 +3034,14 @@ p {
 
 .complete__progressindicator_wrapper {
   margin: 17px 0 48px; }
+  @media screen and (max-width: 1109px) {
+    .complete__progressindicator_wrapper {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-align: start;
+      align-items: flex-start; } }
 
 .handbook__title {
   width: 100%;
