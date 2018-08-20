@@ -3148,6 +3148,9 @@ p {
     margin-bottom: 16px;
     font-size: 40px;
     color: #3b4b6b; }
+  @media screen and (max-width: 1109px) {
+    .complete_section .single-post-comments {
+      display: none; } }
 .complete__resources_slide {
   width: 384px;
   margin-right: 24px;

@@ -484,6 +484,11 @@
       font-size: 40px;
       color: #3b4b6b;
     }
+    .single-post-comments{
+      @media screen and (max-width: 1109px) {
+        display: none;
+      }
+    }
   }
   &__resources{
     &_slide{
