@@ -3153,6 +3153,10 @@ p {
     margin-bottom: 16px;
     font-size: 40px;
     color: #3b4b6b; }
+.complete__resources_slide {
+  width: 384px; }
+  .complete__resources_slide img {
+    height: 266px; }
 
 .handbook__title {
   width: 100%;

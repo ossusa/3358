@@ -2986,6 +2986,9 @@ p {
     font-size: 40px;
     color: #3b4b6b; }
 
+.complete__resources_slide {
+  width: 384px; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;

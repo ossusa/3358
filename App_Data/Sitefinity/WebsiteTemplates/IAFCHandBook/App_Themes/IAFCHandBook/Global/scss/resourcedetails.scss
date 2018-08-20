@@ -469,13 +469,21 @@
   justify-content: space-between;
   align-items: center;
 }
-.complete_section{
-  background-color: #efefef;
-  padding: 64px 0 72px;
-  margin: 100px 0;
-  &-title{
-    margin-bottom: 16px;
-    font-size: 40px;
-    color: #3b4b6b;
+.complete {
+  &_section {
+    background-color: #efefef;
+    padding: 64px 0 72px;
+    margin: 100px 0;
+    &-title {
+      margin-bottom: 16px;
+      font-size: 40px;
+      color: #3b4b6b;
+    }
+  }
+  &__resources_slide{
+    width: 384px;
+    img{
+      height: 266px;
+    }
   }
 }
