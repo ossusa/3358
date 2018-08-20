@@ -528,8 +528,10 @@
   }
   &__progressindicator_wrapper{
     margin: 17px 0 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     @media screen and (max-width: 1109px){
-      display: flex;
       flex-direction: column;
       align-items: flex-start;
     }

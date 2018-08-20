@@ -3181,10 +3181,12 @@ p {
   display: flex;
   align-items: center; }
 .complete__progressindicator_wrapper {
-  margin: 17px 0 48px; }
+  margin: 17px 0 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
   @media screen and (max-width: 1109px) {
     .complete__progressindicator_wrapper {
-      display: flex;
       flex-direction: column;
       align-items: flex-start; } }
 .complete__head-btn-select {
