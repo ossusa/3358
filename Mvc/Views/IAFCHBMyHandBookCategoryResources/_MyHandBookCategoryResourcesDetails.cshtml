@@ -30,7 +30,7 @@
 			{
 				@Html.Raw("<section>");
 			}
-			<div class="resources__slide">
+			<div class="resources__slide complete__resources_slide">
 				<div class="resources__community-img">
 					<img src='@item.ResourceDetails.ImageUrl' />
 					<div class="resources__slide-time">
@@ -38,7 +38,7 @@
 						@item.ResourceDetails.DurationStr
 					</div>
 				</div>
-				<div class="resources__slide-info resources__community-slide-info">
+				<div class="complete__resources_slide-info">
 					<div class="resources__slide-box">
 						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
 						<a href='@item.ResourceUrl'>
@@ -60,7 +60,7 @@
 							</div>
 						</div>
 						<div class="resources__slide-social">
-							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount Comments</a>
+							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount</a>
 
 							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
 								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
