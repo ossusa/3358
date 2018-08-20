@@ -584,13 +584,14 @@ p {
   -o-transition: .1s ease-in-out;
   transition: .1s ease-in-out; }
   .k-link:hover {
-    color: #2B4B6B; }
+    color: #2B4B6B;
+    font-weight: bold; }
   .k-link:focus {
-    text-shadow: 1px 0 #2B4B6B;
-    color: #2B4B6B; }
+    color: #2B4B6B;
+    font-weight: bold; }
   .k-link:active {
-    text-shadow: 1px 0 #2B4B6B;
-    color: #2B4B6B; }
+    color: #2B4B6B;
+    font-weight: bold; }
 
 .k-popup {
   border: 0px solid transparent;
