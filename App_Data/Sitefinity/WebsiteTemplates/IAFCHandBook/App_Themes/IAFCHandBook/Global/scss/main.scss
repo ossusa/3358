@@ -888,9 +888,8 @@ p {
       font-size: 1.25em;
     }
     &-social {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
+      align-items: center;
     }
     &-btn {
       border: none;

@@ -779,9 +779,8 @@ p {
       color: #2B4B6B;
       font-size: 1.25em; }
     .resources__slide-social {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      align-items: center; }
     .resources__slide-btn {
       border: none;
       outline: none;

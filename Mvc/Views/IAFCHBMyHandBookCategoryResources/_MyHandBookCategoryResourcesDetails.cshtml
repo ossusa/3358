@@ -113,7 +113,7 @@
 			{
 				@Html.Raw("<section>");
 			}
-			<div class="resources__slide">
+			<div class="resources__slide complete__resources_slide">
 				<div class="resources__community-img">
 					<img src='@item.ResourceDetails.ImageUrl' />
 					<div class="resources__slide-time">
@@ -121,7 +121,7 @@
 						@item.ResourceDetails.DurationStr
 					</div>
 				</div>
-				<div class="resources__slide-info resources__community-slide-info">
+				<div class="complete__resources_slide-info">
 					<div class="resources__slide-box">
 						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
 						<a href='@item.ResourceUrl'>
