@@ -541,14 +541,5 @@
   }
   &__head-buttons{
     display: flex;
-    @media screen and (max-width:1109px){
-      display: none;
-    }
-  }
-  &__tablet_head-buttons{
-    display: none;
-    @media screen and (max-width:1109px){
-      display: flex;
-    }
   }
 }
