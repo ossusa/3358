@@ -355,6 +355,7 @@
     -o-transition: 0.5s;
     transition: 0.5s;
   }
+
   .header__mob-open {
     font-size: 1.250em;
     color: $color_14;
@@ -408,6 +409,11 @@
     outline: none;
     border: none;
   }
+}
+
+.sticky .header__mob-nav {
+  height: 100vh;
+  top: 0;
 }
 
 @media (max-width: 370px) {
