@@ -2558,30 +2558,6 @@ p {
 .header__nav > ul > li > a {
   padding: 12px !important; }
 
-@media (max-width: 1109px) {
-  .header__text {
-    padding: 0 27px; }
-
-  .header__nav > ul > li:nth-of-type(5) > a {
-    padding-right: 22px !important; }
-
-  .header__logo {
-    padding: 14px 0; }
-    .header__logo img {
-      width: 315px;
-      height: 71px;
-      margin-left: 7px; }
-
-  .header__table-tr {
-    height: 72px;
-    padding: 16px 0 16px 16px !important; }
-
-  .header__logo {
-    padding: 0; }
-    .header__logo img {
-      width: auto;
-      height: 40px;
-      margin-left: 0; } }
 .community__topics, .footer {
   max-width: 1440px;
   margin-left: auto;
@@ -2607,6 +2583,23 @@ p {
   z-index: 9999;
   background: #fff; }
 
+@media (max-width: 1109px) {
+  .header__text {
+    padding: 0 27px; }
+
+  .header__nav > ul > li:nth-of-type(5) > a {
+    padding-right: 22px !important; }
+
+  .header__table-tr {
+    height: 72px;
+    padding: 16px 0 16px 16px !important; }
+
+  .header__logo {
+    padding: 0; }
+    .header__logo img {
+      width: auto;
+      height: 40px;
+      margin-left: 0; } }
 @media (max-width: 767px) {
   .header__text {
     padding: 0 28px; }
@@ -2614,7 +2607,6 @@ p {
   .header__logo {
     padding: 0; }
     .header__logo img {
-      width: 283px;
       margin-left: 0px; }
 
   .header__table-td {
@@ -2632,7 +2624,7 @@ p {
     align-items: center; }
 
   .header__mob-nav {
-    height: 100%;
+    height: 100vh;
     width: 0;
     position: absolute;
     display: -webkit-box;
@@ -2650,9 +2642,7 @@ p {
     right: 0;
     background-color: transparent;
     overflow-x: hidden;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; }
+    transition: 0.5s, top 0s; }
 
   .header__mob-open {
     font-size: 1.250em;
@@ -2707,7 +2697,6 @@ p {
     border: none; }
 
   .sticky .header__mob-nav {
-    height: 100vh;
     top: 0; } }
 @media (max-width: 370px) {
   .header__logo img {
@@ -3178,7 +3167,16 @@ p {
   border-radius: 2px;
   border: 1px solid #9b9b9b;
   background: transparent;
-  outline: none; }
+  outline: none;
+  margin-right: 6px; }
+.complete_btn {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0; }
+  .complete_btn-group {
+    display: flex;
+    align-items: center; }
 
 .handbook__title {
   width: 100%;

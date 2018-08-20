@@ -512,5 +512,16 @@
     border: 1px solid #9b9b9b;
     background: transparent;
     outline: none;
+    margin-right: 6px;
+  }
+  &_btn{
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 0;
+    &-group{
+      display: flex;
+      align-items: center;
+    }
   }
 }
