@@ -3015,7 +3015,12 @@ p {
 .complete_btn {
   border: none;
   background: transparent;
-  outline: none; }
+  outline: none;
+  padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .handbook__title {
   width: 100%;
