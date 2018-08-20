@@ -3114,18 +3114,18 @@ p {
   .complete-box .resources-breadcrumbs {
     margin: 28px auto 4px 0; } }
 
-.complete-box__tablet_head-buttons {
+.complete__tablet_head-buttons {
   display: none; }
   @media screen and (max-width: 1109px) {
-    .complete-box__tablet_head-buttons {
+    .complete__tablet_head-buttons {
       display: -ms-flexbox !important;
       display: flex !important;
       margin: 0 -90px; }
-      .complete-box__tablet_head-buttons button:nth-of-type(1) {
+      .complete__tablet_head-buttons button:nth-of-type(1) {
         -ms-flex-pack: end;
         justify-content: flex-end;
         padding-right: 12px; }
-      .complete-box__tablet_head-buttons button:nth-of-type(2) {
+      .complete__tablet_head-buttons button:nth-of-type(2) {
         -ms-flex-pack: start;
         justify-content: flex-start;
         padding-left: 12px; } }
