@@ -57,7 +57,8 @@
                     font-weight: bold;
                   }
                   &:focus {
-                    text-shadow: 1px 0 #5591AA;
+                    //text-shadow: 1px 0 #5591AA;
+                    font-weight: bold;
                     color: $color_community;
                   }
                 }
@@ -76,12 +77,14 @@
                       }
                       >a {
                         &:hover {
-                          text-shadow: 1px 0 #5591AA;
+                          //text-shadow: 1px 0 #5591AA;
                           color: $color_community;
+                          font-weight: bold;
                         }
                         &:focus {
-                          text-shadow: 1px 0 #5591AA;
+                          //text-shadow: 1px 0 #5591AA;
                           color: $color_community;
+                          font-weight: bold;
                         }
                       }
                     }
@@ -109,8 +112,9 @@
                           font-weight: bold;
                         }
                         &:focus {
-                          text-shadow: 1px 0 #BDA15F;
+                          //text-shadow: 1px 0 #BDA15F;
                           color: $color_leadership;
+                          font-weight: bold;
                         }
                       }
                     }
@@ -123,8 +127,9 @@
                     font-weight: bold;
                   }
                   &:focus {
-                    text-shadow: 1px 0 #BDA15F;
+                    //text-shadow: 1px 0 #BDA15F;
                     color: $color_leadership;
+                    font-weight: bold;
                   }
                 }
               }
@@ -149,8 +154,9 @@
                           font-weight: bold;
                         }
                         &:focus {
-                          text-shadow: 1px 0 #73AA56;
+                          //text-shadow: 1px 0 #73AA56;
                           color: $color_finance;
+                          font-weight: bold;
                         }
                       }
                     }
@@ -163,8 +169,9 @@
                     font-weight: bold;
                   }
                   &:focus {
-                    text-shadow: 1px 0 #73AA56;
+                    //text-shadow: 1px 0 #73AA56;
                     color: $color_finance;
+                    font-weight: bold;
                   }
                 }
               }
@@ -189,8 +196,9 @@
                           font-weight: bold;
                         }
                         &:focus {
-                          text-shadow: 1px 0 #CF794A;
+                          //text-shadow: 1px 0 #CF794A;
                           color: $color_personnel;
+                          font-weight: bold;
                         }
                       }
                     }
@@ -204,8 +212,9 @@
                     font-weight: bold;
                   }
                   &:focus {
-                    text-shadow: 1px 0 #CF794A;
+                    //text-shadow: 1px 0 #CF794A;
                     color: $color_personnel;
+                    font-weight: bold;
                   }
                 }
               }
