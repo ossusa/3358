@@ -3160,6 +3160,10 @@ p {
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
       width: 282px; } }
+  @media screen and (max-width: 767px) {
+    .complete__resources_slide {
+      width: 320px;
+      margin-right: 0; } }
   .complete__resources_slide:nth-of-type(even) {
     margin-right: 0; }
   .complete__resources_slide img {
@@ -3167,6 +3171,9 @@ p {
     @media screen and (max-width: 1109px) {
       .complete__resources_slide img {
         height: 195px; } }
+    @media screen and (max-width: 767px) {
+      .complete__resources_slide img {
+        height: 221px; } }
   .complete__resources_slide-info {
     padding: 20px 25px 20px 20px;
     height: 181px;
@@ -3182,7 +3189,8 @@ p {
 .complete__resources_slides {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start; }
+  align-items: flex-start;
+  flex-wrap: wrap; }
 .complete_box {
   width: 14px;
   height: 14px;
@@ -3208,6 +3216,9 @@ p {
       flex-direction: column;
       align-items: flex-start;
       margin: 24px 0 48px; } }
+  @media screen and (max-width: 767px) {
+    .complete__progressindicator_wrapper {
+      margin: 13px 0 36px; } }
 .complete__head-btn-select {
   margin-top: 20px; }
   @media screen and (max-width: 1109px) {
@@ -3225,16 +3236,19 @@ p {
     margin: 0 auto 4px 0; }
   .complete-box .selectric-community__title-select {
     margin: 0; } }
-.complete__tablet_head-buttons {
+@media screen and (max-width: 767px) {
+  .complete-box .progressindicator_share {
+    margin-bottom: 28px; } }
+.complete-box__tablet_head-buttons {
   display: none; }
   @media screen and (max-width: 1109px) {
-    .complete__tablet_head-buttons {
+    .complete-box__tablet_head-buttons {
       display: flex;
       margin: 0 -90px; }
-      .complete__tablet_head-buttons button:nth-of-type(1) {
+      .complete-box__tablet_head-buttons button:nth-of-type(1) {
         justify-content: flex-end;
         padding-right: 12px; }
-      .complete__tablet_head-buttons button:nth-of-type(2) {
+      .complete-box__tablet_head-buttons button:nth-of-type(2) {
         justify-content: flex-start;
         padding-left: 12px; } }
 
