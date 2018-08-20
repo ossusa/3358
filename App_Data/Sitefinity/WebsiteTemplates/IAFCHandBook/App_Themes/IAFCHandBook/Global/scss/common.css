@@ -3152,10 +3152,6 @@ p {
       display: none; } }
   .complete_section .complete__resources_slide img {
     margin-bottom: -6px; }
-  .complete_section .community__head-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
 .complete__resources_slide {
   width: 384px;
   margin-right: 24px;
@@ -3236,6 +3232,10 @@ p {
   @media screen and (max-width: 1109px) {
     .complete__head-buttons {
       display: none; } }
+.complete-box .community__head-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 @media screen and (max-width: 1109px) {
   .complete-box .single-post-comments {
     display: none; }
