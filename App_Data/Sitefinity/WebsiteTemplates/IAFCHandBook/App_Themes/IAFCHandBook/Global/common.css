@@ -2555,7 +2555,8 @@ p {
     .single-post-statistic button.anticon-dislike-o:hover:before {
       content: "\E64B"; }
     .single-post-statistic button:before {
-      font-size: 15px; }
+      font-size: 15px;
+      padding-right: 4px; }
 
 .single-post-comments {
   display: -ms-flexbox;
