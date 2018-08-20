@@ -1,5 +1,5 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookModel
-@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
+
 
 <div class="handbook__title">
 	<h1>MY HANDBOOK</h1>
@@ -9,6 +9,7 @@
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
 	<div class="community_indicator_col">
+		@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
 		<select class="community__title-select" id="UrlList" onchange="doNavigate()">
 			<option value=@Model.Category.MyHandBookCategoryUrl>@Model.Category.CategoryTitle</option>
 			@foreach (var item in Model.MoreCategories)
