@@ -499,10 +499,10 @@
         border-bottom-right-radius: 3px;
       }
     }
-  &_slides{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+    &_slides{
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
   }
 }
