@@ -3053,6 +3053,15 @@ p {
 .complete__head-buttons {
   display: -ms-flexbox;
   display: flex; }
+  @media screen and (max-width: 1109px) {
+    .complete__head-buttons {
+      margin: 0 -90px; }
+      .complete__head-buttons button:nth-of-type(1) {
+        -ms-flex-pack: end;
+        justify-content: flex-end; }
+      .complete__head-buttons button:nth-of-type(2) {
+        -ms-flex-pack: start;
+        justify-content: flex-start; } }
 
 .handbook__title {
   width: 100%;

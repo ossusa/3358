@@ -541,5 +541,14 @@
   }
   &__head-buttons{
     display: flex;
+    @media screen and (max-width: 1109px){
+      margin: 0 -90px;
+      button:nth-of-type(1){
+        justify-content: flex-end;
+      }
+      button:nth-of-type(2){
+        justify-content: flex-start;
+      }
+    }
   }
 }
