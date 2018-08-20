@@ -3247,9 +3247,7 @@ p {
     margin: 0; } }
 @media screen and (max-width: 767px) {
   .complete-box .progressindicator_share {
-    margin-bottom: 28px; }
-  .complete-box .resources-breadcrumbs {
-    margin: 28px auto 4px 0; } }
+    margin-bottom: 28px; } }
 .complete__tablet_head-buttons {
   display: none; }
   @media screen and (max-width: 1109px) {
