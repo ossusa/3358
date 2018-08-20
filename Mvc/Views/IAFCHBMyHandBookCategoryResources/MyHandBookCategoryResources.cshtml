@@ -128,14 +128,14 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$('.editBtn').html("<i class='anticon anticon-close'></i> Cancel");
+						$('.editBtn').html("<i class='anticon anticon-close'></i>").text("Cancel");
 						$('.markAsCompleteBtn').text("Remove");
 						$('.completeMarkAsCompleteBtn').text("Remove");
 						$('.completeMarkAsCompleteBtn').removeAttr("disabled");
 					}
 					else
 					{
-						$('.editBtn').text("Edit");
+						$('.editBtn').html("<i class='anticon anticon-edit'></i>").text("Edit");
 						$('.markAsCompleteBtn').text("Mark as Complete");
 						$('.completeMarkAsCompleteBtn').text("Complete");
 						$('.completeMarkAsCompleteBtn').attr("disabled", "disabled");
