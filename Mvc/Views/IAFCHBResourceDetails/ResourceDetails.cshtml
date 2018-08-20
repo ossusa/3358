@@ -117,178 +117,188 @@
 <script type="text/javascript">
 
 	$(document).ready(function () {
-
-		//Add Like
-		$('.addLike').on('click', function () {
-
-			var resourceId = $(this).attr('data-id');
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddLike", "IAFCHBResourceDetailsController")',
-				data: { resourceId: resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceLikes_" + resourceId).html(response);
-				}
-			});
-		});
-
-		//Add Dislike
-		$('.addDislike').on('click', function () {
-
-			var resourceId = $(this).attr('data-id');
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddDislike", "IAFCHBResourceDetailsController")',
-				data: { resourceId: resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceDislikes_" + resourceId).html(response);
-				}
-			});
-		});
-
-		//Add ToMyHandBook
-		$('.addToMyHandBook').on('click', function () {
-
-			var resourceId = $(this).attr('data-id');
-			var tag_id = "#addToMyHandBook_" + resourceId;
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddToMyHandBook", "IAFCHBResourceDetailsController")',
-				data: { resourceId: resourceId },
-				dataType: "json",
-				success: function (response) {
-					if (response == true) {
-						$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
-					}
-				}
-			});
-		});
-
-		//Add Comment
-		$('.addCommentBtn').on('click', function () {
-
-			var resourceId = $(this).attr('data-id');
-			var commentMsg = $('#comment_' + resourceId).val();
-			var comment = commentMsg;
-			var commentAmount = parseInt($('#commentsAmountHeaderID').attr('data-id'))+1;
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddComment", "IAFCHBResourceDetailsController")',
-				data: { commentTxt: comment, resourceId:resourceId },
-				success: function (commentsResults) {
-					$("#refTable").removeData();
-					$("#refTable").html(commentsResults);
-					var inputTxt = $('#comment_' + resourceId);
-					inputTxt.replaceWith(inputTxt.val('').clone(true));
-					$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
-					$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
-				}
-
-			});
-		});
-
-		//Add Comment Like
-		$('.addCommentLike').on('click', function () {
-
-			var resourceId = $(this).attr('data-id');
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddCommentLike", "IAFCHBResourceDetailsController")',
-				data: { resourceId: resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#commentLikes_" + resourceId).html(response);
-				}
-			});
-		});
-
-		//Add Comment Dislike
-		$('.addCommentDislike').on('click', function () {
-
-			var resourceId = $(this).attr('data-id');
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddCommentDislike", "IAFCHBResourceDetailsController")',
-				data: { resourceId: resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#commentDislikes_" + resourceId).html(response);
-				}
-			});
-		});
-
-		//Comment Reply btn t1
-		$('.commentReplyBtn').on('click', function () {
-
-			var commentId = $(this).attr('data-id');
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("PressReplyCommentBtn", "IAFCHBResourceDetailsController")',
-				data: { commentId: commentId },
-				success: function (response) {
-					$("#replyCommentBtn_" + commentId).html("");
-					$("#commentRepliesInputView_" + commentId).html(response);
-				}
-			});
-		});
-
-		//Add Reply Comment Button Pressed
-		$('.addReplyCommentBtn').on('click', function () {
-
-			var commentId = $(this).attr('data-id');
-			var commentMsg = $('#replyComment_' + commentId).val();
-			var comment = commentMsg;
-
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddReplyComment", "IAFCHBResourceDetailsController")',
-				data: { commentTxt: comment, commentId: commentId},
-				success: function (commentsResults) {
-					$("#commentRepliesInputView_" + commentId).html(" ");
-					$("#commentRepliesView_" + commentId).html(commentsResults);
-					$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="'+commentId+'"> Reply </button>');
-				}
-
-			});
-		});
-
-		$('.resources-single-comment').on('click tap', function(){
-			if(!$(this).hasClass('active')){
-				$(this).addClass('active');
-				$('.resources-single-resources').removeClass('active');
-				$('.resources-single__right').hide();
-				$('.resources-single__comments_list').show();
-                $('.resources-single__left_post_comment_textarea > div').show();
-			}
-		})
-
-		$('.resources-single-resources').on('click tap', function(){
-			if(!$(this).hasClass('active')){
-				$(this).addClass('active');
-				$('.resources-single-comment').removeClass('active');
-				$('.resources-single__right').show();
-				$('.resources-single__comments_list').hide();
-                $('.resources-single__left_post_comment_textarea > div').hide();
-			}
-		})
+		bindEdit();
 	});
+	$(document).ajaxComplete(function (event, xhr, settings) {
+		bindEdit();
+	});
+
+	function bindEdit() {
+
+		$(document).ready(function () {
+
+			//Add Like
+			$('.addLike').one('click', function () {
+
+				var resourceId = $(this).attr('data-id');
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("AddLike", "IAFCHBResourceDetailsController")',
+					data: { resourceId: resourceId },
+					dataType: "json",
+					success: function (response) {
+						$("#resourceLikes_" + resourceId).html(response);
+					}
+				});
+			});
+
+			//Add Dislike
+			$('.addDislike').one('click', function () {
+
+				var resourceId = $(this).attr('data-id');
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("AddDislike", "IAFCHBResourceDetailsController")',
+					data: { resourceId: resourceId },
+					dataType: "json",
+					success: function (response) {
+						$("#resourceDislikes_" + resourceId).html(response);
+					}
+				});
+			});
+
+			//Add ToMyHandBook
+			$('.addToMyHandBook').one('click', function () {
+
+				var resourceId = $(this).attr('data-id');
+				var tag_id = "#addToMyHandBook_" + resourceId;
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("AddToMyHandBook", "IAFCHBResourceDetailsController")',
+					data: { resourceId: resourceId },
+					dataType: "json",
+					success: function (response) {
+						if (response == true) {
+							$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+						}
+					}
+				});
+			});
+
+			//Add Comment
+			$('.addCommentBtn').one('click', function () {
+
+				var resourceId = $(this).attr('data-id');
+				var commentMsg = $('#comment_' + resourceId).val();
+				var comment = commentMsg;
+				var commentAmount = parseInt($('#commentsAmountHeaderID').attr('data-id')) + 1;
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("AddComment", "IAFCHBResourceDetailsController")',
+					data: { commentTxt: comment, resourceId: resourceId },
+					success: function (commentsResults) {
+						$("#refTable").removeData();
+						$("#refTable").html(commentsResults);
+						var inputTxt = $('#comment_' + resourceId);
+						inputTxt.replaceWith(inputTxt.val('').clone(true));
+						$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
+						$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
+					}
+
+				});
+			});
+
+			//Add Comment Like
+			$('.addCommentLike').one('click', function () {
+
+				var resourceId = $(this).attr('data-id');
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("AddCommentLike", "IAFCHBResourceDetailsController")',
+					data: { resourceId: resourceId },
+					dataType: "json",
+					success: function (response) {
+						$("#commentLikes_" + resourceId).html(response);
+					}
+				});
+			});
+
+			//Add Comment Dislike
+			$('.addCommentDislike').one('click', function () {
+
+				var resourceId = $(this).attr('data-id');
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("AddCommentDislike", "IAFCHBResourceDetailsController")',
+					data: { resourceId: resourceId },
+					dataType: "json",
+					success: function (response) {
+						$("#commentDislikes_" + resourceId).html(response);
+					}
+				});
+			});
+
+			//Comment Reply btn t1
+			$('.commentReplyBtn').one('click', function () {
+
+				var commentId = $(this).attr('data-id');
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("PressReplyCommentBtn", "IAFCHBResourceDetailsController")',
+					data: { commentId: commentId },
+					success: function (response) {
+						$("#replyCommentBtn_" + commentId).html("");
+						$("#commentRepliesInputView_" + commentId).html(response);
+					}
+				});
+			});
+
+			//Add Reply Comment Button Pressed
+			$('.addReplyCommentBtn').one('click', function () {
+
+				var commentId = $(this).attr('data-id');
+				var commentMsg = $('#replyComment_' + commentId).val();
+				var comment = commentMsg;
+
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: '@Url.Action("AddReplyComment", "IAFCHBResourceDetailsController")',
+					data: { commentTxt: comment, commentId: commentId },
+					success: function (commentsResults) {
+						$("#commentRepliesInputView_" + commentId).html(" ");
+						$("#commentRepliesView_" + commentId).html(commentsResults);
+						$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="' + commentId + '"> Reply </button>');
+					}
+
+				});
+			});
+
+			$('.resources-single-comment').on('click tap', function () {
+				if (!$(this).hasClass('active')) {
+					$(this).addClass('active');
+					$('.resources-single-resources').removeClass('active');
+					$('.resources-single__right').hide();
+					$('.resources-single__comments_list').show();
+					$('.resources-single__left_post_comment_textarea > div').show();
+				}
+			})
+
+			$('.resources-single-resources').on('click tap', function () {
+				if (!$(this).hasClass('active')) {
+					$(this).addClass('active');
+					$('.resources-single-comment').removeClass('active');
+					$('.resources-single__right').show();
+					$('.resources-single__comments_list').hide();
+					$('.resources-single__left_post_comment_textarea > div').hide();
+				}
+			})
+		});
+	}
 
 
 </script>

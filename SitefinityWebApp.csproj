@@ -1268,14 +1268,14 @@
     <Content Include="OpenAccessNuGet.targets" />
     <Content Include="Mvc\Views\IAFCHBRecentlyAddedResources\RecentlyAddedResources.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourceDetails\ResourceDetails.cshtml" />
-    <Content Include="Mvc\Views\IAFCHBResourceDetails\_IAFCHBComments.cshtml" />
-    <Content Include="Mvc\Views\IAFCHBResourceDetails\_IAFCHBReplyCommentsInput.cshtml" />
+    <Content Include="Mvc\Views\Shared\_IAFCHBComments.cshtml" />
+    <Content Include="Mvc\Views\Shared\_IAFCHBReplyCommentsInput.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBook\MyHandBook.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookAllResourcesPerCategory\MyHandBookAllResourcesPerCategory.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookAllResourcesPerCategory\_MyHandBookAllResourcesPerCategoryDetails.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\MyHandBookCategoryResources.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\_MyHandBookCategoryResourcesDetails.cshtml" />
-    <Content Include="Mvc\Views\IAFCHBMyHandBookResourceDetails\MyHandBookResourceDetail.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBMyHandBookResourceDetails\MyHandBookResourceDetails.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
