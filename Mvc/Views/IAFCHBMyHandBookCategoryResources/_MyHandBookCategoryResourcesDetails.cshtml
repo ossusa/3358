@@ -131,8 +131,8 @@
 					</div>
 					<div class="resources__slide-footer">
 						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete" , item.Id.ToString())">
-							<div id="completeMarkAsComplete">							
-								<button type="button"  @(item.IsResourceCompleted? "disabled": "") class="completeMarkAsCompleteBtn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">@item.MarkCompleteBtnText</button>								
+							<div id="completeMarkAsComplete">
+								<div class="complete_btn-group"><div class="complete_box anticon anticon-check"></div><button type="button"  @(item.IsResourceCompleted? "disabled": "") class="completeMarkAsCompleteBtn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">@item.MarkCompleteBtnText</button></div>
 							</div>
 						</div>
 						<div class="resources__slide-social">

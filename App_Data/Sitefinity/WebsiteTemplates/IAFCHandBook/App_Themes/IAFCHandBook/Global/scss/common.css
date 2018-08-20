@@ -3172,7 +3172,11 @@ p {
 .complete_btn {
   border: none;
   background: transparent;
-  outline: none; }
+  outline: none;
+  padding: 0; }
+  .complete_btn-group {
+    display: flex;
+    align-items: center; }
 
 .handbook__title {
   width: 100%;
