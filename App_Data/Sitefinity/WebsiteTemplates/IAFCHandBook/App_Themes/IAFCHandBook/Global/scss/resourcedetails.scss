@@ -1,6 +1,9 @@
 .single-post-statistic{
+  display: flex;
+  align-items: center;
   button{
-    display: inline-block;
+    display: flex;
+    align-items: center;
     background: transparent;
     border: none;
     color: #9b9b9b;
@@ -202,6 +205,7 @@
             }
             &_right{
               display: flex;
+              align-items: center;
               @media screen and (max-width: 767px){
                 margin-top: 16px;
               }

@@ -2530,22 +2530,30 @@ p {
   .footer__info {
     height: auto; } }
 
-.single-post-statistic button {
-  display: inline-block;
-  background: transparent;
-  border: none;
-  color: #9b9b9b;
-  font-size: 13px;
-  font-weight: 400;
-  padding: 0; }
-  .single-post-statistic button:not(:last-child) {
-    margin-right: 16px; }
-  .single-post-statistic button.anticon-like-o:hover:before {
-    content: "\E64C"; }
-  .single-post-statistic button.anticon-dislike-o:hover:before {
-    content: "\E64B"; }
-  .single-post-statistic button:before {
-    font-size: 15px; }
+.single-post-statistic {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
+  .single-post-statistic button {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #9b9b9b;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0; }
+    .single-post-statistic button:not(:last-child) {
+      margin-right: 16px; }
+    .single-post-statistic button.anticon-like-o:hover:before {
+      content: "\E64C"; }
+    .single-post-statistic button.anticon-dislike-o:hover:before {
+      content: "\E64B"; }
+    .single-post-statistic button:before {
+      font-size: 15px; }
 
 .single-post-comments {
   display: -ms-flexbox;
@@ -2712,7 +2720,9 @@ p {
             font-weight: 400; }
         .resources-single__left_post_comment_header_right {
           display: -ms-flexbox;
-          display: flex; }
+          display: flex;
+          -ms-flex-align: center;
+          align-items: center; }
           @media screen and (max-width: 767px) {
             .resources-single__left_post_comment_header_right {
               margin-top: 16px; } }
