@@ -3157,6 +3157,15 @@ p {
   width: 384px; }
   .complete__resources_slide img {
     height: 266px; }
+  .complete__resources_slide-info {
+    padding: 20px;
+    height: 181px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px; }
 
 .handbook__title {
   width: 100%;

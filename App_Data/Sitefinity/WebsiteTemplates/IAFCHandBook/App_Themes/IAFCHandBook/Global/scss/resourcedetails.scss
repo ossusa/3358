@@ -485,5 +485,15 @@
     img{
       height: 266px;
     }
+    &-info{
+      padding: 20px;
+      height: 181px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+  }
   }
 }
