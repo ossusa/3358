@@ -575,7 +575,7 @@ p {
 
 .k-link {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 400 !important;
+  font-weight: 400;
   color: #666666;
   font-size: 1.00em;
   z-index: 1000;
@@ -2471,70 +2471,71 @@ p {
   .header__nav > ul > li > div > ul > li:nth-of-type(1) > a {
     padding-top: 20px !important; }
     .header__nav > ul > li > div > ul > li:nth-of-type(1) > a:hover {
-      color: #5591AA; }
+      color: #5591AA;
+      font-weight: bold; }
     .header__nav > ul > li > div > ul > li:nth-of-type(1) > a:focus {
-      text-shadow: 1px 0 #5591AA;
+      font-weight: bold;
       color: #5591AA; }
   .header__nav > ul > li > div > ul > li:nth-of-type(1) > div > ul > li:first-child > a {
     padding-top: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(1) > div > ul > li:last-child > a {
     padding-bottom: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(1) > div > ul > li > a:hover {
-    text-shadow: 1px 0 #5591AA;
-    color: #5591AA; }
+    color: #5591AA;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(1) > div > ul > li > a:focus {
-    text-shadow: 1px 0 #5591AA;
-    color: #5591AA; }
+    color: #5591AA;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(2) > div > ul > li:first-child > a {
     padding-top: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(2) > div > ul > li:last-child > a {
     padding-bottom: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(2) > div > ul > li > a:hover {
-    text-shadow: 1px 0 #BDA15F;
-    color: #BDA15F; }
+    color: #BDA15F;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(2) > div > ul > li > a:focus {
-    text-shadow: 1px 0 #BDA15F;
-    color: #BDA15F; }
+    color: #BDA15F;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(2) > a:hover {
-    text-shadow: 1px 0 #BDA15F;
-    color: #BDA15F; }
+    color: #BDA15F;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(2) > a:focus {
-    text-shadow: 1px 0 #BDA15F;
-    color: #BDA15F; }
+    color: #BDA15F;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(3) > div > ul > li:first-child > a {
     padding-top: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(3) > div > ul > li:last-child > a {
     padding-bottom: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(3) > div > ul > li > a:hover {
-    text-shadow: 1px 0 #73AA56;
-    color: #73AA56; }
+    color: #73AA56;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(3) > div > ul > li > a:focus {
-    text-shadow: 1px 0 #73AA56;
-    color: #73AA56; }
+    color: #73AA56;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(3) > a:hover {
-    text-shadow: 1px 0 #73AA56;
-    color: #73AA56; }
+    color: #73AA56;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(3) > a:focus {
-    text-shadow: 1px 0 #73AA56;
-    color: #73AA56; }
+    color: #73AA56;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(4) > div > ul > li:first-child > a {
     padding-top: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(4) > div > ul > li:last-child > a {
     padding-bottom: 20px !important; }
   .header__nav > ul > li > div > ul > li:nth-of-type(4) > div > ul > li > a:hover {
-    text-shadow: 1px 0 #CF794A;
-    color: #CF794A; }
+    color: #CF794A;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(4) > div > ul > li > a:focus {
-    text-shadow: 1px 0 #CF794A;
-    color: #CF794A; }
+    color: #CF794A;
+    font-weight: bold; }
   .header__nav > ul > li > div > ul > li:nth-of-type(4) > a {
     padding-bottom: 20px !important; }
     .header__nav > ul > li > div > ul > li:nth-of-type(4) > a:hover {
-      text-shadow: 1px 0 #CF794A;
-      color: #CF794A; }
+      color: #CF794A;
+      font-weight: bold; }
     .header__nav > ul > li > div > ul > li:nth-of-type(4) > a:focus {
-      text-shadow: 1px 0 #CF794A;
-      color: #CF794A; }
+      color: #CF794A;
+      font-weight: bold; }
   .header__table-tr {
     display: -webkit-box;
     display: -ms-flexbox;
