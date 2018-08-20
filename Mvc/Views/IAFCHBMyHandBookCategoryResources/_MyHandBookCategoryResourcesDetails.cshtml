@@ -55,7 +55,7 @@
 								}
 								else
 								{
-									<div class="complete_btn-group"><div class="complete_box"></div><button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">@item.MarkCompleteBtnText</button></div>
+									<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>@item.MarkCompleteBtnText</button>
 								}
 							</div>
 						</div>
@@ -132,7 +132,7 @@
 					<div class="resources__slide-footer">
 						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete" , item.Id.ToString())">
 							<div id="completeMarkAsComplete">
-								<div class="complete_btn-group"><div class="complete_box anticon anticon-check"></div><button type="button" class="complete_btn" @(item.IsResourceCompleted? "disabled": "") class="completeMarkAsCompleteBtn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">@item.MarkCompleteBtnText</button></div>
+								<button type="button" class="complete_btn" @(item.IsResourceCompleted? "disabled": "") class="completeMarkAsCompleteBtn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box anticon anticon-check"></div>@item.MarkCompleteBtnText</button>
 							</div>
 						</div>
 						<div class="resources__slide-social">
