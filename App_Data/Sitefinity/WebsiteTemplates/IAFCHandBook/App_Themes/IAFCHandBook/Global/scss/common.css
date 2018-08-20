@@ -3173,9 +3173,6 @@ p {
   border: none;
   background: transparent;
   outline: none; }
-  .complete_btn-group {
-    display: flex;
-    align-items: center; }
 
 .handbook__title {
   width: 100%;
