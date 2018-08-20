@@ -3215,13 +3215,7 @@ p {
   display: flex; }
   @media screen and (max-width: 1109px) {
     .complete__head-buttons {
-      margin: 0 -90px; }
-      .complete__head-buttons button:nth-of-type(1) {
-        justify-content: flex-end;
-        padding-right: 12px; }
-      .complete__head-buttons button:nth-of-type(2) {
-        justify-content: flex-start;
-        padding-left: 12px; } }
+      display: none; } }
 @media screen and (max-width: 1109px) {
   .complete-box .single-post-comments {
     display: none; }
@@ -3229,6 +3223,18 @@ p {
     margin: 0 auto 4px 0; }
   .complete-box .selectric-community__title-select {
     margin: 0; } }
+.complete__tablet_head-buttons {
+  display: none; }
+  @media screen and (max-width: 1109px) {
+    .complete__tablet_head-buttons {
+      display: flex;
+      margin: 0 -90px; }
+      .complete__tablet_head-buttons button:nth-of-type(1) {
+        justify-content: flex-end;
+        padding-right: 12px; }
+      .complete__tablet_head-buttons button:nth-of-type(2) {
+        justify-content: flex-start;
+        padding-left: 12px; } }
 
 .handbook__title {
   width: 100%;
