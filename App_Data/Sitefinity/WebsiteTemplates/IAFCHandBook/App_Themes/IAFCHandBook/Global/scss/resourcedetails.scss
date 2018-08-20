@@ -505,4 +505,12 @@
       align-items: flex-start;
     }
   }
+  &_box{
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid #9b9b9b;
+    background: transparent;
+    outline: none;
+  }
 }
