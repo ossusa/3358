@@ -2602,7 +2602,8 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_community;
-            text-shadow: 1px 0 #5591AA;
+            //text-shadow: 1px 0 #5591AA;
+            font-weight: bold;
           }
         }
       }
@@ -2610,7 +2611,8 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_leadership;
-            text-shadow: 1px 0 #BDA15F;
+            //text-shadow: 1px 0 #BDA15F;
+            font-weight: bold;
           }
         }
       }
@@ -2618,7 +2620,8 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_finance;
-            text-shadow: 1px 0 #73AA56;
+            //text-shadow: 1px 0 #73AA56;
+            font-weight: bold;
           }
         }
       }
@@ -2626,7 +2629,8 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_personnel;
-            text-shadow: 1px 0 #CF794A;
+            //text-shadow: 1px 0 #CF794A;
+            font-weight: bold;
           }
         }
       }

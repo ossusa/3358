@@ -1952,16 +1952,16 @@ p {
     height: 176px !important; }
   .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover {
     color: #5591AA;
-    text-shadow: 1px 0 #5591AA; }
+    font-weight: bold; }
   .accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-title:hover {
     color: #BDA15F;
-    text-shadow: 1px 0 #BDA15F; }
+    font-weight: bold; }
   .accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-title:hover {
     color: #73AA56;
-    text-shadow: 1px 0 #73AA56; }
+    font-weight: bold; }
   .accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title:hover {
     color: #CF794A;
-    text-shadow: 1px 0 #CF794A; }
+    font-weight: bold; }
   .community__head-button-group {
     margin-bottom: 36px !important;
     margin-top: 32px !important; }
