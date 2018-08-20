@@ -2994,6 +2994,8 @@ p {
   width: 384px;
   margin-right: 24px;
   margin-bottom: 48px; }
+  .complete__resources_slide:nth-of-type(3n + 3) {
+    margin-right: 0; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
       width: 282px; }
