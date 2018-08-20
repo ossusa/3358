@@ -128,7 +128,7 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$('.editBtn').text("Cancel");
+						$('.editBtn').html("<i class='anticon anticon-close'></i> Cancel");
 						$('.markAsCompleteBtn').text("Remove");
 						$('.completeMarkAsCompleteBtn').text("Remove");
 						$('.completeMarkAsCompleteBtn').removeAttr("disabled");
