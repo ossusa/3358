@@ -2492,11 +2492,10 @@ p {
     color: #9b9b9b;
     font-size: 1.125em;
     outline: none;
-    border: none; } }
-
-.sticky .header__mob-nav {
-  height: 100vh;
-  top: 0; }
+    border: none; }
+  .sticky .header__mob-nav {
+    height: 100vh;
+    top: 0; } }
 
 @media (max-width: 370px) {
   .header__logo img {
@@ -3013,6 +3012,14 @@ p {
   justify-content: flex-start;
   -ms-flex-align: start;
   align-items: flex-start; }
+
+.complete_box {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid #9b9b9b;
+  background: transparent;
+  outline: none; }
 
 .handbook__title {
   width: 100%;
