@@ -3033,15 +3033,22 @@ p {
   align-items: center; }
 
 .complete__progressindicator_wrapper {
-  margin: 17px 0 48px; }
+  margin: 17px 0 48px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center; }
   @media screen and (max-width: 1109px) {
     .complete__progressindicator_wrapper {
-      display: -ms-flexbox;
-      display: flex;
       -ms-flex-direction: column;
       flex-direction: column;
       -ms-flex-align: start;
       align-items: flex-start; } }
+
+.complete__head-btn-select {
+  margin-top: 20px; }
 
 .handbook__title {
   width: 100%;
