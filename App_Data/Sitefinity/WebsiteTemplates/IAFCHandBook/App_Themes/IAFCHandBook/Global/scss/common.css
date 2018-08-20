@@ -2195,7 +2195,8 @@ p {
     width: 318px; }
 
   .resources__slide-footer {
-    margin-top: 6px; } }
+    margin-top: 6px;
+    flex-wrap: wrap; } }
 @media (max-width: 382px) {
   .resources__slide-info {
     height: 220px; } }
@@ -3147,12 +3148,25 @@ p {
     margin-bottom: 16px;
     font-size: 40px;
     color: #3b4b6b; }
+  @media screen and (max-width: 1109px) {
+    .complete_section .single-post-comments {
+      display: none; } }
+  .complete_section .complete__resources_slide img {
+    margin-bottom: -6px; }
 .complete__resources_slide {
   width: 384px;
   margin-right: 24px;
   margin-bottom: 48px; }
+  @media screen and (max-width: 1109px) {
+    .complete__resources_slide {
+      width: 282px; } }
+  .complete__resources_slide:nth-of-type(even) {
+    margin-right: 0; }
   .complete__resources_slide img {
     height: 266px; }
+    @media screen and (max-width: 1109px) {
+      .complete__resources_slide img {
+        height: 195px; } }
   .complete__resources_slide-info {
     padding: 20px 25px 20px 20px;
     height: 181px;
@@ -3162,6 +3176,9 @@ p {
     justify-content: space-between;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
+    @media screen and (max-width: 1109px) {
+      .complete__resources_slide-info {
+        height: 186px; } }
 .complete__resources_slides {
   display: flex;
   justify-content: flex-start;
@@ -3189,18 +3206,35 @@ p {
   @media screen and (max-width: 1109px) {
     .complete__progressindicator_wrapper {
       flex-direction: column;
-      align-items: flex-start; } }
+      align-items: flex-start;
+      margin: 24px 0 48px; } }
 .complete__head-btn-select {
   margin-top: 20px; }
+  @media screen and (max-width: 1109px) {
+    .complete__head-btn-select {
+      margin-top: 24px; } }
 .complete__head-buttons {
   display: flex; }
   @media screen and (max-width: 1109px) {
     .complete__head-buttons {
+      display: none; } }
+@media screen and (max-width: 1109px) {
+  .complete-box .single-post-comments {
+    display: none; }
+  .complete-box .resources-breadcrumbs {
+    margin: 0 auto 4px 0; }
+  .complete-box .selectric-community__title-select {
+    margin: 0; } }
+.complete__tablet_head-buttons {
+  display: none; }
+  @media screen and (max-width: 1109px) {
+    .complete__tablet_head-buttons {
+      display: flex;
       margin: 0 -90px; }
-      .complete__head-buttons button:nth-of-type(1) {
+      .complete__tablet_head-buttons button:nth-of-type(1) {
         justify-content: flex-end;
         padding-right: 12px; }
-      .complete__head-buttons button:nth-of-type(2) {
+      .complete__tablet_head-buttons button:nth-of-type(2) {
         justify-content: flex-start;
         padding-left: 12px; } }
 
