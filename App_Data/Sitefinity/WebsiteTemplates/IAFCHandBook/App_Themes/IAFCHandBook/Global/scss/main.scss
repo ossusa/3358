@@ -2385,11 +2385,13 @@ p {
           }
           &:focus {
             color: $color_19;
-            text-shadow: 1px 0 #2b4b6b;
+            //text-shadow: 1px 0 #2b4b6b;
+            font-weight: bold;
           }
           &:visited {
             color: $color_19;
-            text-shadow: 1px 0 #2b4b6b;
+            //text-shadow: 1px 0 #2b4b6b;
+            font-weight: bold;
           }
         }
         >.accordion__arrow.accordion__sub-title {
@@ -2406,13 +2408,15 @@ p {
         >.accordion__sub-title {
           &:focus {
             color: $color_community;
-            text-shadow: 1px 0 #5591AA;
+            //text-shadow: 1px 0 #5591AA;
+            font-weight: bold;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
             color: $color_community;
-            text-shadow: 1px 0 #5591AA;
+            //text-shadow: 1px 0 #5591AA;
+            font-weight: bold;
           }
         }
       }
@@ -2420,13 +2424,15 @@ p {
         >.accordion__sub-title {
           &:focus {
             color: $color_leadership;
-            text-shadow: 1px 0 #BDA15F;
+            //text-shadow: 1px 0 #BDA15F;
+            font-weight: bold;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
             color: $color_leadership;
-            text-shadow: 1px 0 #BDA15F;
+            //text-shadow: 1px 0 #BDA15F;
+            font-weight: bold;
           }
         }
       }
@@ -2440,7 +2446,8 @@ p {
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
             color: $color_finance;
-            text-shadow: 1px 0 #73AA56;
+            //text-shadow: 1px 0 #73AA56;
+            font-weight: bold;
           }
         }
       }
@@ -2448,14 +2455,15 @@ p {
         >.accordion__sub-title {
           &:focus {
             color: $color_personnel;
-            text-shadow: 1px 0 #CF794A;
+            //text-shadow: 1px 0 #CF794A;
+            font-weight: bold;
           }
         }
         >.accordion__sub-arrow.accordion__sub-title {
           &:hover {
             color: $color_personnel;
-            text-shadow: 1px 0 #CF794A;
-          }
+            //text-shadow: 1px 0 #CF794A;
+            font-weight: bold;          }
         }
       }
     }
@@ -2479,7 +2487,7 @@ p {
       -o-transition: background-color 0.2s;
       transition: background-color 0.2s;
       cursor: pointer;
-      padding: 20px 28px;
+      padding: 12px 28px;
       border-bottom: 1px solid #D8D8D8;
       &:hover {
         background-color: $background_color_1;
