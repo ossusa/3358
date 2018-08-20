@@ -2996,10 +2996,16 @@ p {
   width: 384px;
   margin-right: 24px;
   margin-bottom: 48px; }
+  @media screen and (max-width: 1109px) {
+    .complete__resources_slide {
+      width: 282px; } }
   .complete__resources_slide:nth-of-type(even) {
     margin-right: 0; }
   .complete__resources_slide img {
     height: 266px; }
+    @media screen and (max-width: 1109px) {
+      .complete__resources_slide img {
+        height: 195px; } }
   .complete__resources_slide-info {
     padding: 20px 25px 20px 20px;
     height: 181px;
@@ -3012,6 +3018,9 @@ p {
     justify-content: space-between;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
+    @media screen and (max-width: 1109px) {
+      .complete__resources_slide-info {
+        height: 186px; } }
 
 .complete__resources_slides {
   display: -ms-flexbox;
@@ -3053,10 +3062,14 @@ p {
       -ms-flex-direction: column;
       flex-direction: column;
       -ms-flex-align: start;
-      align-items: flex-start; } }
+      align-items: flex-start;
+      margin: 24px 0 48px; } }
 
 .complete__head-btn-select {
   margin-top: 20px; }
+  @media screen and (max-width: 1109px) {
+    .complete__head-btn-select {
+      margin-top: 24px; } }
 
 .complete__head-buttons {
   display: -ms-flexbox;
@@ -3072,6 +3085,14 @@ p {
         -ms-flex-pack: start;
         justify-content: flex-start;
         padding-left: 12px; } }
+
+@media screen and (max-width: 1109px) {
+  .complete-box .resources-breadcrumbs {
+    margin: 0 auto 4px 0; } }
+
+@media screen and (max-width: 1109px) {
+  .complete-box .selectric-community__title-select {
+    margin: 0; } }
 
 .handbook__title {
   width: 100%;

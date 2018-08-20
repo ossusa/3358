@@ -495,11 +495,17 @@
       width: 384px;
       margin-right: 24px;
       margin-bottom: 48px;
+      @media screen and (max-width: 1109px){
+        width: 282px;
+      }
       &:nth-of-type(even){
         margin-right: 0;
       }
       img{
         height: 266px;
+        @media screen and (max-width: 1109px){
+          height: 195px;
+        }
       }
       &-info{
         padding: 20px 25px 20px 20px;
@@ -510,6 +516,9 @@
         justify-content: space-between;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
+        @media screen and (max-width: 1109px){
+          height: 186px;
+        }
       }
     }
     &_slides{
@@ -543,10 +552,14 @@
     @media screen and (max-width: 1109px){
       flex-direction: column;
       align-items: flex-start;
+      margin: 24px 0 48px;
     }
   }
   &__head-btn-select{
     margin-top: 20px;
+    @media screen and (max-width: 1109px){
+      margin-top: 24px;
+    }
   }
   &__head-buttons{
     display: flex;
@@ -559,6 +572,18 @@
       button:nth-of-type(2){
         justify-content: flex-start;
         padding-left: 12px;
+      }
+    }
+  }
+  &-box{
+    .resources-breadcrumbs{
+      @media screen and (max-width: 1109px) {
+        margin: 0 auto 4px 0;
+      }
+    }
+    .selectric-community__title-select{
+      @media screen and (max-width: 1109px) {
+        margin: 0;
       }
     }
   }
