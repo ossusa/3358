@@ -343,9 +343,9 @@
     right: 0;
     background-color: $background_color_3;
     overflow-x: hidden;
-    -webkit-transition: 0.5s, top 0s;
-    -o-transition: 0.5s, top 0s;
-    transition: 0.5s, top 0s;
+    -webkit-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
   }
 
   .header__mob-open {
@@ -408,11 +408,6 @@
 }
 
 @media (max-width: 370px) {
-  .header__logo {
-    img {
-      width: 270px;
-    }
-  }
   .header__text {
     padding: 0 14px;
   }
