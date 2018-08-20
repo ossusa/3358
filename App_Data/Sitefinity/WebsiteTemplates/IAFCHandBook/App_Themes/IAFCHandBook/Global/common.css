@@ -2976,6 +2976,10 @@ p {
   background-color: #efefef;
   padding: 64px 0 72px;
   margin: 52px 0 100px; }
+  @media screen and (max-width: 767px) {
+    .complete_section {
+      padding: 36px 0 16px;
+      margin: 40px 0 67px; } }
   .complete_section-title {
     margin-bottom: 16px;
     font-size: 40px;
@@ -3003,7 +3007,8 @@ p {
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
       width: 320px;
-      margin-right: 0; } }
+      margin-right: 0;
+      margin-bottom: 24px; } }
   .complete__resources_slide:nth-of-type(even) {
     margin-right: 0; }
   .complete__resources_slide img {
