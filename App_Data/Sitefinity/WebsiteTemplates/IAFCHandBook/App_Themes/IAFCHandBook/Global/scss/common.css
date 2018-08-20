@@ -2632,7 +2632,7 @@ p {
     align-items: center; }
 
   .header__mob-nav {
-    height: 100%;
+    height: 100vh;
     width: 0;
     position: absolute;
     display: -webkit-box;
@@ -2650,9 +2650,7 @@ p {
     right: 0;
     background-color: transparent;
     overflow-x: hidden;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; }
+    transition: 0.5s, top 0s; }
 
   .header__mob-open {
     font-size: 1.250em;
@@ -2707,7 +2705,6 @@ p {
     border: none; }
 
   .sticky .header__mob-nav {
-    height: 100vh;
     top: 0; } }
 @media (max-width: 370px) {
   .header__logo img {
@@ -3178,7 +3175,15 @@ p {
   border-radius: 2px;
   border: 1px solid #9b9b9b;
   background: transparent;
+  outline: none;
+  margin-right: 6px; }
+.complete_btn {
+  border: none;
+  background: transparent;
   outline: none; }
+  .complete_btn-group {
+    display: flex;
+    align-items: center; }
 
 .handbook__title {
   width: 100%;

@@ -3018,7 +3018,18 @@ p {
   border-radius: 2px;
   border: 1px solid #9b9b9b;
   background: transparent;
+  outline: none;
+  margin-right: 6px; }
+
+.complete_btn {
+  border: none;
+  background: transparent;
   outline: none; }
+  .complete_btn-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
 
 .handbook__title {
   width: 100%;
