@@ -2490,8 +2490,6 @@ p {
     top: 0; } }
 
 @media (max-width: 370px) {
-  .header__logo img {
-    width: 270px; }
   .header__text {
     padding: 0 14px; }
   .header__mob-open {
