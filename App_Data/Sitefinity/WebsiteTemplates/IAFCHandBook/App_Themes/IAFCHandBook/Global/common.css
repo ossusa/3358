@@ -2993,6 +2993,8 @@ p {
   width: 384px;
   margin-right: 24px;
   margin-bottom: 48px; }
+  .complete__resources_slide:nth-of-type(even) {
+    margin-right: 0; }
   .complete__resources_slide img {
     height: 266px; }
   .complete__resources_slide-info {

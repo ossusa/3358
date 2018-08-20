@@ -490,6 +490,9 @@
       width: 384px;
       margin-right: 24px;
       margin-bottom: 48px;
+      &:nth-of-type(even){
+        margin-right: 0;
+      }
       img{
         height: 266px;
       }
