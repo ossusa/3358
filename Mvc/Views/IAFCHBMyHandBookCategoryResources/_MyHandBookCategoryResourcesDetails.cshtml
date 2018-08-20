@@ -136,7 +136,7 @@
 							</div>
 						</div>
 						<div class="resources__slide-social">
-							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount Comments</a>
+							<a href="@item.ResourceUrl"  class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
 
 							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
 								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
