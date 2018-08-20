@@ -469,11 +469,7 @@
   justify-content: space-between;
   margin: 48px 0 20px 0;
 }
-.community__head-title{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .complete {
   &_section {
     background-color: #efefef;
@@ -491,6 +487,11 @@
     }
     .complete__resources_slide img{
       margin-bottom: -6px;
+    }
+    .community__head-title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
   &__resources {
@@ -575,6 +576,9 @@
     @media screen and (max-width: 1109px) {
       margin-top: 24px;
     }
+    @media screen and (max-width: 767px) {
+      margin-bottom: 0;
+    }
   }
   &__head-buttons {
     display: flex;
@@ -597,6 +601,9 @@
     @media screen and (max-width: 767px){
       .progressindicator_share {
         margin-bottom: 28px;
+      }
+      .resources-breadcrumbs {
+        margin: 28px auto 4px 0;
       }
   }
   &__tablet_head-buttons{
