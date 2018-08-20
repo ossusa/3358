@@ -475,6 +475,10 @@
     background-color: #efefef;
     padding: 64px 0 72px;
     margin: 52px 0 100px;
+    @media screen and (max-width: 767px){
+      padding: 36px 0 16px;
+      margin: 40px 0 67px;
+    }
     &-title {
       margin-bottom: 16px;
       font-size: 40px;
@@ -505,6 +509,7 @@
       @media screen and (max-width: 767px) {
         width: 320px;
         margin-right: 0;
+        margin-bottom: 24px;
       }
       &:nth-of-type(even) {
         margin-right: 0;
