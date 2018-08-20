@@ -3135,11 +3135,6 @@ p {
   justify-content: space-between;
   margin: 48px 0 20px 0; }
 
-.community__head-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
 .complete_section {
   background-color: #efefef;
   padding: 64px 0 72px;
@@ -3153,6 +3148,10 @@ p {
       display: none; } }
   .complete_section .complete__resources_slide img {
     margin-bottom: -6px; }
+  .complete_section .community__head-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
 .complete__resources_slide {
   width: 384px;
   margin-right: 24px;
@@ -3224,6 +3223,9 @@ p {
   @media screen and (max-width: 1109px) {
     .complete__head-btn-select {
       margin-top: 24px; } }
+  @media screen and (max-width: 767px) {
+    .complete__head-btn-select {
+      margin-bottom: 0; } }
 .complete__head-buttons {
   display: flex; }
   @media screen and (max-width: 1109px) {
