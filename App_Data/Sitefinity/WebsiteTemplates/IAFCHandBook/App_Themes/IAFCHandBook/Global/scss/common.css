@@ -803,7 +803,7 @@ p {
         margin-left: 0;
         padding: 0; }
       .resources__slide-btn span {
-        margin-right: -1px; }
+        margin-right: 0px; }
       .resources__slide-btn img:nth-of-type(even) {
         display: none; }
       .resources__slide-btn:hover img:first-of-type {
@@ -3145,13 +3145,15 @@ p {
 .complete_section {
   background-color: #efefef;
   padding: 64px 0 72px;
-  margin: 100px 0; }
+  margin: 52px 0 100px; }
   .complete_section-title {
     margin-bottom: 16px;
     font-size: 40px;
     color: #3b4b6b; }
 .complete__resources_slide {
-  width: 384px; }
+  width: 384px;
+  margin-right: 24px;
+  margin-bottom: 48px; }
   .complete__resources_slide img {
     height: 266px; }
   .complete__resources_slide-info {
@@ -3163,6 +3165,10 @@ p {
     justify-content: space-between;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
+.complete__resources_slides {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; }
 
 .handbook__title {
   width: 100%;
