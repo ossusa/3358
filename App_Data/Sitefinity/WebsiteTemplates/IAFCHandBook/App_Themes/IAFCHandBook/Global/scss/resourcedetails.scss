@@ -484,30 +484,30 @@
       font-size: 40px;
       color: #3b4b6b;
     }
-    .single-post-comments{
+    .single-post-comments {
       @media screen and (max-width: 1109px) {
         display: none;
       }
     }
   }
-  &__resources{
-    &_slide{
+  &__resources {
+    &_slide {
       width: 384px;
       margin-right: 24px;
       margin-bottom: 48px;
-      @media screen and (max-width: 1109px){
+      @media screen and (max-width: 1109px) {
         width: 282px;
       }
-      &:nth-of-type(even){
+      &:nth-of-type(even) {
         margin-right: 0;
       }
-      img{
+      img {
         height: 266px;
-        @media screen and (max-width: 1109px){
+        @media screen and (max-width: 1109px) {
           height: 195px;
         }
       }
-      &-info{
+      &-info {
         padding: 20px 25px 20px 20px;
         height: 181px;
         background: #fff;
@@ -516,18 +516,18 @@
         justify-content: space-between;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
-        @media screen and (max-width: 1109px){
+        @media screen and (max-width: 1109px) {
           height: 186px;
         }
       }
     }
-    &_slides{
+    &_slides {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
     }
   }
-  &_box{
+  &_box {
     width: 14px;
     height: 14px;
     border-radius: 2px;
@@ -536,7 +536,7 @@
     outline: none;
     margin-right: 6px;
   }
-  &_btn{
+  &_btn {
     border: none;
     background: transparent;
     outline: none;
@@ -544,45 +544,46 @@
     display: flex;
     align-items: center;
   }
-  &__progressindicator_wrapper{
+  &__progressindicator_wrapper {
     margin: 17px 0 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media screen and (max-width: 1109px){
+    @media screen and (max-width: 1109px) {
       flex-direction: column;
       align-items: flex-start;
       margin: 24px 0 48px;
     }
   }
-  &__head-btn-select{
+  &__head-btn-select {
     margin-top: 20px;
-    @media screen and (max-width: 1109px){
+    @media screen and (max-width: 1109px) {
       margin-top: 24px;
     }
   }
-  &__head-buttons{
+  &__head-buttons {
     display: flex;
-    @media screen and (max-width: 1109px){
+    @media screen and (max-width: 1109px) {
       margin: 0 -90px;
-      button:nth-of-type(1){
+      button:nth-of-type(1) {
         justify-content: flex-end;
         padding-right: 12px;
       }
-      button:nth-of-type(2){
+      button:nth-of-type(2) {
         justify-content: flex-start;
         padding-left: 12px;
       }
     }
   }
-  &-box{
-    .resources-breadcrumbs{
-      @media screen and (max-width: 1109px) {
+  &-box {
+    @media screen and (max-width: 1109px) {
+      .single-post-comments {
+        display: none;
+      }
+      .resources-breadcrumbs {
         margin: 0 auto 4px 0;
       }
-    }
-    .selectric-community__title-select{
-      @media screen and (max-width: 1109px) {
+      .selectric-community__title-select {
         margin: 0;
       }
     }

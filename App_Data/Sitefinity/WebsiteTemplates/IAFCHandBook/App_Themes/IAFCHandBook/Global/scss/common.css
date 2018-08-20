@@ -3223,9 +3223,10 @@ p {
         justify-content: flex-start;
         padding-left: 12px; } }
 @media screen and (max-width: 1109px) {
+  .complete-box .single-post-comments {
+    display: none; }
   .complete-box .resources-breadcrumbs {
-    margin: 0 auto 4px 0; } }
-@media screen and (max-width: 1109px) {
+    margin: 0 auto 4px 0; }
   .complete-box .selectric-community__title-select {
     margin: 0; } }
 
