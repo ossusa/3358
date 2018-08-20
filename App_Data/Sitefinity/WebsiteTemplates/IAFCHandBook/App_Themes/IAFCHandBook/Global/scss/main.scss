@@ -2190,6 +2190,14 @@ p {
   .community__head-desc {
     width: auto !important;
     font-size: 1.250em !important;
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    white-space: normal;
+    line-height: 48px;
+    color: #5591aa;
+    height: auto;
   }
   .selectric-community__title-select {
     .selectric {
