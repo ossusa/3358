@@ -3151,6 +3151,8 @@ p {
   @media screen and (max-width: 1109px) {
     .complete_section .single-post-comments {
       display: none; } }
+  .complete_section .complete__resources_slide img {
+    margin-bottom: -6px; }
 .complete__resources_slide {
   width: 384px;
   margin-right: 24px;
