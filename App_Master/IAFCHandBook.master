@@ -180,7 +180,7 @@
 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
-<script type="text/javascript">
+<script>
     var currentYear = (new Date()).getFullYear();
     $(document).ready(function() {
         $("#copyrightIAFC").text(currentYear);
