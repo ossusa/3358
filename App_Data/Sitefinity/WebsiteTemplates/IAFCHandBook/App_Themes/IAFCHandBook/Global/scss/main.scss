@@ -661,14 +661,17 @@ p {
   &:hover {
     //text-shadow: 1px 0 #2B4B6B;
     color: $color_blue;
+    font-weight: bold;
   }
   &:focus {
-    text-shadow: 1px 0 #2B4B6B;
+    //text-shadow: 1px 0 #2B4B6B;
     color: $color_blue;
+    font-weight: bold;
   }
   &:active {
-    text-shadow: 1px 0 #2B4B6B;
+    //text-shadow: 1px 0 #2B4B6B;
     color: $color_blue;
+    font-weight: bold;
   }
 }
 .k-popup {
