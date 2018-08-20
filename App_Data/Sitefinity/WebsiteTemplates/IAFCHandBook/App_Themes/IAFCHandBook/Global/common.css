@@ -2515,9 +2515,6 @@ p {
     height: 40px;
     margin-left: 0 !important; }
 
-.resources--like, .resources--dislike {
-  display: inline-block; }
-
 @media (max-width: 1109px) {
   .header__table-tr {
     height: 72px;
@@ -2991,7 +2988,7 @@ p {
   .complete__resources_slide img {
     height: 266px; }
   .complete__resources_slide-info {
-    padding: 20px;
+    padding: 20px 25px 20px 20px;
     height: 181px;
     background: #fff;
     display: -ms-flexbox;
