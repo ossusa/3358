@@ -2642,6 +2642,8 @@ p {
     right: 0;
     background-color: transparent;
     overflow-x: hidden;
+    -webkit-transition: 0.5s, top 0s;
+    -o-transition: 0.5s, top 0s;
     transition: 0.5s, top 0s; }
 
   .header__mob-open {
