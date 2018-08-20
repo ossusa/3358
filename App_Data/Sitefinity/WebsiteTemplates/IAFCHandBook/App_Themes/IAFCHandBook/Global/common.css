@@ -3117,8 +3117,8 @@ p {
   display: none; }
   @media screen and (max-width: 1109px) {
     .complete-box__tablet_head-buttons {
-      display: -ms-flexbox;
-      display: flex;
+      display: -ms-flexbox !important;
+      display: flex !important;
       margin: 0 -90px; }
       .complete-box__tablet_head-buttons button:nth-of-type(1) {
         -ms-flex-pack: end;

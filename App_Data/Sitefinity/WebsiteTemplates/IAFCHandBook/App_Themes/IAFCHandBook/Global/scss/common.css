@@ -3252,7 +3252,7 @@ p {
   display: none; }
   @media screen and (max-width: 1109px) {
     .complete-box__tablet_head-buttons {
-      display: flex;
+      display: flex !important;
       margin: 0 -90px; }
       .complete-box__tablet_head-buttons button:nth-of-type(1) {
         justify-content: flex-end;
