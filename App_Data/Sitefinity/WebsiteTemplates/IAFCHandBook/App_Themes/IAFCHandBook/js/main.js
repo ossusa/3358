@@ -122,4 +122,8 @@ $(document).ready(function () {
         if ($(window).width() <= 1109){
             $('.complete-box').prepend($(".complete__head-buttons"));
     } });
+    $(window).resize(function(){
+        if ($(window).width() >= 1109){
+            $('.community__head-title').append($(".complete__head-buttons"));
+    } });
 });
