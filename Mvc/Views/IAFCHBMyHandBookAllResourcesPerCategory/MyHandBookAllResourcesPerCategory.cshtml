@@ -9,14 +9,7 @@
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
 	<div class="community_indicator_col">
-		@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
-		<select class="community__title-select" id="UrlList" onchange="doNavigate()">
-			<option value=@Model.Category.MyHandBookCategoryUrl>@Model.Category.CategoryTitle</option>
-			@foreach (var item in Model.MoreCategories)
-			{
-			<option value=@item.MyHandBookCategoryUrl>@item.CategoryTitle</option>
-			}
-		</select>
+	<div class="community__head-desc">@myHandBookResource.Category.CategoryTitle</div>
 
 		<div id="edit">
 			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
