@@ -2997,28 +2997,23 @@ p {
       display: none; } }
   .complete_section .complete__resources_slide img {
     margin-bottom: -6px; }
-  .complete_section .community__head-title {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-align: center;
-    align-items: center; }
 
 .complete__resources_slide {
   width: 384px;
   margin-right: 24px;
   margin-bottom: 48px; }
+  .complete__resources_slide:nth-of-type(3n + 3) {
+    margin-right: 0; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
-      width: 282px; } }
+      width: 282px; }
+      .complete__resources_slide:nth-of-type(even) {
+        margin-right: 0; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
       width: 320px;
       margin-right: 0;
       margin-bottom: 24px; } }
-  .complete__resources_slide:nth-of-type(even) {
-    margin-right: 0; }
   .complete__resources_slide img {
     height: 266px; }
     @media screen and (max-width: 1109px) {
@@ -3107,6 +3102,14 @@ p {
     .complete__head-buttons {
       display: none; } }
 
+.complete-box .community__head-title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center; }
+
 @media screen and (max-width: 1109px) {
   .complete-box .single-post-comments {
     display: none; }
@@ -3117,22 +3120,20 @@ p {
 
 @media screen and (max-width: 767px) {
   .complete-box .progressindicator_share {
-    margin-bottom: 28px; }
-  .complete-box .resources-breadcrumbs {
-    margin: 28px auto 4px 0; } }
+    margin-bottom: 28px; } }
 
-.complete-box__tablet_head-buttons {
+.complete__tablet_head-buttons {
   display: none; }
   @media screen and (max-width: 1109px) {
-    .complete-box__tablet_head-buttons {
-      display: -ms-flexbox;
-      display: flex;
+    .complete__tablet_head-buttons {
+      display: -ms-flexbox !important;
+      display: flex !important;
       margin: 0 -90px; }
-      .complete-box__tablet_head-buttons button:nth-of-type(1) {
+      .complete__tablet_head-buttons button:nth-of-type(1) {
         -ms-flex-pack: end;
         justify-content: flex-end;
         padding-right: 12px; }
-      .complete-box__tablet_head-buttons button:nth-of-type(2) {
+      .complete__tablet_head-buttons button:nth-of-type(2) {
         -ms-flex-pack: start;
         justify-content: flex-start;
         padding-left: 12px; } }
