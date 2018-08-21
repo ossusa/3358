@@ -2276,7 +2276,7 @@ p {
     padding-top: 36px;
   }
 
-  .community__topics-list {
+  .community__topics-list:nth-child(even) {
     margin-right: 0 !important;
   }
   .community__topics-img {
