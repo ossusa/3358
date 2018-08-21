@@ -16,7 +16,7 @@
 		{
 			if (columnCounter == 0)
 			{
-				@Html.Raw("<section>");
+				@Html.Raw("<section class='complete__resources_slides'>");
 			}
 			{ columnCounterForMoreResources++; }
 			<div class="resources__slide complete__resources_slide">
@@ -76,7 +76,7 @@
 				{
 					<div class="handbook__more">
 						<div class="hanbook__more-item">
-							<div>+ @item.MoreThen5Resources More</div>
+							<h3>+ @item.MoreThen5Resources More</h3>
 							<a href="@item.ResourceDetails.Category.CategoryUrl">
 								<span>@item.ResourceDetails.Category.CategoryTitle</span>
 							</a>
