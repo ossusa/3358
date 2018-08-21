@@ -3497,6 +3497,7 @@ p {
       .handbook_category__item__links a:hover:after {
         content: "\E61F";
         font-family: anticon;
+        padding-top: 1px;
         padding-left: 8px;
         font-size: 1em;
         display: inline-block; }
