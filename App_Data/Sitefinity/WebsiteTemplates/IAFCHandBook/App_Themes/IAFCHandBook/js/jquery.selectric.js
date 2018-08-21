@@ -1119,19 +1119,3 @@ $(function () {
         nativeOnMobile: false
     });
 });
-
-/*Select*/
-
-$('.selectric-community__title-select > .selectric').find('.button').addClass('title__arrow');
-$('.selectric-community__title-select .selectric').click(function (e) {
-    e.stopPropagation();
-    $('.title__arrow').toggleClass('rotated');
-});
-$('.selectric-community__category-select > .selectric').find('.button').addClass('category__arrow');
-$('.selectric-community__category-select .selectric').click(function (e) {
-    e.stopPropagation();
-    $('.category__arrow').toggleClass('rotated');
-});
-$(document).on("click", function () {
-    $(".rotated").toggleClass('rotated');
-});

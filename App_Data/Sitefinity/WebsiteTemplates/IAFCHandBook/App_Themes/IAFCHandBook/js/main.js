@@ -89,7 +89,6 @@ $(document).ready(function () {
 
     /*Select*/
 
-/*
     $('.selectric-community__title-select').find('.button').addClass('title__arrow');
     $('.selectric-community__title-select .selectric').click(function (e) {
         e.stopPropagation();
@@ -103,7 +102,6 @@ $(document).ready(function () {
     $(document).on("click", function () {
         $(".rotated").toggleClass('rotated');
     });
-*/
 
 
     //sticky header
