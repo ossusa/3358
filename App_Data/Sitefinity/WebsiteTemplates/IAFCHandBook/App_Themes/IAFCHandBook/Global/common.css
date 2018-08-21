@@ -1731,7 +1731,9 @@ p {
   white-space: normal;
   line-height: 48px;
   color: #5591aa;
-  height: auto; }
+  height: auto;
+  -ms-flex-item-align: start;
+  align-self: flex-start; }
 
 .topic__subtitle {
   font-size: 2.00em;
@@ -2995,9 +2997,7 @@ p {
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 48px 0 20px 0;
-  -ms-flex-align: center;
-  align-items: center; }
+  margin: 48px 0 20px 0; }
 
 .complete_section {
   background-color: #efefef;
@@ -3179,9 +3179,7 @@ p {
     display: flex;
     margin: 0 -90px; }
   .community_indicator_col {
-    margin: 0;
-    -ms-flex-align: start;
-    align-items: flex-start; } }
+    margin: 0; } }
 
 .handbook__title {
   width: 100%;
