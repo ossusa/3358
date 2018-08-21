@@ -2242,7 +2242,22 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+
+    h3 {
+      color: #fff;
+    }
   }
+
+  &-topic {
+    color: #fff;
+    font-face: $font_family_4;
+    font-size: 1.00em;
+  }
+}
+
+.complete__resources_slides {
+  align-items: stretch;
 }
 
 @media (max-width: 767px) {
