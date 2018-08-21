@@ -31,13 +31,11 @@
 					}			
 			</div>
 		</div>
-
-
+	</div>
 		
-
-		<div id="@string.Format("{0}_{1}", "myHandBookResourcesDetails", Model.Category.Id.ToString())">
-			@Html.Partial("_MyHandBookCategoryResourcesDetails", Model)
-		</div>	
+	<div id="@string.Format("{0}_{1}", "myHandBookResourcesDetails", Model.Category.Id.ToString())">
+		@Html.Partial("_MyHandBookCategoryResourcesDetails", Model)
+	</div>	
 
 </div>
 
@@ -52,7 +50,7 @@
 		bindEdit();
 	});
 
-	function bindEdit(){
+	function bindEdit() {
 
 		//Add Like
 		$('.addLike').on('click', function () {
@@ -66,134 +64,133 @@
 				data: { resourceId: resourceId },
 				dataType: "json",
 				success: function (response) {
-				$("#resourceLikes_" + resourceId).html(response);
+					$("#resourceLikes_" + resourceId).html(response);
 				}
-				});
-				});
+			});
+		});
 
-				//Add Dislike
-				$('.addDislike').on('click', function () {
+		//Add Dislike
+		$('.addDislike').on('click', function () {
 
-				var resourceId = $(this).attr('data-id');
+			var resourceId = $(this).attr('data-id');
 
-				$.ajax({
+			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookCategoryResources")',
 				data: { resourceId: resourceId },
 				dataType: "json",
 				success: function (response) {
-				$("#resourceDislikes_" + resourceId).html(response);
+					$("#resourceDislikes_" + resourceId).html(response);
 				}
-				});
-				});
+			});
+		});
 
-				//mark As Complete
-				$('.markAsCompleteBtn').on('click', function () {
+		//mark As Complete
+		$('.markAsCompleteBtn').on('click', function () {
 
-				var resourceId = $(this).attr('data-id');
-				var categoryId = $(this).attr('data-id2');
-				var markAsCompleteCaption = $(this).text();
+			var resourceId = $(this).attr('data-id');
+			var categoryId = $(this).attr('data-id2');
+			var markAsCompleteCaption = $(this).text();
 
-				$.ajax({
+			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookCategoryResources")',
-				data: { operation: markAsCompleteCaption, resourceId: resourceId, categoryId: categoryId},
+				data: { operation: markAsCompleteCaption, resourceId: resourceId, categoryId: categoryId },
 				success: function (response) {
-				console.log("MSG");
-				console.log("MSG" + response);
-				$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					console.log("MSG");
+					console.log("MSG" + response);
+					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 
 				}
-				});
-				});
+			});
+		});
 
-				//Remove Completed
-				$('.completeMarkAsCompleteBtn').on('click', function () {
+		//Remove Completed
+		$('.completeMarkAsCompleteBtn').on('click', function () {
 
-				var resourceId = $(this).attr('data-id');
-				var categoryId = $(this).attr('data-id2');
-				var markAsCompleteCaption = $(this).text();
+			var resourceId = $(this).attr('data-id');
+			var categoryId = $(this).attr('data-id2');
+			var markAsCompleteCaption = $(this).text();
 
-				$.ajax({
+			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("RemoveCompleted", "IAFCHBMyHandBookCategoryResources")',
-				data: { resourceId: resourceId, categoryId: categoryId},
+				data: { resourceId: resourceId, categoryId: categoryId },
 				success: function (response) {
-				$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 
 				}
-				});
-				});
+			});
+		});
 
-				//Edit
-				$('.editBtn').on('click', function () {
-				var editCaption = $(this).text();
+		//Edit
+		$('.editBtn').on('click', function () {
+			var editCaption = $(this).text();
 
-				$.ajax({
+			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("Edit", "IAFCHBMyHandBookCategoryResources")',
 				data: { operation: editCaption },
 				dataType: "json",
 				success: function (response) {
-				if (response == true) {
-				$('.editBtn').text("Cancel");
-				$('.markAsCompleteBtn').text("Remove");
-				$('.completeMarkAsCompleteBtn').text("Remove");
-				$('.completeMarkAsCompleteBtn').removeAttr("disabled");
+					if (response == true) {
+						$('.editBtn').text("Cancel");
+						$('.markAsCompleteBtn').text("Remove");
+						$('.completeMarkAsCompleteBtn').text("Remove");
+						$('.completeMarkAsCompleteBtn').removeAttr("disabled");
+					}
+					else {
+						$('.editBtn').text("Edit");
+						$('.markAsCompleteBtn').text("Mark as Complete");
+						$('.completeMarkAsCompleteBtn').text("Complete");
+						$('.completeMarkAsCompleteBtn').attr("disabled", "disabled");
+					}
 				}
-				else
-				{
-				$('.editBtn').text("Edit");
-				$('.markAsCompleteBtn').text("Mark as Complete");
-				$('.completeMarkAsCompleteBtn').text("Complete");
-				$('.completeMarkAsCompleteBtn').attr("disabled", "disabled");
-				}
-				}
-				});
-				});
+			});
+		});
 
-				//share
-				$('.shareBtn').on('click', function () {
-				var url = window.location.href;
-				$.ajax({
+		//share
+		$('.shareBtn').on('click', function () {
+			var url = window.location.href;
+			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-				$('#share').html(response);
+					$('#share').html(response);
 				}
 
-				});
-				});
+			});
+		});
 
-				}
+	}
 
-				function doOrderBy() {
-				var orderBy = $('#orderByList').val();
-				var categoryId = $('#orderByList').attr('data-id');
-				var userId = $('#orderByList').attr('data-id2');
-				var sharedUserID = $('#orderByList').attr('data-id3');
+	function doOrderBy() {
+		var orderBy = $('#orderByList').val();
+		var categoryId = $('#orderByList').attr('data-id');
+		var userId = $('#orderByList').attr('data-id2');
+		var sharedUserID = $('#orderByList').attr('data-id3');
 
-				$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("OrderBy", "IAFCHBMyHandBookCategoryResources")',
-				data: { orderBy: orderBy, categoryId: categoryId, userId: userId, sharedUserID: sharedUserID},
-				success: function (response) {
+		$.ajax({
+			type: 'POST',
+			cache: false,
+			url: '@Url.Action("OrderBy", "IAFCHBMyHandBookCategoryResources")',
+			data: { orderBy: orderBy, categoryId: categoryId, userId: userId, sharedUserID: sharedUserID },
+			success: function (response) {
 				$('#myHandBookResourcesDetails_' + categoryId).html(response);
-				}
-				});
-				}
+			}
+		});
+	}
 
-				function doNavigate() {
-				window.location.href = document.getElementById("UrlList").value;
-				}
+	function doNavigate() {
+		window.location.href = document.getElementById("UrlList").value;
+	}				
 
-				</script>
+</script>
 
