@@ -609,6 +609,14 @@
     @media screen and (max-width: 767px){
       .progressindicator_share {
         margin-bottom: 28px;
+        &:nth-child(1) {
+          justify-content: flex-end;
+          padding-right: 12px;
+        }
+        &:nth-child(2) {
+          justify-content: flex-start;
+          padding-left: 12px;
+        }
       }
   }
 }
