@@ -3485,7 +3485,10 @@ p {
       .handbook_category__item__links {
         width: 320px; } }
     .handbook_category__item__links a {
-      display: block;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
       color: #666666;
       font-family: "Nunito Sans", sans-serif;
       font-size: 16px;

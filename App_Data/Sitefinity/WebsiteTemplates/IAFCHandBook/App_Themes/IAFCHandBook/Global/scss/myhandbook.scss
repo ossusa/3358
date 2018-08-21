@@ -261,7 +261,8 @@
         width: 320px;
       }
       a{
-        display: block;
+        display: flex;
+        align-items: center;
         color: $color_5;
         font-family: $font_family_4;
         font-size: 16px;
