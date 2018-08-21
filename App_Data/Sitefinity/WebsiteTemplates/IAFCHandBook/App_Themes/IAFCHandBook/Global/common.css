@@ -2995,7 +2995,9 @@ p {
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 48px 0 20px 0; }
+  margin: 48px 0 20px 0;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .complete_section {
   background-color: #efefef;
@@ -3177,7 +3179,9 @@ p {
     display: flex;
     margin: 0 -90px; }
   .community_indicator_col {
-    margin: 0; } }
+    margin: 0;
+    -ms-flex-align: start;
+    align-items: flex-start; } }
 
 .handbook__title {
   width: 100%;
