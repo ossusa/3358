@@ -1582,6 +1582,46 @@ p {
   transform: translateX(-50%);
   left: 50%; }
 
+.topic__title {
+  margin: 0 0 20px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  white-space: normal;
+  line-height: 48px;
+  color: #5591aa;
+  height: auto;
+  -ms-flex-item-align: start;
+  align-self: flex-start; }
+
+.topic__subtitle {
+  font-size: 2.00em;
+  color: #4A4A4A;
+  font-weight: 300;
+  font-family: "Zilla Slab", "Arial", "Helvetica", sans-serif;
+  display: inline-block;
+  margin-bottom: 16px; }
+
+.handbook__more {
+  width: 384px;
+  height: 380px;
+  position: relative;
+  margin-bottom: 48px;
+  background: #2b4b6b; }
+  .handbook__more-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    .handbook__more-item h3 {
+      color: #fff; }
+  .handbook__more-topic {
+    color: #fff;
+    font-face: "Nunito Sans", sans-serif;
+    font-size: 1.00em; }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
@@ -1721,50 +1761,10 @@ p {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse; } }
-
-.topic__title {
-  margin: 0 0 20px;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 700;
-  font-size: 48px;
-  white-space: normal;
-  line-height: 48px;
-  color: #5591aa;
-  height: auto;
-  -ms-flex-item-align: start;
-  align-self: flex-start; }
-
-.topic__subtitle {
-  font-size: 2.00em;
-  color: #4A4A4A;
-  font-weight: 300;
-  font-family: "Zilla Slab", "Arial", "Helvetica", sans-serif;
-  display: inline-block;
-  margin-bottom: 16px; }
-
-.handbook__more {
-  width: 384px;
-  position: relative;
-  margin-bottom: 48px;
-  background: #2b4b6b; }
-  .handbook__more-item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center; }
-    .handbook__more-item h3 {
-      color: #fff; }
-  .handbook__more-topic {
-    color: #fff;
-    font-face: "Nunito Sans", sans-serif;
-    font-size: 1.00em; }
-
-.complete__resources_slides {
-  -ms-flex-align: stretch;
-  align-items: stretch; }
+    flex-direction: column-reverse; }
+  .handbook__more {
+    width: 282px;
+    height: 307px; } }
 
 @media (max-width: 767px) {
   h1 {
