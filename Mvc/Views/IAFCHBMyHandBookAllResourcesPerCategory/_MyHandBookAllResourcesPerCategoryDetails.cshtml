@@ -74,10 +74,14 @@
 			{
 				if (item.MoreThen5Resources > 0)
 				{
-					<div>+ @item.MoreThen5Resources More</div>
-					<a href="@item.ResourceDetails.Category.CategoryUrl">
-						<span>@item.ResourceDetails.Category.CategoryTitle</span>
-					</a>
+					<div class="handbook__more">
+						<div class="hanbook__more-item">
+							<div>+ @item.MoreThen5Resources More</div>
+							<a href="@item.ResourceDetails.Category.CategoryUrl">
+								<span>@item.ResourceDetails.Category.CategoryTitle</span>
+							</a>
+						</div>
+					</div>
 				}
 			}
 
