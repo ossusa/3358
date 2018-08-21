@@ -3,7 +3,11 @@
 <div class="handbook__title">
 	<h1>MY HANDBOOK</h1>
 </div>
-<div class="box box-container">
+<div class="box complete-box">
+	<div class="complete__tablet_head-buttons">
+		<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
+		<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
+	</div>
 
 <div class="resources-breadcrumbs">My HandBook > 
 	<a href='@Model.Category.MyHandBookParentCategoryUrl'><span>@Model.Category.ParentCategoryTitle </span></a>
@@ -17,16 +21,18 @@
 			<option value=@item.MyHandBookCategoryUrl>@item.CategoryTitle</option>
 		}
 	</select>
-
-	<div id="edit">
-		<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
+		<div class="complete__head-buttons">
+			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
+	</div>
 	</div>
 
 	<div id="share">
-		@if (Model.SharedUserId == Guid.Empty)
-		{
-			<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
-		}
+		<div class="complete__head-buttons">
+			@if (Model.SharedUserId == Guid.Empty)
+			{
+				<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
+			}
+		</div>
 	</div>
 
 	<div id="@string.Format("{0}_{1}", "myHandBookResourcesDetails", Model.Category.Id.ToString())">
@@ -39,7 +45,7 @@
 
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
 
-<script type="text/javascript">
+
 
 	$(document).ready(function () {
 		bindEdit();
@@ -136,14 +142,14 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$('.editBtn').text("<i class='anticon anticon-close'></i> Cancel");
+						$('.editBtn').text("Cancel");
 						$('.markAsCompleteBtn').text("Remove");
 						$('.completeMarkAsCompleteBtn').text("Remove");
 						$('.completeMarkAsCompleteBtn').removeAttr("disabled");
 					}
 					else
 					{
-						$('.editBtn').hide("<i class='anticon anticon-close'></i> Cancel").text("<i class='anticon anticon-setting'></i> Edit");
+						$('.editBtn').text("Edit");
 						$('.markAsCompleteBtn').text("Mark as Complete");
 						$('.completeMarkAsCompleteBtn').text("Complete");
 						$('.completeMarkAsCompleteBtn').attr("disabled", "disabled");
@@ -162,8 +168,9 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					$('#share').html(response);					
+					$('#share').html(response);
 				}
+
 			});
 		});
 		
@@ -174,7 +181,7 @@
 		var categoryId = $('#orderByList').attr('data-id');
 		var userId = $('#orderByList').attr('data-id2');
 		var sharedUserID = $('#orderByList').attr('data-id3');
-		var id = "AAA";
+		
 		$.ajax({
 			type: 'POST',
 			cache: false,
