@@ -1117,7 +1117,7 @@ $(function () {
 
 /*Select*/
 
-$('.selectric-community__title-select').find('.button').addClass('title__arrow');
+$('.community__title-select').find('.button').addClass('title__arrow');
 $('.selectric-community__title-select .selectric').click(function (e) {
     e.stopPropagation();
     $('.title__arrow').toggleClass('rotated');
