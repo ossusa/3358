@@ -2071,7 +2071,9 @@ p {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
   .progressindicator__label:not(:last-child) {
-    margin-bottom: 16px; } }
+    margin-bottom: 16px; }
+  .handbook__more {
+    width: 320px; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
