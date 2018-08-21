@@ -3169,7 +3169,11 @@ p {
   .progressindicator_share:nth-child(2) {
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding-left: 12px; } }
+    padding-left: 12px; }
+  .handbook__social-buttons {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 -90px; } }
 
 .handbook__title {
   width: 100%;
