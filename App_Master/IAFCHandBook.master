@@ -165,7 +165,7 @@
                         </asp:ContentPlaceHolder>
                     </div>
                     <div class="footer__info-col">
-                        <span>&copy</span> <span id="copyrightIAFC"> </span> <span> IAFC </span>
+                        <span>&copy;</span> <span id="copyrightIAFC"> </span> <span> IAFC </span>
                         <asp:ContentPlaceHolder ID="footerCurentYear" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
