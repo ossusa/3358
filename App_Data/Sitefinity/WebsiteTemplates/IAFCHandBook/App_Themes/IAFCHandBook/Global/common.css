@@ -2999,7 +2999,9 @@ p {
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 48px 0 20px 0; }
+  margin: 48px 0 20px 0;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .complete_section {
   background-color: #efefef;
