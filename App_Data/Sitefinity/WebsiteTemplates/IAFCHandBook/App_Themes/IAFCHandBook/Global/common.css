@@ -1724,7 +1724,7 @@ p {
     flex-direction: column-reverse; } }
 
 .topic__title {
-  margin: 0;
+  margin: 0 0 20px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 48px;
@@ -1737,7 +1737,9 @@ p {
   font-size: 2.00em;
   color: #4A4A4A;
   font-weight: 300;
-  font-family: "Zilla Slab", "Arial", "Helvetica", sans-serif; }
+  font-family: "Zilla Slab", "Arial", "Helvetica", sans-serif;
+  display: inline-block;
+  margin-bottom: 16px; }
 
 @media (max-width: 767px) {
   h1 {
@@ -3173,7 +3175,9 @@ p {
   .handbook__social-buttons {
     display: -ms-flexbox;
     display: flex;
-    margin: 0 -90px; } }
+    margin: 0 -90px; }
+  .community_indicator_col {
+    margin: 0; } }
 
 .handbook__title {
   width: 100%;
