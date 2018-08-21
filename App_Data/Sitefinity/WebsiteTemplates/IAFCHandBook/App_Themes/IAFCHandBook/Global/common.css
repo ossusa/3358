@@ -1753,7 +1753,18 @@ p {
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    .handbook__more-item h3 {
+      color: #fff; }
+  .handbook__more-topic {
+    color: #fff;
+    font-face: "Nunito Sans", sans-serif;
+    font-size: 1.00em; }
+
+.complete__resources_slides {
+  -ms-flex-align: stretch;
+  align-items: stretch; }
 
 @media (max-width: 767px) {
   h1 {
