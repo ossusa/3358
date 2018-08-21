@@ -3066,7 +3066,9 @@ p {
     .complete__resources_slide {
       width: 320px;
       margin-right: 0;
-      margin-bottom: 24px; } }
+      margin-bottom: 24px; }
+      .complete__resources_slide:nth-of-type(3n) {
+        margin-right: 0px; } }
   .complete__resources_slide img {
     height: 266px; }
     @media screen and (max-width: 1109px) {
