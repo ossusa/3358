@@ -1716,17 +1716,32 @@ p {
   .selectric-community__title-select .selectric .label {
     font-size: 2.750em; }
   .community__head-button:nth-of-type(2) {
-    width: 150px; } }
+    width: 150px; }
+  .community_indicator_col {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; } }
 
 .topic__title {
-  margin: 0;
+  margin: 0 0 20px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 48px;
   white-space: normal;
   line-height: 48px;
   color: #5591aa;
-  height: auto; }
+  height: auto;
+  -ms-flex-item-align: start;
+  align-self: flex-start; }
+
+.topic__subtitle {
+  font-size: 2.00em;
+  color: #4A4A4A;
+  font-weight: 300;
+  font-family: "Zilla Slab", "Arial", "Helvetica", sans-serif;
+  display: inline-block;
+  margin-bottom: 16px; }
 
 @media (max-width: 767px) {
   h1 {
@@ -1761,7 +1776,9 @@ p {
   .topics__ul-flex .topics__list:nth-of-type(3) a,
   .topics__ul-flex .topics__list:nth-of-type(4) a {
     margin-right: 0; }
-  .community__topics-list {
+  .community__topics {
+    padding-top: 36px; }
+  .community__topics-list:nth-child(even) {
     margin-right: 0 !important; }
   .community__topics-img {
     width: 100% !important; }
@@ -3122,7 +3139,15 @@ p {
 
 @media screen and (max-width: 767px) {
   .complete-box .progressindicator_share {
-    margin-bottom: 28px; } }
+    margin-bottom: 28px; }
+    .complete-box .progressindicator_share:nth-child(1) {
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      padding-right: 12px; }
+    .complete-box .progressindicator_share:nth-child(2) {
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      padding-left: 12px; } }
 
 .complete__tablet_head-buttons {
   display: none; }
@@ -3139,6 +3164,22 @@ p {
         -ms-flex-pack: start;
         justify-content: flex-start;
         padding-left: 12px; } }
+
+@media screen and (max-width: 1109px) {
+  .progressindicator_share:nth-child(1) {
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-right: 12px; }
+  .progressindicator_share:nth-child(2) {
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    padding-left: 12px; }
+  .handbook__social-buttons {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 -90px; }
+  .community_indicator_col {
+    margin: 0; } }
 
 .handbook__title {
   width: 100%;

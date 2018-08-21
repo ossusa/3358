@@ -3372,6 +3372,7 @@ p {
     width: 148px; }
   @media screen and (max-width: 767px) {
     .progressindicator__label {
+      margin-bottom: 16px
       width: 151px;
       height: 40px;
       display: flex;

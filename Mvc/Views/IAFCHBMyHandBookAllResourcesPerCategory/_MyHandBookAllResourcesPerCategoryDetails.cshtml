@@ -1,7 +1,7 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
 
 
-		<div><a href="@Model.Category.MyHandBookCategoryUrl">@Model.Category.CategoryTitle</a></div>
+		<div><a class="topic__subtitle" href="@Model.Category.MyHandBookCategoryUrl">@Model.Category.CategoryTitle</a></div>
 		<div class="progressindicator__wrapper">
 			<div class="progressindicator__wrapper-col">
 			<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookCompletedResources</div> Complete</div>
@@ -48,21 +48,22 @@
 								}
 							</div>
 						</div>
-						<div class="resources__slide-social">
-							<a href="@item.ResourceUrl" class="resources__slide-btn resources__slide-btn-comment"><span class="resources--comments"></span>@item.CommentsAmount Comments</a>
+						<div class="resources-single__left_post_comment_header_right">
+							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
 
-							<button type="button" class="addLike resources__slide-btn resources--like anticon anticon-like-o" data-id="@item.Id.ToString()">
-								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-									<span>@item.Likes.Likes</span>
-								</div>
-							</button>
+							<div class="single-post-statistic">
+								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+									<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+									<span>@item.Likes.Likes</span></span>
+								</button>
 
 
-							<button type="button" class="addDislike resources__slide-btn resources--dislike  anticon anticon-dislike-o" data-id="@item.Id.ToString()">
-								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+								<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+									<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 									<span>@item.Likes.Dislikes</span>
-								</div>
-							</button>
+									</span>
+								</button>
+							</div>
 
 						</div>
 					</div>
