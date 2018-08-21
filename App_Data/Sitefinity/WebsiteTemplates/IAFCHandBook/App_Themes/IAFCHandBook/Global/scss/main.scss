@@ -2231,6 +2231,20 @@ p {
   margin-bottom: 16px;
 }
 
+.hanbook__more {
+  width: 384px;
+  position: relative;
+  margin-bottom: 48px;
+  background: #2b4b6b;
+
+  &-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 @media (max-width: 767px) {
   h1 {
     line-height: 50px;
