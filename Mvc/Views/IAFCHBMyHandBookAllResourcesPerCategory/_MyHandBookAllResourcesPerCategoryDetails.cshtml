@@ -16,10 +16,10 @@
 		{
 			if (columnCounter == 0)
 			{
-				@Html.Raw("<section>");
+				@Html.Raw("<section class="complete__resources_slides">");
 			}
 			{ columnCounterForMoreResources++; }
-			<div class="resources__slide">
+			<div class="resources__slide complete__resources_slide">
 				<div class="resources__community-img">
 					<img src='@item.ResourceDetails.ImageUrl' />
 					<div class="resources__slide-time">
@@ -49,7 +49,7 @@
 							</div>
 						</div>
 						<div class="resources-single__left_post_comment_header_right">
-							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
+							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
 
 							<div class="single-post-statistic">
 								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
