@@ -475,10 +475,13 @@
   &_section {
     background-color: #efefef;
     padding: 64px 0 72px;
-    margin: 52px 0 100px;
+    margin: 52px -120px 100px;
+    @media screen and (max-width: 1109px) {
+      margin: 52px -90px 100px;
+    }
     @media screen and (max-width: 767px){
       padding: 36px 0 16px;
-      margin: 40px 0 67px;
+      margin: 40px -28px 67px;
     }
     &-title {
       margin-bottom: 16px;
@@ -499,7 +502,7 @@
       width: 384px;
       margin-right: 24px;
       margin-bottom: 48px;
-      &:nth-of-type(3n + 3) {
+      &:nth-of-type(3n) {
         margin-right: 0;
       }
       @media screen and (max-width: 1109px) {

@@ -3031,11 +3031,14 @@ p {
 .complete_section {
   background-color: #efefef;
   padding: 64px 0 72px;
-  margin: 52px 0 100px; }
+  margin: 52px -120px 100px; }
+  @media screen and (max-width: 1109px) {
+    .complete_section {
+      margin: 52px -90px 100px; } }
   @media screen and (max-width: 767px) {
     .complete_section {
       padding: 36px 0 16px;
-      margin: 40px 0 67px; } }
+      margin: 40px -28px 67px; } }
   .complete_section-title {
     margin-bottom: 16px;
     font-size: 40px;
@@ -3050,7 +3053,7 @@ p {
   width: 384px;
   margin-right: 24px;
   margin-bottom: 48px; }
-  .complete__resources_slide:nth-of-type(3n + 3) {
+  .complete__resources_slide:nth-of-type(3n) {
     margin-right: 0; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
