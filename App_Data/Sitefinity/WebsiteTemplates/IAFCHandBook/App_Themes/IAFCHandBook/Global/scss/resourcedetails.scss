@@ -636,3 +636,16 @@
     }
   }
 }
+
+@media screen and (max-width: 1109px){
+  .progressindicator_share {
+    &:nth-child(1) {
+      justify-content: flex-end;
+      padding-right: 12px;
+    }
+    &:nth-child(2) {
+      justify-content: flex-start;
+      padding-left: 12px;
+    }
+  }
+}
