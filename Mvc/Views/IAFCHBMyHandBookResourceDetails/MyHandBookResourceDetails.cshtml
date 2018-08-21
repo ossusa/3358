@@ -38,7 +38,7 @@
 	<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
 </div>
 
-<div id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">	
+<div id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
 	@Model.CommentsAmount Comments
 </div>
 <div>
@@ -93,7 +93,7 @@
 		}
 	</ul>
 </div>
-<div >
+<div>
 	<a href='@Model.ResourceDetails.Category.MyHandBookCategoryUrl'>See More</a>
 </div>
 
@@ -107,9 +107,7 @@
 		bindEdit();
 	});
 
-	function bindEdit() {
-
-		$(document).ready(function () {
+	function bindEdit() {		
 
 			//Add Like
 			$('.addLike').one('click', function () {
@@ -272,12 +270,10 @@
 				success: function (response) {
 					if (response == true) {
 						$('#share').html("Shared");
-
 					}
 				}
 			});
-		});
-		});
+		});	
 	}
 
 

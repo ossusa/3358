@@ -7,7 +7,11 @@
 		<div class="progressindicator__label"><div class="time">@Model.Category.TotalDuration.ToString() </div> Time Remaining</div>
 	</div>
 	<div class="community__head-btn-select">
-		<select class="community__category-select" id="orderByList" data-id="@Model.Category.Id.ToString()" onchange="doOrderBy()">
+		<select class="community__category-select" id="orderByList" 
+				data-id="@Model.Category.Id.ToString()" 
+				data-id2="@Model.UserId.ToString()" 
+				data-id3="@Model.SharedUserId.ToString()" 
+				onchange="doOrderBy()">
 			@foreach (var orderByItem in Model.OrderBy)
 			{
 				if (orderByItem.Selected)

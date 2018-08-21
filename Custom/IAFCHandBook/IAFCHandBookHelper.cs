@@ -981,6 +981,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					}
 					else
 					{
+						
 						commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
 					}
 				}
@@ -1732,16 +1733,57 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 		#endregion GetCreateMyHandBook
 
+		#region GetMyHandBookByID
+		public DynamicContent GetMyHandBookByID(Guid userId)
+		{
+			DynamicContent myHandBook = new DynamicContent();
+			var providerName = String.Empty;
+			var transactionName = "myHandBookTransaction";
+
+			var model = new IAFCHandBookMyHandBookModel();
+			try
+			{
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
+
+				var myHandBookModuleArray = dynamicModuleManager.GetDataItems(myHandBookType).
+							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live).ToArray();
+				var myHandBookModuleData = myHandBookModuleArray.Where(u => u.GetValue<Guid>("UserId") == userId);
+				if (myHandBookModuleData.Any())
+				{
+					myHandBook = myHandBookModuleData.First();
+				}
+			}
+			catch (Exception e)
+			{
+				log.Error("MyHandbook" + e.Message);
+			}
+
+			return myHandBook;
+		}
+		#endregion GetMyHandBookByID
+
 		#region GetMyHandBook
-		public IAFCHandBookMyHandBookModel GetMyHandBook()
+		public IAFCHandBookMyHandBookModel GetMyHandBook(String userId = null)
 		{
 			var model = new IAFCHandBookMyHandBookModel();
 			try
-			{				
-				var myHandBookItem = GetOrCreateMyHandBook();
+			{
+				DynamicContent myHandBookItem = new DynamicContent();
+				String sharedUrl = String.Empty;
+				if (userId != null)
+				{
+					sharedUrl = "/" + userId;
+					var userGuid = Guid.Parse(userId);
+					myHandBookItem = GetMyHandBookByID(userGuid);
+					model.SharedUserId = userGuid;
+				}
+				else
+				{ 
+					myHandBookItem = GetOrCreateMyHandBook();
+				}
 				log.Info("GetMyHandBook:" + myHandBookItem.Id.ToString());
 				model.Id = myHandBookItem.Id;
-				model.UserId = myHandBookItem.GetValue<Guid>("UserId");
+				model.UserId = SecurityManager.GetCurrentUserId();
 				log.Info("GetMyHandBook:" + model.UserId);
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().ToList();
@@ -1763,8 +1805,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					var category = new IAFCHandBookTopicCategoryModel();
 					var categoryDetails = GetTopicCategories(categoryItem);
 					category.Id = categoryItem;
-					category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl;
-					category.MyHandBookParentCategoryUrl = categoryDetails.MyHandbookResourceParentCategoryUrl;
+					category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl+ sharedUrl;
+					category.MyHandBookParentCategoryUrl = categoryDetails.MyHandbookResourceParentCategoryUrl+ sharedUrl;
 					category.TopicCategoryImageUrl = categoryDetails.ResourceParentCategoryImageUrl;
 					category.CategoryTitle = categoryDetails.ResourceCategoryTile;
 					category.CategoryDescription = categoryDetails.ResourceCategoryDescription;
@@ -1794,8 +1836,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						var childCategoryDetails = GetTopicCategories(childItem);
 
 						childCategory.Id = childItem;
-						childCategory.MyHandBookCategoryUrl = childCategoryDetails.MyHandbookResourceCategoryUrl;
-						childCategory.MyHandBookParentCategoryUrl = childCategoryDetails.MyHandbookResourceParentCategoryUrl;
+						childCategory.MyHandBookCategoryUrl = childCategoryDetails.MyHandbookResourceCategoryUrl+ sharedUrl;
+						childCategory.MyHandBookParentCategoryUrl = childCategoryDetails.MyHandbookResourceParentCategoryUrl+ sharedUrl;
 						childCategory.TopicCategoryImageUrl = childCategoryDetails.ResourceParentCategoryImageUrl;
 						childCategory.CategoryTitle = childCategoryDetails.ResourceCategoryTile;
 						childCategory.CategoryDescription = childCategoryDetails.ResourceCategoryDescription;
@@ -2022,14 +2064,32 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion IsResourceMarkedAsComplete
 
 		#region MyHandBookGetResourcesPerCategory
-		public IAFCHandBookMyHandBookModel GetMyHandBookResourcesPerCategory(String categoryName)
+		public IAFCHandBookMyHandBookModel GetMyHandBookResourcesPerCategory(String categoryName, String userId = null)
 		{
 			var model = new IAFCHandBookMyHandBookModel();
 			try
 			{
-				var myHandBookItem = GetOrCreateMyHandBook();
+				
+
+				var myHandBookItem = new DynamicContent();
+				String sharedUrl = String.Empty;
+				Boolean showAsMyHandBookItem = true;
+				if (userId == null)
+				{
+					myHandBookItem = GetOrCreateMyHandBook();
+				}
+				else
+				{
+					sharedUrl = "/" + userId;
+					showAsMyHandBookItem = false;
+					var userGuid = Guid.Parse(userId);
+					model.SharedUserId = userGuid;
+					myHandBookItem = GetMyHandBookByID(userGuid);					
+				}
+
 				model.Id = myHandBookItem.Id;
-				model.UserId = myHandBookItem.GetValue<Guid>("UserId");
+				model.UserId = SecurityManager.GetCurrentUserId();
+
 
 				var myHandBookResourcesItem = new IAFCHandBookMyHandBookResourceModelModel();
 
@@ -2038,7 +2098,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var category = new IAFCHandBookTopicCategoryModel();
 				var categoryDetails = GetTopicCategories(categoryItem);
 				category.Id = categoryItem;
-				category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl;
+				category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl+sharedUrl;
 				category.CategoryTitle = categoryDetails.ResourceCategoryTile;
 				myHandBookResourcesItem.Category = category;
 
@@ -2056,8 +2116,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					var childCategoryDetails = GetTopicCategories(childItem);
 
 					childCategory.Id = childItem;
-					childCategory.MyHandBookCategoryUrl = childCategoryDetails.MyHandbookResourceCategoryUrl;
-					childCategory.MyHandBookParentCategoryUrl = childCategoryDetails.MyHandbookResourceParentCategoryUrl;
+					childCategory.MyHandBookCategoryUrl = childCategoryDetails.MyHandbookResourceCategoryUrl+sharedUrl;
+					childCategory.MyHandBookParentCategoryUrl = childCategoryDetails.MyHandbookResourceParentCategoryUrl+sharedUrl;
 					childCategory.TopicCategoryImageUrl = childCategoryDetails.ResourceParentCategoryImageUrl;
 					childCategory.CategoryTitle = childCategoryDetails.ResourceCategoryTile;
 					childCategory.CategoryDescription = childCategoryDetails.ResourceCategoryDescription;
@@ -2087,8 +2147,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					myChildHandBookResourcesItem.Category = childCategory;
 					var myChildResourceItem = new IAFCHandBookResourceModel();
 					foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
-					{
-						myChildResourceItem = GetResourceDetails(resourceItem, true);
+					{						
+						myChildResourceItem = GetResourceDetails(resourceItem, showAsMyHandBookItem);
 						myChildResourceItem.MoreThen5Resources = (myHandBookResourcesAmount - 5) < 0 ? 0 : myHandBookResourcesAmount - 5;
 						myChildHandBookResourcesItem.MyResources.Add(myChildResourceItem);
 					}
@@ -2096,7 +2156,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					var myChildCompletedResourceItem = new IAFCHandBookResourceModel();
 					foreach (var resourceCompletedItem in categoryCompletedResources.OrderByDescending(r => r.DateCreated).Take(5))
 					{
-						myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, true);
+						myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, showAsMyHandBookItem);
 						myChildHandBookResourcesItem.MyCompletedResources.Add(myChildCompletedResourceItem);
 					}
 
@@ -2115,13 +2175,29 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion MyHandBookGetResourcesPerCategory
 
 		#region GetCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, Boolean showAllResources, String markCompleteBtnText = "Mark as Complete", String orderBy= OrderByMostRecent)
+		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, Boolean showAllResources, String userId= null, String markCompleteBtnText = "Mark as Complete", String orderBy= OrderByMostRecent)
 		{
 			
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
 			try
 			{
-				var myHandBookItem = GetOrCreateMyHandBook();				
+				var myHandBookItem = new DynamicContent();
+				String sharedUrl = String.Empty;
+				model.UserId = SecurityManager.GetCurrentUserId(); 
+				Boolean showAsMyHandBookItem = true;
+				if (userId == null)
+				{
+					myHandBookItem = GetOrCreateMyHandBook();
+				}
+				else
+				{
+					sharedUrl = "/" + userId;
+					showAsMyHandBookItem = false;
+					var userGuid = Guid.Parse(userId);
+					model.SharedUserId = userGuid;
+					
+					myHandBookItem = GetMyHandBookByID(userGuid);
+				}
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().ToList();
 				var myCompletedHandBookResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>().ToList();
@@ -2130,8 +2206,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var categoryDetails = GetTopicCategories(categoryId);
 
 				category.Id = categoryId;
-				category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl;
-				category.MyHandBookParentCategoryUrl = categoryDetails.MyHandbookResourceParentCategoryUrl;
+				category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl+sharedUrl;
+				category.MyHandBookParentCategoryUrl = categoryDetails.MyHandbookResourceParentCategoryUrl+sharedUrl;
 				category.TopicCategoryImageUrl = categoryDetails.ResourceParentCategoryImageUrl;
 				category.CategoryTitle = categoryDetails.ResourceCategoryTile;
 				category.CategoryDescription = categoryDetails.ResourceCategoryDescription;
@@ -2190,7 +2266,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var myChildResourceItem = new IAFCHandBookResourceModel();
 				foreach (var resourceItem in showAllResources? categoryResources: categoryResources.Take(5))
 				{
-					myChildResourceItem = GetResourceDetails(resourceItem, true);
+					myChildResourceItem = GetResourceDetails(resourceItem, showAsMyHandBookItem);
 					myChildResourceItem.MarkCompleteBtnText = markCompleteBtnText;
 					myChildResourceItem.MoreThen5Resources = (myHandBookResourcesAmount - 5) < 0 ? 0 : myHandBookResourcesAmount - 5;
 					model.MyResources.Add(myChildResourceItem);
@@ -2200,7 +2276,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				foreach (var resourceCompletedItem in showAllResources? categoryCompletedResources: categoryCompletedResources.Take(5))
 				{
 
-					myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, true);
+					myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, showAsMyHandBookItem);
 					var completedResourceBtnText = "Complete";
 					if (markCompleteBtnText != "Mark as Complete")
 					{
@@ -2222,11 +2298,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetCategoryResources
 
 		#region GetMyHandBookCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetMyHandBookCategoryResourcesByName(String  categoryName, String markCompleteBtnText = "Mark as Complete", String orderBy = OrderByMostRecent)
+		public IAFCHandBookMyHandBookResourceModelModel GetMyHandBookCategoryResourcesByName(String  categoryName, String userId = null, String markCompleteBtnText = "Mark as Complete", String orderBy = OrderByMostRecent)
 		{
 			var categoryId = GetCategoryGuidByName(categoryName);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
-			model = GetCategoryResources(categoryId,false, markCompleteBtnText, orderBy);
+			model = GetCategoryResources(categoryId, false, userId, markCompleteBtnText, orderBy);
 			return model;
 		}
 		#endregion GetMyHandBookCategoryResources
@@ -2324,8 +2400,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return moreResources;
 		}
 		#endregion Get My Hand Book MoreResources
-		#endregion MyHandBook
 
+		#region generateSharedUrl
+		public string GenerateSharedUrl(String url)
+		{
+			var returnUrl=String.Empty;
+			returnUrl = url + "/" + SecurityManager.GetCurrentUserId().ToString();
+			return returnUrl;
+		}
+
+		#endregion generateSharedUrl
+		#endregion MyHandBook
 
 	}
 }

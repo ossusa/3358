@@ -1,50 +1,88 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookModel
 
 <div class="handbook__title">
-    <h1>MY HANDBOOK</h1>
+	<h1>MY HANDBOOK</h1>
 </div>
 <div class="handbook_container">
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
-	<div class="progressindicator__wrapper">
-		<div class="progressindicator__wrapper-col">
-		<div class="progressindicator__label"><div class="time">@myHandBookResource.CompletedResourcesAmount</div> Complete</div>
-		<div class="progressindicator__label"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
-		<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
-	</div>
-		<div class="progressindicator_share">
-			<i class="anticon anticon-share-alt"></i>
-			Share
+		<div class="progressindicator__wrapper">
+			<div class="progressindicator__wrapper-col">
+				<div class="progressindicator__label"><div class="time">@myHandBookResource.CompletedResourcesAmount</div> Complete</div>
+				<div class="progressindicator__label"><div class="time">@myHandBookResource.IncompletedResourcesAmount</div> Incomplete</div>
+				<div class="progressindicator__label"><div class="time">@myHandBookResource.TotalDuration.ToString()</div> Time Remaining</div>
+			</div>
+			<div class="progressindicator_share">
+				
+				<div id="share">
+					@if (Model.SharedUserId == Guid.Empty)
+					{
+						<i class="anticon anticon-share-alt"></i>
+						<button type="button" class="shareBtn progressindicator_share"> Share </button>
+					}
+				</div>
+			</div>
 		</div>
-	</div>
 		<div class="handbook_category__wrapper">
-				@foreach (var categories in myHandBookResource.MyChildHandBookResources)
-				{
-					<div class="handbook_category__item">
-						<div class="handbook_category__item__image @categories.Category.CategoryTitle" >
-							<a href="@categories.Category.MyHandBookCategoryUrl">
-								<h3>@categories.Category.CategoryTitle</h3>
-							</a>
-							<object type="image/svg+xml" data="@categories.Category.TopicCategoryImageUrl" class="category_image">
-								Category_image <!-- fallback image in CSS -->
-							</object>
+			@foreach (var categories in myHandBookResource.MyChildHandBookResources)
+			{
+				<div class="handbook_category__item">
+					<div class="handbook_category__item__image @categories.Category.CategoryTitle">
+						<a href="@categories.Category.MyHandBookCategoryUrl">
+							<h3>@categories.Category.CategoryTitle</h3>
+						</a>
+						<object type="image/svg+xml" data="@categories.Category.TopicCategoryImageUrl" class="category_image">
+							Category_image <!-- fallback image in CSS -->
+						</object>
 
-							<div class="handbook_category__item__time">
-								<div><span>@categories.Category.MyHandBookCompletedResources</span> Complete</div>
-								<div><span>@categories.Category.MyHandBookInCompletedResources</span> Incomplete</div>
-								<div><span>@categories.Category.TotalDuration.ToString()</span> Time Remaining</div>
-							</div>
-								<!--<div>@categories.Category.CategoryDescription</div>-->
+						<div class="handbook_category__item__time">
+							<div><span>@categories.Category.MyHandBookCompletedResources</span> Complete</div>
+							<div><span>@categories.Category.MyHandBookInCompletedResources</span> Incomplete</div>
+							<div><span>@categories.Category.TotalDuration.ToString()</span> Time Remaining</div>
+						</div>
+						<!--<div>@categories.Category.CategoryDescription</div>-->
 
-						</div>
-						<div class="handbook_category__item__links @categories.Category.CategoryTitle">
-							@foreach (var childCategoryItem in categories.Category.ChildCategories)
-							{
-								<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
-							}
-						</div>
 					</div>
-				}
+					<div class="handbook_category__item__links @categories.Category.CategoryTitle">
+						@foreach (var childCategoryItem in categories.Category.ChildCategories)
+						{
+							<a href="@childCategoryItem.MyHandBookCategoryUrl"> @childCategoryItem.CategoryTitle</a>
+						}
+					</div>
+				</div>
+			}
 		</div>
 	}
 </div>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		bindEdit();
+	});
+	$(document).ajaxComplete(function (event, xhr, settings) {
+		bindEdit();
+	});
+
+	function bindEdit(){
+		
+		//share
+		$('.shareBtn').on('click', function () {
+			var url = window.location.href;
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
+				data: { url: url },
+				dataType: "json",
+				success: function (response) {					
+					$('#share').html(response);					
+				}
+			});
+		});
+	}
+
+
+</script>

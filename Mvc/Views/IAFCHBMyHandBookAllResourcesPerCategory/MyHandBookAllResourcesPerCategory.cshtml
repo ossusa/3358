@@ -8,13 +8,19 @@
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
 	<div class="community_indicator_col">
-	<div class="community__head-desc">@myHandBookResource.Category.CategoryTitle</div>
+		<div class="community__head-desc">@myHandBookResource.Category.CategoryTitle</div>
 
 		<div id="edit">
 			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
-			<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
 		</div>
-	</div>
+
+		<div id="share">
+			@if (Model.SharedUserId == Guid.Empty)
+			{
+				<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
+			}
+		</div>
+
 		<div>
 			@foreach (var myChildResources in myHandBookResource.MyChildHandBookResources)
 			{
@@ -24,7 +30,8 @@
 				<br />
 			}
 		</div>
-	}
+	</div>
+	}	
 </div>
 
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
@@ -119,17 +126,15 @@
 
 		//share
 		$('.shareBtn').on('click', function () {
-			
+			var url = window.location.href;
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("Share", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					if (response == true) {
-						$('#share').html("Shared");
-						
-					}					
+					$('#share').html(response);
 				}
 			});
 		});

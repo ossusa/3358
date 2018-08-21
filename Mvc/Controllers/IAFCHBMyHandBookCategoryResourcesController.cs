@@ -26,16 +26,16 @@ namespace SitefinityWebApp.Mvc.Controllers
 		private ILog log = LogManager.GetLogger(typeof(IAFCHBMyHandBookCategoryResourcesController));
 		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
 
-
-		public ActionResult Index()
+		[RelativeRoute("{userid?}")]
+		public ActionResult Index(String userId)
 		{
 			IAFCHandBookMyHandBookResourceModelModel model = new IAFCHandBookMyHandBookResourceModelModel();
-			model = handBookHelper.GetMyHandBookCategoryResourcesByName(CategoryName);
+			model = handBookHelper.GetMyHandBookCategoryResourcesByName(CategoryName, userId);
 			return View("MyHandBookCategoryResources", model);
 		}
 
 
-		[HttpPost, StandaloneResponseFilter]
+		[RelativeRoute("GetResources"), HttpPost, StandaloneResponseFilter]
 		public ActionResult GetResources(String categoryId)
 		{
 
@@ -48,7 +48,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return view;
 		}
 
-		[HttpPost]
+		[RelativeRoute("AddLike"), HttpPost]
 		public ActionResult AddLike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
@@ -56,7 +56,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			return Json(likes);
 		}
-		[HttpPost]
+		[RelativeRoute("AddDislike"), HttpPost]
 		public ActionResult AddDislike(String resourceId)
 		{
 			var id = Guid.Parse(resourceId);
@@ -65,8 +65,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return Json(dislikes);
 		}
 
-		[HttpPost, StandaloneResponseFilter]
-		public ActionResult MarkAsComplete(String operation, String resourceId, String categoryId)
+		[RelativeRoute("MarkAsComplete"), HttpPost, StandaloneResponseFilter]
+		public ActionResult MarkAsComplete(String operation, String resourceId, String categoryId, String userId)
 		{
 			var id = Guid.Parse(resourceId);
 			var categoryGuid = Guid.Parse(categoryId);
@@ -74,46 +74,51 @@ namespace SitefinityWebApp.Mvc.Controllers
 			if (operation.Equals("Remove"))
 			{
 				var markAsComplete = handBookHelper.RemoveResource(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid, true, "Remove");
+				model = handBookHelper.GetCategoryResources(categoryGuid, true, null, "Remove");
 			}
 			else
 			{
 				var markAsComplete = handBookHelper.MarkAsComplete(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid, true);
+				model = handBookHelper.GetCategoryResources(categoryGuid, true, null);
 
 			}			
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
 		}
 
-		[HttpPost, StandaloneResponseFilter]
-		public ActionResult RemoveCompleted(String resourceId, String categoryId)
+		[RelativeRoute("RemoveCompleted"), HttpPost, StandaloneResponseFilter]
+		public ActionResult RemoveCompleted(String resourceId, String categoryId, String userId)
 		{
 			var id = Guid.Parse(resourceId);
 			var categoryGuid = Guid.Parse(categoryId);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();			
 			var markAsComplete = handBookHelper.RemoveResource(id, "MyCompletedResources");
 			
-			model = handBookHelper.GetCategoryResources(categoryGuid, true);
+			model = handBookHelper.GetCategoryResources(categoryGuid, true, null);
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
 		}
 
-		[HttpPost, StandaloneResponseFilter]
-		public ActionResult OrderBy(String orderBy, String categoryId)
+		[RelativeRoute("OrderBy"), HttpPost, StandaloneResponseFilter]
+		public ActionResult OrderBy(String orderBy, String categoryId, String userId, String sharedUserID)
 		{
-			
+
 			var categoryGuid = Guid.Parse(categoryId);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
-			
-
-			model = handBookHelper.GetCategoryResources(categoryGuid, true, "Mark as Commplete", orderBy);
+			if (sharedUserID == Guid.Empty.ToString())
+			{
+				model = handBookHelper.GetCategoryResources(categoryGuid, true, null, "Mark as Commplete", orderBy);
+			}
+			else
+			{
+				model = handBookHelper.GetCategoryResources(categoryGuid, true, sharedUserID, "Mark as Commplete", orderBy);
+			}
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
 		}
 
 
-		[HttpPost]
+		[RelativeRoute("Edit"), HttpPost]
 		public ActionResult Edit(String operation)
 		{
 			Boolean edit = true;
@@ -124,11 +129,11 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return Json(edit);
 		}
 
-		[HttpPost]
-		public ActionResult Share()
+		[RelativeRoute("Share"), HttpPost]
+		public ActionResult Share(String url)
 		{
-			Boolean share = true;
-			return Json(share);
+			String sharedUrl = handBookHelper.GenerateSharedUrl(url);
+			return Json(sharedUrl);
 		}
 
 

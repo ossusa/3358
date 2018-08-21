@@ -18,11 +18,35 @@ namespace SitefinityWebApp.Mvc.Controllers
 			IAFCHandBookMyHandBookModel model = handBookHelper.GetMyHandBook();
 			return model;
 		}
-		public ActionResult Index()
+
+		public IAFCHandBookMyHandBookModel GetSharedHandBook(String userId)
 		{
-			IAFCHandBookMyHandBookModel model = GetData();
+			IAFCHandBookMyHandBookModel model = handBookHelper.GetMyHandBook(userId);
+			return model;
+		}
+
+		[RelativeRoute("{userid?}")]
+		public ActionResult Index(String userid)
+		{
+			IAFCHandBookMyHandBookModel model = new IAFCHandBookMyHandBookModel();
+			if (userid == null)
+			{
+				model = GetData();
+			}
+			else
+			{
+				model = GetSharedHandBook(userid);
+			}
+
 
 			return View("MyHandBook",model);
+		}
+
+		[RelativeRoute("Share"), HttpPost]
+		public ActionResult Share(string url)
+		{
+			String sharedUrl = handBookHelper.GenerateSharedUrl(url);			
+			return Json(sharedUrl);
 		}
 	}
 }

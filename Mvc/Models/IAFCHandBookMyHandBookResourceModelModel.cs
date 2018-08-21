@@ -24,6 +24,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public List<IAFCHandBookResourceModel> MyCompletedResources { get; set; }	
 		public List<IAFCHandBookMyHandBookResourceModelModel> MyChildHandBookResources { get; set; }
 		public List<IAFCHandBookTopicOrderBy> OrderBy { get; set; }
-
+		public Guid UserId { get; set; }
+		public Guid SharedUserId { get; set; }
 	}
 }
