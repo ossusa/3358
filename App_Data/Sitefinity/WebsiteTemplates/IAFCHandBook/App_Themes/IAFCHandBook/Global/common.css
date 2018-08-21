@@ -1716,7 +1716,12 @@ p {
   .selectric-community__title-select .selectric .label {
     font-size: 2.750em; }
   .community__head-button:nth-of-type(2) {
-    width: 150px; } }
+    width: 150px; }
+  .community_indicator_col {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; } }
 
 .topic__title {
   margin: 0;
