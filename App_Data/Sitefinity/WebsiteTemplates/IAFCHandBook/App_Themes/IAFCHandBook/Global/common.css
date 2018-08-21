@@ -3179,11 +3179,13 @@ p {
     justify-content: flex-start;
     padding-left: 12px; }
   .handbook__social-buttons {
-    display: -ms-flexbox;
-    display: flex;
     margin: 0 -90px; }
   .community_indicator_col {
     margin: 0; } }
+
+.handbook__social-buttons {
+  display: -ms-flexbox;
+  display: flex; }
 
 .handbook__title {
   width: 100%;
