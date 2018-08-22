@@ -3465,10 +3465,9 @@ p {
 .handbook_category__wrapper {
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 50px;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin: 0 -12px; }
+  margin: 0 -12px 50px; }
   @media screen and (max-width: 1600px) {
     .handbook_category__wrapper {
       -ms-flex-wrap: wrap;
