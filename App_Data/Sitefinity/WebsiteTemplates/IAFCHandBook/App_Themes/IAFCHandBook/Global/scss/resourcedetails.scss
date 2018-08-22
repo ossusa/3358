@@ -508,6 +508,7 @@
       }
       img {
         height: 266px;
+        display: block;
         @media screen and (max-width: 1109px) {
           height: 195px;
         }
@@ -535,7 +536,7 @@
       align-items: flex-start;
       flex-wrap: wrap;
       width: 100%;
-      margin: 0 auto;
+      margin: 0 -12px;
     }
   }
   &_box {

@@ -1586,7 +1586,7 @@ p {
   margin: 0 0 20px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3em;
   white-space: normal;
   line-height: 48px;
   color: #5591aa;
@@ -1791,7 +1791,12 @@ p {
   .complete__resources_slide {
     width: 48%; }
     .complete__resources_slide .single-post-comments {
-      display: none; } }
+      display: none; }
+  .topic__title {
+    font-size: 2.75em;
+    line-height: 50px; }
+  .topic__subtitle {
+    font-size: 1.5em; } }
 
 @media (max-width: 767px) {
   h1 {
@@ -2100,7 +2105,28 @@ p {
   .progressindicator__label:not(:last-child) {
     margin-bottom: 16px; }
   .handbook__more {
-    width: 320px; } }
+    width: 320px; }
+  .handbook__template.complete__resources_slides .complete__resources_slide {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex; }
+  .handbook__template.complete__resources_slides .resources__slide-footer {
+    display: none; }
+  .handbook__template.complete__resources_slides .resources__community-img {
+    width: 50%; }
+  .handbook__template.complete__resources_slides .resources__slide-info.resources__community-slide-info {
+    width: 50%;
+    height: auto !important;
+    padding: 14px; }
+  .handbook__template.complete__resources_slides .resources__slide-title {
+    font-size: 1em; }
+  .handbook__template .handbook__more {
+    width: 100%;
+    height: 100px;
+    margin: 0 0 36px; }
+  .handbook__template .resources__slide-article, .handbook__template .resources__slide-title, .handbook__template .resources__slide-desc {
+    overflow: hidden;
+    text-overflow: ellipsis; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
@@ -3088,7 +3114,8 @@ p {
     .complete__resources_slide {
       margin: 0 0 24px; } }
   .complete__resources_slide img {
-    height: 266px; }
+    height: 266px;
+    display: block; }
     @media screen and (max-width: 1109px) {
       .complete__resources_slide img {
         height: 195px; } }
@@ -3121,7 +3148,7 @@ p {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 -12px; }
 
 .complete_box {
   width: 14px;

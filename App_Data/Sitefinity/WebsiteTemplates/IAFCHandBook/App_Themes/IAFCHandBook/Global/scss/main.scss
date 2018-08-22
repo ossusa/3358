@@ -1984,7 +1984,7 @@ p {
   margin: 0 0 20px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3em;
   white-space: normal;
   line-height: 48px;
   color: #5591aa;
@@ -2281,6 +2281,15 @@ p {
     .single-post-comments {
       display: none;
     }
+  }
+
+  .topic__title {
+    font-size: 2.75em;
+    line-height: 50px;
+  }
+
+  .topic__subtitle {
+    font-size: 1.5em;
   }
 }
 
@@ -2826,6 +2835,46 @@ p {
 
   .handbook__more {
     width: 320px;
+  }
+
+  .handbook__template {
+    &.complete__resources_slides {
+      .complete__resources_slide {
+        width: 100%;
+        display: flex;
+      }
+
+      .resources__slide-footer {
+        display: none;
+      }
+
+      .resources__community-img {
+        width: 50%;
+      }
+      .resources__slide-info {
+        &.resources__community-slide-info {
+          width: 50%;
+          height: auto!important;
+          padding: 14px;
+        }
+      }
+
+      .resources__slide-title {
+        font-size: 1em;
+      }
+    }
+
+    .handbook__more {
+      width: 100%;
+      height: 100px;
+      margin: 0 0 36px;
+    }
+
+    .resources__slide-article, .resources__slide-title, .resources__slide-desc {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
   }
 }
 @media (max-width: 382px) {
