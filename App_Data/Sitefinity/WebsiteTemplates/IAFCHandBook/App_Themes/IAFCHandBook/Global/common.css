@@ -1295,7 +1295,7 @@ p {
       margin-top: 24px; }
 
 .about {
-  padding: 0 0 100px 0; }
+  padding-bottom: 100px; }
   .about__info {
     font-family: "Nunito Sans", sans-serif;
     line-height: 22px;
@@ -1802,8 +1802,6 @@ p {
     padding-left: 90px;
     padding-right: 90px; }
   .maps {
-    width: 100%; }
-  .about {
     width: 100%; }
   .community__head-desc {
     width: auto !important;

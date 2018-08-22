@@ -1554,7 +1554,7 @@ p {
   }
 }
 .about {
-  padding: 0 0 100px 0;
+  padding-bottom: 100px;
   &__info {
     font-family: $font_family_4;
     line-height: 22px;
@@ -2243,9 +2243,6 @@ p {
   }
 
   .maps {
-    width: 100%;
-  }
-  .about {
     width: 100%;
   }
   .community__head-desc {
