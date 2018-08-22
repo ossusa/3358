@@ -35,17 +35,15 @@
 						</a>
 						<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					</div>
-					<div class="resources__slide-footer">
+					<div class="resources__slide-footer">						
 						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete" , item.Id.ToString())">
-							<div id="markAsComplete">
-								@if (item.IsResourceCompleted == true)
-								{
-									<span>Completed</span>
-								}
-								else
-								{
-									<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>@item.MarkCompleteBtnText</button>
-								}
+							<div class="markAsCompleteResource">
+								<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+							</div>
+						</div>
+						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove" , item.Id.ToString())">
+							<div class="removeResource">
+								<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"> Remove </button>
 							</div>
 						</div>
 						<div class="resources-single__left_post_comment_header_right">
@@ -54,13 +52,14 @@
 							<div class="single-post-statistic">
 								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
 									<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-									<span>@item.Likes.Likes</span></span>
+										<span>@item.Likes.Likes</span>
+									</span>
 								</button>
 
 
 								<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
 									<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-									<span>@item.Likes.Dislikes</span>
+										<span>@item.Likes.Dislikes</span>
 									</span>
 								</button>
 							</div>

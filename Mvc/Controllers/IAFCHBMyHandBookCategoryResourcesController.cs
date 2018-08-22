@@ -33,7 +33,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			model = handBookHelper.GetMyHandBookCategoryResourcesByName(CategoryName, userId);
 			return View("MyHandBookCategoryResources", model);
 		}
-
+		
 
 		[RelativeRoute("GetResources"), HttpPost, StandaloneResponseFilter]
 		public ActionResult GetResources(String categoryId)
@@ -66,22 +66,26 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 		[RelativeRoute("MarkAsComplete"), HttpPost, StandaloneResponseFilter]
-		public ActionResult MarkAsComplete(String operation, String resourceId, String categoryId, String userId)
+		public ActionResult MarkAsComplete(String resourceId, String categoryId, String userId)
+		{
+			var id = Guid.Parse(resourceId);
+			var categoryGuid = Guid.Parse(categoryId);
+			var model = new IAFCHandBookMyHandBookResourceModelModel();			
+			var markAsComplete = handBookHelper.MarkAsComplete(id);
+			model = handBookHelper.GetCategoryResources(categoryGuid, true, null);
+			
+			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
+			return view;
+		}
+
+		[RelativeRoute("Remove"), HttpPost, StandaloneResponseFilter]
+		public ActionResult Remove(String resourceId, String categoryId, String userId)
 		{
 			var id = Guid.Parse(resourceId);
 			var categoryGuid = Guid.Parse(categoryId);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
-			if (operation.Equals("Remove"))
-			{
-				var markAsComplete = handBookHelper.RemoveResource(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid, true, null, "Remove");
-			}
-			else
-			{
-				var markAsComplete = handBookHelper.MarkAsComplete(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid, true, null);
-
-			}			
+			var markAsComplete = handBookHelper.RemoveResource(id);
+			model = handBookHelper.GetCategoryResources(categoryGuid, true, null);			
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
 		}
@@ -107,11 +111,11 @@ namespace SitefinityWebApp.Mvc.Controllers
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
 			if (sharedUserID == Guid.Empty.ToString())
 			{
-				model = handBookHelper.GetCategoryResources(categoryGuid, true, null, "Mark as Commplete", orderBy);
+				model = handBookHelper.GetCategoryResources(categoryGuid, true, null, orderBy);
 			}
 			else
 			{
-				model = handBookHelper.GetCategoryResources(categoryGuid, true, sharedUserID, "Mark as Commplete", orderBy);
+				model = handBookHelper.GetCategoryResources(categoryGuid, true, sharedUserID, orderBy);
 			}
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
