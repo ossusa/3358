@@ -11680,37 +11680,6 @@ hr {
   }
 }
 
-/* Classes for iafchandbook client in cms */
-.handbook-text {
-  font-family: "Nunito Sans", sans-serif;
-  line-height: 22px;
-  margin-bottom: 24px;
-  width: 792px;
-  margin: 0 auto;
-  padding: 0 120px;
-}
-
-@media (max-width: 1109px) {
-  .handbook-text {
-    width: 100%;
-    padding: 0 90px;
-  }
-}
-
-@media (max-width: 767px) {
-  .handbook-text {
-    padding: 0 28px;
-  }
-}
-
-.pink-btn {
-  background: red;
-}
-
-.green-btn {
-  color: green;
-}
-
 /***********************************************/
 /************Conferences & events***************/
 /**********************************************/

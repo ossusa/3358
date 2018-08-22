@@ -1,0 +1,53 @@
+///* Classes for iafchandbook client in cms */
+//.handbook-text{
+//  font-family: "Nunito Sans", sans-serif;
+//  line-height: 22px;
+//  margin-bottom: 24px;
+//  width: 792px;
+//  margin: 0 auto;
+//  padding: 0 120px;
+//}
+//@media (max-width: 1109px){
+//  .handbook-text{
+//    width: 100%;
+//    padding: 0 90px;
+//  }
+//}
+//
+//@media (max-width: 767px){
+//  .handbook-text{
+//    padding: 0 28px;
+//
+//  }
+//}
+//.pink-btn{
+//  background: red;
+//}
+//.green-btn{
+//  color: green;
+//}
+
+.handbook-centered{
+  width: 792px;
+  margin: 0 auto;
+  padding: 0;
+}
+.hanbook-title{
+  h1{
+    color: #2B4B6B;
+  }
+}
+.handbook-content{
+  p{
+    font-family: "Nunito Sans", sans-serif;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+  h6{
+    color: #DF405A;
+  }
+  a{
+    color: #2B4B6B;
+    font-weight: 600;
+  }
+}
