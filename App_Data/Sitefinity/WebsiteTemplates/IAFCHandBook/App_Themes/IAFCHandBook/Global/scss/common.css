@@ -3198,11 +3198,6 @@ p {
     @media screen and (max-width: 1109px) {
       .complete__resources_slide-info {
         height: 186px; } }
-.complete__resources_slides {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap; }
 .complete_box {
   width: 14px;
   height: 14px;
