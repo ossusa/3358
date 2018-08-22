@@ -3140,7 +3140,8 @@ p {
       width: 48%; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
-      margin: 0 0 24px; } }
+      margin: 0 0 24px;
+      width: 100%; } }
   .complete__resources_slide img {
     height: 266px;
     display: block; }
