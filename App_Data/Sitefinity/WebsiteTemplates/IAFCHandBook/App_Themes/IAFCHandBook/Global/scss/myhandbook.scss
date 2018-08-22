@@ -35,6 +35,14 @@
   @media screen and (max-width: 767px){
     width: 100%;
   }
+  @media screen and (max-width: 1109px) {
+    .progressindicator_share {
+      &:nth-child(2) {
+        justify-content: center;
+        padding-left: 0;
+      }
+    }
+  }
 }
 .progressindicator{
   &__wrapper{
@@ -62,16 +70,19 @@
     }
   }
   &_share{
-    color: #9b9b9b;
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 1em;
-    font-weight: 400;
-    border: none;
-    background: transparent;
-    outline: none;
+    button{
+      color: #9b9b9b;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1em;
+      font-weight: 400;
+      border: none;
+      background: transparent;
+      outline: none;
+    }
     i{
       margin-right: 10px;
       font-size: 1.125em;
+      color: #9b9b9b;
     }
     @media screen and (max-width: 1109px){
       height: 54px;
@@ -94,7 +105,6 @@
     margin-right: 24px;
     color: $color_15;
     font-family: $font_family_5;
-    //font-size: 13px;
     font-weight: 400;
     font-size: 0.813em;
     text-align: center;
@@ -123,13 +133,12 @@
       }
     }
     .time{
-      //font-size: 20px;
       font-weight: 700;
       font-size: 1.250em;
       font-family: $font_family_4;
       @media screen and (max-width: 767px){
         margin-right: 8px;
-        font-size: 20px;
+        font-size: 1.250em;
       }
     }
   }
