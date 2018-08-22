@@ -3272,6 +3272,11 @@ p {
   @media screen and (max-width: 767px) {
     .handbook_container {
       width: 100%; } }
+  @media screen and (max-width: 1109px) {
+    .handbook_container .progressindicator_share:nth-child(2) {
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding-left: 0; } }
 
 .progressindicator__wrapper {
   margin: 48px 0;
@@ -3313,7 +3318,8 @@ p {
 
 .progressindicator_share i {
   margin-right: 10px;
-  font-size: 1.125em; }
+  font-size: 1.125em;
+  color: #9b9b9b; }
 
 @media screen and (max-width: 1109px) {
   .progressindicator_share {
@@ -3380,12 +3386,6 @@ p {
       .progressindicator__label .time {
         margin-right: 8px;
         font-size: 20px; } }
-
-@media screen and (max-width: 1109px) {
-  .handbook_category .progressindicator_share:nth-child(2) {
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding-left: 0; } }
 
 .handbook_category__wrapper {
   display: -ms-flexbox;

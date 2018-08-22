@@ -35,6 +35,14 @@
   @media screen and (max-width: 767px){
     width: 100%;
   }
+  @media screen and (max-width: 1109px) {
+    .progressindicator_share {
+      &:nth-child(2) {
+        justify-content: center;
+        padding-left: 0;
+      }
+    }
+  }
 }
 .progressindicator{
   &__wrapper{
@@ -74,6 +82,7 @@
     i{
       margin-right: 10px;
       font-size: 1.125em;
+      color: #9b9b9b;
     }
     @media screen and (max-width: 1109px){
       height: 54px;
@@ -138,14 +147,6 @@
 
 }
 .handbook_category{
-  @media screen and (max-width: 1109px) {
-    .progressindicator_share {
-      &:nth-child(2) {
-        justify-content: center;
-        padding-left: 0;
-      }
-    }
-  }
   &__wrapper {
     display: flex;
     margin-bottom: 50px;
