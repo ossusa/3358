@@ -26,9 +26,13 @@
 		</select>
 	</div>
 </div>
-
+@{int columnCounter = 0; }
 @foreach (var item in Model.MyResources)
-{	
+{
+	if (columnCounter == 0)
+	{
+		@Html.Raw("<section class='complete__resources_slides'>");
+	}
 	<div class="resources__slide complete__resources_slide">
 		<div class="resources__community-img">
 			<img src='@item.ResourceDetails.ImageUrl' />
@@ -46,44 +50,84 @@
 				<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 			</div>
 			<div class="resources__slide-footer">
-				<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete" , item.Id.ToString())">
-					<div class="markAsCompleteResource" >						
-						<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>						
-					</div>
-				</div>
-				<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove" , item.Id.ToString())">
-					<div class="removeResource">
-						<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"> Remove </button>
-					</div>
-				</div>
-
-					<div class="resources-single__left_post_comment_header_right">
-						<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
-						<div class="single-post-statistic">
-							<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
-								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-									<span>@item.Likes.Likes</span>
-								</div>
-							</button>
-							<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
-								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-									<span>@item.Likes.Dislikes</span>
-								</div>
-							</button>
+				@if (Model.SharedUserId == Guid.Empty)
+				{
+					<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
+						<div class="markAsCompleteResource">
+							<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
 						</div>
 					</div>
+					<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove", item.Id.ToString())">
+						<div class="removeResource">
+							<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"> Remove </button>
+						</div>
+					</div>
+				}
+				else
+				{
+					<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addSharedToMyHandBook" , item.Id.ToString())">
+						<div id="addSharedToMyHandBook">
+							@if (item.IsResourceAddedToMyHandBook == true)
+							{
+								<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
+							}
+							else
+							{
+								<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
+							}
+						</div>
+					</div>
+				}
+
+				<div class="resources-single__left_post_comment_header_right">
+					<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+					<div class="single-post-statistic">
+						<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+								<span>@item.Likes.Likes</span>
+							</div>
+						</button>
+						<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+								<span>@item.Likes.Dislikes</span>
+							</div>
+						</button>
+					</div>
 				</div>
+			</div>
 		</div>
 	</div>
+
+	if (columnCounter == 5)
+	{
+		columnCounter = 0;
+		@Html.Raw("</section>")
+	}
+	else
+	{
+		columnCounter++;
+
+	}
 }
+@{
+	if (columnCounter != 0)
+	{
+		@Html.Raw("</section>")
+	}
+}
+
 
 <div class="complete_section">
 	<div class="box">
 		<h3 class="complete_section-title">Complete </h3>
 		<div class="complete__resources_slides">
-			
+			@{int columnCompleteCounter = 0; }
 			@foreach (var item in Model.MyCompletedResources)
-			{				
+			{
+				if (columnCompleteCounter == 0)
+				{
+					@Html.Raw("<section>");
+				}
 				<div class="resources__slide complete__resources_slide">
 					<div class="resources__community-img">
 						<img src='@item.ResourceDetails.ImageUrl' />
@@ -101,14 +145,30 @@
 							<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 						</div>
 						<div class="resources__slide-footer">
-
-							<div class="completedResource">
-								<span>Comleted</span>
-							</div>
-							<div class="removeCompletedResource">
-								<button type="button" class="removeComplenedBtn complete_btn"data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"> Remove </button>
-							</div>
-
+							@if (Model.SharedUserId == Guid.Empty)
+							{
+								<div class="completedResource">
+									<span>Comleted</span>
+								</div>
+								<div class="removeCompletedResource">
+									<button type="button" class="removeComplenedBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"> Remove </button>
+								</div>
+							}
+							else
+							{
+								<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addSharedToMyHandBook" , item.Id.ToString())">
+									<div id="addSharedToMyHandBook">
+										@if (item.IsResourceAddedToMyHandBook == true)
+										{
+											<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
+										}
+										else
+										{
+											<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
+										}
+									</div>
+								</div>
+							}
 							<div class="resources-single__left_post_comment_header_right">
 								<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
 								<div class="single-post-statistic">
@@ -126,7 +186,23 @@
 							</div>
 						</div>
 					</div>
-				</div>				
+				</div>
+				if (columnCompleteCounter == 5)
+				{
+					columnCompleteCounter = 0;
+					@Html.Raw("</section>")
+				}
+				else
+				{
+					columnCompleteCounter++;
+
+				}
+			}
+			@{
+				if (columnCompleteCounter != 0)
+				{
+					@Html.Raw("</section>")
+				}
 			}
 		</div>
 	</div>

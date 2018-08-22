@@ -2074,6 +2074,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var myHandBookItem = new DynamicContent();
 				String sharedUrl = String.Empty;
 				Boolean showAsMyHandBookItem = true;
+				var userGuid = Guid.Empty;
 				if (userId == null)
 				{
 					myHandBookItem = GetOrCreateMyHandBook();
@@ -2082,7 +2083,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					sharedUrl = "/" + userId;
 					showAsMyHandBookItem = false;
-					var userGuid = Guid.Parse(userId);
+					userGuid = Guid.Parse(userId);
 					model.SharedUserId = userGuid;
 					myHandBookItem = GetMyHandBookByID(userGuid);					
 				}
@@ -2101,7 +2102,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl+sharedUrl;
 				category.CategoryTitle = categoryDetails.ResourceCategoryTile;
 				myHandBookResourcesItem.Category = category;
-
+				myHandBookResourcesItem.SharedUserId = userGuid;
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().ToList();
 				var myCompletedHandBookResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>().ToList();
@@ -2145,11 +2146,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					childCategory.MyHandBookInCompletedResources = myHandBookResourcesAmount;
 
 					myChildHandBookResourcesItem.Category = childCategory;
+					myChildHandBookResourcesItem.SharedUserId = userGuid;
+
 					var myChildResourceItem = new IAFCHandBookResourceModel();
 					foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
 					{						
-						myChildResourceItem = GetResourceDetails(resourceItem, showAsMyHandBookItem);
+						myChildResourceItem = GetResourceDetails(resourceItem, showAsMyHandBookItem);						
 						myChildResourceItem.MoreThen5Resources = (myHandBookResourcesAmount - 5) < 0 ? 0 : myHandBookResourcesAmount - 5;
+						
 						myChildHandBookResourcesItem.MyResources.Add(myChildResourceItem);
 					}
 
@@ -2158,11 +2162,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					{
 						myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, showAsMyHandBookItem);
 						myChildHandBookResourcesItem.MyCompletedResources.Add(myChildCompletedResourceItem);
+						
 					}
-
+					
+					
 					myHandBookResourcesItem.MyChildHandBookResources.Add(myChildHandBookResourcesItem);
 				}
-
+				
 				model.MyHandBookResurces.Add(myHandBookResourcesItem);
 
 			}
