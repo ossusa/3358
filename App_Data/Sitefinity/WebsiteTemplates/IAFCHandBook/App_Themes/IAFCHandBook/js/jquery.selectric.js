@@ -1073,7 +1073,7 @@
         onChange             : function(elm) { $(elm).change(); },
         maxHeight            : 300,
         keySearchTimeout     : 500,
-        arrowButtonMarkup    : '<b class="category__arrow"></b>',
+        arrowButtonMarkup    : '<b class="category__arrow">&#x25be;</b>',
         disableOnMobile      : false,
         nativeOnMobile       : true,
         openOnFocus          : true,
