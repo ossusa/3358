@@ -172,6 +172,9 @@
       margin-right: 12px;
       margin-left: 12px;
       width: 100%;
+      @media screen and (max-width: 1440px){
+        width: 282px;
+      }
       @media screen and (max-width: 1109px){
         &:nth-of-type(2){
           margin-bottom: 48px;
@@ -196,7 +199,7 @@
       color: $color_15;
       display: flex;
       flex-direction: column;
-      @media screen and (max-width: 1109px){
+      @media screen and (max-width: 1440px){
         width: 282px;
       }
       @media screen and (max-width: 767px){
@@ -272,7 +275,7 @@
       border: 1px solid #efefef;
       background-color: $color_15 !important;
       padding: 16px 20px;
-      @media screen and (max-width: 1109px){
+      @media screen and (max-width: 1440px){
         width: 282px;
       }
       @media screen and (max-width: 767px){

@@ -3491,6 +3491,9 @@ p {
   margin-right: 12px;
   margin-left: 12px;
   width: 100%; }
+  @media screen and (max-width: 1440px) {
+    .handbook_category__item {
+      width: 282px; } }
   @media screen and (max-width: 1109px) {
     .handbook_category__item:nth-of-type(2) {
       margin-bottom: 48px; } }
@@ -3513,7 +3516,7 @@ p {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column; }
-    @media screen and (max-width: 1109px) {
+    @media screen and (max-width: 1440px) {
       .handbook_category__item__image {
         width: 282px; } }
     @media screen and (max-width: 767px) {
@@ -3583,7 +3586,7 @@ p {
     border: 1px solid #efefef;
     background-color: white !important;
     padding: 16px 20px; }
-    @media screen and (max-width: 1109px) {
+    @media screen and (max-width: 1440px) {
       .handbook_category__item__links {
         width: 282px; } }
     @media screen and (max-width: 767px) {
