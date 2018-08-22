@@ -2847,6 +2847,16 @@ p {
       .resources__slide-footer {
         display: none;
       }
+
+      .resources__community-img {
+        width: 50%;
+      }
+      .resources__slide-info {
+        &.resources__community-slide-info {
+          width: 50%;
+          height: auto!important;
+        }
+      }
     }
 
     .handbook__more {
