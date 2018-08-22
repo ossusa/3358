@@ -2050,6 +2050,8 @@ p {
 .resources__slide {
   width: 49%;
   margin-bottom: 48px;
+  border: 1px solid #EFEFEF;
+  border-radius: 3px;
 
   &:nth-child(odd) {
     margin-right: 2%;
