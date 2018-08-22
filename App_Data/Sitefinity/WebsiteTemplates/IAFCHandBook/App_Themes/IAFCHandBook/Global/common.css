@@ -3353,7 +3353,7 @@ p {
     .handbook_subcontainer {
       width: 100%; } }
   @media screen and (max-width: 1109px) {
-    .handbook_subcontainer .progressindicator_share:nth-child(2) {
+    .handbook_subcontainer .progressindicator_share {
       -ms-flex-pack: center;
       justify-content: center;
       padding-left: 0; } }
