@@ -3066,7 +3066,6 @@ p {
     margin-bottom: -6px; }
 
 .complete__resources_slide {
-  width: 384px;
   margin: 0 12px 48px; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
