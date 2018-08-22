@@ -1610,7 +1610,8 @@ p {
   position: relative;
   margin-bottom: 48px;
   background: #2b4b6b;
-  border-radius: 3px; }
+  border-radius: 3px;
+  transition: .3s ease-in-out; }
   .handbook__more-item {
     position: absolute;
     top: 50%;
@@ -1625,7 +1626,7 @@ p {
     font-face: "Nunito Sans", sans-serif;
     font-size: 1.00em; }
   .handbook__more:hover {
-    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15); }
 
 .complete__resources_slides {
   display: -ms-flexbox;

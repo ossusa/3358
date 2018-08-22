@@ -2036,8 +2036,9 @@ p {
     font-size: 1.00em;
   }
   &:hover {
-    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
   }
+  transition: .3s ease-in-out;
 }
 
 .complete__resources_slides {
