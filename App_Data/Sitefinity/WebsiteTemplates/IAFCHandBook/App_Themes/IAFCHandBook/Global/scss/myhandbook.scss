@@ -22,7 +22,7 @@
     margin: 0;
     @media screen and (max-width: 767px){
       margin: 0 auto;
-      font-size: 1.750em;
+      font-size: 28px;
     }
   }
 }
@@ -64,14 +64,14 @@
   &_share{
     color: #9b9b9b;
     font-family: "Nunito Sans", sans-serif;
-    font-size: 1.00em;
+    font-size: 16px;
     font-weight: 400;
     border: none;
     background: transparent;
     outline: none;
     i{
       margin-right: 10px;
-      font-size: 1.125em;
+      font-size: 18px;
     }
     @media screen and (max-width: 1109px){
       height: 54px;
@@ -94,6 +94,7 @@
     margin-right: 24px;
     color: $color_15;
     font-family: $font_family_5;
+    //font-size: 13px;
     font-weight: 400;
     font-size: 0.813em;
     text-align: center;
@@ -122,12 +123,13 @@
       }
     }
     .time{
+      //font-size: 20px;
       font-weight: 700;
       font-size: 1.250em;
       font-family: $font_family_4;
       @media screen and (max-width: 767px){
         margin-right: 8px;
-        font-size: 1.250em;
+        font-size: 20px;
       }
     }
   }
@@ -232,7 +234,7 @@
     }
     &__time{
       font-family: $font_family_5;
-      font-size: 0.813em;
+      font-size: 13px;
       font-weight: 400;
       color: $color_15;
       display: flex;
@@ -244,7 +246,7 @@
       cursor: default;
       span{
         font-family: $font_family_4;
-        font-size: 0.938em;
+        font-size: 15px;
         font-weight: 700;
         display: block;
       }
@@ -263,7 +265,7 @@
         align-items: center;
         color: $color_5;
         font-family: $font_family_4;
-        font-size: 1.00em;
+        font-size: 16px;
         font-weight: 400;
         padding-bottom: 4px;
         &:hover{

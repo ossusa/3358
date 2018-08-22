@@ -52,7 +52,7 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 1.500em;
+  font-size: 24px;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -64,13 +64,129 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
+/*Slider*/
+/* Icons */
+/* Arrows */
+/***********CONTACT, ABOUT PAGE************/
+/*Community*/
+/*Select title*/
+/*Selectric category*/
+/*mob nav*/
 /*-------------------------------------*/
 .main-nav {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.mg-carousel {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.button{
+  &-default {
+    width: auto;
+    border-radius: 4px;
+    padding: 12px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: bold;
+  }
+  &-blue {
+    width: auto;
+    border-radius: 4px;
+    padding: 12px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: bold;
+    &-heavy {
+      width: auto;
+      border-radius: 4px;
+      padding: 12px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 21px;
+      font-weight: bold;
+    }
+  }
+  &-red {
+    width: auto;
+    border-radius: 4px;
+    padding: 12px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: bold;
+    &-heavy {
+      width: auto;
+      border-radius: 4px;
+      padding: 12px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 21px;
+      font-weight: bold;
+    }
+  }
+}
 
+.ibutton-blue {
+  width: auto;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+}
+.ibutton-blue-heavy {
+  width: auto;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+}
+.ibutton-red {
+  width: auto;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+}
+.ibutton-red-heavy {
+  width: auto;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+}
+.button-orange {
+  width: auto;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+}
+.button-arrow {
+  width: auto;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  font-weight: bold;
+}
 html {
   font-family: $font_family_1;
   -ms-text-size-adjust: 100%;
@@ -637,7 +753,7 @@ p {
           position: absolute;
           right: 24px;
           color: $color_12;
-          font-size: 1.250em;
+          font-size: 20px;
           font-weight: 400;
           top: 22px;
         }
@@ -786,7 +902,7 @@ p {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      font-size: 0.813em;
+      font-size: 13px;
       -webkit-box-align: flex-end;
       -ms-flex-align: flex-end;
       align-items: flex-end;
@@ -794,7 +910,7 @@ p {
       margin-left: 16px;
       padding: 0;
       div {
-        font-size: 0.813em;
+        font-size: 13px;
       }
       &:first-child {
         margin-left: 0;
@@ -850,7 +966,7 @@ p {
     }
   }
   &__logged-article {
-    font-size: 0.813em;
+    font-size: 13px;
     letter-spacing: 1.3px;
     font-weight: 600;
     >span {
@@ -862,14 +978,14 @@ p {
     margin-right: 8px !important;
   }
   &--time {
-    font-size: 1.125em;
+    font-size: 18px;
     background: url(../images/time.png) no-repeat 50% 50%;
     width: 19px;
     height: 15px;
   }
   &--dislike-img {
     margin-right: 4px;
-    font-size: 1.00em;
+    font-size: 16px;
   }
   &--comment {
     margin-right: 4px;
@@ -1097,7 +1213,7 @@ p {
     }
     &:before {
       font-family: $font_family_8 !important;
-      font-size: 2.250em;
+      font-size: 36px;
       line-height: 1;
       color: $color_15;
       -webkit-font-smoothing: antialiased;
@@ -1135,7 +1251,7 @@ p {
     }
     &:before {
       font-family: $font_family_8 !important;
-      font-size: 2.250em;
+      font-size: 36px;
       line-height: 1;
       color: $color_15;
       -webkit-font-smoothing: antialiased;
@@ -1275,7 +1391,7 @@ p {
         color: $color_6;
         font-family: $font_family_4;
         margin: 0;
-        font-size: 1.00em;
+        font-size: 16px;
       }
     }
     &-text {
@@ -1497,7 +1613,7 @@ p {
     &-desc {
       color: $color_4;
       font-family: $font_family_5;
-      font-size: 1.500em;
+      font-size: 24px;
       font-weight: 300;
       width: 791px;
     }
@@ -1536,7 +1652,7 @@ p {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      font-size: 1.250em;
+      font-size: 20px;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
@@ -1549,7 +1665,7 @@ p {
         margin-right: 0;
       }
       span {
-        font-size: 0.938em;
+        font-size: 15px;
       }
     }
     &-btn {
@@ -1692,7 +1808,7 @@ p {
       margin: 0;
       font-family: $font_family_4;
       font-weight: 700;
-      font-size: 3.00em;
+      font-size: 48px;
       white-space: normal;
       line-height: 48px;
       color: $color_20;
@@ -1723,7 +1839,7 @@ p {
     }
     ul {
       font-family: $font_family_4;
-      font-size: 1.500em;
+      font-size: 24px;
       font-weight: 700;
       line-height: 24px;
     }
@@ -1731,6 +1847,10 @@ p {
 }
 .selectric-items {
   li {
+    font-family: $font_family_4;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
     font-family: $font_family_4;
     font-size: 0.938em;
     font-weight: 400;
@@ -1843,10 +1963,10 @@ p {
   font-weight: 600;
 }
 .resources__slide-btn-comment {
-  font-size: 0.813em;
+  font-size: 13px;
 }
 .resources__community-slide-btn {
-  font-size: 1.00em;
+  font-size: 16px;
 }
 .hello {
   background: pink;
@@ -1873,7 +1993,7 @@ p {
   margin: 0 0 20px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 3.00em;
+  font-size: 48px;
   white-space: normal;
   line-height: 48px;
   color: #5591aa;
@@ -1914,13 +2034,6 @@ p {
     font-face: $font_family_4;
     font-size: 1.00em;
   }
-}
-
-.complete__resources_slides {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: nowrap;
 }
 
 @media(max-width: 1500px){
@@ -1993,13 +2106,13 @@ p {
     padding-bottom: 48px !important;
   }
   .topics__img-back-info {
-    font-size: 0.875em !important;
+    font-size: 14px !important;
   }
   .topics__img-back-text {
-    font-size: 0.875em;
+    font-size: 14px;
   }
   .topics__img-text {
-    font-size: 2.00em;
+    font-size: 32px;
     white-space: normal;
   }
   .community__topics-img {
@@ -2147,14 +2260,6 @@ p {
     width: 282px;
     height: 307px;
   }
-
-  .topic__title {
-    font-size: 2.75em;
-    line-height: 50px;
-  }
-  .topic__subtitle {
-    font-size: 1.5em;
-  }
 }
 
 @media (max-width: 767px) {
@@ -2235,7 +2340,7 @@ p {
     }
   }
   .resources__slide-desc {
-    font-size: 0.938em;
+    font-size: 15px;
   }
 
   .mobile-br {
