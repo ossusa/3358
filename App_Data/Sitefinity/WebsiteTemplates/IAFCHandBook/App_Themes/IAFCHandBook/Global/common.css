@@ -1677,7 +1677,7 @@ p {
   border-radius: 3px; }
 
 .resources__slide {
-  width: 49% !important;
+  width: 49%;
   margin-bottom: 48px; }
   .resources__slide:nth-child(odd) {
     margin-right: 2%; }
