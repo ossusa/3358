@@ -1,5 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Zilla+Slab:300,400,500,600|Lato:400");
 @import url("//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+.handbook-centered {
+  width: 792px;
+  margin: 0 auto;
+  padding: 0; }
+  @media screen and (max-width: 1109px) {
+    .handbook-centered {
+      width: 100%; } }
+
+.handbook-title h1 {
+  color: #2B4B6B; }
+
+.handbook-content p {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 22px;
+  margin-bottom: 24px; }
+
+.handbook-content h6 {
+  color: #DF405A; }
+
+.handbook-content a {
+  color: #2B4B6B;
+  font-weight: 600; }
+
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 @font-face {
   font-family: 'icomoon';
@@ -1241,13 +1264,6 @@ p {
   font-family: "Zilla Slab", serif;
   color: #9b9b9b; }
 
-.page {
-  width: 792px;
-  margin: 0 auto;
-  padding: 0; }
-  .page__title {
-    color: #2B4B6B; }
-
 .maps {
   width: 792px;
   margin: 0 auto;
@@ -1260,8 +1276,6 @@ p {
       margin-top: 24px; }
 
 .about {
-  width: 792px;
-  margin: 0 auto;
   padding: 0 0 100px 0; }
   .about__info {
     font-family: "Nunito Sans", sans-serif;
@@ -1768,8 +1782,6 @@ p {
     width: 100%;
     padding-left: 90px;
     padding-right: 90px; }
-  .page {
-    width: 100%; }
   .maps {
     width: 100%; }
   .about {

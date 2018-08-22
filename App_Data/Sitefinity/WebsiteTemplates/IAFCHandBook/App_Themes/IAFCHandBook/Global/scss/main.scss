@@ -1539,14 +1539,7 @@ p {
   font-family: $font_family_5;
   color: $color_16;
 }
-.page {
-  width: 792px;
-  margin: 0 auto;
-  padding: 0;
-  &__title {
-    color: $color_blue;
-  }
-}
+
 .maps {
   width: 792px;
   margin: 0 auto;
@@ -1561,8 +1554,6 @@ p {
   }
 }
 .about {
-  width: 792px;
-  margin: 0 auto;
   padding: 0 0 100px 0;
   &__info {
     font-family: $font_family_4;
@@ -2250,9 +2241,7 @@ p {
     padding-left: 90px;
     padding-right: 90px;
   }
-  .page {
-    width: 100%;
-  }
+
   .maps {
     width: 100%;
   }
