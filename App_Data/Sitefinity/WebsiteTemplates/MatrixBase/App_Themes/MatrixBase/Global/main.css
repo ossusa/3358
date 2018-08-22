@@ -11703,8 +11703,12 @@ hr {
   }
 }
 
-.red {
+.pink-btn {
   background: red;
+}
+
+.green-btn {
+  color: green;
 }
 
 /***********************************************/
