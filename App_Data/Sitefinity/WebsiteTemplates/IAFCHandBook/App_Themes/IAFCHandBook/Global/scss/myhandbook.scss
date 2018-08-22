@@ -62,13 +62,15 @@
     }
   }
   &_share{
-    color: #9b9b9b;
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 1em;
-    font-weight: 400;
-    border: none;
-    background: transparent;
-    outline: none;
+    button{
+      color: #9b9b9b;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1em;
+      font-weight: 400;
+      border: none;
+      background: transparent;
+      outline: none;
+    }
     i{
       margin-right: 10px;
       font-size: 1.125em;
@@ -136,6 +138,14 @@
 
 }
 .handbook_category{
+  @media screen and (max-width: 1109px) {
+    .progressindicator_share {
+      &:nth-child(2) {
+        justify-content: center;
+        padding-left: 0;
+      }
+    }
+  }
   &__wrapper {
     display: flex;
     margin-bottom: 50px;

@@ -3302,7 +3302,7 @@ p {
         flex-wrap: wrap;
         margin: 0 auto; } }
 
-.progressindicator_share {
+.progressindicator_share button {
   color: #9b9b9b;
   font-family: "Nunito Sans", sans-serif;
   font-size: 1em;
@@ -3310,24 +3310,27 @@ p {
   border: none;
   background: transparent;
   outline: none; }
-  .progressindicator_share i {
-    margin-right: 10px;
-    font-size: 1.125em; }
-  @media screen and (max-width: 1109px) {
-    .progressindicator_share {
-      height: 54px;
-      border-bottom: 1px solid #D8D8D8;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      width: 100vw;
-      margin-bottom: 48px; } }
-  @media screen and (max-width: 767px) {
-    .progressindicator_share {
-      margin-bottom: 36px; } }
+
+.progressindicator_share i {
+  margin-right: 10px;
+  font-size: 1.125em; }
+
+@media screen and (max-width: 1109px) {
+  .progressindicator_share {
+    height: 54px;
+    border-bottom: 1px solid #D8D8D8;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 48px; } }
+
+@media screen and (max-width: 767px) {
+  .progressindicator_share {
+    margin-bottom: 36px; } }
 
 .progressindicator__label {
   width: 124px;
@@ -3377,6 +3380,12 @@ p {
       .progressindicator__label .time {
         margin-right: 8px;
         font-size: 20px; } }
+
+@media screen and (max-width: 1109px) {
+  .handbook_category .progressindicator_share:nth-child(2) {
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0; } }
 
 .handbook_category__wrapper {
   display: -ms-flexbox;
