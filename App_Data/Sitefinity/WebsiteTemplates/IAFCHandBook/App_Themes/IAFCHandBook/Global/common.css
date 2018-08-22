@@ -1642,7 +1642,6 @@ p {
     border-radius: 3px 3px 0 0; }
 
 .complete__resources_slide {
-  max-width: 384px;
   width: 31.3%;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
@@ -1790,8 +1789,10 @@ p {
   .handbook__more {
     width: 282px;
     height: 307px; }
-  .complete__resources_slide .single-post-comments {
-    display: none; } }
+  .complete__resources_slide {
+    width: 48%; }
+    .complete__resources_slide .single-post-comments {
+      display: none; } }
 
 @media (max-width: 767px) {
   h1 {
