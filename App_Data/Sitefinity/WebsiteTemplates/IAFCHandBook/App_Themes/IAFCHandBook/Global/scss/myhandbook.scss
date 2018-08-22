@@ -156,6 +156,7 @@
     display: flex;
     margin-bottom: 50px;
     align-items: flex-start;
+    margin: 0 -12px;
     @media screen and (max-width: 1600px){
       flex-wrap: wrap;
     }
@@ -171,18 +172,15 @@
     }
   }
   &__item{
-      margin-right: 24px;
+      margin-right: 12px;
+      margin-left: 12px;
       @media screen and (max-width: 1109px){
-        &:nth-of-type(even){
-          margin-right: 0;
-        }
         &:nth-of-type(2){
           margin-bottom: 48px;
         }
       }
       @media screen and (max-width: 767px){
-        margin-right: 0;
-        margin-bottom: 24px;
+        margin: 0 0 24px 0;
         &:nth-of-type(2){
           margin-bottom: 24px;
         }
