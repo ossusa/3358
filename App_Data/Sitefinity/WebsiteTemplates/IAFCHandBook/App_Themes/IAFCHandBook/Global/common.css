@@ -3298,7 +3298,7 @@ p {
         flex-wrap: wrap;
         margin: 0 auto; } }
 
-.progressindicator_share button {
+.progressindicator_share {
   color: #9b9b9b;
   font-family: "Nunito Sans", sans-serif;
   font-size: 1em;
@@ -3306,28 +3306,33 @@ p {
   border: none;
   background: transparent;
   outline: none; }
-
-.progressindicator_share i {
-  margin-right: 10px;
-  font-size: 1.125em;
-  color: #9b9b9b; }
-
-@media screen and (max-width: 1109px) {
-  .progressindicator_share {
-    height: 54px;
-    border-bottom: 1px solid #D8D8D8;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 100vw;
-    margin-bottom: 48px; } }
-
-@media screen and (max-width: 767px) {
-  .progressindicator_share {
-    margin-bottom: 36px; } }
+  .progressindicator_share button {
+    color: #9b9b9b;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    outline: none; }
+  .progressindicator_share i {
+    margin-right: 10px;
+    font-size: 1.125em;
+    color: #9b9b9b; }
+  @media screen and (max-width: 1109px) {
+    .progressindicator_share {
+      height: 54px;
+      border-bottom: 1px solid #D8D8D8;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100vw;
+      margin-bottom: 48px; } }
+  @media screen and (max-width: 767px) {
+    .progressindicator_share {
+      margin-bottom: 36px; } }
 
 .progressindicator__label {
   width: 124px;
