@@ -1713,9 +1713,6 @@ p {
     margin-bottom: 20px; }
     .community__head-buttons:nth-of-type(2) {
       margin-bottom: 0; }
-  #partViewID div section {
-    -ms-flex-direction: column;
-    flex-direction: column; }
   .community__section > .box > section > .resources__slide {
     margin-bottom: 48px;
     margin-left: 0; }
@@ -2109,9 +2106,11 @@ p {
   .community__head-btn:nth-of-type(2) {
     width: 37% !important;
     margin-left: 12px !important; }
-  .community__section > .box > section > .resources__slide {
-    width: 100%;
-    margin-bottom: 10px; }
+  .community__section {
+    margin-bottom: 72px; }
+    .community__section > .box > section > .resources__slide {
+      width: 100%;
+      margin-bottom: 10px; }
   .resources__community-slide-info {
     height: 154px !important; }
   .resources__community-img img {
@@ -2160,7 +2159,10 @@ p {
     height: 100px;
     margin: 0 0 36px; }
     .handbook__more h3 {
-      font-size: 1.25em; } }
+      font-size: 1.25em; }
+  .resources__slide {
+    width: 100%;
+    margin-right: 0; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
