@@ -1993,7 +1993,7 @@ p {
   margin: 0 0 20px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3em;
   white-space: normal;
   line-height: 48px;
   color: #5591aa;
@@ -2290,6 +2290,15 @@ p {
     .single-post-comments {
       display: none;
     }
+  }
+
+  .topic__title {
+    font-size: 2.75em;
+    line-height: 50px;
+  }
+
+  .topic__subtitle {
+    font-size: 1.5em;
   }
 }
 
@@ -2867,7 +2876,7 @@ p {
     .handbook__more {
       width: 100%;
       height: 100px;
-      margin: 0 0 24px;
+      margin: 0 0 36px;
     }
 
   }
