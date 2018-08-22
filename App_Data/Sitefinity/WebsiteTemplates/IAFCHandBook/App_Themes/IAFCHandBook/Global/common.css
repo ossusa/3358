@@ -2124,7 +2124,7 @@ p {
     width: 100%;
     height: 100px;
     margin: 0 0 36px; }
-  .handbook__template .resources__slide-box * {
+  .handbook__template .resources__slide-article {
     overflow: hidden;
     text-overflow: ellipsis; } }
 

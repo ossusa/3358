@@ -2879,11 +2879,9 @@ p {
       margin: 0 0 36px;
     }
 
-    .resources__slide-box {
-      * {
+    .resources__slide-article, .resources__slide-title, .resources__slide-desc {
         overflow: hidden;
         text-overflow: ellipsis;
-      }
     }
 
   }
