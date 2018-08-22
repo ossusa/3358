@@ -4,3 +4,4 @@
 /App_Data/Sitefinity/Logs/*
 /.idea/*
 /App_Data/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/node_modules
+/App_Data/Sitefinity/WebsiteTemplates/MatrixBase/App_Themes/MatrixBase/node_modules

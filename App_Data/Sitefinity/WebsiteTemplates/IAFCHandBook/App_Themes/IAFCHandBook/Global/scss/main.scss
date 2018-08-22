@@ -650,7 +650,7 @@ p {
 
 .k-link {
   font-family: $font_family_4;
-  font-weight: 400;
+  font-weight: 400 !important;
   color: $color_5;
   font-size: 1.00em;
   z-index: 1000;
