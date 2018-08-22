@@ -82,6 +82,14 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return view;
 		}
 
+		[RelativeRoute("AddSharedToMyHandBook"), HttpPost]
+		public ActionResult AddSharedToMyHandBook(String resourceId)
+		{
+			var id = Guid.Parse(resourceId);
+			var addedToMyHandBool = handBookHelper.AddToMyHandBook(id);
+
+			return Json(addedToMyHandBool);
+		}
 
 		[RelativeRoute("Edit"), HttpPost]
 		public ActionResult Edit(String operation)

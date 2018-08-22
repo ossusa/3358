@@ -23,6 +23,15 @@
   color: #2B4B6B;
   font-weight: 600; }
 
+.handbook-content ul {
+  margin-top: 8px;
+  margin-bottom: 24px; }
+
+.handbook-content ul > li > ul {
+  list-style: disc;
+  padding-left: 40px;
+  margin: 0; }
+
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 @font-face {
   font-family: 'icomoon';

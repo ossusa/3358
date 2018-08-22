@@ -53,4 +53,13 @@
     color: #2B4B6B;
     font-weight: 600;
   }
+  ul{
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }
+  ul > li > ul{
+    list-style: disc;
+    padding-left: 40px;
+    margin: 0;
+  }
 }

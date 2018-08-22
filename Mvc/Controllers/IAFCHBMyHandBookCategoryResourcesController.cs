@@ -66,7 +66,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 		[RelativeRoute("MarkAsComplete"), HttpPost, StandaloneResponseFilter]
-		public ActionResult MarkAsComplete(String resourceId, String categoryId, String userId)
+		public ActionResult MarkAsComplete(String resourceId, String categoryId)
 		{
 			var id = Guid.Parse(resourceId);
 			var categoryGuid = Guid.Parse(categoryId);
@@ -79,7 +79,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 		[RelativeRoute("Remove"), HttpPost, StandaloneResponseFilter]
-		public ActionResult Remove(String resourceId, String categoryId, String userId)
+		public ActionResult Remove(String resourceId, String categoryId)
 		{
 			var id = Guid.Parse(resourceId);
 			var categoryGuid = Guid.Parse(categoryId);
@@ -88,6 +88,16 @@ namespace SitefinityWebApp.Mvc.Controllers
 			model = handBookHelper.GetCategoryResources(categoryGuid, true, null);			
 			var view = PartialView("_MyHandBookCategoryResourcesDetails", model);
 			return view;
+		}
+
+		
+		[RelativeRoute("AddSharedToMyHandBook"), HttpPost]
+		public ActionResult AddSharedToMyHandBook(String resourceId)
+		{
+			var id = Guid.Parse(resourceId);						
+			var addedToMyHandBool = handBookHelper.AddToMyHandBook(id);
+						
+			return Json(addedToMyHandBool);
 		}
 
 		[RelativeRoute("RemoveCompleted"), HttpPost, StandaloneResponseFilter]

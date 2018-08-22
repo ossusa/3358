@@ -10,11 +10,11 @@
 		<div class="topic__title">@myHandBookResource.Category.CategoryTitle</div>
 
 		<div class="handbook__social-buttons">
+			@if (Model.SharedUserId == Guid.Empty)
+			{
 				<button id="edit" type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
-				@if (Model.SharedUserId == Guid.Empty)
-				{
 				<button id="share" type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
-				}
+			}
 		</div>
 
 	</div>
@@ -111,6 +111,23 @@
 				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 					hideButtons();
+				}
+			});
+		});
+
+		//Add Shared Resource to My Hand Book
+		$('.addSharedToMyHandBookBtn').one('click', function () {
+			var resourceId = $(this).attr('data-id');			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddSharedToMyHandBook", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {					
+					if (response == true) {
+						$("#addSharedToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+					}
 				}
 			});
 		});
