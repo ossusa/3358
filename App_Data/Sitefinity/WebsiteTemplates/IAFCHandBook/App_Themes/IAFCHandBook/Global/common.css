@@ -2400,7 +2400,7 @@ p {
   border-bottom: 1px solid #d8d8d8; }
   .header__text {
     background: #B5354A;
-    padding: 0 120px;
+    padding: 8px 120px;
     height: 38px; }
     .header__text-link {
       color: #fff;
@@ -2538,7 +2538,7 @@ p {
 
 @media (max-width: 1109px) {
   .header__text {
-    padding: 0 27px; }
+    padding: 8px 27px; }
   .header__nav > ul > li:nth-of-type(5) > a {
     padding-right: 22px !important; }
   .header__table-tr {
@@ -2553,7 +2553,7 @@ p {
 
 @media (max-width: 767px) {
   .header__text {
-    padding: 0 28px; }
+    padding: 8px 28px; }
   .header__logo {
     padding: 0; }
     .header__logo img {
