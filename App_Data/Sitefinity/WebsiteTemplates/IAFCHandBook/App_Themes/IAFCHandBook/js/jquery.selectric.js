@@ -1073,7 +1073,7 @@
         onChange             : function(elm) { $(elm).change(); },
         maxHeight            : 300,
         keySearchTimeout     : 500,
-        arrowButtonMarkup    : '<b class="category__arrow">&#x25be;</b>',
+        arrowButtonMarkup    : '<b class="category__arrow"></b>',
         disableOnMobile      : false,
         nativeOnMobile       : true,
         openOnFocus          : true,
@@ -1108,7 +1108,7 @@
         }
     };
 }));
-
+/*Select*/
 $(function () {
     $('.community__title-select').selectric({
         nativeOnMobile: false
