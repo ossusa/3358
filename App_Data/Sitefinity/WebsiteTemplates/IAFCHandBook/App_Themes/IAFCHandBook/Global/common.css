@@ -3258,7 +3258,7 @@ p {
     @media screen and (max-width: 767px) {
       .handbook__title h1 {
         margin: 0 auto;
-        font-size: 28px; } }
+        font-size: 1.750em; } }
 
 .handbook_container {
   width: 83.3%;
@@ -3302,14 +3302,14 @@ p {
 .progressindicator_share {
   color: #9b9b9b;
   font-family: "Nunito Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 400;
   border: none;
   background: transparent;
   outline: none; }
   .progressindicator_share i {
     margin-right: 10px;
-    font-size: 18px; }
+    font-size: 1.125em; }
   @media screen and (max-width: 1109px) {
     .progressindicator_share {
       height: 54px;
@@ -3468,7 +3468,7 @@ p {
       z-index: 0; }
   .handbook_category__item__time {
     font-family: "Zilla Slab", serif;
-    font-size: 13px;
+    font-size: 0.813em;
     font-weight: 400;
     color: white;
     display: -ms-flexbox;
@@ -3484,7 +3484,7 @@ p {
     cursor: default; }
     .handbook_category__item__time span {
       font-family: "Nunito Sans", sans-serif;
-      font-size: 15px;
+      font-size: 0.938em;
       font-weight: 700;
       display: block; }
   .handbook_category__item__links {
@@ -3503,7 +3503,7 @@ p {
       align-items: center;
       color: #666666;
       font-family: "Nunito Sans", sans-serif;
-      font-size: 16px;
+      font-size: 1em;
       font-weight: 400;
       padding-bottom: 4px; }
       .handbook_category__item__links a:hover:after {
