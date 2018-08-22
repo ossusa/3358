@@ -27,6 +27,12 @@
   }
 }
 .handbook_container{
+  padding: 0 90px;
+  @media screen and (max-width: 767px){
+    padding: 0 28px;
+  }
+}
+.handbook_subcontainer{
   max-width: 1200px;
   margin: 0 auto;
   @media screen and (max-width: 1109px){
@@ -44,6 +50,7 @@
     }
   }
 }
+
 .progressindicator{
   &__wrapper{
     margin: 48px 0;

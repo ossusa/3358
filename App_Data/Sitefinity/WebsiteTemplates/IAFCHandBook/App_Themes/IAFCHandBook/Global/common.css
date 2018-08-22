@@ -3338,16 +3338,22 @@ p {
         font-size: 1.750em; } }
 
 .handbook_container {
+  padding: 0 90px; }
+  @media screen and (max-width: 767px) {
+    .handbook_container {
+      padding: 0 28px; } }
+
+.handbook_subcontainer {
   max-width: 1200px;
   margin: 0 auto; }
   @media screen and (max-width: 1109px) {
-    .handbook_container {
+    .handbook_subcontainer {
       width: 588px; } }
   @media screen and (max-width: 767px) {
-    .handbook_container {
+    .handbook_subcontainer {
       width: 100%; } }
   @media screen and (max-width: 1109px) {
-    .handbook_container .progressindicator_share:nth-child(2) {
+    .handbook_subcontainer .progressindicator_share:nth-child(2) {
       -ms-flex-pack: center;
       justify-content: center;
       padding-left: 0; } }
