@@ -2105,10 +2105,10 @@ p {
   #partViewID {
     div {
       section {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
+       // -webkit-box-orient: vertical;
+       // -webkit-box-direction: normal;
+       // -ms-flex-direction: column;
+      //  flex-direction: column;
       }
     }
   }
@@ -2786,6 +2786,7 @@ p {
     }
   }
   .community__section {
+    margin-bottom: 72px;
     >.box {
       >section {
         >.resources__slide {
@@ -2880,6 +2881,11 @@ p {
     h3 {
       font-size: 1.25em;
     }
+  }
+
+  .resources__slide {
+    width: 100%;
+    margin-right: 0;
   }
 }
 @media (max-width: 382px) {
