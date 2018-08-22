@@ -480,7 +480,7 @@
       margin: 52px -90px 100px;
     }
     @media screen and (max-width: 767px){
-      padding: 36px 0 16px;
+      padding: 36px 14px 16px;
       margin: 40px -28px 67px;
     }
     &-title {
@@ -537,6 +537,9 @@
       flex-wrap: wrap;
       width: 100%;
       margin: 0 -12px;
+      @media screen and (max-width: 767px) {
+        margin: 0 auto;
+      }
     }
   }
   &_box {

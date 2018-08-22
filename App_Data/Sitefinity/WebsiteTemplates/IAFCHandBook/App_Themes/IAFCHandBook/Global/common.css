@@ -3121,7 +3121,7 @@ p {
       margin: 52px -90px 100px; } }
   @media screen and (max-width: 767px) {
     .complete_section {
-      padding: 36px 0 16px;
+      padding: 36px 14px 16px;
       margin: 40px -28px 67px; } }
   .complete_section-title {
     margin-bottom: 16px;
@@ -3177,6 +3177,9 @@ p {
   flex-wrap: wrap;
   width: 100%;
   margin: 0 -12px; }
+  @media screen and (max-width: 767px) {
+    .complete__resources_slides {
+      margin: 0 auto; } }
 
 .complete_box {
   width: 14px;
