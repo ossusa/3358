@@ -499,13 +499,13 @@
   }
   &__resources {
     &_slide {
-      margin: 0 1% 48px;
+      margin: 0 1% 48px !important;
       @media screen and (max-width: 1109px) {
-        width: 48%;
+        width: 48% !important;
       }
       @media screen and (max-width: 767px) {
-        margin: 0 0 24px;
-        width: 100%;
+        margin: 0 0 24px !important;
+        width: 100% !important;
       }
       img {
         height: 266px;
@@ -533,7 +533,7 @@
     }
     &_slides {
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-start !important;
       align-items: flex-start;
       flex-wrap: wrap;
       width: 100%;

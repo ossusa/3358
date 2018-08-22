@@ -2042,9 +2042,19 @@ p {
 }
 
 .complete__resources_slide {
-  width: 31.3%;
+  width: 31.3% !important;
   border: 1px solid #EFEFEF;
   border-radius: 3px;
+}
+
+.resources__slide {
+  width: 49%;
+  margin-bottom: 48px;
+
+  &:nth-child(odd) {
+    margin-right: 2%;
+  }
+
 }
 
 
