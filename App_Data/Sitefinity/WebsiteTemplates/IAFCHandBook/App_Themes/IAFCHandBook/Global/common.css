@@ -1634,6 +1634,9 @@ p {
   .complete__resources_slides img {
     height: auto !important; }
 
+.complete__resources_slide {
+  max-width: 384px; }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
