@@ -570,7 +570,7 @@ p {
 
 .k-link {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 400 !important;
   color: #666666;
   font-size: 1.00em;
   z-index: 1000;
@@ -1636,9 +1636,7 @@ p {
   -ms-flex-align: start;
   align-items: flex-start;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 0 auto; }
+  flex-wrap: wrap; }
   .complete__resources_slides img {
     height: auto !important;
     border-radius: 3px 3px 0 0; }
@@ -3122,7 +3120,8 @@ p {
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 -12px; }
+  width: 100%;
+  margin: 0 auto; }
 
 .complete_box {
   width: 14px;
