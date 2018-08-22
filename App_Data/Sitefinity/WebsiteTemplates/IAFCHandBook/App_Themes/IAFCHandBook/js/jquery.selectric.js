@@ -1,4 +1,3 @@
-$(document).ready(function () {
 (function(factory) {
     /* global define */
     /* istanbul ignore next */
@@ -1109,5 +1108,25 @@ $(document).ready(function () {
         }
     };
 }));
-
+/*Select*/
+$(function () {
+    $('.community__title-select').selectric({
+        nativeOnMobile: false
+    });
+});
+$(function () {
+    $('.community__category-select').selectric({
+        nativeOnMobile: false
+    });
+});
+$('.selectric-community__title-select .selectric').click(function (e) {
+    e.stopPropagation();
+    $(this).find('.category__arrow').toggleClass('rotated');
+});
+$('.selectric-community__category-select .selectric').click(function (e) {
+    e.stopPropagation();
+    $(this).find('.category__arrow').toggleClass('rotated');
+});
+$(document).on("click", function () {
+    $(".rotated").toggleClass('rotated');
 });
