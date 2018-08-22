@@ -1505,6 +1505,16 @@ p {
     font-face: "Nunito Sans", sans-serif;
     font-size: 1.00em; }
 
+.complete__resources_slides {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
@@ -1647,7 +1657,12 @@ p {
     flex-direction: column-reverse; }
   .handbook__more {
     width: 282px;
-    height: 307px; } }
+    height: 307px; }
+  .topic__title {
+    font-size: 2.75em;
+    line-height: 50px; }
+  .topic__subtitle {
+    font-size: 1.5em; } }
 
 @media (max-width: 767px) {
   h1 {

@@ -1916,6 +1916,13 @@ p {
   }
 }
 
+.complete__resources_slides {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
 @media(max-width: 1500px){
   .topics__img-text{
     font-size: 2.2vw;
@@ -2139,6 +2146,14 @@ p {
   .handbook__more {
     width: 282px;
     height: 307px;
+  }
+
+  .topic__title {
+    font-size: 2.75em;
+    line-height: 50px;
+  }
+  .topic__subtitle {
+    font-size: 1.5em;
   }
 }
 
