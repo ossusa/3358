@@ -95,7 +95,7 @@
 	$(document).ready(function () {
 
 		//Add Like
-		$('.addLike').on('click', function () {
+		$('.addLike').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -112,7 +112,7 @@
 		});
 
 		//Add Dislike
-		$('.addDislike').on('click', function () {
+		$('.addDislike').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -129,7 +129,7 @@
 		});
 
 		//Add ToMyHandBook
-		$('.addToMyHandBook').on('click', function () {
+		$('.addToMyHandBook').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 			var tag_id = "#addToMyHandBook_" + resourceId;
