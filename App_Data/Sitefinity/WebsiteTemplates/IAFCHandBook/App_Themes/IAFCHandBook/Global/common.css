@@ -1629,8 +1629,8 @@ p {
   justify-content: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap; }
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .complete__resources_slides img {
     height: auto !important; }
 
@@ -3108,7 +3108,15 @@ p {
       .complete__resources_slide-info {
         height: 186px; } }
 
-
+.complete__resources_slides {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 .complete_box {
   width: 14px;
