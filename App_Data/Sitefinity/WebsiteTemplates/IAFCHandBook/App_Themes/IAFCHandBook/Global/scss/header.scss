@@ -2,7 +2,7 @@
   border-bottom: 1px solid #d8d8d8;
   &__text {
     background: #B5354A;
-    padding: 0 120px;
+    padding: 8px 120px;
     height: 38px;
     &-link {
       color: $color_6;
@@ -282,7 +282,7 @@
 
 @media (max-width: 1109px) {
   .header__text {
-    padding: 0 27px;
+    padding: 8px 27px;
   }
   .header__nav {
     >ul {
@@ -315,7 +315,7 @@
 
 @media (max-width: 767px) {
   .header__text {
-    padding: 0 28px;
+    padding: 8px 28px;
   }
 
   .header__logo {
