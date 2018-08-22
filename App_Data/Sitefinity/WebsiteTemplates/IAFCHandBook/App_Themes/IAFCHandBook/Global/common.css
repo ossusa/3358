@@ -1,5 +1,28 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Zilla+Slab:300,400,500,600|Lato:400");
 @import url("//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css");
+.handbook-centered {
+  width: 792px;
+  margin: 0 auto;
+  padding: 0; }
+  @media screen and (max-width: 1109px) {
+    .handbook-centered {
+      width: 100%; } }
+
+.handbook-title h1 {
+  color: #2B4B6B; }
+
+.handbook-content p {
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 22px;
+  margin-bottom: 24px; }
+
+.handbook-content h6 {
+  color: #DF405A; }
+
+.handbook-content a {
+  color: #2B4B6B;
+  font-weight: 600; }
+
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 @font-face {
   font-family: 'icomoon';
@@ -570,7 +593,7 @@ p {
 
 .k-link {
   font-family: "Nunito Sans", sans-serif;
-  font-weight: 400;
+  font-weight: 400 !important;
   color: #666666;
   font-size: 1.00em;
   z-index: 1000;
@@ -1241,13 +1264,6 @@ p {
   font-family: "Zilla Slab", serif;
   color: #9b9b9b; }
 
-.page {
-  width: 792px;
-  margin: 0 auto;
-  padding: 0; }
-  .page__title {
-    color: #2B4B6B; }
-
 .maps {
   width: 792px;
   margin: 0 auto;
@@ -1260,8 +1276,6 @@ p {
       margin-top: 24px; }
 
 .about {
-  width: 792px;
-  margin: 0 auto;
   padding: 0 0 100px 0; }
   .about__info {
     font-family: "Nunito Sans", sans-serif;
@@ -1586,7 +1600,7 @@ p {
   margin: 0 0 20px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 3em;
   white-space: normal;
   line-height: 48px;
   color: #5591aa;
@@ -1768,8 +1782,6 @@ p {
     width: 100%;
     padding-left: 90px;
     padding-right: 90px; }
-  .page {
-    width: 100%; }
   .maps {
     width: 100%; }
   .about {
@@ -1791,7 +1803,12 @@ p {
   .complete__resources_slide {
     width: 48%; }
     .complete__resources_slide .single-post-comments {
-      display: none; } }
+      display: none; }
+  .topic__title {
+    font-size: 2.75em;
+    line-height: 50px; }
+  .topic__subtitle {
+    font-size: 1.5em; } }
 
 @media (max-width: 767px) {
   h1 {
@@ -2100,7 +2117,28 @@ p {
   .progressindicator__label:not(:last-child) {
     margin-bottom: 16px; }
   .handbook__more {
-    width: 320px; } }
+    width: 320px; }
+  .handbook__template.complete__resources_slides .complete__resources_slide {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex; }
+  .handbook__template.complete__resources_slides .resources__slide-footer {
+    display: none; }
+  .handbook__template.complete__resources_slides .resources__community-img {
+    width: 45%; }
+  .handbook__template.complete__resources_slides .resources__slide-info.resources__community-slide-info {
+    width: 55%;
+    height: auto !important;
+    padding: 14px; }
+  .handbook__template.complete__resources_slides .resources__slide-title {
+    font-size: 1em; }
+  .handbook__template .handbook__more {
+    width: 100%;
+    height: 100px;
+    margin: 0 0 36px; }
+  .handbook__template .resources__slide-article, .handbook__template .resources__slide-title, .handbook__template .resources__slide-desc {
+    overflow: hidden;
+    text-overflow: ellipsis; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
@@ -3088,7 +3126,8 @@ p {
     .complete__resources_slide {
       margin: 0 0 24px; } }
   .complete__resources_slide img {
-    height: 266px; }
+    height: 266px;
+    display: block; }
     @media screen and (max-width: 1109px) {
       .complete__resources_slide img {
         height: 195px; } }
@@ -3120,6 +3159,7 @@ p {
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  width: 100%;
   margin: 0 -12px; }
 
 .complete_box {
