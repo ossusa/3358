@@ -2836,6 +2836,25 @@ p {
   .handbook__more {
     width: 320px;
   }
+
+  .handbook__template {
+    &.complete__resources_slides {
+      .complete__resources_slide {
+        width: 100%;
+        display: flex;
+      }
+
+      .resources__slide-footer {
+        display: none;
+      }
+    }
+
+    .handbook__more {
+      width: 100%;
+      height: 100px;
+    }
+
+  }
 }
 @media (max-width: 382px) {
   .resources__slide-info {
