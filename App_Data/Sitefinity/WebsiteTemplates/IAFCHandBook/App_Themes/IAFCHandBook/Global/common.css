@@ -4,6 +4,9 @@
   width: 792px;
   margin: 0 auto;
   padding: 0; }
+  @media screen and (max-width: 1109px) {
+    .handbook-centered {
+      width: 100%; } }
 
 .hanbook-title h1 {
   color: #2B4B6B; }
@@ -1779,8 +1782,6 @@ p {
     width: 100%;
     padding-left: 90px;
     padding-right: 90px; }
-  .page {
-    width: 100%; }
   .maps {
     width: 100%; }
   .about {

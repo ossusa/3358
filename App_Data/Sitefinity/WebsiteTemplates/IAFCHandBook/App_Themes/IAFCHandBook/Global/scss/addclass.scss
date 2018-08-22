@@ -31,6 +31,9 @@
   width: 792px;
   margin: 0 auto;
   padding: 0;
+  @media screen and (max-width: 1109px){
+    width: 100%;
+  }
 }
 .hanbook-title{
   h1{
