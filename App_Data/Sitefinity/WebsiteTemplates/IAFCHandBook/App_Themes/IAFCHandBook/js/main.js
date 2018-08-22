@@ -111,19 +111,19 @@ $(document).ready(function () {
     });
 
 
-    //sticky header
-    var headerText = $('#headerText');
-    var wrapper = $('#wrapper');
-    var stickyHeader = $('.box-mobile');
-    $(window).scroll(function(){
-        if ($(window).scrollTop() >= headerText.height()) {
-            wrapper.css("margin-top", stickyHeader.height());
-            stickyHeader.addClass('sticky');
-        }
-        else {
-            stickyHeader.removeClass('sticky');
-            wrapper.css("margin-top", 0);
-        }
-    });
+    // //sticky header
+    // var headerText = $('#headerText');
+    // var wrapper = $('#wrapper');
+    // var stickyHeader = $('.box-mobile');
+    // $(window).scroll(function(){
+    //     if ($(window).scrollTop() >= headerText.height()) {
+    //         wrapper.css("margin-top", stickyHeader.height());
+    //         stickyHeader.addClass('sticky');
+    //     }
+    //     else {
+    //         stickyHeader.removeClass('sticky');
+    //         wrapper.css("margin-top", 0);
+    //     }
+    // });
 
 });
