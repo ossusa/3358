@@ -1629,8 +1629,13 @@ p {
   justify-content: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap; }
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .complete__resources_slides img {
+    height: auto !important; }
+
+.complete__resources_slide {
+  max-width: 384px; }
 
 @media (max-width: 1500px) {
   .topics__img-text {
