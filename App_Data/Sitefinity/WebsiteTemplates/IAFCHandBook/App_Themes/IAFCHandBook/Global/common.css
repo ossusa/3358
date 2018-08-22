@@ -1789,7 +1789,9 @@ p {
     flex-direction: column-reverse; }
   .handbook__more {
     width: 282px;
-    height: 307px; } }
+    height: 307px; }
+  .complete__resources_slide .single-post-comments {
+    display: none; } }
 
 @media (max-width: 767px) {
   h1 {

@@ -2287,6 +2287,12 @@ p {
     width: 282px;
     height: 307px;
   }
+
+  .complete__resources_slide {
+    .single-post-comments {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 767px) {
