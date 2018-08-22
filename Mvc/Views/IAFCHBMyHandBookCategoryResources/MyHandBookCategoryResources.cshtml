@@ -5,7 +5,7 @@
 </div>
 <div class="box complete-box">
 	<div class="complete__tablet_head-buttons">
-		<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
+		<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit  </button>
 		<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
 	</div>
 
@@ -23,7 +23,7 @@
 			}
 		</select>
 		<div class="complete__head-buttons">
-			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>			
+			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit  </button>			
 			<div id="share">			
 					@if (Model.SharedUserId == Guid.Empty)
 					{
@@ -43,7 +43,9 @@
 <script type="text/javascript">
 
 
-	$(document).ready(function () {
+	$(document).ready(function () {		
+		$('.removeResource').hide();		
+		$('.removeCompletedResource').hide();				
 		bindEdit();
 	});
 	$(document).ajaxComplete(function (event, xhr, settings) {
@@ -53,7 +55,7 @@
 	function bindEdit() {
 
 		//Add Like
-		$('.addLike').on('click', function () {
+		$('.addLike').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -70,7 +72,7 @@
 		});
 
 		//Add Dislike
-		$('.addDislike').on('click', function () {
+		$('.addDislike').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -87,31 +89,49 @@
 		});
 
 		//mark As Complete
-		$('.markAsCompleteBtn').on('click', function () {
+		$('.markAsCompleteBtn').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
-			var categoryId = $(this).attr('data-id2');
-			var markAsCompleteCaption = $(this).text();
+			var categoryId = $(this).attr('data-id2');			
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookCategoryResources")',
-				data: { operation: markAsCompleteCaption, resourceId: resourceId, categoryId: categoryId },
+				data: { resourceId: resourceId, categoryId: categoryId },
 				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					hideButtons();
 
 				}
 			});
 		});
 
+		//remove
+		$('.removeBtn').one('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+			var categoryId = $(this).attr('data-id2');			
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Remove", "IAFCHBMyHandBookCategoryResources")',
+				data: { resourceId: resourceId, categoryId: categoryId },
+				success: function (response) {					
+					$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					hideButtons();
+				}
+			});
+		});
+
 		//Remove Completed
-		$('.completeMarkAsCompleteBtn').on('click', function () {
+		$('.removeComplenedBtn').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 			var categoryId = $(this).attr('data-id2');
 			var markAsCompleteCaption = $(this).text();
-
+			24
 			$.ajax({
 				type: 'POST',
 				cache: false,
@@ -125,7 +145,7 @@
 		});
 
 		//Edit
-		$('.editBtn').on('click', function () {
+		$('.editBtn').one('click', function () {
 			var editCaption = $(this).text();
 
 			$.ajax({
@@ -137,22 +157,17 @@
 				success: function (response) {
 					if (response == true) {
 						$('.editBtn').text("Cancel");
-						$('.markAsCompleteBtn').text("Remove");
-						$('.completeMarkAsCompleteBtn').text("Remove");
-						$('.completeMarkAsCompleteBtn').removeAttr("disabled");
 					}
 					else {
 						$('.editBtn').text("Edit");
-						$('.markAsCompleteBtn').text("Mark as Complete");
-						$('.completeMarkAsCompleteBtn').text("Complete");
-						$('.completeMarkAsCompleteBtn').attr("disabled", "disabled");
 					}
+					hideButtons();
 				}
 			});
 		});
 
 		//share
-		$('.shareBtn').on('click', function () {
+		$('.shareBtn').one('click', function () {
 			var url = window.location.href;
 			$.ajax({
 				type: 'POST',
@@ -167,6 +182,22 @@
 			});
 		});
 
+	}
+
+	function hideButtons() {
+		var editTxt = $('.editBtn').first().text();
+		if (editTxt == "Edit") {
+			$('.markAsCompleteResource').show();
+			$('.removeResource').hide();
+			$('.completedResource').show();
+			$('.removeCompletedResource').hide();		
+		}
+		else {
+			$('.markAsCompleteResource').hide();
+			$('.removeResource').show();
+			$('.completedResource').hide();
+			$('.removeCompletedResource').show();
+		}
 	}
 
 	function doOrderBy() {
@@ -185,7 +216,7 @@
 			}
 		});
 	}
-
+	
 	function doNavigate() {
 		window.location.href = document.getElementById("UrlList").value;
 	}				
