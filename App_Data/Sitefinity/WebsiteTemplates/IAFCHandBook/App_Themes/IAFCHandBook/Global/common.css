@@ -1633,7 +1633,8 @@ p {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .complete__resources_slides img {
-    height: auto !important; }
+    height: auto !important;
+    border-radius: 3px 3px 0 0; }
 
 .complete__resources_slide {
   max-width: 384px;
