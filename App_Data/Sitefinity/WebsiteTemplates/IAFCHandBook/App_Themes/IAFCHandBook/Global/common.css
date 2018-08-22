@@ -1620,12 +1620,12 @@ p {
     text-align: center; }
     .handbook__more-item h3 {
       color: #fff; }
-    .handbook__more-item:hover {
-      box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15); }
   .handbook__more-topic {
     color: #fff;
     font-face: "Nunito Sans", sans-serif;
     font-size: 1.00em; }
+  .handbook__more:hover {
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15); }
 
 .complete__resources_slides {
   display: -ms-flexbox;
