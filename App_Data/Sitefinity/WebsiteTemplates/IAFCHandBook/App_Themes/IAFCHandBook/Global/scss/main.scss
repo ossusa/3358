@@ -2855,7 +2855,12 @@ p {
         &.resources__community-slide-info {
           width: 50%;
           height: auto!important;
+          padding: 14px;
         }
+      }
+
+      .resources__slide-title {
+        font-size: 1em;
       }
     }
 
