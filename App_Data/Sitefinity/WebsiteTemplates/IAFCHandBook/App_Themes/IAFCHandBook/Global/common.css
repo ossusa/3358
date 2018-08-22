@@ -1640,7 +1640,7 @@ p {
 
 .complete__resources_slide {
   max-width: 384px;
-  width: 30.5%;
+  width: 30.5% !important;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
 
