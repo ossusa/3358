@@ -2047,6 +2047,15 @@ p {
   border-radius: 3px;
 }
 
+.resources__slide {
+  width: 49%!important;
+
+  &:nth-child(odd) {
+    margin-right: 2%;
+  }
+
+}
+
 
 
 @media(max-width: 1500px){
