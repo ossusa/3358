@@ -6,7 +6,14 @@
   padding: 0; }
   @media screen and (max-width: 1109px) {
     .handbook-centered {
-      width: 100%; } }
+      width: 100%;
+      padding: 0 90px; } }
+  @media (max-width: 767px) {
+    .handbook-centered {
+      padding: 0 28px; } }
+  @media (max-width: 370px) {
+    .handbook-centered {
+      padding: 0 14px; } }
 
 .handbook-title h1 {
   color: #2B4B6B; }
