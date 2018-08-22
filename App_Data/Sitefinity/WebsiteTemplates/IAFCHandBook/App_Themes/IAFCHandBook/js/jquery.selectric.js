@@ -1119,14 +1119,14 @@ $(function () {
         nativeOnMobile: false
     });
 });
-$('.selectric-community__title-select .selectric').click(function (e) {
-    e.stopPropagation();
-    $(this).find('.category__arrow').toggleClass('rotated');
-});
-$('.selectric-community__category-select .selectric').click(function (e) {
-    e.stopPropagation();
-    $(this).find('.category__arrow').toggleClass('rotated');
-});
-$(document).on("click", function () {
-    $(".rotated").toggleClass('rotated');
-});
+// $('.selectric-community__title-select .selectric').click(function (e) {
+//     e.stopPropagation();
+//     $(this).find('.category__arrow').toggleClass('rotated');
+// });
+// $('.selectric-community__category-select .selectric').click(function (e) {
+//     e.stopPropagation();
+//     $(this).find('.category__arrow').toggleClass('rotated');
+// });
+// $(document).on("click", function () {
+//     $(".rotated").toggleClass('rotated');
+// });
