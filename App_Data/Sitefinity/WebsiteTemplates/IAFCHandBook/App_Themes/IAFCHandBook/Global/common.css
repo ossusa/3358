@@ -3170,8 +3170,8 @@ p {
 .complete__resources_slides {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important;
   -ms-flex-align: start;
   align-items: flex-start;
   -ms-flex-wrap: wrap;
