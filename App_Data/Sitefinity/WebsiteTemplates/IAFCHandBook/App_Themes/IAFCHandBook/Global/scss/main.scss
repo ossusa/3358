@@ -2036,13 +2036,21 @@ p {
   }
 }
 
-
 .complete__resources_slides {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: nowrap;
+
+  img {
+    height: auto !important;
+  }
 }
+
+.complete__resources_slide {
+  max-width: 384px;
+}
+
 
 
 @media(max-width: 1500px){
