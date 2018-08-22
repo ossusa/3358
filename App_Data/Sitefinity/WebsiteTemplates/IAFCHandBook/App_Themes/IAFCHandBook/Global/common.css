@@ -1620,6 +1620,8 @@ p {
     text-align: center; }
     .handbook__more-item h3 {
       color: #fff; }
+    .handbook__more-item:hover {
+      box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15); }
   .handbook__more-topic {
     color: #fff;
     font-face: "Nunito Sans", sans-serif;
