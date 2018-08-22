@@ -3385,7 +3385,7 @@ p {
     @media screen and (max-width: 767px) {
       .progressindicator__label .time {
         margin-right: 8px;
-        font-size: 20px; } }
+        font-size: 1.250em; } }
 
 .handbook_category__wrapper {
   display: -ms-flexbox;

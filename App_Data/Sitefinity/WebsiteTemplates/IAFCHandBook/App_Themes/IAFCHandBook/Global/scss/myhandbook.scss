@@ -105,7 +105,6 @@
     margin-right: 24px;
     color: $color_15;
     font-family: $font_family_5;
-    //font-size: 13px;
     font-weight: 400;
     font-size: 0.813em;
     text-align: center;
@@ -134,13 +133,12 @@
       }
     }
     .time{
-      //font-size: 20px;
       font-weight: 700;
       font-size: 1.250em;
       font-family: $font_family_4;
       @media screen and (max-width: 767px){
         margin-right: 8px;
-        font-size: 20px;
+        font-size: 1.250em;
       }
     }
   }
