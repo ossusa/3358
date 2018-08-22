@@ -2175,7 +2175,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion MyHandBookGetResourcesPerCategory
 
 		#region GetCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, Boolean showAllResources, String userId= null, String markCompleteBtnText = "Mark as Complete", String orderBy= OrderByMostRecent)
+		public IAFCHandBookMyHandBookResourceModelModel GetCategoryResources(Guid categoryId, Boolean showAllResources, String userId= null, String orderBy= OrderByMostRecent)
 		{
 			
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
@@ -2267,7 +2267,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				foreach (var resourceItem in showAllResources? categoryResources: categoryResources.Take(5))
 				{
 					myChildResourceItem = GetResourceDetails(resourceItem, showAsMyHandBookItem);
-					myChildResourceItem.MarkCompleteBtnText = markCompleteBtnText;
+					
 					myChildResourceItem.MoreThen5Resources = (myHandBookResourcesAmount - 5) < 0 ? 0 : myHandBookResourcesAmount - 5;
 					model.MyResources.Add(myChildResourceItem);
 				}
@@ -2275,14 +2275,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var myChildCompletedResourceItem = new IAFCHandBookResourceModel();
 				foreach (var resourceCompletedItem in showAllResources? categoryCompletedResources: categoryCompletedResources.Take(5))
 				{
-
-					myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, showAsMyHandBookItem);
-					var completedResourceBtnText = "Complete";
-					if (markCompleteBtnText != "Mark as Complete")
-					{
-						completedResourceBtnText = markCompleteBtnText;
-					}
-					myChildCompletedResourceItem.MarkCompleteBtnText = completedResourceBtnText;
+					myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, showAsMyHandBookItem);										
 					model.MyCompletedResources.Add(myChildCompletedResourceItem);
 				}
 
@@ -2298,11 +2291,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetCategoryResources
 
 		#region GetMyHandBookCategoryResources
-		public IAFCHandBookMyHandBookResourceModelModel GetMyHandBookCategoryResourcesByName(String  categoryName, String userId = null, String markCompleteBtnText = "Mark as Complete", String orderBy = OrderByMostRecent)
+		public IAFCHandBookMyHandBookResourceModelModel GetMyHandBookCategoryResourcesByName(String  categoryName, String userId = null, String orderBy = OrderByMostRecent)
 		{
 			var categoryId = GetCategoryGuidByName(categoryName);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
-			model = GetCategoryResources(categoryId, false, userId, markCompleteBtnText, orderBy);
+			model = GetCategoryResources(categoryId, false, userId, orderBy);
 			return model;
 		}
 		#endregion GetMyHandBookCategoryResources

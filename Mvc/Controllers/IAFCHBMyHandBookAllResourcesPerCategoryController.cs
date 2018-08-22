@@ -57,26 +57,31 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 		[RelativeRoute("MarkAsComplete"), HttpPost, StandaloneResponseFilter]
-		public ActionResult MarkAsComplete(String operation, String resourceId, String categoryId, String userId)
+		public ActionResult MarkAsComplete(String resourceId, String categoryId, String userId)
 		{
 			var id = Guid.Parse(resourceId);
 			var categoryGuid = Guid.Parse(categoryId);
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
-			if (operation.Equals("Remove"))
-			{				
-				var markAsComplete = handBookHelper.RemoveResource(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid, false, userId, "Remove");
-			}
-			else
-			{				
-				var markAsComplete = handBookHelper.MarkAsComplete(id);
-				model = handBookHelper.GetCategoryResources(categoryGuid, false, userId);
-			}
-			
-			var view =  PartialView("_MyHandBookAllResourcesPerCategoryDetails", model);			
+			var markAsComplete = handBookHelper.MarkAsComplete(id);
+			model = handBookHelper.GetCategoryResources(categoryGuid, false, userId);
+
+			var view = PartialView("_MyHandBookAllResourcesPerCategoryDetails", model);
 			return view;
 		}
-	
+
+		[RelativeRoute("Remove"), HttpPost, StandaloneResponseFilter]
+		public ActionResult Remove(String resourceId, String categoryId, String userId)
+		{
+			var id = Guid.Parse(resourceId);
+			var categoryGuid = Guid.Parse(categoryId);
+			var model = new IAFCHandBookMyHandBookResourceModelModel();
+			var markAsComplete = handBookHelper.RemoveResource(id);
+			model = handBookHelper.GetCategoryResources(categoryGuid, false, userId);
+
+			var view = PartialView("_MyHandBookAllResourcesPerCategoryDetails", model);
+			return view;
+		}
+
 
 		[RelativeRoute("Edit"), HttpPost]
 		public ActionResult Edit(String operation)

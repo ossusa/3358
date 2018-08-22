@@ -2011,10 +2011,10 @@ p {
 }
 
 .handbook__more {
-  width: 30.5%;
+  width: 31.3%;
   align-self: stretch;
   position: relative;
-  margin-bottom: 48px;
+  margin: 0 1% 48px;
   background: #2b4b6b;
   border-radius: 3px;
 
@@ -2036,8 +2036,9 @@ p {
     font-size: 1.00em;
   }
   &:hover {
-    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15);
   }
+  transition: .3s ease-in-out;
 }
 
 .complete__resources_slides {
@@ -2053,9 +2054,7 @@ p {
 }
 
 .complete__resources_slide {
-  max-width: 384px;
   width: 31.3%;
-  //width: 31.3%;
   border: 1px solid #EFEFEF;
   border-radius: 3px;
 }
@@ -2283,8 +2282,14 @@ p {
   }
 
   .handbook__more {
-    width: 282px;
-    height: 307px;
+    width: 48%;
+  }
+
+  .complete__resources_slide {
+    width: 48%;
+    .single-post-comments {
+      display: none;
+    }
   }
 }
 

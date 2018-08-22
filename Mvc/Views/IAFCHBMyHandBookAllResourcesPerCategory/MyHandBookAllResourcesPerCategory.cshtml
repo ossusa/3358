@@ -36,6 +36,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function () {
+		$('.removeResource').hide();		
 		bindEdit();
 	});
 	$(document).ajaxComplete(function (event, xhr, settings) {
@@ -45,7 +46,7 @@
 	function bindEdit(){
 
 		//Add Like
-		$('.addLike').on('click', function () {
+		$('.addLike').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -62,7 +63,7 @@
 		});
 
 		//Add Dislike
-		$('.addDislike').on('click', function () {
+		$('.addDislike').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -79,26 +80,44 @@
 		});
 
 		//mark As Complete
-		$('.markAsCompleteBtn').on('click', function () {
+		$('.markAsCompleteBtn').one('click', function () {
 
 			var resourceId = $(this).attr('data-id');
-			var categoryId = $(this).attr('data-id2');
-			var markAsCompleteCaption = $(this).text();
+			var categoryId = $(this).attr('data-id2');			
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookAllResourcesPerCategory")',
-				data: { operation: markAsCompleteCaption, resourceId: resourceId, categoryId: categoryId},
+				data: {  resourceId: resourceId, categoryId: categoryId},
 				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
-
+					hideButtons();
 				}
 			});
 		});
 
+		//remove
+		$('.removeBtn').one('click', function () {
+
+			var resourceId = $(this).attr('data-id');
+			var categoryId = $(this).attr('data-id2');			
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Remove", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { resourceId: resourceId, categoryId: categoryId },
+				success: function (response) {					
+					$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					hideButtons();
+				}
+			});
+		});
+
+
 		//Edit
-		$('.editBtn').on('click', function () {
+		$('.editBtn').one('click', function () {
 			var editCaption = $(this).text();
 
 			$.ajax({
@@ -109,20 +128,19 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$('.editBtn').text("Cancel");
-						$('.markAsCompleteBtn').text("Remove");
+						$('.editBtn').text("Cancel");						
 					}
 					else
 					{
-						$('.editBtn').text("Edit");
-						$('.markAsCompleteBtn').text("Mark as Complete");
+						$('.editBtn').text("Edit");						
 					}
+					hideButtons();
 				}
 			});
 		});
 
 		//share
-		$('.shareBtn').on('click', function () {
+		$('.shareBtn').one('click', function () {
 			var url = window.location.href;
 			$.ajax({
 				type: 'POST',
@@ -135,6 +153,18 @@
 				}
 			});
 		});
+	}
+
+	function hideButtons() {
+		var editTxt = $('.editBtn').first().text();
+		if (editTxt == "Edit") {
+			$('.markAsCompleteResource').show();
+			$('.removeResource').hide();			
+		}
+		else {
+			$('.markAsCompleteResource').hide();
+			$('.removeResource').show();			
+		}
 	}
 
 </script>

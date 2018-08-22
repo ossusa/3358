@@ -1603,14 +1603,15 @@ p {
   margin-bottom: 16px; }
 
 .handbook__more {
-  width: 30.5%;
+  width: 31.3%;
   -ms-flex-item-align: stretch;
   -ms-grid-row-align: stretch;
   align-self: stretch;
   position: relative;
-  margin-bottom: 48px;
+  margin: 0 1% 48px;
   background: #2b4b6b;
-  border-radius: 3px; }
+  border-radius: 3px;
+  transition: .3s ease-in-out; }
   .handbook__more-item {
     position: absolute;
     top: 50%;
@@ -1625,7 +1626,7 @@ p {
     font-face: "Nunito Sans", sans-serif;
     font-size: 1.00em; }
   .handbook__more:hover {
-    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15); }
 
 .complete__resources_slides {
   display: -ms-flexbox;
@@ -1641,7 +1642,6 @@ p {
     border-radius: 3px 3px 0 0; }
 
 .complete__resources_slide {
-  max-width: 384px;
   width: 31.3%;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
@@ -1787,8 +1787,11 @@ p {
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse; }
   .handbook__more {
-    width: 282px;
-    height: 307px; } }
+    width: 48%; }
+  .complete__resources_slide {
+    width: 48%; }
+    .complete__resources_slide .single-post-comments {
+      display: none; } }
 
 @media (max-width: 767px) {
   h1 {
@@ -3080,10 +3083,9 @@ p {
   margin: 0 1% 48px; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
-      width: 282px; } }
+      width: 48%; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
-      width: 320px;
       margin: 0 0 24px; } }
   .complete__resources_slide img {
     height: 266px; }

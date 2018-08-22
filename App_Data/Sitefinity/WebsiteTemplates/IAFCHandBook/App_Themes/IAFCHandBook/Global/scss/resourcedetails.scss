@@ -501,10 +501,9 @@
     &_slide {
       margin: 0 1% 48px;
       @media screen and (max-width: 1109px) {
-        width: 282px;
+        width: 48%;
       }
       @media screen and (max-width: 767px) {
-        width: 320px;
         margin: 0 0 24px;
       }
       img {
