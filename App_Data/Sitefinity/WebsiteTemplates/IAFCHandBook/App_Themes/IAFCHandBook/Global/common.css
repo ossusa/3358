@@ -1603,7 +1603,7 @@ p {
   margin-bottom: 16px; }
 
 .handbook__more {
-  width: 384px;
+  width: 31%;
   height: 428px;
   position: relative;
   margin-bottom: 48px;
@@ -1635,7 +1635,8 @@ p {
     height: auto !important; }
 
 .complete__resources_slide {
-  max-width: 384px; }
+  max-width: 384px;
+  width: 31%; }
 
 @media (max-width: 1500px) {
   .topics__img-text {
