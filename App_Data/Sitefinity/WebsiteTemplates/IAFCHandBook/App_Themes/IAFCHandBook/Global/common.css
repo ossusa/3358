@@ -1672,7 +1672,7 @@ p {
     border-radius: 3px 3px 0 0; }
 
 .complete__resources_slide {
-  width: 31.3%;
+  width: 31.3% !important;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
 
@@ -3140,14 +3140,14 @@ p {
     margin-bottom: -6px; }
 
 .complete__resources_slide {
-  margin: 0 1% 48px; }
+  margin: 0 1% 48px !important; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
-      width: 48%; } }
+      width: 48% !important; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
-      margin: 0 0 24px;
-      width: 100%; } }
+      margin: 0 0 24px !important;
+      width: 100% !important; } }
   .complete__resources_slide img {
     height: 266px;
     display: block; }
