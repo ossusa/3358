@@ -2879,6 +2879,13 @@ p {
       margin: 0 0 36px;
     }
 
+    .resources__slide-box {
+      * {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
   }
 }
 @media (max-width: 382px) {
