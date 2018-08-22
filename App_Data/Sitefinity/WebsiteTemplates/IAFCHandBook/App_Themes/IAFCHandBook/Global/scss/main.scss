@@ -2011,11 +2011,12 @@ p {
 }
 
 .handbook__more {
-  width: 31%;
+  width: 30.5%;
   height: 428px;
   position: relative;
   margin-bottom: 48px;
   background: #2b4b6b;
+  border-radius: 3px;
 
   &-item {
     position: absolute;
@@ -2049,7 +2050,9 @@ p {
 
 .complete__resources_slide {
   max-width: 384px;
-  width: 31%;
+  width: 30.5%;
+  border: 1px solid #EFEFEF;
+  border-radius: 3px;
 }
 
 
