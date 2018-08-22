@@ -7,13 +7,16 @@
   @media screen and (max-width: 1109px) {
     .handbook-centered {
       width: 100%;
-      padding: 0 90px; } }
+      padding-left: 90px;
+      padding-right: 90px; } }
   @media (max-width: 767px) {
     .handbook-centered {
-      padding: 0 28px; } }
+      padding-left: 28px;
+      padding-right: 28px; } }
   @media (max-width: 370px) {
     .handbook-centered {
-      padding: 0 14px; } }
+      padding-left: 14px;
+      padding-right: 14px; } }
 
 .handbook-title h1 {
   color: #2B4B6B; }
