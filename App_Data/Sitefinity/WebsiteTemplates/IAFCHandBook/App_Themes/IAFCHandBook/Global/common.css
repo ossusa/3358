@@ -1604,7 +1604,9 @@ p {
 
 .handbook__more {
   width: 30.5%;
-  height: 428px;
+  -ms-flex-item-align: stretch;
+  -ms-grid-row-align: stretch;
+  align-self: stretch;
   position: relative;
   margin-bottom: 48px;
   background: #2b4b6b;
@@ -3073,6 +3075,7 @@ p {
     margin-bottom: -6px; }
 
 .complete__resources_slide {
+  width: 384px;
   margin: 0 12px 48px; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
