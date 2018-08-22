@@ -1640,7 +1640,7 @@ p {
 
 .complete__resources_slide {
   max-width: 384px;
-  width: 30.5% !important;
+  width: 31.3%;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
 
@@ -3075,8 +3075,7 @@ p {
     margin-bottom: -6px; }
 
 .complete__resources_slide {
-  width: 384px;
-  margin: 0 12px 48px; }
+  margin: 0 1% 48px; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
       width: 282px; } }
