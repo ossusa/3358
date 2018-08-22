@@ -548,9 +548,6 @@ p {
   font-size: 1.00em;
   color: #666666; }
 
-.sfContentBlock {
-  padding: 8px 0; }
-
 .sfNavHorizontalDropDownWrp .k-menu {
   display: -ms-flexbox;
   display: flex;
