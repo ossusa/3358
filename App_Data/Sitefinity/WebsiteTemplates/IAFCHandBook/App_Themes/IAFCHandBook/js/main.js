@@ -106,9 +106,9 @@ $(document).ready(function () {
     //     e.stopPropagation();
     //     $(this).find('.category__arrow').toggleClass('rotated');
     // });
-    // $(document).on("click", function () {
-    //     $(".rotated").toggleClass('rotated');
-    // });
+    $(document).on("click", function () {
+        $(".rotated").toggleClass('rotated');
+    });
 
 
     //sticky header
