@@ -2332,6 +2332,9 @@ p {
 .selectric-items .selectric-group li {
   padding-left: 25px; }
 
+.selectric-community__category-select .category__arrow:before {
+  color: #2b4b6b; }
+
 .header {
   border-bottom: 1px solid #d8d8d8; }
   .header__text {
