@@ -3338,7 +3338,7 @@ p {
         font-size: 1.750em; } }
 
 .handbook_container {
-  width: 83.3%;
+  max-width: 1200px;
   margin: 0 auto; }
   @media screen and (max-width: 1109px) {
     .handbook_container {
@@ -3501,7 +3501,8 @@ p {
       margin-bottom: 48px; } }
   @media screen and (max-width: 767px) {
     .handbook_category__item {
-      margin: 0 0 24px 0; }
+      margin: 0 0 24px 0;
+      width: 320px; }
       .handbook_category__item:nth-of-type(2) {
         margin-bottom: 24px; } }
   .handbook_category__item:hover {

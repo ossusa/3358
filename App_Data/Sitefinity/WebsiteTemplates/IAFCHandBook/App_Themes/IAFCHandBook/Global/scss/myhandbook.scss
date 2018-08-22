@@ -27,7 +27,7 @@
   }
 }
 .handbook_container{
-  width: 83.3%;
+  max-width: 1200px;
   margin: 0 auto;
   @media screen and (max-width: 1109px){
     width: 588px;
@@ -182,6 +182,7 @@
       }
       @media screen and (max-width: 767px){
         margin: 0 0 24px 0;
+        width: 320px;
         &:nth-of-type(2){
           margin-bottom: 24px;
         }
