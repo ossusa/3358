@@ -3374,7 +3374,7 @@ p {
     display: flex; }
     @media screen and (max-width: 1109px) {
       .progressindicator__wrapper-col {
-        margin: 0 auto 0 0; } }
+        margin: 0 auto; } }
     @media screen and (max-width: 767px) {
       .progressindicator__wrapper-col {
         max-width: 320px;
