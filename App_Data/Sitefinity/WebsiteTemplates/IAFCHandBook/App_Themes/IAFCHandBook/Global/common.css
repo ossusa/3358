@@ -3067,24 +3067,14 @@ p {
 
 .complete__resources_slide {
   width: 384px;
-  margin-right: 24px;
-  margin-bottom: 48px; }
-  .complete__resources_slide:nth-of-type(3n) {
-    margin-right: 0; }
+  margin: 0 12px 48px; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
-      width: 282px; }
-      .complete__resources_slide:nth-of-type(2n) {
-        margin-right: 0; }
-      .complete__resources_slide:nth-of-type(3n) {
-        margin-right: 24px; } }
+      width: 282px; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
       width: 320px;
-      margin-right: 0;
-      margin-bottom: 24px; }
-      .complete__resources_slide:nth-of-type(3n) {
-        margin-right: 0px; } }
+      margin: 0 0 24px; } }
   .complete__resources_slide img {
     height: 266px; }
     @media screen and (max-width: 1109px) {
@@ -3117,7 +3107,8 @@ p {
   -ms-flex-align: start;
   align-items: flex-start;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 0 -12px; }
 
 .complete_box {
   width: 14px;
@@ -3308,7 +3299,7 @@ p {
         flex-wrap: wrap;
         margin: 0 auto; } }
 
-.progressindicator_share button {
+.progressindicator_share {
   color: #9b9b9b;
   font-family: "Nunito Sans", sans-serif;
   font-size: 1em;
@@ -3316,28 +3307,33 @@ p {
   border: none;
   background: transparent;
   outline: none; }
-
-.progressindicator_share i {
-  margin-right: 10px;
-  font-size: 1.125em;
-  color: #9b9b9b; }
-
-@media screen and (max-width: 1109px) {
-  .progressindicator_share {
-    height: 54px;
-    border-bottom: 1px solid #D8D8D8;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 100vw;
-    margin-bottom: 48px; } }
-
-@media screen and (max-width: 767px) {
-  .progressindicator_share {
-    margin-bottom: 36px; } }
+  .progressindicator_share button {
+    color: #9b9b9b;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    outline: none; }
+  .progressindicator_share i {
+    margin-right: 10px;
+    font-size: 1.125em;
+    color: #9b9b9b; }
+  @media screen and (max-width: 1109px) {
+    .progressindicator_share {
+      height: 54px;
+      border-bottom: 1px solid #D8D8D8;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100vw;
+      margin-bottom: 48px; } }
+  @media screen and (max-width: 767px) {
+    .progressindicator_share {
+      margin-bottom: 36px; } }
 
 .progressindicator__label {
   width: 124px;
