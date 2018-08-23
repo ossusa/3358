@@ -2071,10 +2071,6 @@ p {
   .resources__slide {
     &:nth-child(odd) {
       margin-right: 12px;
-
-      @media screen and (max-width: 767px){
-        margin-right: 12px;
-      }
     }
   }
 }
@@ -2908,6 +2904,14 @@ p {
   .resources__slide {
     width: 100%;
     margin-right: 0;
+  }
+
+  .slick-track {
+    .resources__slide {
+      &:nth-child(odd) {
+        margin-right: 12px;
+      }
+    }
   }
 }
 @media (max-width: 382px) {

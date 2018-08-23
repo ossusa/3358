@@ -1450,7 +1450,8 @@ p {
     background: #5591aa; }
     @media screen and (max-width: 767px) {
       .community__topics-link {
-        width: 320px; } }
+        width: 320px;
+        height: 124px; } }
   .community__topics-text {
     white-space: normal; }
   .community__topics-list {
@@ -1695,9 +1696,6 @@ p {
 
 .slick-track .resources__slide:nth-child(odd) {
   margin-right: 12px; }
-  @media screen and (max-width: 767px) {
-    .slick-track .resources__slide:nth-child(odd) {
-      margin-right: 12px; } }
 
 @media (max-width: 1500px) {
   .topics__img-text {
@@ -2182,7 +2180,9 @@ p {
       font-size: 1.25em; }
   .resources__slide {
     width: 100%;
-    margin-right: 0; } }
+    margin-right: 0; }
+  .slick-track .resources__slide:nth-child(odd) {
+    margin-right: 12px; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
@@ -3383,6 +3383,10 @@ p {
   @media screen and (max-width: 767px) {
     .handbook_container {
       padding: 0 28px; } }
+  @media screen and (max-width: 1109px) {
+    .handbook_container .progressindicator_share:nth-child(2) {
+      -ms-flex-pack: center !important;
+      justify-content: center !important; } }
 
 .handbook_subcontainer {
   max-width: 1200px;
@@ -3397,6 +3401,11 @@ p {
 @media screen and (max-width: 767px) {
   .handbook__template .progressindicator__wrapper {
     margin-bottom: 20px; } }
+
+@media screen and (max-width: 767px) {
+  .handbook__template .resources__slide-time {
+    bottom: 8px;
+    right: 8px; } }
 
 .progressindicator__wrapper {
   margin: 48px 0;
