@@ -2867,8 +2867,6 @@ p {
               font-size: 13px;
               font-weight: 400; }
           .resources-single__left_post_comment_header_left_share {
-            position: relative;
-            top: 1px;
             color: #9b9b9b;
             font-family: "Nunito Sans";
             font-size: 13px;
@@ -3414,6 +3412,8 @@ p {
     background: transparent;
     outline: none; }
   .progressindicator_share i {
+    position: relative;
+    top: 1px;
     margin-right: 10px;
     font-size: 1.125em;
     color: #9b9b9b; }
