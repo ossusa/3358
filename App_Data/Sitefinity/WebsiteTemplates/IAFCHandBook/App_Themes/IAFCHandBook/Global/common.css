@@ -3299,13 +3299,13 @@ p {
 
 @media screen and (max-width: 1109px) {
   .progressindicator_share:nth-child(1) {
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    padding-right: 12px; }
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+    padding-right: 12px !important; }
   .progressindicator_share:nth-child(3) {
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    padding-left: 12px; }
+    -ms-flex-pack: start !important;
+    justify-content: flex-start !important;
+    padding-left: 12px !important; }
   .handbook__social-buttons {
     margin: 0 -90px; }
   .community_indicator_col {
