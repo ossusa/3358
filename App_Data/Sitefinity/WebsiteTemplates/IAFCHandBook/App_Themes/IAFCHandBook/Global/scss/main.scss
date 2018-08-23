@@ -1751,10 +1751,6 @@ p {
       width: 282px;
       border-radius: 3px;
       background: #5591aa;
-      @media screen and (max-width: 767px){
-        width: 320px;
-        height: 124px !important;
-      }
     }
     &-text {
       white-space: normal;
@@ -2379,6 +2375,10 @@ p {
   }
   .topics__img-text{
     font-size: 1.750em;
+  }
+  .community__topics-link{
+    width: 320px;
+    height: 124px !important;
   }
   .topics__list {
     svg{
