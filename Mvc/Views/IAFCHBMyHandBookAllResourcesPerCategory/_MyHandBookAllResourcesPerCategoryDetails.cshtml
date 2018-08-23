@@ -1,6 +1,6 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
 
-
+	<div class="handbook__template">
 		<div><a class="topic__subtitle" href="@Model.Category.MyHandBookCategoryUrl">@Model.Category.CategoryTitle</a></div>
 		<div class="progressindicator__wrapper">
 			<div class="progressindicator__wrapper-col">
@@ -9,6 +9,7 @@
 			<div class="progressindicator__label"><div class="time">@Model.Category.TotalDuration.ToString() </div>Time Remaining</div>
 			</div>
 		</div>
+	</div>
 		@{int columnCounter = 0; }
 		@{int columnCounterForMoreResources = 0; }
 
@@ -45,7 +46,8 @@
 							</div>
 							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove" , item.Id.ToString())">
 								<div class="removeResource">
-									<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"> Remove </button>
+									<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
+										<i class="anticon anticon-close"></i>Remove </button>
 								</div>
 							</div>
 						}

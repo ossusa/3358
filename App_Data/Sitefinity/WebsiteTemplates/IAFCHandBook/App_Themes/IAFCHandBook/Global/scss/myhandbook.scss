@@ -42,7 +42,21 @@
     width: 100%;
   }
 }
-
+.handbook__template{
+  .progressindicator{
+    &__wrapper {
+      @media screen and (max-width: 767px){
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .resources__slide-time{
+    @media screen and (max-width: 767px) {
+      bottom: 8px;
+      right: 8px;
+    }
+  }
+}
 .progressindicator{
   &__wrapper{
     margin: 48px 0;
@@ -59,7 +73,7 @@
     &-col{
       display: flex;
       @media screen and (max-width: 1109px){
-        margin: 0 auto;
+        margin: 0 auto 0 0;
       }
       @media screen and (max-width: 767px){
         max-width: 320px;
@@ -86,6 +100,8 @@
       outline: none;
     }
     i{
+      position: relative;
+      top: 1px;
       margin-right: 10px;
       font-size: 1.125em;
       color: #9b9b9b;
@@ -328,6 +344,30 @@
     }
   }
 }
+.removeBtn {
+  color: #b5354a;
+  margin-left: -16px;
+  i{
+    font-size: 16px;
+    margin-right: 6px;
+  }
+}
+.removeComplenedBtn{
+  color: #b5354a;
+  i{
+    font-size: 16px;
+    margin-right: 6px;
+  }
+}
+.completedResource{
+  display: flex;
+  align-items: center;
+  color: #9b9b9b;
+}
 
-
-
+.complete_box:before:hover{
+  font-family: anticon!important;
+  color: #9b9b9b;
+  display: inline-block;
+  content: "\E632";
+}

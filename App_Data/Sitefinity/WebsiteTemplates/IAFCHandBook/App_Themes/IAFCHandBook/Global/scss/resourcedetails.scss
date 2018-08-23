@@ -198,8 +198,6 @@
                 }
               }
               &_share{
-                position: relative;
-                top: 1px;
                 color: #9b9b9b;
                 font-family: "Nunito Sans";
                 font-size: 13px;
@@ -482,7 +480,7 @@
       margin: 52px -90px 100px;
     }
     @media screen and (max-width: 767px){
-      padding: 36px 14px 16px;
+      padding: 36px 0 16px;
       margin: 40px -28px 67px;
     }
     &-title {
@@ -508,12 +506,12 @@
   }
   &__resources {
     &_slide {
-      margin: 0 1% 48px !important;
+      margin: 0 2% 48px !important;
       @media screen and (max-width: 1109px) {
-        width: 48% !important;
+        width: 46% !important;
       }
       @media screen and (max-width: 767px) {
-        margin: 0 0 24px !important;
+        margin: 0 0 16px !important;
         width: 100% !important;
       }
       img {
@@ -546,7 +544,7 @@
       align-items: flex-start;
       flex-wrap: wrap;
       width: 100%;
-      margin: 0 -12px;
+      margin: 0 -2%;
       @media screen and (max-width: 767px) {
         margin: 0 auto;
       }
@@ -623,7 +621,7 @@
           justify-content: flex-end;
           padding-right: 12px;
         }
-        &:nth-child(2) {
+        &:nth-child(3) {
           justify-content: flex-start;
           padding-left: 12px;
         }
@@ -640,6 +638,10 @@
         padding-right: 12px !important;
       }
       button:nth-of-type(2) {
+        justify-content: flex-end !important;
+        padding-right: 12px !important;
+      }
+      button:nth-of-type(3) {
         justify-content: flex-start !important;
         padding-left: 12px !important;
       }
@@ -650,15 +652,18 @@
 @media screen and (max-width: 1109px){
   .progressindicator_share {
     &:nth-child(1) {
-      justify-content: flex-end;
-      padding-right: 12px;
+      justify-content: flex-end !important;
+      padding-right: 12px !important;
     }
     &:nth-child(2) {
-      justify-content: flex-start;
-      padding-left: 12px;
+      justify-content: flex-end !important;
+      padding-right: 12px !important;
+    }
+    &:nth-child(3) {
+      justify-content: flex-start !important;
+      padding-left: 12px !important;
     }
   }
-
   .handbook__social-buttons {
     margin: 0 -90px;
   }

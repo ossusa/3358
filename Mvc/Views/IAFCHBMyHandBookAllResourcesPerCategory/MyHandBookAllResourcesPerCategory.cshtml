@@ -191,11 +191,11 @@
 	function hideButtons() {
 		var isEditVisible = $('.editBtn').is(':visible');
 		if (isEditVisible) {
-			$('.markAsCompleteResource').show();
+			$('.resources__slide-btn:nth-of-type(1)').show();
 			$('.removeResource').hide();			
 		}
 		else {
-			$('.markAsCompleteResource').hide();
+			$('.resources__slide-btn:nth-of-type(1)').hide();
 			$('.removeResource').show();			
 		}
 	}

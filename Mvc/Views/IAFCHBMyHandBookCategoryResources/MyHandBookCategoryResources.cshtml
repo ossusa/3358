@@ -8,7 +8,7 @@
 		@if (Model.SharedUserId == Guid.Empty)
 		{
 			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit  </button>
-			<button type="button" class="cancelBtn progressindicator_share"><i class="anticon anticon-setting"></i> Cancel </button>
+			<button type="button" class="cancelBtn progressindicator_share"><i class="anticon anticon-close"></i> Cancel </button>
 			<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>			
 		}
 	</div>
@@ -220,13 +220,13 @@
 	function hideButtons() {
 		var isEditVisible = $('.editBtn').is(':visible');
 		if (isEditVisible) {
-			$('.complete__resources_slide .resources__slide-btn:nth-of-type(1)').show();
+			$('.resources__slide-btn:nth-of-type(1)').show();
 			$('.removeResource').hide();
 			$('.completedResource').show();
 			$('.removeCompletedResource').hide();		
 		}
 		else {
-			$('.complete__resources_slide .resources__slide-btn:nth-of-type(1)').hide();
+			$('.resources__slide-btn:nth-of-type(1)').hide();
 			$('.removeResource').show();
 			$('.completedResource').hide();
 			$('.removeCompletedResource').show();
