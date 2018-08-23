@@ -498,15 +498,18 @@
     .complete__resources_slide img{
       margin-bottom: -6px;
     }
-  }
-  &__resources {
-    &_slide {
+    .complete__resources_slide{
       margin: 0 1% 48px !important;
       opacity: 0.5;
       transition: .3s ease-in-out;
       &:hover{
         opacity: 1;
       }
+    }
+  }
+  &__resources {
+    &_slide {
+      margin: 0 1% 48px !important;
       @media screen and (max-width: 1109px) {
         width: 48% !important;
       }
