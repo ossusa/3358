@@ -2115,6 +2115,79 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion generateSharedUrl
 		#endregion MyHandBook
 
+		#region Menu
+		public IAFCHandBookMyHandBookMenuModel GetMenu()
+		{
+			IAFCHandBookMyHandBookMenuModel model = new IAFCHandBookMyHandBookMenuModel();
+			var topicMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
+			topicMenuItem.Title = "Topics";
+			topicMenuItem.Url = String.Empty;
+			topicMenuItem.Visible = true;
+			foreach ( var categoryItem in topicParentCategories)
+			{
+				var menuItem = new IAFCHandBookMyHandBookMenuItemModel();
+				var categoryDetails = GetTopicCategories(categoryItem);
+
+				menuItem.Title = categoryDetails.ResourceCategoryTile;
+				menuItem.Visible = true;
+				menuItem.Url = String.Empty;
+				foreach (var childCategoryItem in GetChildCategories(categoryItem))
+				{
+					var childMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
+					var childCategoryDetails = GetTopicCategories(childCategoryItem);
+					childMenuItem.Title = childCategoryDetails.ResourceCategoryTile;
+					childMenuItem.Url = childCategoryDetails.ResourceCategoryUrl;
+					childMenuItem.Visible = true;
+					menuItem.ChildMenuItem.Add(childMenuItem);
+				}
+				topicMenuItem.ChildMenuItem.Add(menuItem);
+			}
+			model.Menu.Add(topicMenuItem);
+
+			var isUserSignIn = IsUserSignIn();
+			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
+			otherMenuItem.Title = "My HandBook";
+			otherMenuItem.Url = "/iafchandbookhome/my-handbook/";
+			otherMenuItem.Visible = isUserSignIn;
+			model.Menu.Add(otherMenuItem);
+
+			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
+			otherMenuItem.Title = "Account";
+			otherMenuItem.Url = "/iafchandbookhome/account/";
+			otherMenuItem.Visible = isUserSignIn;
+			model.Menu.Add(otherMenuItem);
+
+			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
+			otherMenuItem.Title = "Search";
+			otherMenuItem.Url = "/iafchandbookhome/search/";
+			otherMenuItem.Visible = true;
+			model.Menu.Add(otherMenuItem);
+
+			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
+			otherMenuItem.Title = "SignIn";
+			otherMenuItem.Url = "/iafchandbookhome/signin/";
+			otherMenuItem.Visible = !isUserSignIn;
+			model.Menu.Add(otherMenuItem);
+
+			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
+			otherMenuItem.Title = "LogOut";
+			otherMenuItem.Url = "/iafchandbookhome/Logoyt/";
+			otherMenuItem.Visible = isUserSignIn;
+			model.Menu.Add(otherMenuItem);
+
+			return model;
+		}
+		private Boolean IsUserSignIn()
+		{
+			Boolean isUserSignIn = false;
+			var identity = ClaimsManager.GetCurrentIdentity();
+			if (identity.UserId !=Guid.Empty)
+			{
+				isUserSignIn = true;
+			}
+			return isUserSignIn;
+		}
+		#endregion Menu
 	}
 }
 
