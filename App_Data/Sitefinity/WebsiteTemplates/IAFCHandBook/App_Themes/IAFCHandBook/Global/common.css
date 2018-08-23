@@ -617,7 +617,7 @@ p {
   transition: .1s ease-in-out; }
   .k-link:hover {
     color: #2B4B6B;
-    font-weight: bold; }
+    font-weight: bold !important; }
   .k-link:focus {
     color: #2B4B6B;
     font-weight: bold; }
