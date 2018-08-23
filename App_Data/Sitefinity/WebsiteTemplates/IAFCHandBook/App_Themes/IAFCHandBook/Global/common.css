@@ -2181,7 +2181,9 @@ p {
     width: 100%;
     margin-right: 0; }
   .slick-track .resources__slide {
-    margin-right: 12px; } }
+    margin-right: 12px; }
+  .slick-track .single-post-comments {
+    display: none; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
