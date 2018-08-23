@@ -14,8 +14,9 @@ namespace SitefinityWebApp.Mvc.Controllers
 		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
 
 		public ActionResult Index(String userid)
-		{			
-			return View("MyHandBookMenu");
+		{
+			var model = handBookHelper.GetMenu();
+			return View("MyHandBookMenu",model);
 		}
 	}
 }
