@@ -27,14 +27,15 @@
   }
 }
 .handbook_container{
-  padding: 0 90px;
-  @media screen and (max-width: 767px){
-    padding: 0 28px;
-  }
+  padding: 0 120px;
   @media screen and (max-width: 1109px){
+    padding: 0 90px;
     .progressindicator_share:nth-child(2){
       justify-content: center !important;
     }
+  }
+  @media screen and (max-width: 767px){
+    padding: 0 28px;
   }
 }
 .handbook_subcontainer{
