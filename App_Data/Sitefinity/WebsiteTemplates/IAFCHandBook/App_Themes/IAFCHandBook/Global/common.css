@@ -2744,7 +2744,11 @@ p {
     color: #9b9b9b; }
 
 .single-post-add {
-  margin-right: 24px; }
+  margin-right: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
   .single-post-add button {
     display: -ms-flexbox;
     display: flex;
