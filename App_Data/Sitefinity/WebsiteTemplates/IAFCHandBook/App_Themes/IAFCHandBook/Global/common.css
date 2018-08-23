@@ -3648,3 +3648,10 @@ p {
   .removeComplenedBtn i {
     font-size: 16px;
     margin-right: 6px; }
+
+.completedResource {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #9b9b9b; }
