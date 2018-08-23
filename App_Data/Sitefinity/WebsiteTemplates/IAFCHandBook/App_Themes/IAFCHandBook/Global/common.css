@@ -3146,7 +3146,11 @@ p {
     margin-bottom: -6px; }
 
 .complete__resources_slide {
-  margin: 0 1% 48px !important; }
+  margin: 0 1% 48px !important;
+  opacity: 0.5;
+  transition: .3s ease-in-out; }
+  .complete__resources_slide:hover {
+    opacity: 1; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
       width: 48% !important; } }
