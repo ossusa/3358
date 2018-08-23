@@ -3636,9 +3636,11 @@ p {
       .handbook_category__item__links.Personnel a:hover {
         color: #CF794A; }
 
-.removeBtn {
+.removeBtn,
+.removeComplenedBtn {
   color: #b5354a;
   margin-left: -16px; }
-  .removeBtn i {
+  .removeBtn i,
+  .removeComplenedBtn i {
     font-size: 16px;
     margin-right: 6px; }
