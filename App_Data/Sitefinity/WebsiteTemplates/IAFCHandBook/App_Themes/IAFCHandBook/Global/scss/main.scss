@@ -1972,13 +1972,14 @@ p {
 //}
 
 .resources__slide-img img {
-  height: 100%;
-  min-width: 100%;
-  position: relative;
-  -o-object-fit: cover;
-  object-fit: cover;
-  transform: translateX(-50%);
-  left: 50%;
+  //height: 100%;
+  //min-width: 100%;
+  //position: relative;
+  //-o-object-fit: cover;
+  //object-fit: cover;
+  //transform: translateX(-50%);
+  //left: 50%;
+  width: 100%;
 }
 
 .topic__title {
@@ -2369,7 +2370,8 @@ p {
     width: 100% !important;
   }
   .resources__slide-img {
-    height: 221px;
+    //height: 221px;
+    height: auto !important;
   }
   .resources__slide-title {
     font-size: 1.23em;
