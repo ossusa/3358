@@ -226,13 +226,13 @@
 	function hideButtons() {
 		var isEditVisible = $('.editBtn').is(':visible');
 		if (isEditVisible) {
-			$('.markAsCompleteResource').show();
+			$('.resources__slide-btn .markAsCompleteResource').show();
 			$('.removeResource').hide();
 			$('.completedResource').show();
 			$('.removeCompletedResource').hide();		
 		}
 		else {
-			$('.markAsCompleteResource').hide();
+			$('.resources__slide-btn .markAsCompleteResource').hide();
 			$('.removeResource').show();
 			$('.completedResource').hide();
 			$('.removeCompletedResource').show();
