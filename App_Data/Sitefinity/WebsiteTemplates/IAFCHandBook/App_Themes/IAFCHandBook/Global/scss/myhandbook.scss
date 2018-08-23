@@ -31,11 +31,6 @@
   @media screen and (max-width: 767px){
     padding: 0 28px;
   }
-  @media screen and (max-width: 1109px){
-    .progressindicator_share:nth-child(2){
-      justify-content: center !important;
-    }
-  }
 }
 .handbook_subcontainer{
   max-width: 1200px;
@@ -56,10 +51,7 @@
     }
   }
   .resources__slide-time{
-    @media screen and (max-width: 767px) {
-      bottom: 8px;
-      right: 8px;
-    }
+
   }
 }
 .progressindicator{

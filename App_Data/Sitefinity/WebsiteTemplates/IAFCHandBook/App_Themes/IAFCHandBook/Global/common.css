@@ -3380,10 +3380,6 @@ p {
   @media screen and (max-width: 767px) {
     .handbook_container {
       padding: 0 28px; } }
-  @media screen and (max-width: 1109px) {
-    .handbook_container .progressindicator_share:nth-child(2) {
-      -ms-flex-pack: center !important;
-      justify-content: center !important; } }
 
 .handbook_subcontainer {
   max-width: 1200px;
@@ -3398,11 +3394,6 @@ p {
 @media screen and (max-width: 767px) {
   .handbook__template .progressindicator__wrapper {
     margin-bottom: 20px; } }
-
-@media screen and (max-width: 767px) {
-  .handbook__template .resources__slide-time {
-    bottom: 8px;
-    right: 8px; } }
 
 .progressindicator__wrapper {
   margin: 48px 0;
