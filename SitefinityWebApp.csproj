@@ -869,6 +869,7 @@
       <DependentUpon>NotFoundStatusCodeSetter.ascx</DependentUpon>
     </Compile>
     <Compile Include="Custom\IAFCHandBook\IAFCHandBookHelper.cs" />
+    <Compile Include="Custom\IAFCHandBook\IAFCHandBookHelper.Next.cs" />
     <Compile Include="Custom\News\BlendedListOutboundPipe.cs" />
     <Compile Include="Custom\News\BlendedNewsHelper.cs" />
     <Compile Include="Custom\ResourceLibrary\ResourceLibraryHelper.cs" />

@@ -27,10 +27,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
 
 		public IAFCHandBookResourcesPerCatergoryModel GetData(String orderBy)
-		{
-			var a1 = 1;
-			return handBookHelper.GetResourcesPerCategory(CategoryName, orderBy);
-			
+		{			
+			return handBookHelper.GetResourcesPerCategory(CategoryName, orderBy);			
 		}
 
 				
