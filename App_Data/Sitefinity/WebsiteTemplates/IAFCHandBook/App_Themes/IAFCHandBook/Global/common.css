@@ -1681,8 +1681,14 @@ p {
   margin-bottom: 48px;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
+  @media screen and (max-width: 767px) {
+    .resources__slide {
+      width: 48%; } }
   .resources__slide:nth-child(odd) {
     margin-right: 2%; }
+    @media screen and (max-width: 767px) {
+      .resources__slide:nth-child(odd) {
+        margin-right: 4%; } }
 
 @media (max-width: 1500px) {
   .topics__img-text {

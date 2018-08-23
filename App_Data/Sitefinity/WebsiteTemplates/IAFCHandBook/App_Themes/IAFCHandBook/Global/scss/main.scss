@@ -2052,9 +2052,14 @@ p {
   margin-bottom: 48px;
   border: 1px solid #EFEFEF;
   border-radius: 3px;
-
+  @media screen and (max-width: 767px){
+    width: 48%;
+  }
   &:nth-child(odd) {
     margin-right: 2%;
+    @media screen and (max-width: 767px){
+      margin-right: 4%;
+    }
   }
 
 }
