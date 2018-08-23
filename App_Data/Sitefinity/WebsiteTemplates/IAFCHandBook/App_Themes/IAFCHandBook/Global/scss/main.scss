@@ -2070,6 +2070,10 @@ p {
   .resources__slide {
     &:nth-child(odd) {
       margin-right: 12px;
+
+      @media screen and (max-width: 767px){
+        margin-right: 12px;
+      }
     }
   }
 }
