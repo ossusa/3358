@@ -654,11 +654,11 @@ p {
   padding: 8px 20px 8px !important;
   -webkit-transition: .1s ease-in-out;
   -o-transition: .1s ease-in-out;
-  transition: .1s ease-in-out;
+  transition: .3s ease-in-out;
   &:hover {
     //text-shadow: 1px 0 #2B4B6B;
     color: $color_blue;
-    font-weight: bold;
+    font-weight: bold !important;
   }
   &:focus {
     //text-shadow: 1px 0 #2B4B6B;
