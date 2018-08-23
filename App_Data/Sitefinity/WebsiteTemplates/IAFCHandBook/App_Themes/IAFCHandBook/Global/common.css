@@ -3133,7 +3133,7 @@ p {
       margin: 52px -90px 100px; } }
   @media screen and (max-width: 767px) {
     .complete_section {
-      padding: 36px 14px 16px;
+      padding: 36px 0 16px;
       margin: 40px -28px 67px; } }
   .complete_section-title {
     margin-bottom: 16px;
@@ -3276,7 +3276,7 @@ p {
       -ms-flex-pack: end;
       justify-content: flex-end;
       padding-right: 12px; }
-    .complete-box .progressindicator_share:nth-child(2) {
+    .complete-box .progressindicator_share:nth-child(3) {
       -ms-flex-pack: start;
       justify-content: flex-start;
       padding-left: 12px; } }
@@ -3292,7 +3292,7 @@ p {
         -ms-flex-pack: end !important;
         justify-content: flex-end !important;
         padding-right: 12px !important; }
-      .complete__tablet_head-buttons button:nth-of-type(2) {
+      .complete__tablet_head-buttons button:nth-of-type(3) {
         -ms-flex-pack: start !important;
         justify-content: flex-start !important;
         padding-left: 12px !important; } }
@@ -3381,7 +3381,7 @@ p {
     display: flex; }
     @media screen and (max-width: 1109px) {
       .progressindicator__wrapper-col {
-        margin: 0 auto; } }
+        margin: 0 auto 0 0; } }
     @media screen and (max-width: 767px) {
       .progressindicator__wrapper-col {
         max-width: 320px;
