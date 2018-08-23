@@ -1885,6 +1885,9 @@ p {
     height: 221px; }
   .resources__slide-title {
     font-size: 1.23em; }
+  .topics__list svg {
+    width: 91px;
+    height: 84px; }
   .topics__list:hover .topics__img-back {
     padding: 10px 15px; }
   .topics__list:active .topics__img-back {
