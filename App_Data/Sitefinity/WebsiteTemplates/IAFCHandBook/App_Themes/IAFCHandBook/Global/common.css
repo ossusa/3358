@@ -1433,7 +1433,7 @@ p {
     margin-bottom: 100px; }
   .community__topics-ul {
     padding: 0;
-    margin: 0;
+    margin: 0 -12px;
     margin-top: 16px;
     display: -ms-flexbox;
     display: flex;
@@ -1452,7 +1452,7 @@ p {
     white-space: normal; }
   .community__topics-list {
     list-style: none;
-    margin-right: 24px; }
+    margin: 12px; }
   .community__topics-img {
     width: 282px;
     height: 188px;
@@ -1870,8 +1870,6 @@ p {
     margin-right: 0; }
   .community__topics {
     padding-top: 36px; }
-  .community__topics-list:nth-child(even) {
-    margin-right: 0 !important; }
   .community__topics-img {
     width: 100% !important; }
   .resources__slide-img {

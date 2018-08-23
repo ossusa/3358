@@ -1731,7 +1731,7 @@ p {
     }
     &-ul {
       padding: 0;
-      margin: 0;
+      margin: 0 -12px;
       margin-top: 16px;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1756,7 +1756,7 @@ p {
     }
     &-list {
       list-style: none;
-      margin-right: 24px;
+      margin: 12px;
     }
     &-img {
       width: 282px;
@@ -2353,10 +2353,6 @@ p {
 
   .community__topics {
     padding-top: 36px;
-  }
-
-  .community__topics-list:nth-child(even) {
-    margin-right: 0 !important;
   }
   .community__topics-img {
     width: 100% !important;
