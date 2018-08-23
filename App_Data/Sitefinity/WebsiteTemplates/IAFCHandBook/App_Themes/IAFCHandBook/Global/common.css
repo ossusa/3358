@@ -614,7 +614,7 @@ p {
   font-size: 1.00em;
   z-index: 1000;
   padding: 8px 20px 8px !important;
-  transition: .1s ease-in-out; }
+  transition: .3s ease-in-out; }
   .k-link:hover {
     color: #2B4B6B;
     font-weight: bold !important; }
