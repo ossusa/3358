@@ -1448,10 +1448,6 @@ p {
     width: 282px;
     border-radius: 3px;
     background: #5591aa; }
-    @media screen and (max-width: 767px) {
-      .community__topics-link {
-        width: 320px;
-        height: 124px !important; } }
   .community__topics-text {
     white-space: normal; }
   .community__topics-list {
@@ -1886,7 +1882,8 @@ p {
   .resources__slide-title {
     font-size: 1.23em; }
   .topics__img-text {
-    font-size: 1.750em; }
+    font-size: 1.750em;
+    white-space: nowrap; }
   .topics__list svg {
     width: 91px;
     height: 84px; }
@@ -1947,6 +1944,9 @@ p {
       padding: 0 0 42px; }
     .topics__content img {
       height: 124px !important; }
+  .community__topics-link {
+    width: 320px;
+    height: 124px !important; }
   .topics__text {
     padding: 0 0 14px; }
     .topics__text h2 img {
