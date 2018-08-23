@@ -349,3 +349,9 @@
   color: #9b9b9b;
 }
 
+.complete_box:before:hover{
+  font-family: anticon!important;
+  color: #9b9b9b;
+  display: inline-block;
+  content: "\E632";
+}
