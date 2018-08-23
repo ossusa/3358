@@ -21,7 +21,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
     public partial class IAFCHandBookHelper
     {
         public Type ExternalResourcesType => externalResourcesType;
-        public Type ResourceType => resourceType;
+		public Type ResourceType => resourceType;
 
 		#region  CreateIAFCHandBookResourcesData
 		public void CreateIAFCHandBookResourcesData(Guid resourceLiveId, Type resourceType)
