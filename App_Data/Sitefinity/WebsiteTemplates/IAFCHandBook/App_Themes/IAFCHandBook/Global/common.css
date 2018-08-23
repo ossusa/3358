@@ -3142,6 +3142,9 @@ p {
     .complete_section {
       margin: 52px -90px 100px; } }
   @media screen and (max-width: 767px) {
+    .complete_section .resources__slide {
+      width: 588px; } }
+  @media screen and (max-width: 767px) {
     .complete_section {
       padding: 36px 0 16px;
       margin: 40px -28px 67px; } }

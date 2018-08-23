@@ -480,6 +480,11 @@
       margin: 52px -90px 100px;
     }
     @media screen and (max-width: 767px){
+      .resources__slide{
+        width: 588px;
+      }
+    }
+    @media screen and (max-width: 767px){
       padding: 36px 0 16px;
       margin: 40px -28px 67px;
     }
