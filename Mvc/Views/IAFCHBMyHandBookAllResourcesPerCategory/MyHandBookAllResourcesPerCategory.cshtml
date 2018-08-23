@@ -13,6 +13,7 @@
 			@if (Model.SharedUserId == Guid.Empty)
 			{
 				<button id="edit" type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
+				<button id="edit" type="button" class="cancelBtn progressindicator_share"><i class="anticon anticon-setting"></i> Cancel </button>
 				<button id="share" type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
 			}
 		</div>
@@ -37,6 +38,7 @@
 
 	$(document).ready(function () {
 		$('.removeResource').hide();		
+		$('.cancelBtn').hide();
 		bindEdit();
 	});
 	$(document).ajaxComplete(function (event, xhr, settings) {
@@ -134,23 +136,38 @@
 
 
 		//Edit
-		$('.editBtn').one('click', function () {
-			var editCaption = $(this).text();
-
+		$('.editBtn').one('click', function () {			
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("Edit", "IAFCHBMyHandBookAllResourcesPerCategory")',
-				data: { operation: editCaption },
+				data: { operation: "Edit" },
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$('.editBtn').text("Cancel");						
+						$('.editBtn').hide();
+						$('.cancelBtn').show();
 					}
-					else
-					{
-						$('.editBtn').text("Edit");						
-					}
+					
+					hideButtons();
+				}
+			});
+		});
+
+		//Cancel
+		$('.cancelBtn').one('click', function () {
+			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Edit", "IAFCHBMyHandBookAllResourcesPerCategory")',
+				data: { operation: "Cancel" },
+				dataType: "json",
+				success: function (response) {
+					if (response == false) {
+						$('.editBtn').show();
+						$('.cancelBtn').hide();
+					}					
 					hideButtons();
 				}
 			});
@@ -173,8 +190,8 @@
 	}
 
 	function hideButtons() {
-		var editTxt = $('.editBtn').first().text();
-		if (editTxt == "Edit") {
+		var isEditVisible = $('.editBtn').is(':visible');
+		if (isEditVisible) {
 			$('.markAsCompleteResource').show();
 			$('.removeResource').hide();			
 		}

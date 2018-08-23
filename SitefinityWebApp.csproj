@@ -884,6 +884,7 @@
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookAllResourcesPerCategoryController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookCategoryResourcesController.cs" />
+    <Compile Include="Mvc\Controllers\IAFCHBMyHandBookMenuController.cs.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBRecentlyAddedResourcesController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourceDetailsController.cs" />
@@ -905,6 +906,8 @@
     <Compile Include="Mvc\Models\EventsCalendarModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMoreResourcesModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookCategoryModel.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookMyHandBookMenuItemModel.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookMyHandBookMenuModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookResourceModelModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookTopicCategoryModel.cs" />
@@ -924,6 +927,7 @@
     <Compile Include="Mvc\Models\SearchCriteria.cs" />
     <Compile Include="Mvc\Models\SearchResult.cs" />
     <Content Include="Mvc\Views\IAFCHBFeaturedResources\FeaturedResources.cshtml" />
+    <None Include="Mvc\Views\IAFCHBMyHandBookMenu\MyHandBookMenu.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourcesPerCategory\ResourcesPerCategory.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourcesPerCategory\_ResourcesPerCategoryDetails.cshtml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
