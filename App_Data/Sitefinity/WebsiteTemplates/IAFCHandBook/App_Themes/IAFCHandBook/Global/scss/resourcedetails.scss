@@ -515,7 +515,7 @@
   }
   &__resources {
     &_slide {
-      margin: 0 2% 48px !important;
+      margin: 0 1% 48px !important;
       @media screen and (max-width: 1109px) {
         width: 46% !important;
       }
@@ -553,7 +553,7 @@
       align-items: flex-start;
       flex-wrap: wrap;
       width: 100%;
-      margin: 0 -2% 0 0;
+      margin: 0 -2%;
       @media screen and (max-width: 767px) {
         margin: 0 auto;
       }
