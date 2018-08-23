@@ -1191,6 +1191,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion Categories Methods
 
 		#region Likes
+
 		#region Add Like
 
 		public int AddLikeForResource(Guid resourceID, string resourceType)
@@ -1245,7 +1246,6 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion Add Like
 
 		#region Add Dislike
-
 		public int AddDislikeForResource(Guid resourceID, string resourceType)
 		{
 			int currentDislikes = 0;
@@ -1297,6 +1297,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 
 		#endregion Add Dislike
+
 		#endregion Likes
 
 		#region Comments

@@ -103,164 +103,163 @@
 	$(document).ready(function () {
 		bindEdit();
 	});
-	$(document).ajaxComplete(function (event, xhr, settings) {
-		bindEdit();
-	});
+	
 
-	function bindEdit() {		
+	function bindEdit() {
+		//Add Like
+		$('.addLike').click(function () {
 
-			//Add Like
-			$('.addLike').one('click', function () {
+			var resourceId = $(this).attr('data-id');
 
-				var resourceId = $(this).attr('data-id');
-
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("AddLike", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#resourceLikes_" + resourceId).html(response);
-					}
-				});
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddLike", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceLikes_" + resourceId).html(response);
+				}
 			});
+		});
 
-			//Add Dislike
-			$('.addDislike').one('click', function () {
+		//Add Dislike
+		$('.addDislike').click(function () {
 
-				var resourceId = $(this).attr('data-id');
+			var resourceId = $(this).attr('data-id');
 
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("AddDislike", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#resourceDislikes_" + resourceId).html(response);
-					}
-				});
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceDislikes_" + resourceId).html(response);
+				}
 			});
+		});
 
-			//Mark As Complete
-			$('.markAsCompleteBtn').one('click', function () {
+		//Mark As Complete
+		$('.markAsCompleteBtn').click(function () {
 
-				var resourceId = $(this).attr('data-id');
-				var tag_id = "#markAsComplete_" + resourceId;
+			var resourceId = $(this).attr('data-id');
+			var tag_id = "#markAsComplete_" + resourceId;
 
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						if (response == true) {
-							$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Completed");
-						}
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Completed");
 					}
-				});
+				}
 			});
+		});
 
-			//Add Comment
-			$('.addCommentBtn').one('click', function () {
+		//Add Comment
+		$('.addCommentBtn').click(function () {
 
-				var resourceId = $(this).attr('data-id');
-				var commentMsg = $('#comment_' + resourceId).val();
-				var comment = commentMsg;
-				var commentAmount = parseInt($('#commentsAmountHeaderID').attr('data-id')) + 1;
+			var resourceId = $(this).attr('data-id');
+			var commentMsg = $('#comment_' + resourceId).val();
+			var comment = commentMsg;
+			var commentAmount = parseInt($('#commentsAmountHeaderID').attr('data-id')) + 1;
 
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("AddComment", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { commentTxt: comment, resourceId: resourceId },
-					success: function (commentsResults) {
-						$("#refTable").removeData();
-						$("#refTable").html(commentsResults);
-						var inputTxt = $('#comment_' + resourceId);
-						inputTxt.replaceWith(inputTxt.val('').clone(true));
-						$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
-						$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
-					}
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddComment", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { commentTxt: comment, resourceId: resourceId },
+				success: function (commentsResults) {
+					$("#refTable").removeData();
+					$("#refTable").html(commentsResults);
+					var inputTxt = $('#comment_' + resourceId);
+					inputTxt.replaceWith(inputTxt.val('').clone(true));
+					$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
+					$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
+					bindEdit();
+				}
+			});			
+		});
 
-				});
+		//Add Comment Like
+		$('.addCommentLike').click(function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddCommentLike", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#commentLikes_" + resourceId).html(response);
+				}
+			});			
+		});
+
+		//Add Comment Dislike
+		$('.addCommentDislike').click(function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddCommentDislike", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#commentDislikes_" + resourceId).html(response);
+				}
 			});
+		});
 
-			//Add Comment Like
-			$('.addCommentLike').one('click', function () {
+		//Comment Reply btn t1
+		$('.commentReplyBtn').click(function () {
 
-				var resourceId = $(this).attr('data-id');
+			var commentId = $(this).attr('data-id');
 
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("AddCommentLike", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#commentLikes_" + resourceId).html(response);
-					}
-				});
-			});
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("PressReplyCommentBtn", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { commentId: commentId },
+				success: function (response) {
+					$("#replyCommentBtn_" + commentId).html("");
+					$("#commentRepliesInputView_" + commentId).html(response);
+					bindEdit();
+				}
+			});			
+		});
 
-			//Add Comment Dislike
-			$('.addCommentDislike').one('click', function () {
+		//Add Reply Comment Button Pressed
+		$('.addReplyCommentBtn').click(function () {
 
-				var resourceId = $(this).attr('data-id');
+			var commentId = $(this).attr('data-id');
+			var commentMsg = $('#replyComment_' + commentId).val();
+			var comment = commentMsg;
 
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("AddCommentDislike", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#commentDislikes_" + resourceId).html(response);
-					}
-				});
-			});
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddReplyComment", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { commentTxt: comment, commentId: commentId },
+				success: function (commentsResults) {
+					$("#commentRepliesInputView_" + commentId).html(" ");
+					$("#commentRepliesView_" + commentId).html(commentsResults);
+					$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="' + commentId + '"> Reply </button>');
+					bindEdit();
+				}
+			});			
+		});
 
-			//Comment Reply btn t1
-			$('.commentReplyBtn').one('click', function () {
-
-				var commentId = $(this).attr('data-id');
-
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("PressReplyCommentBtn", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { commentId: commentId },
-					success: function (response) {
-						$("#replyCommentBtn_" + commentId).html("");
-						$("#commentRepliesInputView_" + commentId).html(response);
-					}
-				});
-			});
-
-			//Add Reply Comment Button Pressed
-			$('.addReplyCommentBtn').one('click', function () {
-
-				var commentId = $(this).attr('data-id');
-				var commentMsg = $('#replyComment_' + commentId).val();
-				var comment = commentMsg;
-
-				$.ajax({
-					type: 'POST',
-					cache: false,
-					url: '@Url.Action("AddReplyComment", "IAFCHBMyHandBookResourceDetailsController")',
-					data: { commentTxt: comment, commentId: commentId },
-					success: function (commentsResults) {
-						$("#commentRepliesInputView_" + commentId).html(" ");
-						$("#commentRepliesView_" + commentId).html(commentsResults);
-						$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="' + commentId + '"> Reply </button>');
-					}
-				});
-			});
-
-			//share
-		$('.shareBtn').on('click', function () {
+		//share
+		$('.shareBtn').click(function () {
 
 			$.ajax({
 				type: 'POST',
@@ -273,7 +272,7 @@
 					}
 				}
 			});
-		});	
+		});
 	}
 
 

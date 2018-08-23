@@ -17,7 +17,7 @@
 					@if (Model.SharedUserId == Guid.Empty)
 					{
 						<i class="anticon anticon-share-alt"></i>
-						<button type="button" class="shareBtn"> Share </button>
+						<button type="button" class="shareBtn" > Share </button>
 					}
 			</div>
 		</div>
@@ -60,14 +60,11 @@
 	$(document).ready(function () {
 		bindEdit();
 	});
-	$(document).ajaxComplete(function (event, xhr, settings) {
-		bindEdit();
-	});
-
+	
 	function bindEdit(){
 		
 		//share
-		$('.shareBtn').on('click', function () {
+		$('.shareBtn').click(function() {
 			var url = window.location.href;
 
 			$.ajax({

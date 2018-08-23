@@ -41,14 +41,12 @@
 		$('.cancelBtn').hide();
 		bindEdit();
 	});
-	$(document).ajaxComplete(function (event, xhr, settings) {
-		bindEdit();
-	});
+	
 
 	function bindEdit(){
 
 		//Add Like
-		$('.addLike').one('click', function () {
+		$('.addLike').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -65,7 +63,7 @@
 		});
 
 		//Add Dislike
-		$('.addDislike').one('click', function () {
+		$('.addDislike').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -82,7 +80,7 @@
 		});
 
 		//mark As Complete
-		$('.markAsCompleteBtn').one('click', function () {
+		$('.markAsCompleteBtn').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 			var categoryId = $(this).attr('data-id2');			
@@ -95,12 +93,13 @@
 				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 					hideButtons();
+					bindEdit();
 				}
-			});
+			});			
 		});
 
 		//remove
-		$('.removeBtn').one('click', function () {
+		$('.removeBtn').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 			var categoryId = $(this).attr('data-id2');			
@@ -113,12 +112,13 @@
 				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 					hideButtons();
+					bindEdit();
 				}
-			});
+			});			
 		});
 
 		//Add Shared Resource to My Hand Book
-		$('.addSharedToMyHandBookBtn').one('click', function () {
+		$('.addSharedToMyHandBookBtn').click(function ()  {
 			var resourceId = $(this).attr('data-id');			
 			$.ajax({
 				type: 'POST',
@@ -136,7 +136,7 @@
 
 
 		//Edit
-		$('.editBtn').one('click', function () {			
+		$('.editBtn').click(function ()  {			
 			$.ajax({
 				type: 'POST',
 				cache: false,
@@ -147,15 +147,14 @@
 					if (response == true) {
 						$('.editBtn').hide();
 						$('.cancelBtn').show();
-					}
-					
+					}					
 					hideButtons();
 				}
 			});
 		});
 
 		//Cancel
-		$('.cancelBtn').one('click', function () {
+		$('.cancelBtn').click(function ()  {
 			
 			$.ajax({
 				type: 'POST',
@@ -174,7 +173,7 @@
 		});
 
 		//share
-		$('.shareBtn').one('click', function () {
+		$('.shareBtn').click(function ()  {
 			var url = window.location.href;
 			$.ajax({
 				type: 'POST',

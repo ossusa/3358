@@ -119,16 +119,13 @@
 	$(document).ready(function () {
 		bindEdit();
 	});
-	$(document).ajaxComplete(function (event, xhr, settings) {
-		bindEdit();
-	});
-
+	
 	function bindEdit() {
 
 		$(document).ready(function () {
 
 			//Add Like
-			$('.addLike').one('click', function () {
+			$('.addLike').click(function () {
 
 				var resourceId = $(this).attr('data-id');
 
@@ -145,7 +142,7 @@
 			});
 
 			//Add Dislike
-			$('.addDislike').one('click', function () {
+			$('.addDislike').click(function () {
 
 				var resourceId = $(this).attr('data-id');
 
@@ -162,7 +159,7 @@
 			});
 
 			//Add ToMyHandBook
-			$('.addToMyHandBook').one('click', function () {
+			$('.addToMyHandBook').click(function () {
 
 				var resourceId = $(this).attr('data-id');
 				var tag_id = "#addToMyHandBook_" + resourceId;
@@ -182,7 +179,7 @@
 			});
 
 			//Add Comment
-			$('.addCommentBtn').one('click', function () {
+			$('.addCommentBtn').click(function () {
 
 				var resourceId = $(this).attr('data-id');
 				var commentMsg = $('#comment_' + resourceId).val();
@@ -201,13 +198,14 @@
 						inputTxt.replaceWith(inputTxt.val('').clone(true));
 						$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
 						$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
+						bindEdit();
 					}
 
 				});
 			});
 
 			//Add Comment Like
-			$('.addCommentLike').one('click', function () {
+			$('.addCommentLike').click(function () {
 
 				var resourceId = $(this).attr('data-id');
 
@@ -224,7 +222,7 @@
 			});
 
 			//Add Comment Dislike
-			$('.addCommentDislike').one('click', function () {
+			$('.addCommentDislike').click(function () {
 
 				var resourceId = $(this).attr('data-id');
 
@@ -241,7 +239,7 @@
 			});
 
 			//Comment Reply btn t1
-			$('.commentReplyBtn').one('click', function () {
+			$('.commentReplyBtn').click(function () {
 
 				var commentId = $(this).attr('data-id');
 
@@ -253,12 +251,13 @@
 					success: function (response) {
 						$("#replyCommentBtn_" + commentId).html("");
 						$("#commentRepliesInputView_" + commentId).html(response);
+						bindEdit();
 					}
 				});
 			});
 
 			//Add Reply Comment Button Pressed
-			$('.addReplyCommentBtn').one('click', function () {
+			$('.addReplyCommentBtn').click(function () {
 
 				var commentId = $(this).attr('data-id');
 				var commentMsg = $('#replyComment_' + commentId).val();
