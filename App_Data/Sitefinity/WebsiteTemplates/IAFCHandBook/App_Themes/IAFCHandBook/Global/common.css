@@ -1669,7 +1669,7 @@ p {
   flex-wrap: wrap; }
   .complete__resources_slides img {
     height: auto !important;
-    border-radius: 3px 3px 0 0; }
+    border-radius: 3px 0 0 3px; }
 
 .complete__resources_slide {
   width: 31.3% !important;
@@ -3365,6 +3365,10 @@ p {
   @media screen and (max-width: 767px) {
     .handbook_subcontainer {
       width: 100%; } }
+
+@media screen and (max-width: 767px) {
+  .handbook__template .progressindicator__wrapper {
+    margin-bottom: 20px; } }
 
 .progressindicator__wrapper {
   margin: 48px 0;

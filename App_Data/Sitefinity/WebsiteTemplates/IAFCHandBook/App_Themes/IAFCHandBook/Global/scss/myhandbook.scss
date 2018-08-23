@@ -42,7 +42,15 @@
     width: 100%;
   }
 }
-
+.handbook__template{
+  .progressindicator{
+    &__wrapper {
+      @media screen and (max-width: 767px){
+        margin-bottom: 20px;
+      }
+    }
+    }
+}
 .progressindicator{
   &__wrapper{
     margin: 48px 0;
