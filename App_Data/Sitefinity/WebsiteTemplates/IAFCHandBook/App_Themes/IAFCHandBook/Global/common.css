@@ -2121,7 +2121,8 @@ p {
     margin-bottom: 72px; }
     .community__section > .box > section > .resources__slide {
       width: 100%;
-      margin-bottom: 10px; }
+      margin-bottom: 24px;
+      margin-right: 0; }
     .community__section .single-post-comments {
       display: none; }
   .resources__community-slide-info {
