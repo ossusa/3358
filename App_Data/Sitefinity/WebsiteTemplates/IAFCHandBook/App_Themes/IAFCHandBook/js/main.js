@@ -115,5 +115,7 @@ $(document).ready(function () {
             wrapper.css("margin-top", 0);
         }
     });
-
+    $('.markAsCompleteBtn').click(function () {
+        $('.complete_box').addClass('anticon anticon-check');
+    });
 });
