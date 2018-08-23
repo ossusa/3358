@@ -2867,6 +2867,8 @@ p {
               font-size: 13px;
               font-weight: 400; }
           .resources-single__left_post_comment_header_left_share {
+            position: relative;
+            top: 1px;
             color: #9b9b9b;
             font-family: "Nunito Sans";
             font-size: 13px;
