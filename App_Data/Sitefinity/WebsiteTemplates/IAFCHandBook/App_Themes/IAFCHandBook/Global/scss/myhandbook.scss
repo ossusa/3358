@@ -50,6 +50,12 @@
       }
     }
   }
+  .resources__slide-time{
+    @media screen and (max-width: 767px) {
+      bottom: 8px;
+      right: 8px;
+    }
+  }
 }
 .progressindicator{
   &__wrapper{
