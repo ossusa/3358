@@ -3344,6 +3344,12 @@ p {
   display: -ms-flexbox;
   display: flex; }
 
+.commentReplyBtn {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
