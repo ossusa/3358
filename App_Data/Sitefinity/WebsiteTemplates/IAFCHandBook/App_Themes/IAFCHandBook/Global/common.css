@@ -1692,6 +1692,8 @@ p {
     @media screen and (max-width: 767px) {
       .resources__slide:nth-child(odd) {
         margin-right: 4%; } }
+  .resources__slide .slick-track .resources__slide:nth-child(odd) {
+    margin-right: 12px; }
 
 @media (max-width: 1500px) {
   .topics__img-text {
