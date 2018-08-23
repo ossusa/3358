@@ -31,6 +31,11 @@
   @media screen and (max-width: 767px){
     padding: 0 28px;
   }
+  @media screen and (max-width: 1109px){
+    .progressindicator_share:nth-child(2){
+      justify-content: center !important;
+    }
+  }
 }
 .handbook_subcontainer{
   max-width: 1200px;
@@ -51,7 +56,10 @@
     }
   }
   .resources__slide-time{
-
+    @media screen and (max-width: 767px) {
+      bottom: 8px;
+      right: 8px;
+    }
   }
 }
 .progressindicator{
@@ -182,26 +190,26 @@
     }
   }
   &__item{
-      margin-right: 12px;
-      margin-left: 12px;
-      width: 100%;
-      @media screen and (max-width: 1440px){
-        width: 282px;
+    margin-right: 12px;
+    margin-left: 12px;
+    width: 100%;
+    @media screen and (max-width: 1440px){
+      width: 282px;
+    }
+    @media screen and (max-width: 1109px){
+      &:nth-of-type(2){
+        margin-bottom: 48px;
       }
-      @media screen and (max-width: 1109px){
-        &:nth-of-type(2){
-          margin-bottom: 48px;
-        }
+    }
+    @media screen and (max-width: 767px){
+      margin: 0 0 24px 0;
+      width: 320px;
+      &:nth-of-type(2){
+        margin-bottom: 24px;
       }
-      @media screen and (max-width: 767px){
-        margin: 0 0 24px 0;
-        width: 320px;
-        &:nth-of-type(2){
-          margin-bottom: 24px;
-        }
-      }
-      &:hover {
-        box-shadow: 0 6px 15px 0 rgba(0,0,0,0.15);
+    }
+    &:hover {
+      box-shadow: 0 6px 15px 0 rgba(0,0,0,0.15);
     }
     &__image{
       position: relative;
@@ -282,7 +290,7 @@
         font-weight: 700;
         display: block;
       }
-      }
+    }
     &__links{
       width: 100%;
       border-radius: 0 0 3px 3px;
