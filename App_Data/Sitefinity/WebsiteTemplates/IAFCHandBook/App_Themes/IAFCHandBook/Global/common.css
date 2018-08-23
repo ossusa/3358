@@ -1451,7 +1451,7 @@ p {
     @media screen and (max-width: 767px) {
       .community__topics-link {
         width: 320px;
-        height: 124px; } }
+        height: 124px !important; } }
   .community__topics-text {
     white-space: normal; }
   .community__topics-list {
@@ -1885,6 +1885,8 @@ p {
     height: 221px; }
   .resources__slide-title {
     font-size: 1.23em; }
+  .topics__img-text {
+    font-size: 1.750em; }
   .topics__list svg {
     width: 91px;
     height: 84px; }
