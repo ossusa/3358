@@ -31,15 +31,17 @@
   @media screen and (max-width: 767px){
     padding: 0 28px;
   }
+  @media screen and (max-width: 1109px){
+    .progressindicator_share:nth-child(2){
+      justify-content: center !important;
+    }
+  }
 }
 .handbook_subcontainer{
   max-width: 1200px;
   margin: 0 auto;
   @media screen and (max-width: 1109px){
     width: 588px;
-    .progressindicator_share:nth-child(2){
-      justify-content: center !important;
-    }
   }
   @media screen and (max-width: 767px){
     width: 100%;
