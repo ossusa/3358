@@ -1,0 +1,89 @@
+<%@ Master Language="C#" %>
+
+<!doctype html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/css/lib/anticon.min.css">
+    <!--<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/common.css">-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
+
+</head>
+
+<body>
+
+<form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ContentPlaceHolder ID="JavaScript" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Document Wrapper============================================= -->
+    <div id="wrapper">
+
+        <!-- Header ============================================= -->
+        <header id="header" class="header">
+
+            <!-- Header Text ============================================= -->
+            <div id="headerText" class="header__text">
+                <asp:ContentPlaceHolder ID="headerHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- Header Text End ============================================= -->
+            <div class="box box-mobile">
+                <asp:ContentPlaceHolder ID="menuHolder" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </header>
+        <!-- End Header ============================================= -->
+
+        <!-- Content ============================================= -->
+        <section id="content">
+            <!-- Content ============================================= -->
+
+            <asp:ContentPlaceHolder ID="contentHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <!-- Content Ends ============================================= -->
+        </section>
+        <!-- Content End ============================================= -->
+
+        <!-- Footer ============================================= -->
+        <footer class="footer box">
+            <div class="footer__info">
+                <div class="footer__info-col">
+                    <asp:ContentPlaceHolder ID="footerImage" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="footer__info-cols">
+                    <div class="footer__info-col">
+                        <asp:ContentPlaceHolder ID="footerMenu" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="footer__info-col">
+                        <span>&copy;</span> <span id="copyrightIAFC"> </span> <span> IAFC </span>
+                        <asp:ContentPlaceHolder ID="footerCurentYear" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End ============================================= -->
+    </div>
+
+    <!-- Document Wrapper end ============================================= -->
+</form>
+<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
+<script>
+    var currentYear = (new Date()).getFullYear();
+    $(document).ready(function() {
+        $("#copyrightIAFC").text(currentYear);
+    });
+</script>
+
+</body>
+</html>
