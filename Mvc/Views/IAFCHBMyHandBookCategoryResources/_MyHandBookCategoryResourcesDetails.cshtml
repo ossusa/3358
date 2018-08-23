@@ -149,7 +149,7 @@
 							@if (Model.SharedUserId == Guid.Empty)
 							{
 								<div class="completedResource">
-									<span>Completed</span>
+									<div class="complete_box"></div>Complete
 								</div>
 								<div class="removeCompletedResource">
 									<button type="button" class="removeComplenedBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
