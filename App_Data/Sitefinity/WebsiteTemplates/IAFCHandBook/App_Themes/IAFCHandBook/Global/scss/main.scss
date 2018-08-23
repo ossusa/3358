@@ -2338,7 +2338,9 @@ p {
       height: 235px;
     }
   }
-
+  .community__topics-list {
+    margin-bottom: 20px;
+  }
   .topics__ul-flex .topics__list{
      width: 100%;
    }
@@ -2800,6 +2802,9 @@ p {
           margin-bottom: 10px;
         }
       }
+    }
+    .single-post-comments{
+      display: none;
     }
   }
   .resources__community-slide-info {

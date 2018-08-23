@@ -1861,6 +1861,8 @@ p {
     .resources__logged-img-box img {
       width: 78vw;
       height: 235px; }
+  .community__topics-list {
+    margin-bottom: 20px; }
   .topics__ul-flex .topics__list {
     width: 100%; }
   .topics__ul-flex .topics__list:last-of-type a {
@@ -2120,6 +2122,8 @@ p {
     .community__section > .box > section > .resources__slide {
       width: 100%;
       margin-bottom: 10px; }
+    .community__section .single-post-comments {
+      display: none; }
   .resources__community-slide-info {
     height: 154px !important; }
   .resources__community-img img {
