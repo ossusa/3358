@@ -470,7 +470,12 @@
   margin: 48px 0 20px 0;
   align-items: center;
 }
-
+.community__section{
+  @media screen and (max-width: 768px) {
+    .resources__slide {
+      width: 588px !important;
+    }
+  }
 .complete {
   &_section {
     background-color: #efefef;
@@ -478,6 +483,7 @@
     margin: 52px -120px 100px;
     @media screen and (max-width: 1109px) {
       margin: 52px -90px 100px;
+    }
     }
     @media screen and (max-width: 767px){
       padding: 36px 0 16px;
