@@ -3141,6 +3141,11 @@ p {
   -ms-flex-align: center;
   align-items: center; }
 
+@media screen and (max-width: 768px) {
+  .community__section .resources__slide {
+    width: 588px !important;
+    margin-right: 0 !important; } }
+
 .complete_section {
   background-color: #efefef;
   padding: 64px 0 72px;
