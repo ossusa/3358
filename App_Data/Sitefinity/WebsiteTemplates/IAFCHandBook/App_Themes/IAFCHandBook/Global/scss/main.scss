@@ -1750,6 +1750,9 @@ p {
       width: 282px;
       border-radius: 3px;
       background: #5591aa;
+      @media screen and (max-width: 767px){
+        width: 320px;
+      }
     }
     &-text {
       white-space: normal;

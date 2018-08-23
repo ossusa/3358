@@ -1448,6 +1448,9 @@ p {
     width: 282px;
     border-radius: 3px;
     background: #5591aa; }
+    @media screen and (max-width: 767px) {
+      .community__topics-link {
+        width: 320px; } }
   .community__topics-text {
     white-space: normal; }
   .community__topics-list {
