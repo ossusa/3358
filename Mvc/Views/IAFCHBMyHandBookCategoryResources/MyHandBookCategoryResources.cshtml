@@ -226,13 +226,13 @@
 	function hideButtons() {
 		var isEditVisible = $('.editBtn').is(':visible');
 		if (isEditVisible) {
-			$('.resources__slide-btn:nth-of-type(1)').show();
+			$('.complete__resources_slide .resources__slide-btn:nth-of-type(1)').show();
 			$('.removeResource').hide();
 			$('.completedResource').show();
 			$('.removeCompletedResource').hide();		
 		}
 		else {
-			$('.resources__slide-btn:nth-of-type(1)').hide();
+			$('.complete__resources_slide .resources__slide-btn:nth-of-type(1)').hide();
 			$('.removeResource').show();
 			$('.completedResource').hide();
 			$('.removeCompletedResource').show();
