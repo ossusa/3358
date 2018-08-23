@@ -1752,7 +1752,7 @@ p {
       background: #5591aa;
       @media screen and (max-width: 767px){
         width: 320px;
-        height: 124px;
+        height: 124px !important;
       }
     }
     &-text {
@@ -2377,6 +2377,9 @@ p {
   }
   .resources__slide-title {
     font-size: 1.23em;
+  }
+  .topics__img-text{
+    font-style: 1.750em;
   }
   .topics__list {
     svg{
