@@ -3138,7 +3138,8 @@ p {
 
 @media screen and (max-width: 768px) {
   .community__section .resources__slide {
-    width: 588px !important; } }
+    width: 588px !important;
+    margin-right: 0; } }
 
 .community__section .complete_section {
   background-color: #efefef;
@@ -3384,7 +3385,10 @@ p {
   margin: 0 auto; }
   @media screen and (max-width: 1109px) {
     .handbook_subcontainer {
-      width: 588px; } }
+      width: 588px; }
+      .handbook_subcontainer .progressindicator_share:nth-child(2) {
+        -ms-flex-pack: center !important;
+        justify-content: center !important; } }
   @media screen and (max-width: 767px) {
     .handbook_subcontainer {
       width: 100%; } }
