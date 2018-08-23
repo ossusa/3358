@@ -3302,7 +3302,7 @@ p {
     -ms-flex-pack: end;
     justify-content: flex-end;
     padding-right: 12px; }
-  .progressindicator_share:nth-child(2) {
+  .progressindicator_share:nth-child(3) {
     -ms-flex-pack: start;
     justify-content: flex-start;
     padding-left: 12px; }
