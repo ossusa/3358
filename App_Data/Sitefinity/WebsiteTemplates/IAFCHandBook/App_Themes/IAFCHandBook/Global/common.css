@@ -1667,7 +1667,7 @@ p {
   flex-wrap: wrap; }
   .complete__resources_slides img {
     height: auto !important;
-    border-radius: 3px 0 0 3px; }
+    border-radius: 3px 3px 0 0; }
 
 .complete__resources_slide {
   width: 31.3% !important;
