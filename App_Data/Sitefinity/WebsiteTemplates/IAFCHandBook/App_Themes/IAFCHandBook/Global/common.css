@@ -3149,10 +3149,10 @@ p {
       opacity: 1; }
 
 .complete__resources_slide {
-  margin: 0 1% 48px !important; }
+  margin: 0 2% 48px !important; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
-      width: 48% !important; } }
+      width: 46% !important; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
       margin: 0 0 24px !important;
@@ -3192,7 +3192,7 @@ p {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 -12px; }
+  margin: 0 -2%; }
   @media screen and (max-width: 767px) {
     .complete__resources_slides {
       margin: 0 auto; } }
