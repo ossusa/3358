@@ -3144,6 +3144,11 @@ p {
       display: none; } }
   .complete_section .complete__resources_slide img {
     margin-bottom: -6px; }
+  .complete_section .complete__resources_slide {
+    opacity: 0.5;
+    transition: .3s ease-in-out; }
+    .complete_section .complete__resources_slide:hover {
+      opacity: 1; }
 
 .complete__resources_slide {
   margin: 0 1% 48px !important; }
