@@ -149,22 +149,18 @@
         <footer class="footer box">
             <div class="footer__info">
                 <div class="footer__info-col">
-                    <div class="sfimageWrp">
-                        <img id="footerImage_T7974F21F009_ctl00_ctl00_imageItem" title="IACF" src="/images/default-source/iacfhandbook/iacf.png?sfvrsn=a9be8a0d_4&amp;MaxWidth=145&amp;MaxHeight=&amp;ScaleUp=false&amp;Quality=High&amp;Method=ResizeFitToAreaArguments&amp;Signature=0155182ED502B4E02F3BA64C26041E6050F861B3" alt="IACF" style="margin-left:-15px;">
-                    </div>
+                    <asp:ContentPlaceHolder ID="footerImage" runat="server">
+                    </asp:ContentPlaceHolder>
                 </div>
                 <div class="footer__info-cols">
                     <div class="footer__info-col">
-                        <div class="sfNavWrp sfNavHorizontalWrp footer__nav ASP.templates_telerik_sitefinity_resources_templates_frontend_navigation_horizontallist_ascx">
-                            <ul class="sfNavHorizontal sfNavList">
-                                <li><a href="/iafchandbookhome/iacf-handbook-aboutus">About Us</a></li>
-                                <li><a href="/iafchandbookhome/iacf-handbook-contact">Contact</a></li>
-                                <li><a href="/privacy-policy">Privacy Policy</a></li>
-                            </ul>
-                        </div>
+                        <asp:ContentPlaceHolder ID="footerMenu" runat="server">
+                        </asp:ContentPlaceHolder>
                     </div>
                     <div class="footer__info-col">
-                        <span>©</span> <span id="copyrightIAFC">2018</span> <span> IAFC </span>
+                        <span>&copy;</span> <span id="copyrightIAFC"> </span> <span> IAFC </span>
+                        <asp:ContentPlaceHolder ID="footerCurentYear" runat="server">
+                        </asp:ContentPlaceHolder>
                     </div>
                 </div>
             </div>
