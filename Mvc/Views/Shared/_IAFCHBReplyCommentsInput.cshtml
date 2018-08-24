@@ -1,13 +1,13 @@
 ﻿@model Guid
-<div class="resources-single__left_post_comment_textarea resources-single__left_post_comment_textarea-reply">
+
 <div id="@string.Format("{0}_{1}","replyCommentsBlock", Model.ToString())">
 	<div class="replyAddComment">
-		<div class="textarea-container">
-			<textarea placeholder="Add a reply…" id="@string.Format("{0}_{1}", "replyComment", Model.ToString())"
+		<div>
+			<textarea  id="@string.Format("{0}_{1}", "replyComment", Model.ToString())"
 					  value="">
 				</textarea>
 		</div>
-		<button type="button" class="addReplyCommentBtn addCommentBtn" data-id="@Model.ToString()"> Add Reply </button>
+		<button type="button" class="addReplyCommentBtn" data-id="@Model.ToString()"> Add Reply </button>
 	</div>
 </div>
-</div>
+
