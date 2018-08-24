@@ -35,7 +35,106 @@
             <div class="box box-mobile">
                 <table width="100%">
                     <tr class="header__table-tr">
-                      
+                        <td>
+
+                            <!-- Logo ============================================= -->
+                            <div id="logo" class="header__logo">
+                                <asp:ContentPlaceHolder ID="logoHolder" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                            <!-- Logo ============================================= -->
+                        </td>
+                        <td class="header__table-td">
+                            <!-- Menu ============================================= -->
+                            <div>
+                                <nav id="primaryMenu">
+                                    <asp:ContentPlaceHolder ID="menuHolder" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </nav>
+                            </div>
+                        </td>
+                        <!-- Menu end ============================================= -->
+                        <td class="header__mob">
+                            <div class="header__mob-nav">
+                                <div class="header__mob-box">
+                                    <a href="#" class="header__mob-close anticon anticon-menu-unfold"></a>
+                                    <form action="#" class="header__mob-form">
+                                        <input type="search" placeholder="Search" class="header__mob-search">
+                                        <button class="header__mob-button" type="submit"></button>
+                                    </form>
+                                </div>
+                                <!-- accordion   -->
+                                <ul class="accordion">
+                                    <li class="accordion__item accordion__item--first">
+                                        <div class="accordion__title">
+                                            <div class="accordion__arrow anticon anticon-down"></div>
+                                            <span class="accordion__title-text">Topics</span>
+                                        </div>
+                                        <div class="accordion__content">
+                                            <div class="accordion__sub-item">
+                                                <div class="accordion__sub-title">
+                                                    <div class="accordion__sub-arrow anticon anticon-down"></div>
+                                                    <span class="accordion__title-text">Community</span>
+                                                </div>
+                                                <ul class="accordion__sub-content">
+                                                    <li><a href="/iafchandbookhome/topics/community/crisis-communicatio" class="accordion__sub-link">Crisis Communication</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/community/customer-service" class="accordion__sub-link">Customer Service</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/community/marketing-and-media" class="accordion__sub-link">Marketing & Media</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/community/politics" class="accordion__sub-link">Politics</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="accordion__sub-item">
+                                                <div class="accordion__sub-title">
+                                                    <div class="accordion__sub-arrow anticon anticon-down"></div>
+                                                    <span class="accordion__title-text">Leadership</span>
+                                                </div>
+                                                <ul class="accordion__sub-content">
+                                                    <li><a href="/iafchandbookhome/topics/leadership/ethics" class="accordion__sub-link">Ethics</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/leadership/generational-differences" class="accordion__sub-link">Generational Differences</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/leadership/leadership-styles" class="accordion__sub-link">Leadership Styles</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/leadership/motivating-people" class="accordion__sub-link">Motivating People</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/leadership/strategy" class="accordion__sub-link">Strategy</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="accordion__sub-item">
+                                                <div class="accordion__sub-title">
+                                                    <div class="accordion__sub-arrow anticon anticon-down"></div>
+                                                    <span class="accordion__title-text">Finance</span>
+                                                </div>
+                                                <ul class="accordion__sub-content">
+                                                    <li><a href="/iafchandbookhome/topics/finance/budgeting" class="accordion__sub-link">Budgeting</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/finance/fundraising" class="accordion__sub-link">Fundraising</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/finance/legal-issues" class="accordion__sub-link">Legal Issues</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="accordion__sub-item">
+                                                <div class="accordion__sub-title">
+                                                    <div class="accordion__sub-arrow anticon anticon-down"></div>
+                                                    <span class="accordion__title-text">Personnel</span>
+                                                </div>
+                                                <ul class="accordion__sub-content">
+                                                    <li><a href="/iafchandbookhome/topics/personnel/insurance" class="accordion__sub-link">Insurance</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/personnel/legal-issues" class="accordion__sub-link">Legal Issues</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/personnel/recruitment" class="accordion__sub-link">Recruitment</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/personnel/retention" class="accordion__sub-link">Retention</a></li>
+                                                    <li><a href="/iafchandbookhome/topics/personnel/volunteer-career-relations" class="accordion__sub-link">Volunteer /Career Relations</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion__item">
+                                        <a href="/iafchandbookhome/my-handbook" class="accordion__item-link">My Handbook</a>
+                                    </li>
+                                    <li class="accordion__item">
+                                        <a href="/iafchandbookhome/account" class="accordion__item-link">Account</a>
+                                    </li>
+                                    <li class="accordion__item">
+                                        <a href="#" class="accordion__item-link">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="header__mob-open anticon anticon-menu-fold"></span>
+                        </td>
                     </tr>
                 </table>
             </div>
