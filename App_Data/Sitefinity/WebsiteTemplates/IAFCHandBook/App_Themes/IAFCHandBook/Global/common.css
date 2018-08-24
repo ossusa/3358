@@ -2982,6 +2982,8 @@ p {
           .resources-single__left_post_comment_textarea .addCommentBtn:focus {
             background: #2b4b6b;
             color: #fff; }
+        .resources-single__left_post_comment_textarea-reply {
+          margin: 14px 0; }
       .resources-single__left_post_comment_changer {
         display: none;
         border-top: 1px solid #d8d8d8;
@@ -3354,9 +3356,6 @@ addReplyCommentBtn {
   border: none;
   outline: none;
   padding: 0; }
-
-.addReplyCommentBtn {
-  margin-bottom: 14px !important; }
 
 .handbook__title {
   width: 100%;
