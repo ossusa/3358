@@ -3,7 +3,7 @@
 	<div id="@string.Format("{0}_{1}","replyCommentsBlock", Model.ToString())">
 	<div class="replyAddComment">
 		<div class="textarea-container">
-			<textarea placeholder="Add a reply…" name="commentName" id="@string.Format("{0}_{1}", "replyComment", Model.ToString())"></textarea>
+			<textarea placeholder="Add a reply…" id="@string.Format("{0}_{1}", "replyComment", Model.ToString())"></textarea>
 		</div>
 		<button type="button" class="addReplyCommentBtn addCommentBtn" data-id="@Model.ToString()"> Add Reply </button>
 	</div>
