@@ -8,6 +8,7 @@
 		@if (Model.SharedUserId == Guid.Empty)
 		{
 			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit  </button>
+			<button type="button" class="cancelBtn progressindicator_share"><i class="anticon anticon-close"></i> Cancel </button>
 			<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>			
 		}
 	</div>
@@ -29,6 +30,7 @@
 			@if (Model.SharedUserId == Guid.Empty)
 			{
 				<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit  </button>
+				<button type="button" class="cancelBtn progressindicator_share"><i class="anticon anticon-close"></i> Cancel  </button>
 				<button type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
 				<div id="share"> </div>
 			}
@@ -48,17 +50,14 @@
 	$(document).ready(function () {		
 		$('.removeResource').hide();		
 		$('.removeCompletedResource').hide();				
+		$('.cancelBtn').hide();				
 		bindEdit();
 	});
-	$(document).ajaxComplete(function (event, xhr, settings) {
-		bindEdit();
-	});
-
+	
 	function bindEdit() {
 
 		//Add Like
-		$('.addLike').one('click', function () {
-
+		$('.addLike').click(function ()  {
 			var resourceId = $(this).attr('data-id');
 
 			$.ajax({
@@ -74,7 +73,7 @@
 		});
 
 		//Add Dislike
-		$('.addDislike').one('click', function () {
+		$('.addDislike').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 
@@ -91,7 +90,7 @@
 		});
 
 		//mark As Complete
-		$('.markAsCompleteBtn').one('click', function () {
+		$('.markAsCompleteBtn').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 			var categoryId = $(this).attr('data-id2');			
@@ -104,13 +103,13 @@
 				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 					hideButtons();
-
+					bindEdit();
 				}
-			});
+			});			
 		});
 
 		//Add Shared Resource to My Hand Book
-		$('.addSharedToMyHandBookBtn').one('click', function () {
+		$('.addSharedToMyHandBookBtn').click(function ()  {
 			var resourceId = $(this).attr('data-id');			
 			$.ajax({
 				type: 'POST',
@@ -127,7 +126,7 @@
 		});
 
 		//remove
-		$('.removeBtn').one('click', function () {
+		$('.removeBtn').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 			var categoryId = $(this).attr('data-id2');			
@@ -140,17 +139,17 @@
 				success: function (response) {					
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
 					hideButtons();
+					bindEdit();
 				}
-			});
+			});			
 		});
 
 		//Remove Completed
-		$('.removeComplenedBtn').one('click', function () {
+		$('.removeComplenedBtn').click(function ()  {
 
 			var resourceId = $(this).attr('data-id');
 			var categoryId = $(this).attr('data-id2');
-			var markAsCompleteCaption = $(this).text();
-			24
+			var markAsCompleteCaption = $(this).text();			
 			$.ajax({
 				type: 'POST',
 				cache: false,
@@ -158,35 +157,51 @@
 				data: { resourceId: resourceId, categoryId: categoryId },
 				success: function (response) {
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					bindEdit();
+				}
+			});			
+		});
 
+		//Edit
+		$('.editBtn').click(function ()  {
+			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Edit", "IAFCHBMyHandBookCategoryResources")',
+				data: { operation: "Edit" },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$('.editBtn').hide();
+						$('.cancelBtn').show();
+					}					
+					hideButtons();
 				}
 			});
 		});
 
 		//Edit
-		$('.editBtn').one('click', function () {
-			var editCaption = $(this).text();
-
+		$('.cancelBtn').click(function ()  {
+			
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("Edit", "IAFCHBMyHandBookCategoryResources")',
-				data: { operation: editCaption },
+				data: { operation: "Cancel" },
 				dataType: "json",
 				success: function (response) {
-					if (response == true) {
-						$('.editBtn').text("Cancel");
-					}
-					else {
-						$('.editBtn').text("Edit");
-					}
+					if (response == false) {
+						$('.editBtn').show();
+						$('.cancelBtn').hide();
+					}					
 					hideButtons();
 				}
 			});
 		});
 
 		//share
-		$('.shareBtn').one('click', function () {
+		$('.shareBtn').click(function ()  {
 			var url = window.location.href;
 			$.ajax({
 				type: 'POST',
@@ -197,22 +212,21 @@
 				success: function (response) {
 					$('#share').html(response);
 				}
-
 			});
 		});
 
 	}
 
 	function hideButtons() {
-		var editTxt = $('.editBtn').first().text();
-		if (editTxt == "Edit") {
-			$('.markAsCompleteResource').show();
+		var isEditVisible = $('.editBtn').is(':visible');
+		if (isEditVisible) {
+			$('.resources__slide-btn:nth-of-type(1)').show();
 			$('.removeResource').hide();
 			$('.completedResource').show();
 			$('.removeCompletedResource').hide();		
 		}
 		else {
-			$('.markAsCompleteResource').hide();
+			$('.resources__slide-btn:nth-of-type(1)').hide();
 			$('.removeResource').show();
 			$('.completedResource').hide();
 			$('.removeCompletedResource').show();
@@ -232,8 +246,9 @@
 			data: { orderBy: orderBy, categoryId: categoryId, userId: userId, sharedUserID: sharedUserID },
 			success: function (response) {
 				$('#myHandBookResourcesDetails_' + categoryId).html(response);
+				bindEdit();
 			}
-		});
+		});		
 	}
 	
 	function doNavigate() {

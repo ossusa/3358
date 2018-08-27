@@ -21,6 +21,10 @@ using ServiceStack;
 using SitefinityWebApp.App_Start;
 using SitefinityWebApp.Custom;
 using Telerik.Sitefinity.Publishing.Pipes;
+using Telerik.Sitefinity.Services;
+using Telerik.Sitefinity.DynamicModules.Events;
+using SitefinityWebApp.Custom.IAFCHandBook;
+using Telerik.Sitefinity.GenericContent.Model;
 
 namespace SitefinityWebApp
 {
@@ -35,8 +39,71 @@ namespace SitefinityWebApp
 
             bootstraper = new SfBootstraper();
             bootstraper.Setup();
-			///Bootstrapper.Initialized += Bootstrapper_Initialized;
-		}
+            ///Bootstrapper.Initialized += Bootstrapper_Initialized;
+            ///
+
+            SystemManager.ApplicationStart += SystemManager_ApplicationStart;
+        }
+
+        private void SystemManager_ApplicationStart(object sender, EventArgs e)
+        {
+            EventHub.Subscribe<IDynamicContentCreatedEvent>(evt => DynamicContentCreatedEventHandler(evt));
+            EventHub.Subscribe<IDynamicContentUpdatedEvent>(evt => DynamicContentUpdatedEventHandler(evt));
+        }
+
+        private void DynamicContentCreatedEventHandler(IDynamicContentCreatedEvent evt)
+        {
+            var item = evt.Item;
+            var itemType = item.GetType();
+
+            var helper = new IAFCHandBookHelper();
+
+            if (itemType == helper.ResourceType ||
+                itemType == helper.ExternalResourcesType)
+            {
+                if (item.Status == ContentLifecycleStatus.Live && item.Visible)
+                {
+                    if (helper.IsResourceContainedWithinTopicsCategory(item.Id, itemType))
+                    {
+                        helper.CreateIAFCHandBookResourcesData(item.Id, itemType);
+                    }
+                }
+            }
+        }
+
+        private void DynamicContentUpdatedEventHandler(IDynamicContentUpdatedEvent evt)
+        {
+            var item = evt.Item;
+            var itemType = item.GetType();
+
+            var helper = new IAFCHandBookHelper();
+
+            if (itemType == helper.ResourceType ||
+                itemType == helper.ExternalResourcesType)
+            {
+                if (item.Status == ContentLifecycleStatus.Live && item.Visible)
+                {
+                    if (helper.IsResourceContainedWithinTopicsCategory(item.Id, itemType))
+                    {
+                        if (helper.IsHandBookResourcesDataExistsFor(item.Id, itemType))
+                        {
+                            helper.UpdateIAFCHandBookResourcesData(item.Id, itemType);
+                        }
+                        else
+                        {
+                            helper.CreateIAFCHandBookResourcesData(item.Id, itemType);
+                        }
+                    }
+                    else
+                    {
+                        if (helper.IsHandBookResourcesDataExistsFor(item.Id, itemType))
+                        {
+                            helper.DeleteIAFCHandBookResourcesData(item.Id, itemType);
+                        }
+                    }
+                }
+            }
+        }
 
         /*void SystemManager_ApplicationStart(object sender, EventArgs e)
         {

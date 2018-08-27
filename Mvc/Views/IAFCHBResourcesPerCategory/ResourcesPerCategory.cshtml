@@ -99,13 +99,14 @@
 
 
 <script>
-
-
-
 	$(document).ready(function () {
+			bindEdit();
+		});
+
+	function bindEdit() {
 
 		//Add All ToMyHandBook
-		$('.addAllToMyHandBook').on('click', function () {
+		$('.addAllToMyHandBook').click(function () {
 
 			var categoryId = $(this).attr('data-id');
 
@@ -124,7 +125,7 @@
 		});
 
 		//Follow
-		$('.followCategory').on('click', function () {
+		$('.followCategory').click(function () {
 
 			var categoryId = $(this).attr('data-id');
 
@@ -143,23 +144,24 @@
 		});
 
 
-		$('#sortByChanged').on('change', function () {
+		$('#sortByChanged').click(function () {
 
-				var orderByValue = $('#sortByChanged').val();
+			var orderByValue = $('#sortByChanged').val();
 
-                $.ajax({
-					type: 'POST',
-					cache: false,
-                    url: '@Url.Action("GetOrderedResources", "IAFCHBResourcesPerCategory")',
-					data: { orderBy: parseInt(orderByValue) },
-                    success: function (response) {
-						$("#partViewID").html(response);
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("GetOrderedResources", "IAFCHBResourcesPerCategory")',
+				data: { orderBy: parseInt(orderByValue) },
+				success: function (response) {
+					$("#partViewID").html(response);
+					bindEdit();
+				}
+			})
+		});
 
-                    }
-                })
-            });
-
-	});
+	}
+	
 
 
 	function doNavigate() {
