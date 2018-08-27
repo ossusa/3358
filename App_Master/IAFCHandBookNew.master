@@ -16,9 +16,7 @@
 
 <body>
 
-<form id="form1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <asp:ContentPlaceHolder ID="JavaScript" runat="server"></asp:ContentPlaceHolder>
+<form id="form1" runat="server">    
 
     <!-- Document Wrapper============================================= -->
     <div id="wrapper">
