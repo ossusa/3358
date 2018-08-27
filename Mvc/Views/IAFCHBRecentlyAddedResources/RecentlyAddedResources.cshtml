@@ -5,13 +5,14 @@
 <div class="sfContentBlock resources">
 
     <h2 class="resources__title">Recently Added Resources</h2>
+
     <div class="resources__slider">
         @foreach (var item in Model)
         {
             <div class="resources__slide">
                 <div class="resources__slide-img" style="background: none; overflow: hidden">
                     <img src='@item.ResourceDetails.ImageUrl'/>
-
+                    <!--<object type="image/svg+xml" data="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/community-multiply.svg" alt="">-->
                     <div class="resources__slide-label">
                        <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
                         <span>@item.ResourceDetails.Category.ParentCategoryTitle
