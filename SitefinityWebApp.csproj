@@ -890,6 +890,7 @@
     <Compile Include="Mvc\Controllers\IAFCHBRecentlyAddedResourcesController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourcesPerCategoryController.cs" />
+    <Compile Include="Mvc\Controllers\IAFCHBSearchController.cs" />
     <Compile Include="Mvc\Controllers\RelatedContentForBlogPostsController.cs" />
     <Compile Include="Mvc\Controllers\RelatedContentForDynamicContentController.cs" />
     <Compile Include="Mvc\Controllers\RelatedContentForEventsController.cs" />
@@ -1281,6 +1282,7 @@
     <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\MyHandBookCategoryResources.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookCategoryResources\_MyHandBookCategoryResourcesDetails.cshtml" />
     <Content Include="Mvc\Views\IAFCHBMyHandBookResourceDetails\MyHandBookResourceDetails.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBSearch\Search.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

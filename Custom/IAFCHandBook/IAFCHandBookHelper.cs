@@ -1303,66 +1303,74 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Comments
 		public void CreateNewCommentForResource(Guid resourceID, string comment, string resourceType = resourceResource)
 		{
-			var providerName = String.Empty;
-			var transactionName = "commentTransaction";
-
-			string commentType = "Comment";
-			var resourceTypeItem = handBookResourcesType;
-
-			if (resourceType == commentResource)
+			try
 			{
-                commentType = "Reply";
-                resourceTypeItem = resourceCommentsType;
+				var providerName = String.Empty;
+				var transactionName = "commentTransaction";
+
+				string commentType = "Comment";
+				var resourceTypeItem = handBookResourcesType;
+
+				if (resourceType == commentResource)
+				{
+					commentType = "Reply";
+					resourceTypeItem = resourceCommentsType;
+				}
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
+
+				var resource = dynamicModuleManager.GetDataItem(resourceTypeItem, resourceID);
+				var commentsAmount = resource.GetRelatedItems(commentType).Cast<DynamicContent>().Count() + 1;
+				var commentTtitle = resource.GetValue("Title").ToString() + "_comment_" + commentsAmount.ToString();
+				var likeTtitle = resource.GetValue("Title").ToString() + "_comment_" + commentsAmount.ToString() + "_like";
+
+				//Create like for comment			
+				DynamicContent mylikesmoduleItem = dynamicModuleManager.CreateDataItem(resourceLikesType);
+
+				mylikesmoduleItem.SetValue("Title", likeTtitle);
+				mylikesmoduleItem.SetValue("AmountOfLikes", 0);
+				mylikesmoduleItem.SetValue("AmountOfDislikes", 0);
+				mylikesmoduleItem.SetString("UrlName", new Lstring(Regex.Replace(likeTtitle, UrlNameCharsToReplace, UrlNameReplaceString)));
+				mylikesmoduleItem.SetValue("Owner", SecurityManager.GetCurrentUserId());
+				mylikesmoduleItem.SetValue("PublicationDate", DateTime.UtcNow);
+
+				dynamicModuleManager.Lifecycle.Publish(mylikesmoduleItem);
+				mylikesmoduleItem.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
+
+				//Create new Comment
+				DynamicContent mycommentsItem = dynamicModuleManager.CreateDataItem(resourceCommentsType);
+				mycommentsItem.SetValue("Title", commentTtitle);
+				mycommentsItem.SetValue("CommentText", comment);
+				mycommentsItem.SetString("UrlName", new Lstring(Regex.Replace(commentTtitle, UrlNameCharsToReplace, UrlNameReplaceString)));
+				mycommentsItem.SetValue("Owner", SecurityManager.GetCurrentUserId());
+				mycommentsItem.SetValue("PublicationDate", DateTime.UtcNow);
+
+				mycommentsItem.CreateRelation(mylikesmoduleItem, "CommentLikes");
+
+				ILifecycleDataItem publishedMycommentsItem = dynamicModuleManager.Lifecycle.Publish(mycommentsItem);
+				mycommentsItem.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
+
+				//Add Comment to resource
+				var masterResource = dynamicModuleManager.Lifecycle.GetMaster(resource);
+
+				DynamicContent checkOutResourceItem = dynamicModuleManager.Lifecycle.CheckOut(masterResource) as DynamicContent;
+				checkOutResourceItem.CreateRelation(mycommentsItem, commentType);
+
+				if (resourceTypeItem == handBookResourcesType)
+				{
+					checkOutResourceItem.SetValue("AmountOfComments", commentsAmount);
+				}
+
+				ILifecycleDataItem checkInMyresourcesItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutResourceItem);
+				dynamicModuleManager.Lifecycle.Publish(checkInMyresourcesItem);
+
+				TransactionManager.CommitTransaction(transactionName);
+			}
+			catch  (Exception e)
+			{
+				log.Error("Create Comment Error: " + e.Message);
 			}
 
-			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
-
-			var resource = dynamicModuleManager.GetDataItem(resourceTypeItem, resourceID);
-			var commentsAmount = resource.GetRelatedItems(commentType).Cast<DynamicContent>().Count() + 1;
-			var commentTtitle = resource.GetValue("Title").ToString() + "_comment_" + commentsAmount.ToString();
-			var likeTtitle = resource.GetValue("Title").ToString() + "_comment_" + commentsAmount.ToString() + "_like";
-
-			//Create like for comment			
-			DynamicContent mylikesmoduleItem = dynamicModuleManager.CreateDataItem(resourceLikesType);
-
-			mylikesmoduleItem.SetValue("Title", likeTtitle);
-			mylikesmoduleItem.SetValue("AmountOfLikes", 0);
-			mylikesmoduleItem.SetValue("AmountOfDislikes", 0);
-			mylikesmoduleItem.SetString("UrlName", new Lstring(Regex.Replace(likeTtitle, UrlNameCharsToReplace, UrlNameReplaceString)));
-			mylikesmoduleItem.SetValue("Owner", SecurityManager.GetCurrentUserId());
-			mylikesmoduleItem.SetValue("PublicationDate", DateTime.UtcNow);
-
-			dynamicModuleManager.Lifecycle.Publish(mylikesmoduleItem);
-			mylikesmoduleItem.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
-
-			//Create new Comment
-			DynamicContent mycommentsItem = dynamicModuleManager.CreateDataItem(resourceCommentsType);
-			mycommentsItem.SetValue("Title", commentTtitle);
-			mycommentsItem.SetValue("CommentText", comment);
-			mycommentsItem.SetString("UrlName", new Lstring(Regex.Replace(commentTtitle, UrlNameCharsToReplace, UrlNameReplaceString)));
-			mycommentsItem.SetValue("Owner", SecurityManager.GetCurrentUserId());
-			mycommentsItem.SetValue("PublicationDate", DateTime.UtcNow);
-
-			mycommentsItem.CreateRelation(mylikesmoduleItem, "CommentLikes");
-
-			ILifecycleDataItem publishedMycommentsItem = dynamicModuleManager.Lifecycle.Publish(mycommentsItem);
-			mycommentsItem.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
-
-			//Add Comment to resource
-			var masterResource = dynamicModuleManager.Lifecycle.GetMaster(resource);
-
-			DynamicContent checkOutResourceItem = dynamicModuleManager.Lifecycle.CheckOut(masterResource) as DynamicContent;
-			checkOutResourceItem.CreateRelation(mycommentsItem, commentType);
-
-            if (resourceTypeItem == handBookResourcesType)
-            {
-                checkOutResourceItem.SetValue("AmountOfComments", commentsAmount);
-            }
-
-            ILifecycleDataItem checkInMyresourcesItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutResourceItem);
-			dynamicModuleManager.Lifecycle.Publish(checkInMyresourcesItem);
-
-			TransactionManager.CommitTransaction(transactionName);
 		}
 
 		#endregion Comments
