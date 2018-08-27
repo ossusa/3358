@@ -1,26 +1,16 @@
 ﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
 <div>
 	<input type="text" id="searchText" size="40" />
-	<button type="button" class="searchBtn"> Search </button>
+	<button type="button" class="searchBtn" onclick="doSearch()"> Search </button>
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function () {
-		//Add Like
-		$('.searchBtn').click(function () {
-			var searchStr = $('#searchText').val();
-			
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("Search", "IAFCHBSearchController")',
-				data: { searchStr: searchStr },
-				dataType: "json",
-				success: function (response) {
-					alert(response);
-				}
-			});
-		});
-	});
+	
+	function doSearch() {
+		var searchStr = document.getElementById("searchText").value;
+		var searchPageUrl = "search-results/"+searchStr;
+		window.location.href = searchPageUrl;
+	}
 
 </script>
