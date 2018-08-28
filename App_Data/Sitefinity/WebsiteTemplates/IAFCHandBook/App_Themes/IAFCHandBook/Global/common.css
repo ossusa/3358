@@ -683,11 +683,19 @@ p {
       padding: 0;
       margin: 0 auto; }
       .hb-jumbo__search fieldset input[type="text"] {
-        width: inherit;
+        width: inherit !important;
         border: none;
         font-weight: 900;
         font-family: "Font Awesome 5 Free"; }
-        .hb-jumbo__search fieldset input[type="text"]:before {
+      .hb-jumbo__search fieldset button[type="button"] {
+        position: absolute;
+        right: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: transparent;
+        top: 18px; }
+        .hb-jumbo__search fieldset button[type="button"]:before {
           content: "\E670";
           display: block;
           font-family: anticon !important;
@@ -697,14 +705,6 @@ p {
           font-size: 20px;
           font-weight: 400;
           top: 22px; }
-      .hb-jumbo__search fieldset button[type="button"] {
-        position: absolute;
-        right: 0;
-        border: none;
-        outline: none;
-        background: transparent;
-        color: transparent;
-        top: 18px; }
     .hb-jumbo__search .k-input {
       font-family: "Nunito Sans", sans-serif;
       font-size: 1.125em;

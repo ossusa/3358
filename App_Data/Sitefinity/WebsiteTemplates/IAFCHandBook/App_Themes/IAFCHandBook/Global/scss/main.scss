@@ -739,10 +739,19 @@ p {
       padding: 0;
       margin: 0 auto;
       input[type="text"] {
-        width: inherit;
+        width: inherit !important;
         border: none;
         font-weight: 900;
         font-family: $font_family_7;
+      }
+      button[type="button"] {
+        position: absolute;
+        right: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: $color_13;
+        top: 18px;
         &:before {
           content: "\E670";
           display: block;
@@ -754,15 +763,6 @@ p {
           font-weight: 400;
           top: 22px;
         }
-      }
-      button[type="button"] {
-        position: absolute;
-        right: 0;
-        border: none;
-        outline: none;
-        background: transparent;
-        color: $color_13;
-        top: 18px;
       }
     }
     .k-input {
