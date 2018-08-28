@@ -913,6 +913,7 @@
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookMenuModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookResourceModelModel.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookSearchedResourcesModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookTopicCategoryModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookCommentModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookLikesModel.cs" />
@@ -1285,6 +1286,7 @@
     <Content Include="Mvc\Views\IAFCHBMyHandBookResourceDetails\MyHandBookResourceDetails.cshtml" />
     <Content Include="Mvc\Views\IAFCHBSearch\Search.cshtml" />
     <Content Include="Mvc\Views\IAFCHBSearchResults\SearchResults.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBSearchResults\_SearchResultsDetails.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

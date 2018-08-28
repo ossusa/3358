@@ -1,1 +1,105 @@
-﻿<p> Search Results</p>
+﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookSearchedResourcesModel
+
+<p> Search Results For "<span id="searchTextVal">@Model.SearchText</span>"</p>
+
+<div id="detailsViewID">
+	@Html.Partial("_SearchResultsDetails", Model)
+</div>
+
+<script>
+	$(document).ready(function () {
+
+		bindEdit();
+	});
+
+	function bindEdit() {
+
+		//Add Like
+		$('.addLike').click(function () {
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddLike", "IAFCHBMyHandBookCategoryResources")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceLikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add Dislike
+		$('.addDislike').click(function () {
+
+			var resourceId = $(this).attr('data-id');
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookCategoryResources")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					$("#resourceDislikes_" + resourceId).html(response);
+				}
+			});
+		});
+
+		//Add ToMyHandBook
+		$('.addToMyHandBookBtn').click(function () {
+
+			var resourceId = $(this).attr('data-id');
+			var orderBy = $('#orderByList').val();
+			var searchText = document.getElementById("searchTextVal").innerText;
+			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddToMyHandBook", "IAFCHBMyHandBookCategoryResources")',
+				data: { resourceId: resourceId, searchText: searchText, orderBy: orderBy},				
+				success: function (response) {										
+					$("#detailsViewID").html(response);
+					bindEdit();			
+				}
+			});
+		});
+
+		//mark As Complete
+		$('.markAsCompleteBtn').click(function ()  {
+
+			var resourceId = $(this).attr('data-id');			
+
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookCategoryResources")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {					
+					if (response == true) {
+						$('#markAsComplete_' + resourceId).html('<div class="complete_box anticon anticon-check"></div>Complete');
+					}
+				}
+			});			
+		});
+	}
+
+	function doOrderBy() {
+		var orderBy = $('#orderByList').val();
+		var searchText = document.getElementById("searchTextVal").innerText;
+
+		$.ajax({
+			type: 'POST',
+			cache: false,
+			url: '@Url.Action("OrderBy", "IAFCHBSearchResultsController")',
+			data: { searchText: searchText, orderBy: orderBy  },
+			success: function (response) {
+				$("#detailsViewID").html(response);
+				bindEdit();
+			}
+		});
+	}
+
+</script>

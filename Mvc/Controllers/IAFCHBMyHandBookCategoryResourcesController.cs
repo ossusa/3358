@@ -163,6 +163,6 @@ namespace SitefinityWebApp.Mvc.Controllers
 			var currentDislikes = handBookHelper.AddDislikeForResource(resourceID, "Resource");
 			return currentDislikes;
 		}
-		#endregion AddLikes
+		#endregion Likes
 	}
 }
