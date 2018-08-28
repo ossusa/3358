@@ -677,6 +677,9 @@ p {
     position: relative;
     z-index: 2;
     margin: 34px 0 0 0; }
+    @media screen and (max-width: 767px) {
+      .hb-jumbo__search {
+        margin-top: 44px; } }
     .hb-jumbo__search fieldset {
       position: relative;
       width: 700px;
