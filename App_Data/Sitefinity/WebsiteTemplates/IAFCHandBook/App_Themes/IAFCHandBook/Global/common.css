@@ -2099,8 +2099,9 @@ p {
       -ms-flex-align: flex-start;
       align-items: flex-start; }
   .community__head-btn-select {
-    width: 100%;
-    margin-bottom: 16px; }
+    width: 320px;
+    margin-bottom: 16px;
+    margin: 0 auto; }
   .selectric-community__category-select .selectric {
     width: 100% !important; }
   .community__head-btns-grp {
