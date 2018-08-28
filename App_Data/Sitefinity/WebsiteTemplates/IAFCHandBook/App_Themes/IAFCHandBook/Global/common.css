@@ -682,12 +682,12 @@ p {
       width: 700px;
       padding: 0;
       margin: 0 auto; }
-      .hb-jumbo__search fieldset span {
+      .hb-jumbo__search fieldset input[type="text"] {
         width: inherit;
         border: none;
         font-weight: 900;
         font-family: "Font Awesome 5 Free"; }
-        .hb-jumbo__search fieldset span:before {
+        .hb-jumbo__search fieldset input[type="text"]:before {
           content: "\E670";
           display: block;
           font-family: anticon !important;
