@@ -684,35 +684,35 @@ p {
       margin: 0 auto; }
       .hb-jumbo__search fieldset input[type="text"] {
         width: inherit !important;
-        border: none;
-        font-weight: 900;
-        font-family: "Font Awesome 5 Free"; }
+        border: 1px solid #d8d8d8;
+        font-size: 18px;
+        font-weight: 400;
+        color: #9b9b9b;
+        font-family: "Nunito Sans", sans-serif; }
       .hb-jumbo__search fieldset button[type="button"] {
         position: absolute;
-        right: 0;
+        width: 20px;
+        height: 21px;
+        right: 22px;
         border: none;
         outline: none;
         background: transparent;
         color: transparent;
-        top: 18px; }
+        top: 22px;
+        bottom: 22px;
+        padding: 0; }
         .hb-jumbo__search fieldset button[type="button"]:before {
           content: "\E670";
           display: block;
           font-family: anticon !important;
-          position: absolute;
-          right: 24px;
           color: #9B9B9B;
           font-size: 20px;
-          font-weight: 400;
-          top: 22px; }
+          font-weight: 400; }
     .hb-jumbo__search .k-input {
-      font-family: "Nunito Sans", sans-serif;
       font-size: 1.125em;
       height: 65px;
-      font-weight: normal;
       border-radius: 4px;
-      padding: 0 25px;
-      width: 650px !important; }
+      padding: 0 25px; }
 
 .k-autocomplete.k-state-border-down > .k-i-close {
   display: none; }

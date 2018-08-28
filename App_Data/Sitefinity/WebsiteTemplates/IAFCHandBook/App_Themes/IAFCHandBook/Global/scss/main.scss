@@ -740,39 +740,39 @@ p {
       margin: 0 auto;
       input[type="text"] {
         width: inherit !important;
-        border: none;
-        font-weight: 900;
-        font-family: $font_family_7;
+        border: 1px solid #d8d8d8;
+        font-size: 18px;
+        font-weight: 400;
+        color: #9b9b9b;
+        font-family: $font_family_4;
       }
       button[type="button"] {
         position: absolute;
-        right: 0;
+        width: 20px;
+        height: 21px;
+        right: 22px;
         border: none;
         outline: none;
         background: transparent;
-        color: $color_13;
-        top: 18px;
+        color: transparent;
+        top: 22px;
+        bottom: 22px;
+        padding: 0;
         &:before {
           content: "\E670";
           display: block;
           font-family: $font_family_8 !important;
-          position: absolute;
-          right: 24px;
           color: $color_12;
           font-size: 20px;
           font-weight: 400;
-          top: 22px;
         }
       }
     }
     .k-input {
-      font-family: $font_family_4;
       font-size: 1.125em;
       height: 65px;
-      font-weight: normal;
       border-radius: 4px;
       padding: 0 25px;
-      width: 650px !important;
     }
   }
 }
