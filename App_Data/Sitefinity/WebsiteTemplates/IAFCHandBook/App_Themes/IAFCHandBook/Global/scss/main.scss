@@ -2775,9 +2775,15 @@ p {
     width: 100%;
   }
   .community__head-btn-select {
-    width: 320px;
+    width: 100%;
     margin-bottom: 16px;
-    margin: 0 auto;
+
+  }
+  .complete__progressindicator_wrapper {
+    .community__head-btn-select {
+      margin: 0 auto;
+      width: 320px;
+    }
   }
   .selectric-community__category-select {
     .selectric {
