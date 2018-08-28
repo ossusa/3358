@@ -3371,10 +3371,12 @@ addReplyCommentBtn {
   align-items: center; }
   @media screen and (max-width: 1109px) {
     .handbook__title {
+      padding: 0 90px;
       height: 140px; } }
   @media screen and (max-width: 767px) {
     .handbook__title {
-      height: 100px; } }
+      height: 100px;
+      padding: 0 8.5%; } }
   .handbook__title h1 {
     color: #fff;
     font-family: "Zilla Slab", serif;
