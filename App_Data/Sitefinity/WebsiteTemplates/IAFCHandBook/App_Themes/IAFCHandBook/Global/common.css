@@ -3390,26 +3390,25 @@ addReplyCommentBtn {
         margin: 0 auto;
         font-size: 1.750em; } }
 
-.handbook_container {
-  padding: 0 120px; }
-  @media screen and (max-width: 1109px) {
-    .handbook_container {
-      padding: 0 90px; }
-      .handbook_container .progressindicator_share:nth-child(2) {
-        -ms-flex-pack: center !important;
-        justify-content: center !important; } }
-  @media screen and (max-width: 767px) {
-    .handbook_container {
-      padding: 0 28px; } }
+@media screen and (max-width: 1109px) {
+  .handbook_container {
+    padding: 0 90px; }
+    .handbook_container .progressindicator_share:nth-child(2) {
+      -ms-flex-pack: center !important;
+      justify-content: center !important; } }
 
-.handbook_subcontainer {
+@media screen and (max-width: 767px) {
+  .handbook_container {
+    padding: 0 28px; } }
+
+.handboox_subcontainer {
   max-width: 1200px;
   margin: 0 auto; }
-  @media screen and (max-width: 1109px) {
-    .handbook_subcontainer {
-      width: 588px; } }
+  @media screen and (max-width: 1200px) {
+    .handboox_subcontainer {
+      max-width: 588px; } }
   @media screen and (max-width: 767px) {
-    .handbook_subcontainer {
+    .handboox_subcontainer {
       width: 100%; } }
 
 @media screen and (max-width: 767px) {

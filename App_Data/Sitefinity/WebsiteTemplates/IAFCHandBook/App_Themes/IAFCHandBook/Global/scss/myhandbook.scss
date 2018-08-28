@@ -29,7 +29,7 @@
   }
 }
 .handbook_container{
-  padding: 0 120px;
+  //padding: 0 120px;
   @media screen and (max-width: 1109px){
     padding: 0 90px;
     .progressindicator_share:nth-child(2){
@@ -40,11 +40,11 @@
     padding: 0 28px;
   }
 }
-.handbook_subcontainer{
+.handboox_subcontainer{
   max-width: 1200px;
   margin: 0 auto;
-  @media screen and (max-width: 1109px){
-    width: 588px;
+  @media screen and (max-width: 1200px){
+    max-width: 588px;
   }
   @media screen and (max-width: 767px){
     width: 100%;
