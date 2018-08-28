@@ -2710,7 +2710,8 @@ p {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  -webkit-font-smoothing: antialiased; }
   .single-post-statistic button {
     display: -ms-flexbox;
     display: flex;
