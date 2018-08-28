@@ -118,4 +118,10 @@ $(document).ready(function () {
     $('.markAsCompleteBtn').click(function () {
         $('.complete_box').addClass('anticon anticon-check');
     });
+
+        function doSearch() {
+            var searchStr = document.getElementById("searchText").value;
+            var searchPageUrl = "/iafchandbookhome/search-results/"+searchStr;
+            window.location.href = searchPageUrl;
+        }
 });
