@@ -819,8 +819,8 @@ p {
       width: 100%;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
-      //height: 407px;
-      height: auto;
+      height: 404px;
+      //height: auto;
       background: url(../images/resources-img.png) no-repeat;
       background-size: cover;
       img {
@@ -1344,6 +1344,9 @@ p {
   }
   &__content {
     padding: 0 0 76px;
+    .topics__list{
+      width: 33.3%;
+    }
     &-last {
       margin-bottom: 0 !important;
     }

@@ -745,7 +745,7 @@ p {
       width: 100%;
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
-      height: auto;
+      height: 404px;
       background: url(../images/resources-img.png) no-repeat;
       background-size: cover; }
       .resources__slide-img img {
@@ -1136,6 +1136,8 @@ p {
 
 .topics__content {
   padding: 0 0 76px; }
+  .topics__content .topics__list {
+    width: 33.3%; }
   .topics__content-last {
     margin-bottom: 0 !important; }
   .topics__content a {
