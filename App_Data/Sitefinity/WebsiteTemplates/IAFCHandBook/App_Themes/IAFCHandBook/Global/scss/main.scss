@@ -746,7 +746,6 @@ p {
         color: #9b9b9b;
         font-family: $font_family_4;
       }
-      
       button[type="button"] {
         position: absolute;
         width: 20px;
@@ -766,6 +765,10 @@ p {
           color: $color_12;
           font-size: 20px;
           font-weight: 400;
+        }
+        @media screen and (max-width: 767px){
+          top: 15px;
+          bottom: 15px;
         }
       }
     }
