@@ -58,10 +58,10 @@
                             <div class="header__mob-nav">
                                 <div class="header__mob-box">
                                     <a href="#" class="header__mob-close anticon anticon-menu-unfold"></a>
-                                    <form action="#" class="header__mob-form">
+                                    <div class="header__mob-form">
                                         <input type="search" placeholder="Search" class="header__mob-search">
                                         <button class="header__mob-button" type="submit"></button>
-                                    </form>
+                                    </div>
                                 </div>
                                 <!-- accordion   -->
                                 <ul class="accordion">
