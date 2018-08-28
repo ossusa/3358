@@ -3406,7 +3406,11 @@ addReplyCommentBtn {
       max-width: 588px; }
       .handboox_subcontainer .progressindicator_share:nth-child(2) {
         -ms-flex-pack: center !important;
-        justify-content: center !important; } }
+        justify-content: center !important; }
+      .handboox_subcontainer .progressindicator__wrapper {
+        margin-top: 0;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
   @media screen and (max-width: 767px) {
     .handboox_subcontainer {
       width: 100%; } }

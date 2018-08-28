@@ -45,6 +45,10 @@
     .progressindicator_share:nth-child(2){
       justify-content: center !important;
     }
+    .progressindicator__wrapper{
+      margin-top: 0;
+      flex-direction: column-reverse;
+    }
   }
   @media screen and (max-width: 767px){
     width: 100%;
