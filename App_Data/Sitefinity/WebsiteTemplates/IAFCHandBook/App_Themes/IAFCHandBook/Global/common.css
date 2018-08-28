@@ -815,6 +815,7 @@ p {
       align-items: flex-end;
       cursor: pointer;
       margin-left: 16px;
+      -webkit-font-smoothing: antialiased;
       padding: 0; }
       .resources__slide-btn div {
         font-size: 13px; }
@@ -2740,6 +2741,7 @@ p {
   font-size: 14px;
   letter-spacing: -0.6px;
   color: #9b9b9b;
+  -webkit-font-smoothing: antialiased;
   font-weight: 400; }
   .single-post-comments i {
     margin-right: 5px;

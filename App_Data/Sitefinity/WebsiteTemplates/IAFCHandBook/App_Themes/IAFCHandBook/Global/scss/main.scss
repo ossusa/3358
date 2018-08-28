@@ -906,6 +906,7 @@ p {
       align-items: flex-end;
       cursor: pointer;
       margin-left: 16px;
+      -webkit-font-smoothing: antialiased;
       padding: 0;
       div {
         font-size: 13px;
