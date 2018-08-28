@@ -3392,10 +3392,7 @@ addReplyCommentBtn {
 
 @media screen and (max-width: 1109px) {
   .handbook_container {
-    padding: 0 90px; }
-    .handbook_container .progressindicator_share:nth-child(2) {
-      -ms-flex-pack: center !important;
-      justify-content: center !important; } }
+    padding: 0 90px; } }
 
 @media screen and (max-width: 767px) {
   .handbook_container {
@@ -3406,7 +3403,14 @@ addReplyCommentBtn {
   margin: 0 auto; }
   @media screen and (max-width: 1200px) {
     .handboox_subcontainer {
-      max-width: 588px; } }
+      max-width: 588px; }
+      .handboox_subcontainer .progressindicator_share:nth-child(2) {
+        -ms-flex-pack: center !important;
+        justify-content: center !important; }
+      .handboox_subcontainer .progressindicator__wrapper {
+        margin-top: 0;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; } }
   @media screen and (max-width: 767px) {
     .handboox_subcontainer {
       width: 100%; } }
