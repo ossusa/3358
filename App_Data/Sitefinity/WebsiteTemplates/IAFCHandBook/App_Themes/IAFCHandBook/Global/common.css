@@ -3404,6 +3404,18 @@ addReplyCommentBtn {
   @media screen and (max-width: 1200px) {
     .handboox_subcontainer {
       max-width: 588px; }
+      .handboox_subcontainer .progressindicator_share {
+        height: 54px;
+        border-bottom: 1px solid #D8D8D8;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+        width: 100vw;
+        padding-left: 0 !important;
+        margin-bottom: 48px; }
       .handboox_subcontainer .progressindicator_share:nth-child(2) {
         -ms-flex-pack: center !important;
         justify-content: center !important; }
