@@ -204,19 +204,34 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private List<Guid> topicPersonnelCategories = new List<Guid>();
 		private List<Guid> topicCommunityRelationsCategories = new List<Guid>();
 		Dictionary<Guid, Categories> categoriesDictionaly = new Dictionary<Guid, Categories>();
-
+		private bool isUserAuthorized = false;
 		#endregion Variables
 
 		#region Constructor
 		public IAFCHandBookHelper()
 		{
-
+			isUserAuthorized = IsUserAuthorized();
 			InitCategoriesGuid();
 			InitCategoriesLists();
 			InitCategoryDictionary();
 
 		}
 		#endregion Constructor
+
+		#region IsUserAuthorized
+		private Boolean IsUserAuthorized()
+		{
+			Boolean returnValue = false;
+			var identity = ClaimsManager.GetCurrentIdentity();
+			var currentUserGuid = identity.UserId;
+
+			if (currentUserGuid != Guid.Empty)
+			{
+				returnValue = true;
+			}
+			return returnValue;
+		}
+		#endregion IsUserAuthorized
 
 		#region InitCategories
 
@@ -1740,7 +1755,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			model.Menu.Add(topicMenuItem);
 
-			var isUserSignIn = IsUserSignIn();
+			var isUserSignIn = IsUserAuthorized();
 			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "My HandBook";
 			otherMenuItem.Url = "/iafchandbookhome/my-handbook/";
@@ -1773,16 +1788,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			return model;
 		}
-		private Boolean IsUserSignIn()
-		{
-			Boolean isUserSignIn = false;
-			var identity = ClaimsManager.GetCurrentIdentity();
-			if (identity.UserId != Guid.Empty)
-			{
-				isUserSignIn = true;
-			}
-			return isUserSignIn;
-		}
+	
 		#endregion Menu
 
 		#region GetSearchedResources
@@ -1873,6 +1879,65 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var messageJobId = ns.SendMessage(context, job, contextDictionary);
 		}
 		#endregion SendEmails
+
+		#region FollowCategory
+		public Boolean FollowCategory(Guid categoryId)
+		{
+			Boolean returnData = false;
+			try
+			{
+				var myHandBookItem = GetOrCreateMyHandBook();
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+				
+				
+				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
+				var checkOutHandBook = dynamicModuleManager.Lifecycle.CheckOut(masterHandBook) as DynamicContent;
+
+				checkOutHandBook.Organizer.AddTaxa("Category", categoryId);
+
+				masterHandBook = dynamicModuleManager.Lifecycle.CheckIn(checkOutHandBook) as DynamicContent;
+				dynamicModuleManager.Lifecycle.Publish(masterHandBook);
+				dynamicModuleManager.SaveChanges();
+
+				returnData = true;
+			}
+			catch (Exception e)
+			{
+				log.Error("FollowCategory Error: " + e.Message);
+			}
+			return returnData;
+		}
+
+		#endregion FollowCategory
+
+		#region IsCategoryFollowed
+		public Boolean IsCategoryFollowed(Guid categoryId)
+		{
+
+			Boolean returnData = false;
+			var i = 0;
+			try
+			{
+				var myHandBookItem = GetOrCreateMyHandBook();
+
+				var providerName = String.Empty;
+				var transactionName = "myHandBookTransaction";
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
+
+				var categoryFollowed = myHandBookItem.GetValue<IList<Guid>>("Category").Contains(categoryId);
+								
+				returnData = categoryFollowed;
+			}
+			catch (Exception e)
+			{
+				log.Error("IsResourceAddedToMyHandBook Error: " + e.Message);
+			}
+			return returnData;
+		}
+		#endregion IsCategoryFollowed
 	}
 }
 

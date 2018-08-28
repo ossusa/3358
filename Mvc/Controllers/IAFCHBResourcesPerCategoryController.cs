@@ -96,7 +96,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult FollowCategory(String categoryId)
 		{
 			var id = Guid.Parse(categoryId);
-			Boolean followCategory = true;
+			var followCategory = handBookHelper.FollowCategory(id);			
 			return Json(followCategory);
 		}
 

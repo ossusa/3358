@@ -45,7 +45,7 @@
 			<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 		</div>
 
-		if (item.UserAuthorized)
+		if (item.IsUserAuthorized)
 		{
 			if (item.IsResourceCompleted)
 			{

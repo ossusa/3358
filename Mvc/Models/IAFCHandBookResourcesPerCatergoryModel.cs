@@ -9,6 +9,8 @@ namespace SitefinityWebApp.Mvc.Models
 	public class IAFCHandBookResourcesPerCatergoryModel
 	{
 		public IAFCHandBookTopicCategoryModel Category { get; set; }
+		public bool IsCategoryFollowed { get; set; }
+		public bool IsUserAuthorized { get; set; }
 		public List<IAFCHandBookResourceModel> Resources { get; set; }
 		public List<IAFCHandBookTopicCategoryModel> MoreCategories { get; set; }
 
@@ -20,6 +22,7 @@ namespace SitefinityWebApp.Mvc.Models
 			Category = new IAFCHandBookTopicCategoryModel();
 			MoreCategories = new List<IAFCHandBookTopicCategoryModel>();
 			OrderBy = new List<IAFCHandBookTopicOrderBy>();
+			IsCategoryFollowed = false;
 		}
 
 		

@@ -57,7 +57,7 @@
 
 <div class="resources-single__left_post_comment_textarea">
 
-	@if (Model.UserAuthorized)
+	@if (Model.IsUserAuthorized)
 	{
 		<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
 			<div class="replyAddComment">

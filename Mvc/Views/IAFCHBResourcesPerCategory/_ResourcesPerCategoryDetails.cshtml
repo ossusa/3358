@@ -34,39 +34,43 @@
 							</a>
 							<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					    </div>
-					    <div class="resources__slide-footer">
-							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook" , item.Id.ToString())">
-									<div id="addToMyHandBook">
-										@if (item.IsResourceAddedToMyHandBook == true)
-										{
+						<div class="resources__slide-footer">		
+							@if (item.IsUserAuthorized)
+							{
+							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
+								<div id="addToMyHandBook">
+									@if (item.IsResourceAddedToMyHandBook == true)
+									{
 										<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
-										}
-										else
-										{
-											<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
-										}
-									</div>
+									}
+									else
+									{
+										<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
+									}
 								</div>
-                        <div class="resources-single__left_post_comment_header_right">
-							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
-
-							<div class="single-post-statistic">
-								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
-									<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-									<span>@item.Likes.Likes</span></span>
-								</button>
-
-
-							<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
-								<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-								<span>@item.Likes.Dislikes</span>
-								</span>
-							</button>
 							</div>
+							}
+							<div class="resources-single__left_post_comment_header_right">
+								<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
+
+								<div class="single-post-statistic">
+									<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+										<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+											<span>@item.Likes.Likes</span>
+										</span>
+									</button>
 
 
-                        </div>
-                        </div>
+									<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+										<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+											<span>@item.Likes.Dislikes</span>
+										</span>
+									</button>
+								</div>
+
+
+							</div>
+						</div>
                     </div>
 				</div>
 

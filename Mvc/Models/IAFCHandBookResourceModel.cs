@@ -15,7 +15,7 @@ namespace SitefinityWebApp.Mvc.Models
 			Likes = new IAFCHandBookLikesModel();
 			ResourceDetails = new IAFCHandBookResourceDetailsModel();
 			MoreResources = new List<IAFCHandBookMoreResourcesModel>();
-			UserAuthorized = IsUserAuthorized();			
+			IsUserAuthorized = false;			
 		}
 
 		public IAFCHandBookResourceModel(Guid id, string resourceTitle, DateTime dateCreated)
@@ -29,7 +29,7 @@ namespace SitefinityWebApp.Mvc.Models
 			Likes = new IAFCHandBookLikesModel();
 			ResourceDetails = new IAFCHandBookResourceDetailsModel();
 			MoreResources = new List<IAFCHandBookMoreResourcesModel>();
-			UserAuthorized = IsUserAuthorized();			
+			IsUserAuthorized = false;			
 		}
 
 		public System.Guid Id { get; set; }
@@ -39,24 +39,13 @@ namespace SitefinityWebApp.Mvc.Models
 		public int CommentsAmount { get; set; }
 		public Boolean IsResourceAddedToMyHandBook { get; set; }
 		public Boolean IsResourceCompleted { get; set; }
-		public Boolean UserAuthorized { get; set; }		
+		public Boolean IsUserAuthorized { get; set; }		
 		public List<IAFCHandBookCommentModel> Comments { get; set; }
 		public IAFCHandBookLikesModel Likes { get; set; }	
 		public IAFCHandBookResourceDetailsModel ResourceDetails { get; set; }
 		public List<IAFCHandBookMoreResourcesModel> MoreResources {get;set;}
 		public int MoreThen5Resources { get; set; }
 
-		private Boolean IsUserAuthorized()
-		{
-			Boolean returnValue = false;
-			var identity = ClaimsManager.GetCurrentIdentity();
-			var currentUserGuid = identity.UserId;
-
-			if (currentUserGuid != Guid.Empty)
-			{
-				returnValue = true;
-			}
-			return returnValue;
-		}
+		
 	}
 }

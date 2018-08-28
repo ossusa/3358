@@ -435,6 +435,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 model.Category.ResourcesTotalDuration = totalDuration.ToString();
                 model.Category.ResourcesAmount = resourcesAmount;
                 model.MoreCategories = GetMoreCategories(model.Category.Id);
+				model.IsCategoryFollowed = IsCategoryFollowed(model.Category.Id);
+				model.IsUserAuthorized = isUserAuthorized;
             }
             catch (Exception e)
             {
@@ -512,7 +514,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 var resourceCompleted = IsResourceMarkedAsComplete(handBookResourceModel.Id);
                 handBookResourceModel.IsResourceAddedToMyHandBook = IsResourceAddedToMyHandBook(handBookResourceModel.Id) || resourceCompleted;
                 handBookResourceModel.IsResourceCompleted = resourceCompleted;
-            }
+				handBookResourceModel.IsUserAuthorized = isUserAuthorized;
+
+			}
             catch (Exception e)
             {
                 log.Error($@"{nameof(GetResourceDetailsNext)} Error: {e.Message}");
