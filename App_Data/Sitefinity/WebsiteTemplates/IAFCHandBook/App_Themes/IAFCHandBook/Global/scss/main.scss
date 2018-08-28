@@ -1033,6 +1033,9 @@ p {
       -ms-flex-align: center;
       align-items: center;
       margin-top: 24px;
+      .resources__slide-btn{
+        align-items: center;
+      }
     }
     &-img-box {
       position: relative;
@@ -1350,7 +1353,7 @@ p {
     &-last {
       margin-bottom: 0 !important;
     }
-    
+
     a {
       display: block;
       position: relative;

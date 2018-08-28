@@ -903,6 +903,9 @@ p {
       -ms-flex-align: center;
       align-items: center;
       margin-top: 24px; }
+      .resources__logged-buttons .resources__slide-btn {
+        -ms-flex-align: center;
+        align-items: center; }
     .resources__logged-img-box {
       position: relative;
       width: 384px;
