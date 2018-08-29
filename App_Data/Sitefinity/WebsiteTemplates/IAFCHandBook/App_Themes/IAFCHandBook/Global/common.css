@@ -1703,7 +1703,8 @@ p {
     margin-right: 12px; }
 
 .search-results .breadcrumbs {
-  margin-left: 0; }
+  margin-left: 0;
+  padding: 0 !important; }
 
 .search-results .handbook-title {
   margin-bottom: 16px; }
