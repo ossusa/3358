@@ -1712,6 +1712,24 @@ p {
 .search-results .community__head-btn-select {
   margin-bottom: 36px; }
 
+.placehoolder-background img {
+  width: 100%; }
+
+.placeholder-type img {
+  height: 100%;
+  width: auto; }
+
+.resources-placeholder {
+  position: relative; }
+
+.placeholder-type {
+  position: absolute;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
