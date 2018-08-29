@@ -6,15 +6,15 @@
 	<select class="community__category-select" id="orderByList" onchange="doOrderBy()">
 		@foreach (var orderByItem in Model.OrderBy)
 		{
-			if (orderByItem.Selected)
-			{
-				<option value=@orderByItem.Title selected>@orderByItem.Title</option>
-				{ selectedOrderBy = orderByItem.Title; }
-			}
-			else
-			{
-				<option value=@orderByItem.Title> @orderByItem.Title </option>
-			}
+		if (orderByItem.Selected)
+		{
+		<option value=@orderByItem.Title selected>@orderByItem.Title</option>
+		{ selectedOrderBy = orderByItem.Title; }
+		}
+		else
+		{
+		<option value=@orderByItem.Title> @orderByItem.Title </option>
+		}
 		}
 	</select>
 </div>
@@ -88,11 +88,11 @@
 	</button>
 </div>
 </div>
+</div>
 
 
-		</div>
 { currentCategory = item.ResourceDetails.Category.CategoryTitle; }
 }
-	</div>
+</div>
 </div>
 
