@@ -142,6 +142,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 resDataMaster.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
                 TransactionManager.CommitTransaction(transactionName);
+
+				SendNotification(resDataMaster.Id);
             }
             catch (Exception e)
             {
