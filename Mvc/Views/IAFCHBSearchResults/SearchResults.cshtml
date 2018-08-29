@@ -1,9 +1,14 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookSearchedResourcesModel
 
-<p> Search Results For "<span id="searchTextVal">@Model.SearchText</span>"</p>
+<div class="search-results box">
+	<div class="breadcrumbs">Search</div>
+	<div class="handbook-title">
+		<h1> Search Results For "<span id="searchTextVal">@Model.SearchText</span>"</h1>
+	</div>
 
-<div id="detailsViewID">
-	@Html.Partial("_SearchResultsDetails", Model)
+	<div id="detailsViewID">
+		@Html.Partial("_SearchResultsDetails", Model)
+	</div>
 </div>
 
 <script>

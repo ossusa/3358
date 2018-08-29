@@ -2,7 +2,7 @@
 
 @{string selectedOrderBy = String.Empty; }
 @{string currentCategry = String.Empty; }
-<div>
+<div class="community__head-btn-select">
 	<select class="community__category-select" id="orderByList" onchange="doOrderBy()">
 		@foreach (var orderByItem in Model.OrderBy)
 		{
