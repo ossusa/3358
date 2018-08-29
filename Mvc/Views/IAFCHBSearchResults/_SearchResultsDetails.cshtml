@@ -2,34 +2,33 @@
 
 @{string selectedOrderBy = String.Empty; }
 @{string currentCategry = String.Empty; }
-<div class="search-results">
-	<div class="community__head-btn-select">
-		<select class="community__category-select" id="orderByList" onchange="doOrderBy()">
-			@foreach (var orderByItem in Model.OrderBy)
-			{
+<div class="community__head-btn-select">
+	<select class="community__category-select" id="orderByList" onchange="doOrderBy()">
+		@foreach (var orderByItem in Model.OrderBy)
+		{
 			if (orderByItem.Selected)
 			{
-			<option value=@orderByItem.Title selected>@orderByItem.Title</option>
-			{ selectedOrderBy = orderByItem.Title; }
+				<option value=@orderByItem.Title selected>@orderByItem.Title</option>
+				{ selectedOrderBy = orderByItem.Title; }
 			}
 			else
 			{
-			<option value=@orderByItem.Title> @orderByItem.Title </option>
+				<option value=@orderByItem.Title> @orderByItem.Title </option>
 			}
-			}
-		</select>
-	</div>
+		}
+	</select>
+</div>
 
-	<div>
+<div>
 
-		@foreach (var item in Model.Resources)
-		{
+	@foreach (var item in Model.Resources)
+	{
 		if (selectedOrderBy == "ByTopic")
 		{
-		if (currentCategry != item.ResourceDetails.Category.CategoryTitle)
-		{
-		<div>@item.ResourceDetails.Category.CategoryTitle </div>
-		}
+			if (currentCategry != item.ResourceDetails.Category.CategoryTitle)
+			{
+				<div>@item.ResourceDetails.Category.CategoryTitle </div>
+			}
 		}
 		<div class="resources__community-img">
 			<img src='@item.ResourceDetails.ImageUrl' />
@@ -48,47 +47,46 @@
 
 		if (item.IsUserAuthorized)
 		{
-		if (item.IsResourceCompleted)
-		{
-		<div class="completedResource">
-			<div class="complete_box anticon anticon-check"></div>Complete
-		</div>
+			if (item.IsResourceCompleted)
+			{
+				<div class="completedResource">
+					<div class="complete_box anticon anticon-check"></div>Complete
+				</div>
+			}
+			else if (item.IsResourceAddedToMyHandBook && !item.IsResourceCompleted)
+			{
+				<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
+					<div class="markAsCompleteResource">
+						<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+					</div>
+				</div>
+			}
+			else if (!item.IsResourceAddedToMyHandBook)
+			{
+				<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
+					<div class="addToMyHandBook">
+						<button type="button" class="addToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
+					</div>
+				</div>
+			}
 		}
-		else if (item.IsResourceAddedToMyHandBook && !item.IsResourceCompleted)
-		{
-		<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
-		<div class="markAsCompleteResource">
-			<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+		<div class="resources-single__left_post_comment_header_right">
+			<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+			<div class="single-post-statistic">
+				<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+					<div id="@string.Format("{0}_{1}", "resourceLikes", item.Id.ToString())">
+						<span>@item.Likes.Likes</span>
+					</div>
+				</button>
+				<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+					<div id="@string.Format("{0}_{1}", "resourceDislikes", item.Id.ToString())">
+						<span>@item.Likes.Dislikes</span>
+					</div>
+				</button>
+			</div>
 		</div>
-	</div>
-	}
-	else if (!item.IsResourceAddedToMyHandBook)
-	{
-	<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
-	<div class="addToMyHandBook">
-		<button type="button" class="addToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
-	</div>
-</div>
-}
-}
-<div class="resources-single__left_post_comment_header_right">
-	<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
-	<div class="single-post-statistic">
-		<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
-			<div id="@string.Format("{0}_{1}", "resourceLikes", item.Id.ToString())">
-			<span>@item.Likes.Likes</span>
-	</div>
-	</button>
-	<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
-		<div id="@string.Format("{0}_{1}", "resourceDislikes", item.Id.ToString())">
-		<span>@item.Likes.Dislikes</span>
-</div>
-</button>
-</div>
-</div>
 
-{ currentCategry = item.ResourceDetails.Category.CategoryTitle; }
-}
-</div>
+		{ currentCategry = item.ResourceDetails.Category.CategoryTitle; }
+	}
 </div>
 
