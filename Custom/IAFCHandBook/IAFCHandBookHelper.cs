@@ -984,9 +984,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 			UserProfileManager profileManager = UserProfileManager.GetManager();
 			UserManager userManager = UserManager.GetManager();
-
-
-
+			
 			string commentFieldName = "Comment";
 			if (resourceType == commentResource)
 			{
@@ -1844,39 +1842,36 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetSearchedResources		
 
 		#region SendEmails
-		private void SendEmails()
+		private void SendEmails(List<ISubscriberRequest> subscribers)
 		{
-			var ns = SystemManager.GetNotificationService();
-			var context = new ServiceContext("myNotificationAccount", "MyCustomModule");
-
-			var contextDictionary = new Dictionary<string, string>();
-			contextDictionary.Add("MergeData.Time", DateTime.UtcNow.ToString());
-
-			List<ISubscriberRequest> subscribers = new List<ISubscriberRequest>();
-
-			var subscriber1 = new SubscriberRequestProxy()
+			try
 			{
-				Email = "ivanov@edsson.com",
-				FirstName = "Oleg",
-				LastName = "Ivanov",
-				ResolveKey = "unique-identifier-in-the-specified-context-1"
-			};
+				var ns = SystemManager.GetNotificationService();
+				var context = new ServiceContext("myNotificationAccount", "MyCustomModule");
 
-			subscribers.Add(subscriber1);
+				var contextDictionary = new Dictionary<string, string>();
+				contextDictionary.Add("MergeData.Time", DateTime.UtcNow.ToString());
 
-			var profileName = "OlegProfile"; //Name of an existing profile
-			var subjectTemplate = "Test notification";
-			var bodyTemplate = "Hi {|Subscriber.FirstName|} {|Subscriber.LastName|}, the time is: {|MergeData.Time|}";
-			var tmpl = new MessageTemplateRequestProxy() { Subject = subjectTemplate, BodyHtml = bodyTemplate };
+				var profileName = "IAFCHandBookNotification"; //Name of an existing profile
+				var subjectTemplate = "Test notification";
+				var bodyTemplate = "Hi {|Subscriber.FirstName|} {|Subscriber.LastName|}, the time is: {|MergeData.Time|}";
+				var tmpl = new MessageTemplateRequestProxy() { Subject = subjectTemplate, BodyHtml = bodyTemplate };
 
-			IMessageJobRequest job = new MessageJobRequestProxy()
+				IMessageJobRequest job = new MessageJobRequestProxy()
+				{
+					MessageTemplate = tmpl,
+					Subscribers = subscribers,
+					SenderProfileName = profileName
+				};
+
+				var messageJobId = ns.SendMessage(context, job, contextDictionary);
+								
+			}
+			catch(Exception e)
 			{
-				MessageTemplate = tmpl,
-				Subscribers = subscribers,
-				SenderProfileName = profileName
-			};
+				log.Error("Sent Email Error:" + e.Message);
+			}
 
-			var messageJobId = ns.SendMessage(context, job, contextDictionary);
 		}
 		#endregion SendEmails
 
@@ -1938,6 +1933,71 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return returnData;
 		}
 		#endregion IsCategoryFollowed
+
+		private void SendNotification(Guid resourceId)
+		{
+			try
+			{
+				var myHandBookItem = GetOrCreateMyHandBook();
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				UserManager userManager = UserManager.GetManager();
+				UserProfileManager profileManager = UserProfileManager.GetManager();
+				List<ISubscriberRequest> subscribers = new List<ISubscriberRequest>();
+				var resourceCategory = dynamicModuleManager.GetDataItems(handBookResourcesType)
+					.Where(d => d.Id == resourceId)
+					.ToArray()
+					.Select(r => r.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c)).First())
+					.First();
+
+				var handBookList = dynamicModuleManager.GetDataItems(myHandBookType)
+					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+					.ToArray()
+					.Where(h=> h.GetValue<IList<Guid>>("Category").Contains(resourceCategory))					
+					.ToArray();
+
+				var users = userManager.GetUsers(); 
+				foreach (var handBook in handBookList)
+				{
+					var userId = handBook.GetValue<Guid>("UserId");
+					User user = userManager.GetUser(userId);
+
+					var profile = profileManager.GetUserProfile<SitefinityProfile>(user);
+					var key = String.Empty;
+					var firstName = String.Empty;
+					var lastName = String.Empty;
+					var email = String.Empty;
+					if (profile != null)
+					{
+						
+						email = profile.User.Email;
+						firstName = profile.FirstName;
+						lastName = profile.LastName;
+						key = profile.GetKey();
+					}
+					else
+					{
+						firstName = user.FirstName;
+						lastName = user.LastName;
+						email = user.Email;														
+					}
+					var subscriber = new SubscriberRequestProxy()
+					{
+						Email = email,
+						FirstName = firstName,
+						LastName = lastName,
+						ResolveKey = userId.ToString()
+					};
+					subscribers.Add(subscriber);										
+				}
+
+				SendEmails(subscribers);
+			}
+			catch (Exception e)
+			{
+				log.Error("Send Notification Error: " + e.Message);
+			}
+		}
 	}
 }
 
