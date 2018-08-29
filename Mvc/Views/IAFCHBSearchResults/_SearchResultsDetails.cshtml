@@ -32,37 +32,38 @@
 		<div>@item.ResourceDetails.Category.CategoryTitle </div>
 		}
 		}
-		<div class="resources__community-img">
-			<img src='@item.ResourceDetails.ImageUrl' />
-			<div class="resources__slide-time">
-				<div class="resources--time">&nbsp;</div>
-				@item.ResourceDetails.DurationStr
+		<div>
+			<div class="resources__community-img">
+				<img src='@item.ResourceDetails.ImageUrl' />
+				<div class="resources__slide-time">
+					<div class="resources--time">&nbsp;</div>
+					@item.ResourceDetails.DurationStr
+				</div>
+			</div>
+			<div class="resources__slide-box">
+				<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+				<a href='@item.ResourceUrl'>
+					<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+				</a>
+				<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+			</div>
+
+
+			if (item.IsUserAuthorized)
+			{
+			if (item.IsResourceCompleted)
+			{
+			<div class="completedResource">
+				<div class="complete_box anticon anticon-check"></div>Complete
+			</div>
+			}
+			else if (item.IsResourceAddedToMyHandBook && !item.IsResourceCompleted)
+			{
+			<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
+			<div class="markAsCompleteResource">
+				<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
 			</div>
 		</div>
-		<div class="resources__slide-box">
-			<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-			<a href='@item.ResourceUrl'>
-				<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
-			</a>
-			<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
-		</div>
-
-
-		if (item.IsUserAuthorized)
-		{
-		if (item.IsResourceCompleted)
-		{
-		<div class="completedResource">
-			<div class="complete_box anticon anticon-check"></div>Complete
-		</div>
-		}
-		else if (item.IsResourceAddedToMyHandBook && !item.IsResourceCompleted)
-		{
-		<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
-		<div class="markAsCompleteResource">
-			<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
-		</div>
-	</div>
 	}
 	else if (!item.IsResourceAddedToMyHandBook)
 	{
@@ -88,6 +89,7 @@
 </button>
 </div>
 </div>
+		</div>
 
 { currentCategry = item.ResourceDetails.Category.CategoryTitle; }
 }
