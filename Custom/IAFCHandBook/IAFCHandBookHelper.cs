@@ -1725,7 +1725,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion MyHandBook
 
 		#region Menu
-		public IAFCHandBookMyHandBookMenuModel GetMenu()
+		public IAFCHandBookMyHandBookMenuModel GetMenu(String urlPath)
 		{
 			IAFCHandBookMyHandBookMenuModel model = new IAFCHandBookMyHandBookMenuModel();
 			var topicMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
@@ -1764,23 +1764,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			otherMenuItem.Title = "Account";
 			otherMenuItem.Url = "/iafchandbookhome/account/";
 			otherMenuItem.Visible = isUserSignIn;
-			model.Menu.Add(otherMenuItem);
-
-			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "Search";
-			otherMenuItem.Url = "/iafchandbookhome/search/";
-			otherMenuItem.Visible = true;
-			model.Menu.Add(otherMenuItem);
+			model.Menu.Add(otherMenuItem);			
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "SignIn";
-			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/";
+			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl="+ urlPath;
 			otherMenuItem.Visible = !isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "LogOut";
-			otherMenuItem.Url = "/Mxg/AuthService/SignOut";
+			otherMenuItem.Url = "/Mxg/AuthService/SignOut/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 

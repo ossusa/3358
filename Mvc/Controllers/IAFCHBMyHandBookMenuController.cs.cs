@@ -15,7 +15,9 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 		public ActionResult Index(String userid)
 		{
-			var model = handBookHelper.GetMenu();
+			var url = System.Web.HttpContext.Current.Request.Url;
+			var urlPath = url.AbsoluteUri;
+			var model = handBookHelper.GetMenu(urlPath);
 			return View("MyHandBookMenu",model);
 		}
 	}
