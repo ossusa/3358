@@ -4,32 +4,31 @@
 	<ul>
 		@foreach (var menuItem in Model.Menu)
 		{
-			if (menuItem.Visible)
+		if (menuItem.Visible)
+		{
+		<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+			@if (menuItem.ChildMenuItem.Any())
 			{
-				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a> </li>
-				if (menuItem.ChildMenuItem.Any())
-				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
-				@if (menuItem.ChildMenuItem.Any())
+
+			<ul>
+				@foreach (var childItem in menuItem.ChildMenuItem)
 				{
-					<div>
-						<ul>
-							@foreach (var childItem in menuItem.ChildMenuItem)
-							{
-								<li><a href="@childItem.Url"> <span>@childItem.Title</span></a></li>
-								if (childItem.ChildMenuItem.Any())
-								{
-									<ul>
-										@foreach (var childChildItem in childItem.ChildMenuItem)
-										{
-											<li><a href="@childChildItem.Url"> <span>@childChildItem.Title</span></a></li>
-										}
-									</ul>
-								}
-							}
-						</ul>
-					</div>
+				<li><a href="@childItem.Url"> <span>@childItem.Title</span></a></li>
+				if (childItem.ChildMenuItem.Any())
+				{
+				<ul>
+					@foreach (var childChildItem in childItem.ChildMenuItem)
+					{
+					<li><a href="@childChildItem.Url"> <span>@childChildItem.Title</span></a></li>
+					}
+				</ul>
 				}
+				}
+			</ul>
+
 			}
+		</li>
+		}
 		}
 	</ul>
 </div>
