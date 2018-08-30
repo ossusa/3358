@@ -13,9 +13,10 @@
 			<ul class="header__sublist">
 				@foreach (var childItem in menuItem.ChildMenuItem)
 				{
-				<li class="header__sublist"><a class="header__sublist-link" href="@childItem.Url"> <span>@childItem.Title</span></a></li>
 				if (childItem.ChildMenuItem.Any())
 				{
+				<li class="header__sublist"><a class="header__sublist-link" href="@childItem.Url"> <span>@childItem.Title</span></a>
+
 				<ul>
 					@foreach (var childChildItem in childItem.ChildMenuItem)
 					{
@@ -23,6 +24,7 @@
 					}
 				</ul>
 				}
+				</li>
 				}
 			</ul>
 
