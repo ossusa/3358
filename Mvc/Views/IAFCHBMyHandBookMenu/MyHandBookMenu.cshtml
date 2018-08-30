@@ -6,10 +6,10 @@
 		{
 			if (menuItem.Visible)
 			{
-				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a> </li>
 				if (menuItem.ChildMenuItem.Any())
 				{
-					
+					<div>
 						<ul>
 							@foreach (var childItem in menuItem.ChildMenuItem)
 							{
@@ -25,9 +25,8 @@
 								}
 							}
 						</ul>
-
+					</div>
 				}
-				</li>
 			}
 		}
 	</ul>
