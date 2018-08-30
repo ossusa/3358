@@ -13,7 +13,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 	{
 		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
 
-		public ActionResult Index(String userid)
+		[RelativeRoute("{relativeUrl?}")]
+		public ActionResult Index()
 		{
 			var url = System.Web.HttpContext.Current.Request.Url;
 			var urlPath = url.AbsoluteUri;
