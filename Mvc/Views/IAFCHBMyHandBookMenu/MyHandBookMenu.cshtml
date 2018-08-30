@@ -8,6 +8,8 @@
 			{
 				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a> </li>
 				if (menuItem.ChildMenuItem.Any())
+				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+				@if (menuItem.ChildMenuItem.Any())
 				{
 					<div>
 						<ul>
