@@ -1,16 +1,23 @@
-﻿
-<!--<div class="hb-jumbo__search">-->
-	<!--<input type="text" id="searchText" size="40" />-->
-	<!--<button type="button" class="searchBtn" onclick="doSearch()"> Search </button>-->
-<!--</div>-->
-
+﻿<div class='hb-jumbo'>
+	<h1 class="hb-jumbo__title">IAFC Handnook</h1>
+	<h5 class="hb-jumbo__desc">
+		Lorem ipsum dolor sit amet, consectetur adipiscing <br />
+		elit. Ut pretium tempor. Ut eget imp.
+	</h5>
+	<div class="hb-jumbo__search">
+		<fieldset>
+			<input type="text" id="searchText" class="k-input" />
+			<button type="button" class="searchBtn" onclick="doSearch()"></button>
+		</fieldset>
+	</div>
+</div>
 
 <script type="text/javascript">
 
-    function doSearch() {
-        var searchStr = document.getElementById("searchText").value;
-        var searchPageUrl = "/iafchandbookhome/search-results/"+searchStr;
-        window.location.href = searchPageUrl;
-    }
+	function doSearch() {
+		var searchStr = document.getElementById("searchText").value;
+		var searchPageUrl = "/iafchandbookhome/search-results/" + searchStr;
+		window.location.href = searchPageUrl;
+	}
 
 </script>

@@ -131,29 +131,30 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#region Urls
 		//Urls
-		private const string TopicCommynityUrl = "/iafchandbookhome/topics/community";
-		private const string TopicCommynityCrisisCommunicationUrl = "/iafchandbookhome/topics/community/crisis-communication";
-		private const string TopicCommynityCustomerServiceUrl = "/iafchandbookhome/topics/community/customer-service";
-		private const string TopicCommynityMarketingAndMediaUrl = "/iafchandbookhome/topics/community/marketing-and-media";
-		private const string TopicCommynityPoliticsUrl = "/iafchandbookhome/topics/community/politics";
-		private const string TopicLeadershipUrl = "/iafchandbookhome/topics/leadership";
-		private const string TopicLeadershipEthicsUrl = "/iafchandbookhome/topics/leadership/ethics";
-		private const string TopicLeadershipGenerationalDifferencesUrl = "/iafchandbookhome/topics/leadership/generational-differences";
-		private const string TopicLeadershipLeadershipStylesUrl = "/iafchandbookhome/topics/leadership/leadership-styles";
-		private const string TopicLeadershipMotivatingPeopleUrl = "/iafchandbookhome/topics/leadership/motivating-people";
-		private const string TopicLeadershipStrategyUrl = "/iafchandbookhome/topics/leadership/strategy";
-		private const string TopicFinanceUrl = "/iafchandbookhome/topics/finance";
-		private const string TopicFinanceBudgetingUrl = "/iafchandbookhome/topics/finance/budgeting";
-		private const string TopicFinanceFundraisingUrl = "/iafchandbookhome/topics/finance/fundraising";
-		private const string TopicFinanceLegalIssuesUrl = "/iafchandbookhome/topics/finance/legal-issues";
-		private const string TopicPersonnelUrl = "/iafchandbookhome/topics/personnel";
-		private const string TopicPersonnelInsuranceUrl = "/iafchandbookhome/topics/personnel/insurance";
-		private const string TopicPersonnelLegalIssuesUrl = "/iafchandbookhome/topics/personnel/legal-issues";
-		private const string TopicPersonnelRecruitmentUrl = "/iafchandbookhome/topics/personnel/recruitment";
-		private const string TopicPersonnelRetentionUrl = "/iafchandbookhome/topics/personnel/retention";
-		private const string TopicPersonnelVolunteerCareerRelationsUrl = "/iafchandbookhome/topics/personnel/volunteer-career-relations";
+		private const string MainPage = "/iafchandbookhome";
+		private const string TopicCommynityUrl = MainPage+"/topics/community";
+		private const string TopicCommynityCrisisCommunicationUrl = MainPage+"/topics/community/crisis-communication";
+		private const string TopicCommynityCustomerServiceUrl = MainPage + "/topics/community/customer-service";
+		private const string TopicCommynityMarketingAndMediaUrl = MainPage + "/topics/community/marketing-and-media";
+		private const string TopicCommynityPoliticsUrl = MainPage + "/topics/community/politics";
+		private const string TopicLeadershipUrl = MainPage + "/topics/leadership";
+		private const string TopicLeadershipEthicsUrl = MainPage + "/topics/leadership/ethics";
+		private const string TopicLeadershipGenerationalDifferencesUrl = MainPage + "/topics/leadership/generational-differences";
+		private const string TopicLeadershipLeadershipStylesUrl = MainPage + "/topics/leadership/leadership-styles";
+		private const string TopicLeadershipMotivatingPeopleUrl = MainPage + "/topics/leadership/motivating-people";
+		private const string TopicLeadershipStrategyUrl = MainPage + "/topics/leadership/strategy";
+		private const string TopicFinanceUrl = MainPage + "/topics/finance";
+		private const string TopicFinanceBudgetingUrl = MainPage + "/topics/finance/budgeting";
+		private const string TopicFinanceFundraisingUrl = MainPage + "/topics/finance/fundraising";
+		private const string TopicFinanceLegalIssuesUrl = MainPage + "/topics/finance/legal-issues";
+		private const string TopicPersonnelUrl = MainPage + "/topics/personnel";
+		private const string TopicPersonnelInsuranceUrl = MainPage + "/topics/personnel/insurance";
+		private const string TopicPersonnelLegalIssuesUrl = MainPage + "/topics/personnel/legal-issues";
+		private const string TopicPersonnelRecruitmentUrl = MainPage + "/topics/personnel/recruitment";
+		private const string TopicPersonnelRetentionUrl = MainPage + "/topics/personnel/retention";
+		private const string TopicPersonnelVolunteerCareerRelationsUrl = MainPage + "/topics/personnel/volunteer-career-relations";
 
-		private const string ResourceDetailsUrl = "/iafchandbookhome/iafcresourcedetails/";
+		private const string ResourceDetailsUrl = MainPage + "/iafcresourcedetails/";
 
 		private const string TopicCommynityImageUrl = "/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/community-multiply.svg";
 		private const string TopicLeadershipImageUrl = "/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/leadership-multiply.svg";
@@ -1756,13 +1757,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var isUserSignIn = IsUserAuthorized();
 			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "My HandBook";
-			otherMenuItem.Url = "/iafchandbookhome/my-handbook/";
+			otherMenuItem.Url = MainPage+"/my-handbook/";
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "Account";
-			otherMenuItem.Url = "/iafchandbookhome/account/";
+			otherMenuItem.Url = MainPage + "/account/";
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);			
 
