@@ -37,8 +37,6 @@
       font-size: 1.00em;
       z-index: 1000;
       padding: 8px 20px 8px !important;
-      -webkit-transition: .1s ease-in-out;
-      -o-transition: .1s ease-in-out;
       transition: .3s ease-in-out;
       &:hover {
         //text-shadow: 1px 0 #2B4B6B;
@@ -54,6 +52,13 @@
         //text-shadow: 1px 0 #2B4B6B;
         color: $color_blue;
         font-weight: bold;
+      }
+      &:nth-of-type(1){
+        &:after {
+          content: "\E61D";
+          display: block;
+          font-family: $font_family_8 !important;
+        }
       }
     }
   }
