@@ -9,7 +9,7 @@
 				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
 				if (menuItem.ChildMenuItem.Any())
 				{
-
+					
 						<ul>
 							@foreach (var childItem in menuItem.ChildMenuItem)
 							{
@@ -26,8 +26,8 @@
 							}
 						</ul>
 
-				</li>
 				}
+				</li>
 			}
 		}
 	</ul>
