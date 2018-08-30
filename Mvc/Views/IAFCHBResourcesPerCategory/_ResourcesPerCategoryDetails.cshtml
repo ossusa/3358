@@ -12,20 +12,38 @@
 			}
 
 				<div class="resources__slide">
-<div class="resources__community-img">
-							<img src='@item.ResourceDetails.ImageUrl'  />
-  <div class="resources__community-label">
-  <a href="@item.ResourceDetails.Category.ParentCategoryUrl">
-  <span>@item.ResourceDetails.Category.ParentCategoryTitle</span></a>
-              <a href="@item.ResourceDetails.Category.CategoryUrl">
-               <span>@item.ResourceDetails.Category.CategoryTitle</span>
+					<div class="resources__community-img">						
+						@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+						{
+							<img src='@item.ResourceDetails.ImageUrl' />
+						}
+						else
+						{
+							<div class="resources-placeholder">
+								<div class="placehoolder-background">
+									<img src="@item.ResourceDetails.ImagePlaceholderUrl">
+								</div>
+								@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+								{
+									<div class="placeholder-type">
+										<img src="@item.ResourceDetails.ImageSvgUrl" alt="">
+									</div>
+								}
+							</div>
+						}
+						<div class="resources__community-label">
+							<a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+								<span>@item.ResourceDetails.Category.ParentCategoryTitle</span>
 							</a>
-    </div>
-     <div class="resources__slide-time">
-    <div class="resources--time">&nbsp;</div>
-       @item.ResourceDetails.DurationStr
-    </div>
-</div>
+							<a href="@item.ResourceDetails.Category.CategoryUrl">
+								<span>@item.ResourceDetails.Category.CategoryTitle</span>
+							</a>
+						</div>
+						<div class="resources__slide-time">
+							<div class="resources--time">&nbsp;</div>
+							@item.ResourceDetails.DurationStr
+						</div>
+					</div>
                     <div class="resources__slide-info resources__community-slide-info">
                         <div class="resources__slide-box">
 							<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
