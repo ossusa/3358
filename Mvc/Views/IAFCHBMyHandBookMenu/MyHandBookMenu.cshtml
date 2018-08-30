@@ -1,34 +1,36 @@
 ﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookMenuModel
 
-<div>
-	<ul>
+<div class="header__nav">
+	<ul class="header__ul">
 		@foreach (var menuItem in Model.Menu)
 		{
-			if (menuItem.Visible)
+		if (menuItem.Visible)
+		{
+		<li class="header__list"><a class="header__list-link" href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+			@if (menuItem.ChildMenuItem.Any())
 			{
-				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
-				@if (menuItem.ChildMenuItem.Any())
-				{
-					
-						<ul>
-							@foreach (var childItem in menuItem.ChildMenuItem)
-							{
-								<li><a href="@childItem.Url"> <span>@childItem.Title</span></a></li>
-								if (childItem.ChildMenuItem.Any())
-								{
-									<ul>
-										@foreach (var childChildItem in childItem.ChildMenuItem)
-										{
-											<li><a href="@childChildItem.Url"> <span>@childChildItem.Title</span></a></li>
-										}
-									</ul>
-								}
-							}
-						</ul>
 
-				}
+			<ul class="header__sublist">
+				@foreach (var childItem in menuItem.ChildMenuItem)
+				{
+				if (childItem.ChildMenuItem.Any())
+				{
+				<li class="header__sublist"><a class="header__sublist-link" href="@childItem.Url"> <span>@childItem.Title</span></a>
+
+				<ul>
+					@foreach (var childChildItem in childItem.ChildMenuItem)
+					{
+					<li><a href="@childChildItem.Url"> <span>@childChildItem.Title</span></a></li>
+					}
+				</ul>
 				</li>
+				}
+				}
+			</ul>
+
 			}
+		</li>
+		}
 		}
 	</ul>
 </div>
