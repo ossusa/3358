@@ -1934,6 +1934,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 		#endregion IsCategoryFollowed
 
+		#region SendNotification
 		private void SendNotification(Guid resourceId)
 		{
 			try
@@ -1998,6 +1999,83 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				log.Error("Send Notification Error: " + e.Message);
 			}
 		}
+		#endregion SendNotification
+
+		#region GetAccount
+		public IAFCHandBookAccount GetAccount()
+		{
+			IAFCHandBookAccount model = new IAFCHandBookAccount();
+
+			var myHandBookItem = GetOrCreateMyHandBook();
+			model.WeeklyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("WeeklyUpdates"));
+			model.MonthlyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("MonthlyUpdates"));
+
+			var foollowedCategories = myHandBookItem.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c));
+
+			foreach (var categoryId in foollowedCategories)
+			{				
+				var category = new IAFCHandBookTopicCategoryModel();
+				var topicCategoryDetails = GetTopicCategories(categoryId);
+
+				category.Id = categoryId;				
+				category.CategoryTitle = topicCategoryDetails.ResourceCategoryTile;
+				category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;				
+
+				model.FollowedCategories.Add(category);
+			}
+
+			return model;
+		}
+		#endregion GetAccount
+
+		#region WeeklyUpdates
+		public void WeeklyUpdates(bool value)
+		{
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			var myHandBookItem = GetOrCreateMyHandBook();
+			var masterHandBookItem = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
+			DynamicContent checkOutHandBookItem = dynamicModuleManager.Lifecycle.CheckOut(masterHandBookItem) as DynamicContent;
+			checkOutHandBookItem.SetValue("WeeklyUpdates", value);
+			ILifecycleDataItem checkInHandBookItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutHandBookItem);
+			dynamicModuleManager.Lifecycle.Publish(checkInHandBookItem);
+			dynamicModuleManager.SaveChanges();
+		}
+		#endregion WeeklyUpdates
+
+		#region MonthlyUpdates
+		public void MonthlyUpdates(bool value)
+		{
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			var myHandBookItem = GetOrCreateMyHandBook();
+			var masterHandBookItem = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
+			DynamicContent checkOutHandBookItem = dynamicModuleManager.Lifecycle.CheckOut(masterHandBookItem) as DynamicContent;
+			checkOutHandBookItem.SetValue("MonthlyUpdates", value);
+			ILifecycleDataItem checkInHandBookItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutHandBookItem);
+			dynamicModuleManager.Lifecycle.Publish(checkInHandBookItem);
+			dynamicModuleManager.SaveChanges();
+		}
+		#endregion MonthlyUpdates
+
+		#region Unfollow
+		public void Unfollow(Guid categoryId)
+		{
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			var myHandBookItem = GetOrCreateMyHandBook();
+			var categories = myHandBookItem.GetValue<TrackedList<Guid>>("Category")
+				.ToArray()
+				.Where(c=>c!=categoryId)
+				.ToArray();
+			
+			var masterHandBookItem = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
+			DynamicContent checkOutHandBookItem = dynamicModuleManager.Lifecycle.CheckOut(masterHandBookItem) as DynamicContent;
+			checkOutHandBookItem.Organizer.Clear("Category");
+			checkOutHandBookItem.Organizer.AddTaxa("Category", categories);
+			ILifecycleDataItem checkInHandBookItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutHandBookItem);
+			dynamicModuleManager.Lifecycle.Publish(checkInHandBookItem);
+			dynamicModuleManager.SaveChanges();
+		}
+		#endregion Unfollow
+
 	}
 }
 

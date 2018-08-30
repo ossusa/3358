@@ -1,0 +1,68 @@
+﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookAccount
+
+<p>My Account</p>
+<p>Login Information</p>
+<div>Email Digest</div>
+<div>A summary of all the latest resources from the topics you follow:</div>
+<div>	
+	<input id="WeeklyUpdates" type="checkbox" value="@Model.WeeklyUpdates"  @(Model.WeeklyUpdates ? "checked=\"checked\"" : "")/> Weekly Updates	
+	<input id="MonthlyUpdates" type="checkbox" value="@Model.MonthlyUpdates" @(Model.MonthlyUpdates ? "checked=\"checked\"" : "")/>  Monthly Updates
+</div>
+<div id="followedCategoriesViewID">
+	@Html.Partial("_FollowedCategories", Model.FollowedCategories)
+</div>
+<script>
+
+	$(document).ready(function () {
+	
+		bindEdit();
+	});
+
+	function bindEdit() {
+
+		//WeeklyUpdates
+		$('#WeeklyUpdates').change(function () {
+			var checkBoxItemValue = $(this).is(':checked');
+			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("WeeklyUpdates", "IAFCHBAccountController")',
+				data: { value: checkBoxItemValue }
+				
+			});
+		});
+
+	
+		//MonthlyUpdates
+		$('#MonthlyUpdates').change(function () {
+			var checkBoxItemValue = $(this).is(':checked');
+			
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("MonthlyUpdates", "IAFCHBAccountController")',
+				data: { value: checkBoxItemValue }				
+			});
+		});
+
+		//Unfollow
+		$('.unfollowBtn').click(function () {
+			var categoryId = $(this).attr('data-id');
+						
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Unfollow", "IAFCHBMyHandBookCategoryResources")',
+				data: { categoryId: categoryId},				
+				success: function (response) {										
+					$("#followedCategoriesViewID").html(response);
+					bindEdit();			
+				}
+			});
+		});
+
+	}
+	
+
+</script>
