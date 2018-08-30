@@ -2490,6 +2490,29 @@ p {
     padding: 8px 0; }
     .header__logo img {
       margin-left: -19px; }
+  .header__ul {
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .header__list-link {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400 !important;
+    color: #666666;
+    font-size: 1.00em;
+    z-index: 1000;
+    padding: 8px 20px 8px !important;
+    transition: .3s ease-in-out; }
+    .header__list-link:hover {
+      color: #2B4B6B;
+      font-weight: bold !important; }
+    .header__list-link:focus {
+      color: #2B4B6B;
+      font-weight: bold; }
+    .header__list-link:active {
+      color: #2B4B6B;
+      font-weight: bold; }
   .header__nav > ul > li > div > ul > li > a {
     display: -ms-flexbox !important;
     display: flex !important;
