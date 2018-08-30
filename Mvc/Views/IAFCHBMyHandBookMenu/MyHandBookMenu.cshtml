@@ -1,19 +1,19 @@
 ﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookMenuModel
 
 <div class="header__nav">
-	<ul>
+	<ul class="header__ul">
 		@foreach (var menuItem in Model.Menu)
 		{
 		if (menuItem.Visible)
 		{
-		<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+		<li class="header__list"><a class="header__list-link" href="@menuItem.Url"> <span>@menuItem.Title</span></a>
 			@if (menuItem.ChildMenuItem.Any())
 			{
 
-			<ul>
+			<ul class="header__sublist">
 				@foreach (var childItem in menuItem.ChildMenuItem)
 				{
-				<li><a href="@childItem.Url"> <span>@childItem.Title</span></a></li>
+				<li class="header__sublist"><a class="header__sublist-link" href="@childItem.Url"> <span>@childItem.Title</span></a></li>
 				if (childItem.ChildMenuItem.Any())
 				{
 				<ul>

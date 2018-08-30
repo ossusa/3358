@@ -2490,8 +2490,6 @@ p {
     padding: 8px 0; }
     .header__logo img {
       margin-left: -19px; }
-  .header__nav > ul > li:nth-of-type(5) > a {
-    padding-right: 0 !important; }
   .header__nav > ul > li > div > ul > li > a {
     display: -ms-flexbox !important;
     display: flex !important;
