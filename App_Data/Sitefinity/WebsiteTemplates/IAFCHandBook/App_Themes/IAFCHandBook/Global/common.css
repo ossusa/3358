@@ -2513,10 +2513,10 @@ p {
     .header__list-link:active {
       color: #2B4B6B;
       font-weight: bold; }
-    .header__list-link:nth-of-type(1):after {
-      content: "\E61D";
-      display: block;
-      font-family: anticon !important; }
+  .header__list:nth-of-type(1) a:after {
+    content: "\E61D";
+    display: block;
+    font-family: anticon !important; }
   .header__nav > ul > li > div > ul > li > a {
     display: -ms-flexbox !important;
     display: flex !important;
