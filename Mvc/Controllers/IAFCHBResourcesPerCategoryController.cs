@@ -102,8 +102,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 			}
 
 			var model = GetData(orderByItem);
-			var view = View("ResourcesPerCategory", model);
-			return view;
+			return PartialView("_ResourcesPerCategoryDetails", model.Resources);
+			
 		}
 	
 
