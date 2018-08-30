@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Web.Mvc;
 using Telerik.Sitefinity.Mvc;
-
+using Telerik.Sitefinity.Mvc.ActionFilters;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -84,7 +84,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return Json(addToMyHandBook);
 		}
 
-		[RelativeRoute("AddAllToMyHandBook"), HttpPost]
+		[RelativeRoute("AddAllToMyHandBook"), HttpPost, StandaloneResponseFilter]
 		public ActionResult AddAllToMyHandBook(String categoryId, string orderby)
 		{
 			var id = Guid.Parse(categoryId);
