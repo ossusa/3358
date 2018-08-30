@@ -7,7 +7,7 @@
 			if (menuItem.Visible)
 			{
 				<li><a href="@menuItem.Url"> <span>@menuItem.Title</span></a>
-				if (menuItem.ChildMenuItem.Any())
+				@if (menuItem.ChildMenuItem.Any())
 				{
 					
 						<ul>
