@@ -2513,7 +2513,7 @@ p {
     .header__list-link:active {
       color: #2B4B6B;
       font-weight: bold; }
-  .header__list:nth-of-type(1) a:after {
+  .header__list:nth-of-type(1) .header__list-link:after {
     content: "\E61D";
     display: block;
     font-family: anticon !important; }
