@@ -121,17 +121,17 @@
 		$('.addAllToMyHandBook').click(function () {
 
 			var categoryId = $(this).attr('data-id');
+			var orderByValue = $('#UrlOrderByList option:selected').text();
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddAllToMyHandBook", "IAFCHBResourcesPerCategory")',
-				data: { categoryId: categoryId },
-				dataType: "json",
+				data: { categoryId: categoryId, orderBy: orderByValue},				
 				success: function (response) {
-					if (response == true) {
-						$("#addAllToMyHandBook").html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
-					}
+					$("#addAllToMyHandBook").html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+					$("#partViewID").html(response);
+					bindEdit();
 				}
 			});
 		});

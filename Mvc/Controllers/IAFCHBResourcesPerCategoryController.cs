@@ -85,12 +85,27 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 		[RelativeRoute("AddAllToMyHandBook"), HttpPost]
-		public ActionResult AddAllToMyHandBook(String categoryId)
+		public ActionResult AddAllToMyHandBook(String categoryId, string orderby)
 		{
 			var id = Guid.Parse(categoryId);
-			Boolean addAllToMyHandBook = true;
-			return Json(addAllToMyHandBook);
+			handBookHelper.AddAllToMyHandBook( id);
+
+			string orderByItem = "MostPopular";
+			if (orderby != null && (
+				orderby == "MostPopular" ||
+				orderby == "MostRecent" ||
+				orderby == "AlphabeticalAZ" ||
+				orderby == "AlphabeticalZA"))
+			{
+
+				orderByItem = orderby;
+			}
+
+			var model = GetData(orderByItem);
+			var view = View("ResourcesPerCategory", model);
+			return view;
 		}
+	
 
 		[RelativeRoute("FollowCategory"), HttpPost]
 		public ActionResult FollowCategory(String categoryId)

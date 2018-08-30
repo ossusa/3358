@@ -1541,6 +1541,47 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#endregion AddToMyHandBook
 
+		#region AddAllToMyHandBook
+		public Boolean AddAllToMyHandBook(Guid categoryId)
+		{
+			Boolean returnData = false;
+			try
+			{
+				var myHandBookItem = GetOrCreateMyHandBook();
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				var resourceList = dynamicModuleManager.GetDataItems(handBookResourcesType).
+							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+							.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId))
+							.ToArray();
+
+				
+				
+				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
+
+				foreach (var resourceItem in resourceList)
+				{
+					if (!IsResourceAddedToMyHandBook(resourceItem.Id) && !IsResourceMarkedAsComplete(resourceItem.Id))
+					{
+						var masterResourcrItem = dynamicModuleManager.Lifecycle.GetMaster(resourceItem);
+						masterHandBook.CreateRelation(masterResourcrItem, "MyResources");
+					}
+				}
+
+				dynamicModuleManager.Lifecycle.Publish(masterHandBook);
+				dynamicModuleManager.SaveChanges();
+
+				returnData = true;
+			}
+			catch (Exception e)
+			{
+				log.Error("AddToMyHandBook Error: " + e.Message);
+			}
+			return returnData;
+		}
+
+		#endregion AddAllToMyHandBook
+
 		#region MarkAsComplete
 		public Boolean MarkAsComplete(Guid resourceId)
 		{
