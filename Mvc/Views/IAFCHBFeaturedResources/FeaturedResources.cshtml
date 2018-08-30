@@ -25,11 +25,28 @@
             </div>
 			</div>
 			<div class="resources__logged-img-box">
-				<img src='@Model.ResourceDetails.ImageUrl' />
+				@if (Model.ResourceDetails.ImageUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
+				{
+					<img src='@Model.ResourceDetails.ImageUrl' />
+				}
+				else
+				{
+					<div class="resources-placeholder">
+						<div class="placehoolder-background">
+							<img src="@Model.ResourceDetails.ImagePlaceholderUrl">
+						</div>
+						@if (Model.ResourceDetails.ImageSvgUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
+						{
+							<div class="placeholder-type">
+								<img src="@Model.ResourceDetails.ImageSvgUrl" alt="">
+							</div>
+						}
+					</div>
+				}				
 				<div class="resources__slide-time resources__logged-time">
-                                    <div class="resources--time">&nbsp;</div>
-				<span>@Model.ResourceDetails.Duration</span>
-                </div>
+					<div class="resources--time">&nbsp;</div>
+					<span>@Model.ResourceDetails.Duration</span>
+				</div>
 
 			</div>
 
