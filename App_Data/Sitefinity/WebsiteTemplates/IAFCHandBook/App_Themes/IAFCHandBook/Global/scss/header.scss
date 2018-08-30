@@ -31,17 +31,19 @@
   }
   &__list{
     &-link{
+      display: flex;
+      align-items: center;
       font-family: $font_family_4;
-      font-weight: 400 !important;
+      font-weight: 400;
       color: $color_5;
       font-size: 1.00em;
       z-index: 1000;
-      padding: 8px 20px 8px !important;
+      padding: 8px 20px 8px;
       transition: .3s ease-in-out;
       &:hover {
         //text-shadow: 1px 0 #2B4B6B;
         color: $color_blue;
-        font-weight: bold !important;
+        font-weight: bold;
       }
       &:focus {
         //text-shadow: 1px 0 #2B4B6B;
@@ -58,9 +60,17 @@
       &:after {
         content: "\E61D";
         display: block;
-        font-family: $font_family_8 !important;
+        font-family: $font_family_8;
+        position: relative;
+        right: -4px;
       }
     }
+  }
+  &__sublist{
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
   &__nav {
     >ul {
