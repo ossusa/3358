@@ -51,28 +51,28 @@
 
 			@if (item.IsUserAuthorized)
 			{
-			if (item.IsResourceCompleted)
-			{
-			<div class="completedResource">
-				<div class="complete_box anticon anticon-check"></div>Complete
-			</div>
-			}
-			else if (item.IsResourceAddedToMyHandBook && !item.IsResourceCompleted)
-			{
-			<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
-				<div class="markAsCompleteResource">
-					<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+				if (item.IsResourceCompleted)
+				{
+				<div class="completedResource">
+					<div class="complete_box anticon anticon-check"></div>Complete
 				</div>
-			</div>
-			}
-			else if (!item.IsResourceAddedToMyHandBook)
-			{
-			<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
-				<div class="addToMyHandBook">
-					<button type="button" class="addToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
-				</div>
-			</div>
-			}
+				}
+				else if (item.IsResourceAddedToMyHandBook && !item.IsResourceCompleted)
+				{
+					<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
+						<div class="markAsCompleteResource">
+							<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+						</div>
+					</div>
+				}
+				else if (!item.IsResourceAddedToMyHandBook)
+				{
+					<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
+						<div class="addToMyHandBook">
+							<button type="button" class="addToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to MyHandBook </button>
+						</div>
+					</div>
+				}
 			}
 			<div class="resources-single__left_post_comment_header_right">
 				<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>

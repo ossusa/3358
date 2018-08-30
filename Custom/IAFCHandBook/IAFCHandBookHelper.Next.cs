@@ -526,69 +526,79 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
             return handBookResourceModel;
         }
-        #endregion GetResourceDetailsNext
+		#endregion GetResourceDetailsNext
 
-        #region GetResourceDetailsInfoNext
-        public IAFCHandBookResourceDetailsModel GetResourceDetailsInfoNext(DynamicContent resource, bool isMyHandBookItem = false)
-        {
-            var resourceInfo = new IAFCHandBookResourceDetailsModel();
+		#region GetResourceDetailsInfoNext
+		public IAFCHandBookResourceDetailsModel GetResourceDetailsInfoNext(DynamicContent resource, bool isMyHandBookItem = false)
+		{
+			var resourceInfo = new IAFCHandBookResourceDetailsModel();
 
-            string resourceTypeTitle = string.Empty;
-            string resourceCategoryTitle = string.Empty;
-            string resourceCategoryUrl = string.Empty;
-            string resourceParentCategoryTitle = string.Empty;
-            string resourceParentCategoryUrl = string.Empty;
-            string myHandbookResourceCategoryUrl = string.Empty;
-            string myHandbookResourceParentCategoryUrl = string.Empty;
+			string resourceTypeTitle = string.Empty;
+			string resourceCategoryTitle = string.Empty;
+			string resourceCategoryUrl = string.Empty;
+			string resourceParentCategoryTitle = string.Empty;
+			string resourceParentCategoryUrl = string.Empty;
+			string myHandbookResourceCategoryUrl = string.Empty;
+			string myHandbookResourceParentCategoryUrl = string.Empty;
 
-            // Get single field
-            // !!! resourceInfo.id = externalResourceItem.Id; todo: Fill id with proper data if it is needed somewhere.
-            resourceInfo.ResourceTitle = resource.GetValue("Title").ToString();
-            resourceInfo.ResourceSummary = resource.GetValue("shortsummary").ToString();
-            resourceInfo.ResourceDescription = resource.GetValue("ResourceDescription").ToString();
-            resourceInfo.Duration = ParseTime(resource.GetValue("Time").ToString());
-            resourceInfo.DurationStr = resourceInfo.Duration.ToString();
-            resourceInfo.VideoEmbedCode = resource.GetValue("VideoEmbedCode").ToString();
+			// Get single field
+			// !!! resourceInfo.id = externalResourceItem.Id; todo: Fill id with proper data if it is needed somewhere.
+			resourceInfo.ResourceTitle = resource.GetValue("Title").ToString();
+			resourceInfo.ResourceSummary = resource.GetValue("shortsummary").ToString();
+			resourceInfo.ResourceDescription = resource.GetValue("ResourceDescription").ToString();
+			resourceInfo.Duration = ParseTime(resource.GetValue("Time").ToString());
+			resourceInfo.DurationStr = resourceInfo.Duration.ToString();
+			resourceInfo.VideoEmbedCode = resource.GetValue("VideoEmbedCode").ToString();
 
-            TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-            // get first resource type
-            var resourceTypesID = resource.GetPropertyValue<TrackedList<Guid>>("resourcetypes").First();
-            if (resourceTypesID != null)
-            {
-                resourceTypeTitle = taxonomyManager.GetTaxon(resourceTypesID).Title.ToString();
-            }
+			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+			// get first resource type
+			var resourceTypesID = resource.GetPropertyValue<TrackedList<Guid>>("resourcetypes").First();
+			if (resourceTypesID != null)
+			{
+				resourceTypeTitle = taxonomyManager.GetTaxon(resourceTypesID).Title.ToString();
+			}
 
-            // get first category
-            var resourceCategoriesIDs = resource.GetPropertyValue<TrackedList<Guid>>("Category");
-            var categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).First();
-            if (categoryItem != null)
-            {
-                var topicCategory = GetTopicCategories(categoryItem);
-                resourceCategoryTitle = topicCategory.ResourceCategoryTile;
-                resourceParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
-                resourceParentCategoryUrl = topicCategory.ResourceParentCategoryUrl;
-                resourceCategoryUrl = topicCategory.ResourceCategoryUrl;
-                if (isMyHandBookItem)
-                {
-                    myHandbookResourceCategoryUrl = topicCategory.MyHandbookResourceCategoryUrl;
-                    myHandbookResourceParentCategoryUrl = topicCategory.MyHandbookResourceParentCategoryUrl;
-                }
-            }
+			// get first category
+			var resourceCategoriesIDs = resource.GetPropertyValue<TrackedList<Guid>>("Category");
+			var categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).First();
+			if (categoryItem != null)
+			{
+				var topicCategory = GetTopicCategories(categoryItem);
+				resourceCategoryTitle = topicCategory.ResourceCategoryTile;
+				resourceParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
+				resourceParentCategoryUrl = topicCategory.ResourceParentCategoryUrl;
+				resourceCategoryUrl = topicCategory.ResourceCategoryUrl;
+				if (isMyHandBookItem)
+				{
+					myHandbookResourceCategoryUrl = topicCategory.MyHandbookResourceCategoryUrl;
+					myHandbookResourceParentCategoryUrl = topicCategory.MyHandbookResourceParentCategoryUrl;
+				}
+			}
 
-            resourceInfo.Category.Id = categoryItem;
-            resourceInfo.Category.CategoryTitle = resourceCategoryTitle;
-            resourceInfo.Category.CategoryUrl = resourceCategoryUrl;
-            resourceInfo.Category.ParentCategoryTitle = resourceParentCategoryTitle;
-            resourceInfo.Category.ParentCategoryUrl = resourceParentCategoryUrl;
-            resourceInfo.Category.MyHandBookCategoryUrl = myHandbookResourceCategoryUrl;
-            resourceInfo.Category.MyHandBookParentCategoryUrl = myHandbookResourceParentCategoryUrl;
-            resourceInfo.ResourceType = resourceTypeTitle;
+			resourceInfo.Category.Id = categoryItem;
+			resourceInfo.Category.CategoryTitle = resourceCategoryTitle;
+			resourceInfo.Category.CategoryUrl = resourceCategoryUrl;
+			resourceInfo.Category.ParentCategoryTitle = resourceParentCategoryTitle;
+			resourceInfo.Category.ParentCategoryUrl = resourceParentCategoryUrl;
+			resourceInfo.Category.MyHandBookCategoryUrl = myHandbookResourceCategoryUrl;
+			resourceInfo.Category.MyHandBookParentCategoryUrl = myHandbookResourceParentCategoryUrl;
+			resourceInfo.ResourceType = resourceTypeTitle;
 
-            var img = resource.GetRelatedItems<Image>("featuredimage").FirstOrDefault();
-            if (img != null)
-            {
-                resourceInfo.ImageUrl = img.Url;
-            }
+			var img = resource.GetRelatedItems<Image>("featuredimage").FirstOrDefault();
+			if (img != null)
+			{
+				resourceInfo.ImageUrl = img.Url;
+			}
+			else
+			{
+				resourceInfo.ImagePlaceholderUrl = DefaultPaceholderImgUrl;
+				resourceInfo.ImageSvgUrl = resourceTypeImages[resourceTypeTitle];
+				if (resourceInfo.ImageSvgUrl ==null)
+				{
+					resourceInfo.ImageSvgUrl = DefaultArticleImgUrl;
+				}
+
+			}
 
             return resourceInfo;
         }

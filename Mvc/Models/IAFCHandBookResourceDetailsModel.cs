@@ -19,6 +19,8 @@ namespace SitefinityWebApp.Mvc.Models
 		public TimeSpan Duration { get; set; }
 		public string DurationStr { get; set; }
 		public string ImageUrl { get; set; }
+		public string ImageSvgUrl { get; set; }
+		public string ImagePlaceholderUrl { get; set; }
 		public string VideoEmbedCode { get; set; }
 		public IAFCHandBookResourceDetailsModel()
 		{

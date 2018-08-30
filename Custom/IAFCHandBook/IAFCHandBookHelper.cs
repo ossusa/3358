@@ -132,8 +132,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Urls
 		//Urls
 		private const string MainPage = "/iafchandbookhome";
-		private const string TopicCommynityUrl = MainPage+"/topics/community";
-		private const string TopicCommynityCrisisCommunicationUrl = MainPage+"/topics/community/crisis-communication";
+		private const string TopicCommynityUrl = MainPage + "/topics/community";
+		private const string TopicCommynityCrisisCommunicationUrl = MainPage + "/topics/community/crisis-communication";
 		private const string TopicCommynityCustomerServiceUrl = MainPage + "/topics/community/customer-service";
 		private const string TopicCommynityMarketingAndMediaUrl = MainPage + "/topics/community/marketing-and-media";
 		private const string TopicCommynityPoliticsUrl = MainPage + "/topics/community/politics";
@@ -160,6 +160,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string TopicLeadershipImageUrl = "/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/leadership-multiply.svg";
 		private const string TopicFinanceImageUrl = "/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/finance-multiply.svg";
 		private const string TopicPersonnelImageUrl = "/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/personnel-multiply.svg";
+
+		private const string DefaultPodcastImgUrl = "/images/default-source/icons/podcast.svg";
+		private const string DefaultChartImgUrl = "/images/default-source/icons/chart.svg";
+		private const string DefaultVideoImgUrl = "images/default-source/icons/video.svg";
+		private const string DefaultLinkImgUrl = "images/default-source/icons/link.svg";
+		private const string DefaultImageImgUrl = "images/default-source/icons/image.svg";
+		private const string DefaultWebinarImgUrl = "images/default-source/icons/webinar.svg";
+		private const string DefaultArticleImgUrl = "images/default-source/icons/article.svg";
+		private const string DefaultAudioImgUrl = "images/default-source/icons/audio.svg";
+		private const string DefaultBookImgUrl = "images/default-source/icons/book.svg";
+		private const string DefaultPaceholderImgUrl = "images/default-source/icons/resource-placeholder.svg";
 		#endregion Urls
 
 		#endregion Constants
@@ -205,6 +216,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private List<Guid> topicPersonnelCategories = new List<Guid>();
 		private List<Guid> topicCommunityRelationsCategories = new List<Guid>();
 		Dictionary<Guid, Categories> categoriesDictionaly = new Dictionary<Guid, Categories>();
+		Dictionary<string, string> resourceTypeImages = new Dictionary<string, string>();
 		private bool isUserAuthorized = false;
 		#endregion Variables
 
@@ -212,6 +224,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public IAFCHandBookHelper()
 		{
 			isUserAuthorized = IsUserAuthorized();
+			InitResourceTypeImages();
 			InitCategoriesGuid();
 			InitCategoriesLists();
 			InitCategoryDictionary();
@@ -917,7 +930,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					orderByItem.Selected = true;
 				}
-				orderByList.Add(orderByItem); 
+				orderByList.Add(orderByItem);
 			}
 
 			orderByItem = new IAFCHandBookTopicOrderBy();
@@ -985,7 +998,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 			UserProfileManager profileManager = UserProfileManager.GetManager();
 			UserManager userManager = UserManager.GetManager();
-			
+
 			string commentFieldName = "Comment";
 			if (resourceType == commentResource)
 			{
@@ -1757,7 +1770,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var isUserSignIn = IsUserAuthorized();
 			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "My HandBook";
-			otherMenuItem.Url = MainPage+"/my-handbook/";
+			otherMenuItem.Url = MainPage + "/my-handbook/";
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
@@ -1765,11 +1778,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			otherMenuItem.Title = "Account";
 			otherMenuItem.Url = MainPage + "/account/";
 			otherMenuItem.Visible = isUserSignIn;
-			model.Menu.Add(otherMenuItem);			
+			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "SignIn";
-			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl="+ urlPath;
+			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = !isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
@@ -1781,7 +1794,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			return model;
 		}
-	
+
 		#endregion Menu
 
 		#region GetSearchedResources
@@ -1800,13 +1813,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			if (orderBy == OrderByTopic)
 			{
 				searchedResourcesList = searchedResources.ToList()
-					.OrderBy(r=> categoriesDictionaly[r.GetValue<IList<Guid>>("Category").Where(c=> topicCategories.Contains(c)).First()].ResourceCategoryTile).ToList() ;
+					.OrderBy(r => categoriesDictionaly[r.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c)).First()].ResourceCategoryTile).ToList();
 			}
 			else if (orderBy == OrderByMostRecent)
 			{
 				searchedResourcesList = searchedResources.OrderByDescending(r => r.DateCreated).ToList(); ;
 			}
-             else if (orderBy == OrderByMostPopular)
+			else if (orderBy == OrderByMostPopular)
 			{
 				searchedResourcesList = searchedResources.OrderByDescending(r => r.GetValue<decimal?>("AmountOfLikes")).ToList(); ;
 			}
@@ -1818,7 +1831,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			{
 				searchedResourcesList = searchedResources.OrderByDescending(r => r.GetValue<string>("Title")).ToList(); ;
 			}
-			
+
 			var listOfMyResources = new List<IAFCHandBookResourceModel>();
 
 			foreach (var res in searchedResourcesList)
@@ -1829,7 +1842,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Resources = listOfMyResources;
 			var orderByList = InitOrderBy(orderBy, "", true);
 			model.OrderBy = orderByList;
-			
+
 			return model;
 		}
 
@@ -1860,9 +1873,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				};
 
 				var messageJobId = ns.SendMessage(context, job, contextDictionary);
-								
+
 			}
-			catch(Exception e)
+			catch (Exception e)
 			{
 				log.Error("Sent Email Error:" + e.Message);
 			}
@@ -1880,8 +1893,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-				
-				
+
+
 				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
 				var checkOutHandBook = dynamicModuleManager.Lifecycle.CheckOut(masterHandBook) as DynamicContent;
 
@@ -1918,7 +1931,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
 
 				var categoryFollowed = myHandBookItem.GetValue<IList<Guid>>("Category").Contains(categoryId);
-								
+
 				returnData = categoryFollowed;
 			}
 			catch (Exception e)
@@ -1949,10 +1962,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var handBookList = dynamicModuleManager.GetDataItems(myHandBookType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
 					.ToArray()
-					.Where(h=> h.GetValue<IList<Guid>>("Category").Contains(resourceCategory))					
+					.Where(h => h.GetValue<IList<Guid>>("Category").Contains(resourceCategory))
 					.ToArray();
 
-				var users = userManager.GetUsers(); 
+				var users = userManager.GetUsers();
 				foreach (var handBook in handBookList)
 				{
 					var userId = handBook.GetValue<Guid>("UserId");
@@ -1965,7 +1978,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					var email = String.Empty;
 					if (profile != null)
 					{
-						
+
 						email = profile.User.Email;
 						firstName = profile.FirstName;
 						lastName = profile.LastName;
@@ -1975,7 +1988,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					{
 						firstName = user.FirstName;
 						lastName = user.LastName;
-						email = user.Email;														
+						email = user.Email;
 					}
 					var subscriber = new SubscriberRequestProxy()
 					{
@@ -1984,7 +1997,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						LastName = lastName,
 						ResolveKey = userId.ToString()
 					};
-					subscribers.Add(subscriber);										
+					subscribers.Add(subscriber);
 				}
 
 				SendEmails(subscribers);
@@ -2008,13 +2021,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var foollowedCategories = myHandBookItem.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c));
 
 			foreach (var categoryId in foollowedCategories)
-			{				
+			{
 				var category = new IAFCHandBookTopicCategoryModel();
 				var topicCategoryDetails = GetTopicCategories(categoryId);
 
-				category.Id = categoryId;				
+				category.Id = categoryId;
 				category.CategoryTitle = topicCategoryDetails.ResourceCategoryTile;
-				category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;				
+				category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;
 
 				model.FollowedCategories.Add(category);
 			}
@@ -2058,9 +2071,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var myHandBookItem = GetOrCreateMyHandBook();
 			var categories = myHandBookItem.GetValue<TrackedList<Guid>>("Category")
 				.ToArray()
-				.Where(c=>c!=categoryId)
+				.Where(c => c != categoryId)
 				.ToArray();
-			
+
 			var masterHandBookItem = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
 			DynamicContent checkOutHandBookItem = dynamicModuleManager.Lifecycle.CheckOut(masterHandBookItem) as DynamicContent;
 			checkOutHandBookItem.Organizer.Clear("Category");
@@ -2070,6 +2083,29 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			dynamicModuleManager.SaveChanges();
 		}
 		#endregion Unfollow
+
+		#region getDefaultImageUrl
+		public string GetDefaultImageUrl(string resourceType)
+		{
+			string imgUrl = String.Empty;
+
+			return imgUrl;
+		}
+		#endregion getDefaultImageUrl
+
+		public void InitResourceTypeImages()
+		{
+			resourceTypeImages.Add("Video", DefaultVideoImgUrl);
+			resourceTypeImages.Add("Webinar", DefaultWebinarImgUrl);
+			resourceTypeImages.Add("Article", DefaultArticleImgUrl);
+
+			/*DefaultPodcastImgUrl;
+			DefaultChartImgUrl;		
+			DefaultLinkImgUrl;
+			DefaultImageImgUrl;				
+			DefaultAudioImgUrl;
+			DefaultBookImgUrl;*/
+		}
 
 	}
 }
