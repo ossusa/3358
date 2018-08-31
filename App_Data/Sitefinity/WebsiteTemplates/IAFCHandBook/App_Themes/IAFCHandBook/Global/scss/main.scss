@@ -2130,6 +2130,25 @@ p {
       padding-right: 0;
     }
   }
+  .edit-button {
+    position: relative;
+    &:after {
+      content: "\E61D";
+      display: block;
+      font-family: anticon !important;
+      color: #2b4b6b;
+      transform: rotate(-90deg) translateX(50%);
+      right: 40px;
+      top: 50%;
+      position: absolute;
+    }
+  }
+
+  .community__head-btn {
+    padding-left: 25px;
+    padding-right: 40px;
+    width: auto !important;
+  }
 }
 
 .placehoolder-background img {

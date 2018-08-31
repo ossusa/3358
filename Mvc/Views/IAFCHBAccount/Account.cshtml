@@ -5,7 +5,9 @@
 	<h1 class="page__title">My Account</h1>
 	<p>Login Information</p>
 	<div class="resources__logged-buttons">
-		<button type="submit" formaction="/Mxg/AuthService/SignInByHelix/?ReturnUrl=@Request.Url.AbsoluteUri" class="community__head-btn resources__logged-btn"> Edit Login </button>
+		<div class="edit-button">
+			<button type="submit" formaction="/Mxg/AuthService/SignInByHelix/?ReturnUrl=@Request.Url.AbsoluteUri" class="community__head-btn resources__logged-btn"> Edit Login </button>
+		</div>
 	</div>
 
 	<div>Email Digest</div>

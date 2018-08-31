@@ -1731,6 +1731,24 @@ p {
       padding-left: 0;
       padding-right: 0; } }
 
+.account-template .edit-button {
+  position: relative; }
+  .account-template .edit-button:after {
+    content: "\E61D";
+    display: block;
+    font-family: anticon !important;
+    color: #2b4b6b;
+    -ms-transform: rotate(-90deg) translateX(50%);
+    transform: rotate(-90deg) translateX(50%);
+    right: 40px;
+    top: 50%;
+    position: absolute; }
+
+.account-template .community__head-btn {
+  padding-left: 25px;
+  padding-right: 40px;
+  width: auto !important; }
+
 .placehoolder-background img {
   width: 100%; }
 
