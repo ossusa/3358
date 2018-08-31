@@ -33,7 +33,8 @@
                 </asp:ContentPlaceHolder>
             </div>
             <!-- Header Text End ============================================= -->
-            <div class="header_wrapper">
+            <div class="box box-mobile">
+                <div class="header_wrapper">
                     <div class="header__table-tr">
 
                             <!-- Logo ============================================= -->
@@ -132,6 +133,7 @@
                             <span class="header__mob-open anticon anticon-menu-fold"></span>
                         </div>
                     </div>
+                </div>
             </div>
         </header>
         <!-- End Header ============================================= -->
