@@ -511,7 +511,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceDetails.Category.CategoryUrl + "/resourcedetails/" + resource.UrlName.ToString();
 				}
 
-				if (handBookResourceModel.ResourceDetails.IsResourceHasMoreThen1Category)
+				if (handBookResourceModel.ResourceDetails.IsResourceHasMoreThen1Category && categoryId!=null)
 				{
 					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceUrl + "," + categoryId.ToString();
 				}
