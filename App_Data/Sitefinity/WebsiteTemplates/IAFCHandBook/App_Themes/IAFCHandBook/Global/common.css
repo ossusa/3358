@@ -2566,30 +2566,10 @@ p {
   .header__sub_list:nth-of-type(1) > .header__sub_list-link:focus {
     font-weight: bold;
     color: #5591AA; }
-  .header__sub_list:nth-of-type(1) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:hover {
-    color: #5591AA;
-    font-weight: bold; }
-  .header__sub_list:nth-of-type(1) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:focus {
-    font-weight: bold;
-    color: #5591AA; }
   .header__sub_list:nth-of-type(2) > .header__sub_list-link:hover {
     color: #BDA15F;
     font-weight: bold; }
   .header__sub_list:nth-of-type(2) > .header__sub_list-link:focus {
-    color: #BDA15F;
-    font-weight: bold; }
-  .header__sub_list:nth-of-type(2) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:hover {
-    color: #BDA15F;
-    font-weight: bold; }
-  .header__sub_list:nth-of-type(2) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:focus {
     color: #BDA15F;
     font-weight: bold; }
   .header__sub_list:nth-of-type(3) > .header__sub_list-link:hover {
@@ -2598,30 +2578,10 @@ p {
   .header__sub_list:nth-of-type(3) > .header__sub_list-link:focus {
     font-weight: bold;
     color: #5591AA; }
-  .header__sub_list:nth-of-type(3) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:hover {
-    color: #73AA56;
-    font-weight: bold; }
-  .header__sub_list:nth-of-type(3) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:focus {
-    color: #73AA56;
-    font-weight: bold; }
   .header__sub_list:nth-of-type(4) > .header__sub_list-link:hover {
     color: #CF794A;
     font-weight: bold; }
   .header__sub_list:nth-of-type(4) > .header__sub_list-link:focus {
-    color: #CF794A;
-    font-weight: bold; }
-  .header__sub_list:nth-of-type(4) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:hover {
-    color: #CF794A;
-    font-weight: bold; }
-  .header__sub_list:nth-of-type(4) > .header__second_ul
-> .header__second_list
-> .header__second_list-link:focus {
     color: #CF794A;
     font-weight: bold; }
   .header__second_ul {
@@ -2636,6 +2596,30 @@ p {
     height: 152px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     background-color: #ffffff; }
+    .header__second_ul:nth-of-type(1) .header__second_list:hover {
+      color: #5591AA;
+      font-weight: bold; }
+    .header__second_ul:nth-of-type(1) .header__second_list:focus {
+      font-weight: bold;
+      color: #5591AA; }
+    .header__second_ul:nth-of-type(2) .header__second_list:hover {
+      color: #BDA15F;
+      font-weight: bold; }
+    .header__second_ul:nth-of-type(2) .header__second_list:focus {
+      font-weight: bold;
+      color: #BDA15F; }
+    .header__second_ul:nth-of-type(3) .header__second_list:hover {
+      color: #73AA56;
+      font-weight: bold; }
+    .header__second_ul:nth-of-type(3) .header__second_list:focus {
+      font-weight: bold;
+      color: #73AA56; }
+    .header__second_ul:nth-of-type(4) .header__second_list:hover {
+      color: #CF794A;
+      font-weight: bold; }
+    .header__second_ul:nth-of-type(4) .header__second_list:focus {
+      font-weight: bold;
+      color: #CF794A; }
   .header__second_list-link {
     color: #666666;
     font-family: "Nunito Sans", sans-serif;

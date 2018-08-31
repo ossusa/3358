@@ -75,7 +75,6 @@
       position: absolute;
       top: 45px;
       z-index: 2;
-      //display: none;
       margin: 0;
       padding: 20px;
       list-style: none;
@@ -107,37 +106,7 @@
           color: $color_community;
         }
       }
-      &:nth-of-type(1)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
-        &:hover {
-          //text-shadow: 1px 0 #5591AA;
-          color: $color_community;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #5591AA;
-          font-weight: bold;
-          color: $color_community;
-        }
-      }
       &:nth-of-type(2) > .header__sub_list-link {
-        &:hover {
-          //text-shadow: 1px 0 #BDA15F;
-          color: $color_leadership;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #BDA15F;
-          color: $color_leadership;
-          font-weight: bold;
-        }
-      }
-      &:nth-of-type(2)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #BDA15F;
           color: $color_leadership;
@@ -161,37 +130,7 @@
           color: $color_community;
         }
       }
-      &:nth-of-type(3)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
-        &:hover {
-          //text-shadow: 1px 0 #73AA56;
-          color: $color_finance;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #73AA56;
-          color: $color_finance;
-          font-weight: bold;
-        }
-      }
       &:nth-of-type(4) > .header__sub_list-link {
-        &:hover {
-          //text-shadow: 1px 0 #CF794A;
-          color: $color_personnel;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #CF794A;
-          color: $color_personnel;
-          font-weight: bold;
-        }
-      }
-      &:nth-of-type(4)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #CF794A;
           color: $color_personnel;
@@ -218,7 +157,54 @@
       height: 152px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       background-color: #ffffff;
-    //display: none;
+      &:nth-of-type(1) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_community;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_community;
+        }
+      }
+      &:nth-of-type(2) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_leadership;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_leadership;
+        }
+      }
+      &:nth-of-type(3) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_finance;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_finance;
+        }
+      }
+      &:nth-of-type(4) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_personnel;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_personnel;
+        }
+      }
   }
     &_list{
       &-link{
