@@ -134,7 +134,7 @@ $(document).ready(function () {
         $(".header__second_ul:nth-of-type(4)").show();
         $('.header__second_ul').not(':nth-of-type(4)').hide();
     });
-    // $('body').not('.header__sub_ul').click(function() {
-    //     $('.header__second_ul').hide();
-    // });
+    $('body').not('.header__sub_ul').click(function() {
+        $('.header__sub_ul').hide();
+    });
 });
