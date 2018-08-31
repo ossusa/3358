@@ -94,9 +94,17 @@
       }
       padding: 9px 0 0 0;
       &-link{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         color: #666666;
         font-family: "Nunito Sans", sans-serif;
         font-size: 1.00em;
+        &:after{
+          content: "\E61F";
+          display: block;
+          font-family: $font_family_8;
+        }
     }
       &:nth-of-type(1) > .header__sub_list-link {
         &:hover {
