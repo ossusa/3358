@@ -2565,6 +2565,12 @@ p {
       color: #666666;
       font-family: "Nunito Sans", sans-serif;
       font-size: 1.00em; }
+      .header__sub_list-link:after {
+        content: "\E61F";
+        display: block;
+        font-family: anticon;
+        position: relative;
+        right: -7px; }
     .header__sub_list:nth-of-type(1) > .header__sub_list-link:hover {
       color: #5591AA;
       font-weight: bold; }
