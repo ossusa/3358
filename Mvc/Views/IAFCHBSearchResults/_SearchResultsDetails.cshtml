@@ -22,9 +22,10 @@
 
 <div>
 	@if (selectedOrderBy != "ByTopic")
-	{
-		<section class="complete__resources_slides">
+	{				
+		@:<section class="complete__resources_slides">		
 	}
+
 		@foreach (var item in Model.Resources)
 		{
 			if (selectedOrderBy == "ByTopic")
@@ -32,12 +33,11 @@
 				if (currentCategry != item.ResourceDetails.Category.CategoryTitle)
 				{
 					if (isSectionOpen==true)
-					{
-						</section>
+					{						
+						@:</section>						
 					}
-					isSectionOpen = true;
-					<section class="complete__resources_slides">
-
+					isSectionOpen = true;					
+					@:<section class="complete__resources_slides">					
 					<div>@item.ResourceDetails.Category.CategoryTitle </div>
 				}
 			}
@@ -118,11 +118,13 @@
 					</div>
 				</div>
 			</div>
+
 			{ currentCategry = item.ResourceDetails.Category.CategoryTitle; }
 		}
+
 		@if (selectedOrderBy != "ByTopic")
-		{
-			</section>
+		{			
+			@:</section>			
 		}
 </div>
 
