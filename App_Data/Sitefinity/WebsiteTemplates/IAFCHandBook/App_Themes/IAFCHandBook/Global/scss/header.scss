@@ -85,6 +85,7 @@
       background-color: #ffffff;
   }
     &_list{
+      cursor: pointer;
       &:nth-of-type(1){
         padding: 0;
       }
@@ -121,13 +122,13 @@
       &:nth-of-type(3) > .header__sub_list-link {
         &:hover {
           //text-shadow: 1px 0 #5591AA;
-          color: $color_community;
+          color: $color_finance;
           font-weight: bold;
         }
         &:focus {
           //text-shadow: 1px 0 #5591AA;
           font-weight: bold;
-          color: $color_community;
+          color: $color_finance;
         }
       }
       &:nth-of-type(4) > .header__sub_list-link {
@@ -154,10 +155,19 @@
       padding: 20px;
       list-style: none;
       width: 257px;
-      height: 152px;
       border-radius: 3px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       background-color: #ffffff;
+      &:before{
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 15px 15px 0;
+        border-color: transparent #ffffff transparent transparent;
+
+      }
       &:nth-of-type(1) .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #5591AA;
