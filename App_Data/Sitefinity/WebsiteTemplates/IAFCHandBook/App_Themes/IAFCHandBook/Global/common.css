@@ -1736,8 +1736,8 @@ p {
   display: block;
   font-family: anticon !important;
   color: #2b4b6b;
-  -ms-transform: rotate(40deg);
-  transform: rotate(40deg); }
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
 
 .placehoolder-background img {
   width: 100%; }
