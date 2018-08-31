@@ -573,7 +573,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			// get first category
 			var resourceCategoriesIDs = resource.GetPropertyValue<TrackedList<Guid>>("Category").ToArray();
-			var moreThen1Category = resourceCategoriesIDs.Count() > 1;
+			var moreThen1Category = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).Count() > 1;
 			resourceInfo.IsResourceHasMoreThen1Category = moreThen1Category;
 			Guid categoryItem;
 			if (categoryId != null)
