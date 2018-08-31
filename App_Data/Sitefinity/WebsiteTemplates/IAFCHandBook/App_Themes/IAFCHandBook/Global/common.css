@@ -1719,6 +1719,10 @@ p {
 .search-results .complete__resources_slides {
   margin-bottom: 36px; }
 
+.search-results .complete__resources_slides {
+  margin-left: 0;
+  margin-right: 0; }
+
 .placehoolder-background img {
   width: 100%; }
 
