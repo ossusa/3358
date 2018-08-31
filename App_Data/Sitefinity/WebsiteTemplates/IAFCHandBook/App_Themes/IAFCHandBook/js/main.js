@@ -114,7 +114,7 @@ $(document).ready(function () {
     $('.markAsCompleteBtn').click(function () {
         $('.complete_box').addClass('anticon anticon-check');
     });
-    $('.header__list:nth-of-type(1) .header__list-link').click(function (e) {
+    $('.header__list:nth-of-type(1) > a').click(function (e) {
         e.preventDefault();
         $('.header__sub_ul').toggle();
 
