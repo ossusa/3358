@@ -2120,6 +2120,18 @@ p {
   }
 }
 
+.account-template {
+  .breadcrumbs {
+    margin-left: 0;
+    margin-right: 0;
+
+    @media (max-width: 1109px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
 .placehoolder-background img {
   width: 100%;
 }
