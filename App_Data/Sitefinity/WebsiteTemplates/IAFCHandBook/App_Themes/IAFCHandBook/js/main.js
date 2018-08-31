@@ -120,11 +120,11 @@ $(document).ready(function () {
         $('.header__sub_ul').show();
     });
     $('.header__sub_list').click(function() {
-        $('.header__second_ul').stop().slideUp();
-        $(this).find('.header__second_ul').stop().slideDown();
+        $('.header__second_ul').slideUp();
+        $(this).find('.header__second_ul').slideDown();
     });
     $('body').not('.header__sub_ul').click(function() {
-        $('.header__second_ul').stop().slideUp();
+        $('.header__second_ul').slideUp();
     });
     // $('.header__sub_list').click(function() {
     //     var sibling = $(this).siblings('.header__second_ul');
