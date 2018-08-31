@@ -44,8 +44,6 @@ namespace SitefinityWebApp.Mvc.Models
 		public IAFCHandBookLikesModel Likes { get; set; }	
 		public IAFCHandBookResourceDetailsModel ResourceDetails { get; set; }
 		public List<IAFCHandBookMoreResourcesModel> MoreResources {get;set;}
-		public int MoreThen5Resources { get; set; }
-
-		
+		public int MoreThen5Resources { get; set; }		
 	}
 }

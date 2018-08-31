@@ -38,6 +38,14 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return View("MyHandBookResourceDetails", model);
 		}
 
+		[RelativeRoute("{name},{categoryId?}")]
+		public ActionResult Index(string name, string categoryId)
+		{
+			var id = Guid.Parse(categoryId);
+			var model = handBookHelper.GetMyHnadbookResourceDetails(name, id);
+			return View("MyHandBookResourceDetails", model);
+		}
+
 		[RelativeRoute("AddLike"), HttpPost]
 		public ActionResult AddLike(String resourceId)
 		{

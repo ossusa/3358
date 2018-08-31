@@ -18,520 +18,533 @@ using Telerik.Sitefinity.Taxonomies;
 
 namespace SitefinityWebApp.Custom.IAFCHandBook
 {
-    public partial class IAFCHandBookHelper
-    {
-        public Type ExternalResourcesType => externalResourcesType;
-        public Type ResourceType => resourceType;
+	public partial class IAFCHandBookHelper
+	{
+		public Type ExternalResourcesType => externalResourcesType;
+		public Type ResourceType => resourceType;
 
-        #region  CreateIAFCHandBookResourcesData
-        public void CreateIAFCHandBookResourcesData(Guid resourceLiveId, Type resourceType)
-        {
-            try
-            {
-                var providerName = string.Empty;
-                var transactionName = "createIAFCHandBookResourcesDataTransaction";
-                var relationFieldName = GetRelatedResourceFieldName(resourceType);
-                var currentUtcDateTime = DateTime.UtcNow;
+		#region  CreateIAFCHandBookResourcesData
+		public void CreateIAFCHandBookResourcesData(Guid resourceLiveId, Type resourceType)
+		{
+			try
+			{
+				var providerName = string.Empty;
+				var transactionName = "createIAFCHandBookResourcesDataTransaction";
+				var relationFieldName = GetRelatedResourceFieldName(resourceType);
+				var currentUtcDateTime = DateTime.UtcNow;
 
-                DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
 
-                var resLive = dynamicModuleManager.GetDataItem(resourceType, resourceLiveId);
-                var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
+				var resLive = dynamicModuleManager.GetDataItem(resourceType, resourceLiveId);
+				var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
 
-                DynamicContent resDataMaster = dynamicModuleManager.CreateDataItem(handBookResourcesType);
+				DynamicContent resDataMaster = dynamicModuleManager.CreateDataItem(handBookResourcesType);
 
-                var title = resMaster.GetValue("Title").ToString();
-                resDataMaster.SetValue("Title", title);
+				var title = resMaster.GetValue("Title").ToString();
+				resDataMaster.SetValue("Title", title);
 
-                var categories = resMaster.GetValue<TrackedList<Guid>>("Category").ToArray();
-                resDataMaster.Organizer.AddTaxa("Category", categories);
+				var categories = resMaster.GetValue<TrackedList<Guid>>("Category").ToArray();
+				resDataMaster.Organizer.AddTaxa("Category", categories);
 
-                var shortsummary = resMaster.GetValue("shortsummary");
-                resDataMaster.SetValue("shortsummary", shortsummary);
+				var shortsummary = resMaster.GetValue("shortsummary");
+				resDataMaster.SetValue("shortsummary", shortsummary);
 
-                if (resourceType == ResourceType)
-                {
-                    var article = resMaster.GetValue("Article");
-                    resDataMaster.SetValue("ResourceDescription", article);
-                }
-                else if (resourceType == ExternalResourcesType)
-                {
-                    var time = resMaster.GetValue("Time");
-                    resDataMaster.SetValue("Time", time);
+				if (resourceType == ResourceType)
+				{
+					var article = resMaster.GetValue("Article");
+					resDataMaster.SetValue("ResourceDescription", article);
+				}
+				else if (resourceType == ExternalResourcesType)
+				{
+					var time = resMaster.GetValue("Time");
+					resDataMaster.SetValue("Time", time);
 
-                    var videoEmbedCode = resMaster.GetValue("VideoEmbedCode");
-                    resDataMaster.SetValue("VideoEmbedCode", videoEmbedCode);
+					var videoEmbedCode = resMaster.GetValue("VideoEmbedCode");
+					resDataMaster.SetValue("VideoEmbedCode", videoEmbedCode);
 
-                    var resourceDescription = resMaster.GetValue("ResourceDescription");
-                    resDataMaster.SetValue("ResourceDescription", resourceDescription);
-                }
+					var resourceDescription = resMaster.GetValue("ResourceDescription");
+					resDataMaster.SetValue("ResourceDescription", resourceDescription);
+				}
 
-                var departmenttype = resMaster.GetValue<TrackedList<Guid>>("departmenttype").ToArray();
-                resDataMaster.Organizer.AddTaxa("departmenttype", departmenttype);
+				var departmenttype = resMaster.GetValue<TrackedList<Guid>>("departmenttype").ToArray();
+				resDataMaster.Organizer.AddTaxa("departmenttype", departmenttype);
 
-                var feeding = resMaster.GetValue<TrackedList<Guid>>("feeding").ToArray();
-                resDataMaster.Organizer.AddTaxa("feeding", feeding);
+				var feeding = resMaster.GetValue<TrackedList<Guid>>("feeding").ToArray();
+				resDataMaster.Organizer.AddTaxa("feeding", feeding);
 
-                var organizationalauthors = resMaster.GetValue<TrackedList<Guid>>("organizationalauthors").ToArray();
-                resDataMaster.Organizer.AddTaxa("organizationalauthors", organizationalauthors);
+				var organizationalauthors = resMaster.GetValue<TrackedList<Guid>>("organizationalauthors").ToArray();
+				resDataMaster.Organizer.AddTaxa("organizationalauthors", organizationalauthors);
 
-                var resourceLink = resMaster.GetValue("ResourceLink");
-                resDataMaster.SetValue("ResourceLink", resourceLink);
+				var resourceLink = resMaster.GetValue("ResourceLink");
+				resDataMaster.SetValue("ResourceLink", resourceLink);
 
-                var resourcetypes = resMaster.GetValue<TrackedList<Guid>>("resourcetypes").ToArray();
-                resDataMaster.Organizer.AddTaxa("resourcetypes", resourcetypes);
+				var resourcetypes = resMaster.GetValue<TrackedList<Guid>>("resourcetypes").ToArray();
+				resDataMaster.Organizer.AddTaxa("resourcetypes", resourcetypes);
 
-                var showInDetail = resMaster.GetValue("showInDetail");
-                resDataMaster.SetValue("showInDetail", showInDetail);
+				var showInDetail = resMaster.GetValue("showInDetail");
+				resDataMaster.SetValue("showInDetail", showInDetail);
 
-                var titleExists = dynamicModuleManager.GetDataItems(handBookResourcesType)
-                    .Where(i => i.GetValue<string>("DataTitle").ToLower() == title.ToLower())
-                    .Any();
+				var titleExists = dynamicModuleManager.GetDataItems(handBookResourcesType)
+					.Where(i => i.GetValue<string>("DataTitle").ToLower() == title.ToLower())
+					.Any();
 
-                if (titleExists)
-                {
-                    title += "_data_title";
-                }
+				if (titleExists)
+				{
+					title += "_data_title";
+				}
 
-                resDataMaster.SetValue("DataTitle", title);
+				resDataMaster.SetValue("DataTitle", title);
 
-                var featuredimage = resMaster.GetRelatedItems<Image>("featuredimage").ToList();
-                foreach (var image in featuredimage)
-                {
-                    resDataMaster.CreateRelation(image, "featuredimage");
-                }
+				var featuredimage = resMaster.GetRelatedItems<Image>("featuredimage").ToList();
+				foreach (var image in featuredimage)
+				{
+					resDataMaster.CreateRelation(image, "featuredimage");
+				}
 
-                var attachfiles = resMaster.GetRelatedItems<Document>("attachfiles").ToList();
-                foreach (var file in attachfiles)
-                {
-                    resDataMaster.CreateRelation(file, "attachfiles");
-                }
+				var attachfiles = resMaster.GetRelatedItems<Document>("attachfiles").ToList();
+				foreach (var file in attachfiles)
+				{
+					resDataMaster.CreateRelation(file, "attachfiles");
+				}
 
-                resDataMaster.UrlName = new Lstring(Regex.Replace(title, UrlNameCharsToReplace, UrlNameReplaceString));
-                resDataMaster.Owner = SecurityManager.GetCurrentUserId();
-                resDataMaster.PublicationDate = currentUtcDateTime;
-                resDataMaster.DateCreated = currentUtcDateTime;
+				resDataMaster.UrlName = new Lstring(Regex.Replace(title, UrlNameCharsToReplace, UrlNameReplaceString));
+				resDataMaster.Owner = SecurityManager.GetCurrentUserId();
+				resDataMaster.PublicationDate = currentUtcDateTime;
+				resDataMaster.DateCreated = currentUtcDateTime;
 
-                var likeTitle = $@"{title}_{handBookResourcesType.Name}";
+				var likeTitle = $@"{title}_{handBookResourcesType.Name}";
 
-                var likeTitleExists = dynamicModuleManager.GetDataItems(resourceLikesType)
-                    .Where(i => i.GetValue<string>("Title").ToLower() == likeTitle.ToLower())
-                    .Any();
+				var likeTitleExists = dynamicModuleManager.GetDataItems(resourceLikesType)
+					.Where(i => i.GetValue<string>("Title").ToLower() == likeTitle.ToLower())
+					.Any();
 
-                if (likeTitleExists)
-                {
-                    likeTitle += "_like";
-                }
+				if (likeTitleExists)
+				{
+					likeTitle += "_like";
+				}
 
-                // Create like
-                DynamicContent likeMaster = dynamicModuleManager.CreateDataItem(resourceLikesType);
-                likeMaster.SetValue("Title", likeTitle);
-                likeMaster.SetValue("AmountOfLikes", 0);
-                likeMaster.SetValue("AmountOfDislikes", 0);
-                likeMaster.UrlName = new Lstring(Regex.Replace(likeTitle, UrlNameCharsToReplace, UrlNameReplaceString));
-                likeMaster.Owner = SecurityManager.GetCurrentUserId();
-                likeMaster.PublicationDate = currentUtcDateTime;
-                likeMaster.DateCreated = currentUtcDateTime;
+				// Create like
+				DynamicContent likeMaster = dynamicModuleManager.CreateDataItem(resourceLikesType);
+				likeMaster.SetValue("Title", likeTitle);
+				likeMaster.SetValue("AmountOfLikes", 0);
+				likeMaster.SetValue("AmountOfDislikes", 0);
+				likeMaster.UrlName = new Lstring(Regex.Replace(likeTitle, UrlNameCharsToReplace, UrlNameReplaceString));
+				likeMaster.Owner = SecurityManager.GetCurrentUserId();
+				likeMaster.PublicationDate = currentUtcDateTime;
+				likeMaster.DateCreated = currentUtcDateTime;
 
-                dynamicModuleManager.Lifecycle.Publish(likeMaster);
+				dynamicModuleManager.Lifecycle.Publish(likeMaster);
 
-                resDataMaster.CreateRelation(resMaster, relationFieldName);
-                resDataMaster.CreateRelation(likeMaster, "Likes");
+				resDataMaster.CreateRelation(resMaster, relationFieldName);
+				resDataMaster.CreateRelation(likeMaster, "Likes");
 
-                dynamicModuleManager.Lifecycle.Publish(resDataMaster);
-                resDataMaster.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
+				dynamicModuleManager.Lifecycle.Publish(resDataMaster);
+				resDataMaster.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
-                TransactionManager.CommitTransaction(transactionName);
+				TransactionManager.CommitTransaction(transactionName);
 
 				SendNotification(resDataMaster.Id);
-            }
-            catch (Exception e)
-            {
-                log.Error($@"{nameof(CreateIAFCHandBookResourcesData)} Error: {e.Message}");
-            }
-        }
-        #endregion  CreateIAFCHandBookResourcesData
+			}
+			catch (Exception e)
+			{
+				log.Error($@"{nameof(CreateIAFCHandBookResourcesData)} Error: {e.Message}");
+			}
+		}
+		#endregion  CreateIAFCHandBookResourcesData
 
-        #region UpdateIAFCHandBookResourcesData
-        public void UpdateIAFCHandBookResourcesData(Guid resourceLiveId, Type resourceType)
-        {
-            try
-            {
-                var relationFieldName = GetRelatedResourceFieldName(resourceType);
-                var currentUtcDateTime = DateTime.UtcNow;
+		#region UpdateIAFCHandBookResourcesData
+		public void UpdateIAFCHandBookResourcesData(Guid resourceLiveId, Type resourceType)
+		{
+			try
+			{
+				var relationFieldName = GetRelatedResourceFieldName(resourceType);
+				var currentUtcDateTime = DateTime.UtcNow;
 
-                DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-                var resLive = dynamicModuleManager.GetDataItem(resourceType, resourceLiveId);
-                var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
+				var resLive = dynamicModuleManager.GetDataItem(resourceType, resourceLiveId);
+				var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
 
-                var resDataList = resMaster.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName)
-                    .ToList();
+				var resDataList = resMaster.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName)
+					.ToList();
 
-                var resData = resDataList.First() as DynamicContent;
-                DynamicContent resDataMaster = dynamicModuleManager.Lifecycle.GetMaster(resData) as DynamicContent;
-                DynamicContent resDataTemp = dynamicModuleManager.Lifecycle.CheckOut(resDataMaster) as DynamicContent;
+				var resData = resDataList.First() as DynamicContent;
+				DynamicContent resDataMaster = dynamicModuleManager.Lifecycle.GetMaster(resData) as DynamicContent;
+				DynamicContent resDataTemp = dynamicModuleManager.Lifecycle.CheckOut(resDataMaster) as DynamicContent;
 
-                var title = resMaster.GetValue("Title").ToString();
-                resDataTemp.SetValue("Title", title);
+				var title = resMaster.GetValue("Title").ToString();
+				resDataTemp.SetValue("Title", title);
 
-                var categories = resMaster.GetValue<TrackedList<Guid>>("Category").ToArray();
-                resDataTemp.Organizer.Clear("Category");
-                resDataTemp.Organizer.AddTaxa("Category", categories);
+				var categories = resMaster.GetValue<TrackedList<Guid>>("Category").ToArray();
+				resDataTemp.Organizer.Clear("Category");
+				resDataTemp.Organizer.AddTaxa("Category", categories);
 
-                var shortsummary = resMaster.GetValue("shortsummary");
-                resDataTemp.SetValue("shortsummary", shortsummary);
+				var shortsummary = resMaster.GetValue("shortsummary");
+				resDataTemp.SetValue("shortsummary", shortsummary);
 
-                if (resourceType == ResourceType)
-                {
-                    var article = resMaster.GetValue("Article");
-                    resDataTemp.SetValue("ResourceDescription", article);
-                }
-                else if (resourceType == ExternalResourcesType)
-                {
-                    var time = resMaster.GetValue("Time");
-                    resDataTemp.SetValue("Time", time);
+				if (resourceType == ResourceType)
+				{
+					var article = resMaster.GetValue("Article");
+					resDataTemp.SetValue("ResourceDescription", article);
+				}
+				else if (resourceType == ExternalResourcesType)
+				{
+					var time = resMaster.GetValue("Time");
+					resDataTemp.SetValue("Time", time);
 
-                    var videoEmbedCode = resMaster.GetValue("VideoEmbedCode");
-                    resDataTemp.SetValue("VideoEmbedCode", videoEmbedCode);
+					var videoEmbedCode = resMaster.GetValue("VideoEmbedCode");
+					resDataTemp.SetValue("VideoEmbedCode", videoEmbedCode);
 
-                    var resourceDescription = resMaster.GetValue("ResourceDescription");
-                    resDataTemp.SetValue("ResourceDescription", resourceDescription);
-                }
+					var resourceDescription = resMaster.GetValue("ResourceDescription");
+					resDataTemp.SetValue("ResourceDescription", resourceDescription);
+				}
 
-                var departmenttype = resMaster.GetValue<TrackedList<Guid>>("departmenttype").ToArray();
-                resDataTemp.Organizer.Clear("departmenttype");
-                resDataTemp.Organizer.AddTaxa("departmenttype", departmenttype);
+				var departmenttype = resMaster.GetValue<TrackedList<Guid>>("departmenttype").ToArray();
+				resDataTemp.Organizer.Clear("departmenttype");
+				resDataTemp.Organizer.AddTaxa("departmenttype", departmenttype);
 
-                var feeding = resMaster.GetValue<TrackedList<Guid>>("feeding").ToArray();
-                resDataTemp.Organizer.Clear("feeding");
-                resDataTemp.Organizer.AddTaxa("feeding", feeding);
+				var feeding = resMaster.GetValue<TrackedList<Guid>>("feeding").ToArray();
+				resDataTemp.Organizer.Clear("feeding");
+				resDataTemp.Organizer.AddTaxa("feeding", feeding);
 
-                var organizationalauthors = resMaster.GetValue<TrackedList<Guid>>("organizationalauthors").ToArray();
-                resDataTemp.Organizer.Clear("organizationalauthors");
-                resDataTemp.Organizer.AddTaxa("organizationalauthors", organizationalauthors);
+				var organizationalauthors = resMaster.GetValue<TrackedList<Guid>>("organizationalauthors").ToArray();
+				resDataTemp.Organizer.Clear("organizationalauthors");
+				resDataTemp.Organizer.AddTaxa("organizationalauthors", organizationalauthors);
 
-                var resourceLink = resMaster.GetValue("ResourceLink");
-                resDataTemp.SetValue("ResourceLink", resourceLink);
+				var resourceLink = resMaster.GetValue("ResourceLink");
+				resDataTemp.SetValue("ResourceLink", resourceLink);
 
-                var resourcetypes = resMaster.GetValue<TrackedList<Guid>>("resourcetypes").ToArray();
-                resDataTemp.Organizer.Clear("resourcetypes");
-                resDataTemp.Organizer.AddTaxa("resourcetypes", resourcetypes);
+				var resourcetypes = resMaster.GetValue<TrackedList<Guid>>("resourcetypes").ToArray();
+				resDataTemp.Organizer.Clear("resourcetypes");
+				resDataTemp.Organizer.AddTaxa("resourcetypes", resourcetypes);
 
-                var showInDetail = resMaster.GetValue("showInDetail");
-                resDataTemp.SetValue("showInDetail", showInDetail);
+				var showInDetail = resMaster.GetValue("showInDetail");
+				resDataTemp.SetValue("showInDetail", showInDetail);
 
-                var dataTitle = resDataTemp.GetValue("DataTitle").ToString();
-                var titleExists = dynamicModuleManager.GetDataItems(handBookResourcesType)
-                    .Where(i => i.GetValue<string>("DataTitle").ToLower() == title.ToLower() &&
-                                i.GetValue<string>("DataTitle").ToLower() != dataTitle.ToLower())
-                    .Any();
+				var dataTitle = resDataTemp.GetValue("DataTitle").ToString();
+				var titleExists = dynamicModuleManager.GetDataItems(handBookResourcesType)
+					.Where(i => i.GetValue<string>("DataTitle").ToLower() == title.ToLower() &&
+								i.GetValue<string>("DataTitle").ToLower() != dataTitle.ToLower())
+					.Any();
 
-                if (titleExists)
-                {
-                    title += "_data_title";
-                }
+				if (titleExists)
+				{
+					title += "_data_title";
+				}
 
-                resDataTemp.SetValue("DataTitle", title);
+				resDataTemp.SetValue("DataTitle", title);
 
-                resDataTemp.DeleteRelations("featuredimage");
-                var featuredimage = resMaster.GetRelatedItems<Image>("featuredimage").ToList();
-                foreach (var image in featuredimage)
-                {
-                    resDataTemp.CreateRelation(image, "featuredimage");
-                }
+				resDataTemp.DeleteRelations("featuredimage");
+				var featuredimage = resMaster.GetRelatedItems<Image>("featuredimage").ToList();
+				foreach (var image in featuredimage)
+				{
+					resDataTemp.CreateRelation(image, "featuredimage");
+				}
 
-                resDataTemp.DeleteRelations("attachfiles");
-                var attachfiles = resMaster.GetRelatedItems<Document>("attachfiles").ToList();
-                foreach (var file in attachfiles)
-                {
-                    resDataTemp.CreateRelation(file, "attachfiles");
-                }
+				resDataTemp.DeleteRelations("attachfiles");
+				var attachfiles = resMaster.GetRelatedItems<Document>("attachfiles").ToList();
+				foreach (var file in attachfiles)
+				{
+					resDataTemp.CreateRelation(file, "attachfiles");
+				}
 
-                resDataTemp.UrlName = new Lstring(Regex.Replace(title, UrlNameCharsToReplace, UrlNameReplaceString));
-                resDataTemp.PublicationDate = currentUtcDateTime;
-                resDataTemp.LastModified = currentUtcDateTime;
-                resDataTemp.LastModifiedBy = SecurityManager.GetCurrentUserId();
+				resDataTemp.UrlName = new Lstring(Regex.Replace(title, UrlNameCharsToReplace, UrlNameReplaceString));
+				resDataTemp.PublicationDate = currentUtcDateTime;
+				resDataTemp.LastModified = currentUtcDateTime;
+				resDataTemp.LastModifiedBy = SecurityManager.GetCurrentUserId();
 
-                resDataMaster = dynamicModuleManager.Lifecycle.CheckIn(resDataTemp) as DynamicContent;
-                dynamicModuleManager.Lifecycle.Publish(resDataMaster);
-                dynamicModuleManager.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                log.Error($@"{nameof(UpdateIAFCHandBookResourcesData)} Error: {e.Message}");
-            }
-        }
-        #endregion UpdateIAFCHandBookResourcesData
+				resDataMaster = dynamicModuleManager.Lifecycle.CheckIn(resDataTemp) as DynamicContent;
+				dynamicModuleManager.Lifecycle.Publish(resDataMaster);
+				dynamicModuleManager.SaveChanges();
+			}
+			catch (Exception e)
+			{
+				log.Error($@"{nameof(UpdateIAFCHandBookResourcesData)} Error: {e.Message}");
+			}
+		}
+		#endregion UpdateIAFCHandBookResourcesData
 
-        #region DeleteIAFCHandBookResourcesData
-        public void DeleteIAFCHandBookResourcesData(Guid resourceID, Type resourceType)
-        {
-            try
-            {
-                var relationFieldName = GetRelatedResourceFieldName(resourceType);
+		#region DeleteIAFCHandBookResourcesData
+		public void DeleteIAFCHandBookResourcesData(Guid resourceID, Type resourceType)
+		{
+			try
+			{
+				var relationFieldName = GetRelatedResourceFieldName(resourceType);
 
-                DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-                var res = dynamicModuleManager.GetDataItem(resourceType, resourceID);
+				var res = dynamicModuleManager.GetDataItem(resourceType, resourceID);
 
-                var resDataList = res.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName);
-                var resData = resDataList.First() as DynamicContent;
-                DynamicContent resDataMaster = dynamicModuleManager.Lifecycle.GetMaster(resData) as DynamicContent;
+				var resDataList = res.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName);
+				var resData = resDataList.First() as DynamicContent;
+				DynamicContent resDataMaster = dynamicModuleManager.Lifecycle.GetMaster(resData) as DynamicContent;
 
-                dynamicModuleManager.Provider.DeleteDataItem(resDataMaster);
-                dynamicModuleManager.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                log.Error($@"{nameof(DeleteIAFCHandBookResourcesData)} Error: {e.Message}");
-            }
-        }
-        #endregion DeleteIAFCHandBookResourcesData
+				dynamicModuleManager.Provider.DeleteDataItem(resDataMaster);
+				dynamicModuleManager.SaveChanges();
+			}
+			catch (Exception e)
+			{
+				log.Error($@"{nameof(DeleteIAFCHandBookResourcesData)} Error: {e.Message}");
+			}
+		}
+		#endregion DeleteIAFCHandBookResourcesData
 
-        #region IsResourceContainedWithinTopicsCategory
-        public bool IsResourceContainedWithinTopicsCategory(Guid liveResourceId, Type resourceType)
-        {
-            if (resourceType != ExternalResourcesType &&
-                resourceType != ResourceType)
-            {
-                throw new ArgumentException("Invalid type passed.", nameof(resourceType));
-            }
+		#region IsResourceContainedWithinTopicsCategory
+		public bool IsResourceContainedWithinTopicsCategory(Guid liveResourceId, Type resourceType)
+		{
+			if (resourceType != ExternalResourcesType &&
+				resourceType != ResourceType)
+			{
+				throw new ArgumentException("Invalid type passed.", nameof(resourceType));
+			}
 
-            DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-            var resLive = dynamicModuleManager.GetDataItem(resourceType, liveResourceId);
-            var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
+			var resLive = dynamicModuleManager.GetDataItem(resourceType, liveResourceId);
+			var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
 
-            var categories = resMaster.GetValue<IList<Guid>>("Category");
-            var isContained = categories.Where(c => topicCategories.Contains(c)).Any();
+			var categories = resMaster.GetValue<IList<Guid>>("Category");
+			var isContained = categories.Where(c => topicCategories.Contains(c)).Any();
 
-            return isContained;
-        }
-        #endregion IsResourceContainedWithinTopicsCategory
+			return isContained;
+		}
+		#endregion IsResourceContainedWithinTopicsCategory
 
-        #region IsHandBookResourcesDataExistsFor
-        public bool IsHandBookResourcesDataExistsFor(Guid liveResourceId, Type resourceType)
-        {
-            var relationFieldName = GetRelatedResourceFieldName(resourceType);
+		#region IsHandBookResourcesDataExistsFor
+		public bool IsHandBookResourcesDataExistsFor(Guid liveResourceId, Type resourceType)
+		{
+			var relationFieldName = GetRelatedResourceFieldName(resourceType);
 
-            DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-            var resLive = dynamicModuleManager.GetDataItem(resourceType, liveResourceId);
-            var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
+			var resLive = dynamicModuleManager.GetDataItem(resourceType, liveResourceId);
+			var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
 
-            var resDataList = resMaster.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName);
-            return resDataList.Any();
-        }
-        #endregion IsHandBookResourcesDataExistsFor
+			var resDataList = resMaster.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName);
+			return resDataList.Any();
+		}
+		#endregion IsHandBookResourcesDataExistsFor
 
-        #region GetRecentlyAddedResourcesNext
-        public List<IAFCHandBookResourceModel> GetRecentlyAddedResourcesNext()
-        {
-            DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+		#region GetRecentlyAddedResourcesNext
+		public List<IAFCHandBookResourceModel> GetRecentlyAddedResourcesNext()
+		{
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-            var recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
-                .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-                .OrderByDescending(d => d.DateCreated)
-                .Take(6)
-                .ToList();
+			var recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
+				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+				.OrderByDescending(d => d.DateCreated)
+				.Take(6)
+				.ToList();
 
-            var listOfMyResources = new List<IAFCHandBookResourceModel>();
+			var listOfMyResources = new List<IAFCHandBookResourceModel>();
 
-            foreach (var res in recentlyAddedResources)
-            {
-                var handBookResource = GetResourceDetailsNext(res);
-                listOfMyResources.Add(handBookResource);
-            }
+			foreach (var res in recentlyAddedResources)
+			{
+				var handBookResource = GetResourceDetailsNext(res, null);
+				listOfMyResources.Add(handBookResource);
+			}
 
-            return listOfMyResources;
-        }
-        #endregion GetRecentlyAddedResourcesNext
+			return listOfMyResources;
+		}
+		#endregion GetRecentlyAddedResourcesNext
 
-        #region GetFeaturedResourcesDataNext
-        public IAFCHandBookResourceModel GetFeaturedResourcesDataNext()
-        {
-            IAFCHandBookResourceModel handBookResourceModel = new IAFCHandBookResourceModel();
+		#region GetFeaturedResourcesDataNext
+		public IAFCHandBookResourceModel GetFeaturedResourcesDataNext()
+		{
+			IAFCHandBookResourceModel handBookResourceModel = new IAFCHandBookResourceModel();
 
-            try
-            {
-                DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			try
+			{
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-                var featuredResource = dynamicModuleManager.GetDataItems(handBookResourcesType)
-                    .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-                    .Where(d => d.GetValue<IList<Guid>>("Category").Contains(Featured_VWS_A_RIT))
-                    .OrderByDescending(d => d.DateCreated)
-                    .FirstOrDefault();
+				var featuredResource = dynamicModuleManager.GetDataItems(handBookResourcesType)
+					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+					.Where(d => d.GetValue<IList<Guid>>("Category").Contains(Featured_VWS_A_RIT))
+					.OrderByDescending(d => d.DateCreated)
+					.FirstOrDefault();
 
-                if (featuredResource != null)
-                {
-                    handBookResourceModel = GetResourceDetailsNext(featuredResource);
-                }
-            }
-            catch (Exception e)
-            {
-                log.Error($@"{nameof(GetFeaturedResourcesDataNext)} Error: {e.Message}");
-            }
+				if (featuredResource != null)
+				{
+					handBookResourceModel = GetResourceDetailsNext(featuredResource,null);
+				}
+			}
+			catch (Exception e)
+			{
+				log.Error($@"{nameof(GetFeaturedResourcesDataNext)} Error: {e.Message}");
+			}
 
-            return handBookResourceModel;
-        }
-        #endregion GetFeaturedResourcesDataNext
+			return handBookResourceModel;
+		}
+		#endregion GetFeaturedResourcesDataNext
 
-        #region GetResourcesPerCategoryNext
-        public IAFCHandBookResourcesPerCatergoryModel GetResourcesPerCategoryNext(string categoryName, string orderBy)
-        {
-            IAFCHandBookResourcesPerCatergoryModel model = new IAFCHandBookResourcesPerCatergoryModel();
+		#region GetResourcesPerCategoryNext
+		public IAFCHandBookResourcesPerCatergoryModel GetResourcesPerCategoryNext(string categoryName, string orderBy)
+		{
+			IAFCHandBookResourcesPerCatergoryModel model = new IAFCHandBookResourcesPerCatergoryModel();
 
-            try
-            {
-                Guid categoryID = GetCategoryGuidByName(categoryName);
-                var topicCategory = GetTopicCategories(categoryID);
+			try
+			{
+				Guid categoryID = GetCategoryGuidByName(categoryName);
+				var topicCategory = GetTopicCategories(categoryID);
 
-                model.Category.Id = categoryID;
-                model.Category.CategoryTitle = topicCategory.ResourceCategoryTile;
-                model.Category.CategoryUrl = topicCategory.ResourceCategoryUrl;
-                model.Category.ParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
-                model.Category.CategoryDescription = topicCategory.ResourceCategoryDescription;
+				model.Category.Id = categoryID;
+				model.Category.CategoryTitle = topicCategory.ResourceCategoryTile;
+				model.Category.CategoryUrl = topicCategory.ResourceCategoryUrl;
+				model.Category.ParentCategoryTitle = topicCategory.ResourceParentCategoryTitle;
+				model.Category.CategoryDescription = topicCategory.ResourceCategoryDescription;
 
-                var orderByList = InitOrderBy(orderBy, topicCategory.ResourceCategoryUrl);
-                model.OrderBy = orderByList;
+				var orderByList = InitOrderBy(orderBy, topicCategory.ResourceCategoryUrl);
+				model.OrderBy = orderByList;
 
-                DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-                var recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
-                    .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-                    .Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryID));
+				var recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
+					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryID));
 
-                if (orderBy == OrderByMostRecent)
-                {
-                    recentlyAddedResources = recentlyAddedResources.OrderByDescending(r => r.DateCreated);
-                }
-                else if (orderBy == OrderByMostPopular)
-                {
-                    recentlyAddedResources = recentlyAddedResources.OrderByDescending(r => r.GetValue<decimal?>("AmountOfLikes"));
-                }
-                else if (orderBy == OrderByAlphabeticalAZ)
-                {
-                    recentlyAddedResources = recentlyAddedResources.OrderBy(r => r.GetValue<string>("Title"));
-                }
-                else if (orderBy == OrderByAlphabeticalZA)
-                {
-                    recentlyAddedResources = recentlyAddedResources.OrderByDescending(r => r.GetValue<string>("Title"));
-                }
+				if (orderBy == OrderByMostRecent)
+				{
+					recentlyAddedResources = recentlyAddedResources.OrderByDescending(r => r.DateCreated);
+				}
+				else if (orderBy == OrderByMostPopular)
+				{
+					recentlyAddedResources = recentlyAddedResources.OrderByDescending(r => r.GetValue<decimal?>("AmountOfLikes"));
+				}
+				else if (orderBy == OrderByAlphabeticalAZ)
+				{
+					recentlyAddedResources = recentlyAddedResources.OrderBy(r => r.GetValue<string>("Title"));
+				}
+				else if (orderBy == OrderByAlphabeticalZA)
+				{
+					recentlyAddedResources = recentlyAddedResources.OrderByDescending(r => r.GetValue<string>("Title"));
+				}
 
-                var recentlyAddedResourcesList = recentlyAddedResources.ToList();
+				var recentlyAddedResourcesList = recentlyAddedResources.ToList();
 
-                var listOfMyResources = new List<IAFCHandBookResourceModel>();
-                TimeSpan totalDuration = new TimeSpan(0, 0, 0);
-                int resourcesAmount = 0;
+				var listOfMyResources = new List<IAFCHandBookResourceModel>();
+				TimeSpan totalDuration = new TimeSpan(0, 0, 0);
+				int resourcesAmount = 0;
 
-                foreach (var res in recentlyAddedResourcesList)
-                {
-                    var handBookResource = GetResourceDetailsNext(res);
-                    listOfMyResources.Add(handBookResource);
-                    totalDuration = totalDuration.Add(handBookResource.ResourceDetails.Duration);
-                    resourcesAmount++;
-                }
+				foreach (var res in recentlyAddedResourcesList)
+				{
+					var handBookResource = GetResourceDetailsNext(res, categoryID);
+					listOfMyResources.Add(handBookResource);
+					totalDuration = totalDuration.Add(handBookResource.ResourceDetails.Duration);
+					resourcesAmount++;
+				}
 
-                model.Resources = listOfMyResources;
-                model.Category.ResourcesTotalDuration = totalDuration.ToString();
-                model.Category.ResourcesAmount = resourcesAmount;
-                model.MoreCategories = GetMoreCategories(model.Category.Id);
+				model.Resources = listOfMyResources;
+				model.Category.ResourcesTotalDuration = totalDuration.ToString();
+				model.Category.ResourcesAmount = resourcesAmount;
+				model.MoreCategories = GetMoreCategories(model.Category.Id);
 				model.IsCategoryFollowed = IsCategoryFollowed(model.Category.Id);
 				model.IsUserAuthorized = isUserAuthorized;
-            }
-            catch (Exception e)
-            {
-                log.Error($@"{nameof(GetResourcesPerCategoryNext)} Error: {e.Message}");
-            }
+			}
+			catch (Exception e)
+			{
+				log.Error($@"{nameof(GetResourcesPerCategoryNext)} Error: {e.Message}");
+			}
 
-            return model;
-        }
-        #endregion GetResourcesPerCategoryNext
+			return model;
+		}
+		#endregion GetResourcesPerCategoryNext
 
-        #region GetMoreResourcesNext
-        public List<IAFCHandBookMoreResourcesModel> GetMoreResourcesNext(Guid resourceId, Guid categoryID)
-        {
-            List<IAFCHandBookMoreResourcesModel> moreResources = new List<IAFCHandBookMoreResourcesModel>();
+		#region GetMoreResourcesNext
+		public List<IAFCHandBookMoreResourcesModel> GetMoreResourcesNext(Guid resourceId, Guid categoryID)
+		{
+			List<IAFCHandBookMoreResourcesModel> moreResources = new List<IAFCHandBookMoreResourcesModel>();
 
-            DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-            var moreResourcesArray = dynamicModuleManager.GetDataItems(handBookResourcesType)
-                .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-                .Where(d => d.GetValue<IList<Guid>>("Category").Contains(categoryID))
-                .Where(d => d.Id != resourceId)
-                .OrderByDescending(r => r.DateCreated)
-                .Take(5)
-                .ToArray();
+			var moreResourcesArray = dynamicModuleManager.GetDataItems(handBookResourcesType)
+				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+				.Where(d => d.GetValue<IList<Guid>>("Category").Contains(categoryID))
+				.Where(d => d.Id != resourceId)
+				.OrderByDescending(r => r.DateCreated)
+				.Take(5)
+				.ToArray();
 
-            foreach (var resItem in moreResourcesArray)
-            {
-                var moreResourcesItem = new IAFCHandBookMoreResourcesModel();
-                moreResourcesItem.Id = resItem.Id;
-                moreResourcesItem.ResourceDetails = GetResourceDetailsInfo(resItem);
+			foreach (var resItem in moreResourcesArray)
+			{
+				var moreResourcesItem = new IAFCHandBookMoreResourcesModel();
+				moreResourcesItem.Id = resItem.Id;
+				moreResourcesItem.ResourceDetails = GetResourceDetailsInfo(resItem, categoryID);
 
-                var likesModel = new IAFCHandBookLikesModel
-                {
-                    Likes = Convert.ToInt32(resItem.GetValue("AmountOfLikes")),
-                    Dislikes = Convert.ToInt32(resItem.GetValue("AmountOfDislikes"))
-                };
-                moreResourcesItem.Likes = likesModel;
+				var likesModel = new IAFCHandBookLikesModel
+				{
+					Likes = Convert.ToInt32(resItem.GetValue("AmountOfLikes")),
+					Dislikes = Convert.ToInt32(resItem.GetValue("AmountOfDislikes"))
+				};
+				moreResourcesItem.Likes = likesModel;
 
-                moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceDetails.Category.CategoryUrl + "/resourcedetails/" + resItem.UrlName.ToString();
-                moreResources.Add(moreResourcesItem);
-            }
+				moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceDetails.Category.CategoryUrl + "/resourcedetails/" + resItem.UrlName.ToString();
+				if (moreResourcesItem.ResourceDetails.IsResourceHasMoreThen1Category)
+				{
+					moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceUrl + "," + categoryID.ToString();
+				}
+				moreResources.Add(moreResourcesItem);
+			}
 
-            return moreResources;
-        }
-        #endregion GetMoreResourcesNext
+			return moreResources;
+		}
+		#endregion GetMoreResourcesNext
 
-        #region GetResourceDetailsNext
-        public IAFCHandBookResourceModel GetResourceDetailsNext(DynamicContent resource, bool isMyHandBookItem = false)
-        {
-            var handBookResourceModel = new IAFCHandBookResourceModel(resource.Id,
-                resource.GetValue("Title").ToString(),
-                resource.DateCreated);
+		#region GetResourceDetailsNext
+		public IAFCHandBookResourceModel GetResourceDetailsNext(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false)
+		{
+			var handBookResourceModel = new IAFCHandBookResourceModel(resource.Id,
+				resource.GetValue("Title").ToString(),
+				resource.DateCreated);
 
-            try
-            {
-                handBookResourceModel.ResourceDetails = GetResourceDetailsInfoNext(resource, isMyHandBookItem);
+			try
+			{
 
-                if (isMyHandBookItem)
-                {
-                    handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceDetails.Category.MyHandBookCategoryUrl + "/resourcedetails/" + resource.UrlName.ToString();
-                }
-                else
-                {
-                    handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceDetails.Category.CategoryUrl + "/resourcedetails/" + resource.UrlName.ToString();
-                }
+				// get first category
+				handBookResourceModel.ResourceDetails = GetResourceDetailsInfoNext(resource, categoryId, isMyHandBookItem);
 
-                var handBookLikeModel = new IAFCHandBookLikesModel
-                {
-                    Likes = Convert.ToInt32(resource.GetValue("AmountOfLikes")),
-                    Dislikes = Convert.ToInt32(resource.GetValue("AmountOfDislikes"))
-                };
+				if (isMyHandBookItem)
+				{											
+					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceDetails.Category.MyHandBookCategoryUrl + "/resourcedetails/" + resource.UrlName.ToString();				
+				}
+				else
+				{
+					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceDetails.Category.CategoryUrl + "/resourcedetails/" + resource.UrlName.ToString();
+				}
 
-                handBookResourceModel.Likes = handBookLikeModel;
-                handBookResourceModel.CommentsAmount = Convert.ToInt32(resource.GetValue("AmountOfComments"));
-                var resourceCompleted = IsResourceMarkedAsComplete(handBookResourceModel.Id);
-                handBookResourceModel.IsResourceAddedToMyHandBook = IsResourceAddedToMyHandBook(handBookResourceModel.Id) || resourceCompleted;
-                handBookResourceModel.IsResourceCompleted = resourceCompleted;
+				if (handBookResourceModel.ResourceDetails.IsResourceHasMoreThen1Category)
+				{
+					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceUrl + "," + categoryId.ToString();
+				}
+
+				var handBookLikeModel = new IAFCHandBookLikesModel
+				{
+					Likes = Convert.ToInt32(resource.GetValue("AmountOfLikes")),
+					Dislikes = Convert.ToInt32(resource.GetValue("AmountOfDislikes"))
+				};
+
+				handBookResourceModel.Likes = handBookLikeModel;
+				handBookResourceModel.CommentsAmount = Convert.ToInt32(resource.GetValue("AmountOfComments"));
+				var resourceCompleted = IsResourceMarkedAsComplete(handBookResourceModel.Id);
+				handBookResourceModel.IsResourceAddedToMyHandBook = IsResourceAddedToMyHandBook(handBookResourceModel.Id) || resourceCompleted;
+				handBookResourceModel.IsResourceCompleted = resourceCompleted;
 				handBookResourceModel.IsUserAuthorized = isUserAuthorized;
+				
 
 			}
-            catch (Exception e)
-            {
-                log.Error($@"{nameof(GetResourceDetailsNext)} Error: {e.Message}");
-            }
+			catch (Exception e)
+			{
+				log.Error($@"{nameof(GetResourceDetailsNext)} Error: {e.Message}");
+			}
 
-            return handBookResourceModel;
-        }
+			return handBookResourceModel;
+		}
 		#endregion GetResourceDetailsNext
 
 		#region GetResourceDetailsInfoNext
-		public IAFCHandBookResourceDetailsModel GetResourceDetailsInfoNext(DynamicContent resource, bool isMyHandBookItem = false)
+		public IAFCHandBookResourceDetailsModel GetResourceDetailsInfoNext(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false)
 		{
 			var resourceInfo = new IAFCHandBookResourceDetailsModel();
+
 
 			string resourceTypeTitle = string.Empty;
 			string resourceCategoryTitle = string.Empty;
@@ -559,8 +572,18 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 
 			// get first category
-			var resourceCategoriesIDs = resource.GetPropertyValue<TrackedList<Guid>>("Category");
-			var categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).First();
+			var resourceCategoriesIDs = resource.GetPropertyValue<TrackedList<Guid>>("Category").ToArray();
+			var moreThen1Category = resourceCategoriesIDs.Count() > 1;
+			resourceInfo.IsResourceHasMoreThen1Category = moreThen1Category;
+			Guid categoryItem;
+			if (categoryId != null)
+			{
+				categoryItem = resourceCategoriesIDs.Where(c => c == categoryId).First();
+			}
+			else
+			{
+				categoryItem = resourceCategoriesIDs.Where(c => topicCategories.Contains(c)).First();
+			}
 			if (categoryItem != null)
 			{
 				var topicCategory = GetTopicCategories(categoryItem);
@@ -592,12 +615,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			else
 			{
 				resourceInfo.ImagePlaceholderUrl = DefaultPaceholderImgUrl;
-				resourceInfo.ImageSvgUrl = resourceTypeImages[resourceTypeTitle];
-				if (resourceInfo.ImageSvgUrl ==null)
+				if (resourceTypeImages.ContainsKey(resourceTypeTitle))
+				{
+					resourceInfo.ImageSvgUrl = resourceTypeImages[resourceTypeTitle];
+				}
+				else
 				{
 					resourceInfo.ImageSvgUrl = DefaultArticleImgUrl;
 				}
-
 			}
 
             return resourceInfo;
@@ -867,7 +892,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     var myChildResourceItem = new IAFCHandBookResourceModel();
                     foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
                     {
-                        myChildResourceItem = GetResourceDetails(resourceItem, showAsMyHandBookItem);
+                        myChildResourceItem = GetResourceDetails(resourceItem, childCategory.Id, showAsMyHandBookItem);
                         myChildResourceItem.MoreThen5Resources = (myHandBookResourcesAmount - 5) < 0 ? 0 : myHandBookResourcesAmount - 5;
 
                         myChildHandBookResourcesItem.MyResources.Add(myChildResourceItem);
@@ -876,7 +901,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     var myChildCompletedResourceItem = new IAFCHandBookResourceModel();
                     foreach (var resourceCompletedItem in categoryCompletedResources.OrderByDescending(r => r.DateCreated).Take(5))
                     {
-                        myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, showAsMyHandBookItem);
+                        myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, childCategory.Id, showAsMyHandBookItem);
                         myChildHandBookResourcesItem.MyCompletedResources.Add(myChildCompletedResourceItem);
                     }
 
@@ -997,7 +1022,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 var myChildResourceItem = new IAFCHandBookResourceModel();
                 foreach (var resourceItem in showAllResources ? categoryResources : categoryResources.Take(5))
                 {
-                    myChildResourceItem = GetResourceDetails(resourceItem, showAsMyHandBookItem);
+                    myChildResourceItem = GetResourceDetails(resourceItem, categoryId, showAsMyHandBookItem);
 
                     myChildResourceItem.MoreThen5Resources = (myHandBookResourcesAmount - 5) < 0 ? 0 : myHandBookResourcesAmount - 5;
                     model.MyResources.Add(myChildResourceItem);
@@ -1006,7 +1031,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 var myChildCompletedResourceItem = new IAFCHandBookResourceModel();
                 foreach (var resourceCompletedItem in showAllResources ? categoryCompletedResources : categoryCompletedResources.Take(5))
                 {
-                    myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, showAsMyHandBookItem);
+                    myChildCompletedResourceItem = GetResourceDetails(resourceCompletedItem, categoryId, showAsMyHandBookItem);
                     model.MyCompletedResources.Add(myChildCompletedResourceItem);
                 }
 
@@ -1037,7 +1062,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
         #endregion GetMyHandBookCategoryResourcesListNext
 
         #region Get My Hnadbook ResourceDetails by Name Next
-        public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsNext(string name)
+        public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsNext(string name, Guid? categoryId)
         {
             DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
@@ -1046,7 +1071,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 .Where(d => d.UrlName == name)
                 .First();
 
-            var model = GetResourceDetails(resourceItem, true);
+            var model = GetResourceDetails(resourceItem, categoryId, true);
             model.MoreResources = GetMyHandBookMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
             model.Comments = GetResourceComments(resourceItem);
 
@@ -1081,7 +1106,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
             {
                 var moreResourcesItem = new IAFCHandBookMoreResourcesModel();
                 moreResourcesItem.Id = resItem.Id;
-                moreResourcesItem.ResourceDetails = GetResourceDetailsInfo(resItem, true);
+                moreResourcesItem.ResourceDetails = GetResourceDetailsInfo(resItem, categoryID,true);
 
                 var likesModel = new IAFCHandBookLikesModel
                 {
@@ -1091,7 +1116,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 moreResourcesItem.Likes = likesModel;
 
                 moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceDetails.Category.MyHandBookCategoryUrl + "/resourcedetails/" + resItem.UrlName.ToString();
-                moreResources.Add(moreResourcesItem);
+				if(moreResourcesItem.ResourceDetails.IsResourceHasMoreThen1Category)
+				{
+					moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceUrl + "," + categoryID.ToString();
+				}
+
+				moreResources.Add(moreResourcesItem);
             }
 
             return moreResources;

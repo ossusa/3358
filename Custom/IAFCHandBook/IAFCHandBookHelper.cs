@@ -1074,9 +1074,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#region GetResourceDetailsInfo
 
-		public IAFCHandBookResourceDetailsModel GetResourceDetailsInfo(DynamicContent resource, bool isMyHandBookItem = false)
+		public IAFCHandBookResourceDetailsModel GetResourceDetailsInfo(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false)
 		{
-			return GetResourceDetailsInfoNext(resource, isMyHandBookItem);
+			return GetResourceDetailsInfoNext(resource, categoryId, isMyHandBookItem);
 		}
 
 		#endregion GetResourceDetailsInfo
@@ -1085,15 +1085,15 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#region GetResourceDetails by Item
 
-		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resource, bool isMyHandBookItem = false)
+		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false)
 		{
-			return GetResourceDetailsNext(resource, isMyHandBookItem);
+			return GetResourceDetailsNext(resource, categoryId, isMyHandBookItem);
 		}
 
 		#endregion GetResourceDetails by Item
 
 		#region GetResourceDetails by Name
-		public IAFCHandBookResourceModel GetResourceDetails(String name)
+		public IAFCHandBookResourceModel GetResourceDetails(String name, Guid? categoryId= null)
 		{
 
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -1101,7 +1101,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name).
 						First();
 
-			var model = GetResourceDetails(resourceItem);
+			var model = GetResourceDetails(resourceItem, categoryId);
 			model.MoreResources = GetMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
 			model.Comments = GetResourceComments(resourceItem);
 
@@ -1738,7 +1738,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			foreach (var resourceItem in resources)
 			{
-				resourceItemModel = GetResourceDetails(resourceItem, true);
+				resourceItemModel = GetResourceDetails(resourceItem, null, true);
 				model.Add(resourceItemModel);
 			}
 
@@ -1754,9 +1754,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetMyHandBookCategoryResources
 
 		#region Get My Hnadbook ResourceDetails by Name
-		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name)
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId=null)
 		{
-			return GetMyHnadbookResourceDetailsNext(name);
+			return GetMyHnadbookResourceDetailsNext(name, categoryId);
 		}
 		#endregion Get My Hnadbook ResourceDetails by Name
 
@@ -1877,7 +1877,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			foreach (var res in searchedResourcesList)
 			{
-				var handBookResource = GetResourceDetailsNext(res);
+				var handBookResource = GetResourceDetailsNext(res, null);
 				listOfMyResources.Add(handBookResource);
 			}
 			model.Resources = listOfMyResources;
