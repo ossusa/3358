@@ -120,6 +120,7 @@ $(document).ready(function () {
         $('.header__sub_ul').show();
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
+        $(".header__second_ul:nth-of-type(1)").show();
         if ($(".header__second_ul:nth-of-type(1)").show()){
             $(this).siblings('.header__second_ul').hide();
         }
