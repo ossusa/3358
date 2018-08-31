@@ -85,14 +85,14 @@
       background-color: #ffffff;
   }
     &_list{
+      &:nth-of-type(1){
+        padding: 0;
+      }
+      padding: 9px 0 0 0;
       &-link{
         color: #666666;
         font-family: "Nunito Sans", sans-serif;
         font-size: 1.00em;
-        padding: 9px 0 0 0;
-        &:nth-of-type(1){
-          padding: 0;
-        }
     }
       &:nth-of-type(1) > .header__sub_list-link {
         &:hover {
@@ -158,7 +158,7 @@
       border-radius: 3px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       background-color: #ffffff;
-      &:nth-of-type(1) .header__second_list{
+      &:nth-of-type(1) .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #5591AA;
           color: $color_community;
@@ -170,7 +170,7 @@
           color: $color_community;
         }
       }
-      &:nth-of-type(2) .header__second_list{
+      &:nth-of-type(2) .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #5591AA;
           color: $color_leadership;
@@ -182,7 +182,7 @@
           color: $color_leadership;
         }
       }
-      &:nth-of-type(3) .header__second_list{
+      &:nth-of-type(3) .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #5591AA;
           color: $color_finance;
@@ -194,7 +194,7 @@
           color: $color_finance;
         }
       }
-      &:nth-of-type(4) .header__second_list{
+      &:nth-of-type(4) .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #5591AA;
           color: $color_personnel;
@@ -208,14 +208,15 @@
       }
   }
     &_list{
+      &:nth-of-type(1){
+        padding: 0;
+      }
+      padding: 9px 0 0 0;
       &-link{
         color: #666666;
         font-family: "Nunito Sans", sans-serif;
         font-size: 1.00em;
-        padding: 9px 0 0 0;
-        &:nth-of-type(1){
-          padding: 0;
-        }
+
     }
     }
   }
