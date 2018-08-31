@@ -1,10 +1,6 @@
 
 
 $(document).ready(function () {
-    /*Jumbo Search*/
-    $('.hb-jumbo__search').appendTo(".hb-jumbo");
-    $(".k-input").attr("placeholder", "Search");
-
     /*Slider*/
     $('.resources__slider').slick({
         dots: false,
@@ -106,7 +102,7 @@ $(document).ready(function () {
     var wrapper = $('#wrapper');
     var stickyHeader = $('.box-mobile');
     $(window).scroll(function(){
-        if ($(window).scrollTop() >= headerText.height()) {
+        if ($(window).scrollTop() >= headerText.outerHeight()) {
             wrapper.css("margin-top", stickyHeader.height());
             stickyHeader.addClass('sticky');
         }
@@ -118,5 +114,37 @@ $(document).ready(function () {
     $('.markAsCompleteBtn').click(function () {
         $('.complete_box').addClass('anticon anticon-check');
     });
-
+    $('.header__list-link:nth-of-type(1)').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('.header__sub_ul').show();
+    });
+    $('.header__sub_list').click(function() {
+        $('.header__second_ul').show().nextAll().hide();
+        // $(this).find('.header__second_ul').slideDown();
+    });
+    // $('body').not('.header__sub_ul').click(function() {
+    //     $('.header__second_ul').slideUp();
+    // });
+    // $('.header__sub_list').click(function() {
+    //     var sibling = $(this).siblings('.header__second_ul');
+    //     if(!sibling.is(':visible')){
+    //         $('.header__second_ul:visible').hide();
+    //         sibling.show(); }
+    //     else sibling.hide();
+    // });
+    // $(document).bind("click touchstart", function(e)
+    // {
+    //     var open_content = $(".header__second_ul:visible");
+    //
+    //     if (!open_content.parent().is(e.target)
+    //         && open_content.parent().has(e.target).length === 0)
+    //     {
+    //         open_content.hide();
+    //     }
+    // });
+    // function showSubList(obj) {
+    //     //     $('.header__second_ul').hide(300);
+    //     //     $(obj).parent().children('.header__second_ul').show();
+    //     // };
 });
