@@ -18,8 +18,8 @@ $(document).ready(function () {
     });
 
     /*Search in header*/
-    var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
-    var $li = $(".sfNavHorizontalDropDownWrp li:contains('Account')");
+    var $search = '<li class="header__list"><button class="header__search anticon anticon-search" type="submit"></button></li>';
+    var $li = $(".header__list:contains('Account')");
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
     $($liSearch).appendTo('.k-item-search');
