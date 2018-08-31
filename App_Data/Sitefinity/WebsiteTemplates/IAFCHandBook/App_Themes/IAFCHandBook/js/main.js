@@ -135,13 +135,13 @@ $(document).ready(function () {
         $(".header__second_ul:nth-of-type(4)").show();
         $('.header__second_ul').not(':nth-of-type(4)').hide();
     });
-    $(window).click(function() {
+    $(window).not('header__sub_ul').click(function() {
         $('.header__sub_ul').hide();
     });
     $('.header__list-link:nth-of-type(1)').click(function(event){
         event.stopPropagation();
     });
-    $('.header__sub_ul').click(function(event){
-        event.stopPropagation();
-    });
+    // $('.header__sub_ul').click(function(event){
+    //     event.stopPropagation();
+    // });
 });
