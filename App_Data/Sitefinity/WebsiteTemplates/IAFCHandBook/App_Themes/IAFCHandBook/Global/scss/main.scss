@@ -2131,6 +2131,7 @@ p {
     }
   }
   .edit-button {
+    position: relative;
     &:after {
       content: "\E61D";
       display: block;
@@ -2139,6 +2140,7 @@ p {
       transform: rotate(-90deg) translate(-50%);
       right: 27px;
       top: 50%;
+      position: absolute;
     }
   }
 }
