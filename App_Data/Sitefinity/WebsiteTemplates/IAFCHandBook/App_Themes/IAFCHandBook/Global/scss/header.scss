@@ -23,14 +23,16 @@
       margin-left: -19px;
     }
   }
-  &__ul{
+  &__ul {
     display: flex;
     list-style: none;
-    margin: 0;
+    margin: 0 -12px;
     padding: 0;
   }
-  &__list{
-    &-link{
+  &__list {
+    display: flex;
+    position: relative;
+    &-link {
       display: flex;
       align-items: center;
       font-family: $font_family_4;
@@ -38,7 +40,7 @@
       color: $color_5;
       font-size: 1.00em;
       z-index: 1000;
-      padding: 8px 20px 8px;
+      padding: 12px;
       transition: .3s ease-in-out;
       &:hover {
         //text-shadow: 1px 0 #2B4B6B;
@@ -56,22 +58,171 @@
         font-weight: bold;
       }
     }
-    &:nth-of-type(1) .header__list-link{
+    &:nth-of-type(1) .header__list-link {
+      width: 86px;
       &:after {
         content: "\E61D";
         display: block;
         font-family: $font_family_8;
         position: relative;
-        right: -4px;
+        right: -7px;
       }
     }
   }
-  &__sublist{
-    display: none;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  &__sub {
+    &_ul {
+      position: absolute;
+      top: 45px;
+      z-index: 2;
+      //display: none;
+      margin: 0;
+      padding: 20px;
+      list-style: none;
+      width: 173px;
+      height: 152px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+      background-color: #ffffff;
   }
+    &_list{
+      &-link{
+        color: #666666;
+        font-family: "Nunito Sans", sans-serif;
+        font-style: 1.00em;
+    }
+      &:nth-of-type(1) > .header__sub_list-link {
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_community;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_community;
+        }
+      }
+      &:nth-of-type(1)
+      > .header__second_ul
+      > .header__second_list
+      > .header__second_list-link{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_community;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_community;
+        }
+      }
+      &:nth-of-type(2) > .header__sub_list-link {
+        &:hover {
+          //text-shadow: 1px 0 #BDA15F;
+          color: $color_leadership;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #BDA15F;
+          color: $color_leadership;
+          font-weight: bold;
+        }
+      }
+      &:nth-of-type(2)
+      > .header__second_ul
+      > .header__second_list
+      > .header__second_list-link{
+        &:hover {
+          //text-shadow: 1px 0 #BDA15F;
+          color: $color_leadership;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #BDA15F;
+          color: $color_leadership;
+          font-weight: bold;
+        }
+      }
+      &:nth-of-type(3) > .header__sub_list-link {
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_community;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_community;
+        }
+      }
+      &:nth-of-type(3)
+      > .header__second_ul
+      > .header__second_list
+      > .header__second_list-link{
+        &:hover {
+          //text-shadow: 1px 0 #73AA56;
+          color: $color_finance;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #73AA56;
+          color: $color_finance;
+          font-weight: bold;
+        }
+      }
+      &:nth-of-type(4) > .header__sub_list-link {
+        &:hover {
+          //text-shadow: 1px 0 #CF794A;
+          color: $color_personnel;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #CF794A;
+          color: $color_personnel;
+          font-weight: bold;
+        }
+      }
+      &:nth-of-type(4)
+      > .header__second_ul
+      > .header__second_list
+      > .header__second_list-link{
+        &:hover {
+          //text-shadow: 1px 0 #CF794A;
+          color: $color_personnel;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #CF794A;
+          color: $color_personnel;
+          font-weight: bold;
+        }
+      }
+    }
+}
+  &__second{
+    &_ul{
+      position: absolute;
+      left: 173px;
+      top: 0;
+      margin: 0;
+      padding: 20px;
+      list-style: none;
+      width: 257px;
+      height: 152px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    //display: none;
+  }
+    &_list{
+      &-link{
+        color: #666666;
+        font-family: "Nunito Sans", sans-serif;
+        font-style: 1.00em;
+    }
+    }
+  }
+
   &__nav {
     >ul {
       >li {
@@ -291,9 +442,6 @@
   }
 }
 
-.header__nav > ul > li > a{
-  padding: 12px !important;
-}
 
 .community__topics, .footer  {
   max-width: 1440px;
