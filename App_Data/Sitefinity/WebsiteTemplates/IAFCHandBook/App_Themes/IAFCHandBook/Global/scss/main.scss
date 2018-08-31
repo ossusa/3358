@@ -2107,10 +2107,16 @@ p {
 
   .topic__subtitle {
     width: 100%;
+    margin-bottom: 24px;
   }
 
   .complete__resources_slides {
     margin-bottom: 36px;
+  }
+
+  .complete__resources_slides {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

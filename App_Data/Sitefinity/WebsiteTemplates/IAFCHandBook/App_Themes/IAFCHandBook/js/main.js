@@ -102,7 +102,7 @@ $(document).ready(function () {
     var wrapper = $('#wrapper');
     var stickyHeader = $('.box-mobile');
     $(window).scroll(function(){
-        if ($(window).scrollTop() >= headerText.height()) {
+        if ($(window).scrollTop() >= headerText.outerHeight()) {
             wrapper.css("margin-top", stickyHeader.height());
             stickyHeader.addClass('sticky');
         }
