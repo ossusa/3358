@@ -2586,6 +2586,15 @@ p {
     outline: none;
     font-size: 1.250em;
     background: transparent; }
+    .header__search:hover {
+      color: #2B4B6B;
+      font-weight: bold; }
+    .header__search:focus {
+      color: #2B4B6B;
+      font-weight: bold; }
+    .header__search:active {
+      color: #2B4B6B;
+      font-weight: bold; }
   .header__logo {
     padding: 8px 0; }
     .header__logo img {

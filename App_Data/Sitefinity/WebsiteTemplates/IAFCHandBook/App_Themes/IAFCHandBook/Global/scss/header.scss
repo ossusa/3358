@@ -16,6 +16,21 @@
     outline: none;
     font-size: 1.250em;
     background: transparent;
+    &:hover {
+      //text-shadow: 1px 0 #2B4B6B;
+      color: $color_blue;
+      font-weight: bold;
+    }
+    &:focus {
+      //text-shadow: 1px 0 #2B4B6B;
+      color: $color_blue;
+      font-weight: bold;
+    }
+    &:active {
+      //text-shadow: 1px 0 #2B4B6B;
+      color: $color_blue;
+      font-weight: bold;
+    }
   }
   &__logo {
     padding: 8px 0;

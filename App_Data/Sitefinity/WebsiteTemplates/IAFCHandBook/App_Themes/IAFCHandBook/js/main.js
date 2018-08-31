@@ -18,11 +18,11 @@ $(document).ready(function () {
     });
 
     /*Search in header*/
-    var $search = '<li class="header__list"><button class="header__search anticon anticon-search" type="submit"></button></li>';
+    var $search = '<li class="header__list header__list-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $(".header__list:contains('Account')");
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
-    $($liSearch).appendTo('.k-item-search');
+    $($liSearch).appendTo('.header__list-search');
     $(".header__search").click(function (e) {
         e.preventDefault();
         $('.mg-search-box').toggleClass('hidden');
