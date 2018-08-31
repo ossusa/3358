@@ -1,7 +1,14 @@
 ﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <div class="handbook__title">
-	<h1>@Model.SharedUser MY HANDBOOK</h1>
+	@if (Model.SharedUser != null && Model.SharedUser != string.Empty)
+	{
+		<h1>@Model.SharedUser HANDBOOK</h1>
+	}
+	else
+	{
+		<h1>MY HANDBOOK</h1>
+	}
 </div>
 <div class="box complete-box">
 	<div class="sharethis-inline-share-buttons">share</div>
@@ -15,7 +22,7 @@
 
 	<div class="resources-breadcrumbs">
 		My HandBook >
-		<a href='@Model.Category.MyHandBookParentCatego]ryUrl'><span>@Model.Category.ParentCategoryTitle </span></a>
+		<a href='@Model.Category.MyHandBookParentCategoryUrl'><span>@Model.Category.ParentCategoryTitle </span></a>
 	</div>
 
 	<div class="community__head-title">
