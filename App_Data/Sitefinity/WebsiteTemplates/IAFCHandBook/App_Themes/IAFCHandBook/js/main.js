@@ -117,7 +117,7 @@ $(document).ready(function () {
     $('.header__list-link:nth-of-type(1)').click(function (e) {
         e.preventDefault();
         e.stopPropagation();
-        $('.header__list-link:nth-of-type(1)').toggle('header__sub_ul');
+        $('.header__list-link:nth-of-type(1)').toggleClass('header__sub_ul');
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(this).show();
