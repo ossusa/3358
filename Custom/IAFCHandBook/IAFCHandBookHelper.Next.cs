@@ -720,6 +720,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     var userGuid = Guid.Parse(userId);
                     myHandBookItem = GetMyHandBookByID(userGuid);
                     model.SharedUserId = userGuid;
+					model.SharedUser = GetUserName(userGuid);
                 }
                 else
                 {
@@ -830,7 +831,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     showAsMyHandBookItem = false;
                     userGuid = Guid.Parse(userId);
                     model.SharedUserId = userGuid;
-                    myHandBookItem = GetMyHandBookByID(userGuid);
+					model.SharedUser = GetUserName(userGuid);
+					myHandBookItem = GetMyHandBookByID(userGuid);
                 }
 
                 model.Id = myHandBookItem.Id;
@@ -847,8 +849,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 category.CategoryTitle = categoryDetails.ResourceCategoryTile;
                 myHandBookResourcesItem.Category = category;
                 myHandBookResourcesItem.SharedUserId = userGuid;
+				myHandBookResourcesItem.SharedUser = GetUserName(userGuid);
 
-                var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
+				var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
                     .ToList();
                 var myCompletedHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyCompletedResources")
                     .ToList();
@@ -888,8 +891,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
                     myChildHandBookResourcesItem.Category = childCategory;
                     myChildHandBookResourcesItem.SharedUserId = userGuid;
+					myChildHandBookResourcesItem.SharedUser = GetUserName(userGuid);
 
-                    var myChildResourceItem = new IAFCHandBookResourceModel();
+					var myChildResourceItem = new IAFCHandBookResourceModel();
                     foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
                     {
                         myChildResourceItem = GetResourceDetails(resourceItem, childCategory.Id, showAsMyHandBookItem);
@@ -939,8 +943,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     showAsMyHandBookItem = false;
                     var userGuid = Guid.Parse(userId);
                     model.SharedUserId = userGuid;
+					model.SharedUser = GetUserName(userGuid);
 
-                    myHandBookItem = GetMyHandBookByID(userGuid);
+					myHandBookItem = GetMyHandBookByID(userGuid);
                 }
 
                 var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")

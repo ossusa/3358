@@ -26,5 +26,6 @@ namespace SitefinityWebApp.Mvc.Models
 		public List<IAFCHandBookTopicOrderBy> OrderBy { get; set; }
 		public Guid UserId { get; set; }
 		public Guid SharedUserId { get; set; }
+		public string SharedUser { get; set; }
 	}
 }
