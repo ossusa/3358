@@ -90,6 +90,10 @@
         color: #666666;
         font-family: "Nunito Sans", sans-serif;
         font-size: 1.00em;
+        padding: 9px 0 0 0;
+        &:nth-of-type(1){
+          padding: 0;
+        }
     }
       &:nth-of-type(1) > .header__sub_list-link {
         &:hover {
@@ -221,6 +225,10 @@
         color: #666666;
         font-family: "Nunito Sans", sans-serif;
         font-size: 1.00em;
+        padding: 9px 0 0 0;
+        &:nth-of-type(1){
+          padding: 0;
+        }
     }
     }
   }
