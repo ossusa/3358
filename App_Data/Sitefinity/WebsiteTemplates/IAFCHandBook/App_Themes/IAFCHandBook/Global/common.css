@@ -1745,12 +1745,12 @@ p {
     position: absolute; }
 
 .account-template input[type="checkbox"] {
-  min-width: 10px;
+  min-width: 14px;
   border-radius: 2px;
-  border: 1px solid #fff;
+  border: 1px solid #9b9b9b;
   background-color: #fff;
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1775,18 +1775,7 @@ p {
   transform: rotate(-45deg) scale(1, 1); }
 
 .account-template input[type="checkbox"]:before {
-  content: '';
-  position: absolute;
-  left: -1px;
-  top: -2px;
-  z-index: 1;
-  width: 10px;
-  height: 8px;
-  border: 2px solid #000;
-  border-top-style: none;
-  border-right-style: none;
-  -ms-transform: rotate(-45deg) scale(0, 0);
-  transform: rotate(-45deg) scale(0, 0); }
+  content: "\E632"; }
 
 .account-template .community__head-btn {
   padding-left: 25px;
