@@ -1712,6 +1712,12 @@ p {
 .search-results .community__head-btn-select {
   margin-bottom: 36px; }
 
+.search-results .topic__subtitle {
+  width: 100%; }
+
+.search-results .complete__resources_slides {
+  margin-bottom: 36px; }
+
 .placehoolder-background img {
   width: 100%; }
 
