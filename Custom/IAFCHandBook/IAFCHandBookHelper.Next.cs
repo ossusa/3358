@@ -720,7 +720,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     var userGuid = Guid.Parse(userId);
                     myHandBookItem = GetMyHandBookByID(userGuid);
                     model.SharedUserId = userGuid;
-					model.SharedUser = GetUserName(userGuid);
+					model.SharedUser = GetUserName(userGuid)+"'s";
                 }
                 else
                 {
@@ -831,7 +831,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     showAsMyHandBookItem = false;
                     userGuid = Guid.Parse(userId);
                     model.SharedUserId = userGuid;
-					model.SharedUser = GetUserName(userGuid);
+					model.SharedUser = GetUserName(userGuid) + "'s";
 					myHandBookItem = GetMyHandBookByID(userGuid);
                 }
 
@@ -849,7 +849,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 category.CategoryTitle = categoryDetails.ResourceCategoryTile;
                 myHandBookResourcesItem.Category = category;
                 myHandBookResourcesItem.SharedUserId = userGuid;
-				myHandBookResourcesItem.SharedUser = GetUserName(userGuid);
+				myHandBookResourcesItem.SharedUser = GetUserName(userGuid) + "'s"; 
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
                     .ToList();
@@ -891,7 +891,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
                     myChildHandBookResourcesItem.Category = childCategory;
                     myChildHandBookResourcesItem.SharedUserId = userGuid;
-					myChildHandBookResourcesItem.SharedUser = GetUserName(userGuid);
+					myChildHandBookResourcesItem.SharedUser = GetUserName(userGuid) + "'s";
 
 					var myChildResourceItem = new IAFCHandBookResourceModel();
                     foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
@@ -943,7 +943,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     showAsMyHandBookItem = false;
                     var userGuid = Guid.Parse(userId);
                     model.SharedUserId = userGuid;
-					model.SharedUser = GetUserName(userGuid);
+					model.SharedUser = GetUserName(userGuid) + "'s";
 
 					myHandBookItem = GetMyHandBookByID(userGuid);
                 }
