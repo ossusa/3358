@@ -1746,7 +1746,8 @@ p {
 
 .account-template .community__head-btn {
   padding-left: 25px;
-  padding-right: 40px; }
+  padding-right: 40px;
+  width: auto !important; }
 
 .placehoolder-background img {
   width: 100%; }
