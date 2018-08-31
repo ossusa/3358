@@ -122,53 +122,32 @@ $(document).ready(function () {
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(".header__second_ul:nth-of-type(1)").show();
         if ($(".header__second_ul:nth-of-type(1)").show()){
-            $('.header__second_ul').nextAll().hide();
-            $('.header__second_ul').prevAll().hide()
+            $('.header__second_ul').nextAll('header__second_ul').hide();
+            $('.header__second_ul').prevAll('header__second_ul'.hide()
         }
     });
     $('.header__sub_list:nth-of-type(2)').click(function() {
         $(".header__second_ul:nth-of-type(2)").show();
         if ($(".header__second_ul:nth-of-type(2)").show()){
-            $('.header__second_ul').nextAll().hide();
-            $('.header__second_ul').prevAll().hide()
+            $('.header__second_ul').nextAll('header__second_ul').hide();
+            $('.header__second_ul').prevAll('header__second_ul').hide()
         }
     });
     $('.header__sub_list:nth-of-type(3)').click(function() {
         $(".header__second_ul:nth-of-type(3)").show();
         if ($(".header__second_ul:nth-of-type(3)").show()){
-            $('.header__second_ul').nextAll().hide();
-            $('.header__second_ul').prevAll().hide()
+            $('.header__second_ul').nextAll('header__second_ul').hide();
+            $('.header__second_ul').prevAll('header__second_ul').hide()
         }
     });
     $('.header__sub_list:nth-of-type(4)').click(function() {
         $(".header__second_ul:nth-of-type(4)").show();
         if ($(".header__second_ul:nth-of-type(4)").show()){
-            $('.header__second_ul').nextAll().hide();
-            $('.header__second_ul').prevAll().hide()
+            $('.header__second_ul').nextAll('header__second_ul').hide();
+            $('.header__second_ul').prevAll('header__second_ul').hide()
         }
     });
     // $('body').not('.header__sub_ul').click(function() {
     //     $('.header__second_ul').slideUp();
     // });
-    // $('.header__sub_list').click(function() {
-    //     var sibling = $(this).siblings('.header__second_ul');
-    //     if(!sibling.is(':visible')){
-    //         $('.header__second_ul:visible').hide();
-    //         sibling.show(); }
-    //     else sibling.hide();
-    // });
-    // $(document).bind("click touchstart", function(e)
-    // {
-    //     var open_content = $(".header__second_ul:visible");
-    //
-    //     if (!open_content.parent().is(e.target)
-    //         && open_content.parent().has(e.target).length === 0)
-    //     {
-    //         open_content.hide();
-    //     }
-    // });
-    // function showSubList(obj) {
-    //     //     $('.header__second_ul').hide(300);
-    //     //     $(obj).parent().children('.header__second_ul').show();
-    //     // };
 });
