@@ -1771,11 +1771,16 @@ p {
   background-position: center; }
 
 .account-template input[type="checkbox"]:checked::before {
-  -ms-transform: rotate(-45deg) scale(1, 1);
-  transform: rotate(-45deg) scale(1, 1); }
+  content: "\E632";
+  font-family: anticon !important;
+  display: block;
+  opacity: 1; }
 
 .account-template input[type="checkbox"]:before {
-  content: "\E632"; }
+  content: "\E632";
+  font-family: anticon !important;
+  display: block;
+  opacity: 0; }
 
 .account-template .community__head-btn {
   padding-left: 25px;
