@@ -75,7 +75,6 @@
       position: absolute;
       top: 45px;
       z-index: 2;
-      //display: none;
       margin: 0;
       padding: 20px;
       list-style: none;
@@ -90,23 +89,12 @@
         color: #666666;
         font-family: "Nunito Sans", sans-serif;
         font-size: 1.00em;
+        padding: 9px 0 0 0;
+        &:nth-of-type(1){
+          padding: 0;
+        }
     }
       &:nth-of-type(1) > .header__sub_list-link {
-        &:hover {
-          //text-shadow: 1px 0 #5591AA;
-          color: $color_community;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #5591AA;
-          font-weight: bold;
-          color: $color_community;
-        }
-      }
-      &:nth-of-type(1)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #5591AA;
           color: $color_community;
@@ -130,21 +118,6 @@
           font-weight: bold;
         }
       }
-      &:nth-of-type(2)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
-        &:hover {
-          //text-shadow: 1px 0 #BDA15F;
-          color: $color_leadership;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #BDA15F;
-          color: $color_leadership;
-          font-weight: bold;
-        }
-      }
       &:nth-of-type(3) > .header__sub_list-link {
         &:hover {
           //text-shadow: 1px 0 #5591AA;
@@ -157,37 +130,7 @@
           color: $color_community;
         }
       }
-      &:nth-of-type(3)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
-        &:hover {
-          //text-shadow: 1px 0 #73AA56;
-          color: $color_finance;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #73AA56;
-          color: $color_finance;
-          font-weight: bold;
-        }
-      }
       &:nth-of-type(4) > .header__sub_list-link {
-        &:hover {
-          //text-shadow: 1px 0 #CF794A;
-          color: $color_personnel;
-          font-weight: bold;
-        }
-        &:focus {
-          //text-shadow: 1px 0 #CF794A;
-          color: $color_personnel;
-          font-weight: bold;
-        }
-      }
-      &:nth-of-type(4)
-      > .header__second_ul
-      > .header__second_list
-      > .header__second_list-link{
         &:hover {
           //text-shadow: 1px 0 #CF794A;
           color: $color_personnel;
@@ -212,215 +155,68 @@
       list-style: none;
       width: 257px;
       height: 152px;
+      border-radius: 3px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       background-color: #ffffff;
-    //display: none;
+      &:nth-of-type(1) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_community;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_community;
+        }
+      }
+      &:nth-of-type(2) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_leadership;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_leadership;
+        }
+      }
+      &:nth-of-type(3) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_finance;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_finance;
+        }
+      }
+      &:nth-of-type(4) .header__second_list{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_personnel;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_personnel;
+        }
+      }
   }
     &_list{
       &-link{
         color: #666666;
         font-family: "Nunito Sans", sans-serif;
         font-size: 1.00em;
-    }
-    }
-  }
-
-  &__nav {
-    >ul {
-      >li {
-
-        >div {
-          >ul {
-            >li {
-              >a {
-                display: -webkit-box !important;
-                display: -ms-flexbox !important;
-                display: flex !important;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                width: 135px;
-                -webkit-box-pack: space-between;
-                -ms-flex-pack: distribute;
-                justify-content: space-between;
-                -webkit-transition: .1s ease-in-out;
-                -o-transition: .1s ease-in-out;
-                transition: .1s ease-in-out;
-              }
-              &:nth-of-type(1) {
-                >a {
-                  padding-top: 20px !important;
-                  &:hover {
-                    //text-shadow: 1px 0 #5591AA;
-                    color: $color_community;
-                    font-weight: bold;
-                  }
-                  &:focus {
-                    //text-shadow: 1px 0 #5591AA;
-                    font-weight: bold;
-                    color: $color_community;
-                  }
-                }
-                >div {
-                  >ul {
-                    >li {
-                      &:first-child {
-                        >a {
-                          padding-top: 20px !important;
-                        }
-                      }
-                      &:last-child {
-                        >a {
-                          padding-bottom: 20px !important;
-                        }
-                      }
-                      >a {
-                        &:hover {
-                          //text-shadow: 1px 0 #5591AA;
-                          color: $color_community;
-                          font-weight: bold;
-                        }
-                        &:focus {
-                          //text-shadow: 1px 0 #5591AA;
-                          color: $color_community;
-                          font-weight: bold;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-              &:nth-of-type(2) {
-                >div {
-                  >ul {
-                    >li {
-                      &:first-child {
-                        >a {
-                          padding-top: 20px !important;
-                        }
-                      }
-                      &:last-child {
-                        >a {
-                          padding-bottom: 20px !important;
-                        }
-                      }
-                      >a {
-                        &:hover {
-                          //text-shadow: 1px 0 #BDA15F;
-                          color: $color_leadership;
-                          font-weight: bold;
-                        }
-                        &:focus {
-                          //text-shadow: 1px 0 #BDA15F;
-                          color: $color_leadership;
-                          font-weight: bold;
-                        }
-                      }
-                    }
-                  }
-                }
-                >a {
-                  &:hover {
-                    //text-shadow: 1px 0 #BDA15F;
-                    color: $color_leadership;
-                    font-weight: bold;
-                  }
-                  &:focus {
-                    //text-shadow: 1px 0 #BDA15F;
-                    color: $color_leadership;
-                    font-weight: bold;
-                  }
-                }
-              }
-              &:nth-of-type(3) {
-                >div {
-                  >ul {
-                    >li {
-                      &:first-child {
-                        >a {
-                          padding-top: 20px !important;
-                        }
-                      }
-                      &:last-child {
-                        >a {
-                          padding-bottom: 20px !important;
-                        }
-                      }
-                      >a {
-                        &:hover {
-                          //text-shadow: 1px 0 #73AA56;
-                          color: $color_finance;
-                          font-weight: bold;
-                        }
-                        &:focus {
-                          //text-shadow: 1px 0 #73AA56;
-                          color: $color_finance;
-                          font-weight: bold;
-                        }
-                      }
-                    }
-                  }
-                }
-                >a {
-                  &:hover {
-                    //text-shadow: 1px 0 #73AA56;
-                    color: $color_finance;
-                    font-weight: bold;
-                  }
-                  &:focus {
-                    //text-shadow: 1px 0 #73AA56;
-                    color: $color_finance;
-                    font-weight: bold;
-                  }
-                }
-              }
-              &:nth-of-type(4) {
-                >div {
-                  >ul {
-                    >li {
-                      &:first-child {
-                        >a {
-                          padding-top: 20px !important;
-                        }
-                      }
-                      &:last-child {
-                        >a {
-                          padding-bottom: 20px !important;
-                        }
-                      }
-                      >a {
-                        &:hover {
-                          //text-shadow: 1px 0 #CF794A;
-                          color: $color_personnel;
-                          font-weight: bold;
-                        }
-                        &:focus {
-                          //text-shadow: 1px 0 #CF794A;
-                          color: $color_personnel;
-                          font-weight: bold;
-                        }
-                      }
-                    }
-                  }
-                }
-                >a {
-                  padding-bottom: 20px !important;
-                  &:hover {
-                    //text-shadow: 1px 0 #CF794A;
-                    color: $color_personnel;
-                    font-weight: bold;
-                  }
-                  &:focus {
-                    //text-shadow: 1px 0 #CF794A;
-                    color: $color_personnel;
-                    font-weight: bold;
-                  }
-                }
-              }
-            }
-          }
+        padding: 9px 0 0 0;
+        &:nth-of-type(1){
+          padding: 0;
         }
-      }
+    }
     }
   }
   &__table-tr {
