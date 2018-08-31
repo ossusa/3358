@@ -2554,6 +2554,7 @@ p {
     border-radius: 3px;
     background-color: #ffffff; }
   .header__sub_list {
+    cursor: pointer;
     padding: 9px 0 0 0; }
     .header__sub_list:nth-of-type(1) {
       padding: 0; }
@@ -2574,11 +2575,11 @@ p {
       color: #BDA15F;
       font-weight: bold; }
     .header__sub_list:nth-of-type(3) > .header__sub_list-link:hover {
-      color: #5591AA;
+      color: #73AA56;
       font-weight: bold; }
     .header__sub_list:nth-of-type(3) > .header__sub_list-link:focus {
       font-weight: bold;
-      color: #5591AA; }
+      color: #73AA56; }
     .header__sub_list:nth-of-type(4) > .header__sub_list-link:hover {
       color: #CF794A;
       font-weight: bold; }
@@ -2594,10 +2595,19 @@ p {
     padding: 20px;
     list-style: none;
     width: 257px;
-    height: 152px;
     border-radius: 3px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     background-color: #ffffff; }
+    .header__second_ul:before {
+      position: absolute;
+      left: -15px;
+      top: 20px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 15px 15px 0;
+      border-color: transparent #ffffff transparent transparent; }
     .header__second_ul:nth-of-type(1) .header__second_list-link:hover {
       color: #5591AA;
       font-weight: bold; }
