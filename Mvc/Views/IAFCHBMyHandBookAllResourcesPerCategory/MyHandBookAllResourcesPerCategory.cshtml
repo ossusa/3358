@@ -1,6 +1,13 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookModel
 <div class="handbook__title">
-	<h1>@Model.SharedUser MY HANDBOOK</h1>
+	@if (Model.SharedUser != null && Model.SharedUser != string.Empty)
+	{
+		<h1>@Model.SharedUser HANDBOOK</h1>
+	}
+	else
+	{
+		<h1>MY HANDBOOK</h1>
+	}	
 </div>
 <div class="box">
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)

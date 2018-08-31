@@ -2600,6 +2600,8 @@ p {
     background-color: #ffffff; }
     .header__second_ul:before {
       position: absolute;
+      left: -15px;
+      top: 20px;
       content: '';
       width: 0;
       height: 0;
