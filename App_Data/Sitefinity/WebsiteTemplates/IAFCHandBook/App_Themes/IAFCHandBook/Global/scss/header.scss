@@ -23,14 +23,14 @@
       margin-left: -19px;
     }
   }
-  &__ul{
+  &__ul {
     display: flex;
     list-style: none;
     margin: 0 -12px;
     padding: 0;
   }
-  &__list{
-    &-link{
+  &__list {
+    &-link {
       display: flex;
       align-items: center;
       font-family: $font_family_4;
@@ -56,7 +56,7 @@
         font-weight: bold;
       }
     }
-    &:nth-of-type(1) .header__list-link{
+    &:nth-of-type(1) .header__list-link {
       &:after {
         content: "\E61D";
         display: block;
@@ -66,10 +66,11 @@
       }
     }
   }
-  &__sub_ul{
-    //display: none;
+  &__sub {
+    &_ul {
+    display: none;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     list-style: none;
     width: 173px;
     height: 152px;
@@ -77,8 +78,52 @@
     border-radius: 3px;
     background-color: #ffffff;
   }
-  &__second_ul{
+    &_list{
+      &-link{
+        color: #666666;
+        font-family: "Nunito Sans", sans-serif;
+        font-style: 1.00em;
+    }
+      &:nth-of-type(1) > .header__sub_list-link {
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_community;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_community;
+        }
+      }
+      &:nth-of-type(1)
+      > .header__second_ul
+      > .header__second_list
+      > .header__second_list-link{
+        &:hover {
+          //text-shadow: 1px 0 #5591AA;
+          color: $color_community;
+          font-weight: bold;
+        }
+        &:focus {
+          //text-shadow: 1px 0 #5591AA;
+          font-weight: bold;
+          color: $color_community;
+        }
+      }
+    }
+}
+  &__second{
+    &_ul{
     display: none;
+  }
+    &_list{
+      &-link{
+        color: #666666;
+        font-family: "Nunito Sans", sans-serif;
+        font-style: 1.00em;
+    }
+    }
   }
 
   &__nav {
