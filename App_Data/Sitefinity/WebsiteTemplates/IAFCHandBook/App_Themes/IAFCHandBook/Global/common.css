@@ -1749,6 +1749,16 @@ p {
   padding-right: 40px;
   width: auto !important; }
 
+.account-template .page__title {
+  margin-bottom: 24px; }
+
+.account-template .resources__logged-buttons {
+  margin-bottom: 56px;
+  margin-top: 0; }
+
+.account-template .topic__subtitle {
+  margin-bottom: 12px; }
+
 .placehoolder-background img {
   width: 100%; }
 
