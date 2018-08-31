@@ -2541,6 +2541,7 @@ p {
         position: relative;
         right: -7px; }
   .header__sub_ul {
+    display: none;
     position: absolute;
     top: 45px;
     z-index: 2;
@@ -2621,6 +2622,7 @@ p {
     color: #CF794A;
     font-weight: bold; }
   .header__second_ul {
+    display: none;
     position: absolute;
     left: 173px;
     top: 0;

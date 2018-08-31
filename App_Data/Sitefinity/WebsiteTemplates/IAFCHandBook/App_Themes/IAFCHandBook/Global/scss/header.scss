@@ -71,6 +71,7 @@
   }
   &__sub {
     &_ul {
+      display: none;
       position: absolute;
       top: 45px;
       z-index: 2;
@@ -202,6 +203,7 @@
 }
   &__second{
     &_ul{
+      display: none;
       position: absolute;
       left: 173px;
       top: 0;
