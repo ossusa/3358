@@ -3,6 +3,9 @@
   &_wrapper{
     border-bottom: 1px solid #d8d8d8;
     margin: 0 -120px;
+    @media (max-width: 1109px){
+      margin: 0 0 0 -16px;
+    }
   }
   &__text {
     background: #B5354A;
@@ -268,9 +271,9 @@
     -webkit-box-pack: space-between;
     -ms-flex-pack: distribute;
     justify-content: space-between;
-    padding: 0 120px;
+    padding: 24px 120px;
     @media (max-width: 1109px){
-      padding: 16px 0 16px 16px !important
+      padding: 16px 0 16px 16px;
     }
   }
   &__table-td {
@@ -293,9 +296,6 @@
   margin-right: auto;
 }
 
-.header__table-tr {
-  padding: 24px 0;
-}
 
 .header__logo {
   padding: 0;
