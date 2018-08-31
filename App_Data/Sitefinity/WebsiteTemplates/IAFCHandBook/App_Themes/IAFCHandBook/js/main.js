@@ -134,7 +134,7 @@ $(document).ready(function () {
         $(".header__second_ul:nth-of-type(4)").show();
         $('.header__second_ul').not(':nth-of-type(4)').hide();
     });
-    var $menu = $('.header__second_ul');
+    var $submenu = $('.header__second_ul');
     $($submenu).mouseup(function (e) {
         if (!$submenu.is(e.target) // if the target of the click isn't the container...
             && $submenu.has(e.target).length === 0) // ... nor a descendant of the container
