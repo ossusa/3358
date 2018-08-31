@@ -31,6 +31,7 @@
   }
   &__list {
     display: flex;
+    position: relative;
     &-link {
       display: flex;
       align-items: center;
@@ -69,15 +70,18 @@
   }
   &__sub {
     &_ul {
-    //display: none;
-    margin: 0;
-    padding: 20px;
-    list-style: none;
-    width: 173px;
-    height: 152px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    background-color: #ffffff;
+      position: absolute;
+      top: 45px;
+      z-index: 2;
+      //display: none;
+      margin: 0;
+      padding: 20px;
+      list-style: none;
+      width: 173px;
+      height: 152px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+      background-color: #ffffff;
   }
     &_list{
       &-link{
@@ -197,6 +201,9 @@
 }
   &__second{
     &_ul{
+      position: absolute;
+      left: 173px;
+      top: 0;
       margin: 0;
       padding: 0;
       list-style: none;

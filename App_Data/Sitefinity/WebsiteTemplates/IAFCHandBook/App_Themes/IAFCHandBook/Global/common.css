@@ -2504,7 +2504,8 @@ p {
     padding: 0; }
   .header__list {
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    position: relative; }
     .header__list-link {
       display: -ms-flexbox;
       display: flex;
@@ -2533,6 +2534,9 @@ p {
       position: relative;
       right: -7px; }
   .header__sub_ul {
+    position: absolute;
+    top: 45px;
+    z-index: 2;
     margin: 0;
     padding: 20px;
     list-style: none;
@@ -2610,6 +2614,9 @@ p {
     color: #CF794A;
     font-weight: bold; }
   .header__second_ul {
+    position: absolute;
+    left: 173px;
+    top: 0;
     margin: 0;
     padding: 0;
     list-style: none;
