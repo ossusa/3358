@@ -119,11 +119,25 @@ $(document).ready(function () {
         e.stopPropagation();
         $('.header__sub_ul').show();
     });
-    $('.header__sub_list').click(function() {
-        $('.header__second_ul').show();
-        $(this).siblings('.header__second_ul').hide();
-    });
     // $('.header__sub_list').click(function() {
-    //     var sibling = $(this).siblings('.header__second_ul');
+    //     $('.header__second_ul').hide();
+    //     $(this).siblings('.header__second_ul').show();
     // });
+    $('.header__sub_list').click(function() {
+        var sibling = $(this).siblings('.header__second_ul');
+        if(!sibling.is(':visible')){
+            $('.header__second_ul:visible').hide();
+            sibling.show(); }
+        else sibling.hide();
+    });
+    $(document).bind("click touchstart", function(e)
+    {
+        var open_content = $(".header__second_ul:visible");
+
+        if (!open_content.parent().is(e.target)
+            && open_content.parent().has(e.target).length === 0)
+        {
+            open_content.hide();
+        }
+    });
 });
