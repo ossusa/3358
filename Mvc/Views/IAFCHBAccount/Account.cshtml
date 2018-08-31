@@ -3,14 +3,14 @@
 <div class="box account-template">
 	<p class="breadcrumbs">Account</p>
 	<h1 class="page__title">My Account</h1>
-	<p>Login Information</p>
+	<h4 class="topic__subtitle">Login Information</h4>
 	<div class="resources__logged-buttons">
 		<div class="edit-button">
 			<button type="submit" formaction="/Mxg/AuthService/SignInByHelix/?ReturnUrl=@Request.Url.AbsoluteUri" class="community__head-btn resources__logged-btn"> Edit Login </button>
 		</div>
 	</div>
 
-	<div>Email Digest</div>
+	<h4 class="topic__subtitle">Email Digest</h4>
 	<div>A summary of all the latest resources from the topics you follow:</div>
 	<div>
 		<input id="WeeklyUpdates" type="checkbox" value="@Model.WeeklyUpdates"  @(Model.WeeklyUpdates ? "checked=\"checked\"" : "")/> Weekly Updates
