@@ -6,7 +6,7 @@
 	{
 		if (parentCategory != category.ParentCategoryTitle)
 		{
-			<div>@category.ParentCategoryTitle</div>
+			<p>@category.ParentCategoryTitle</p>
 		}
 		<div> @category.CategoryTitle</div>
 		<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
