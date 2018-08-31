@@ -2130,6 +2130,15 @@ p {
       padding-right: 0;
     }
   }
+  .edit-button {
+    &:after {
+      content: "\E61D";
+      display: block;
+      font-family: anticon !important;
+      color: #2b4b6b;
+      transform: rotate(40deg);
+    }
+  }
 }
 
 .placehoolder-background img {
