@@ -10,17 +10,17 @@
 			@if (menuItem.ChildMenuItem.Any())
 			{
 
-			<ul class="header__sublist">
+			<ul class="header__sub_ul">
 				@foreach (var childItem in menuItem.ChildMenuItem)
 				{
 				if (childItem.ChildMenuItem.Any())
 				{
-				<li class="header__sublist"><a class="header__sublist-link" href="@childItem.Url"> <span>@childItem.Title</span></a>
+				<li class="header__sub_list"><a class="header__sub_list-link" href="@childItem.Url"> <span>@childItem.Title</span></a>
 
-				<ul>
+				<ul class="header__second_ul">
 					@foreach (var childChildItem in childItem.ChildMenuItem)
 					{
-					<li><a href="@childChildItem.Url"> <span>@childChildItem.Title</span></a></li>
+					<li class="header__second_list"><a class="header__second_list-link" href="@childChildItem.Url"> <span>@childChildItem.Title</span></a></li>
 					}
 				</ul>
 				</li>

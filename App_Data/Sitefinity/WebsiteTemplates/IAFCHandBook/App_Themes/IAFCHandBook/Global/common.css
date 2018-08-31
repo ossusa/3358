@@ -2500,7 +2500,7 @@ p {
     display: -ms-flexbox;
     display: flex;
     list-style: none;
-    margin: 0;
+    margin: 0 -12px;
     padding: 0; }
   .header__list-link {
     display: -ms-flexbox;
@@ -2512,7 +2512,7 @@ p {
     color: #666666;
     font-size: 1.00em;
     z-index: 1000;
-    padding: 8px 20px 8px;
+    padding: 12px;
     transition: .3s ease-in-out; }
     .header__list-link:hover {
       color: #2B4B6B;
@@ -2528,12 +2528,18 @@ p {
     display: block;
     font-family: anticon;
     position: relative;
-    right: -4px; }
-  .header__sublist {
-    display: none;
+    right: -7px; }
+  .header__sub_ul {
     margin: 0;
     padding: 0;
-    list-style: none; }
+    list-style: none;
+    width: 173px;
+    height: 152px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    background-color: #ffffff; }
+  .header__second_ul {
+    display: none; }
   .header__nav > ul > li > div > ul > li > a {
     display: -ms-flexbox !important;
     display: flex !important;
@@ -2623,9 +2629,6 @@ p {
     justify-content: flex-end;
     -ms-flex-align: center;
     align-items: center; }
-
-.header__nav > ul > li > a {
-  padding: 12px !important; }
 
 .community__topics, .footer {
   max-width: 1440px;
