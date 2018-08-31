@@ -1093,7 +1093,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetResourceDetails by Item
 
 		#region GetResourceDetails by Name
-		public IAFCHandBookResourceModel GetResourceDetails(String name, Guid? categoryId= null)
+		public IAFCHandBookResourceModel GetResourceDetails(String name, Guid? categoryId = null)
 		{
 
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
@@ -1428,20 +1428,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					{
 						DynamicContent myHandBookItem = dynamicModuleManager.CreateDataItem(myHandBookType);
 
-						UserProfileManager profileManager = UserProfileManager.GetManager();
-						UserManager userManager = UserManager.GetManager();
-						User user = userManager.GetUser(currentUserGuid);
-						var profile = profileManager.GetUserProfile<SitefinityProfile>(user);
-						var userFullName = String.Empty;
-						if (profile != null)
-						{
-							userFullName = profile.Nickname;
-						}
-						else
-						{
-							userFullName = user.FirstName + " " + user.LastName;
-						}
 
+						var userFullName = String.Empty;
+						userFullName = GetUserName(currentUserGuid);
+						
 						var myHandBookTitle = "MyHandBook_" + userFullName;
 
 						myHandBookItem.SetValue("Title", myHandBookTitle);
@@ -1555,8 +1545,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId))
 							.ToArray();
 
-				
-				
+
+
 				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
 
 				foreach (var resourceItem in resourceList)
@@ -1754,7 +1744,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetMyHandBookCategoryResources
 
 		#region Get My Hnadbook ResourceDetails by Name
-		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId=null)
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null)
 		{
 			return GetMyHnadbookResourceDetailsNext(name, categoryId);
 		}
@@ -2148,6 +2138,31 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			DefaultBookImgUrl;*/
 		}
 
+		public string GetUserName(Guid userId)
+		{
+			string userName = string.Empty;
+			UserProfileManager profileManager = UserProfileManager.GetManager();
+			UserManager userManager = UserManager.GetManager();
+
+			User user = userManager.GetUser(userId);
+			SitefinityProfile profile = null;
+
+			if (user != null)
+			{
+				profile = profileManager.GetUserProfile<SitefinityProfile>(user);
+				if (profile != null)
+				{
+					userName = profile.Nickname;
+				}
+				else
+				{
+
+					userName = user.FirstName + " " + user.LastName;
+				}
+			}
+			return userName;
+		}
+	
 	}
 }
 

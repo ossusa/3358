@@ -15,6 +15,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public Guid Id { get; set; }
 		public Guid UserId { get; set; }
 		public Guid SharedUserId { get; set; }
+		public string SharedUser { get; set; }
 		public List<IAFCHandBookMyHandBookResourceModelModel> MyHandBookResurces { get; set; }
 
 	}
