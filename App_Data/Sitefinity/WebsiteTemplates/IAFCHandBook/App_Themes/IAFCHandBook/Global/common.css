@@ -1761,7 +1761,7 @@ p {
   left: 0;
   margin: 0;
   transition: all 0.15s ease-out 0s;
-  color: #000;
+  color: #9b9b9b;
   cursor: pointer;
   display: inline-block;
   box-sizing: border-box;
@@ -1774,13 +1774,18 @@ p {
   content: "\E632";
   font-family: anticon !important;
   display: block;
-  opacity: 1; }
+  color: #9b9b9b;
+  opacity: 1;
+  position: absolute;
+  left: -1px;
+  top: -1px; }
 
 .account-template input[type="checkbox"]:before {
   content: "\E632";
   font-family: anticon !important;
   display: block;
-  opacity: 0; }
+  opacity: 0;
+  color: #9b9b9b; }
 
 .account-template .community__head-btn {
   padding-left: 25px;
