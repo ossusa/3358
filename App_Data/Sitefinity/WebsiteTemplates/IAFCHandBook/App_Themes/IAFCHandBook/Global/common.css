@@ -2515,6 +2515,9 @@ p {
     list-style: none;
     margin: 0 -12px;
     padding: 0; }
+    @media screen and (max-width: 1109px) {
+      .header__ul {
+        margin: 0; } }
   .header__list {
     display: -ms-flexbox;
     display: flex;
