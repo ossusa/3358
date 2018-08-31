@@ -120,12 +120,12 @@ $(document).ready(function () {
         $('.header__sub_ul').show();
     });
     $('.header__sub_list').click(function() {
-        $('.header__second_ul').slideUp();
-        $(this).find('.header__second_ul').slideDown();
+        $('.header__second_ul').show().nextAll().hide();
+        // $(this).find('.header__second_ul').slideDown();
     });
-    $('body').not('.header__sub_ul').click(function() {
-        $('.header__second_ul').slideUp();
-    });
+    // $('body').not('.header__sub_ul').click(function() {
+    //     $('.header__second_ul').slideUp();
+    // });
     // $('.header__sub_list').click(function() {
     //     var sibling = $(this).siblings('.header__second_ul');
     //     if(!sibling.is(':visible')){
