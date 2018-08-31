@@ -1759,6 +1759,16 @@ p {
 .account-template .topic__subtitle {
   margin-bottom: 12px; }
 
+.account-template p {
+  margin-top: 0; }
+
+.account-template h5 {
+  margin-bottom: 12px; }
+
+.account-template h6 {
+  color: #2B4B6B;
+  margin-bottom: 12px; }
+
 .placehoolder-background img {
   width: 100%; }
 
