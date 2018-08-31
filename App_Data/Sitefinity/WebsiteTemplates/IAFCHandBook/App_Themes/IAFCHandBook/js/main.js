@@ -120,7 +120,7 @@ $(document).ready(function () {
         $('.header__sub_ul').show();
     });
     $('.header__sub_list').click(function() {
-        $('.header__second_ul').show().nextAll().hide();
+        $('.header__second_ul').show().nextAll('.header__second_ul').hide();
         // $(this).find('.header__second_ul').slideDown();
     });
     // $('body').not('.header__sub_ul').click(function() {
