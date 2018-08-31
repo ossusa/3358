@@ -135,6 +135,6 @@ $(document).ready(function () {
         $('.header__second_ul').not(':nth-of-type(4)').hide();
     });
     $('body').not('.header__sub_ul').click(function() {
-        $('.header__second_ul').hide();
+        $('.header__sub_ul').hide();
     });
 });
