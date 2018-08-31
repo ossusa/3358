@@ -141,4 +141,7 @@ $(document).ready(function () {
     $('.header__list-link:nth-of-type(1)').click(function(event){
         event.stopPropagation();
     });
+    $('.header__sub_ul').click(function(event){
+        event.stopPropagation();
+    });
 });
