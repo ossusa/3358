@@ -2576,7 +2576,7 @@ p {
   margin: 0 -120px; }
   @media (max-width: 1109px) {
     .header_wrapper {
-      margin: 0 0 0 -16px; } }
+      margin: 0; } }
 
 .header__text {
   background: #B5354A;
