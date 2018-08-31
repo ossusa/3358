@@ -123,4 +123,7 @@ $(document).ready(function () {
         $('.header__second_ul').hide();
         $(this).siblings('.header__second_ul').show();
     });
+    $('.header__sub_list').click(function() {
+        var sibling = $(this).siblings('.header__second_ul');
+    });
 });

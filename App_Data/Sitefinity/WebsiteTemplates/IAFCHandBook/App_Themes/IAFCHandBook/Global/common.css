@@ -2556,7 +2556,7 @@ p {
   .header__sub_list-link {
     color: #666666;
     font-family: "Nunito Sans", sans-serif;
-    font-style: 1.00em; }
+    font-size: 1.00em; }
   .header__sub_list:nth-of-type(1) > .header__sub_list-link:hover {
     color: #5591AA;
     font-weight: bold; }
@@ -2636,7 +2636,7 @@ p {
   .header__second_list-link {
     color: #666666;
     font-family: "Nunito Sans", sans-serif;
-    font-style: 1.00em; }
+    font-size: 1.00em; }
   .header__nav > ul > li > div > ul > li > a {
     display: -ms-flexbox !important;
     display: flex !important;
