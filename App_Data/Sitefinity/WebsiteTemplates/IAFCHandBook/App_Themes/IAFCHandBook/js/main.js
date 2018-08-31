@@ -1,10 +1,6 @@
 
 
 $(document).ready(function () {
-    /*Jumbo Search*/
-    $('.hb-jumbo__search').appendTo(".hb-jumbo");
-    $(".k-input").attr("placeholder", "Search");
-
     /*Slider*/
     $('.resources__slider').slick({
         dots: false,
@@ -118,5 +114,13 @@ $(document).ready(function () {
     $('.markAsCompleteBtn').click(function () {
         $('.complete_box').addClass('anticon anticon-check');
     });
-
+    $('.header__list-link:nth-of-type(1)').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('.header__sub_ul').show();
+    });
+    $('.header__sub_list').click(function() {
+        $('.header__second_ul').hide();
+        $(this).siblings('.header__second_ul').show();
+    });
 });
