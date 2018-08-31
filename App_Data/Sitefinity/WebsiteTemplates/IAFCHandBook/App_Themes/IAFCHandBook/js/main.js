@@ -117,9 +117,6 @@ $(document).ready(function () {
     $('.header__list-link:nth-of-type(1)').click(function (e) {
         e.preventDefault();
         $('.header__sub_ul').toggle();
-        $('body').not('.header__sub_ul').not('.header__list-link:nth-of-type(1)').click(function() {
-            $('.header__sub_ul').hide();
-        });
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(".header__second_ul:nth-of-type(1)").show();
@@ -137,5 +134,11 @@ $(document).ready(function () {
         $(".header__second_ul:nth-of-type(4)").show();
         $('.header__second_ul').not(':nth-of-type(4)').hide();
     });
-
+    $(document).click(function(event) {
+        if(!$(event.target).closest('.header__sub_ul').length) {
+            if($('.header__sub_ul').is(":visible")) {
+                $('.header__sub_ul').hide();
+            }
+        }
+    });
 });
