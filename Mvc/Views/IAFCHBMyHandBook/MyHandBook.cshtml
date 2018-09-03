@@ -78,6 +78,7 @@
 		
 		//share
 			var url = window.location.href;
+		console.log(url);
 
 			$.ajax({
 				type: 'POST',
@@ -88,7 +89,7 @@
 				success: function (response) {
 					 addthis_share = {
 						url: response
-					}
+					};
 				}
 			});
 	}
