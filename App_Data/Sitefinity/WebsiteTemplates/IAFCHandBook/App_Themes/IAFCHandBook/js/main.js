@@ -194,7 +194,7 @@ $('.resources__slide-title').each(function() {
         $(this).text($(this).text().substr(0, maxcharacters-separate.length) + separate);
     }
 });
-$('.community__topics-list topics__img-back-info').each(function() {
+$('.topics_seperator').each(function() {
     var maxcharacter = 110;
     var separates = '...';
 
