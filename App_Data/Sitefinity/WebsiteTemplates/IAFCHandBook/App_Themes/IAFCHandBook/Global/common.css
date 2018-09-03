@@ -458,7 +458,6 @@ body {
   width: auto;
   margin: 0 auto;
   max-width: 1440px;
-  overflow: hidden;
   box-sizing: content-box; }
 
 .box {
