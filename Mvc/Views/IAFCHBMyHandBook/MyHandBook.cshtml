@@ -68,14 +68,14 @@
 
 
 <script type="text/javascript">
-	var shareUrl;
-
+	var addthis_share = {
+		url: "THE URL",
+		title: "THE TITLE",
+		description: "THE DESCRIPTION",
+		media: "THE IMAGE"
+	};
 	$(document).ready(function () {
 		bindEdit();
-		var addthis_share = {
-			url: shareUrl
-		};
-		console.log(shareUrl);
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
@@ -91,7 +91,7 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					shareUrl = response;
+					addthis_share.url = response;
 				}
 			});
 	}
