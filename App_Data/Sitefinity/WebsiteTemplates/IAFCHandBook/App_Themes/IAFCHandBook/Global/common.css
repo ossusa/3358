@@ -2581,7 +2581,7 @@ p {
 .selectric-items li.highlighted {
   background: #fff; }
 
-.selectric-items li.highlighted:before {
+.selectric-items li.highlighted:after {
   content: "\E632";
   display: inline-block;
   font-size: 1.00em;
