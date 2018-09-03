@@ -1829,6 +1829,9 @@ p {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
+#shareBtn {
+  pointer-events: none; }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
