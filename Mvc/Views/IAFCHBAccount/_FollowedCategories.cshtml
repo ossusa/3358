@@ -4,10 +4,9 @@
 	@{var parentCategory = String.Empty;}
 	@foreach (var category in Model.OrderBy(c => c.ParentCategoryTitle))
 	{
-	<div class="follow_categories">
 		if (parentCategory != category.ParentCategoryTitle)
 		{
-
+	<div class="follow_categories">
 			<h5>@category.ParentCategoryTitle</h5>
 		}
 	<div class="category_follow">
@@ -18,7 +17,8 @@
 			</div>
 		</div>
 </div>
+</div>
 		{ parentCategory = category.ParentCategoryTitle; }
-	</div>
+
 	}
 </div>
