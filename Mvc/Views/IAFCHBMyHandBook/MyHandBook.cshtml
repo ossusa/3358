@@ -68,21 +68,24 @@
 
 
 <script type="text/javascript">
-	var addthis_share = {
-		url: "THE URL",
-		title: "THE TITLE",
-		description: "THE DESCRIPTION",
-		media: "THE IMAGE"
-	};
+
 	$(document).ready(function () {
-		bindEdit();
+		var addthis_share = bindEdit();
 		$('#shareBtn').css('pointer-events', 'initial');
+		return addthis_share;
 	});
 	
 	function bindEdit(){
 		
 		//share
 			var url = window.location.href;
+
+		var addthis_share = {
+			url: "THE URL",
+			title: "THE TITLE",
+			description: "THE DESCRIPTION",
+			media: "THE IMAGE"
+		};
 
 			$.ajax({
 				type: 'POST',
@@ -94,6 +97,7 @@
 					addthis_share.url = response;
 				}
 			});
+		return addthis_share;
 	}
 
 
