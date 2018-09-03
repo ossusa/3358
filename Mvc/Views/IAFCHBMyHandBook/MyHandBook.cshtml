@@ -86,6 +86,7 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
+					$('.addthis_button_compact'.attr('addthis:url', response));
 				}
 			});
 	}
