@@ -155,7 +155,7 @@
 			});
 		});
 
-
+		//SortBy
 		$('#sortByChanged').click(function () {
 
 			var orderByValue = $('#sortByChanged').val();
@@ -172,6 +172,22 @@
 			})
 		});
 
+		//Open  Resource Details
+		$('.resourceLink').click(function () {
+			var resourceUrl = $(this).attr("data-id");
+			var resourceLinkUrl = $(this).attr('data-id1');
+			var resourceDocumentUrl = $(this).attr('data-id2');
+
+			window.location.href = resourceUrl;
+
+			if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
+				window.open(resourceLinkUrl);
+			}
+			if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
+				window.open(resourceDocumentUrl);
+			}			
+		});
+
 	}
 	
 
@@ -182,6 +198,7 @@
 	function doOrderByNavigate() {
 		window.location.href = document.getElementById("UrlOrderByList").value;
 	}
+	
 
 </script>
 

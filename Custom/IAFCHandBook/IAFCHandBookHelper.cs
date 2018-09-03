@@ -878,7 +878,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					like.SetString("UrlName", new Lstring(Regex.Replace(liketitle, UrlNameCharsToReplace, UrlNameReplaceString)));
 					like.SetValue("Owner", SecurityManager.GetCurrentUserId());
 					like.SetValue("PublicationDate", DateTime.UtcNow);
-
+					
 					dynamicModuleManager.Lifecycle.Publish(like);
 					like.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 

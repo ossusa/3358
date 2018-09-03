@@ -625,7 +625,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 			}
 
-            return resourceInfo;
+			resourceInfo.ResourceLink = resource.GetValue("ResourceLink").ToString();
+
+			var resourceDocuments = resource.GetRelatedItems<Document>("attachfiles").ToList();
+			if (resourceDocuments.Any())
+			{
+				resourceInfo.ResourceDocument = resourceDocuments.First().Url;
+			}
+			return resourceInfo;
         }
         #endregion GetResourceDetailsInfoNext
 
@@ -849,7 +856,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 category.CategoryTitle = categoryDetails.ResourceCategoryTile;
                 myHandBookResourcesItem.Category = category;
                 myHandBookResourcesItem.SharedUserId = userGuid;
-				myHandBookResourcesItem.SharedUser = GetUserName(userGuid) + "'s"; 
+				if (userGuid != null && userGuid != Guid.Empty)
+				{
+					myHandBookResourcesItem.SharedUser = GetUserName(userGuid) + "'s";
+				}
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
                     .ToList();
@@ -891,7 +901,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
                     myChildHandBookResourcesItem.Category = childCategory;
                     myChildHandBookResourcesItem.SharedUserId = userGuid;
-					myChildHandBookResourcesItem.SharedUser = GetUserName(userGuid) + "'s";
+					if (userGuid != null && userGuid != Guid.Empty)
+					{
+						myChildHandBookResourcesItem.SharedUser = GetUserName(userGuid) + "'s";
+					}
 
 					var myChildResourceItem = new IAFCHandBookResourceModel();
                     foreach (var resourceItem in categoryResources.OrderByDescending(r => r.DateCreated).Take(5))
