@@ -1803,6 +1803,8 @@ p {
     margin-bottom: 12px; }
   .account-template p {
     margin-top: 0; }
+  .account-template .follow_title {
+    margin-top: 32px; }
   .account-template h6 {
     color: #2B4B6B; }
   .account-template .follow_categories {
