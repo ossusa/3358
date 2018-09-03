@@ -11,7 +11,7 @@
 	}	
 </div>
 <div class="handbook_container">
-	<div class="addthis_inline_share_toolbox_n7k8"></div>
+	<div class="addthis_inline_share_toolbox_n7k8" ></div>
 	<div class="handboox_subcontainer">
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
@@ -25,6 +25,7 @@
 					@if (Model.SharedUserId == Guid.Empty)
 					{
 						<i class="anticon anticon-share-alt"></i>
+						<div>Model.SharedUserId</div>
 						<button type="button" class="shareBtn" > Share </button>
 					}
 			</div>
