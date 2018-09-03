@@ -186,7 +186,7 @@
         color: #2b4b6b;        
     }
 }
-.selectric-community__category-select > ul > li.selected:before:hover{
+.selectric-community__category-select > ul > li.selected.highlighted:hover:before{
      content: "\E632";
      display: inline-block;
      font-size: 1.00em;
