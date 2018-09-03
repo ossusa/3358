@@ -1858,14 +1858,20 @@ p {
   transform: translate(-50%, -50%); }
 
 #shareBtn {
-  pointer-events: none;
-  color: #9b9b9b;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1em;
-  font-weight: 400;
-  border: none;
-  background: transparent;
-  outline: none; }
+  pointer-events: none; }
+  #shareBtn .addthis_button_compact {
+    color: #9b9b9b;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    outline: none; }
+  #shareBtn #atstbx {
+    display: none !important; }
+
+.atm {
+  display: none !important; }
 
 @media (max-width: 1500px) {
   .topics__img-text {
