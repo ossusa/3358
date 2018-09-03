@@ -11,7 +11,6 @@
 	}	
 </div>
 <div class="handbook_container">
-	<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8" ></div>
 	<div class="handboox_subcontainer">
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
@@ -24,8 +23,13 @@
 			<div class="progressindicator_share">
 					@if (Model.SharedUserId == Guid.Empty)
 					{
-						<i class="anticon anticon-share-alt"></i>
-						<button type="button" class="shareBtn" > Share </button>
+						<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8" >
+							<a class="addthis_button_compact">
+								<i class="anticon anticon-share-alt"></i>
+								Share
+							</a>
+
+						</div>
 					}
 			</div>
 		</div>
@@ -67,12 +71,12 @@
 	var addthis_share;
 	$(document).ready(function () {
 		bindEdit();
+		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
 	function bindEdit(){
 		
 		//share
-		$('#shareBtn').click(function() {
 			var url = window.location.href;
 
 			$.ajax({
@@ -83,14 +87,10 @@
 				dataType: "json",
 				success: function (response) {
 					 addthis_share = {
-						url: response,
-						title: "THE TITLE",
-						description: "THE DESCRIPTION",
-						media: "THE IMAGE"
+						url: response
 					}
 				}
 			});
-		});
 	}
 
 
