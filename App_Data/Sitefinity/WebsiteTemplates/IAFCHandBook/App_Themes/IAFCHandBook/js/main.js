@@ -177,3 +177,11 @@ $(document).ready(function() {
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
 });
+$(document).ready(function () {
+    var maxchars = 144;
+    var seperator = '...';
+    var content = $('.resources__slide-info');
+    if (content.text().length > (maxchars - seperator.length)) {
+        content.text(content.text().substr(0, maxchars-seperator.length) + seperator);
+    }
+});
