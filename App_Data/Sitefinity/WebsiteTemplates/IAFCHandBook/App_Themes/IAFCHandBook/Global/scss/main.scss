@@ -2238,6 +2238,24 @@ p {
     padding: 12px 0;
     border-bottom: 1px solid #d8d8d8;
   }
+  .unfollowBtn{
+    color: #9b9b9b;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    outline: none;
+    &:before{
+      position: relative;
+      content: "\E633";
+      font-family: anticon!important;
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 1.125em;
+      color: #9b9b9b;
+    }
+  }
 }
 
 .placehoolder-background img {
