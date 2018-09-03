@@ -1722,129 +1722,118 @@ p {
   margin-left: 0;
   margin-right: 0; }
 
-.account-template .breadcrumbs {
-  margin-left: 0;
-  margin-right: 0; }
-  @media (max-width: 1109px) {
-    .account-template .breadcrumbs {
-      padding-left: 0;
-      padding-right: 0; } }
-
-.account-template .edit-button {
-  position: relative; }
-  .account-template .edit-button:after {
-    content: "\E61D";
-    display: block;
-    font-family: anticon !important;
-    color: #2b4b6b;
-    -ms-transform: rotate(-90deg) translateX(50%);
-    transform: rotate(-90deg) translateX(50%);
-    right: 40px;
-    top: 50%;
-    position: absolute; }
-
-.account-template input[type="checkbox"] {
-  min-width: 14px;
-  border-radius: 2px;
-  border: 1px solid #9b9b9b;
-  background-color: #fff;
-  width: 14px;
-  height: 14px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: 0 8px 0 0;
-  transition: all 0.15s ease-out 0s;
-  color: #9b9b9b;
-  cursor: pointer;
-  display: inline-block;
-  box-sizing: border-box;
-  outline: none;
-  z-index: 1;
-  background-size: cover;
-  background-position: center; }
-
-.account-template input[type="checkbox"]:nth-of-type(2) {
-  margin-left: 20px; }
-
-.account-template .checkbox-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center; }
-
-.account-template input[type="checkbox"]:checked::before {
-  content: "\E632";
-  font-family: anticon !important;
-  display: block;
-  color: #9b9b9b;
-  opacity: 1;
-  position: absolute;
-  left: -1px;
-  top: -1px; }
-
-.account-template input[type="checkbox"]:before {
-  content: "\E632";
-  font-family: anticon !important;
-  display: block;
-  opacity: 0;
-  color: #9b9b9b; }
-
-.account-template .community__head-btn {
-  padding-left: 25px;
-  padding-right: 40px;
-  width: auto !important; }
-
-.account-template .page__title {
-  margin-bottom: 24px; }
-
-.account-template .resources__logged-buttons {
-  margin-bottom: 56px;
-  margin-top: 0; }
-
-.account-template .topic__subtitle {
-  margin-bottom: 12px; }
-
-.account-template p {
-  margin-top: 0; }
-
-.account-template h6 {
-  color: #2B4B6B; }
-
-.account-template .follow_categories {
-  margin-bottom: 32px; }
-
-.account-template .category_follow {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid #d8d8d8; }
-
-.account-template .unfollowBtn {
-  color: #9b9b9b;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1em;
-  font-weight: 400;
-  border: none;
-  background: transparent;
-  outline: none; }
-  .account-template .unfollowBtn:before {
+.account-template {
+  margin-bottom: 124px; }
+  .account-template .breadcrumbs {
+    margin-left: 0;
+    margin-right: 0; }
+    @media (max-width: 1109px) {
+      .account-template .breadcrumbs {
+        padding-left: 0;
+        padding-right: 0; } }
+  .account-template .edit-button {
+    position: relative; }
+    .account-template .edit-button:after {
+      content: "\E61D";
+      display: block;
+      font-family: anticon !important;
+      color: #2b4b6b;
+      -ms-transform: rotate(-90deg) translateX(50%);
+      transform: rotate(-90deg) translateX(50%);
+      right: 40px;
+      top: 50%;
+      position: absolute; }
+  .account-template input[type="checkbox"] {
+    min-width: 14px;
+    border-radius: 2px;
+    border: 1px solid #9b9b9b;
+    background-color: #fff;
+    width: 14px;
+    height: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     position: relative;
-    content: "\E633";
-    font-family: anticon !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 8px 0 0;
+    transition: all 0.15s ease-out 0s;
+    color: #9b9b9b;
+    cursor: pointer;
     display: inline-block;
-    margin-right: 10px;
-    font-size: 1.125em;
+    box-sizing: border-box;
+    outline: none;
+    z-index: 1;
+    background-size: cover;
+    background-position: center; }
+  .account-template input[type="checkbox"]:nth-of-type(2) {
+    margin-left: 20px; }
+  .account-template .checkbox-container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+  .account-template input[type="checkbox"]:checked::before {
+    content: "\E632";
+    font-family: anticon !important;
+    display: block;
+    color: #9b9b9b;
+    opacity: 1;
+    position: absolute;
+    left: -1px;
+    top: -1px; }
+  .account-template input[type="checkbox"]:before {
+    content: "\E632";
+    font-family: anticon !important;
+    display: block;
+    opacity: 0;
     color: #9b9b9b; }
+  .account-template .community__head-btn {
+    padding-left: 25px;
+    padding-right: 40px;
+    width: auto !important; }
+  .account-template .page__title {
+    margin-bottom: 24px; }
+  .account-template .resources__logged-buttons {
+    margin-bottom: 56px;
+    margin-top: 0; }
+  .account-template .topic__subtitle {
+    margin-bottom: 12px; }
+  .account-template p {
+    margin-top: 0; }
+  .account-template .follow_title {
+    margin-top: 32px; }
+  .account-template h6 {
+    color: #2B4B6B; }
+  .account-template .follow_categories {
+    margin-bottom: 32px; }
+  .account-template .category_follow {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #d8d8d8; }
+  .account-template .unfollowBtn {
+    color: #9b9b9b;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    outline: none; }
+    .account-template .unfollowBtn:before {
+      position: relative;
+      content: "\E633";
+      font-family: anticon !important;
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 1.125em;
+      color: #9b9b9b; }
 
 .placehoolder-background img {
   width: 100%; }

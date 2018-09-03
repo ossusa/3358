@@ -4,20 +4,23 @@
 	@{var parentCategory = String.Empty;}
 	@foreach (var category in Model.OrderBy(c => c.ParentCategoryTitle))
 	{
-	<div class="follow_categories">
+
 		if (parentCategory != category.ParentCategoryTitle)
 		{
-			<h5>@category.ParentCategoryTitle</h5>
-		}
-	<div class="category_follow">
-		<h6> @category.CategoryTitle</h6>
-		<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
+	<div class="follow_categories">
+			<h5 class="follow_title">@category.ParentCategoryTitle</h5>
+		<div class="category_follow">
+			<h6> @category.CategoryTitle</h6>
+			<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
 			<div class="unfollow">
 				<button type="button" class="unfollowBtn" data-id="@category.Id.ToString()" >Unfollow</button>
 			</div>
 		</div>
+
+	</div>
+
 </div>
-		{ parentCategory = category.ParentCategoryTitle; }
-</div>
+		}
+	{ parentCategory = category.ParentCategoryTitle; }
 	}
 </div>
