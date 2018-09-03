@@ -2581,10 +2581,10 @@ p {
 .selectric-items li.highlighted {
   background: #fff; }
 
-.selectric-items li.highlighted:before {
+.selectric-items li.highlighted:after {
   content: "\E632";
   display: inline-block;
-  font-size: 1.00em;
+  font-size: 0.938em;
   font-family: anticon !important; }
 
 .selectric-items li:hover {
