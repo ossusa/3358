@@ -1,11 +1,12 @@
 ﻿@model  List<SitefinityWebApp.Mvc.Models.IAFCHandBookTopicCategoryModel>
 
-<div class="follow_categories">
+<div>
 	@{var parentCategory = String.Empty;}
 	@foreach (var category in Model.OrderBy(c => c.ParentCategoryTitle))
 	{
 		if (parentCategory != category.ParentCategoryTitle)
 		{
+	<div class="follow_categories">
 			<h5>@category.ParentCategoryTitle</h5>
 		}
 	<div class="category_follow">
@@ -15,6 +16,7 @@
 				<button type="button" class="unfollowBtn" data-id="@category.Id.ToString()" >Unfollow</button>
 			</div>
 		</div>
+</div>
 </div>
 		{ parentCategory = category.ParentCategoryTitle; }
 
