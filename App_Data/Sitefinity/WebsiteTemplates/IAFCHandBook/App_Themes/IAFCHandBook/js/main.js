@@ -185,3 +185,11 @@ $(document).ready(function () {
         content.text(content.text().substr(0, maxchars-seperator.length) + seperator);
     }
 });
+$(document).ready(function () {
+    var maxcharacters = 55;
+    var separate = '...';
+    var content = $('.resources__slide-title');
+    if (content.text().length > (maxcharacters - separate.length)) {
+        content.text(content.text().substr(0, maxcharacters-separate.length) + separate);
+    }
+});
