@@ -120,46 +120,46 @@
           font-family: $font_family_8;
         }
     }
-      &:nth-of-type(1) > .header__sub_list-link {
-        &:hover {
-          text-shadow: 1px 0 0 $color_community;
-          color: $color_community;
-        }
-        &:focus {
-          text-shadow: 1px 0 0 $color_community;
-          color: $color_community;
-        }
-      }
-      &:nth-of-type(2) > .header__sub_list-link {
-        &:hover {
-          text-shadow: 1px 0 0 $color_leadership;
-          color: $color_leadership;
-        }
-        &:focus {
-          text-shadow: 1px 0 0 $color_leadership;
-          color: $color_leadership;
-        }
-      }
-      &:nth-of-type(3) > .header__sub_list-link {
-        &:hover {
-          text-shadow: 1px 0 0 $color_finance;
-          color: $color_finance;
-        }
-        &:focus {
-          text-shadow: 1px 0 0 $color_finance;
-          color: $color_finance;
-        }
-      }
-      &:nth-of-type(4) > .header__sub_list-link {
-        &:hover {
-          text-shadow: 1px 0 0 $color_personnel;
-          color: $color_personnel;
-        }
-        &:focus {
-          text-shadow: 1px 0 0 $color_personnel;
-          color: $color_personnel;
-        }
-      }
+      //&:nth-of-type(1) > .header__sub_list-link {
+      //  &:hover {
+      //    text-shadow: 1px 0 0 $color_community;
+      //    color: $color_community;
+      //  }
+      //  &:focus {
+      //    text-shadow: 1px 0 0 $color_community;
+      //    color: $color_community;
+      //  }
+      //}
+      //&:nth-of-type(2) > .header__sub_list-link {
+      //  &:hover {
+      //    text-shadow: 1px 0 0 $color_leadership;
+      //    color: $color_leadership;
+      //  }
+      //  &:focus {
+      //    text-shadow: 1px 0 0 $color_leadership;
+      //    color: $color_leadership;
+      //  }
+      //}
+      //&:nth-of-type(3) > .header__sub_list-link {
+      //  &:hover {
+      //    text-shadow: 1px 0 0 $color_finance;
+      //    color: $color_finance;
+      //  }
+      //  &:focus {
+      //    text-shadow: 1px 0 0 $color_finance;
+      //    color: $color_finance;
+      //  }
+      //}
+      //&:nth-of-type(4) > .header__sub_list-link {
+      //  &:hover {
+      //    text-shadow: 1px 0 0 $color_personnel;
+      //    color: $color_personnel;
+      //  }
+      //  &:focus {
+      //    text-shadow: 1px 0 0 $color_personnel;
+      //    color: $color_personnel;
+      //  }
+      //}
     }
 }
   &__second{
