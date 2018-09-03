@@ -1560,6 +1560,7 @@ p {
     color: #2b4b6b; }
 
 .selectric-community__category-select .selectric-items {
+  width: 202px !important;
   background: #fff;
   border: 1px solid #2b4b6b;
   box-shadow: none;
@@ -2468,7 +2469,9 @@ p {
   border-top-color: #a2a2a2; }
 
 .selectric-open {
-  z-index: 9999; }
+  z-index: 9999;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important; }
 
 .selectric-open .selectric {
   border-color: #2b4b6b;
@@ -2540,7 +2543,7 @@ p {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: -1px;
   background: #f8f8f8;
   border: 1px solid #c4c4c4;
   z-index: -1;
