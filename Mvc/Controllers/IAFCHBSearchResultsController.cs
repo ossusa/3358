@@ -13,7 +13,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 	[ControllerToolboxItem(Name = "IAFCHBSearchResultsController", Title = "Search Results", SectionName = "Hand Book MVC Widgets")]
 	public class IAFCHBSearchResultsController : Controller
 	{
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		private IAFCHandBookHelper handBookHelper;
+
+		public IAFCHBSearchResultsController()
+		{
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
+		}
 
 		public IAFCHandBookSearchedResourcesModel GetData(string searchTxt, string orderBy)
 		{

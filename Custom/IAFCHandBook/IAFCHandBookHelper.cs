@@ -163,14 +163,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		private const string DefaultPodcastImgUrl = "/images/default-source/icons/podcast.svg";
 		private const string DefaultChartImgUrl = "/images/default-source/icons/chart.svg";
-		private const string DefaultVideoImgUrl = "images/default-source/icons/video.svg";
-		private const string DefaultLinkImgUrl = "images/default-source/icons/link.svg";
-		private const string DefaultImageImgUrl = "images/default-source/icons/image.svg";
-		private const string DefaultWebinarImgUrl = "images/default-source/icons/webinar.svg";
-		private const string DefaultArticleImgUrl = "images/default-source/icons/article.svg";
-		private const string DefaultAudioImgUrl = "images/default-source/icons/audio.svg";
-		private const string DefaultBookImgUrl = "images/default-source/icons/book.svg";
-		private const string DefaultPaceholderImgUrl = "images/default-source/icons/resource-placeholder.svg";
+		private const string DefaultVideoImgUrl = "/images/default-source/icons/video.svg";
+		private const string DefaultLinkImgUrl = "/images/default-source/icons/link.svg";
+		private const string DefaultImageImgUrl = "/images/default-source/icons/image.svg";
+		private const string DefaultWebinarImgUrl = "/images/default-source/icons/webinar.svg";
+		private const string DefaultArticleImgUrl = "/images/default-source/icons/article.svg";
+		private const string DefaultAudioImgUrl = "/images/default-source/icons/audio.svg";
+		private const string DefaultBookImgUrl = "/images/default-source/icons/book.svg";
+		private const string DefaultPaceholderImgUrl = "/images/default-source/icons/resource-placeholder.svg";
 		#endregion Urls
 
 		#endregion Constants
@@ -218,11 +218,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		Dictionary<Guid, Categories> categoriesDictionaly = new Dictionary<Guid, Categories>();
 		Dictionary<string, string> resourceTypeImages = new Dictionary<string, string>();
 		private bool isUserAuthorized = false;
+		private string hostUrl = String.Empty;
 		#endregion Variables
 
 		#region Constructor
-		public IAFCHandBookHelper()
+		public IAFCHandBookHelper(string hostPath)
 		{
+			hostUrl = "https://" + hostPath;
 			isUserAuthorized = IsUserAuthorized();
 			InitResourceTypeImages();
 			InitCategoriesGuid();
@@ -2126,9 +2128,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public void InitResourceTypeImages()
 		{
-			resourceTypeImages.Add("Video", DefaultVideoImgUrl);
-			resourceTypeImages.Add("Webinar", DefaultWebinarImgUrl);
-			resourceTypeImages.Add("Article", DefaultArticleImgUrl);
+			resourceTypeImages.Add("Video", hostUrl+DefaultVideoImgUrl);
+			resourceTypeImages.Add("Webinar", hostUrl+DefaultWebinarImgUrl);
+			resourceTypeImages.Add("Article", hostUrl+DefaultArticleImgUrl);
 
 			/*DefaultPodcastImgUrl;
 			DefaultChartImgUrl;		

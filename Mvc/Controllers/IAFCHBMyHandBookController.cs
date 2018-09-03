@@ -10,9 +10,15 @@ using Telerik.Sitefinity.Mvc;
 namespace SitefinityWebApp.Mvc.Controllers
 {
 	[ControllerToolboxItem(Name = "IAFCHBMyHandBook", Title = "My HandBook", SectionName = "Hand Book MVC Widgets")]
-	public class IAFCHBMyHandBookController:Controller
+	public class IAFCHBMyHandBookController : Controller
 	{
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		private IAFCHandBookHelper handBookHelper;
+		public IAFCHBMyHandBookController()
+		{
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
+		}
+	
 		public IAFCHandBookMyHandBookModel GetData()
 		{
 			IAFCHandBookMyHandBookModel model = handBookHelper.GetMyHandBook();

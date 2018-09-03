@@ -11,7 +11,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 	[ControllerToolboxItem(Name = "IAFCHBMyHandBookMenu", Title = "My HandBook Menu", SectionName = "Hand Book MVC Widgets")]
 	public class IAFCHBMyHandBookMenuController : Controller
 	{
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		private IAFCHandBookHelper handBookHelper;
+		public IAFCHBMyHandBookMenuController()
+		{
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
+		}
+		
 
 		[RelativeRoute("{relativeUrl?}")]
 		public ActionResult Index()

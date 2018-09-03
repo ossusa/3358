@@ -12,11 +12,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 	public class IAFCHBRecentlyAddedResourcesController : Controller
     {
 		
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		private IAFCHandBookHelper handBookHelper;
 
 		public IAFCHBRecentlyAddedResourcesController()
 		{
-			
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
 		}
 	
 		public List<IAFCHandBookResourceModel> GetData()
