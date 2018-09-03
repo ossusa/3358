@@ -23,10 +23,13 @@
 			<div class="progressindicator_share">
 					@if (Model.SharedUserId == Guid.Empty)
 					{
-						<a id="shareBtn" class="addthis_inline_share_toolbox_n7k8 at-icon-wrapper at-share-btn at-svc-compact" >
-							<i class="anticon anticon-share-alt"></i>
-							Share
-						</a>
+						<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8" >
+							<a class="addthis_button_compact">
+								<i class="anticon anticon-share-alt"></i>
+								Share
+							</a>
+
+						</div>
 					}
 			</div>
 		</div>
