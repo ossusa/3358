@@ -19,9 +19,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 		[Category("General")]
 		public Guid ResourceID { get; set; }
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		private IAFCHandBookHelper handBookHelper;
 
-			
+		public IAFCHBResourceDetailsController()
+		{
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
+		}
 
 		public IAFCHandBookResourceModel GetData(string name)
 		{

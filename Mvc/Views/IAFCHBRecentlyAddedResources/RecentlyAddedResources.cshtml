@@ -1,15 +1,15 @@
 ﻿@model  List<SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel>
 
-@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@{var emptyDuration = new TimeSpan(0, 0, 0);}
 
 <div class="sfContentBlock resources">
 
-    <h2 class="resources__title">Recently Added Resources</h2>
+	<h2 class="resources__title">Recently Added Resources</h2>
 
-    <div class="resources__slider">
-        @foreach (var item in Model)
-        {
-            <div class="resources__slide">
+	<div class="resources__slider">
+		@foreach (var item in Model)
+		{
+			<div class="resources__slide">
 				<div class="resources__slide-img" style="background: none; overflow: hidden">
 					@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
@@ -34,64 +34,67 @@
 						<a href="@item.ResourceDetails.Category.ParentCategoryUrl">
 							<span>
 								@item.ResourceDetails.Category.ParentCategoryTitle
-						</span>
-					</a> >
-					<a class="" href="@item.ResourceDetails.Category.CategoryUrl">
-						<span>@item.ResourceDetails.Category.CategoryTitle</span>
-					</a>
+							</span>
+						</a> >
+						<a class="" href="@item.ResourceDetails.Category.CategoryUrl">
+							<span>@item.ResourceDetails.Category.CategoryTitle</span>
+						</a>
+					</div>
+					@if (item.ResourceDetails.Duration != emptyDuration)
+					{
+						<div class="resources__slide-time">
+							<div class="resources--time">&nbsp;</div>
+							<span> @item.ResourceDetails.Duration</span>
+						</div>
+					}
 				</div>
-				<div class="resources__slide-time">
-					<div class="resources--time">&nbsp;</div>
-					<span> @item.ResourceDetails.DurationStr</span>
-				</div>
-				</div>
-            <div class="resources__slide-info">
-                <div class="resources__slide-box">
-                    <p class="resources__slide-article">@item.ResourceDetails.ResourceType</p>
-					<button type="button" class="resourceLink"
-							data-id="@item.ResourceUrl"
-							data-id1="@item.ResourceDetails.ResourceLink"
-							data-id2="@item.ResourceDetails.ResourceDocument">
-						<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
-					</button>
-                    <p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
-                </div>
+				<div class="resources__slide-info">
+					<div class="resources__slide-box">
+						<p class="resources__slide-article">@item.ResourceDetails.ResourceType</p>
+						<button type="button" class="resourceLink"
+								data-id="@item.ResourceUrl"
+								data-id1="@item.ResourceDetails.ResourceLink"
+								data-id2="@item.ResourceDetails.ResourceDocument">
+							<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+						</button>
+						<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+					</div>
 
-                <div class="resources__slide-footer">
-                    <div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
-                        @if (item.IsResourceAddedToMyHandBook == true)
-                        {
-                             <span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
-                        }
-                        else
-                        {
-                            <button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook</button>
-                        }
-                    </div>
-                    <div class="resources-single__left_post_comment_header_right">
-                        <a class="single-post-comments" href="@item.ResourceUrl">
-                            <i class="material-icons">chat_bubble_outline</i>
-                            <span>@item.CommentsAmount Comments</span>
-                        </a>
-                        <div class="single-post-statistic">
-                            <button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
-                                <span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )" >
-                                <span>@item.Likes.Likes</span>
-                                </span>
-                            </button>
-                            <button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
-                                <span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
-                                <span>@item.Likes.Dislikes</span>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
+					<div class="resources__slide-footer">
+						<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}","addToMyHandBook", item.Id.ToString() )">
+							@if (item.IsResourceAddedToMyHandBook == true)
+							{
+								<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
+							}
+							else
+							{
+								<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook</button>
+							}
+						</div>
+						<div class="resources-single__left_post_comment_header_right">
+							<a class="single-post-comments" href="@item.ResourceUrl">
+								<i class="material-icons">chat_bubble_outline</i>
+								<span>@item.CommentsAmount Comments</span>
+							</a>
+							<div class="single-post-statistic">
+								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+									<span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )">
+										<span>@item.Likes.Likes</span>
+									</span>
+								</button>
+								<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+									<span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+										<span>@item.Likes.Dislikes</span>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		}
 
-</div>
+	</div>
 </div>
 
 <script type="text/javascript">

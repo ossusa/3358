@@ -85,8 +85,9 @@ namespace SitefinityWebApp
         {
             var item = evt.Item;
             var itemType = item.GetType();
+			var url = HttpContext.Current.Request.Url.Host;
 
-            var helper = new IAFCHandBookHelper();
+			var helper = new IAFCHandBookHelper(url);
 
             if (itemType == helper.ResourceType ||
                 itemType == helper.ExternalResourcesType)
@@ -105,8 +106,8 @@ namespace SitefinityWebApp
         {
             var item = evt.Item;
             var itemType = item.GetType();
-
-            var helper = new IAFCHandBookHelper();
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			var helper = new IAFCHandBookHelper(url);
 
             if (itemType == helper.ResourceType ||
                 itemType == helper.ExternalResourcesType)

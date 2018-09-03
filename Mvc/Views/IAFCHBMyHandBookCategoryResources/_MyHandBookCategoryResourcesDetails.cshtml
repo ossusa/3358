@@ -1,5 +1,6 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookResourceModelModel
 
+@{var emptyDuration = new TimeSpan(0, 0, 0);}
 <div class="complete__progressindicator_wrapper">
 	<div class="progressindicator__wrapper-col">
 		<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookCompletedResources </div> Complete</div>
@@ -34,7 +35,7 @@
 		@Html.Raw("<section class='complete__resources_slides'>");
 	}
 	<div class="resources__slide complete__resources_slide">
-		<div class="resources__community-img">			
+		<div class="resources__community-img">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{
 				<img src='@item.ResourceDetails.ImageUrl' />
@@ -53,10 +54,13 @@
 					}
 				</div>
 			}
-			<div class="resources__slide-time">
-				<div class="resources--time">&nbsp;</div>
-				@item.ResourceDetails.DurationStr
-			</div>
+			@if (item.ResourceDetails.Duration != emptyDuration)
+			{
+				<div class="resources__slide-time">
+					<div class="resources--time">&nbsp;</div>
+					@item.ResourceDetails.Duration
+				</div>
+			}
 		</div>
 		<div class="complete__resources_slide-info">
 			<div class="resources__slide-box">
@@ -80,7 +84,8 @@
 					<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove", item.Id.ToString())">
 						<div class="removeResource">
 							<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
-								<i class="anticon anticon-close"></i>Remove </button>
+								<i class="anticon anticon-close"></i>Remove
+							</button>
 						</div>
 					</div>
 				}
@@ -150,7 +155,7 @@
 					@Html.Raw("<section class='complete__resources_slides'>");
 				}
 				<div class="resources__slide complete__resources_slide">
-					<div class="resources__community-img">						
+					<div class="resources__community-img">
 						@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 						{
 							<img src='@item.ResourceDetails.ImageUrl' />
@@ -169,10 +174,13 @@
 								}
 							</div>
 						}
-						<div class="resources__slide-time">
-							<div class="resources--time">&nbsp;</div>
-							@item.ResourceDetails.DurationStr
-						</div>
+						@if (item.ResourceDetails.Duration != emptyDuration)
+						{
+							<div class="resources__slide-time">
+								<div class="resources--time">&nbsp;</div>
+								@item.ResourceDetails.Duration
+							</div>
+						}
 					</div>
 					<div class="complete__resources_slide-info">
 						<div class="resources__slide-box">
@@ -193,7 +201,8 @@
 								</div>
 								<div class="removeCompletedResource">
 									<button type="button" class="removeComplenedBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
-                                        <i class="anticon anticon-close"></i>Remove </button>
+										<i class="anticon anticon-close"></i>Remove
+									</button>
 								</div>
 							}
 							else

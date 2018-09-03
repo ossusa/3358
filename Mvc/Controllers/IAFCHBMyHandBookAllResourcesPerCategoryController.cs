@@ -16,14 +16,15 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public String CategoryName { get; set; }
 
 		private ILog log = LogManager.GetLogger(typeof(IAFCHBResourcesPerCategoryController));
-
+		private IAFCHandBookHelper handBookHelper;
 
 		public IAFCHBMyHandBookAllResourcesPerCategoryController()
 		{
-
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
 		}
 
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		
 
 		public IAFCHandBookMyHandBookModel GetData(String categoryName, String userId)
 		{

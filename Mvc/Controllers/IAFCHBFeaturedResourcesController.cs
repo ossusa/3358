@@ -8,12 +8,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 	[ControllerToolboxItem(Name = "IAFCHBFeaturedResources", Title = "Featured Resources", SectionName = "Hand Book MVC Widgets")]
 	public class IAFCHBFeaturedResourcesController: Controller
 	{
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
-
+		private IAFCHandBookHelper handBookHelper;
 
 		public IAFCHBFeaturedResourcesController()
 		{
-			
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
 		}
 
 		public IAFCHandBookResourceModel GetData()
