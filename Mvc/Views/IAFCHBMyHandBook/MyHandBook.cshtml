@@ -73,9 +73,7 @@
 
 	$(document).ready(function () {
 		bindEdit();
-		addthis_share = {
-			url: shareUrl
-		};
+		addthis_share.url = shareUrl;
 		console.log(addthis_share.url);
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
@@ -93,7 +91,6 @@
 				dataType: "json",
 				success: function (response) {
 					shareUrl = response;
-					console.log(shareUrl);
 				}
 			});
 	}
