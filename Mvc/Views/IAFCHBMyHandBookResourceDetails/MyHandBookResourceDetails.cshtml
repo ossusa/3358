@@ -139,18 +139,11 @@
 		//share
 		var url = window.location.href;
 
-		$.ajax({
-			type: 'POST',
-			cache: false,
-			url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
-			data: { url: url },
-			dataType: "json",
-			success: function (response) {
-				addthis_share = {
-					url: response
-				}
-			}
-		});
+		addthis_share = {
+			url: url
+		}
+
+
 
 		//Add Like
 		$('.addLike').click(function () {
