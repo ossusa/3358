@@ -3602,6 +3602,13 @@ addReplyCommentBtn {
   outline: none;
   padding: 0; }
 
+.resourceLink {
+  border: none;
+  background: transparent;
+  outline: none;
+  text-align: left;
+  padding: 0; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
