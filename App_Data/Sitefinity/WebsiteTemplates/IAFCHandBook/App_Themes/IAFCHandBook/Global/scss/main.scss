@@ -2280,6 +2280,13 @@ p {
 
 #shareBtn {
   pointer-events: none;
+  color: #9b9b9b;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  border: none;
+  background: transparent;
+  outline: none;
 }
 
 @media(max-width: 1500px){
