@@ -164,5 +164,7 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/iafchandbookhome/search-results/' + qSecond;
     });
-
+    $('.test-again-link').click(function(e){
+        e.preventDefault();
+    });
 });
