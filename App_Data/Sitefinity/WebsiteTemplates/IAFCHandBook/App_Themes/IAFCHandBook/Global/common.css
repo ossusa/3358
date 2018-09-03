@@ -1818,7 +1818,16 @@ p {
 
 .account-template h6 {
   color: #2B4B6B;
-  margin-bottom: 12px; }
+  border-bottom: 1px solid #d8d8d8;
+  margin: 12px; }
+
+.account-template .category_follow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .placehoolder-background img {
   width: 100%; }
