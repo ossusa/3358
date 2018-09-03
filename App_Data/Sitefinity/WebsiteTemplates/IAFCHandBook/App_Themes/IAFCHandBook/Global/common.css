@@ -1813,13 +1813,11 @@ p {
 .account-template p {
   margin-top: 0; }
 
-.account-template h5 {
-  margin-bottom: 12px; }
-
 .account-template h6 {
-  color: #2B4B6B;
-  border-bottom: 1px solid #d8d8d8;
-  margin: 12px; }
+  color: #2B4B6B; }
+
+.account-template .follow_categories {
+  margin-bottom: 32px; }
 
 .account-template .category_follow {
   display: -ms-flexbox;
@@ -1827,7 +1825,9 @@ p {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #d8d8d8; }
 
 .placehoolder-background img {
   width: 100%; }
