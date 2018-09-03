@@ -176,6 +176,7 @@ $(document).ready(function() {
     $(".header__list:nth-of-type(1) > a").click(function(){
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
+    $('.community__breadcrumbs:contains("Leadership")').closest('.selectric-community__title-select .label').addClass('label-colored');
 });
 
 $('.resources__slide-desc').each(function() {
