@@ -1866,9 +1866,8 @@ p {
     border: none;
     background: transparent;
     outline: none; }
-
-.at-share-tbx-element {
-  display: none !important; }
+  #shareBtn #atstbx {
+    display: none !important; }
 
 @media (max-width: 1500px) {
   .topics__img-text {

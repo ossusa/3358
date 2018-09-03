@@ -2283,10 +2283,12 @@ p {
     background: transparent;
     outline: none;
   }
+
+  #atstbx {
+    display: none !important;
+  }
 }
-.at-share-tbx-element {
-  display: none !important;
-}
+
 
 @media(max-width: 1500px){
   .topics__img-text{
