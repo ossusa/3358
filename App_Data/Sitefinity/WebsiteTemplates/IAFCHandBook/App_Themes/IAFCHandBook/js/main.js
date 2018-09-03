@@ -186,7 +186,7 @@ $(document).ready(function () {
     }
 });
 $(document).ready(function () {
-    var maxcharacters = 63;
+    var maxcharacters = 61;
     var separate = '...';
     var content = $('.resources__slide-title');
     if (content.text().length > (maxcharacters - separate.length)) {
