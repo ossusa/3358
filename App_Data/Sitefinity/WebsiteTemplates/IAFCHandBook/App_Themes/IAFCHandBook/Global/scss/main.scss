@@ -2121,6 +2121,9 @@ p {
 
 .account-template {
   margin-bottom: 124px;
+  @media screen and (max-width: 767px){
+    margin-bottom: 66px;
+  }
   .breadcrumbs {
     margin-left: 0;
     margin-right: 0;
