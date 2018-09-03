@@ -187,7 +187,7 @@ $('.resources__slide-desc').each(function() {
     }
 });
 $('.resources__slide-title').each(function() {
-    var maxcharacters = 61;
+    var maxcharacters = 55;
     var separate = '...';
 
     if ($(this).text().length > (maxcharacters - separate.length)) {
