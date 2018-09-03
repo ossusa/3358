@@ -614,7 +614,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			else
 			{
-				resourceInfo.ImagePlaceholderUrl = DefaultPaceholderImgUrl;
+				resourceInfo.ImagePlaceholderUrl = hostUrl+DefaultPaceholderImgUrl;
 				if (resourceTypeImages.ContainsKey(resourceTypeTitle))
 				{
 					resourceInfo.ImageSvgUrl = resourceTypeImages[resourceTypeTitle];

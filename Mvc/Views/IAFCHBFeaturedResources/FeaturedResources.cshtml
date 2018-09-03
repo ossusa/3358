@@ -1,64 +1,66 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel
 
-@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
-
-	@if (Model.Id != Guid.Empty)
-	{		
+@{var emptyDuration = new TimeSpan(0, 0, 0);}
+@if (Model.Id != Guid.Empty)
+{
 	<div class="resources__logged">
 
-			<div class="resources__logged-info">
-				<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span> @Model.ResourceDetails.Category.CategoryTitle</span></p>
-				<h6 class="resources__slide-title resources__logged-title">@Model.ResourceDetails.ResourceTitle</h6>
-				<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
-				<div class="resources__logged-buttons">					
-					<button type="submit" formaction="@Model.ResourceUrl"
-							class="resourceFeaturedLink community__head-btn resources__logged-btn"
-							data-id="@Model.ResourceUrl"
-							data-id1="@Model.ResourceDetails.ResourceLink"
-							data-id2="@Model.ResourceDetails.ResourceDocument">
-						View
-					</button>
+		<div class="resources__logged-info">
+			<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span> @Model.ResourceDetails.Category.CategoryTitle</span></p>
+			<h6 class="resources__slide-title resources__logged-title">@Model.ResourceDetails.ResourceTitle</h6>
+			<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
+			<div class="resources__logged-buttons">
+				<button type="submit" formaction="@Model.ResourceUrl"
+						class="resourceFeaturedLink community__head-btn resources__logged-btn"
+						data-id="@Model.ResourceUrl"
+						data-id1="@Model.ResourceDetails.ResourceLink"
+						data-id2="@Model.ResourceDetails.ResourceDocument">
+					View
+				</button>
 
-					<span class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
-						@if (Model.IsResourceAddedToMyHandBook == true)
-						{
-							<span class='resources--plus anticon anticon-check'></span><span class="resources__logged-added">Added to MyHandBook</span>
-						}
-						else
-						{
-							<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
-						}
-					</span>
-				</div>
+				<span class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
+					@if (Model.IsResourceAddedToMyHandBook == true)
+					{
+						<span class='resources--plus anticon anticon-check'></span><span class="resources__logged-added">Added to MyHandBook</span>
+					}
+					else
+					{
+						<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
+					}
+				</span>
 			</div>
-			<div class="resources__logged-img-box">
-				@if (Model.ResourceDetails.ImageUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
-				{
-					<img src='@Model.ResourceDetails.ImageUrl' />
-				}
-				else
-				{
-					<div class="resources-placeholder">
-						<div class="placehoolder-background">
-							<img src="@Model.ResourceDetails.ImagePlaceholderUrl">
-						</div>
-						@if (Model.ResourceDetails.ImageSvgUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
-						{
-							<div class="placeholder-type">
-								<img src="@Model.ResourceDetails.ImageSvgUrl" alt="">
-							</div>
-						}
+		</div>
+		<div class="resources__logged-img-box">
+			@if (Model.ResourceDetails.ImageUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
+			{
+				<img src='@Model.ResourceDetails.ImageUrl' />
+			}
+			else
+			{
+				<div class="resources-placeholder">
+					<div class="placehoolder-background">
+						<img src="@Model.ResourceDetails.ImagePlaceholderUrl">
 					</div>
-				}				
+					@if (Model.ResourceDetails.ImageSvgUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
+					{
+						<div class="placeholder-type">
+							<img src="@Model.ResourceDetails.ImageSvgUrl" alt="">
+						</div>
+					}
+				</div>
+			}
+
+			@if (Model.ResourceDetails.Duration != emptyDuration)
+			{
 				<div class="resources__slide-time resources__logged-time">
 					<div class="resources--time">&nbsp;</div>
 					<span>@Model.ResourceDetails.Duration</span>
 				</div>
-
-			</div>
+			}
+		</div>
 
 	</div>
-	}
+}
 
 
 <script type="text/javascript">
@@ -97,7 +99,7 @@
 			}
 			if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
 				window.open(resourceDocumentUrl);
-			}			
+			}
 		});
 
 	});

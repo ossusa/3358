@@ -20,11 +20,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 		public IAFCHBMyHandBookCategoryResourcesController()
 		{
-
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
 		}
 
 		private ILog log = LogManager.GetLogger(typeof(IAFCHBMyHandBookCategoryResourcesController));
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		private IAFCHandBookHelper handBookHelper;
 
 		[RelativeRoute("{userid?}")]
 		public ActionResult Index(String userId)

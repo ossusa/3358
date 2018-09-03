@@ -1,7 +1,9 @@
 ﻿@model  List<SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+@{var emptyDuration = new TimeSpan(0, 0, 0);}
 <div class="community__section">
-<div class="box">
+	<div class="box">
 		@{int columnCounter = 0; }
 
 		@foreach (var item in Model)
@@ -11,53 +13,56 @@
 				@Html.Raw("<section class='complete__resources_slides'>");
 			}
 
-				<div class="resources__slide">
-					<div class="resources__community-img">						
-						@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
-						{
-							<img src='@item.ResourceDetails.ImageUrl' />
-						}
-						else
-						{
-							<div class="resources-placeholder">
-								<div class="placehoolder-background">
-									<img src="@item.ResourceDetails.ImagePlaceholderUrl">
-								</div>
-								@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
-								{
-									<div class="placeholder-type">
-										<img src="@item.ResourceDetails.ImageSvgUrl" alt="">
-									</div>
-								}
+			<div class="resources__slide">
+				<div class="resources__community-img">
+					@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+					{
+						<img src='@item.ResourceDetails.ImageUrl' />
+					}
+					else
+					{
+						<div class="resources-placeholder">
+							<div class="placehoolder-background">
+								<img src="@item.ResourceDetails.ImagePlaceholderUrl">
 							</div>
-						}
-						<div class="resources__community-label">
-							<a href="@item.ResourceDetails.Category.ParentCategoryUrl">
-								<span>@item.ResourceDetails.Category.ParentCategoryTitle</span>
-							</a>
-							<a href="@item.ResourceDetails.Category.CategoryUrl">
-								<span>@item.ResourceDetails.Category.CategoryTitle</span>
-							</a>
+							@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+							{
+								<div class="placeholder-type">
+									<img src="@item.ResourceDetails.ImageSvgUrl" alt="">
+								</div>
+							}
 						</div>
+					}
+					<div class="resources__community-label">
+						<a href="@item.ResourceDetails.Category.ParentCategoryUrl">
+							<span>@item.ResourceDetails.Category.ParentCategoryTitle</span>
+						</a>
+						<a href="@item.ResourceDetails.Category.CategoryUrl">
+							<span>@item.ResourceDetails.Category.CategoryTitle</span>
+						</a>
+					</div>
+					@if (item.ResourceDetails.Duration != emptyDuration)
+					{
 						<div class="resources__slide-time">
 							<div class="resources--time">&nbsp;</div>
-							@item.ResourceDetails.DurationStr
+							@item.ResourceDetails.Duration
 						</div>
+					}
+				</div>
+				<div class="resources__slide-info resources__community-slide-info">
+					<div class="resources__slide-box">
+						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+						<button type="button" class="resourceLink"
+								data-id="@item.ResourceUrl"
+								data-id1="@item.ResourceDetails.ResourceLink"
+								data-id2="@item.ResourceDetails.ResourceDocument">
+							<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+						</button>
+						<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					</div>
-                    <div class="resources__slide-info resources__community-slide-info">
-                        <div class="resources__slide-box">
-							<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>							
-							<button type="button" class="resourceLink" 
-									data-id="@item.ResourceUrl" 
-									data-id1="@item.ResourceDetails.ResourceLink" 
-									data-id2="@item.ResourceDetails.ResourceDocument">
-								<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
-							</button>
-							<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
-					    </div>
-						<div class="resources__slide-footer">		
-							@if (item.IsUserAuthorized)
-							{
+					<div class="resources__slide-footer">
+						@if (item.IsUserAuthorized)
+						{
 							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
 								<div id="addToMyHandBook">
 									@if (item.IsResourceAddedToMyHandBook == true)
@@ -70,30 +75,30 @@
 									}
 								</div>
 							</div>
-							}
-							<div class="resources-single__left_post_comment_header_right">
-								<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
+						}
+						<div class="resources-single__left_post_comment_header_right">
+							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
 
-								<div class="single-post-statistic">
-									<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
-										<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-											<span>@item.Likes.Likes</span>
-										</span>
-									</button>
-
-
-									<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
-										<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-											<span>@item.Likes.Dislikes</span>
-										</span>
-									</button>
-								</div>
+							<div class="single-post-statistic">
+								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+									<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+										<span>@item.Likes.Likes</span>
+									</span>
+								</button>
 
 
+								<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+									<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+										<span>@item.Likes.Dislikes</span>
+									</span>
+								</button>
 							</div>
+
+
 						</div>
-                    </div>
+					</div>
 				</div>
+			</div>
 
 			if (columnCounter == 1)
 			{
@@ -112,7 +117,7 @@
 			}
 		}
 
-</div>
+	</div>
 </div>
 </div>
 <script type="text/javascript">
@@ -158,17 +163,17 @@
 
 			var resourceId = $(this).attr('data-id');
 			var tag_id = "#addToMyHandBook_" + resourceId;
-			
+
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddToMyHandBook", "IAFCHBResourcesPerCategory")',
 				data: { resourceId: resourceId },
 				dataType: "json",
-				success: function (response) {										
-					if (response == true) {						
+				success: function (response) {
+					if (response == true) {
 						$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
-					}					
+					}
 				}
 			});
 		});

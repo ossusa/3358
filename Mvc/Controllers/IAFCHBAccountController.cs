@@ -13,7 +13,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 	[ControllerToolboxItem(Name = "IAFCHBAccountController", Title = "Account", SectionName = "Hand Book MVC Widgets")]
 	public class IAFCHBAccountController : Controller
 	{
-		private IAFCHandBookHelper handBookHelper = new IAFCHandBookHelper();
+		private IAFCHandBookHelper handBookHelper;
+		public IAFCHBAccountController()
+		{
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			handBookHelper = new IAFCHandBookHelper(url);
+		}
+	
 		public IAFCHandBookAccount GetData()
 		{
 			var model = handBookHelper.GetAccount();
