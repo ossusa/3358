@@ -188,8 +188,8 @@ $(document).ready(function () {
 $(document).ready(function () {
     var maxcharacters = 61;
     var separate = '...';
-    var content = $('.resources__slide-title');
-    if (content.text().length > (maxcharacters - separate.length)) {
-        content.text(content.text().substr(0, maxcharacters-separate.length) + separate);
+    var content2 = $('.resources__slide-title');
+    if (content2.text().length > (maxcharacters - separate.length)) {
+        content2.text(content2.text().substr(0, maxcharacters-separate.length) + separate);
     }
 });
