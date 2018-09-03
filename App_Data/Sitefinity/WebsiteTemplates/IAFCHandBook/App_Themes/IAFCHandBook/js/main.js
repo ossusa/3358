@@ -194,3 +194,11 @@ $('.resources__slide-title').each(function() {
         $(this).text($(this).text().substr(0, maxcharacters-separate.length) + separate);
     }
 });
+$('.community__topics-list topics__img-back-info').each(function() {
+    var maxcharacter = 110;
+    var separates = '...';
+
+    if ($(this).text().length > (maxcharacter - separates.length)) {
+        $(this).text($(this).text().substr(0, maxcharacter-separates.length) + separates);
+    }
+});
