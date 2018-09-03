@@ -155,6 +155,13 @@
 .selectric-items li.highlighted {
     background: #fff;
 }
+.selectric-items li.highlighted:before {
+    content: "\E632";
+    display: inline-block;
+    font-size: 1.00em;
+    font-family: anticon!important;
+}
+
 .selectric-items li:hover {
     background: #fff;
 }
