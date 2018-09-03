@@ -34,8 +34,8 @@ $(document).ready(function () {
     });
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
-        var q = $('.site-search').val();
-        location.href = '/iafchandbookhome/search-results/' + q;
+        var qSecond = $('.site-search').val();
+        location.href = '/iafchandbookhome/search-results/' + qSecond;
     });
     
     /*Off canvas menu*/
