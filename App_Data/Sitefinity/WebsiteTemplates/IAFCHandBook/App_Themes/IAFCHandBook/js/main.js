@@ -169,10 +169,9 @@ $(document).ready(function() {
         $(this).addClass("colored");
     });
     $(".header__list:nth-of-type(1) > a").click(function(){
-        $(".header__list:nth-of-type(1) > a.colored").removeClass("colored");
-        $(".header__list:nth-of-type(1) > a").addClass("colored");
-        if($(".header__sub_ul").not(':visible') ) {
-            $(".header__list:nth-of-type(1) > a.colored").removeClass("colored");
+        $(".header__list:nth-of-type(1) > a").addClass("colored-list");
+        if(! $(".header__sub_ul").is(':visible') ) {
+            $(".header__list:nth-of-type(1) > a").removeClass("colored");
         }
     });
 });
