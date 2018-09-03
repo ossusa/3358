@@ -1858,7 +1858,7 @@ p {
 
 #shareBtn {
   pointer-events: none; }
-  #shareBtn .ddthis_button_compact {
+  #shareBtn .addthis_button_compact {
     color: #9b9b9b;
     font-family: "Nunito Sans", sans-serif;
     font-size: 1em;
