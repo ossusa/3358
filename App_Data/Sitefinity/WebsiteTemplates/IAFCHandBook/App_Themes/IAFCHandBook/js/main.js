@@ -170,6 +170,7 @@ $(document).ready(function() {
     });
     $(function() {
         if($(".header__sub_ul").is(":visible")) {
+            $(".header__list:nth-of-type(1) > a.colored").removeClass("colored");
             $(".header__list:nth-of-type(1) > a").addClass("colored");
         }
     });
