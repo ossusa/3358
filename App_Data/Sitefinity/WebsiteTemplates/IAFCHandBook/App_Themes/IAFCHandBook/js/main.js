@@ -170,7 +170,7 @@ $(document).ready(function() {
     });
     $(".header__list:nth-of-type(1) > a").click(function(){
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
-        if(! $(".header__sub_ul").is(':visible') ) {
+        if ($(".header__sub_ul").css(":display") == "none") {
             $(".header__list:nth-of-type(1) > a").removeClass("colored-list");
         }
     });
