@@ -68,7 +68,10 @@
 
 
 <script type="text/javascript">
-	var addthis_share;
+	var addthis_share = {
+		url: ''
+	};
+
 	$(document).ready(function () {
 		bindEdit();
 		$('#shareBtn').css('pointer-events', 'initial');
@@ -78,7 +81,6 @@
 		
 		//share
 			var url = window.location.href;
-		console.log(url);
 
 			$.ajax({
 				type: 'POST',
