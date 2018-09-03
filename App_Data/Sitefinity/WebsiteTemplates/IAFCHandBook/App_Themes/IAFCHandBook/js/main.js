@@ -168,10 +168,11 @@ $(document).ready(function() {
         $(".header__sub_list:nth-of-type(4) .header__sub_list-link.colored").removeClass("colored");
         $(this).addClass("colored");
     });
-    $(function() {
-        if($(".header__sub_ul").is(":visible")) {
+    $(".header__list:nth-of-type(1) > a").click(function(){
+        $(".header__list:nth-of-type(1) > a.colored").removeClass("colored");
+        $(".header__list:nth-of-type(1) > a").addClass("colored");
+        if($(".header__sub_ul").not(':visible') ) {
             $(".header__list:nth-of-type(1) > a.colored").removeClass("colored");
-            $(".header__list:nth-of-type(1) > a").addClass("colored");
         }
     });
 });
