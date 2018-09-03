@@ -195,7 +195,7 @@ $('.resources__slide-title').each(function() {
     }
 });
 $('.topics_seperator').each(function() {
-    var maxch = 100;
+    var maxch = 110;
     var sep = '...';
 
     if ($(this).text().length > (maxch - sep.length)) {
