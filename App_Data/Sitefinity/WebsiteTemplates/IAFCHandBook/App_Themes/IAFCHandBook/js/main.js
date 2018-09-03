@@ -38,7 +38,7 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/iafchandbookhome/search-results/' + qSecond;
     });
-    
+
     /*Off canvas menu*/
     $(".header__mob-open").click(function () {
         $('.header__mob-nav').css({ width: "100vw" });
@@ -123,7 +123,6 @@ $(document).ready(function () {
     $('.header__list:nth-of-type(1) > a').click(function (e) {
         e.preventDefault();
         $('.header__sub_ul').toggle();
-
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(".header__second_ul:nth-of-type(1)").show();
@@ -150,5 +149,28 @@ $(document).ready(function () {
     });
     $('.header__sub_list-link').click(function(e){
         e.preventDefault();
+    });
+});
+$(document).ready(function() {
+    $(".header__sub_list-link").click(function(){
+        $(".header__sub_list:nth-of-type(1) .header__sub_list-link.colored").removeClass("colored");
+        $(this).addClass("colored");
+    });
+    $(".header__sub_list-link").click(function(){
+        $(".header__sub_list:nth-of-type(2) .header__sub_list-link.colored").removeClass("colored");
+        $(this).addClass("colored");
+    });
+    $(".header__sub_list-link").click(function(){
+        $(".header__sub_list:nth-of-type(3) .header__sub_list-link.colored").removeClass("colored");
+        $(this).addClass("colored");
+    });
+    $(".header__sub_list-link").click(function(){
+        $(".header__sub_list:nth-of-type(4) .header__sub_list-link.colored").removeClass("colored");
+        $(this).addClass("colored");
+    });
+    $(function() {
+        if($(".header__sub_ul").is(":visible")) {
+            $(".header__list:nth-of-type(1) > a").addClass("colored");
+        }
     });
 });

@@ -11,7 +11,7 @@
 	}	
 </div>
 <div class="handbook_container">
-	<div class="sharethis-inline-share-buttons"></div>
+	<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8" ></div>
 	<div class="handboox_subcontainer">
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
@@ -64,7 +64,7 @@
 
 
 <script type="text/javascript">
-
+	var addthis_share;
 	$(document).ready(function () {
 		bindEdit();
 	});
@@ -72,7 +72,7 @@
 	function bindEdit(){
 		
 		//share
-		$('.shareBtn').click(function() {
+		$('#shareBtn').click(function() {
 			var url = window.location.href;
 
 			$.ajax({
@@ -81,8 +81,13 @@
 				url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
 				data: { url: url },
 				dataType: "json",
-				success: function (response) {					
-					$('#share').html(response);					
+				success: function (response) {
+					 addthis_share = {
+						url: response,
+						title: "THE TITLE",
+						description: "THE DESCRIPTION",
+						media: "THE IMAGE"
+					}
 				}
 			});
 		});
