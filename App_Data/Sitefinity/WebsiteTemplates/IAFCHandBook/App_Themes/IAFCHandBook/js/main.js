@@ -184,4 +184,4 @@ $(document).ready(function() {
 //     if (content.text().length > (maxchars - seperator.length)) {
 //         content.text(content.text().substr(0, maxchars-seperator.length) + seperator);
 //     }
-});
+// });
