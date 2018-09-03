@@ -56,9 +56,8 @@
                                 <div class="header__mob-box">
                                     <a href="#" class="header__mob-close anticon anticon-menu-unfold"></a>
                                     <div class="header__mob-form">
-                                        <label for="site-search" class="visuallyhidden">Search</label>
-                                        <input id="site-search" type="search" placeholder="Search" class="header__mob-search">
-                                        <button id="site-search-submit" class="header__mob-button" type="submit"></button>
+                                        <input type="search" placeholder="Search" class="header__mob-search site-search">
+                                        <button class="header__mob-button site-search-submit" type="submit"></button>
                                     </div>
                                 </div>
                                 <!-- accordion   -->

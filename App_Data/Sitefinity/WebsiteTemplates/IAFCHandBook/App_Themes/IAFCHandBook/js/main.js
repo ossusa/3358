@@ -32,7 +32,11 @@ $(document).ready(function () {
         var q = $('#site-search').val();
         location.href = '/iafchandbookhome/search-results/' + q;
     });
-
+    $(".site-search-submit").click(function (e) {
+        e.preventDefault();
+        var q = $('.site-search').val();
+        location.href = '/iafchandbookhome/search-results/' + q;
+    });
     /*Off canvas menu*/
     $(".header__mob-open").click(function () {
         $('.header__mob-nav').css({ width: "100vw" });
