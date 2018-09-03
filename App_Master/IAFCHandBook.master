@@ -12,7 +12,6 @@
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b8939e1de278e00111a4903&product=inline-share-buttons' async='async'></script>
 
 </head>
-
 <body>
 
 <form id="form1" runat="server">

@@ -151,20 +151,4 @@ $(document).ready(function () {
     $('.header__sub_list-link').click(function(e){
         e.preventDefault();
     });
-    /*Mob search*/
-    $(".site-search-submit").click(function (e) {
-        e.preventDefault();
-        var qSecond = $('.site-search').val();
-        location.href = '/iafchandbookhome/search-results/' + qSecond;
-    });
-
-    /*Mob search*/
-    $(".site-search-submit").click(function (e) {
-        e.preventDefault();
-        var qSecond = $('.site-search').val();
-        location.href = '/iafchandbookhome/search-results/' + qSecond;
-    });
-    $('.test-again-link').click(function(e){
-        e.preventDefault();
-    });
 });
