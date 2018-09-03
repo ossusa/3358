@@ -25,7 +25,6 @@
 					@if (Model.SharedUserId == Guid.Empty)
 					{
 						<i class="anticon anticon-share-alt"></i>
-						<div>@Model.SharedUserId</div>
 						<button type="button" class="shareBtn" > Share </button>
 					}
 			</div>
@@ -65,7 +64,7 @@
 
 
 <script type="text/javascript">
-
+	var addthis_share;
 	$(document).ready(function () {
 		bindEdit();
 	});
@@ -83,7 +82,13 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {					
-					$('#share').html(response);					
+					$('#share').html(response);
+					 addthis_share = {
+						url: response,
+						title: "THE TITLE",
+						description: "THE DESCRIPTION",
+						media: "THE IMAGE"
+					}
 				}
 			});
 		});
