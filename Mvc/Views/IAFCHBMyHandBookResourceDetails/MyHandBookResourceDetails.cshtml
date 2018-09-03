@@ -102,7 +102,12 @@
 					@item.ResourceDetails.ResourceType
 				</div>
 				<div class="resources-single__right_list_item_title">
-					<a href='@item.ResourceUrl'>@item.ResourceDetails.ResourceTitle</a>
+					<button type="button" class="resourceLink"
+							data-id="@item.ResourceUrl"
+							data-id1="@item.ResourceDetails.ResourceLink"
+							data-id2="@item.ResourceDetails.ResourceDocument">
+						<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+					</button>
 				</div>
 				<div class="single-post-statistic">
 					<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
@@ -290,6 +295,22 @@
 					}
 				}
 			});
+		});
+
+		//Open More Resource Details
+		$('.resourceLink').click(function () {
+			var resourceUrl = $(this).attr("data-id");
+			var resourceLinkUrl = $(this).attr('data-id1');
+			var resourceDocumentUrl = $(this).attr('data-id2');
+
+			window.location.href = resourceUrl;
+
+			if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
+				window.open(resourceLinkUrl);
+			}
+			if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
+				window.open(resourceDocumentUrl);
+			}
 		});
 	}
 

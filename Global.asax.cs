@@ -25,6 +25,8 @@ using Telerik.Sitefinity.Services;
 using Telerik.Sitefinity.DynamicModules.Events;
 using SitefinityWebApp.Custom.IAFCHandBook;
 using Telerik.Sitefinity.GenericContent.Model;
+using Telerik.Sitefinity.Data;
+using Telerik.Sitefinity.Scheduling;
 
 namespace SitefinityWebApp
 {
@@ -34,10 +36,12 @@ namespace SitefinityWebApp
 	    private ILog log = LogManager.GetLogger(typeof (Global));
 		protected void Application_Start(object sender, EventArgs e)
 		{
-            /*Telerik.Sitefinity.Services.SystemManager.ApplicationStart += 
+			/*Telerik.Sitefinity.Services.SystemManager.ApplicationStart += 
                 new EventHandler<EventArgs>(SystemManager_ApplicationStart);*/
 
-            bootstraper = new SfBootstraper();
+			Bootstrapper.Initialized += new EventHandler<ExecutedEventArgs>(this.OnSitefinityAppInitialized);
+
+			bootstraper = new SfBootstraper();
             bootstraper.Setup();
             ///Bootstrapper.Initialized += Bootstrapper_Initialized;
             ///
@@ -47,11 +51,37 @@ namespace SitefinityWebApp
 
         private void SystemManager_ApplicationStart(object sender, EventArgs e)
         {
-            EventHub.Subscribe<IDynamicContentCreatedEvent>(evt => DynamicContentCreatedEventHandler(evt));
-            EventHub.Subscribe<IDynamicContentUpdatedEvent>(evt => DynamicContentUpdatedEventHandler(evt));
-        }
+			EventHub.Subscribe<IDynamicContentCreatedEvent>(evt => DynamicContentCreatedEventHandler(evt));
+            EventHub.Subscribe<IDynamicContentUpdatedEvent>(evt => DynamicContentUpdatedEventHandler(evt));			
+		}
 
-        private void DynamicContentCreatedEventHandler(IDynamicContentCreatedEvent evt)
+		private void OnSitefinityAppInitialized(object sender, EventArgs args)
+		{
+
+			/*ILog log = LogManager.GetLogger(typeof(IAFCHandBookHelper));
+			log.Info("Init Weekly started: " + DateTime.UtcNow.ToString());
+			SchedulingManager manager = SchedulingManager.GetManager();
+			string myKey = "TASKN03-5613-42EC-AC57-8E2B33B28065";
+
+			var count = manager.GetTaskData().Where(i => i.Key == myKey).ToList().Count;
+
+			if (count == 0)
+			{
+				IAFCWeeklycheduledTask newTask = new IAFCWeeklycheduledTask()
+				{
+					Key = myKey,					
+					ExecuteTime = DateTime.UtcNow.AddSeconds(120),
+				};
+				manager.AddTask(newTask);
+				manager.SaveChanges();
+			}
+			log.Info("Init Weekly Finished: " + DateTime.UtcNow.ToString());*/
+
+		}
+		
+		
+
+		private void DynamicContentCreatedEventHandler(IDynamicContentCreatedEvent evt)
         {
             var item = evt.Item;
             var itemType = item.GetType();

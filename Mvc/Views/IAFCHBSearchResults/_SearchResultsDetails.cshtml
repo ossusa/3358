@@ -69,9 +69,12 @@
 				<div class="complete__resources_slide-info">
 					<div class="resources__slide-box">
 						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-						<a href='@item.ResourceUrl'>
+						<button type="button" class="resourceLink"
+								data-id="@item.ResourceUrl"
+								data-id1="@item.ResourceDetails.ResourceLink"
+								data-id2="@item.ResourceDetails.ResourceDocument">
 							<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
-						</a>
+						</button>
 						<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					</div>
 					<div class="resources__slide-footer">
