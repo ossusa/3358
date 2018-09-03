@@ -2635,12 +2635,6 @@ p {
     .header__list-link:hover {
       text-shadow: 1px 0 0 #2B4B6B;
       color: #2B4B6B; }
-    .header__list-link:focus {
-      text-shadow: 1px 0 0 #2B4B6B;
-      color: #2B4B6B; }
-    .header__list-link:active {
-      text-shadow: 1px 0 0 #2B4B6B;
-      color: #2B4B6B; }
   .header__list:nth-of-type(1) .header__list-link {
     width: 86px; }
     .header__list:nth-of-type(1) .header__list-link:after {
@@ -2896,6 +2890,10 @@ p {
 .header__sub_list:nth-of-type(4) .header__sub_list-link.colored {
   text-shadow: 1px 0 0 #CF794A;
   color: #CF794A; }
+
+.header__list:nth-of-type(1) > a.colored {
+  text-shadow: 1px 0 0 #2B4B6B;
+  color: #2B4B6B; }
 
 .footer {
   border-top: 1px solid #9B9B9B; }
