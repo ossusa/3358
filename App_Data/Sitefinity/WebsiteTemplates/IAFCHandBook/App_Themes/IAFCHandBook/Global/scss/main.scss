@@ -2155,7 +2155,7 @@ p {
     right: 0;
     bottom: 0;
     left: 0;
-    margin: 0;
+    margin: 0 8px 0 0;
     transition: all 0.15s ease-out 0s;
     color: #9b9b9b;
     cursor: pointer;
@@ -2167,7 +2167,7 @@ p {
     background-position: center;
   }
   input[type="checkbox"]:nth-of-type(2){
-    margin-left: 12px;
+    margin-left: 20px;
   }
   .checkbox-container{
     display: flex;
