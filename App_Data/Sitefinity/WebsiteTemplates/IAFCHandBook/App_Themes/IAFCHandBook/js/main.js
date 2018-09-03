@@ -195,10 +195,10 @@ $('.resources__slide-title').each(function() {
     }
 });
 $('.topics_seperator').each(function() {
-    var maxcharacter = 110;
-    var separates = '...';
+    var maxch = 100;
+    var sep = '...';
 
-    if ($(this).text().length > (maxcharacter - separates.length)) {
-        $(this).text($(this).text().substr(0, maxcharacter-separates.length) + separates);
+    if ($(this).text().length > (maxch - sep.length)) {
+        $(this).text($(this).text().substr(0, maxch-sep.length) + sep);
     }
 });
