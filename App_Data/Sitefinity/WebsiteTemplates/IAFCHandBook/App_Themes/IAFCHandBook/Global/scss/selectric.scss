@@ -186,12 +186,9 @@
         color: #2b4b6b;        
     }
 }
-.selectric-community__category-select
-> .selectric-items
-> ul
-> li.selected:hover::before{
-    content: "\E632";
-    display: inline-block;
-    font-size: 1.00em;
-    font-family: anticon!important;
-}
+.selectric-community__category-select > ul > li.selected:before:hover{
+     content: "\E632";
+     display: inline-block;
+     font-size: 1.00em;
+     font-family: anticon!important;
+ }
