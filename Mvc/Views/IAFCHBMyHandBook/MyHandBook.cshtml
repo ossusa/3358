@@ -69,14 +69,13 @@
 
 <script type="text/javascript">
 	var addthis_share;
+	var shareUrl;
 
 	$(document).ready(function () {
 		bindEdit();
+		addthis_share.url = shareUrl;
+		console.log(addthis_share.url);
 		$('#shareBtn').css('pointer-events', 'initial');
-	});
-
-	$('#shareBtn').click(function(){
-		bindEdit();
 	});
 	
 	function bindEdit(){
@@ -91,10 +90,7 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					console.log(response)
-					 addthis_share = {
-						url: response
-					};
+					shareUrl = response;
 				}
 			});
 	}
