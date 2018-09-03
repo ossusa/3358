@@ -17,28 +17,30 @@
 				</div>
 				<div class="resources-single__left_post_title">
 					<h5>@Model.ResourceDetails.ResourceTitle</h5>
-					<p>@Model.ResourceDetails.ResourceDescription</p>
+					<p>@Html.Raw(Model.ResourceDetails.ResourceDescription)</p>
 				</div>
 
 				<div class="resources-single__left_post_comment">
 					<div class="resources-single__left_post_comment_header">
 						<div class="resources-single__left_post_comment_header_left">
-							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook" , Model.Id.ToString())">
-								<div id="addToMyHandBook">
-									@if (Model.IsResourceAddedToMyHandBook == true)
-									{
-										<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
-									}
-									else
-									{
-										<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@Model.Id.ToString()"> <i class="anticon anticon-plus"></i> Add to MyHandBook </button>
-									}
+							@if (Model.IsUserAuthorized)
+							{
+								<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
+									<div id="addToMyHandBook">
+										@if (Model.IsResourceAddedToMyHandBook == true)
+										{
+											<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
+										}
+										else
+										{
+											<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@Model.Id.ToString()"> <i class="anticon anticon-plus"></i> Add to MyHandBook </button>
+										}
+									</div>
 								</div>
-							</div>
+							}
 							<div class="resources-single__left_post_comment_header_left_share anticon anticon-share-alt">
 								Share
 							</div>
-
 						</div>
 						<div class="resources-single__left_post_comment_header_right">
 							<div class="single-post-comments" id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
@@ -46,8 +48,10 @@
 								@Model.CommentsAmount Comments
 							</div>
 							<div class="single-post-statistic">
-                                <button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"> <span>@Model.Likes.Likes</span> </button>
-                                <button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"> <span>@Model.Likes.Dislikes</span> </button>
+                                <button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"
+										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> <span>@Model.Likes.Likes</span> </button>
+                                <button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"
+										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> <span>@Model.Likes.Dislikes</span> </button>
 							</div>
 						</div>
 					</div>

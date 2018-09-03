@@ -17,17 +17,19 @@
 						data-id2="@Model.ResourceDetails.ResourceDocument">
 					View
 				</button>
-
-				<span class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
-					@if (Model.IsResourceAddedToMyHandBook == true)
-					{
-						<span class='resources--plus anticon anticon-check'></span><span class="resources__logged-added">Added to MyHandBook</span>
-					}
-					else
-					{
-						<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
-					}
-				</span>
+				@if (Model.IsUserAuthorized)
+				{
+					<span class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
+						@if (Model.IsResourceAddedToMyHandBook == true)
+						{
+							<span class='resources--plus anticon anticon-check'></span><span class="resources__logged-added">Added to MyHandBook</span>
+						}
+						else
+						{
+							<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
+						}
+					</span>
+				}
 			</div>
 		</div>
 		<div class="resources__logged-img-box">
