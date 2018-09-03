@@ -23,7 +23,7 @@
 			<div class="progressindicator_share">
 					@if (Model.SharedUserId == Guid.Empty)
 					{
-						<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8" >
+						<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8" data-url="yabadabadu" >
 							<a class="addthis_button_compact">
 								<i class="anticon anticon-share-alt"></i>
 								<span>Share</span>
@@ -70,22 +70,14 @@
 <script type="text/javascript">
 
 	$(document).ready(function () {
-		var addthis_share = bindEdit();
+		bindEdit();
 		$('#shareBtn').css('pointer-events', 'initial');
-		return addthis_share;
 	});
 	
 	function bindEdit(){
 		
 		//share
 			var url = window.location.href;
-
-		var addthis_share = {
-			url: "THE URL",
-			title: "THE TITLE",
-			description: "THE DESCRIPTION",
-			media: "THE IMAGE"
-		};
 
 			$.ajax({
 				type: 'POST',
@@ -94,10 +86,8 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					addthis_share.url = response;
 				}
 			});
-		return addthis_share;
 	}
 
 
