@@ -1785,7 +1785,7 @@ p {
     color: #9b9b9b;
     opacity: 1;
     position: absolute;
-    left: -1px;
+    left: -2px;
     top: -1px; }
   .account-template input[type="checkbox"]:before {
     content: "\E632";
