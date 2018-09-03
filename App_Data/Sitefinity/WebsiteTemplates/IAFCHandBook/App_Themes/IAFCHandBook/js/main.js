@@ -157,19 +157,19 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function() {
-    $(".header__sub_list:nth-of-type(1) .header__sub_list-link").click(function(){
+    $(".header__sub_list-link").click(function(){
         $(".header__sub_list:nth-of-type(1) .header__sub_list-link.colored").removeClass("colored");
         $(this).addClass("colored");
     });
-    $(".header__sub_list:nth-of-type(2) .header__sub_list-link").click(function(){
+    $(".header__sub_list-link").click(function(){
         $(".header__sub_list:nth-of-type(2) .header__sub_list-link.colored").removeClass("colored");
         $(this).addClass("colored");
     });
-    $(".header__sub_list:nth-of-type(3) .header__sub_list-link").click(function(){
+    $(".header__sub_list-link").click(function(){
         $(".header__sub_list:nth-of-type(3) .header__sub_list-link.colored").removeClass("colored");
         $(this).addClass("colored");
     });
-    $(".header__sub_list:nth-of-type(4) .header__sub_list-link").click(function(){
+    $(".header__sub_list-link").click(function(){
         $(".header__sub_list:nth-of-type(4) .header__sub_list-link.colored").removeClass("colored");
         $(this).addClass("colored");
     });
