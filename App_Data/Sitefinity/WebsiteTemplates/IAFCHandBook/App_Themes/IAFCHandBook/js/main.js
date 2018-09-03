@@ -177,19 +177,19 @@ $(document).ready(function() {
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
 });
-$(document).ready(function () {
-    var maxchars = 144;
-    var seperator = '...';
-    var content = $('.resources__slide-desc');
-    if (content.text().length > (maxchars - seperator.length)) {
-        content.text(content.text().substr(0, maxchars-seperator.length) + seperator);
-    }
-});
-$(document).ready(function () {
-    var maxcharacters = 61;
-    var separate = '...';
-    var content2 = $('.resources__slide-title');
-    if (content2.text().length > (maxcharacters - separate.length)) {
-        content2.text(content2.text().substr(0, maxcharacters-separate.length) + separate);
-    }
-});
+// $(document).ready(function () {
+//     var maxchars = 144;
+//     var seperator = '...';
+//     var content = $('.resources__slide-desc');
+//     if (content.text().length > (maxchars - seperator.length)) {
+//         content.text(content.text().substr(0, maxchars-seperator.length) + seperator);
+//     }
+// });
+// $(document).ready(function () {
+//     var maxcharacters = 61;
+//     var separate = '...';
+//     var content2 = $('.resources__slide-title');
+//     if (content2.text().length > (maxcharacters - separate.length)) {
+//         content2.text(content2.text().substr(0, maxcharacters-separate.length) + separate);
+//     }
+// });
