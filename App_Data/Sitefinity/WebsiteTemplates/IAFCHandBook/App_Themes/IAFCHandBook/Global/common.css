@@ -2569,7 +2569,10 @@ p {
   margin: 0; }
 
 .selectric-items li {
-  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding: 10px;
   transition: 0.1s ease-in-out;
   cursor: pointer; }
