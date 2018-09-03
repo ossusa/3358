@@ -2120,6 +2120,115 @@ p {
   }
 }
 
+.account-template {
+  .breadcrumbs {
+    margin-left: 0;
+    margin-right: 0;
+
+    @media (max-width: 1109px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .edit-button {
+    position: relative;
+    &:after {
+      content: "\E61D";
+      display: block;
+      font-family: anticon !important;
+      color: #2b4b6b;
+      transform: rotate(-90deg) translateX(50%);
+      right: 40px;
+      top: 50%;
+      position: absolute;
+    }
+  }
+  input[type="checkbox"] {
+    min-width: 14px;
+    border-radius: 2px;
+    border: 1px solid #9b9b9b;
+    background-color: #fff;
+    width: 14px;
+    height: 14px;
+    appearance: none;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    transition: all 0.15s ease-out 0s;
+    color: #9b9b9b;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    outline: none;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+  }
+  input[type="checkbox"]:checked::before {
+    //transform: rotate(-45deg) scale(1, 1);
+    content: "\E632";
+    font-family: anticon !important;
+    display: block;
+    color: #9b9b9b;
+    opacity: 1;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+  }
+  input[type="checkbox"]:before {
+    content: "\E632";
+    font-family: anticon !important;
+    display: block;
+    opacity: 0;
+    color: #9b9b9b;
+    //content: '';
+    //position: absolute;
+    //left: -1px;
+    //top: -2px;
+    //z-index: 1;
+    //width: 10px;
+    //height: 8px;
+    //border: 2px solid #000;
+    //border-top-style: none;
+    //border-right-style: none;
+    //transform: rotate(-45deg) scale(0, 0);
+  }
+  .community__head-btn {
+    padding-left: 25px;
+    padding-right: 40px;
+    width: auto !important;
+  }
+
+  .page__title {
+    margin-bottom: 24px;
+  }
+
+  .resources__logged-buttons {
+    margin-bottom: 56px;
+    margin-top: 0;
+  }
+
+  .topic__subtitle {
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  h5 {
+    margin-bottom: 12px;
+  }
+
+  h6 {
+    color: #2B4B6B;
+    margin-bottom: 12px;
+  }
+}
+
 .placehoolder-background img {
   width: 100%;
 }

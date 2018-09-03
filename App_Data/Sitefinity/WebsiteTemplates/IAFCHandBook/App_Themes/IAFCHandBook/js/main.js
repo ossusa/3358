@@ -18,11 +18,11 @@ $(document).ready(function () {
     });
 
     /*Search in header*/
-    var $search = '<li class="k-item k-item-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
-    var $li = $(".sfNavHorizontalDropDownWrp li:contains('Account')");
+    var $search = '<li class="header__list header__list-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
+    var $li = $(".header__list:contains('Account')");
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
-    $($liSearch).appendTo('.k-item-search');
+    $($liSearch).appendTo('.header__list-search');
     $(".header__search").click(function (e) {
         e.preventDefault();
         $('.mg-search-box').toggleClass('hidden');
@@ -30,9 +30,15 @@ $(document).ready(function () {
     $("#site-search-submit").click(function (e) {
         e.preventDefault();
         var q = $('#site-search').val();
-        location.href = '/search-results/#/' + q + "/page=1";
+        location.href = '/iafchandbookhome/search-results/' + q;
     });
-
+    /*Mob search*/
+    $(".site-search-submit").click(function (e) {
+        e.preventDefault();
+        var qSecond = $('.site-search').val();
+        location.href = '/iafchandbookhome/search-results/' + qSecond;
+    });
+    
     /*Off canvas menu*/
     $(".header__mob-open").click(function () {
         $('.header__mob-nav').css({ width: "100vw" });
@@ -114,9 +120,10 @@ $(document).ready(function () {
     $('.markAsCompleteBtn').click(function () {
         $('.complete_box').addClass('anticon anticon-check');
     });
-    $('.header__list-link:nth-of-type(1)').click(function (e) {
+    $('.header__list:nth-of-type(1) > a').click(function (e) {
         e.preventDefault();
         $('.header__sub_ul').toggle();
+
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(".header__second_ul:nth-of-type(1)").show();
@@ -134,11 +141,14 @@ $(document).ready(function () {
         $(".header__second_ul:nth-of-type(4)").show();
         $('.header__second_ul').not(':nth-of-type(4)').hide();
     });
-    $(document).click(function(event) {
-        if(!$(event.target).closest('.header__sub_ul').length) {
-            if($('.header__sub_ul').is(":visible")) {
-                $('.header__sub_ul').hide();
-            }
-        }
+    $(window).click(function() {
+        $('.header__sub_ul').hide();
+        $('.header__second_ul').hide();
+    });
+    $('.header__list-link:nth-of-type(1), .header__sub_list, .header__sub_ul, .header__second_ul').click(function(event){
+        event.stopPropagation();
+    });
+    $('.header__sub_list-link').click(function(e){
+        e.preventDefault();
     });
 });

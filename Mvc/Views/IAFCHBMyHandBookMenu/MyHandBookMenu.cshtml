@@ -14,7 +14,7 @@
 				@foreach (var childItem in menuItem.ChildMenuItem)
 				{
 
-				<li class="header__sub_list"><div class="header__sub_list-link"> <span>@childItem.Title</span></div></li>
+				<li class="header__sub_list"><a href="@childItem.Url" class="header__sub_list-link"> <span>@childItem.Title</span></a></li>
                     if (childItem.ChildMenuItem.Any())
                      {
 				<ul class="header__second_ul">

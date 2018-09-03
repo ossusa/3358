@@ -6,9 +6,9 @@
 	{
 		if (parentCategory != category.ParentCategoryTitle)
 		{
-			<div>@category.ParentCategoryTitle</div>
+			<h5>@category.ParentCategoryTitle</h5>
 		}
-		<div> @category.CategoryTitle</div>
+		<h6> @category.CategoryTitle</h6>
 		<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
 			<div class="unfollow">
 				<button type="button" class="unfollowBtn" data-id="@category.Id.ToString()" >Unfollow</button>

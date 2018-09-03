@@ -7,14 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/css/lib/anticon.min.css">
-    <!--<link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/common.css">-->
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b8939e1de278e00111a4903&product=inline-share-buttons' async='async'></script>
 
 </head>
-
 <body>
 
 <form id="form1" runat="server">
@@ -34,13 +31,16 @@
             </div>
             <!-- Header Text End ============================================= -->
             <div class="box box-mobile">
+                <div class="header_wrapper">
                     <div class="header__table-tr">
 
                             <!-- Logo ============================================= -->
+                        <a href="https://dev-staging.iafc.org/iafchandbookhome/">
                             <div id="logo" class="header__logo">
                                 <asp:ContentPlaceHolder ID="logoHolder" runat="server">
                                 </asp:ContentPlaceHolder>
                             </div>
+                        </a>
                             <!-- Logo ============================================= -->
                         <div class="header__table-td">
                             <!-- Menu ============================================= -->
@@ -55,8 +55,8 @@
                                 <div class="header__mob-box">
                                     <a href="#" class="header__mob-close anticon anticon-menu-unfold"></a>
                                     <div class="header__mob-form">
-                                        <input type="search" placeholder="Search" class="header__mob-search">
-                                        <button class="header__mob-button" type="submit"></button>
+                                        <input type="search" placeholder="Search" class="header__mob-search site-search">
+                                        <button class="header__mob-button site-search-submit" type="submit"></button>
                                     </div>
                                 </div>
                                 <!-- accordion   -->
@@ -132,6 +132,7 @@
                             <span class="header__mob-open anticon anticon-menu-fold"></span>
                         </div>
                     </div>
+                </div>
             </div>
         </header>
         <!-- End Header ============================================= -->

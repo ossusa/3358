@@ -1,19 +1,24 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookAccount
 
-<p>My Account</p>
-<p>Login Information</p>
-<div class="resources__logged-buttons">
-	<button type="submit" formaction="/Mxg/AuthService/SignInByHelix/?ReturnUrl=@Request.Url.AbsoluteUri" class="community__head-btn resources__logged-btn"> Edit Login </button>	
-</div>
+<div class="box account-template">
+	<p class="breadcrumbs">Account</p>
+	<h1 class="page__title">My Account</h1>
+	<h4 class="topic__subtitle">Login Information</h4>
+	<div class="resources__logged-buttons">
+		<div class="edit-button">
+			<button type="submit" formaction="/Mxg/AuthService/SignInByHelix/?ReturnUrl=@Request.Url.AbsoluteUri" class="community__head-btn resources__logged-btn"> Edit Login </button>
+		</div>
+	</div>
 
-<div>Email Digest</div>
-<div>A summary of all the latest resources from the topics you follow:</div>
-<div>	
-	<input id="WeeklyUpdates" type="checkbox" value="@Model.WeeklyUpdates"  @(Model.WeeklyUpdates ? "checked=\"checked\"" : "")/> Weekly Updates	
-	<input id="MonthlyUpdates" type="checkbox" value="@Model.MonthlyUpdates" @(Model.MonthlyUpdates ? "checked=\"checked\"" : "")/>  Monthly Updates
-</div>
-<div id="followedCategoriesViewID">
-	@Html.Partial("_FollowedCategories", Model.FollowedCategories)
+	<h4 class="topic__subtitle">Email Digest</h4>
+	<p>A summary of all the latest resources from the topics you follow:</p>
+	<div>
+		<input id="WeeklyUpdates" type="checkbox" value="@Model.WeeklyUpdates"  @(Model.WeeklyUpdates ? "checked=\"checked\"" : "")/> Weekly Updates
+		<input id="MonthlyUpdates" type="checkbox" value="@Model.MonthlyUpdates" @(Model.MonthlyUpdates ? "checked=\"checked\"" : "")/>  Monthly Updates
+	</div>
+	<div id="followedCategoriesViewID">
+		@Html.Partial("_FollowedCategories", Model.FollowedCategories)
+	</div>
 </div>
 <script>
 
