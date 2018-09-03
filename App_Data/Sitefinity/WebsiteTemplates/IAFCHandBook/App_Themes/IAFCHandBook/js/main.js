@@ -30,7 +30,7 @@ $(document).ready(function () {
     $("#site-search-submit").click(function (e) {
         e.preventDefault();
         var q = $('#site-search').val();
-        location.href = '/search-results/#/' + q + "/page=1";
+        location.href = 'iafchandbookhome/search-results/' + q;
     });
 
     /*Off canvas menu*/
