@@ -1724,6 +1724,9 @@ p {
 
 .account-template {
   margin-bottom: 124px; }
+  @media screen and (max-width: 767px) {
+    .account-template {
+      margin-bottom: 66px; } }
   .account-template .breadcrumbs {
     margin-left: 0;
     margin-right: 0; }
