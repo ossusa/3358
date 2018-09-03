@@ -68,12 +68,13 @@
 
 
 <script type="text/javascript">
-	var addthis_share;
 	var shareUrl;
 
 	$(document).ready(function () {
 		bindEdit();
-		addthis_share.url = shareUrl;
+		var addthis_share = {
+			url: shareUrl
+		};
 		console.log(addthis_share.url);
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
