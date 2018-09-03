@@ -125,27 +125,23 @@ $(document).ready(function () {
         $('.header__sub_ul').toggle();
 
     });
-    $('.header__sub_list:nth-of-type(1)').click(function(e) {
-        e.preventDefault();
-        $('.header__sub_list:nth-of-type(1) .header__sub_list-link').css({"color": "#5591AA", "text-shadow": "1px 0 0 #5591AA"});
+    $('.header__sub_list:nth-of-type(1)').click(function() {
+        $('.header__sub_list:nth-of-type(1) .header__sub_list-link').toggleClass('colored');
         $(".header__second_ul:nth-of-type(1)").show();
         $('.header__second_ul').not(':nth-of-type(1)').hide();
     });
-    $('.header__sub_list:nth-of-type(2)').click(function(e) {
-        e.preventDefault();
-        $('.header__sub_list:nth-of-type(2) .header__sub_list-link').css({"color": "#BDA15F", "text-shadow": "1px 0 0 #BDA15F"});
+    $('.header__sub_list:nth-of-type(2)').click(function() {
+        $('.header__sub_list:nth-of-type(2) .header__sub_list-link').toggleClass('colored');
         $(".header__second_ul:nth-of-type(2)").show();
         $('.header__second_ul').not(':nth-of-type(2)').hide();
     });
-    $('.header__sub_list:nth-of-type(3)').click(function(e) {
-        e.preventDefault();
-        $('.header__sub_list:nth-of-type(3) .header__sub_list-link').css({"color": "#73AA56", "text-shadow": "1px 0 0 #73AA56"});
+    $('.header__sub_list:nth-of-type(3)').click(function() {
+        $('.header__sub_list:nth-of-type(3) .header__sub_list-link').toggleClass('colored');
         $(".header__second_ul:nth-of-type(3)").show();
         $('.header__second_ul').not(':nth-of-type(3)').hide();
     });
-    $('.header__sub_list:nth-of-type(4)').click(function(e) {
-        e.preventDefault();
-        $('.header__sub_list:nth-of-type(4) .header__sub_list-link').css({"color": "#CF794A", "text-shadow": "1px 0 0 #CF794A"});
+    $('.header__sub_list:nth-of-type(4)').click(function() {
+        $('.header__sub_list:nth-of-type(4) .header__sub_list-link').toggleClass('colored');
         $(".header__second_ul:nth-of-type(4)").show();
         $('.header__second_ul').not(':nth-of-type(4)').hide();
     });
