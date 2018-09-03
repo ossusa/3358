@@ -69,6 +69,7 @@
 
 <script type="text/javascript">
 	var addthis_share;
+	var shareUrl;
 
 	$(document).ready(function () {
 		bindEdit();
@@ -91,12 +92,12 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					console.log(response)
-					 addthis_share = {
-						url: response
-					};
+					shareUrl = response;
 				}
 			});
+		addthis_share = {
+			url: shareUrl
+		};
 	}
 
 
