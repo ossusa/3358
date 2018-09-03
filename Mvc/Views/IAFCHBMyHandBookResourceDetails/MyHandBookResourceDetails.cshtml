@@ -48,7 +48,6 @@
 
 	<div id="shareBtn" class="resources-single__left_post_comment_header_left_share anticon anticon-share-alt addthis_inline_share_toolbox_n7k8" >
 		<a class="addthis_button_compact">
-			<i class="anticon anticon-share-alt"></i>
 			<span>Share</span>
 		</a>
 	</div>
@@ -127,11 +126,31 @@
 <script>
 
 	$(document).ready(function () {
+		var addthis_share;
+
 		bindEdit();
+		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
 
 	function bindEdit() {
+
+		//share
+		var url = window.location.href;
+
+		$.ajax({
+			type: 'POST',
+			cache: false,
+			url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
+			data: { url: url },
+			dataType: "json",
+			success: function (response) {
+				addthis_share = {
+					url: response
+				}
+			}
+		});
+
 		//Add Like
 		$('.addLike').click(function () {
 
