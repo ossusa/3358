@@ -28,6 +28,7 @@
 								<i class="anticon anticon-share-alt"></i>
 								<span>Share</span>
 							</a>
+
 						</div>
 					}
 			</div>
@@ -73,27 +74,21 @@
 		doShareUrl();
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
-	
-	function doShareUrl(){
 
+	function doShareUrl() {
 
-		//share
-			var url = window.location.href;
-		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")', function(response) {
-			addthis_share.url = response;
+		var url = window.location.href;
+		$.ajax({
+			async: false,
+			type: 'POST',
+			cache: false,
+			url: '@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',
+			data: { url: url },
+			dataType: "json",
+			success: function (response) {
+				addthis_share.url = response;
+			}
 		});
-		/*
-			$.ajax({
-				async: true,
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
-				data: { url: url },
-				dataType: "json",
-				success: function (response) {
-					addthis_share.url = response;
-				}
-			}); */
 	}
 
 
