@@ -2625,6 +2625,11 @@ p {
 .selectric-community__category-select .category__arrow:before {
   color: #2b4b6b; }
 
+.selectric-community__title-select .selectric-items li.highlighted:hover:after {
+  content: "\E61F";
+  display: block;
+  font-family: anticon; }
+
 .header_wrapper {
   border-bottom: 1px solid #d8d8d8;
   margin: 0 -120px; }
