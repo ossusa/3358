@@ -176,7 +176,6 @@ $(document).ready(function() {
     $(".header__list:nth-of-type(1) > a").click(function(){
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
-    $('.community__breadcrumbs:contains("Leadership")').closest('.selectric-community__title-select .label').addClass('label-colored');
 });
 
 $('.resources__slide-desc').each(function() {
@@ -202,4 +201,8 @@ $('.topics_seperator').each(function() {
     if ($(this).text().length > (maxch - sep.length)) {
         $(this).text($(this).text().substr(0, maxch-sep.length) + sep);
     }
+});
+$(document).ready(function() {
+    var $breadcrumb = $(".community__breadcrumbs:contains('Leadership')");
+    $($breadcrumb).next().addClass('label-leadership');
 });
