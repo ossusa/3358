@@ -3085,6 +3085,7 @@ p {
   .resources__slide-footer {
     margin-top: 6px;
     flex-wrap: wrap;
+    align-items: flex-end;
   }
 
   .progressindicator__label:not(:last-child) {
