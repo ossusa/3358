@@ -72,6 +72,7 @@
 
 	$(document).ready(function () {
 		bindEdit();
+		console.log(addthis_share.url);
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
@@ -85,7 +86,6 @@
 			addthis_share= {
 				url: response
 			};
-			console.log(addthis_share.url);
 		});
 
 		/*	$.ajax({
