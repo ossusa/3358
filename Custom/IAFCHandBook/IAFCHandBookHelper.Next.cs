@@ -519,7 +519,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var handBookLikeModel = new IAFCHandBookLikesModel
 				{
 					Likes = Convert.ToInt32(resource.GetValue("AmountOfLikes")),
-					Dislikes = Convert.ToInt32(resource.GetValue("AmountOfDislikes"))
+					Dislikes = Convert.ToInt32(resource.GetValue("AmountOfDislikes")),
+					IsResourceLiked  = IsResourceLiked(resource.GetRelatedItems("Likes").First().Id)
 				};
 
 				handBookResourceModel.Likes = handBookLikeModel;
