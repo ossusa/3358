@@ -3196,7 +3196,9 @@ p {
           @media screen and (max-width: 767px) {
             .resources-single__left_post_title h5 {
               margin-bottom: 4px; } }
-        .resources-single__left_post_title p {
+        .resources-single__left_post_title p,
+        .resources-single__left_post_title ul,
+        .resources-single__left_post_title ol {
           font-family: 'Zilla Slab', serif;
           margin: 0;
           color: #4a4a4a;
