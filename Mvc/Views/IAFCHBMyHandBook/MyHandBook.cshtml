@@ -69,37 +69,31 @@
 <script type="text/javascript">
 
 
-
 	$(document).ready(function () {
-
-
-
-			//share
-
-
-			/*	$.ajax({
-			 async: false,
-			 type: 'POST',
-			 cache: false,
-			 url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
-			 data: { url: url },
-			 dataType: "json",
-			 success: function (response) {
-			 addthis_share.url = response;
-			 }
-			 }); */
-
-		var url = window.location.href;
-		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',{ url: url }, function(response) {
-			console.log(response);
-			window.addthis_share= {
-				url: response
-			};
-		});
+		bindEdit();
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
+	function bindEdit(){
 
+
+		//share
+			var url = window.location.href;
+
+			$.ajax({
+				async: false,
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
+				data: { url: url },
+				dataType: "json",
+				success: function (response) {
+					window.addthis_share= {
+						url: response
+					};
+				}
+			});
+	}
 
 
 </script>
