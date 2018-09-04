@@ -3075,6 +3075,7 @@ p {
 
 .single-post-add {
   margin-right: 24px;
+  margin-top: 16px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
