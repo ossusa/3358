@@ -20,7 +20,14 @@
 			{
 				<button id="edit" type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit </button>
 				<button id="edit" type="button" class="cancelBtn progressindicator_share"><i class="anticon anticon-close"></i> Cancel </button>
-				<button id="share" type="button" class="shareBtn progressindicator_share"><i class="anticon anticon-share-alt"></i> Share </button>
+				<div class="progressindicator_share">
+					<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8">
+						<a class="addthis_button_compact">
+							<i class="anticon anticon-share-alt"></i>
+							<span>Share</span>
+						</a>
+					</div>
+				</div>
 			}
 		</div>
 
@@ -41,10 +48,13 @@
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
 
 <script type="text/javascript">
+	var addthis_share = {};
 
 	$(document).ready(function () {
 		$('.removeResource').hide();		
 		$('.cancelBtn').hide();
+		doShareUrl();
+		$('#shareBtn').css('pointer-events', 'initial');
 		bindEdit();
 	});
 	
@@ -178,21 +188,6 @@
 			});
 		});
 
-		//share
-		$('.shareBtn').click(function ()  {
-			var url = window.location.href;
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("Share", "IAFCHBMyHandBookAllResourcesPerCategory")',
-				data: { url: url },
-				dataType: "json",
-				success: function (response) {
-					$('#share').html(response);
-				}
-			});
-		});
-
 		//Open MyHandBook Resource Details
 		$('.resourceLink').click(function () {
 			var resourceUrl = $(this).attr("data-id");
@@ -220,6 +215,22 @@
 			$('.resources__slide-btn:nth-of-type(1)').hide();
 			$('.removeResource').show();			
 		}
+	}
+
+	function doShareUrl() {
+
+		var url = window.location.href;
+		$.ajax({
+			async: false,
+			type: 'POST',
+			cache: false,
+			url: '@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',
+			data: { url: url },
+			dataType: "json",
+			success: function (response) {
+				addthis_share.url = response;
+			}
+		});
 	}
 
 </script>
