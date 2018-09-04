@@ -1200,6 +1200,60 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 		#endregion GetMoreCategories
 
+		#region CategoryListResources
+		public IAFCHandBookCategoryResourcesModel CategoryListResources(string categoryName)
+		{
+			var model = new IAFCHandBookCategoryResourcesModel();
+			var categoryId = GetCategoryGuidByName(categoryName);
+									
+			var categoryListResourcesIDs = new List<Guid>();
+			var topicCategory = GetTopicCategories(categoryId);
+
+			model.ParenCategory.Id = categoryId;
+			model.ParenCategory.CategoryDescription = topicCategory.ResourceCategoryDescription;
+			model.ParenCategory.CategoryTitle = topicCategory.ResourceCategoryTile;
+			model.ParenCategory.CategoryUrl = topicCategory.ResourceCategoryUrl;
+			model.ParenCategory.TopicCategoryImageUrl = topicCategory.ResourceParentCategoryImageUrl;			
+			model.ParenCategory.MyHandBookCategoryUrl = topicCategory.MyHandbookResourceCategoryUrl;
+			model.ParenCategory.MyHandBookParentCategoryUrl = topicCategory.MyHandbookResourceParentCategoryUrl;
+
+			switch (topicCategory.ResourceCategoryTile)
+			{
+				case LeadershipCategoryTitle:
+					categoryListResourcesIDs = topicLeadershipCategories;
+					break;
+				case CommunityCategoryTitle:
+					categoryListResourcesIDs = topicCommunityRelationsCategories;
+					break;
+				case FinanceCategoryTitle:
+					categoryListResourcesIDs = topicFinanceCategories;
+					break;
+				case PersonnelCategoryTitle:
+					categoryListResourcesIDs = topicPersonnelCategories;
+					break;
+			}
+
+			foreach (var id in categoryListResourcesIDs)
+			{
+				var categoryResourceAmount = GetResourcesAmountPerCategory(id);
+				var childTopicCategory = new IAFCHandBookTopicCategoryModel();
+				var childCategoryDetails = GetTopicCategories(id);
+
+				childTopicCategory.Id = id;
+				childTopicCategory.CategoryDescription = childCategoryDetails.ResourceCategoryDescription;
+				childTopicCategory.CategoryTitle = childCategoryDetails.ResourceCategoryTile;
+				childTopicCategory.CategoryUrl = childCategoryDetails.ResourceCategoryUrl;
+				childTopicCategory.TopicCategoryImageUrl = childCategoryDetails.ResourceParentCategoryImageUrl;
+				childTopicCategory.ResourcesAmount = categoryResourceAmount;
+				childTopicCategory.MyHandBookCategoryUrl = childCategoryDetails.MyHandbookResourceCategoryUrl;
+				childTopicCategory.MyHandBookParentCategoryUrl = childCategoryDetails.MyHandbookResourceParentCategoryUrl;
+			 	model.ChildCategories.Add(childTopicCategory);
+			}
+
+			return model;
+		}
+		#endregion CategoryListResources
+
 		#region GetResourcesAmountPerCategory
 
 		private int GetResourcesAmountPerCategory(Guid categoryId)
@@ -1212,8 +1266,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion Categories Methods
 
 		#region Likes
-		#region Add Like
 
+		#region Add Like
 		public int AddLikeForResource(Guid resourceID, string resourceType)
 		{
 			int currentLikes = 0;
@@ -1318,6 +1372,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 
 		#endregion Add Dislike
+
 		#endregion Likes
 
 		#region Comments
