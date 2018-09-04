@@ -73,7 +73,9 @@
 
 	$(document).ready(function () {
 		bindEdit();
-		$('#shareBtn').delay(5000).css('pointer-events', 'initial');
+		setTimeout(function(){
+			$('#shareBtn').css('pointer-events', 'initial');
+		}, 5000);
 	});
 	
 	function bindEdit(){
