@@ -41,7 +41,7 @@ $(document).ready(function () {
     /*Label colors*/
     $(document).ready(function() {
         var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership')");
-        var $breadcrumbCommunity = $($(".resources-breadcrumbs").has("span:contains('Community')"), $(".community__breadcrumbs:contains('Community')"));
+        var $breadcrumbCommunity = $($(".resources-breadcrumbs").has("span:contains('Community')") && $(".community__breadcrumbs:contains('Community')"));
         var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance')");
         var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel')");
 
