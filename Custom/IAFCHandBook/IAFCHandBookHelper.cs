@@ -190,6 +190,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string FinanceChildClass = "topics__content-green";
 		private const string PersonnelChildClass = "topics__content-red";
 		#endregion Class
+
 		#region Svg
 
 		private const string CommunityParentSvg = @"<svg height = ""40px"" viewbox=""0 0 82 75"" version=""1.1"" xmlns=""http://www.w3.org/2000/svg"" xmlns:xlink=""http://www.w3.org/1999/xlink"">
@@ -1425,6 +1426,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 
 				dynamicModuleManager.SaveChanges();
+
+				AddToLikedResources(resourceLike.Id);
 			}
 			catch (Exception e)
 			{
@@ -1479,6 +1482,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 
 				dynamicModuleManager.SaveChanges();
+				AddToLikedResources(resourceDislike.Id);
 			}
 			catch (Exception e)
 			{
@@ -1863,6 +1867,68 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return returnData;
 		}
 		#endregion IsResourceMarkedAsComplete
+
+		#region AddToLikedResources
+		public Boolean AddToLikedResources(Guid resourceId)
+		{
+			Boolean returnData = false;
+			try
+			{
+				var myHandBookItem = GetOrCreateMyHandBook();
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				var like = dynamicModuleManager.GetDataItems(resourceLikesType).
+							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceId).First();
+
+				var masterLike = dynamicModuleManager.Lifecycle.GetMaster(like);
+				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
+
+				masterHandBook.CreateRelation(masterLike, "likedResources");
+
+				dynamicModuleManager.Lifecycle.Publish(masterHandBook);
+				dynamicModuleManager.SaveChanges();
+
+				returnData = true;
+			}
+			catch (Exception e)
+			{
+				log.Error("AddToMyHandBook Error: " + e.Message);
+			}
+			return returnData;
+		}
+
+		#endregion AddToLikedResources
+
+		#region IsResourceLiked
+		public Boolean IsResourceLiked(Guid resourceId)
+		{
+
+			Boolean returnData = false;
+			
+			try
+			{
+				if (isUserAuthorized)
+				{
+					var myHandBookItem = GetOrCreateMyHandBook();
+
+					var providerName = String.Empty;
+					var transactionName = "myHandBookTransaction";
+
+					DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
+
+					var myHandBookResources = myHandBookItem.GetRelatedItems("likedResources").Cast<DynamicContent>().ToArray();
+
+					var handBookResourceAdded = myHandBookResources.Where(r => r.Id == resourceId).Any();
+					returnData = handBookResourceAdded;
+				}
+			}
+			catch (Exception e)
+			{
+				log.Error("IsResourceMarkedAsComplete Error: " + e.Message);
+			}
+			return returnData;
+		}
+		#endregion IsResourceLiked
 
 		#region MyHandBookGetResourcesPerCategory
 		public IAFCHandBookMyHandBookModel GetMyHandBookResourcesPerCategory(String categoryName, String userId = null)
