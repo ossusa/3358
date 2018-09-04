@@ -80,7 +80,8 @@
 		
 		//share
 			var url = window.location.href;
-		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")', function(response) {
+		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',{ url: url }, function(response) {
+			console.log(response);
 			addthis_share.url = response;
 		});
 
