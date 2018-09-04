@@ -69,23 +69,28 @@
 
 <script type="text/javascript">
 
+	var addthis_share = {};
+
 	$(document).ready(function () {
 		bindEdit();
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
 	function bindEdit(){
+
 		
 		//share
 			var url = window.location.href;
 
 			$.ajax({
+				async: false,
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
+					addthis_share.url = response;
 				}
 			});
 	}

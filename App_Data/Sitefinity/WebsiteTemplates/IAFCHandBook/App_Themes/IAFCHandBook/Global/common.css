@@ -1527,7 +1527,7 @@ p {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.938em;
   font-weight: 400;
-  color: #2b4b6b !important;
+  color: #2b4b6b;
   line-height: 24px;
   padding: 8px 0; }
 
@@ -2624,6 +2624,43 @@ p {
 
 .selectric-community__category-select .category__arrow:before {
   color: #2b4b6b; }
+
+.label-community .selectric-community__title-select .selectric-items li.highlighted:after,
+.label-leadership .selectric-community__title-select .selectric-items li.highlighted:after,
+.label-finance .selectric-community__title-select .selectric-items li.highlighted:after,
+.label-personnel .selectric-community__title-select .selectric-items li.highlighted:after {
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  margin-left: 8px; }
+
+.label-community .selectric-community__title-select .selectric-items li.highlighted:after {
+  color: #5591AA; }
+
+.label-leadership .selectric-community__title-select .selectric-items li.highlighted:after {
+  color: #BDA15F; }
+
+.label-finance .selectric-community__title-select .selectric-items li.highlighted:after {
+  color: #73AA56; }
+
+.label-personnel .selectric-community__title-select .selectric-items li.highlighted:after {
+  color: #CF794A; }
+
+.label-community .selectric-community__title-select .selectric-items li.highlighted {
+  color: #5591AA; }
+
+.label-leadership .selectric-community__title-select .selectric-items li.highlighted {
+  color: #BDA15F; }
+
+.label-finance .selectric-community__title-select .selectric-items li.highlighted {
+  color: #73AA56; }
+
+.label-personnel .selectric-community__title-select .selectric-items li.highlighted {
+  color: #CF794A; }
+
+.selectric-community__title-select .selectric-items li {
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
 
 .header_wrapper {
   border-bottom: 1px solid #d8d8d8;
