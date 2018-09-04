@@ -2102,9 +2102,6 @@ p {
   }
   .edit-button {
     position: relative;
-    &:hover .edit-button:after{
-      color: #fff;
-    }
     &:hover .resources__logged-btn{
       background: #2b4b6b;
       color: #fff;
@@ -2116,6 +2113,11 @@ p {
         font-family: anticon !important;
         color: #2b4b6b;
         margin-left: 8px;
+      }
+      &:hover{
+        &:after {
+          color: #fff;
+        }
       }
     }
   }

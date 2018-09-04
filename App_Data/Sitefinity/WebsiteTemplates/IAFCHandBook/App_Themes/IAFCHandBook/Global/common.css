@@ -1743,8 +1743,6 @@ p {
         padding-right: 0; } }
   .account-template .edit-button {
     position: relative; }
-    .account-template .edit-button:hover .edit-button:after {
-      color: #fff; }
     .account-template .edit-button:hover .resources__logged-btn {
       background: #2b4b6b;
       color: #fff; }
@@ -1754,6 +1752,8 @@ p {
       font-family: anticon !important;
       color: #2b4b6b;
       margin-left: 8px; }
+    .account-template .edit-button .resources__logged-btn:hover:after {
+      color: #fff; }
   .account-template input[type="checkbox"] {
     min-width: 14px;
     border-radius: 2px;
