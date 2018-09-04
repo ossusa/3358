@@ -1748,16 +1748,12 @@ p {
     .account-template .edit-button:hover .resources__logged-btn {
       background: #2b4b6b;
       color: #fff; }
-    .account-template .edit-button:after {
+    .account-template .edit-button .resources__logged-btn:after {
       content: "\E61F";
       display: block;
       font-family: anticon !important;
       color: #2b4b6b;
-      -ms-transform: translateX(50%);
-      transform: translateX(50%);
-      right: 40px;
-      top: 50%;
-      position: absolute; }
+      margin-left: 8px; }
   .account-template input[type="checkbox"] {
     min-width: 14px;
     border-radius: 2px;

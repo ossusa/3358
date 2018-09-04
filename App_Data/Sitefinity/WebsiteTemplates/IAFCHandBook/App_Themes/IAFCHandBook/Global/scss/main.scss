@@ -2109,15 +2109,14 @@ p {
       background: #2b4b6b;
       color: #fff;
     }
-    &:after {
-      content: "\E61F";
-      display: block;
-      font-family: anticon !important;
-      color: #2b4b6b;
-      transform: translateX(50%);
-      right: 40px;
-      top: 50%;
-      position: absolute;
+    .resources__logged-btn {
+      &:after {
+        content: "\E61F";
+        display: block;
+        font-family: anticon !important;
+        color: #2b4b6b;
+        margin-left: 8px;
+      }
     }
   }
   input[type="checkbox"] {
