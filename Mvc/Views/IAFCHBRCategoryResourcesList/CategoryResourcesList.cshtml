@@ -1,23 +1,25 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookCategoryResourcesModel
 
-<div class='sfContentBlock topics__text topics__text-first'>
+<div class='sfContentBlock topics__text @Model.ParenCategory.CategoryClass'>
 	<div class="box">
 		<h2>
 			@Model.ParenCategory.CategoryTitle
-			<img src="@Model.ParenCategory.TopicCategoryImageUrl">
+			@Html.Raw(Model.ParenCategory.CategorySvg)
 		</h2>
 		<h5>
 			@Model.ParenCategory.CategoryDescription
 		</h5>
 	</div>
+</div>
 
-	@foreach (var categoryItem in Model.ChildCategories)
-	{
-		<div class="box">
-			<ul class="topics__ul topics__ul-flex">
+<div class='sfContentBlock topics__content  @Model.ChildCategories.First().CategoryClass'>
+	<div class="box">
+		<ul class="topics__ul topics__ul-flex">
+			@foreach (var categoryItem in Model.ChildCategories)
+			{
 				<li class="topics__list">
 					<a href="@categoryItem.CategoryUrl">
-						<img src="@categoryItem.TopicCategoryImageUrl">
+						@Html.Raw(categoryItem.CategorySvg)
 						<p class="topics__img-text">@categoryItem.CategoryTitle</p>
 						<span class="topics__img-back">
 							<p class="topics__img-back-info">@categoryItem.CategoryDescription</p>
@@ -25,7 +27,9 @@
 						</span>
 					</a>
 				</li>
-			</ul>
-		</div>
-	}
+			}
+		</ul>
+	</div>
 </div>
+
+

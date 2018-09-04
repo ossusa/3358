@@ -56,6 +56,7 @@
 
 .single-post-add{
   margin-right: 24px;
+  margin-top: 16px;
   display: flex;
   align-items: center;
   button{
@@ -481,7 +482,7 @@
   .resources__slide{
     @media screen and (max-width: 768px){
       width: 588px !important;
-      margin-right: 0 !important;
+      margin: 0 auto;
     }
   }
 }
@@ -557,8 +558,8 @@
       justify-content: flex-start !important;
       align-items: flex-start;
       flex-wrap: wrap;
-      width: 100%;
-      margin: 0 -2%;
+      //width: 100%;
+      margin: 0 -1%;
       @media screen and (max-width: 767px) {
         margin: 0 auto;
       }
