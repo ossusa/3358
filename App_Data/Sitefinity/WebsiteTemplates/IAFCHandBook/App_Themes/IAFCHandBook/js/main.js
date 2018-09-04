@@ -203,6 +203,13 @@ $('.topics_seperator').each(function() {
     }
 });
 $(document).ready(function() {
-    var $breadcrumb = $(".community__breadcrumbs:contains('Leadership')");
-    $($breadcrumb).next().addClass('label-leadership');
+    var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership')");
+    var $breadcrumbCommunity = $(".community__breadcrumbs:contains('Community')");
+    var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance')");
+    var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel')");
+
+    $($breadcrumbLeadership).next().addClass('label-leadership');
+    $($breadcrumbCommunity).next().addClass('label-community');
+    $($breadcrumbFinance).next().addClass('label-finance');
+    $($breadcrumbPersonnel).next().addClass('label-personnel');
 });
