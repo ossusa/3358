@@ -69,16 +69,18 @@
 
 <script type="text/javascript">
 
+	var addthis_share = {};
+
 	$(document).ready(function () {
 		bindEdit();
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
 	function bindEdit(){
+
 		
 		//share
 			var url = window.location.href;
-		console.log(url);
 
 			$.ajax({
 				async: false,
@@ -88,6 +90,7 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
+					addthis_share.url = response;
 				}
 			});
 	}
