@@ -3736,6 +3736,9 @@ addReplyCommentBtn {
     width: 48%;
     margin-left: 1%;
     margin-right: 1%; }
+  .complete__resources_slides .resources__slide-footer {
+    -ms-flex-align: end;
+    align-items: flex-end; }
 
 .handbook__title {
   width: 100%;
