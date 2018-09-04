@@ -73,11 +73,7 @@
     }
   }
 }
-.complete__resources_slides .single-post-add{
-  @media screen and(min-width: 767px){
-    margin-top: 16px;
-  }
-}
+
 .box-container{
   @media screen and(min-width: 768px) and (max-width: 992px){
     padding: 0 36px;
@@ -485,7 +481,7 @@
   .resources__slide{
     @media screen and (max-width: 768px){
       width: 588px !important;
-      margin: 0 auto;
+      margin-right: 0 !important;
     }
   }
 }
@@ -561,8 +557,8 @@
       justify-content: flex-start !important;
       align-items: flex-start;
       flex-wrap: wrap;
-      //width: 100%;
-      margin: 0 -1%;
+      width: 100%;
+      margin: 0 -2%;
       @media screen and (max-width: 767px) {
         margin: 0 auto;
       }
@@ -735,4 +731,14 @@ addReplyCommentBtn{
 }
 .label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
   color: $color_personnel !important;
+}
+.complete__resources_slides {
+  .complete__resources_slides {
+    margin: 0 -1%;
+    width: auto;
+  }
+  .resources__slide {
+    width: 48%;
+    margin: 0 1%;
+  }
 }
