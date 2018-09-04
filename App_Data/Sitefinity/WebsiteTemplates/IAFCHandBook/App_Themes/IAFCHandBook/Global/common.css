@@ -3075,7 +3075,6 @@ p {
 
 .single-post-add {
   margin-right: 24px;
-  margin-top: 16px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -3094,6 +3093,10 @@ p {
     font-weight: 400; }
     .single-post-add button i {
       margin-right: 5px; }
+
+@media screen and (min-width: 767px) {
+  .complete__resources_slides .single-post-add {
+    margin-top: 16px; } }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .box-container {
