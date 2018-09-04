@@ -2426,6 +2426,12 @@ p {
   .community__head-btn:nth-of-type(1) {
     width: 82%; } }
 
+.topics__content-red .topics__list:nth-of-type(1) .topics__img-text {
+  white-space: normal; }
+
+.topics__content-yellow .topics__list:nth-of-type(4) .topics__img-text {
+  white-space: normal; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer;
@@ -3708,6 +3714,21 @@ addReplyCommentBtn {
   outline: none;
   text-align: left;
   padding: 0; }
+
+.addReplyCommentBtn {
+  background: transparent;
+  padding: 10px 24px;
+  margin: 0;
+  color: #434f68;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
+  border: 1px solid #434f68;
+  transition: 0.3s ease-in-out; }
+  .addReplyCommentBtn:hover {
+    background: #2b4b6b;
+    color: #fff; }
 
 /*Leadership*/
 .label-leadership > .selectric-community__title-select > .selectric > .label {
