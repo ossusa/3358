@@ -246,5 +246,5 @@ $('.topics_seperator').each(function() {
 $(document).ready(function() {
     $('.active-link').removeClass('active-link');
     var currurl = window.location.pathname;
-    var val=$('li:has(a[href="'+currurl+'"])').addClass('active-link');
+    var val=$('.header__list:has(a[href="'+currurl+'"])').addClass('active-link');
 });
