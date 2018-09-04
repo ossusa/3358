@@ -193,13 +193,28 @@
         color: #2b4b6b;        
     }
 }
-.selectric-community__title-select .selectric-items li:hover:after {
+
+.label-community .selectric-community__title-select .selectric-items li.highlighted:after {
+     content: "\E61F";
+     display: block;
+     font-family: anticon;
+     color: $color_community;
+ }
+.label-leadership .selectric-community__title-select .selectric-items li.highlighted:after {
     content: "\E61F";
     display: block;
     font-family: anticon;
+    color: $color_leadership;
 }
-.selectric-community__title-select .selectric-items li.highlighted:after {
+.label-finance .selectric-community__title-select .selectric-items li.highlighted:after {
     content: "\E61F";
     display: block;
     font-family: anticon;
+    color: $color_finance;
+}
+.label-personnel .selectric-community__title-select .selectric-items li.highlighted:after {
+    content: "\E61F";
+    display: block;
+    font-family: anticon;
+    color: $color_personnel;
 }

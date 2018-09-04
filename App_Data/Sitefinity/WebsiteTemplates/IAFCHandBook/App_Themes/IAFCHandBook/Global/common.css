@@ -2625,15 +2625,29 @@ p {
 .selectric-community__category-select .category__arrow:before {
   color: #2b4b6b; }
 
-.selectric-community__title-select .selectric-items li:hover:after {
+.label-community .selectric-community__title-select .selectric-items li.highlighted:after {
   content: "\E61F";
   display: block;
-  font-family: anticon; }
+  font-family: anticon;
+  color: #5591AA; }
 
-.selectric-community__title-select .selectric-items li.highlighted:after {
+.label-leadership .selectric-community__title-select .selectric-items li.highlighted:after {
   content: "\E61F";
   display: block;
-  font-family: anticon; }
+  font-family: anticon;
+  color: #BDA15F; }
+
+.label-finance .selectric-community__title-select .selectric-items li.highlighted:after {
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  color: #73AA56; }
+
+.label-personnel .selectric-community__title-select .selectric-items li.highlighted:after {
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  color: #CF794A; }
 
 .header_wrapper {
   border-bottom: 1px solid #d8d8d8;
