@@ -71,17 +71,11 @@
 
 
 	$(document).ready(function () {
-		function bindShare(){
+
 
 
 			//share
-			var url = window.location.href;
-			$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',{ url: url }, function(response) {
-				console.log(response);
-				window.addthis_share= {
-					url: response
-				};
-			});
+
 
 			/*	$.ajax({
 			 async: false,
@@ -94,9 +88,14 @@
 			 addthis_share.url = response;
 			 }
 			 }); */
-		}
 
-		bindShare();
+		var url = window.location.href;
+		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',{ url: url }, function(response) {
+			console.log(response);
+			window.addthis_share= {
+				url: response
+			};
+		});
 		console.log(addthis_share.url);
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
