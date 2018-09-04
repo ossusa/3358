@@ -1,5 +1,13 @@
 
+var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership')");
+var $breadcrumbCommunity = $(".community__breadcrumbs:contains('Community')");
+var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance')");
+var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel')");
 
+$($breadcrumbLeadership).next().addClass('label-leadership');
+$($breadcrumbCommunity).next().addClass('label-community');
+$($breadcrumbFinance).next().addClass('label-finance');
+$($breadcrumbPersonnel).next().addClass('label-personnel');
 $(document).ready(function () {
     /*Slider*/
     $('.resources__slider').slick({
@@ -38,6 +46,18 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/iafchandbookhome/search-results/' + qSecond;
     });
+    // /*Label colors*/
+    // $(document).ready(function() {
+    //     var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership')");
+    //     var $breadcrumbCommunity = $(".community__breadcrumbs:contains('Community')");
+    //     var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance')");
+    //     var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel')");
+    //
+    //     $($breadcrumbLeadership).next().addClass('label-leadership');
+    //     $($breadcrumbCommunity).next().addClass('label-community');
+    //     $($breadcrumbFinance).next().addClass('label-finance');
+    //     $($breadcrumbPersonnel).next().addClass('label-personnel');
+    // });
 
     /*Off canvas menu*/
     $(".header__mob-open").click(function () {
@@ -201,15 +221,4 @@ $('.topics_seperator').each(function() {
     if ($(this).text().length > (maxch - sep.length)) {
         $(this).text($(this).text().substr(0, maxch-sep.length) + sep);
     }
-});
-$(document).ready(function() {
-    var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership')");
-    var $breadcrumbCommunity = $(".community__breadcrumbs:contains('Community')");
-    var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance')");
-    var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel')");
-
-    $($breadcrumbLeadership).next().addClass('label-leadership');
-    $($breadcrumbCommunity).next().addClass('label-community');
-    $($breadcrumbFinance).next().addClass('label-finance');
-    $($breadcrumbPersonnel).next().addClass('label-personnel');
 });
