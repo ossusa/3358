@@ -40,10 +40,10 @@ $(document).ready(function () {
     });
     /*Label colors*/
     $(document).ready(function() {
-        var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership'), .community__breadcrumbs a span:contains('Leadership')");
-        var $breadcrumbCommunity = $(".community__breadcrumbs:contains('Community'), .community__breadcrumbs a span:contains('Community')");
-        var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance'), .community__breadcrumbs a span:contains('Finance')");
-        var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel'), .community__breadcrumbs a span:contains('Personnel')");
+        var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership'), .resources-breadcrumbs a span:contains('Leadership')");
+        var $breadcrumbCommunity = $(".community__breadcrumbs:contains('Community'), .resources-breadcrumbs a span:contains('Community')");
+        var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance'), .resources-breadcrumbs a span:contains('Finance')");
+        var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel'), .resources-breadcrumbs a span:contains('Personnel')");
 
         $($breadcrumbLeadership).next().addClass('label-leadership');
         $($breadcrumbCommunity).next().addClass('label-community');
