@@ -38,7 +38,7 @@
 									</div>
 								</div>
 							}
-						<div id="shareBtn" class="resources-single__left_post_comment_header_left_share anticon anticon-share-alt addthis_inline_share_toolbox_n7k8" >
+						<div id="shareBtn" class="resources-single__left_post_comment_header_left_share addthis_inline_share_toolbox_n7k8" >
 							<a class="addthis_button_compact">
 								<i class="anticon anticon-share-alt"></i>
 								<span>Share</span>
@@ -136,8 +136,15 @@
 
 <script type="text/javascript">
 
+	var url = window.location.href;
+
+	addthis_share = {
+		url: url
+	};
+
 	$(document).ready(function () {
 		bindEdit();
+		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
 	function bindEdit() {
