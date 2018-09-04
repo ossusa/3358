@@ -3726,6 +3726,9 @@ addReplyCommentBtn {
   border-radius: 3px;
   border: 1px solid #434f68;
   transition: 0.3s ease-in-out; }
+  .addReplyCommentBtn:hover {
+    background: #2b4b6b;
+    color: #fff; }
 
 /*Leadership*/
 .label-leadership > .selectric-community__title-select > .selectric > .label {
