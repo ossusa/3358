@@ -215,22 +215,26 @@ if($(window).width() < 767) {
         }
     });
 }
-$('.resources__slide-desc').each(function() {
-    var maxchars = 144;
-    var seperator = '...';
+if($(window).width() < 767) {
+    $('.resources__slide-title').each(function() {
+        var maxcharacters = 31;
+        var separate = '...';
 
-    if ($(this).text().length > (maxchars - seperator.length)) {
-        $(this).text($(this).text().substr(0, maxchars-seperator.length) + seperator);
-    }
-});
-$('.resources__slide-title').each(function() {
-    var maxcharacters = 55;
-    var separate = '...';
+        if ($(this).text().length > (maxcharacters - separate.length)) {
+            $(this).text($(this).text().substr(0, maxcharacters-separate.length) + separate);
+        }
+    });
+} else {
+    $('.resources__slide-title').each(function() {
+        var maxcharacters = 55;
+        var separate = '...';
 
-    if ($(this).text().length > (maxcharacters - separate.length)) {
-        $(this).text($(this).text().substr(0, maxcharacters-separate.length) + separate);
-    }
-});
+        if ($(this).text().length > (maxcharacters - separate.length)) {
+            $(this).text($(this).text().substr(0, maxcharacters-separate.length) + separate);
+        }
+    });
+}
+
 $('.topics_seperator').each(function() {
     var maxch = 106;
     var sep = '...';
@@ -239,3 +243,19 @@ $('.topics_seperator').each(function() {
         $(this).text($(this).text().substr(0, maxch-sep.length) + sep);
     }
 });
+// $('.resources__slide-desc').each(function() {
+//     var maxchars = 144;
+//     var seperator = '...';
+//
+//     if ($(this).text().length > (maxchars - seperator.length)) {
+//         $(this).text($(this).text().substr(0, maxchars-seperator.length) + seperator);
+//     }
+// });
+// $('.resources__slide-title').each(function() {
+//     var maxcharacters = 55;
+//     var separate = '...';
+//
+//     if ($(this).text().length > (maxcharacters - separate.length)) {
+//         $(this).text($(this).text().substr(0, maxcharacters-separate.length) + separate);
+//     }
+// });
