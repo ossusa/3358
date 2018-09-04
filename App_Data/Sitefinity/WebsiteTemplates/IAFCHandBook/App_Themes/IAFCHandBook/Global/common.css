@@ -3664,6 +3664,12 @@ addReplyCommentBtn {
   text-align: left;
   padding: 0; }
 
+.label-leadership > .selectric-community__title-select > .selectric > .label {
+  color: red; }
+
+.label-leadership > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover {
+  color: red; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
