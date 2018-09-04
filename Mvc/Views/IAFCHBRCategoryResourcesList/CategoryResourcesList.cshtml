@@ -1,29 +1,31 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookCategoryResourcesModel
 
-<div class="box">
-	<h2>
-		@Model.ParenCategory.CategoryTitle
-		<img src="@Model.ParenCategory.TopicCategoryImageUrl">		
-	</h2>
-	<h5>
-		@Model.ParenCategory.CategoryDescription
-	</h5>
-</div>
-
-@foreach (var categoryItem in Model.ChildCategories)
-{
+<div class='sfContentBlock topics__text topics__text-first'>
 	<div class="box">
-		<ul class="topics__ul topics__ul-flex">
-			<li class="topics__list">
-				<a href="@categoryItem.CategoryUrl">
-					<img src="@categoryItem.TopicCategoryImageUrl">
-					<p class="topics__img-text">@categoryItem.CategoryTitle</p>
-					<span class="topics__img-back">
-						<p class="topics__img-back-info">@categoryItem.CategoryDescription</p>
-						<p class="topics__img-back-text">@categoryItem.ResourcesAmount</p>
-					</span>
-				</a>
-			</li>			
-		</ul>
+		<h2>
+			@Model.ParenCategory.CategoryTitle
+			<img src="@Model.ParenCategory.TopicCategoryImageUrl">
+		</h2>
+		<h5>
+			@Model.ParenCategory.CategoryDescription
+		</h5>
 	</div>
-}
+
+	@foreach (var categoryItem in Model.ChildCategories)
+	{
+		<div class="box">
+			<ul class="topics__ul topics__ul-flex">
+				<li class="topics__list">
+					<a href="@categoryItem.CategoryUrl">
+						<img src="@categoryItem.TopicCategoryImageUrl">
+						<p class="topics__img-text">@categoryItem.CategoryTitle</p>
+						<span class="topics__img-back">
+							<p class="topics__img-back-info">@categoryItem.CategoryDescription</p>
+							<p class="topics__img-back-text">@categoryItem.ResourcesAmount</p>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	}
+</div>

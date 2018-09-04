@@ -40,15 +40,22 @@ $(document).ready(function () {
     });
     /*Label colors*/
     $(document).ready(function() {
-        var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership')");
-        var $breadcrumbCommunity = $($(".resources-breadcrumbs").has("span:contains('Community')") && $(".community__breadcrumbs:contains('Community')"));
-        var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance')");
-        var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel')");
-
-        $($breadcrumbLeadership).next().addClass('label-leadership');
+        var $breadcrumbCommunity =  $(".community__breadcrumbs:contains('Community')");
+        var $breadcrumbCommunitySecond = $(".resources-breadcrumbs").has("span:contains('Community')");
+        var $breadcrumbLeadership =  $(".community__breadcrumbs:contains('Leadership')");
+        var $breadcrumbLeadershipSecond = $(".resources-breadcrumbs").has("span:contains('Leadership')");
+        var $breadcrumbFinance =  $(".community__breadcrumbs:contains('Finance')");
+        var $breadcrumbFinanceSecond = $(".resources-breadcrumbs").has("span:contains('Finance')");
+        var $breadcrumbPersonnel =  $(".community__breadcrumbs:contains('Personnel')");
+        var $breadcrumbPersonnelSecond = $(".resources-breadcrumbs").has("span:contains('Personnel')");
         $($breadcrumbCommunity).next().addClass('label-community');
+        $($breadcrumbCommunitySecond).next().addClass('label-community');
+        $($breadcrumbLeadership).next().addClass('label-leadership');
+        $($breadcrumbLeadershipSecond).next().addClass('label-leadership');
         $($breadcrumbFinance).next().addClass('label-finance');
+        $($breadcrumbFinanceSecond).next().addClass('label-finance');
         $($breadcrumbPersonnel).next().addClass('label-personnel');
+        $($breadcrumbPersonnelSecond).next().addClass('label-personnel');
     });
 
     /*Off canvas menu*/
