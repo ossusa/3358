@@ -40,10 +40,10 @@ $(document).ready(function () {
     });
     /*Label colors*/
     $(document).ready(function() {
-        var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership')");
+        var $breadcrumbLeadership = $($(".resources-breadcrumbs").has("span:contains('Leadership')") && $(".community__breadcrumbs:contains('Leadership')"));
         var $breadcrumbCommunity = $($(".resources-breadcrumbs").has("span:contains('Community')") && $(".community__breadcrumbs:contains('Community')"));
-        var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance')");
-        var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel')");
+        var $breadcrumbFinance = $($(".resources-breadcrumbs").has("span:contains('Finance')") && $(".community__breadcrumbs:contains('Finance')"));
+        var $breadcrumbPersonnel = $($(".resources-breadcrumbs").has("span:contains('Personnel')") && $(".community__breadcrumbs:contains('Personnel')"));
 
         $($breadcrumbLeadership).next().addClass('label-leadership');
         $($breadcrumbCommunity).next().addClass('label-community');
