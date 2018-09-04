@@ -246,5 +246,10 @@ $('.topics_seperator').each(function() {
 $(document).ready(function() {
     $('.active-link').removeClass('active-link');
     var currurl = window.location.pathname;
-    var val=$('.header__list:has(a[href="'+currurl+'"])').addClass('active-link');
+    var val=$('.header__list:has(a[href="'+currurl+'"] class="header__list-link colored-list")').addClass('active-link');
 });
+// $(document).ready(function() {
+//     $('.colored').removeClass('colored');
+//     var currurl = window.location.pathname;
+//     var val=$('.header__sub_list:has(a[href="'+currurl+'"])').addClass('colored');
+// });
