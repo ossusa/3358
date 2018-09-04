@@ -5,7 +5,7 @@
 <head  id="Head1" runat="server">
 <meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- favicon begins -->
 <link rel="apple-touch-icon" sizes="180x180" href="https://www.iafc.org/VCOSorgAssets/favicon/apple-touch-icon.png">
