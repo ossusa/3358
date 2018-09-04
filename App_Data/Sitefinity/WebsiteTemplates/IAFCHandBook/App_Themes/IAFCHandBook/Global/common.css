@@ -1684,11 +1684,18 @@ p {
   border-radius: 3px; }
 
 .resources__slide {
-  width: 48%;
-  margin: 0 1%;
+  width: 49%;
   margin-bottom: 48px;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
+  @media screen and (max-width: 767px) {
+    .resources__slide {
+      width: 48%; } }
+  .resources__slide:nth-child(odd) {
+    margin-right: 2%; }
+    @media screen and (max-width: 767px) {
+      .resources__slide:nth-child(odd) {
+        margin-right: 4%; } }
 
 .slick-track .resources__slide {
   margin-bottom: 0; }
@@ -3094,10 +3101,6 @@ p {
     .single-post-add button i {
       margin-right: 5px; }
 
-@media screen and (min-width: 767px) {
-  .complete__resources_slides .single-post-add {
-    margin-top: 16px; } }
-
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .box-container {
     padding: 0 36px; } }
@@ -3483,7 +3486,7 @@ p {
 @media screen and (max-width: 768px) {
   .community__section .resources__slide {
     width: 588px !important;
-    margin: 0 auto; } }
+    margin-right: 0 !important; } }
 
 .complete_section {
   background-color: #efefef;
@@ -3554,7 +3557,8 @@ p {
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 -1%; }
+  width: 100%;
+  margin: 0 -2%; }
   @media screen and (max-width: 767px) {
     .complete__resources_slides {
       margin: 0 auto; } }
@@ -3724,6 +3728,17 @@ addReplyCommentBtn {
 
 .label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover {
   color: #CF794A !important; }
+
+.complete__resources_slides {
+  margin: 0 -1%;
+  width: auto; }
+  .complete__resources_slides .resources__slide {
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%; }
+  .complete__resources_slides .resources__slide-footer {
+    -ms-flex-align: end;
+    align-items: flex-end; }
 
 .handbook__title {
   width: 100%;
