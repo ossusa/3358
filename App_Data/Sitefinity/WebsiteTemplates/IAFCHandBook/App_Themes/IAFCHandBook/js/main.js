@@ -196,7 +196,25 @@ $(document).ready(function() {
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
 });
+if($(window).width() < 767) {
+    $('.resources__slide-desc').each(function() {
+        var maxchars = 87;
+        var seperator = '...';
 
+        if ($(this).text().length > (maxchars - seperator.length)) {
+            $(this).text($(this).text().substr(0, maxchars-seperator.length) + seperator);
+        }
+    });
+} else {
+    $('.resources__slide-desc').each(function() {
+        var maxchars = 144;
+        var seperator = '...';
+
+        if ($(this).text().length > (maxchars - seperator.length)) {
+            $(this).text($(this).text().substr(0, maxchars-seperator.length) + seperator);
+        }
+    });
+}
 $('.resources__slide-desc').each(function() {
     var maxchars = 144;
     var seperator = '...';
