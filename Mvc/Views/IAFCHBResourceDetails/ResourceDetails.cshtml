@@ -1,5 +1,5 @@
 ﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
 <div class="box box-container">
@@ -112,8 +112,16 @@
 							</button>
 						</div>
 						<div class="single-post-statistic">
-							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
-							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
+							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" 
+									class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"
+									@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+								<span>@item.Likes.Likes</span> 
+							</button>
+							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" 
+									class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"
+									@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+								<span>@item.Likes.Dislikes</span> 
+							</button>
 						</div>
 					</li>
 				}

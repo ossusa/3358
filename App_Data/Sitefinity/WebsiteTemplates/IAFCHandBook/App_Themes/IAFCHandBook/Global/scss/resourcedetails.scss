@@ -704,3 +704,31 @@ addReplyCommentBtn{
   text-align: left;
   padding: 0;
 }
+/*Leadership*/
+.label-leadership > .selectric-community__title-select > .selectric > .label{
+  color: $color_leadership;
+}
+.label-leadership > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
+  color: $color_leadership !important;
+}
+/*Community*/
+.label-community > .selectric-community__title-select > .selectric > .label{
+  color: $color_community;
+}
+.label-community > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
+  color: $color_community !important;
+}
+/*Finance*/
+.label-finance > .selectric-community__title-select > .selectric > .label{
+  color: $color_finance;
+}
+.label-finance > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
+  color: $color_finance !important;
+}
+/*Personnel*/
+.label-personnel > .selectric-community__title-select > .selectric > .label{
+  color:$color_personnel;
+}
+.label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
+  color: $color_personnel !important;
+}

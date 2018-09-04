@@ -12,117 +12,140 @@
 </div>
 
 <div class="box box-container">
-	<div class="resources-breadcrumbs"><a href="~/iafchandbookhome/my-handbook"><span> MY HANDBOOK</span></a> >
-	<a href="@Model.ResourceDetails.Category.MyHandBookParentCategoryUrl"> <span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> >
-	<a href="@Model.ResourceDetails.Category.MyHandBookCategoryUrl"> <span>@Model.ResourceDetails.Category.CategoryTitle</span></a> >
-	@Model.ResourceDetails.ResourceTitle </div>
-<div class="resources-single">
-<div class="resources-single__left">
-<div class="resources-single__left_post">
-<div class="resources-single__left_post_video">
-	@if (Model.ResourceDetails.VideoEmbedCode != null && Model.ResourceDetails.VideoEmbedCode != String.Empty)
-	{
-		<iframe width="420" height="315"
-				src=@Model.ResourceDetails.VideoEmbedCode></iframe>
-	}
-</div>
-<div class="resources-single__left_post_title">
-	<h5>@Model.ResourceDetails.ResourceTitle</h5>
-	<p>@Model.ResourceDetails.ResourceDescription</p>
-</div>
-<div class="resources-single__left_post_comment">
-<div class="resources-single__left_post_comment_header">
-<div class="resources-single__left_post_comment_header_left">
-<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "markAsComplete" , Model.Id.ToString())">
-	<div id="markAsComplete">
-		@if (Model.IsResourceCompleted == true)
-		{
-			<span><div class="complete_box anticon anticon-check"></div>Completed</span>
-		}
-		else
-		{
-			<button type="button" class="markAsCompleteBtn" data-id="@Model.Id"><div class="complete_box"></div> Mark As Complete </button>
-		}
+	<div class="resources-breadcrumbs">
+		<a href="~/iafchandbookhome/my-handbook"><span> MY HANDBOOK</span></a> >
+		<a href="@Model.ResourceDetails.Category.MyHandBookParentCategoryUrl"> <span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> >
+		<a href="@Model.ResourceDetails.Category.MyHandBookCategoryUrl"> <span>@Model.ResourceDetails.Category.CategoryTitle</span></a> >
+		@Model.ResourceDetails.ResourceTitle
 	</div>
-</div>
-
-	<div id="shareBtn" class="resources-single__left_post_comment_header_left_share addthis_inline_share_toolbox_n7k8" >
-		<a class="addthis_button_compact">
-			<i class="anticon anticon-share-alt"></i>
-			<span>Share</span>
-		</a>
-	</div>
-</div>
-<div class="resources-single__left_post_comment_header_right">
-<div class="single-post-comments"  id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
-	<i class="material-icons">chat_bubble_outline</i>
-	@Model.CommentsAmount Comments
-</div>
-<div class="single-post-statistic">
-	<button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"> <span>@Model.Likes.Likes</span> </button>
-	<button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"> <span>@Model.Likes.Dislikes</span> </button>
-</div>
-</div>
-</div>
-
-<div class="resources-single__left_post_comment_textarea">
-
-	@if (Model.IsUserAuthorized)
-	{
-		<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
-			<div class="replyAddComment">
-				<div class="textarea-container">
-					<textarea placeholder="Add a comment…" name="commentName" id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())"></textarea>
+	<div class="resources-single">
+		<div class="resources-single__left">
+			<div class="resources-single__left_post">
+				<div class="resources-single__left_post_video">
+					@if (Model.ResourceDetails.VideoEmbedCode != null && Model.ResourceDetails.VideoEmbedCode != String.Empty)
+					{
+						<iframe width="420" height="315"
+								src=@Model.ResourceDetails.VideoEmbedCode></iframe>
+					}
 				</div>
-				<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
+				<div class="resources-single__left_post_title">
+					<h5>@Model.ResourceDetails.ResourceTitle</h5>
+					<p>@Html.Raw(Model.ResourceDetails.ResourceDescription)</p>
+				</div>
+				<div class="resources-single__left_post_comment">
+					<div class="resources-single__left_post_comment_header">
+						<div class="resources-single__left_post_comment_header_left">
+							@if (Model.IsUserAuthorized)
+							{
+								<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "markAsComplete", Model.Id.ToString())">
+									<div id="markAsComplete">
+										@if (Model.IsResourceCompleted == true)
+										{
+											<span><div class="complete_box anticon anticon-check"></div>Completed</span>
+										}
+										else
+										{
+											<button type="button" class="markAsCompleteBtn" data-id="@Model.Id"><div class="complete_box"></div> Mark As Complete </button>
+										}
+									</div>
+								</div>
+							}
+
+							<div id="shareBtn" class="resources-single__left_post_comment_header_left_share addthis_inline_share_toolbox_n7k8">
+								<a class="addthis_button_compact">
+									<i class="anticon anticon-share-alt"></i>
+									<span>Share</span>
+								</a>
+							</div>
+						</div>
+						<div class="resources-single__left_post_comment_header_right">
+							<div class="single-post-comments" id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
+								<i class="material-icons">chat_bubble_outline</i>
+								@Model.CommentsAmount Comments
+							</div>
+							<div class="single-post-statistic">
+								<button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" 
+										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"
+										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+									<span>@Model.Likes.Likes</span> 
+								</button>
+								<button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" 
+										class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"
+										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+									<span>@Model.Likes.Dislikes</span> 
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="resources-single__left_post_comment_textarea">
+
+						@if (Model.IsUserAuthorized)
+						{
+							<div id="@string.Format("{0}_{1}", "commentsBlock", Model.Id.ToString())">
+								<div class="replyAddComment">
+									<div class="textarea-container">
+										<textarea placeholder="Add a comment…" name="commentName" id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())"></textarea>
+									</div>
+									<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
+								</div>
+							</div>
+						}
+					</div>
+				</div>
+
+				<div class="resources-single__comments_list">
+					<div class="resources-single__comments_list_header" id="commentsAmountBottomID" data-id="@Model.CommentsAmount.ToString()">
+						@Model.CommentsAmount Comments
+					</div>
+					<div class="resources-single__comments_list_container" id="refTable">
+						@Html.Partial("_IAFCHBComments", Model.Comments)
+					</div>
+				</div>
 			</div>
 		</div>
-	}
-</div>
-</div>
+		<div class="resources__single">
+			<div class="resources-single__right">
+				<div class="resources-single__right_header">
+					<p>More Resources in <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
+				</div>
 
-<div class="resources-single__comments_list">
-<div class="resources-single__comments_list_header" id="commentsAmountBottomID" data-id="@Model.CommentsAmount.ToString()">
-	@Model.CommentsAmount Comments
-</div>
-<div class="resources-single__comments_list_container" id="refTable">
-	@Html.Partial("_IAFCHBComments", Model.Comments)
-</div>
-</div>
-</div>
-</div>
-<div class="resources__single">
-<div class="resources-single__right">
-<div class="resources-single__right_header">
-	<p>More Resources in <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
-</div>
-
-<ul class="resources-single__right_list">
-		@foreach (var item in Model.MoreResources)
-		{
-			<li class="resources-single__right_list_item">
-				<div class="resources-single__right_list_item_type">
-					@item.ResourceDetails.ResourceType
+				<ul class="resources-single__right_list">
+					@foreach (var item in Model.MoreResources)
+					{
+						<li class="resources-single__right_list_item">
+							<div class="resources-single__right_list_item_type">
+								@item.ResourceDetails.ResourceType
+							</div>
+							<div class="resources-single__right_list_item_title">
+								<button type="button" class="resourceLink"
+										data-id="@item.ResourceUrl"
+										data-id1="@item.ResourceDetails.ResourceLink"
+										data-id2="@item.ResourceDetails.ResourceDocument">
+									<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+								</button>
+							</div>
+							<div class="single-post-statistic">
+								<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" 
+										class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"
+										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+									<span>@item.Likes.Likes</span> 
+								</button>
+								<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" 
+										class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"
+										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+									<span>@item.Likes.Dislikes</span> 
+								</button>
+							</div>
+						</li>
+					}
+				</ul>
+				<div class="resources-single__right_more">
+					<a href='@Model.ResourceDetails.Category.MyHandBookCategoryUrl'>See More</a>
 				</div>
-				<div class="resources-single__right_list_item_title">
-					<button type="button" class="resourceLink"
-							data-id="@item.ResourceUrl"
-							data-id1="@item.ResourceDetails.ResourceLink"
-							data-id2="@item.ResourceDetails.ResourceDocument">
-						<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
-					</button>
-				</div>
-				<div class="single-post-statistic">
-					<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Likes</span> </button>
-					<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"> <span>@item.Likes.Dislikes</span> </button>
-				</div>
-			</li>
-		}
-	</ul>
-<div class="resources-single__right_more">
-	<a href='@Model.ResourceDetails.Category.MyHandBookCategoryUrl'>See More</a>
-</div>
-</div>
+			</div>
+		</div>
+	</div>
 </div>
 <script>
 
@@ -132,10 +155,9 @@
 		bindEdit();
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
-	
+
 
 	function bindEdit() {
-
 		//share
 		var url = window.location.href;
 
@@ -143,11 +165,8 @@
 			url: url
 		};
 
-
-
 		//Add Like
 		$('.addLike').click(function () {
-
 			var resourceId = $(this).attr('data-id');
 
 			$.ajax({
@@ -164,7 +183,6 @@
 
 		//Add Dislike
 		$('.addDislike').click(function () {
-
 			var resourceId = $(this).attr('data-id');
 
 			$.ajax({
@@ -181,7 +199,6 @@
 
 		//Mark As Complete
 		$('.markAsCompleteBtn').click(function () {
-
 			var resourceId = $(this).attr('data-id');
 			var tag_id = "#markAsComplete_" + resourceId;
 
@@ -201,7 +218,6 @@
 
 		//Add Comment
 		$('.addCommentBtn').click(function () {
-
 			var resourceId = $(this).attr('data-id');
 			var commentMsg = $('#comment_' + resourceId).val();
 			var comment = commentMsg;
@@ -221,12 +237,11 @@
 					$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
 					bindEdit();
 				}
-			});			
+			});
 		});
 
 		//Add Comment Like
 		$('.addCommentLike').click(function () {
-
 			var resourceId = $(this).attr('data-id');
 
 			$.ajax({
@@ -238,12 +253,11 @@
 				success: function (response) {
 					$("#commentLikes_" + resourceId).html(response);
 				}
-			});			
+			});
 		});
 
 		//Add Comment Dislike
 		$('.addCommentDislike').click(function () {
-
 			var resourceId = $(this).attr('data-id');
 
 			$.ajax({
@@ -260,7 +274,6 @@
 
 		//Comment Reply btn t1
 		$('.commentReplyBtn').click(function () {
-
 			var commentId = $(this).attr('data-id');
 
 			$.ajax({
@@ -273,12 +286,11 @@
 					$("#commentRepliesInputView_" + commentId).html(response);
 					bindEdit();
 				}
-			});			
+			});
 		});
 
 		//Add Reply Comment Button Pressed
 		$('.addReplyCommentBtn').click(function () {
-
 			var commentId = $(this).attr('data-id');
 			var commentMsg = $('#replyComment_' + commentId).val();
 			var comment = commentMsg;
@@ -294,12 +306,11 @@
 					$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="' + commentId + '"> Reply </button>');
 					bindEdit();
 				}
-			});			
+			});
 		});
 
 		//share
 		$('.shareBtn').click(function () {
-
 			$.ajax({
 				type: 'POST',
 				cache: false,
@@ -313,7 +324,7 @@
 			});
 		});
 
-		//Open More Resource Details
+		//Open  Resource Details
 		$('.resourceLink').click(function () {
 			var resourceUrl = $(this).attr("data-id");
 			var resourceLinkUrl = $(this).attr('data-id1');

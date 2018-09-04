@@ -889,6 +889,7 @@
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookCategoryResourcesController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookMenuController.cs.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookResourceDetailsController.cs" />
+    <Compile Include="Mvc\Controllers\IAFCHBRCategoryResourcesListController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBRecentlyAddedResourcesController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourcesPerCategoryController.cs" />
@@ -910,6 +911,7 @@
     <Compile Include="Mvc\Models\ContentListSearchResult.cs" />
     <Compile Include="Mvc\Models\EventsCalendarModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookAccount.cs" />
+    <Compile Include="Mvc\Models\IAFCHandBookCategoryResourcesModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMoreResourcesModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookCategoryModel.cs" />
     <Compile Include="Mvc\Models\IAFCHandBookMyHandBookMenuItemModel.cs" />
@@ -1292,6 +1294,7 @@
     <Content Include="Mvc\Views\IAFCHBSearch\Search.cshtml" />
     <Content Include="Mvc\Views\IAFCHBSearchResults\SearchResults.cshtml" />
     <Content Include="Mvc\Views\IAFCHBSearchResults\_SearchResultsDetails.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBRCategoryResourcesList\CategoryResourcesList.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>

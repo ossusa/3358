@@ -1,5 +1,5 @@
 ﻿@model  List<SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 @{var emptyDuration = new TimeSpan(0, 0, 0);}
 <div class="community__section">
@@ -80,14 +80,16 @@
 							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount Comments</span></a>
 
 							<div class="single-post-statistic">
-								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()">
+								<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"
+										@(!item.IsUserAuthorized? "disabled='disabled'" : "")>
 									<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 										<span>@item.Likes.Likes</span>
 									</span>
 								</button>
 
 
-								<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()">
+								<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"
+										@(!item.IsUserAuthorized? "disabled='disabled'" : "")>
 									<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 										<span>@item.Likes.Dislikes</span>
 									</span>

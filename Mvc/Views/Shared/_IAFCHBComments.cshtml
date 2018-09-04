@@ -27,8 +27,16 @@
     					}
 					</div>
 					<div class="single-post-statistic">
-						<button id="@string.Format("{0}_{1}", "commentLikes" , commentItem.Id.ToString())" type="button" class="addCommentLike anticon anticon-like-o" data-id="@commentItem.Id.ToString()" title="Add Like"> <span>@commentItem.Likes.Likes</span> </button>
-						<button id="@string.Format("{0}_{1}", "commentDislikes" , commentItem.Id.ToString())" type="button" class="addCommentDislike anticon anticon-dislike-o" data-id="@commentItem.Id.ToString()" title="Add Dislike"> <span>@commentItem.Likes.Dislikes</span> </button>
+						<button id="@string.Format("{0}_{1}", "commentLikes" , commentItem.Id.ToString())" type="button" 
+								class="addCommentLike anticon anticon-like-o" data-id="@commentItem.Id.ToString()" title="Add Like"
+								@(!commentItem.UserAuthorized? "disabled='disabled'" : "")> 
+							<span>@commentItem.Likes.Likes</span> 
+						</button>
+						<button id="@string.Format("{0}_{1}", "commentDislikes" , commentItem.Id.ToString())" type="button" 
+								class="addCommentDislike anticon anticon-dislike-o" data-id="@commentItem.Id.ToString()" title="Add Dislike"
+								@(!commentItem.UserAuthorized? "disabled='disabled'" : "")> 
+							<span>@commentItem.Likes.Dislikes</span> 
+						</button>
 					</div>
 				</div>
 				<div class="resources-single__comments_list_container_items_item_replay_container">
