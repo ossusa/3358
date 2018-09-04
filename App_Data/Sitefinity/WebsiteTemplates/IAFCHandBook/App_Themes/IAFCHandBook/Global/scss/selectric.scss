@@ -194,27 +194,28 @@
     }
 }
 
-.label-community .selectric-community__title-select .selectric-items li.highlighted:after {
-     content: "\E61F";
-     display: block;
-     font-family: anticon;
-     color: $color_community;
- }
-.label-leadership .selectric-community__title-select .selectric-items li.highlighted:after {
+.label-community .selectric-community__title-select .selectric-items li.highlighted:after,
+.label-leadership .selectric-community__title-select .selectric-items li.highlighted:after,
+.label-finance .selectric-community__title-select .selectric-items li.highlighted:after,
+.label-personnel .selectric-community__title-select .selectric-items li.highlighted:after{
     content: "\E61F";
     display: block;
     font-family: anticon;
+    margin-left: 8px;
+ }
+.label-community .selectric-community__title-select .selectric-items li.highlighted:after{
+    color: $color_community;
+}
+.label-leadership .selectric-community__title-select .selectric-items li.highlighted:after {
     color: $color_leadership;
 }
 .label-finance .selectric-community__title-select .selectric-items li.highlighted:after {
-    content: "\E61F";
-    display: block;
-    font-family: anticon;
     color: $color_finance;
 }
-.label-personnel .selectric-community__title-select .selectric-items li.highlighted {
+.label-personnel .selectric-community__title-select .selectric-items li.highlighted:after {
     color: $color_personnel;
 }
+
 .label-community .selectric-community__title-select .selectric-items li.highlighted {
     color: $color_community;
 }
@@ -226,4 +227,7 @@
 }
 .label-personnel .selectric-community__title-select .selectric-items li.highlighted {
     color: $color_personnel;
+}
+.selectric-community__title-select .selectric-items li{
+    justify-content: flex-start;
 }
