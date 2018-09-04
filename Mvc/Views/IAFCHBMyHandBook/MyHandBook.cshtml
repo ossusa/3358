@@ -68,7 +68,6 @@
 
 <script type="text/javascript">
 
-	var addthis_share = {};
 
 	$(document).ready(function () {
 		bindEdit();
@@ -77,24 +76,23 @@
 	
 	function bindEdit(){
 
-		
+
 		//share
 			var url = window.location.href;
-		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")', function(response) {
-			addthis_share.url = response;
-		});
 
-		/*	$.ajax({
-				async: false,
+			$.ajax({
+				async: true,
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					addthis_share.url = response;
+					window.addthis_share= {
+						url: response
+					};
 				}
-			}); */
+			});
 	}
 
 
