@@ -1365,12 +1365,27 @@ p {
     }
     &-yellow a{
       background: #BDA15F;
+      &:hover{
+        .topics__img-back{
+          background: #BDA15F;
+        }
+      }
     }
     &-green a{
-      background: #73AA56;
+      background: #BDA15F;
+      &:hover{
+        .topics__img-back{
+          background: #BDA15F;
+        }
+      }
     }
     &-red a{
       background: #cf794a;
+      &:hover{
+        .topics__img-back{
+          background: #cf794a;
+        }
+      }
     }
   }
   &__img{

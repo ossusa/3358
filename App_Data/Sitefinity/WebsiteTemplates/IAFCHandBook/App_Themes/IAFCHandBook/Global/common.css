@@ -1152,10 +1152,16 @@ p {
     border-radius: 3px; }
   .topics__content-yellow a {
     background: #BDA15F; }
+    .topics__content-yellow a:hover .topics__img-back {
+      background: #BDA15F; }
   .topics__content-green a {
-    background: #73AA56; }
+    background: #BDA15F; }
+    .topics__content-green a:hover .topics__img-back {
+      background: #BDA15F; }
   .topics__content-red a {
     background: #cf794a; }
+    .topics__content-red a:hover .topics__img-back {
+      background: #cf794a; }
 
 .topics__img-back {
   display: -ms-flexbox;
