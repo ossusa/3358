@@ -1746,14 +1746,16 @@ p {
     .account-template .edit-button:hover .resources__logged-btn {
       background: #2b4b6b;
       color: #fff; }
-    .account-template .edit-button .resources__logged-btn:after {
-      content: "\E61F";
-      display: block;
-      font-family: anticon !important;
-      color: #2b4b6b;
-      margin-left: 8px; }
-    .account-template .edit-button .resources__logged-btn:hover:after {
-      color: #fff; }
+    .account-template .edit-button .resources__logged-btn {
+      transition: .3s ease-in-out; }
+      .account-template .edit-button .resources__logged-btn:after {
+        content: "\E61F";
+        display: block;
+        font-family: anticon !important;
+        color: #2b4b6b;
+        margin-left: 8px; }
+      .account-template .edit-button .resources__logged-btn:hover:after {
+        color: #fff; }
   .account-template input[type="checkbox"] {
     min-width: 14px;
     border-radius: 2px;
@@ -3008,6 +3010,10 @@ p {
   color: #CF794A; }
 
 .colored-list {
+  text-shadow: 1px 0 0 #2B4B6B;
+  color: #2B4B6B; }
+
+.active-link {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
