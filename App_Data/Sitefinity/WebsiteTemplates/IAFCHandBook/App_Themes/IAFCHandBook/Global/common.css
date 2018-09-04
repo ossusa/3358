@@ -3196,11 +3196,14 @@ p {
           @media screen and (max-width: 767px) {
             .resources-single__left_post_title h5 {
               margin-bottom: 4px; } }
-        .resources-single__left_post_title p,
-        .resources-single__left_post_title ul,
-        .resources-single__left_post_title ol {
+        .resources-single__left_post_title p {
           font-family: 'Zilla Slab', serif;
           margin: 0;
+          color: #4a4a4a;
+          font-size: 18px;
+          font-weight: 300; }
+        .resources-single__left_post_title ul, .resources-single__left_post_title ol {
+          font-family: 'Zilla Slab', serif;
           color: #4a4a4a;
           font-size: 18px;
           font-weight: 300; }
