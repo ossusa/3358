@@ -80,8 +80,11 @@
 		
 		//share
 			var url = window.location.href;
+		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")', function(response) {
+			addthis_share.url = response;
+		});
 
-			$.ajax({
+		/*	$.ajax({
 				async: false,
 				type: 'POST',
 				cache: false,
@@ -91,7 +94,7 @@
 				success: function (response) {
 					addthis_share.url = response;
 				}
-			});
+			}); */
 	}
 
 
