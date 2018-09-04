@@ -254,7 +254,7 @@ $(document).ready(function() {
 //     var val=$('.header__sub_list:has(a[href="'+currurl+'"])').addClass('colored');
 // });
 $(document).ready(function () {
-    $(".header__list").click(function () {
+    $(".header__list-link").click(function () {
         var id = $(this).attr("id");
         $('#' + id).siblings().find(".active-link").removeClass("active-link");
         $('#' + id).addClass("active-link");
