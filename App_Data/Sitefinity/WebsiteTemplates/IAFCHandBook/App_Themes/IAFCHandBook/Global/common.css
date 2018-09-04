@@ -1802,9 +1802,7 @@ p {
     opacity: 0;
     color: #9b9b9b; }
   .account-template .community__head-btn {
-    padding-left: 25px;
-    padding-right: 40px;
-    width: auto !important; }
+    width: 130px !important; }
   .account-template .page__title {
     margin-bottom: 24px; }
   .account-template .resources__logged-buttons {
