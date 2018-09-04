@@ -2426,10 +2426,10 @@ p {
   .community__head-btn:nth-of-type(1) {
     width: 82%; } }
 
-.topics__content-red .topics__list:nth-of-type(1) {
+.topics__content-red .topics__list:nth-of-type(1) .topics__img-text {
   white-space: normal; }
 
-.topics__content-yellow .topics__list:nth-of-type(4) {
+.topics__content-yellow .topics__list:nth-of-type(4) .topics__img-text {
   white-space: normal; }
 
 .selectric-wrapper {
