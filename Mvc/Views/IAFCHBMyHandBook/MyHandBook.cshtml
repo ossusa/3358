@@ -68,7 +68,7 @@
 
 <script type="text/javascript">
 
-	var addthis_share = {};
+	var addthis_share;
 
 	$(document).ready(function () {
 		bindEdit();
@@ -82,7 +82,9 @@
 			var url = window.location.href;
 		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',{ url: url }, function(response) {
 			console.log(response);
-			addthis_share.url = response;
+			addthis_share= {
+				url: response
+			};
 		});
 
 		/*	$.ajax({
