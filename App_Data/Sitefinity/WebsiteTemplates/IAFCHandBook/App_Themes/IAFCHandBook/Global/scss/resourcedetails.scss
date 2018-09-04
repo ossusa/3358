@@ -704,6 +704,18 @@ addReplyCommentBtn{
   text-align: left;
   padding: 0;
 }
+.addReplyCommentBtn{
+  background: transparent;
+  padding: 10px 24px;
+  margin: 0;
+  color: #434f68;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
+  border: 1px solid #434f68;
+  transition: 0.3s ease-in-out;
+}
 /*Leadership*/
 .label-leadership > .selectric-community__title-select > .selectric > .label{
   color: $color_leadership;
