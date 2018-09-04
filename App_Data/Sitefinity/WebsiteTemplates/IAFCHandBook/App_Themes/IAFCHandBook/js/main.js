@@ -44,7 +44,6 @@ $(document).ready(function () {
         var $breadcrumbCommunity = $($(".resources-breadcrumbs").has("span:contains('Community')") && $(".community__breadcrumbs:contains('Community')"));
         var $breadcrumbFinance = $($(".resources-breadcrumbs").has("span:contains('Finance')") && $(".community__breadcrumbs:contains('Finance')"));
         var $breadcrumbPersonnel = $($(".resources-breadcrumbs").has("span:contains('Personnel')") && $(".community__breadcrumbs:contains('Personnel')"));
-
         $($breadcrumbLeadership).next().addClass('label-leadership');
         $($breadcrumbCommunity).next().addClass('label-community');
         $($breadcrumbFinance).next().addClass('label-finance');
