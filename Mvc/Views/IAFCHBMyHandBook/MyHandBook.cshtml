@@ -67,19 +67,22 @@
 
 
 <script type="text/javascript">
-
+	var addthis_share = {};
 
 	$(document).ready(function () {
-		bindEdit();
+		doShareUrl();
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
-	function bindEdit(){
+	function doShareUrl(){
 
 
 		//share
 			var url = window.location.href;
-
+		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")', function(response) {
+			addthis_share.url = response;
+		});
+		/*
 			$.ajax({
 				async: true,
 				type: 'POST',
@@ -88,11 +91,9 @@
 				data: { url: url },
 				dataType: "json",
 				success: function (response) {
-					window.addthis_share= {
-						url: response
-					};
+					addthis_share.url = response;
 				}
-			});
+			}); */
 	}
 
 
