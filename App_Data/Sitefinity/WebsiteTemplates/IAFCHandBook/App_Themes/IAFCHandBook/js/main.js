@@ -38,6 +38,18 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/iafchandbookhome/search-results/' + qSecond;
     });
+    /*Label colors*/
+    $(document).ready(function() {
+        var $breadcrumbLeadership = $(".community__breadcrumbs:contains('Leadership'), .resources-breadcrumbs a span:contains('Leadership')");
+        var $breadcrumbCommunity = $(".community__breadcrumbs:contains('Community'), .resources-breadcrumbs a span:contains('Community')");
+        var $breadcrumbFinance = $(".community__breadcrumbs:contains('Finance'), .resources-breadcrumbs a span:contains('Finance')");
+        var $breadcrumbPersonnel = $(".community__breadcrumbs:contains('Personnel'), .resources-breadcrumbs a span:contains('Personnel')");
+
+        $($breadcrumbLeadership).next().addClass('label-leadership');
+        $($breadcrumbCommunity).next().addClass('label-community');
+        $($breadcrumbFinance).next().addClass('label-finance');
+        $($breadcrumbPersonnel).next().addClass('label-personnel');
+    });
 
     /*Off canvas menu*/
     $(".header__mob-open").click(function () {
@@ -176,7 +188,6 @@ $(document).ready(function() {
     $(".header__list:nth-of-type(1) > a").click(function(){
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
-    $('.community__breadcrumbs:contains("Leadership")').closest('.selectric-community__title-select .label').addClass('label-colored');
 });
 
 $('.resources__slide-desc').each(function() {
