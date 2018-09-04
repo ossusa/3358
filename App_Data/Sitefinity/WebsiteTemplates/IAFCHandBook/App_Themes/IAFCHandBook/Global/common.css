@@ -1743,13 +1743,18 @@ p {
         padding-right: 0; } }
   .account-template .edit-button {
     position: relative; }
+    .account-template .edit-button:hover .edit-button:after {
+      color: #fff; }
+    .account-template .edit-button:hover .resources__logged-btn {
+      background: #2b4b6b;
+      color: #fff; }
     .account-template .edit-button:after {
-      content: "\E61D";
+      content: "\E61F";
       display: block;
       font-family: anticon !important;
       color: #2b4b6b;
-      -ms-transform: rotate(-90deg) translateX(50%);
-      transform: rotate(-90deg) translateX(50%);
+      -ms-transform: translateX(50%);
+      transform: translateX(50%);
       right: 40px;
       top: 50%;
       position: absolute; }
@@ -2890,7 +2895,7 @@ p {
   left: 50%;
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  z-index: 9999;
+  z-index: 99999;
   background: #fff; }
 
 @media (max-width: 1109px) {

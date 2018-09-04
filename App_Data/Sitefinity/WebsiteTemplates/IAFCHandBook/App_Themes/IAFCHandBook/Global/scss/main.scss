@@ -2102,12 +2102,19 @@ p {
   }
   .edit-button {
     position: relative;
+    &:hover .edit-button:after{
+      color: #fff;
+    }
+    &:hover .resources__logged-btn{
+      background: #2b4b6b;
+      color: #fff;
+    }
     &:after {
-      content: "\E61D";
+      content: "\E61F";
       display: block;
       font-family: anticon !important;
       color: #2b4b6b;
-      transform: rotate(-90deg) translateX(50%);
+      transform: translateX(50%);
       right: 40px;
       top: 50%;
       position: absolute;
