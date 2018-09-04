@@ -277,7 +277,7 @@
 			var url = window.location.href;
 		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")', function(response) {
 			addthis_share.url = response;
-		})
+		});
 			/*$.ajax({
 				async: false,
 				type: 'POST',
