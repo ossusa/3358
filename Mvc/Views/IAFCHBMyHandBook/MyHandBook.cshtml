@@ -71,35 +71,37 @@
 
 
 	$(document).ready(function () {
+		function bindEdit(){
+
+
+			//share
+			var url = window.location.href;
+			$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',{ url: url }, function(response) {
+				console.log(response);
+				window.addthis_share= {
+					url: response
+				};
+			});
+
+			/*	$.ajax({
+			 async: false,
+			 type: 'POST',
+			 cache: false,
+			 url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
+			 data: { url: url },
+			 dataType: "json",
+			 success: function (response) {
+			 addthis_share.url = response;
+			 }
+			 }); */
+		}
+
 		bindEdit();
 		console.log(addthis_share.url);
 		$('#shareBtn').css('pointer-events', 'initial');
 	});
 	
-	function bindEdit(){
 
-		
-		//share
-			var url = window.location.href;
-		$.post('@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',{ url: url }, function(response) {
-			console.log(response);
-			window.addthis_share= {
-				url: response
-			};
-		});
-
-		/*	$.ajax({
-				async: false,
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("Share", "IAFCHBMyHandBookController")',
-				data: { url: url },
-				dataType: "json",
-				success: function (response) {
-					addthis_share.url = response;
-				}
-			}); */
-	}
 
 
 </script>
