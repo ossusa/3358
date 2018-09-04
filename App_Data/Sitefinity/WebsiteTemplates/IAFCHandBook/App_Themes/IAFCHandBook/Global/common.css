@@ -22,9 +22,9 @@
   color: #2B4B6B; }
 
 .handbook-content p {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif !important;
   line-height: 22px;
-  margin-bottom: 24px; }
+  margin-bottom: 24px !important; }
 
 .handbook-content h6 {
   color: #DF405A; }
@@ -1152,17 +1152,23 @@ p {
     border-radius: 3px; }
   .topics__content-yellow a {
     background: #BDA15F; }
+    .topics__content-yellow a:hover .topics__img-back {
+      background: #BDA15F; }
   .topics__content-green a {
     background: #73AA56; }
+    .topics__content-green a:hover .topics__img-back {
+      background: #73AA56; }
   .topics__content-red a {
     background: #cf794a; }
+    .topics__content-red a:hover .topics__img-back {
+      background: #cf794a; }
 
 .topics__img-back {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  -ms-flex-pack: distribute;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   position: absolute;
   left: 0;
@@ -1252,10 +1258,10 @@ p {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-pack: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
-  flex-wrap: wrap;
-  -ms-flex-wrap: wrap; }
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .topics__ul-flex .topics__list {
     width: 32%; }
     .topics__ul-flex .topics__list:nth-of-type(3) a {
@@ -1350,9 +1356,9 @@ p {
 .community__head-button-group {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-align: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
   margin-top: 24px;
   margin-bottom: 48px; }
@@ -2419,6 +2425,12 @@ p {
     padding-right: 14px; }
   .community__head-btn:nth-of-type(1) {
     width: 82%; } }
+
+.topics__content-red .topics__list:nth-of-type(1) .topics__img-text {
+  white-space: normal; }
+
+.topics__content-yellow .topics__list:nth-of-type(4) .topics__img-text {
+  white-space: normal; }
 
 .selectric-wrapper {
   position: relative;
@@ -3702,6 +3714,21 @@ addReplyCommentBtn {
   outline: none;
   text-align: left;
   padding: 0; }
+
+.addReplyCommentBtn {
+  background: transparent;
+  padding: 10px 24px;
+  margin: 0;
+  color: #434f68;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
+  border: 1px solid #434f68;
+  transition: 0.3s ease-in-out; }
+  .addReplyCommentBtn:hover {
+    background: #2b4b6b;
+    color: #fff; }
 
 /*Leadership*/
 .label-leadership > .selectric-community__title-select > .selectric > .label {
