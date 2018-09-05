@@ -30,13 +30,13 @@ $(document).ready(function () {
     $("#site-search-submit").click(function (e) {
         e.preventDefault();
         var q = $('#site-search').val();
-        location.href = '/iafchandbookhome/search-results/' + q;
+        location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
     });
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
         var qSecond = $('.site-search').val();
-        location.href = '/iafchandbookhome/search-results/' + qSecond;
+        location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
     /*Label colors*/
     $(document).ready(function() {
