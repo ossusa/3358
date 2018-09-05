@@ -1116,22 +1116,17 @@ p {
     display: flex;
     -ms-flex-align: center;
     align-items: center; }
+    .topics__text h2 img {
+      height: 40px;
+      margin-left: 16px; }
   .topics__text-first {
     padding: 100px 0 36px !important; }
-    .topics__text-first h2 svg {
-      margin-left: 16px; }
   .topics__text-yellow h2 {
     color: #BDA15F; }
-    .topics__text-yellow h2 svg {
-      margin-left: 3px; }
   .topics__text-green h2 {
     color: #73AA56; }
-    .topics__text-green h2 svg {
-      margin-left: 3px; }
   .topics__text-red h2 {
     color: #CF794A; }
-    .topics__text-red h2 svg {
-      margin-left: 3px; }
 
 .topics__content--last {
   padding: 0 0 76px 0 !important; }
