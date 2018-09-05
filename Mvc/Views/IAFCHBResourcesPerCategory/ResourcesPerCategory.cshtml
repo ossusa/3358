@@ -5,7 +5,7 @@
 <div class="box">
 	<div class="community__head">
 		<div class="community__breadcrumbs">@Model.Category.ParentCategoryTitle</div>
-		<div class="community__head-title community__head-title_block">
+		<div class="community__head-title">
 			<select class="community__title-select" id="UrlList" onchange="doNavigate()">
 				<option value=@Model.Category.CategoryUrl>@Model.Category.CategoryTitle</option>
 				@foreach (var item in Model.MoreCategories)
