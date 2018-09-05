@@ -96,8 +96,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		private const string commentResource = "Comment";
 		private const string resourceResource = "Resource";
-		private const string topicMenuUrl = "topics";
-		private const string MyHandBookMenuUrl = "my-handbook";
+		private const string topicMenuUrl = "chiefs-a-rit/topics/";
+		private const string MyHandBookMenuUrl = "chiefs-a-rit/my-handbook";
 
 		#region DynamicTypes
 		private Type handBookResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookResourcesData.Iafchandbookresourcesdata");
