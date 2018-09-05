@@ -765,6 +765,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl + sharedUrl;
                     category.MyHandBookParentCategoryUrl = categoryDetails.MyHandbookResourceParentCategoryUrl + sharedUrl;
                     category.TopicCategoryImageUrl = categoryDetails.ResourceParentCategoryImageUrl;
+					category.CategorySvg = categoryDetails.CategorySvg;
                     category.CategoryTitle = categoryDetails.ResourceCategoryTile;
                     category.CategoryDescription = categoryDetails.ResourceCategoryDescription;
 
