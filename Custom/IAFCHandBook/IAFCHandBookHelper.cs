@@ -1017,7 +1017,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				resourceLike.LikeTitle = like.GetValue("Title").ToString();
 				resourceLike.Likes = Convert.ToInt32(like.GetValue("AmountOfLikes"));
 				resourceLike.Dislikes = Convert.ToInt32(like.GetValue("AmountOfDislikes"));
-
+				resourceLike.IsResourceLiked = IsResourceLiked(resourceLike.Id);
 
 				dynamicModuleManager.SaveChanges();
 			}
