@@ -2439,6 +2439,9 @@ p {
 .topics__content-yellow .topics__list:nth-of-type(4) .topics__img-text {
   white-space: normal; }
 
+.resources__slider .resources__slide {
+  border: none; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer;
