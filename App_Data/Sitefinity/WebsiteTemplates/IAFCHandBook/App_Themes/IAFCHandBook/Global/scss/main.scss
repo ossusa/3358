@@ -2511,6 +2511,10 @@ p {
   .topic__subtitle {
     font-size: 1.5em;
   }
+  .topics__content-green .topics__list:nth-of-type(3) .topics__img-text,
+  .topics__content-red .topics__list:nth-of-type(2) .topics__img-text{
+    white-space: normal;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2582,10 +2586,6 @@ p {
   .topics__img-text{
     font-size: 1.750em;
     white-space: nowrap;
-  }
-  .topics__content-green .topics__list:nth-of-type(3) .topics__img-text,
-  .topics__content-red .topics__list:nth-of-type(2) .topics__img-text{
-    white-space: normal;
   }
   .community__topics-link{
     width: 320px;
