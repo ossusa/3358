@@ -1430,29 +1430,31 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				var resource = dynamicModuleManager.GetDataItem(resourceTypeItem, resourceID);
 				var resourceLike = resource.GetRelatedItems(commentFieldText).Cast<DynamicContent>().First();
-				var masterResourceLike = dynamicModuleManager.Lifecycle.GetMaster(resourceLike);
-
-				currentLikes = Convert.ToInt32(resourceLike.GetValue("AmountOfLikes")) + 1;
-
-				DynamicContent checkOutLikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceLike) as DynamicContent;
-				checkOutLikeItem.SetValue("AmountOfLikes", currentLikes);
-				ILifecycleDataItem checkInLikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutLikeItem);
-				dynamicModuleManager.Lifecycle.Publish(checkInLikeItem);
-
-				if (resourceTypeItem == handBookResourcesType)
+				currentLikes = Convert.ToInt32(resourceLike.GetValue("AmountOfLikes"));
+				if (!IsResourceLiked(resourceLike.Id))
 				{
-					var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
-					var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
+					currentLikes = currentLikes + 1;
+					var masterResourceLike = dynamicModuleManager.Lifecycle.GetMaster(resourceLike);
+					DynamicContent checkOutLikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceLike) as DynamicContent;
+					checkOutLikeItem.SetValue("AmountOfLikes", currentLikes);
+					ILifecycleDataItem checkInLikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutLikeItem);
+					dynamicModuleManager.Lifecycle.Publish(checkInLikeItem);
 
-					resourceTemp.SetValue("AmountOfLikes", currentLikes);
+					if (resourceTypeItem == handBookResourcesType)
+					{
+						var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
+						var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
 
-					resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
-					dynamicModuleManager.Lifecycle.Publish(resourceMaster);
+						resourceTemp.SetValue("AmountOfLikes", currentLikes);
+
+						resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
+						dynamicModuleManager.Lifecycle.Publish(resourceMaster);
+					}
+
+					dynamicModuleManager.SaveChanges();
+
+					AddToLikedResources(resourceLike.Id);
 				}
-
-				dynamicModuleManager.SaveChanges();
-
-				AddToLikedResources(resourceLike.Id);
 			}
 			catch (Exception e)
 			{
@@ -1486,28 +1488,32 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				//Add DisLike to resource
 				var resource = dynamicModuleManager.GetDataItem(resourceTypeItem, resourceID);
 				var resourceDislike = resource.GetRelatedItems(commentFieldText).Cast<DynamicContent>().First();
-				var masterResourceDislike = dynamicModuleManager.Lifecycle.GetMaster(resourceDislike);
-
-				currentDislikes = Convert.ToInt32(resourceDislike.GetValue("AmountOfDislikes")) + 1;
-
-				DynamicContent checkOutDislikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceDislike) as DynamicContent;
-				checkOutDislikeItem.SetValue("AmountOfDislikes", currentDislikes);
-				ILifecycleDataItem checkInDislikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutDislikeItem);
-				dynamicModuleManager.Lifecycle.Publish(checkInDislikeItem);
-
-				if (resourceTypeItem == handBookResourcesType)
+				currentDislikes = Convert.ToInt32(resourceDislike.GetValue("AmountOfDislikes"));
+				if (!IsResourceLiked(resourceDislike.Id))
 				{
-					var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
-					var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
+					var masterResourceDislike = dynamicModuleManager.Lifecycle.GetMaster(resourceDislike);
 
-					resourceTemp.SetValue("AmountOfDislikes", currentDislikes);
+					currentDislikes = currentDislikes + 1;
 
-					resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
-					dynamicModuleManager.Lifecycle.Publish(resourceMaster);
+					DynamicContent checkOutDislikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceDislike) as DynamicContent;
+					checkOutDislikeItem.SetValue("AmountOfDislikes", currentDislikes);
+					ILifecycleDataItem checkInDislikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutDislikeItem);
+					dynamicModuleManager.Lifecycle.Publish(checkInDislikeItem);
+
+					if (resourceTypeItem == handBookResourcesType)
+					{
+						var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
+						var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
+
+						resourceTemp.SetValue("AmountOfDislikes", currentDislikes);
+
+						resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
+						dynamicModuleManager.Lifecycle.Publish(resourceMaster);
+					}
+
+					dynamicModuleManager.SaveChanges();
+					AddToLikedResources(resourceDislike.Id);
 				}
-
-				dynamicModuleManager.SaveChanges();
-				AddToLikedResources(resourceDislike.Id);
 			}
 			catch (Exception e)
 			{
