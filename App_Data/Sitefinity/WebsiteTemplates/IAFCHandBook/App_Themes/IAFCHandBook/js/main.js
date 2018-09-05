@@ -32,6 +32,7 @@ $(document).ready(function () {
         var q = $('#site-search').val();
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
     });
+    
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
