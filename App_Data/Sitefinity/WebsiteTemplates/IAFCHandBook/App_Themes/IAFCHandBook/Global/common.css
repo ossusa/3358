@@ -3633,6 +3633,8 @@ p {
   @media screen and (max-width: 767px) {
     .complete__progressindicator_wrapper {
       margin: 13px 0 36px; } }
+  .complete__progressindicator_wrapper .complete__head-btn-select .selectric-community__category-select {
+    width: 100%; }
 
 .complete__head-btn-select {
   margin-top: 20px; }
