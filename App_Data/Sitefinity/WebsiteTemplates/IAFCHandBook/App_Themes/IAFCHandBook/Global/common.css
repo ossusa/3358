@@ -1489,7 +1489,8 @@ p {
     border-radius: 3px;
     background: #5591aa; }
   .community__topics-text {
-    white-space: normal; }
+    white-space: normal !important;
+    width: 250px; }
   .community__topics-list {
     list-style: none;
     margin: 0 12px; }

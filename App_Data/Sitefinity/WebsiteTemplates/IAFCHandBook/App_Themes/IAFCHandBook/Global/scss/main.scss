@@ -1750,7 +1750,8 @@ p {
       background: #5591aa;
     }
     &-text {
-      white-space: normal;
+      white-space: normal !important;
+      width: 250px;
     }
     &-list {
       list-style: none;
