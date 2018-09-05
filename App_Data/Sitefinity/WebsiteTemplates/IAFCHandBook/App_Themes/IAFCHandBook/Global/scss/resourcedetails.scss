@@ -135,6 +135,7 @@
           iframe{
             width: 100% !important;
             height: 444px !important;
+            border: none;
             @media screen and (max-width: 540px){
               height: 250px !important;
             }

@@ -3192,7 +3192,8 @@ p {
         margin-bottom: 14px; }
         .resources-single__left_post_video iframe {
           width: 100% !important;
-          height: 444px !important; }
+          height: 444px !important;
+          border: none; }
           @media screen and (max-width: 540px) {
             .resources-single__left_post_video iframe {
               height: 250px !important; } }
