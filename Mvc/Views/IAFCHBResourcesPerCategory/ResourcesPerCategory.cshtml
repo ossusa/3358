@@ -6,14 +6,9 @@
 	<div class="community__head">
 		<div class="community__breadcrumbs">@Model.Category.ParentCategoryTitle</div>
 		<div class="community__head-title">
-			<select class="community__title-select" id="UrlList" onchange="doNavigate()">
-				<option value=@Model.Category.CategoryUrl>@Model.Category.CategoryTitle</option>
-				@foreach (var item in Model.MoreCategories)
-				{
-					<option value=@item.CategoryUrl>@item.CategoryTitle</option>
-				}
-
-			</select>
+			<div>
+				@Model.Category.CategoryTitle
+			</div>
 			<h5 class="community__head-desc">@Model.Category.CategoryDescription</h5>
 		</div>
 
@@ -89,7 +84,7 @@
 		{
 			<li class="topics__list community__topics-list">
 				<a href="@mcItem.CategoryUrl" class="community__topics-link">
-					@Html.Raw(mcItem.CategorySvg)
+					<img src="@mcItem.CategorySvg">					
 					<p class="topics__img-text community__topics-text">@mcItem.CategoryTitle</p>
 					<div class="topics__img-back">
 						<p class="topics__img-back-info topics_seperator">

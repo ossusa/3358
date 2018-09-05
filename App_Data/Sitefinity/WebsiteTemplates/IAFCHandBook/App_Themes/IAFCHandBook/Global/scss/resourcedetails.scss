@@ -167,6 +167,12 @@
             font-size: 18px;
             font-weight: 300;
           }
+          ul, ol {
+            font-family: 'Zilla Slab', serif;
+            color: #4a4a4a;
+            font-size: 18px;
+            font-weight: 300;
+          }
         }
         &_comment{
           &_header{
@@ -593,6 +599,12 @@
     }
     @media screen and (max-width: 767px) {
       margin: 13px 0 36px;
+    }
+    .complete__head-btn-select .selectric-community__category-select .selectric-items,
+    .complete__head-btn-select .selectric-community__category-select{
+      @media screen and (max-width: 767px) {
+        width: 100% !important;
+      }
     }
   }
 

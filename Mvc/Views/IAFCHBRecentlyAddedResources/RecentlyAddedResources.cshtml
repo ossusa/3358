@@ -80,14 +80,16 @@
 									<span>@item.CommentsAmount Comments</span>
 								</a>
 								<div class="single-post-statistic">
-									<button type="button" class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"  
-											@(!item.IsUserAuthorized? "disabled='disabled'" : "")>
+									<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
+											class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"  
+											@((!item.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")>
 										<span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )">
 											<span>@item.Likes.Likes</span>
 										</span>
 									</button>
-									<button type="button" class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"
-											@(!item.IsUserAuthorized? "disabled='disabled'" : "")>
+									<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
+											class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"
+											@((!item.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")>
 										<span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
 											<span>@item.Likes.Dislikes</span>
 										</span>
@@ -118,7 +120,9 @@
                 data: { resourceId },
                 dataType: "json",
                 success: function (response) {
-                    $("#resourceLikes_" + resourceId).html(response);
+					$("#resourceLikes_" + resourceId).html(response);
+					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
                 }
             });
         });
@@ -135,7 +139,9 @@
                 data: { resourceId },
                 dataType: "json",
                 success: function (response) {
-                    $("#resourceDislikes_" + resourceId).html(response);
+					$("#resourceDislikes_" + resourceId).html(response);
+					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
                 }
             });
         });

@@ -11,6 +11,7 @@
 	}
 </div>
 <div class="box complete-box">
+	<div class="complete__head-buttons myhandbook_head-buttons">
 		@if (Model.SharedUserId == Guid.Empty)
 		{
 			<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit  </button>
@@ -25,6 +26,7 @@
 			</div>
 		}
 	</div>
+
 
 	<div class="resources-breadcrumbs">
 		My HandBook >
@@ -89,6 +91,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#resourceLikes_" + resourceId).html(response);
+					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});
@@ -106,6 +110,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#resourceDislikes_" + resourceId).html(response);
+					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});

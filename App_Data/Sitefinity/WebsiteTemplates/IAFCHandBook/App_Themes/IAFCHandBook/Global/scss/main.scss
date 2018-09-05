@@ -483,6 +483,9 @@ body {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
+.wrapper_container{
+  overflow: hidden;
+}
 .box {
   padding-left: 120px;
   padding-right: 120px;
@@ -1308,37 +1311,27 @@ p {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
+      img{
+        height: 40px;
+        margin-left: 16px;
+      }
     }
     &-first {
       padding: 100px 0 36px !important;
-      h2 {
-        svg {
-          margin-left: 16px;
-        }
-      }
     }
     &-yellow {
       h2 {
         color: $color_leadership;
-        svg {
-          margin-left: 3px;
-        }
       }
     }
     &-green {
       h2 {
         color: $color_finance;
-        svg {
-          margin-left: 3px;
-        }
       }
     }
     &-red {
       h2 {
         color: $color_personnel;
-        svg {
-          margin-left: 3px;
-        }
       }
     }
   }
@@ -1433,6 +1426,13 @@ p {
     }
   }
   &__list {
+    &_img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 135px;
+    }
     &:hover {
       .topics__img-back {
         visibility: visible;
@@ -2102,15 +2102,24 @@ p {
   }
   .edit-button {
     position: relative;
-    &:after {
-      content: "\E61D";
-      display: block;
-      font-family: anticon !important;
-      color: #2b4b6b;
-      transform: rotate(-90deg) translateX(50%);
-      right: 40px;
-      top: 50%;
-      position: absolute;
+    &:hover .resources__logged-btn{
+      background: #2b4b6b;
+      color: #fff;
+    }
+    .resources__logged-btn {
+      transition: .3s ease-in-out;
+      &:after {
+        content: "\E61F";
+        display: block;
+        font-family: anticon !important;
+        color: #2b4b6b;
+        margin-left: 8px;
+      }
+      &:hover{
+        &:after {
+          color: #fff;
+        }
+      }
     }
   }
   input[type="checkbox"] {
@@ -2162,9 +2171,7 @@ p {
     color: #9b9b9b;
   }
   .community__head-btn {
-    padding-left: 25px;
-    padding-right: 40px;
-    width: auto !important;
+    width: 130px !important;
   }
 
   .page__title {
@@ -3198,4 +3205,7 @@ p {
 }
 .topics__content-yellow .topics__list:nth-of-type(4) .topics__img-text{
   white-space: normal;
+}
+.resources__slider .resources__slide{
+  border: none;
 }

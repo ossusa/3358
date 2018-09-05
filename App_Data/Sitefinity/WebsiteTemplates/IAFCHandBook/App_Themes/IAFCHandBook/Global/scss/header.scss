@@ -1,4 +1,11 @@
 .header {
+  width: auto;
+  margin: 0 auto;
+  max-width: 1440px;
+  box-sizing: content-box;
+  @media screen and (max-width: 767px){
+    overflow: hidden;
+  }
   &_wrapper{
     border-bottom: 1px solid #d8d8d8;
     margin: 0 -120px;
@@ -257,7 +264,7 @@
   max-width: 1440px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 9999;
+  z-index: 99999;
   background: #fff;
 }
 
@@ -410,4 +417,8 @@
 .colored-list{
   text-shadow: 1px 0 0 $color_blue;
   color: $color_blue;
+}
+.active-link{
+  text-shadow: 1px 0 0 #2B4B6B;
+  color: #2B4B6B;
 }
