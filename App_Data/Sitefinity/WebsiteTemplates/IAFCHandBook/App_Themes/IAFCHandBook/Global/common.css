@@ -1853,7 +1853,7 @@ p {
 
 .placeholder-type img {
   height: 100% !important;
-  width: 100% !important; }
+  width: auto; }
 
 .resources-placeholder {
   position: relative; }
