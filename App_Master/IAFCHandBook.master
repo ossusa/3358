@@ -19,6 +19,7 @@
 
     <!-- Document Wrapper============================================= -->
     <div id="wrapper">
+<div class="wrapper_container">
 
         <!-- Header ============================================= -->
         <header id="header" class="header">
@@ -169,7 +170,7 @@
         </footer>
         <!-- Footer End ============================================= -->
     </div>
-
+    </div>
     <!-- Document Wrapper end ============================================= -->
 </form>
 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
