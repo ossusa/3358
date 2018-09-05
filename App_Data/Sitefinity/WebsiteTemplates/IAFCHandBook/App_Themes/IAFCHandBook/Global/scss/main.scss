@@ -673,37 +673,40 @@ p {
     font-weight: bold;
   }
 }
-.k-popup {
-  border: 0px solid transparent;
-  -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-  border-radius: 3px;
-  .k-animation-container {
-    .k-popup {
-      -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-      box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-      overflow: visible !important;
-      width: 245px;
-      margin-left: 0px;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 10px;
-        left: -9px;
-        z-index: 1;
-        display: block;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px 8px 8px 0;
-        border-color: $border_color_1;
-        line-height: 0px;
-        _border-color: #000000 #ffffff #000000 #000000;
-        //_filter: progid: DXImageTransform.Microsoft.Chroma(color='#000000');
-      }
-    }
-  }
+.selectric-community_category_select .selectric-items{
+  width: 101% !important;
 }
+//.k-popup {
+//  border: 0px solid transparent;
+//  -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
+//  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
+//  border-radius: 3px;
+//  .k-animation-container {
+//    .k-popup {
+//      -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
+//      box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
+//      overflow: visible !important;
+//      width: 245px;
+//      margin-left: 0px;
+//      &:before {
+//        content: "";
+//        position: absolute;
+//        top: 10px;
+//        left: -9px;
+//        z-index: 1;
+//        display: block;
+//        width: 0;
+//        height: 0;
+//        border-style: solid;
+//        border-width: 8px 8px 8px 0;
+//        border-color: $border_color_1;
+//        line-height: 0px;
+//        _border-color: #000000 #ffffff #000000 #000000;
+//        //_filter: progid: DXImageTransform.Microsoft.Chroma(color='#000000');
+//      }
+//    }
+//  }
+//}
 .hb-jumbo {
   background: url('../images/hb-jumbo.png') 50% 50% no-repeat;
   background-size: cover;
@@ -3015,6 +3018,9 @@ p {
       width: 100% !important;
     }
   }
+  .selectric-community_category_select .selectric-items{
+    width: 100.5% !important;
+  }
   .community__head-btns-grp {
     width: 100%;
   }
@@ -3242,7 +3248,4 @@ p {
 }
 .resources__slider .resources__slide{
   border: none;
-}
-.selectric-community_category_select .selectric-items{
-  width: 100% !important;
 }
