@@ -2047,7 +2047,7 @@ p {
     white-space: normal; }
   .topics__content a {
     height: 147px; }
-  .community__topics__img-back {
+  .community__topics__list_img {
     height: 100px; } }
 
 @media (max-width: 767px) {
@@ -2065,8 +2065,6 @@ p {
     font-size: 1.25em; }
   .container {
     padding: 0 10px; }
-  .community__topics__img-back {
-    height: 84px; }
   .resources__logged {
     padding: 24px; }
   .resources__logged-img-box {
@@ -2089,6 +2087,8 @@ p {
   .topics__ul-flex .topics__list:nth-of-type(3) a,
   .topics__ul-flex .topics__list:nth-of-type(4) a {
     margin-right: 0; }
+  .community__topics__list_img {
+    height: 84px; }
   .community__topics {
     padding-top: 36px; }
   .community__topics-img {
