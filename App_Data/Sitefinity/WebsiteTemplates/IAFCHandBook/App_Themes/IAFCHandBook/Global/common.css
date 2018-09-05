@@ -1860,6 +1860,8 @@ p {
   position: relative; }
 
 .placeholder-type {
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   height: 120px;
   top: 50%;
