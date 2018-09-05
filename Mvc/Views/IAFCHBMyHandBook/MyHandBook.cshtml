@@ -84,7 +84,7 @@
 			data: { url: url },
 			dataType: "json",
 			success: function (response) {
-				$('#shareBtn').attr('data-url', response);
+				$('.addthis_button_compact').attr('data-url', response);
 				$('#shareBtn').css('pointer-events', 'initial');
 			}
 		});
