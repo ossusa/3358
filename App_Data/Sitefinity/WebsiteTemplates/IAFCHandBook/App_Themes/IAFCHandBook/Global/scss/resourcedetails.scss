@@ -600,7 +600,8 @@
     @media screen and (max-width: 767px) {
       margin: 13px 0 36px;
     }
-    .complete__head-btn-select .selectric-community__category-select .selectric-items{
+    .complete__head-btn-select .selectric-community__category-select .selectric-items,
+    .complete__head-btn-select .selectric-community__category-select{
       @media screen and (max-width: 767px) {
         width: 100% !important;
       }
