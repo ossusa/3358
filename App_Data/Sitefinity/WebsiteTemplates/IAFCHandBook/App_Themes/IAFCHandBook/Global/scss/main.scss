@@ -2251,8 +2251,8 @@ p {
   width: 100%;
 }
 .placeholder-type img {
-  height: 100%;
-  width: auto;
+  //height: 100%;
+  //width: auto;
 }
 
 .resources-placeholder {
@@ -2262,7 +2262,7 @@ p {
 .placeholder-type {
   display: flex;
   position: absolute;
-  height: 120px;
+  max-height: 120px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
