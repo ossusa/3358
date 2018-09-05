@@ -3133,6 +3133,10 @@ p {
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    .placeholder-type {
+      width: 100% !important;
+    }
   }
 
   .handbook__more {
