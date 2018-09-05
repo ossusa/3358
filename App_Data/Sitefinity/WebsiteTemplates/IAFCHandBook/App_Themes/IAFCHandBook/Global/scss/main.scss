@@ -832,8 +832,8 @@ p {
         height: 100%;
         min-width: 100%;
         position: relative;
-        -o-object-fit: cover;
-        object-fit: cover;
+       // -o-object-fit: cover;
+       // object-fit: cover;
       }
     }
     &-label {

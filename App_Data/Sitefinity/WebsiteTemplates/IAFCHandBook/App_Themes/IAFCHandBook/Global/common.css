@@ -730,8 +730,7 @@ p {
       .resources__slide-img img {
         height: 100%;
         min-width: 100%;
-        position: relative;
-        object-fit: cover; }
+        position: relative; }
     .resources__slide-label {
       position: absolute;
       bottom: 12px;
