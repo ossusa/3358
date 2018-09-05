@@ -243,3 +243,8 @@ $('.topics_seperator').each(function() {
         $(this).text($(this).text().substr(0, maxch-sep.length) + sep);
     }
 });
+$(document).ready(function() {
+    $('.active-link').removeClass('active-link');
+    var currurl = window.location.pathname;
+    var val=$('.header__list-link:has([href="'+currurl+'"])').addClass('active-link');
+});

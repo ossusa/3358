@@ -2102,15 +2102,24 @@ p {
   }
   .edit-button {
     position: relative;
-    &:after {
-      content: "\E61D";
-      display: block;
-      font-family: anticon !important;
-      color: #2b4b6b;
-      transform: rotate(-90deg) translateX(50%);
-      right: 40px;
-      top: 50%;
-      position: absolute;
+    &:hover .resources__logged-btn{
+      background: #2b4b6b;
+      color: #fff;
+    }
+    .resources__logged-btn {
+      transition: .3s ease-in-out;
+      &:after {
+        content: "\E61F";
+        display: block;
+        font-family: anticon !important;
+        color: #2b4b6b;
+        margin-left: 8px;
+      }
+      &:hover{
+        &:after {
+          color: #fff;
+        }
+      }
     }
   }
   input[type="checkbox"] {
@@ -2162,9 +2171,7 @@ p {
     color: #9b9b9b;
   }
   .community__head-btn {
-    padding-left: 25px;
-    padding-right: 40px;
-    width: auto !important;
+    width: 130px !important;
   }
 
   .page__title {
