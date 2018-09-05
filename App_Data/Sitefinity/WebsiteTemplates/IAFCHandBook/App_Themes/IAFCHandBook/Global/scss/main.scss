@@ -479,6 +479,7 @@ body {
 #wrapper {
   width: auto;
   margin: 0 auto;
+  overflow: hidden;
   max-width: 1440px;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -1308,37 +1309,27 @@ p {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
+      img{
+        height: 40px;
+        margin-left: 16px;
+      }
     }
     &-first {
       padding: 100px 0 36px !important;
-      h2 {
-        svg {
-          margin-left: 16px;
-        }
-      }
     }
     &-yellow {
       h2 {
         color: $color_leadership;
-        svg {
-          margin-left: 3px;
-        }
       }
     }
     &-green {
       h2 {
         color: $color_finance;
-        svg {
-          margin-left: 3px;
-        }
       }
     }
     &-red {
       h2 {
         color: $color_personnel;
-        svg {
-          margin-left: 3px;
-        }
       }
     }
   }
@@ -1433,6 +1424,13 @@ p {
     }
   }
   &__list {
+    &_img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 135px;
+    }
     &:hover {
       .topics__img-back {
         visibility: visible;
@@ -1596,6 +1594,8 @@ p {
       display: flex;
     }
     &-title {
+      display: flex;
+      justify-content: space-between;
       select {
         font-family: $font_family_4;
         font-weight: 700;
