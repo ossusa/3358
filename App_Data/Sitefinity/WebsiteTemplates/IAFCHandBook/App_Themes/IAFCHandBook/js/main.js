@@ -32,6 +32,7 @@ $(document).ready(function () {
         var q = $('#site-search').val();
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
     });
+
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
@@ -238,7 +239,7 @@ if($(window).width() < 767) {
 }
 /*Second desc*/
 if($(window).width() < 1109) {
-    $('.complete__resources_slide .resources__slide-desc').each(function() {
+    $('.complete__resources_slide .resources__slide-desc', '.handbook__template .resources__slide-desc').each(function() {
         var maxcharacters = 63;
         var separate = '...';
 
@@ -247,7 +248,7 @@ if($(window).width() < 1109) {
         }
     });
 } else {
-    $('.complete-box .resources__slide-desc').each(function() {
+    $('.complete-box .resources__slide-desc', '.handbook__template .resources__slide-desc').each(function() {
         var mch = 90;
         var separ = '...';
 
@@ -258,7 +259,7 @@ if($(window).width() < 1109) {
 }
 /*Second title*/
 if($(window).width() < 1109) {
-    $('.complete-box .resources__slide-title').each(function() {
+    $('.complete-box .resources__slide-title', '.handbook__template .resources__slide-title').each(function() {
         var mch = 47;
         var separ = '...';
 
