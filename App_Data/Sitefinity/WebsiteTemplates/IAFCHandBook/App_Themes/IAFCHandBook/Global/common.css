@@ -1202,6 +1202,14 @@ p {
 .topics__img-text-wrap {
   white-space: normal !important; }
 
+.topics__list_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 135px; }
+
 .topics__list:hover .topics__img-back {
   visibility: visible;
   opacity: 1;
