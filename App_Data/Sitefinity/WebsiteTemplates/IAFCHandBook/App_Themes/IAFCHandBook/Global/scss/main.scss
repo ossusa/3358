@@ -2734,16 +2734,6 @@ p {
             //text-shadow: 1px 0 #2b4b6b;
             font-weight: bold;
           }
-          &:focus {
-            color: $color_19;
-            //text-shadow: 1px 0 #2b4b6b;
-            font-weight: bold;
-          }
-          &:visited {
-            color: $color_19;
-            //text-shadow: 1px 0 #2b4b6b;
-            font-weight: bold;
-          }
         }
         >.accordion__arrow.accordion__sub-title {
           &:hover {
@@ -2883,6 +2873,8 @@ p {
     }
     .accordion-active {
       background-color: $background_color_1;
+      color: #2b4b6b;
+      font-weight: bold;
     }
     .accordion__rotate {
       -webkit-transform: rotate(180deg);
