@@ -1399,15 +1399,22 @@ p {
         font-family: $font_family_4;
         color: $color_6;
         font-weight: 700;
-        width: 93%;
         margin: 0;
         font-size: 1.250em !important;
+        position: absolute;
+        top: 16px;
+        left: 20px;
+        right: 22px;
+
       }
       &-text {
         color: $color_6;
         font-family: $font_family_4;
         margin: 0;
         font-size: 16px;
+        position: absolute;
+        bottom: 17px;
+        left: 20px;
       }
     }
     &-text {
