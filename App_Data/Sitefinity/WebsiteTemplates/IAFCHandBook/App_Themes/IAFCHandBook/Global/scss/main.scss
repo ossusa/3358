@@ -2883,6 +2883,8 @@ p {
     }
     .accordion-active {
       background-color: $background_color_1;
+      color: #2b4b6b;
+      font-weight: bold;
     }
     .accordion__rotate {
       -webkit-transform: rotate(180deg);
