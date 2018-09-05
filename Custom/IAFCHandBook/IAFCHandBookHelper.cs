@@ -89,10 +89,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string PersonnelCategoryTitle = "Personnel";
 
 		private const string OrderByTopic = "ByTopic";
-		private const string OrderByMostPopular = "MostPopular";
-		private const string OrderByMostRecent = "MostRecent";
-		private const string OrderByAlphabeticalAZ = "AlphabeticalAZ";
-		private const string OrderByAlphabeticalZA = "AlphabeticalZA";
+		private const string OrderByMostPopular = "Most Popular";
+		private const string OrderByMostRecent = "Most Recent";
+		private const string OrderByAlphabeticalAZ = "Alphabetical AZ";
+		private const string OrderByAlphabeticalZA = "Alphabetical ZA";
 
 		private const string commentResource = "Comment";
 		private const string resourceResource = "Resource";

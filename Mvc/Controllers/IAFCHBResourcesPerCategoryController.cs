@@ -34,12 +34,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[RelativeRoute("{orderby?}")]
 		public ActionResult GetOrderedResources(string orderby)
 		{
-			string orderByItem = "MostPopular";
+			string orderByItem = "Most Popular";
 			if (orderby !=null &&(
-				orderby == "MostPopular" ||
-				orderby == "MostRecent" ||
-				orderby == "AlphabeticalAZ" ||
-				orderby == "AlphabeticalZA"))
+				orderby == "Most Popular" ||
+				orderby == "Most Recent" ||
+				orderby == "Alphabetical AZ" ||
+				orderby == "Alphabetical ZA"))
 			{
 
 				orderByItem = orderby;
@@ -89,12 +89,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 			var id = Guid.Parse(categoryId);
 			handBookHelper.AddAllToMyHandBook( id);
 
-			string orderByItem = "MostPopular";
+			string orderByItem = "Most Popular";
 			if (orderby != null && (
-				orderby == "MostPopular" ||
-				orderby == "MostRecent" ||
-				orderby == "AlphabeticalAZ" ||
-				orderby == "AlphabeticalZA"))
+				orderby == "Most Popular" ||
+				orderby == "Most Recent" ||
+				orderby == "Alphabetical AZ" ||
+				orderby == "Alphabetical ZA"))
 			{
 
 				orderByItem = orderby;
