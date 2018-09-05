@@ -2165,12 +2165,6 @@ p {
     .accordion > .accordion__item:nth-of-type(1) > .accordion__title:hover {
       color: #2b4b6b;
       font-weight: bold; }
-    .accordion > .accordion__item:nth-of-type(1) > .accordion__title:focus {
-      color: #2b4b6b;
-      font-weight: bold; }
-    .accordion > .accordion__item:nth-of-type(1) > .accordion__title:visited {
-      color: #2b4b6b;
-      font-weight: bold; }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__arrow.accordion__sub-title:hover {
       color: #2b4b6b;
       font-weight: bold; }
