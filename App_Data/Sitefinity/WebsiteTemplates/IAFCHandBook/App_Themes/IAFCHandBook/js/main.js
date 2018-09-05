@@ -261,10 +261,14 @@ if($(window).width() < 1109) {
 if($(window).width() < 1109) {
     $('.complete-box .resources__slide-title, .handbook__template .resources__slide-title').each(function() {
         var mch = 47;
+        var minch = 38;
         var separ = '...';
 
         if ($(this).text().length > (mch - separ.length)) {
             $(this).text($(this).text().substr(0, mch-separ.length) + separ);
+        }
+        if ($('.handbook__template .resources__slide-title').text().length > (minch - separ.length)) {
+            $('.handbook__template .resources__slide-title').text($('.handbook__template .resources__slide-title').text().substr(0, minch-separ.length) + separ);
         }
     });
 }
