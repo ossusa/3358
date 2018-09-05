@@ -796,7 +796,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                         childCategory.TopicCategoryImageUrl = childCategoryDetails.ResourceParentCategoryImageUrl;
                         childCategory.CategoryTitle = childCategoryDetails.ResourceCategoryTile;
                         childCategory.CategoryDescription = childCategoryDetails.ResourceCategoryDescription;
-                        category.ChildCategories.Add(childCategory);
+						childCategory.CategorySvg = childCategoryDetails.CategorySvg;
+						category.ChildCategories.Add(childCategory);
                     }
 
                     category.MyHandBookCompletedResources = myCompletedHandBookResources
