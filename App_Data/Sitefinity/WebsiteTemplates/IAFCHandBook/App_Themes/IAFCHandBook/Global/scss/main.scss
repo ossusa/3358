@@ -1598,6 +1598,9 @@ p {
     &-title {
       display: flex;
       justify-content: space-between;
+      &_block{
+        flex-direction: column;
+      }
       select {
         font-family: $font_family_4;
         font-weight: 700;

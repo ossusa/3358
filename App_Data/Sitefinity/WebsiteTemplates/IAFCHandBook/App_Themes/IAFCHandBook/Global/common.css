@@ -1349,6 +1349,9 @@ p {
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between; }
+  .community__head-title_block {
+    -ms-flex-direction: column;
+    flex-direction: column; }
   .community__head-title select {
     font-family: "Nunito Sans", sans-serif;
     font-weight: 700;
