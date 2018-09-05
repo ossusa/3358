@@ -118,10 +118,10 @@
                                         </div>
                                     </li>
                                     <li class="accordion__item">
-                                        <a href="/iafchandbookhome/my-handbook" class="accordion__item-link">My Handbook</a>
+                                        <a href="/topics-and-tools/volunteer/vws/chiefs-a-rit/my-handbook/" class="accordion__item-link">My Handbook</a>
                                     </li>
                                     <li class="accordion__item">
-                                        <a href="/iafchandbookhome/account" class="accordion__item-link">Account</a>
+                                        <a href="/topics-and-tools/volunteer/vws/chiefs-a-rit/account/" class="accordion__item-link">Account</a>
                                     </li>
                                     <li class="accordion__item">
                                         <a href="#" class="accordion__item-link">Logout</a>
