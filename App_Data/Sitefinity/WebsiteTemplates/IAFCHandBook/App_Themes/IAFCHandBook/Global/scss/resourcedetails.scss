@@ -734,6 +734,9 @@ addReplyCommentBtn{
 }
 /*Leadership*/
 .label-leadership > .selectric-community__title-select > .selectric > .label{
+   color: $color_leadership;
+ }
+.label-leadership > .community_title-label{
   color: $color_leadership;
 }
 .label-leadership > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
@@ -743,11 +746,17 @@ addReplyCommentBtn{
 .label-community > .selectric-community__title-select > .selectric > .label{
   color: $color_community;
 }
+.label-community > .community_title-label{
+  color: $color_community;
+}
 .label-community > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
   color: $color_community !important;
 }
 /*Finance*/
 .label-finance > .selectric-community__title-select > .selectric > .label{
+  color: $color_finance;
+}
+.label-finance > .community_title-label{
   color: $color_finance;
 }
 .label-finance > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
@@ -756,6 +765,9 @@ addReplyCommentBtn{
 /*Personnel*/
 .label-personnel > .selectric-community__title-select > .selectric > .label{
   color:$color_personnel;
+}
+.label-personnel > .community_title-label{
+  color: $color_personnel;
 }
 .label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover{
   color: $color_personnel !important;

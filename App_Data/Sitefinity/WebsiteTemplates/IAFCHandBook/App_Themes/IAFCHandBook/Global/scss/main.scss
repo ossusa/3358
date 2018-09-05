@@ -1705,6 +1705,7 @@ p {
         .selectric-wrapper {
           border: 1px solid #2b4b6b;
           border-radius: 3px;
+          width: 100%;
         }
       }
     }
@@ -1750,7 +1751,8 @@ p {
       background: #5591aa;
     }
     &-text {
-      white-space: normal;
+      white-space: normal !important;
+      width: 250px;
     }
     &-list {
       list-style: none;
@@ -2583,6 +2585,10 @@ p {
   }
   .community__topics {
     padding-top: 36px;
+  }
+  .community_title-label{
+    line-height: 50px;
+    font-size: 2.75em;
   }
   .community__topics-img {
     width: 100% !important;
