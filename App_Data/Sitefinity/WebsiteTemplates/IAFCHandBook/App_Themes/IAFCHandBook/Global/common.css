@@ -4168,3 +4168,6 @@ addReplyCommentBtn {
 
 .myhandbook_head-buttons {
   display: none; }
+  @media screen and (max-width: 1109px) {
+    .myhandbook_head-buttons {
+      display: block; } }
