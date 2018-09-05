@@ -540,10 +540,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public void InitTopicLeadershipCategories()
 		{
 			//Leadership
-			topicLeadershipCategories.Add(LeadershipMotivatingPeople);
-			topicLeadershipCategories.Add(LeadershipLeadershipStyles);
 			topicLeadershipCategories.Add(LeadershipEthics);
 			topicLeadershipCategories.Add(LeadershipGenerationalDifferences);
+			topicLeadershipCategories.Add(LeadershipLeadershipStyles);
+			topicLeadershipCategories.Add(LeadershipMotivatingPeople);									
 			topicLeadershipCategories.Add(LeadershipStrategy);
 		}
 		#endregion InitTopicLeadershipCategories
@@ -552,11 +552,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public void InitTopicPersonnelCategoriesLists()
 		{
 			//Personnel
-			topicPersonnelCategories.Add(PersonnelVolunteerCareerRelations);
+			topicPersonnelCategories.Add(PersonnelInsurance);
+			topicPersonnelCategories.Add(PersonnelLegalIssues);
 			topicPersonnelCategories.Add(PersonnelRecruitment);
 			topicPersonnelCategories.Add(PersonnelRetention);
-			topicPersonnelCategories.Add(PersonnelLegalIssues);
-			topicPersonnelCategories.Add(PersonnelInsurance);
+			topicPersonnelCategories.Add(PersonnelVolunteerCareerRelations);
+			
+			
+			
 		}
 		#endregion InitTopicPersonnelCategoriesLists
 
@@ -574,10 +577,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public void InitTopicCommunityRelationsCategories()
 		{
 			//CommunityRelations
+			topicCommunityRelationsCategories.Add(CommunityRelationsCrisisCommunication);
 			topicCommunityRelationsCategories.Add(CommunityRelationsCustomerService);
 			topicCommunityRelationsCategories.Add(CommunityRelationsMarketingMedia);
-			topicCommunityRelationsCategories.Add(CommunityRelationsPolitics);
-			topicCommunityRelationsCategories.Add(CommunityRelationsCrisisCommunication);
+			topicCommunityRelationsCategories.Add(CommunityRelationsPolitics);			
 		}
 		#endregion InitTopicCommunityRelationsCategories
 
@@ -591,7 +594,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var resourceParenCategoryDescription = resourceCategoryItem.Description.ToString();
 			var imageUrl = GetCategoryImageUrl(LeadershipCategory);
 
-			var category = new Categories(resourceCategoryTitle,
+			var category = new Categories("Leadership",
 				resourceCategoryDescription,
 				String.Empty,
 				String.Empty,
@@ -609,7 +612,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipMotivatingPeople);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Motivating Volounteers",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
@@ -626,7 +629,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipLeadershipStyles);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Leadership Styles",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
@@ -643,7 +646,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipEthics);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Ethics",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
@@ -660,7 +663,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipGenerationalDifferences);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Generational Differences",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
@@ -677,7 +680,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipStrategy);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Organizational Strategies",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
@@ -695,7 +698,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			resourceParenCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(PersonnelCategory);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Personnel",
 				resourceCategoryDescription,
 				String.Empty,
 				String.Empty,
@@ -712,7 +715,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(PersonnelVolunteerCareerRelations);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Volunteer / Career Relations",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicPersonnelUrl,
@@ -729,7 +732,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(PersonnelRecruitment);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Recruitment",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicPersonnelUrl,
@@ -746,7 +749,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(PersonnelRetention);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Retention",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicPersonnelUrl,
@@ -763,7 +766,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(PersonnelLegalIssues);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Legal Issues",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicPersonnelUrl,
@@ -780,7 +783,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(PersonnelInsurance);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Insurance",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicPersonnelUrl,
@@ -798,7 +801,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			resourceParenCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(FinanceCategory);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Finance",
 				resourceCategoryDescription,
 				String.Empty,
 				String.Empty,
@@ -815,7 +818,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(FinanceBudgeting);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Budgeting",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicFinanceUrl,
@@ -832,7 +835,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(FinanceFundraising);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Fundraising",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicFinanceUrl,
@@ -849,7 +852,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(FinanceLegalIssues);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Legal Issues",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicFinanceUrl,
@@ -867,7 +870,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			resourceParenCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(CommunityCategory);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Community",
 				resourceCategoryDescription,
 				String.Empty,
 				String.Empty,
@@ -884,7 +887,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(CommunityRelationsCustomerService);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Customer Service",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicCommunityUrl,
@@ -901,7 +904,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(CommunityRelationsMarketingMedia);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Marketing &Media",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicCommunityUrl,
@@ -918,7 +921,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(CommunityRelationsPolitics);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Politics",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicCommunityUrl,
@@ -935,7 +938,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(CommunityRelationsCrisisCommunication);
-			category = new Categories(resourceCategoryTitle,
+			category = new Categories("Crisis Communication",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicCommunityUrl,
