@@ -4173,3 +4173,6 @@ addReplyCommentBtn {
       display: -ms-flexbox;
       display: flex;
       margin: 0 -90px; } }
+  @media screen and (max-width: 1109px) {
+    .myhandbook_head-buttons {
+      margin: 0 -28px; } }
