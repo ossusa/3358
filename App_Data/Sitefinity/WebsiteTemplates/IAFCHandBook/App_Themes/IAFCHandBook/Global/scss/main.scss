@@ -482,11 +482,10 @@ body {
   max-width: 1440px;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  &_container{
-    overflow: hidden;
-  }
 }
-
+.wrapper_container{
+  overflow: hidden;
+}
 .box {
   padding-left: 120px;
   padding-right: 120px;
