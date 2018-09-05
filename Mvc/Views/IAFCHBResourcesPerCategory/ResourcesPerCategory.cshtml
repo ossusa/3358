@@ -6,14 +6,9 @@
 	<div class="community__head">
 		<div class="community__breadcrumbs">@Model.Category.ParentCategoryTitle</div>
 		<div class="community__head-title">
-			<select class="community__title-select" id="UrlList" onchange="doNavigate()">
-				<option value=@Model.Category.CategoryUrl>@Model.Category.CategoryTitle</option>
-				@foreach (var item in Model.MoreCategories)
-				{
-					<option value=@item.CategoryUrl>@item.CategoryTitle</option>
-				}
-
-			</select>
+			<div>
+				@Model.Category.CategoryTitle				
+			</div>
 			<h5 class="community__head-desc">@Model.Category.CategoryDescription</h5>
 		</div>
 
