@@ -138,7 +138,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#region Urls
 		//Urls
-		private const string MainPage = "/iafchandbookhome";
+		private const string MainPage = "/topics-and-tools/volunteer/vws/chiefs-a-rit";
 		private const string TopicCommunityUrl = MainPage + "/topics/community";
 		private const string TopicCommunityCrisisCommunicationUrl = MainPage + "/topics/community/crisis-communication";
 		private const string TopicCommunityCustomerServiceUrl = MainPage + "/topics/community/customer-service";
