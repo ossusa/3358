@@ -168,9 +168,10 @@
                 </div>
             </div>
         </footer>
+</div>
         <!-- Footer End ============================================= -->
     </div>
-    </div>
+
     <!-- Document Wrapper end ============================================= -->
 </form>
 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
