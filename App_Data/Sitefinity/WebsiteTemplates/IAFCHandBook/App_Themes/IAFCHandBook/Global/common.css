@@ -2471,6 +2471,9 @@ p {
 .resources__slider .resources__slide {
   border: none; }
 
+.community_category_select .selectric-items {
+  width: 100% !important; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer;
