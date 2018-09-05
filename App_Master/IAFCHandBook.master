@@ -19,7 +19,7 @@
 
     <!-- Document Wrapper============================================= -->
     <div id="wrapper">
-<div class="wrapper_container">
+<section class="wrapper_container">
 
         <!-- Header ============================================= -->
         <header id="header" class="header">
@@ -168,7 +168,7 @@
                 </div>
             </div>
         </footer>
-</div>
+</section>
         <!-- Footer End ============================================= -->
     </div>
 
