@@ -66,7 +66,6 @@
 		$('.removeCompletedResource').hide();				
 		$('.cancelBtn').hide();
 		doShareUrl();
-		$('#shareBtn').css('pointer-events', 'initial');
 		bindEdit();
 	});
 	
@@ -289,6 +288,7 @@
 			dataType: "json",
 			success: function (response) {
 				addthis_share.url = response;
+				$('#shareBtn').css('pointer-events', 'initial');
 			}
 		});
 	}
