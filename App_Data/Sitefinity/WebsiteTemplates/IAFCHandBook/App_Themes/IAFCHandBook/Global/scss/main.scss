@@ -2252,7 +2252,7 @@ p {
 }
 .placeholder-type img {
   height: 100% !important;
-  width: 100% !important;
+  width: auto;
 }
 
 .resources-placeholder {
@@ -2269,7 +2269,7 @@ p {
 }
 
 #shareBtn {
-  //pointer-events: none;
+  pointer-events: none;
   .addthis_button_compact {
     color: #9b9b9b;
     font-family: "Nunito Sans", sans-serif;
@@ -3135,7 +3135,9 @@ p {
     }
 
     .placeholder-type {
-      width: 100% !important;
+      img {
+        width: 100%;
+      }
     }
   }
 

@@ -1853,7 +1853,7 @@ p {
 
 .placeholder-type img {
   height: 100% !important;
-  width: 100% !important; }
+  width: auto; }
 
 .resources-placeholder {
   position: relative; }
@@ -1868,17 +1868,18 @@ p {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-#shareBtn .addthis_button_compact {
-  color: #9b9b9b;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1em;
-  font-weight: 400;
-  border: none;
-  background: transparent;
-  outline: none; }
-
-#shareBtn #atstbx {
-  display: none !important; }
+#shareBtn {
+  pointer-events: none; }
+  #shareBtn .addthis_button_compact {
+    color: #9b9b9b;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    outline: none; }
+  #shareBtn #atstbx {
+    display: none !important; }
 
 .atm {
   display: none !important; }
@@ -2381,8 +2382,8 @@ p {
   .handbook__template .resources__slide-article, .handbook__template .resources__slide-title, .handbook__template .resources__slide-desc {
     overflow: hidden;
     text-overflow: ellipsis; }
-  .handbook__template .placeholder-type {
-    width: 100% !important; }
+  .handbook__template .placeholder-type img {
+    width: 100%; }
   .handbook__more {
     width: 100%;
     height: 100px;
