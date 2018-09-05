@@ -4,7 +4,7 @@
 	<div class="box">
 		<h2>
 			@Model.ParenCategory.CategoryTitle
-			@Html.Raw(Model.ParenCategory.CategorySvg)
+			<img src="@Model.ParenCategory.CategorySvg">
 		</h2>
 		<h5>
 			@Model.ParenCategory.CategoryDescription
@@ -19,7 +19,7 @@
 			{
 				<li class="topics__list">
 					<a href="@categoryItem.CategoryUrl">
-						@Html.Raw(categoryItem.CategorySvg)
+						<img src="@categoryItem.CategorySvg">
 						<p class="topics__img-text">@categoryItem.CategoryTitle</p>
 						<span class="topics__img-back">
 							<p class="topics__img-back-info">@categoryItem.CategoryDescription</p>
