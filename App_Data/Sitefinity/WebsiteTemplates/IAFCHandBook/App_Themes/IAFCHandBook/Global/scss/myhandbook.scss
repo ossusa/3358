@@ -134,7 +134,7 @@
       display: flex;
       align-items: center;
       justify-content: center !important;
-      width: 100vw;
+      width: 50vw;
       padding-left: 0 !important;
       margin-bottom: 48px;
     }
@@ -392,4 +392,14 @@
   color: #9b9b9b;
   display: inline-block;
   content: "\E632";
+}
+.myhandbook_head-buttons{
+  display: none;
+  @media screen and (max-width: 1109px){
+    display: flex;
+    margin: 0 -90px;;
+  }
+  @media screen and (max-width: 767px){
+    margin: 0 -28px;
+  }
 }

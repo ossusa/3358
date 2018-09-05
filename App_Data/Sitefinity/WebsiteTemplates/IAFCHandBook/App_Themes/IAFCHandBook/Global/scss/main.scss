@@ -479,10 +479,12 @@ body {
 #wrapper {
   width: auto;
   margin: 0 auto;
-  overflow: hidden;
   max-width: 1440px;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+}
+.wrapper_container{
+  overflow: hidden;
 }
 .box {
   padding-left: 120px;
@@ -1594,8 +1596,6 @@ p {
       display: flex;
     }
     &-title {
-      display: flex;
-      justify-content: space-between;
       select {
         font-family: $font_family_4;
         font-weight: 700;
