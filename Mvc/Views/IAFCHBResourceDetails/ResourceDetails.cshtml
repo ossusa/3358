@@ -141,7 +141,7 @@
 </div>
 
 <script type="text/javascript">
-
+	$('#shareBtn').css('pointer-events', 'initial');
 	var url = window.location.href;
 
 	 var addthis_share = {
@@ -150,10 +150,10 @@
 
 	$(document).ready(function () {
 		bindEdit();
-		document.getElementById("shareBtn").style.pointer-events = "initial";
-		//$('#shareBtn').css('pointer-events', 'initial');
+		$('#shareBtn').css('pointer-events', 'initial');
 	});
-	
+
+
 	function bindEdit() {
 
 		$(document).ready(function () {
