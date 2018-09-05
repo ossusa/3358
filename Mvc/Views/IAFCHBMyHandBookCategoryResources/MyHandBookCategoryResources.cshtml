@@ -180,6 +180,7 @@
 				data: { resourceId: resourceId, categoryId: categoryId },
 				success: function (response) {
 					$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					hideButtons();
 					bindEdit();
 				}
 			});
