@@ -4165,3 +4165,6 @@ addReplyCommentBtn {
   color: #9b9b9b;
   display: inline-block;
   content: "\E632"; }
+
+.myhandbook_head-buttons {
+  display: none; }
