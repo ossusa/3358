@@ -1863,7 +1863,7 @@ p {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  max-height: 120px;
+  height: 120px;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
