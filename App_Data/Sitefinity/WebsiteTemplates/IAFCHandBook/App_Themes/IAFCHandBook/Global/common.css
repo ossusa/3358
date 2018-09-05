@@ -2381,7 +2381,7 @@ p {
   .handbook__template .resources__slide-article, .handbook__template .resources__slide-title, .handbook__template .resources__slide-desc {
     overflow: hidden;
     text-overflow: ellipsis; }
-  .handbook__template .placeholder-type {
+  .handbook__template .placeholder-type img {
     width: 100% !important; }
   .handbook__more {
     width: 100%;
