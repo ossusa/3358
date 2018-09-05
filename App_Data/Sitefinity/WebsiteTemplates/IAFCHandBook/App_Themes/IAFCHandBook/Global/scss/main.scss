@@ -1593,6 +1593,8 @@ p {
       display: flex;
     }
     &-title {
+      display: flex;
+      justify-content: space-between;
       select {
         font-family: $font_family_4;
         font-weight: 700;

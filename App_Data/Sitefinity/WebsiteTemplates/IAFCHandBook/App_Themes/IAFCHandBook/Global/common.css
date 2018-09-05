@@ -1341,13 +1341,18 @@ p {
   display: -ms-flexbox;
   display: flex; }
 
-.community__head-title select {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 700;
-  font-size: 3em;
-  color: #5591AA;
-  border: none;
-  outline: none; }
+.community__head-title {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .community__head-title select {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    color: #5591AA;
+    border: none;
+    outline: none; }
 
 .community__head-desc {
   color: #4a4a4a;
