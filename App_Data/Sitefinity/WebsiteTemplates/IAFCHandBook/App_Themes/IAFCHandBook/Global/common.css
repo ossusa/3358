@@ -457,11 +457,9 @@ body {
 #wrapper {
   width: auto;
   margin: 0 auto;
+  overflow: hidden;
   max-width: 1440px;
   box-sizing: content-box; }
-
-.wrapper_container {
-  overflow: hidden; }
 
 .box {
   padding-left: 120px;
