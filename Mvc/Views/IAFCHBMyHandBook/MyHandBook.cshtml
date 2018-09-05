@@ -71,7 +71,6 @@
 
 	$(document).ready(function () {
 		doShareUrl();
-		$('#shareBtn').css('pointer-events', 'initial');
 	});
 
 	function doShareUrl() {
@@ -86,6 +85,7 @@
 			dataType: "json",
 			success: function (response) {
 				addthis_share.url = response;
+				$('#shareBtn').css('pointer-events', 'initial');
 			}
 		});
 	}

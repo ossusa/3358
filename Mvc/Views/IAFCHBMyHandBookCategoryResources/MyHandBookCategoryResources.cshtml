@@ -59,14 +59,13 @@
 
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
 <script type="text/javascript">
-
+	var addthis_share = {};
 
 	$(document).ready(function () {
 		$('.removeResource').hide();		
 		$('.removeCompletedResource').hide();				
 		$('.cancelBtn').hide();
 		doShareUrl();
-		$('#shareBtn').css('pointer-events', 'initial');
 		bindEdit();
 	});
 	
@@ -289,6 +288,7 @@
 			dataType: "json",
 			success: function (response) {
 				addthis_share.url = response;
+				$('#shareBtn').css('pointer-events', 'initial');
 			}
 		});
 	}

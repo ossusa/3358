@@ -1589,6 +1589,16 @@ p {
   display: block;
 }
 .community{
+  &_title-label{
+    margin: 0;
+    font-family: $font_family_4;
+    font-weight: 700;
+    font-size: 48px;
+    white-space: normal;
+    line-height: 50px;
+    color: $color_20;
+    height: auto;
+  }
   &__head{
     &-btns-grp {
       display: -webkit-box;
@@ -2547,6 +2557,8 @@ p {
   }
   .topics__content a{
     margin-right: 0;
+    margin-bottom: 20px;
+    height: 124px;
   }
   .topics__ul-flex .topics__list:nth-of-type(2) a,
   .topics__ul-flex .topics__list:nth-of-type(3) a,
@@ -2569,6 +2581,11 @@ p {
   }
   .topics__img-text{
     font-size: 1.750em;
+    white-space: nowrap;
+  }
+  .topics__content-green .topics__list:nth-of-type(3) .topics__img-text,
+  .topics__content-red .topics__list:nth-of-type(2) .topics__img-text{
+    white-space: normal;
   }
   .community__topics-link{
     width: 320px;
@@ -2652,7 +2669,7 @@ p {
     padding-right: 28px;
   }
   .topics__text-first {
-    padding: 37px 0 29px !important;
+    padding: 48px 0 32px !important;
   }
   .topics__ul {
     grid-row-gap: 20px;
@@ -2661,23 +2678,22 @@ p {
     grid-template-columns: repeat(1, 1fr);
   }
   .topics__content {
-    padding: 0 0 13px !important;
+    padding: 0 0 48px;
     &:last-of-type {
-      padding: 0 0 42px;
+      padding: 0 0 42px !important;
     }
     img {
-      height: 124px !important;
+      height: 84px;
     }
   }
   .topics__text {
     h2 {
+      margin-bottom: 8px;
       img {
-        -webkit-transform: scale(0.8);
-        -ms-transform: scale(0.8);
-        transform: scale(0.8);
+        height: 32px;
       }
     }
-    padding: 0 0 14px;
+    padding: 0 0 32px;
   }
 
   .accordion {
@@ -3200,11 +3216,12 @@ p {
     }
   }
 }
-.topics__content-red .topics__list:nth-of-type(1) .topics__img-text{
+
+.topics__content-yellow .topics__list:nth-of-type(2) .topics__img-text,
+.topics__content-yellow .topics__list:nth-of-type(5) .topics__img-text,
+.topics__content-red .topics__list:nth-of-type(5) .topics__img-text{
   white-space: normal;
-}
-.topics__content-yellow .topics__list:nth-of-type(4) .topics__img-text{
-  white-space: normal;
+  width: 250px;
 }
 .resources__slider .resources__slide{
   border: none;
