@@ -144,14 +144,29 @@
 
 	var url = window.location.href;
 
-	 var addthis_share = {
-		url: url
-	};
+	 var addthis_share;
 
 	$(document).ready(function () {
+		doShareUrl();
 		bindEdit();
-		$('#shareBtn').css('pointer-events', 'initial');
 	});
+
+	function doShareUrl() {
+
+		var url = window.location.href;
+		$.ajax({
+			async: false,
+			type: 'POST',
+			cache: false,
+			url: '@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',
+			data: { url: url },
+			dataType: "json",
+			success: function (response) {
+				addthis_share.url = response;
+				$('#shareBtn').css('pointer-events', 'initial');
+			}
+		});
+	};
 	
 	function bindEdit() {
 

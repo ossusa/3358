@@ -148,22 +148,34 @@
 	</div>
 </div>
 <script>
+	var addthis_share;
 
 	$(document).ready(function () {
-		var addthis_share;
-
+		doShareUrl();
 		bindEdit();
-		$('#shareBtn').css('pointer-events', 'initial');
 	});
 
 
-	function bindEdit() {
-		//share
-		var url = window.location.href;
+	function doShareUrl() {
 
-		addthis_share = {
-			url: url
-		};
+		var url = window.location.href;
+		$.ajax({
+			async: false,
+			type: 'POST',
+			cache: false,
+			url: '@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',
+			data: { url: url },
+			dataType: "json",
+			success: function (response) {
+				addthis_share.url = response;
+				$('#shareBtn').css('pointer-events', 'initial');
+			}
+		});
+	};
+
+	function bindEdit() {
+
+
 
 		//Add Like
 		$('.addLike').click(function () {
