@@ -2146,7 +2146,7 @@ p {
   .topics__content {
     padding: 0 0 13px !important; }
     .topics__content:last-of-type {
-      padding: 0 0 42px; }
+      padding: 0 0 42px !important; }
     .topics__content img {
       height: 124px !important; }
   .topics__text {
