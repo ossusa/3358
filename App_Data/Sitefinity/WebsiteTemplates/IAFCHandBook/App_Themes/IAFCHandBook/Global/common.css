@@ -1338,6 +1338,14 @@ p {
   height: 50px;
   display: block; }
 
+.community__topics__list_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 135px; }
+
 .community_title-label {
   margin: 0;
   font-family: "Nunito Sans", sans-serif;
@@ -2038,7 +2046,9 @@ p {
   .topics__content-red .topics__list:nth-of-type(2) .topics__img-text {
     white-space: normal; }
   .topics__content a {
-    height: 147px; } }
+    height: 147px; }
+  .community__topics__img-back {
+    height: 100px; } }
 
 @media (max-width: 767px) {
   h1 {
@@ -2055,6 +2065,8 @@ p {
     font-size: 1.25em; }
   .container {
     padding: 0 10px; }
+  .community__topics__img-back {
+    height: 84px; }
   .resources__logged {
     padding: 24px; }
   .resources__logged-img-box {

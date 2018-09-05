@@ -1588,6 +1588,13 @@ p {
   display: block;
 }
 .community{
+  &__topics__list_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 135px;
+  }
   &_title-label{
     margin: 0;
     font-family: $font_family_4;
@@ -2514,6 +2521,9 @@ p {
   .topics__content a{
     height: 147px;
   }
+  .community__topics__img-back{
+    height: 100px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2537,7 +2547,9 @@ p {
   .container {
     padding: 0 10px;
   }
-
+  .community__topics__img-back{
+    height: 84px;
+  }
   .resources__logged {
     padding: 24px;
   }
