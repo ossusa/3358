@@ -74,6 +74,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#resourceLikes_" + resourceId).html(response);
+					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});
@@ -91,6 +93,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#resourceDislikes_" + resourceId).html(response);
+					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});
