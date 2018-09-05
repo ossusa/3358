@@ -3923,7 +3923,7 @@ addReplyCommentBtn {
       align-items: center;
       -ms-flex-pack: center !important;
       justify-content: center !important;
-      width: 100vw;
+      width: 50vw;
       padding-left: 0 !important;
       margin-bottom: 48px; } }
   @media screen and (max-width: 767px) {
@@ -4170,4 +4170,6 @@ addReplyCommentBtn {
   display: none; }
   @media screen and (max-width: 1109px) {
     .myhandbook_head-buttons {
-      display: block; } }
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0 -90px; } }
