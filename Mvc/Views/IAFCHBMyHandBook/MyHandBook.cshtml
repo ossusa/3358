@@ -67,7 +67,7 @@
 
 
 <script type="text/javascript">
-	var addthis_share = {};
+
 
 	$(document).ready(function () {
 		doShareUrl();
@@ -84,7 +84,7 @@
 			data: { url: url },
 			dataType: "json",
 			success: function (response) {
-				addthis_share.url = response;
+				$('#shareBtn').attr('data-url', response);
 				$('#shareBtn').css('pointer-events', 'initial');
 			}
 		});
