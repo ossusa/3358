@@ -1589,6 +1589,16 @@ p {
   display: block;
 }
 .community{
+  &_title-label{
+    margin: 0;
+    font-family: $font_family_4;
+    font-weight: 700;
+    font-size: 48px;
+    white-space: normal;
+    line-height: 50px;
+    color: $color_20;
+    height: auto;
+  }
   &__head{
     &-btns-grp {
       display: -webkit-box;

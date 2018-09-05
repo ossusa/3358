@@ -1340,6 +1340,16 @@ p {
   height: 50px;
   display: block; }
 
+.community_title-label {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  white-space: normal;
+  line-height: 50px;
+  color: #5591aa;
+  height: auto; }
+
 .community__head-btns-grp {
   display: -ms-flexbox;
   display: flex; }
