@@ -3779,11 +3779,17 @@ addReplyCommentBtn {
 .label-leadership > .selectric-community__title-select > .selectric > .label {
   color: #BDA15F; }
 
+.label-leadership > .community_title-label {
+  color: #BDA15F; }
+
 .label-leadership > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover {
   color: #BDA15F !important; }
 
 /*Community*/
 .label-community > .selectric-community__title-select > .selectric > .label {
+  color: #5591AA; }
+
+.label-community > .community_title-label {
   color: #5591AA; }
 
 .label-community > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover {
@@ -3793,11 +3799,17 @@ addReplyCommentBtn {
 .label-finance > .selectric-community__title-select > .selectric > .label {
   color: #73AA56; }
 
+.label-finance > .community_title-label {
+  color: #73AA56; }
+
 .label-finance > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover {
   color: #73AA56 !important; }
 
 /*Personnel*/
 .label-personnel > .selectric-community__title-select > .selectric > .label {
+  color: #CF794A; }
+
+.label-personnel > .community_title-label {
   color: #CF794A; }
 
 .label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover {
