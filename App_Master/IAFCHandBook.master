@@ -18,8 +18,7 @@
     <asp:ContentPlaceHolder ID="JavaScript" runat="server"></asp:ContentPlaceHolder>
 
     <!-- Document Wrapper============================================= -->
-    <div id="wrapper">
-<div class="wrapper_container">
+
 
         <!-- Header ============================================= -->
         <header id="header" class="header">
@@ -136,7 +135,7 @@
             </div>
         </header>
         <!-- End Header ============================================= -->
-
+    <div id="wrapper">
         <!-- Content ============================================= -->
         <section id="content">
             <!-- Content ============================================= -->
@@ -168,7 +167,6 @@
                 </div>
             </div>
         </footer>
-</div>
         <!-- Footer End ============================================= -->
     </div>
 
