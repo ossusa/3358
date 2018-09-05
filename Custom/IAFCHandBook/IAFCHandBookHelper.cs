@@ -1013,11 +1013,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				}
 
-
+				resourceLike.Id = like.Id;
 				resourceLike.LikeTitle = like.GetValue("Title").ToString();
 				resourceLike.Likes = Convert.ToInt32(like.GetValue("AmountOfLikes"));
 				resourceLike.Dislikes = Convert.ToInt32(like.GetValue("AmountOfDislikes"));
-				resourceLike.IsResourceLiked = IsResourceLiked(resourceLike.Id);
+				resourceLike.IsResourceLiked = IsResourceLiked(like.Id);
 
 				dynamicModuleManager.SaveChanges();
 			}
