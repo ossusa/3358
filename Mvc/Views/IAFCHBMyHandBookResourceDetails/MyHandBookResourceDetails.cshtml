@@ -66,12 +66,12 @@
 							<div class="single-post-statistic">
 								<button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" 
 										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"
-										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 									<span>@Model.Likes.Likes</span> 
 								</button>
 								<button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" 
 										class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"
-										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 									<span>@Model.Likes.Dislikes</span> 
 								</button>
 							</div>
@@ -128,12 +128,12 @@
 							<div class="single-post-statistic">
 								<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" 
 										class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"
-										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 									<span>@item.Likes.Likes</span> 
 								</button>
 								<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" 
 										class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"
-										@(!Model.IsUserAuthorized? "disabled='disabled'" : "")> 
+										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 									<span>@item.Likes.Dislikes</span> 
 								</button>
 							</div>
@@ -177,6 +177,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#resourceLikes_" + resourceId).html(response);
+					$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});
@@ -193,6 +195,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#resourceDislikes_" + resourceId).html(response);
+					$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+					$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});
@@ -252,6 +256,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#commentLikes_" + resourceId).html(response);
+					$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+					$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});
@@ -268,6 +274,8 @@
 				dataType: "json",
 				success: function (response) {
 					$("#commentDislikes_" + resourceId).html(response);
+					$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+					$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
 				}
 			});
 		});
