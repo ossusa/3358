@@ -247,7 +247,7 @@ if($(window).width() < 1109) {
         }
     });
 } else {
-    $('.complete__resources_slide .resources__slide-desc').each(function() {
+    $('.complete-box .resources__slide-desc').each(function() {
         var mch = 90;
         var separ = '...';
 
@@ -258,7 +258,7 @@ if($(window).width() < 1109) {
 }
 /*Second title*/
 if($(window).width() < 1109) {
-    $('.complete__resources_slide .resources__slide-title').each(function() {
+    $('.complete-box .resources__slide-title').each(function() {
         var mch = 47;
         var separ = '...';
 
