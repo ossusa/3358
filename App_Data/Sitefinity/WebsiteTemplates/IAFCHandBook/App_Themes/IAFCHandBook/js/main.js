@@ -142,7 +142,7 @@ $(document).ready(function () {
     function setImgHeight() {
         var imgContainer = $('.img-container-js');
         var width = imgContainer.width();
-        imgContainer.height(width/13*9);
+        imgContainer.height(width/13*9 -1);
     }
     setInterval(function() {
         setImgHeight();
