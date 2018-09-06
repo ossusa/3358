@@ -1,7 +1,7 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookResourcesPerCatergoryModel
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+@{ var itemClass = String.Empty;}
 <div class="box">
 	<div class="community__head">
 		<div class="community__breadcrumbs">@Model.Category.ParentCategoryTitle</div>
@@ -21,7 +21,7 @@
 				</div>
 				<div class="community__head-button">
 					@Model.Category.TotalDuration
-				</div>				
+				</div>
 			</div>
 			<div class="community__head-buttons">
 				<div class="community__head-btn-select">
@@ -82,7 +82,8 @@
 	<ul class="community__topics-ul">
 		@foreach (var mcItem in Model.MoreCategories)
 		{
-			<li class="topics__list community__topics-list">
+			{ itemClass = "community__topics_" + mcItem.ParentCategoryTitle.ToLower(); }
+			<li class="topics__list community__topics-list @itemClass">
 				<a href="@mcItem.CategoryUrl" class="community__topics-link">
 					<img class="community__topics__list_img" src="@mcItem.CategorySvg">
 					<p class="topics__img-text community__topics-text">@mcItem.CategoryTitle</p>
