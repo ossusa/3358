@@ -612,7 +612,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipMotivatingPeople);
-			category = new Categories("Motivating/Discipline ",
+			category = new Categories("Motivating/ Discipline",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,

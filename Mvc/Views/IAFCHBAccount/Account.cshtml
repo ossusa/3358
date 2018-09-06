@@ -12,10 +12,7 @@
 
 	<h4 class="topic__subtitle">Email Digest</h4>
 	<p>A summary of all the latest resources from the topics you follow:</p>
-	<div class="checkbox-container">
-		<input id="WeeklyUpdates" type="checkbox" value="@Model.WeeklyUpdates"  @(Model.WeeklyUpdates ? "checked=\"checked\"" : "")/> Weekly Updates
-		<input id="MonthlyUpdates" type="checkbox" value="@Model.MonthlyUpdates" @(Model.MonthlyUpdates ? "checked=\"checked\"" : "")/>  Monthly Updates
-	</div>
+	
 	<div id="followedCategoriesViewID">
 		@Html.Partial("_FollowedCategories", Model.FollowedCategories)
 	</div>

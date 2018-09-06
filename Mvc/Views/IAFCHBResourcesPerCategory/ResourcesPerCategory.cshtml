@@ -56,7 +56,7 @@
 						if (Model.IsCategoryFollowed)
 						{
 							<div class="community__head-btn">
-								<span class='resources--plus anticon anticon-star'></span>Followed
+								<span class='resources--plus anticon anticon-star'></span>Following
 							</div>
 						}
 						else
@@ -170,7 +170,7 @@
 			var resourceDocumentUrl = $(this).attr('data-id2');
 			var openResourceDocumentUrl = $(this).attr('data-id3');
 
-			if (openResourceDocumentUrl == 'OpenLink') {
+			if (openResourceDocumentUrl == "OpenLink") {
 				window.location.href = resourceUrl;
 			}
 			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
