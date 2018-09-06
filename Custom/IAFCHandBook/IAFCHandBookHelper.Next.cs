@@ -143,7 +143,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				TransactionManager.CommitTransaction(transactionName);
 
-				SendNotification(resDataMaster.Id);
+				//SendNotification(resDataMaster.Id);
 			}
 			catch (Exception e)
 			{
