@@ -186,7 +186,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string FinanceParentClass = "topics__text-green";
 		private const string PersonnelParentClass = "topics__text-red";
 
-		private const string CommunityChildClass = "topics__content";
+		private const string CommunityChildClass = "topics__content-blue";
 		private const string LeadershipChildClass = "topics__content-yellow";
 		private const string FinanceChildClass = "topics__content-green";
 		private const string PersonnelChildClass = "topics__content-red";

@@ -1129,6 +1129,10 @@ p {
     margin-left: 12px;
     height: 200px;
     border-radius: 3px; }
+  .topics__content-blue a {
+    background: #5591aa; }
+    .topics__content-blue a:hover .topics__img-back {
+      background: #5591aa; }
   .topics__content-yellow a {
     background: #BDA15F; }
     .topics__content-yellow a:hover .topics__img-back {
@@ -1205,8 +1209,10 @@ p {
   opacity: 1;
   transition: .3s ease-in-out;
   border-radius: 3px;
-  background: #5591AA;
   padding: 16px 20px; }
+
+.topics__list:hover .topics__img-back-blue {
+  background: #5591AA; }
 
 .topics__list:hover .topics__img-back-yellow {
   background: #BDA15F; }
