@@ -2314,30 +2314,35 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetAccount
 		public IAFCHandBookAccount GetAccount()
 		{
-			log.Error("GetAccount Start");
 			IAFCHandBookAccount model = new IAFCHandBookAccount();
-			log.Error("GetAccount StartQ");
-			var myHandBookItem = GetOrCreateMyHandBook();
-			model.WeeklyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("WeeklyUpdates"));
-			model.MonthlyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("MonthlyUpdates"));
-			log.Error("GetAccount Start1");
-			var foollowedCategories = myHandBookItem.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c));
-			log.Error("GetAccount Start2");
-			foreach (var categoryId in foollowedCategories)
+			try
 			{
-				log.Error("GetAccount Start3");
-				var category = new IAFCHandBookTopicCategoryModel();
-				var topicCategoryDetails = GetTopicCategories(categoryId);
+				var myHandBookItem = GetOrCreateMyHandBook();
 
-				category.Id = categoryId;
-				category.CategoryTitle = topicCategoryDetails.ResourceCategoryTile;
-				category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;
+				model.WeeklyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("WeeklyUpdates"));
+				model.MonthlyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("MonthlyUpdates"));
+				
+				var foollowedCategories = myHandBookItem.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c));
+				
+				foreach (var categoryId in foollowedCategories)
+				{
+				
+					var category = new IAFCHandBookTopicCategoryModel();
+					var topicCategoryDetails = GetTopicCategories(categoryId);
 
-				model.FollowedCategories.Add(category);
-				log.Error("GetAccount Start4");
+					category.Id = categoryId;
+					category.CategoryTitle = topicCategoryDetails.ResourceCategoryTile;
+					category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;
+
+					model.FollowedCategories.Add(category);				
+				}
+				
+			}
+			catch (Exception e)
+			{
+				log.Error("GetAccount " + e.Message);
 			}
 
-			log.Error("GetAccount End");
 			return model;
 		}
 		#endregion GetAccount
