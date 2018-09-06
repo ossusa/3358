@@ -2918,7 +2918,7 @@ p {
   .header__table-tr {
     height: 100px;
     padding: 16px 0 16px 16px !important; }
-    .header__table-tr a {
+    .header__table-tr .header__logo-link {
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: column;
