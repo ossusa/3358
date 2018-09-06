@@ -2316,7 +2316,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			log.Error("GetAccount Start");
 			IAFCHandBookAccount model = new IAFCHandBookAccount();
-
+			log.Error("GetAccount StartQ");
 			var myHandBookItem = GetOrCreateMyHandBook();
 			model.WeeklyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("WeeklyUpdates"));
 			model.MonthlyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("MonthlyUpdates"));
