@@ -44,12 +44,12 @@
 			{
 				<div class="resources-placeholder">
 					<div class="placehoolder-background">
-						<img src="@Model.ResourceDetails.ImagePlaceholderUrl">
+						<img src="@Model.ResourceDetails.ImagePlaceholderUrl" alt="placeholder image">
 					</div>
 					@if (Model.ResourceDetails.ImageSvgUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<div class="placeholder-type">
-							<img src="@Model.ResourceDetails.ImageSvgUrl" alt="">
+							<img src="@Model.ResourceDetails.ImageSvgUrl" alt="placeholder image">
 						</div>
 					}
 				</div>
