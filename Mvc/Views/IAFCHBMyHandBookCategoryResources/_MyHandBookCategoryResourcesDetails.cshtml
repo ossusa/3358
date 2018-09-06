@@ -72,7 +72,7 @@
 						data-id1="@item.ResourceDetails.ResourceLink"
 						data-id2="@item.ResourceDetails.ResourceDocument"
 						@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-					<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+					<p class="resources__slide-title">@item.ResourceDetails.ResourceTitle</p>
 				</button>
 				<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 			</div>
@@ -204,7 +204,7 @@
 									data-id1="@item.ResourceDetails.ResourceLink"
 									data-id2="@item.ResourceDetails.ResourceDocument"
 									@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-								<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+								<p class="resources__slide-title">@item.ResourceDetails.ResourceTitle</p>
 							</button>
 							<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 						</div>

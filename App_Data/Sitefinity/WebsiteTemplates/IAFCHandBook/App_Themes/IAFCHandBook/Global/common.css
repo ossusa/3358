@@ -782,6 +782,8 @@ p {
     .resources__slide-title {
       margin: 0;
       color: #2B4B6B;
+      font-family: "Nunito Sans", sans-serif;
+      font-weight: 700;
       font-size: 1.25em; }
     .resources__slide-social {
       display: -ms-flexbox;
