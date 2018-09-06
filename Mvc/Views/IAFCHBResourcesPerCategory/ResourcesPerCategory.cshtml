@@ -56,7 +56,7 @@
 						if (Model.IsCategoryFollowed)
 						{
 							<div class="community__head-btn">
-								<span class='resources--plus anticon anticon-star'></span>Followed
+								<span class='resources--plus anticon anticon-star'></span>Following
 							</div>
 						}
 						else
@@ -82,7 +82,7 @@
 	<ul class="community__topics-ul">
 		@foreach (var mcItem in Model.MoreCategories)
 		{
-			<li class="community__topics-list">
+			<li class="topics__list community__topics-list">
 				<a href="@mcItem.CategoryUrl" class="community__topics-link">
 					<img class="community__topics__list_img" src="@mcItem.CategorySvg">
 					<p class="topics__img-text community__topics-text">@mcItem.CategoryTitle</p>
@@ -170,7 +170,7 @@
 			var resourceDocumentUrl = $(this).attr('data-id2');
 			var openResourceDocumentUrl = $(this).attr('data-id3');
 
-			if (openResourceDocumentUrl == 'OpenLink') {
+			if (openResourceDocumentUrl == "OpenLink") {
 				window.location.href = resourceUrl;
 			}
 			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {

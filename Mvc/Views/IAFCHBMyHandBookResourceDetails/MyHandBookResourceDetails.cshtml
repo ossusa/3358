@@ -124,7 +124,7 @@
 										data-id="@item.ResourceUrl"
 										data-id1="@item.ResourceDetails.ResourceLink"
 										data-id2="@item.ResourceDetails.ResourceDocument"
-										@(openDocumentLink ?"data-id3='OpenLink'":"data-id3=''")>
+										@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 									<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
 								</button>
 							</div>
@@ -360,7 +360,7 @@
 			var resourceDocumentUrl = $(this).attr('data-id2');
 			var openResourceDocumentUrl = $(this).attr('data-id3');
 
-			if (openResourceDocumentUrl == 'OpenLink') {
+			if (openResourceDocumentUrl == "OpenLink") {
 				window.location.href = resourceUrl;
 			}
 			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {

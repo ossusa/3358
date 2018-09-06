@@ -17,7 +17,7 @@
 						data-id="@Model.ResourceUrl"
 						data-id1="@Model.ResourceDetails.ResourceLink"
 						data-id2="@Model.ResourceDetails.ResourceDocument"
-						@(openDocumentLink ?"data-id3='OpenLink'":"data-id3=''")>
+						@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 					View
 				</button>
 				@if (Model.IsUserAuthorized)
@@ -98,7 +98,7 @@
 			var resourceDocumentUrl = $(this).attr('data-id2');
 			var openResourceDocumentUrl = $(this).attr('data-id3');
 
-			if (openResourceDocumentUrl == 'OpenLink') {
+			if (openResourceDocumentUrl == "OpenLink") {
 				window.location.href = resourceUrl;
 			}
 			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {

@@ -293,3 +293,12 @@ $('.topics_seperator').each(function() {
         $(this).text($(this).text().substr(0, maxch-sep.length) + sep);
     }
 });
+/*Fourth*/
+$('.topics__img-back-info').each(function() {
+    var maxchs = 116;
+    var seps = '...';
+
+    if ($(this).text().length > (maxchs - seps.length)) {
+        $(this).text($(this).text().substr(0, maxchs-seps.length) + seps);
+    }
+});
