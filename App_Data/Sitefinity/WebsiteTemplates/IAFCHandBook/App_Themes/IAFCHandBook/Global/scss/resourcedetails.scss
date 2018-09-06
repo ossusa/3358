@@ -166,8 +166,20 @@
             font-family: 'Zilla Slab', serif;
             margin: 0;
             color: #4a4a4a;
-            font-size: 18px;
+            font-size: 1.25em;
             font-weight: 300;
+            line-height: 1.2;
+            &:not(:last-child) {
+              margin: 0 0 40px;
+            }
+            @media screen and (max-width: 767px) {
+              p:not(:last-child) {
+                margin-bottom: 24px;
+              }
+            }
+          }
+          a{
+            color: #4a4a4a;
           }
           ul, ol {
             font-family: 'Zilla Slab', serif;
