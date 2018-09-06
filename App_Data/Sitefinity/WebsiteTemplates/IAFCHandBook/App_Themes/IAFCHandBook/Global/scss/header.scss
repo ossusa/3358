@@ -27,6 +27,7 @@
     border: none;
     outline: none;
     font-size: 1.250em;
+    transition: .3s ease-in-out;
     background: transparent;
     &:hover {
       text-shadow: 1px 0 0 $color_blue;
