@@ -1909,11 +1909,6 @@ p {
     display: none; } }
 
 @media (max-width: 1109px) {
-  .topics__ul-flex .topics__list:nth-of-type(2) a,
-  .topics__ul-flex .topics__list:nth-of-type(4) a {
-    margin-right: 0; }
-  .topics__ul-flex .topics__list:nth-of-type(3) a {
-    margin-right: 24px; }
   .community__head-button-group {
     -ms-flex-direction: column;
     flex-direction: column;
@@ -1984,7 +1979,7 @@ p {
     -ms-transform: translateY(44%);
     transform: translateY(44%); }
   .topics__ul-flex .topics__list {
-    width: 50%; }
+    width: 50% !important; }
   .box {
     padding-left: 90px;
     padding-right: 90px; }
