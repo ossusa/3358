@@ -6,13 +6,20 @@
 	</h5>
 	<div class="hb-jumbo__search">
 		<fieldset>
-			<input placeholder="Search" type="text" id="searchText" class="k-input" />
+			<input placeholder="Search" type="text" id="searchText" class="k-input"  onkeypress="process(event, this)" />
 			<button type="button" class="searchBtn" onclick="doSearch()"></button>
 		</fieldset>
 	</div>
 </div>
 
 <script>
+
+	function process(e) {
+		var code = (e.keyCode ? e.keyCode : e.which);
+		if (code == 13) {
+			doSearch();
+		}
+	}
 
 	function doSearch() {
 		var searchStr = document.getElementById("searchText").value;
