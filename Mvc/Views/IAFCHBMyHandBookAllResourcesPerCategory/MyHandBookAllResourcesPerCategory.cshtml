@@ -69,12 +69,15 @@
 			var likesAmmount = $(this).attr('data-id1');
 			$("#resourceLikes_" + resourceId).html(parseInt(likesAmmount) + 1);
 
-
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBMyHandBookAllResourcesPerCategory")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 
@@ -90,7 +93,11 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookAllResourcesPerCategory")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 
