@@ -2305,6 +2305,12 @@ p {
     font-size: 2.2vw;
   }
 }
+@media(max-width: 1400px){
+  .topics__img-text{
+    white-space: normal;
+    max-width: 250px;
+  }
+}
 @media (max-width: 1352px) {
   .resources__slide-empty {
     display: none;
