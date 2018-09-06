@@ -2,18 +2,17 @@
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media (max-width: 767px) {
+    .slick-arrow {
+      top: auto;
+    }
 
-  }
-  .slick-arrow {
-    top: auto;
-  }
+    .slick-next {
+      right: 34%;
+    }
 
-  .slick-next {
-    right: 34%;
-  }
-
-  .slick-prev {
-    margin-top: auto;
-    top: auto;
+    .slick-prev {
+      margin-top: auto;
+      top: auto;
+    }
   }
 }

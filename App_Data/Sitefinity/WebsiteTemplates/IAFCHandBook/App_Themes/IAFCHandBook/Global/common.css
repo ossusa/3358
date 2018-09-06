@@ -4208,7 +4208,7 @@ addReplyCommentBtn {
     .myhandbook_head-buttons {
       margin: 0 -28px; } }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
     top: auto; }
   .slick-next {
