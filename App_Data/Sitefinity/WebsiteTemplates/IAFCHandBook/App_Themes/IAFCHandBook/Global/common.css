@@ -1693,6 +1693,9 @@ p {
     border-radius: 3px 3px 0 0;
     width: auto; }
 
+.img-container-js {
+  overflow: hidden; }
+
 .complete__resources_slide {
   width: 31.3% !important;
   border: 1px solid #EFEFEF;
