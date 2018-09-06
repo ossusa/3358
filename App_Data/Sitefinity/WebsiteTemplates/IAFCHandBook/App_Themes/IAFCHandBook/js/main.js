@@ -160,20 +160,21 @@ $(document).ready(function () {
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(".header__sub_list:nth-of-type(1) .header__second_ul").show();
-        $('.header__sub_list:nth-of-type(1) .header__second_ul').not('.header__sub_list:nth-of-type(1) .header__second_ul').hide();
+        $('.header__sub_list .header__second_ul').not('.header__sub_list:nth-of-type(1) .header__second_ul').hide();
     });
     $('.header__sub_list:nth-of-type(2)').click(function() {
         $(".header__sub_list:nth-of-type(2) .header__second_ul").show();
-        $('.header__sub_list:nth-of-type(2) .header__second_ul').not('.header__sub_list:nth-of-type(2) .header__second_ul').hide();
+        $('.header__sub_list .header__second_ul').not('.header__sub_list:nth-of-type(2) .header__second_ul').hide();
     });
     $('.header__sub_list:nth-of-type(3)').click(function() {
         $(".header__sub_list:nth-of-type(3) .header__second_ul").show();
-        $('.header__sub_list:nth-of-type(3) .header__second_ul').not('.header__sub_list:nth-of-type(3) .header__second_ul').hide();
+        $('.header__sub_list .header__second_ul').not('.header__sub_list:nth-of-type(3) .header__second_ul').hide();
     });
     $('.header__sub_list:nth-of-type(4)').click(function() {
-        $('.header__sub_list:nth-of-type(4)').next('.header__second_ul').show();
-        $('.header__sub_list:nth-of-type(4)').siblings('.header__second_ul').hide();
+        $(".header__sub_list:nth-of-type(3) .header__second_ul").show();
+        $('.header__sub_list .header__second_ul').not('.header__sub_list:nth-of-type(4) .header__second_ul').hide();
     });
+
     $(window).click(function() {
         $('.header__sub_ul').hide();
         $('.header__second_ul').hide();
