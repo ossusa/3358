@@ -295,7 +295,7 @@ $('.topics_seperator').each(function() {
     }
 });
 /*Fourth*/
-if($(window).width() < 1109) {
+
 $('.topics__img-back-info').each(function() {
     var maxchs = 116;
     var seps = '...';
@@ -304,4 +304,3 @@ $('.topics__img-back-info').each(function() {
         $(this).text($(this).text().substr(0, maxchs-seps.length) + seps);
     }
 });
-}
