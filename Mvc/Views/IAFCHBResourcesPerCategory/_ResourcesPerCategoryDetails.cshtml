@@ -81,7 +81,7 @@
 
 							<div class="single-post-statistic">
 								<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-										class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"
+										class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 										@((!item.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")>
 									<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 										<span>@item.Likes.Likes</span>
@@ -90,7 +90,7 @@
 
 
 								<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-										class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"
+										class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 										@((!item.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")>
 									<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 										<span>@item.Likes.Dislikes</span>
@@ -130,39 +130,33 @@
 
 		//Add Like
 		$('.addLike').click(function () {
-
+			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 			var resourceId = $(this).attr('data-id');
+			var likesAmmount = $(this).attr('data-id1');
+			$("#resourceLikes_" + resourceId).html(parseInt(likesAmmount) + 1);
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBResourcesPerCategory")',
-				data: { resourceId: resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceLikes_" + resourceId).html(response);
-					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
-					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
-				}
+				data: { resourceId: resourceId }
 			});
 		});
 
 		//Add Dislike
 		$('.addDislike').click(function () {
-
+			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 			var resourceId = $(this).attr('data-id');
+			var disLikesAmmount = $(this).attr('data-id1');
+			$("#resourceDislikes_" + resourceId).html(parseInt(disLikesAmmount) + 1);
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBResourcesPerCategory")',
-				data: { resourceId: resourceId },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceDislikes_" + resourceId).html(response);
-					$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
-					$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
-				}
+				data: { resourceId: resourceId }
 			});
 		});
 

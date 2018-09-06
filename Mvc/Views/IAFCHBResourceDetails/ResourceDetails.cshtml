@@ -52,12 +52,12 @@
 							</div>
 							<div class="single-post-statistic">
                                 <button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button" 
-										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" title="Add Like"
+										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Likes" title="Add Like"
 										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 									<span>@Model.Likes.Likes</span> 
 								</button>
                                 <button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button" 
-										class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" title="Add Dislike"
+										class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Dislikes" title="Add Dislike"
 										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 									<span>@Model.Likes.Dislikes</span> 
 								</button>
@@ -119,12 +119,12 @@
 						</div>
 						<div class="single-post-statistic">
 							<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button" 
-									class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"
+									class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 									@((!Model.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 								<span>@item.Likes.Likes</span> 
 							</button>
 							<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button" 
-									class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()"									
+									class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 									@((!Model.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
 								<span>@item.Likes.Dislikes</span> 
 							</button>
@@ -160,39 +160,33 @@
 
 			//Add Like
 			$('.addLike').click(function () {
-
+				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				var likesAmmount = $(this).attr('data-id1');
+				$("#resourceLikes_" + resourceId).html(parseInt(likesAmmount) + 1);
 
 				$.ajax({
 					type: 'POST',
 					cache: false,
 					url: '@Url.Action("AddLike", "IAFCHBResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#resourceLikes_" + resourceId).html(response);
-						$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
-						$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
-					}
+					data: { resourceId: resourceId }
 				});
 			});
 
 			//Add Dislike
 			$('.addDislike').click(function () {
-
+				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				var disLikesAmmount = $(this).attr('data-id1');
+				$("#resourceDislikes_" + resourceId).html(parseInt(disLikesAmmount) + 1);
 
 				$.ajax({
 					type: 'POST',
 					cache: false,
 					url: '@Url.Action("AddDislike", "IAFCHBResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#resourceDislikes_" + resourceId).html(response);
-						$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
-						$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
-					}
+					data: { resourceId: resourceId }
 				});
 			});
 
@@ -244,39 +238,33 @@
 
 			//Add Comment Like
 			$('.addCommentLike').click(function () {
-
+				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				var commentLikesAmmount = $(this).attr('data-id1');
+				$("#commentLikes_" + resourceId).html(parseInt(commentLikesAmmount) + 1);
 
 				$.ajax({
 					type: 'POST',
 					cache: false,
 					url: '@Url.Action("AddCommentLike", "IAFCHBResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#commentLikes_" + resourceId).html(response);
-						$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
-						$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
-					}
+					data: { resourceId: resourceId }
 				});
 			});
 
 			//Add Comment Dislike
 			$('.addCommentDislike').click(function () {
-
+				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				var commentDisLikesAmmount = $(this).attr('data-id1');
+				$("#commentDislikes_" + resourceId).html(parseInt(commentDisLikesAmmount) + 1);
 
 				$.ajax({
 					type: 'POST',
 					cache: false,
 					url: '@Url.Action("AddCommentDislike", "IAFCHBResourceDetailsController")',
-					data: { resourceId: resourceId },
-					dataType: "json",
-					success: function (response) {
-						$("#commentDislikes_" + resourceId).html(response);
-						$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
-						$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
-					}
+					data: { resourceId: resourceId }
 				});
 			});
 
