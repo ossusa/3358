@@ -20,8 +20,10 @@ $(document).ready(function () {
     /*Search in header*/
     var $search = '<li class="header__list header__list-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $(".header__list:contains('Account')");
+    var $liLogout = $(".header__list:contains('Signin')");
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
+    $($search).insertBefore($liLogout);
     $($liSearch).appendTo('.header__list-search');
     $(".header__search").click(function (e) {
         e.preventDefault();
@@ -142,14 +144,11 @@ $(document).ready(function () {
     function setImgHeight() {
         var imgContainer = $('.img-container-js');
         var width = imgContainer.width();
-        console.log(width);
-        imgContainer.height(width/13*9);
-
+        imgContainer.height(width/13*9 -2);
     }
-    $(window).on('resize', function(){
+    setInterval(function() {
         setImgHeight();
-    });
-    setImgHeight();
+    }, 250);
 
 
     $('.markAsCompleteBtn').click(function () {
