@@ -1343,7 +1343,7 @@ p {
   &__content {
     padding: 0 0 76px;
     .topics__list{
-      width: 33.3% !important;
+      width: 33.3%;
     }
     .topics__ul{
       margin: 0 -12px;
@@ -1500,14 +1500,6 @@ p {
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    &-flex{
-      .topics__list{
-        width: 32%;
-        &:nth-of-type(3) a{
-          margin-right: 0;
-        }
-      }
-    }
   }
 }
 
@@ -2442,7 +2434,7 @@ p {
     transform: translateY(44%);
   }
   .topics__ul-flex .topics__list{
-    width: 50% !important;
+    width: 50%;
   }
   .box {
     padding-left: 90px;
