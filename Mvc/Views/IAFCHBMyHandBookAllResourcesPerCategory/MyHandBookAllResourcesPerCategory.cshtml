@@ -13,7 +13,16 @@
 	@foreach (var myHandBookResource in Model.MyHandBookResurces)
 	{
 	<div class="community_indicator_col">
-		<div class="topic__title">@myHandBookResource.Category.CategoryTitle</div>
+		
+		<div>
+			<select class="community__title-select" id="UrlList" onchange="doNavigate()">
+				<option value=@myHandBookResource.Category.MyHandBookCategoryUrl>@myHandBookResource.Category.CategoryTitle</option>
+				@foreach (var item in myHandBookResource.MoreCategories)
+				{
+					<option value=@item.MyHandBookCategoryUrl>@item.CategoryTitle</option>
+				}
+			</select>
+		</div>
 
 		<div class="handbook__social-buttons">
 			@if (Model.SharedUserId == Guid.Empty)

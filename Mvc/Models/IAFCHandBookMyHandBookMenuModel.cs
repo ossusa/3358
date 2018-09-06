@@ -12,5 +12,6 @@ namespace SitefinityWebApp.Mvc.Models
 			Menu = new List<IAFCHandBookMyHandBookMenuItemModel>();
 		}
 		public List<IAFCHandBookMyHandBookMenuItemModel> Menu { get; set; }
+		public bool IsUserAuthorized {get;set;}
 	}
 }
