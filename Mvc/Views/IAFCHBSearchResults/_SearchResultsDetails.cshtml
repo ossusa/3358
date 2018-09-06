@@ -4,6 +4,7 @@
 @{string currentCategry = String.Empty; }
 @{bool isSectionOpen = false; }
 @{var emptyDuration = new TimeSpan(0, 0, 0);}
+@{var openDocumentLink = false;}
 <div class="community__head-btn-select">
 	<select class="community__category-select" id="orderByList" onchange="doOrderBy()">
 		@foreach (var orderByItem in Model.OrderBy)
@@ -73,10 +74,12 @@
 			<div class="complete__resources_slide-info">
 				<div class="resources__slide-box">
 					<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+					@{openDocumentLink = item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty;}
 					<button type="button" class="resourceLink"
 							data-id="@item.ResourceUrl"
 							data-id1="@item.ResourceDetails.ResourceLink"
-							data-id2="@item.ResourceDetails.ResourceDocument">
+							data-id2="@item.ResourceDetails.ResourceDocument"
+							@(openDocumentLink ?"data-id3='OpenLink'":"data-id3=''")>
 						<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
 					</button>
 					<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
@@ -108,18 +111,21 @@
 						}
 					}
 					<div class="resources-single__left_post_comment_header_right">
-						<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+						@if (openDocumentLink)
+						{
+							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+						}
 						<div class="single-post-statistic">
 							<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
 									class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
-									@((!item.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")>
+									@((!item.IsUserAuthorized || item.Likes.IsResourceLiked) ? "disabled='disabled'" : "")>
 								<div id="@string.Format("{0}_{1}", "resourceLikes", item.Id.ToString())">
 									<span>@item.Likes.Likes</span>
 								</div>
 							</button>
 							<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
 									class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
-									@((!item.IsUserAuthorized || item.Likes.IsResourceLiked)? "disabled='disabled'" : "")>
+									@((!item.IsUserAuthorized || item.Likes.IsResourceLiked) ? "disabled='disabled'" : "")>
 								<div id="@string.Format("{0}_{1}", "resourceDislikes", item.Id.ToString())">
 									<span>@item.Likes.Dislikes</span>
 								</div>
