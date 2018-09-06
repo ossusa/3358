@@ -2921,13 +2921,20 @@ p {
   .header__nav > ul > li:nth-of-type(5) > a {
     padding-right: 22px !important; }
   .header__table-tr {
-    height: 72px;
+    height: 100px;
     padding: 16px 0 16px 16px !important; }
+    .header__table-tr a {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      justify-content: center; }
   .header__logo {
     padding: 0; }
     .header__logo img {
-      width: auto;
-      height: 40px;
+      height: 44px;
+      width: 269px;
       margin-left: 0; } }
 
 @media (max-width: 767px) {
