@@ -2,9 +2,18 @@
 
 <div class="search-results box">
 	<div class="breadcrumbs">Search</div>
+	@if (Model.Resources.Any())
+	{
 	<div class="handbook-title">
 		<h1> Search Results For "<span id="searchTextVal">@Model.SearchText</span>"</h1>
 	</div>
+	}
+	else
+	{
+	<div class="handbook-title">
+		<h1> 0 No results for"<span id="searchTextVal">@Model.SearchText</span>"</h1>
+	</div>
+	}
 
 	<div id="detailsViewID">
 		@Html.Partial("_SearchResultsDetails", Model)
