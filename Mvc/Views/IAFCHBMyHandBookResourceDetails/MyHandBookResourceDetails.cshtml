@@ -125,7 +125,7 @@
 										data-id1="@item.ResourceDetails.ResourceLink"
 										data-id2="@item.ResourceDetails.ResourceDocument"
 										@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-									<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
+									<span class="resources__slide-title">@item.ResourceDetails.ResourceTitle</span>
 								</button>
 							</div>
 							<div class="single-post-statistic">
@@ -154,6 +154,7 @@
 	var addthis_share = {};
 
 	$(document).ready(function () {
+		$("title").text("@Model.ResourceDetails.ResourceTitle");
 		doShareUrl();
 		bindEdit();
 	});
