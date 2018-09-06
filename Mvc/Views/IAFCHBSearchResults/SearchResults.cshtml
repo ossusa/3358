@@ -21,9 +21,9 @@
 
 		//Add Like
 		$('.addLike').click(function () {
-			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
-			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 			var resourceId = $(this).attr('data-id');
+			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');			
 			var likesAmmount = $(this).attr('data-id1');
 			$("#resourceLikes_" + resourceId).html(parseInt(likesAmmount) + 1);
 
@@ -37,9 +37,9 @@
 
 		//Add Dislike
 		$('.addDislike').click(function () {
-			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
-			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
 			var resourceId = $(this).attr('data-id');
+			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');			
 			var disLikesAmmount = $(this).attr('data-id1');
 			$("#resourceDislikes_" + resourceId).html(parseInt(disLikesAmmount) + 1);
 
