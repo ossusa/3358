@@ -1,7 +1,7 @@
 ﻿@model  List<SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel>
 
 @{var emptyDuration = new TimeSpan(0, 0, 0);}
-
+@{var openDocumentLink = false;}
 <div class="sfContentBlock resources">
 
 	<h2 class="resources__title">Recently Added Resources</h2>
@@ -31,11 +31,7 @@
 					}
 					<!--<object type="image/svg+xml" data="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/community-multiply.svg" alt="">-->
 					<div class="resources__slide-label">
-						<a href="@item.ResourceDetails.Category.ParentCategoryUrl">
-							<span>
-								@item.ResourceDetails.Category.ParentCategoryTitle
-							</span>
-						</a> >
+						<span> @item.ResourceDetails.Category.ParentCategoryTitle </span> >
 						<a class="" href="@item.ResourceDetails.Category.CategoryUrl">
 							<span>@item.ResourceDetails.Category.CategoryTitle</span>
 						</a>
@@ -48,13 +44,15 @@
 						</div>
 					}
 				</div>
+				@{openDocumentLink = item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty;}
 				<div class="resources__slide-info">
 					<div class="resources__slide-box">
 						<p class="resources__slide-article">@item.ResourceDetails.ResourceType</p>
 						<button type="button" class="resourceLink"
 								data-id="@item.ResourceUrl"
 								data-id1="@item.ResourceDetails.ResourceLink"
-								data-id2="@item.ResourceDetails.ResourceDocument">
+								data-id2="@item.ResourceDetails.ResourceDocument"
+								@(openDocumentLink ?"data-id3='OpenLink'":"data-id3=''")>
 							<h6 class="resources__slide-title">@item.ResourceDetails.ResourceTitle</h6>
 						</button>
 						<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
@@ -75,10 +73,13 @@
 							</div>
 						}
 							<div class="resources-single__left_post_comment_header_right">
+								@if (openDocumentLink)
+								{
 								<a class="single-post-comments" href="@item.ResourceUrl">
 									<i class="material-icons">chat_bubble_outline</i>
 									<span>@item.CommentsAmount Comments</span>
 								</a>
+								}
 								<div class="single-post-statistic">
 									<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
 											class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()"  data-id1="@item.Likes.Likes"
@@ -173,13 +174,16 @@
 			var resourceUrl = $(this).attr("data-id");
 			var resourceLinkUrl = $(this).attr('data-id1');
 			var resourceDocumentUrl = $(this).attr('data-id2');
+			var openResourceDocumentUrl = $(this).attr('data-id3');
 
-			window.location.href = resourceUrl;
 
-			if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
-				window.open(resourceLinkUrl);
+			if (openResourceDocumentUrl == 'OpenLink') {
+				window.location.href = resourceUrl;
 			}
-			if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
+			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
+				window.open(resourceLinkUrl);
+			} 
+			else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
 				window.open(resourceDocumentUrl);
 			}
 		});
