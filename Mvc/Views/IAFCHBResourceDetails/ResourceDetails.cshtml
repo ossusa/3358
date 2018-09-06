@@ -160,9 +160,9 @@
 
 			//Add Like
 			$('.addLike').click(function () {
-				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
-				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');				
 				var likesAmmount = $(this).attr('data-id1');
 				$("#resourceLikes_" + resourceId).html(parseInt(likesAmmount) + 1);
 
@@ -176,9 +176,9 @@
 
 			//Add Dislike
 			$('.addDislike').click(function () {
-				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
-				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');				
 				var disLikesAmmount = $(this).attr('data-id1');
 				$("#resourceDislikes_" + resourceId).html(parseInt(disLikesAmmount) + 1);
 
@@ -238,9 +238,9 @@
 
 			//Add Comment Like
 			$('.addCommentLike').click(function () {
-				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
-				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');				
 				var commentLikesAmmount = $(this).attr('data-id1');
 				$("#commentLikes_" + resourceId).html(parseInt(commentLikesAmmount) + 1);
 
@@ -254,9 +254,9 @@
 
 			//Add Comment Dislike
 			$('.addCommentDislike').click(function () {
-				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
-				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
+				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');				
 				var commentDisLikesAmmount = $(this).attr('data-id1');
 				$("#commentDislikes_" + resourceId).html(parseInt(commentDisLikesAmmount) + 1);
 
