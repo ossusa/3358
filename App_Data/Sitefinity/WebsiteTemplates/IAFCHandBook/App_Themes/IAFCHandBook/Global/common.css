@@ -1171,9 +1171,7 @@ p {
     position: absolute;
     top: 16px;
     left: 20px;
-    right: 22px;
-    line-height: 1.2;
-  }
+    right: 22px; }
   .topics__img-back-text {
     color: #fff;
     font-family: "Nunito Sans", sans-serif;
@@ -2974,7 +2972,7 @@ p {
     padding: 0; }
     .header__logo img {
       margin-left: 0px; }
-  .header__table-td {
+  .header__nav {
     display: none; }
   .header__table-tr {
     height: 72px; }
