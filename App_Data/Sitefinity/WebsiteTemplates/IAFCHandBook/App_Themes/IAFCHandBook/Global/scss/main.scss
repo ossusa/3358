@@ -2693,12 +2693,6 @@ p {
   .topics__text-first {
     padding: 48px 0 32px !important;
   }
-  .topics__ul {
-    grid-row-gap: 20px;
-    grid-column-gap: 20px;
-    -ms-grid-columns: (1fr)[1];
-    grid-template-columns: repeat(1, 1fr);
-  }
   .topics__content {
     padding: 0 0 48px;
     &:last-of-type {
