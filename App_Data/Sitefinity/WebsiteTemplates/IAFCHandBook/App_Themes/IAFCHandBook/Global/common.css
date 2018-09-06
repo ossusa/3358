@@ -1688,7 +1688,8 @@ p {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .complete__resources_slides img {
-    height: auto !important;
+    height: 100% !important;
+    min-width: 100%;
     border-radius: 3px 3px 0 0; }
 
 .complete__resources_slide {
