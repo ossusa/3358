@@ -2238,7 +2238,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("IsResourceAddedToMyHandBook Error: " + e.Message);
+				log.Error("IsCategoryFollowed Error: " + categoryId.ToString() + e.Message);
 			}
 			return returnData;
 		}
@@ -2314,6 +2314,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetAccount
 		public IAFCHandBookAccount GetAccount()
 		{
+			log.Error("GetAccount Start");
 			IAFCHandBookAccount model = new IAFCHandBookAccount();
 
 			var myHandBookItem = GetOrCreateMyHandBook();
@@ -2332,6 +2333,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;
 
 				model.FollowedCategories.Add(category);
+				log.Error("GetAccount End");
 			}
 
 			return model;
