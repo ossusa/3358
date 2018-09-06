@@ -20,7 +20,7 @@ $(document).ready(function () {
     /*Search in header*/
     var $search = '<li class="header__list header__list-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $(".header__list:contains('Account')");
-    var $liLogout = $(".header__list:contains('Signin')");
+    var $liLogout = $(".header__list:contains('SignIn')");
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
     $($search).insertBefore($liLogout);
