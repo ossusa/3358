@@ -2890,8 +2890,12 @@ p {
           font-family: 'Zilla Slab', serif;
           margin: 0;
           color: #4a4a4a;
-          font-size: 18px;
-          font-weight: 300; }
+          font-size: 1.25em;
+          font-weight: 300;
+        line-height: 1.2}
+        .resources-single__left_post_title a {
+          color: #4a4a4a;
+        }
       .resources-single__left_post_comment_header {
         display: flex;
         justify-content: space-between;
