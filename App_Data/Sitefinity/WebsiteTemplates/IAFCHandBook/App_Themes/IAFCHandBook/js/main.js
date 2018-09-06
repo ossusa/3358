@@ -137,6 +137,20 @@ $(document).ready(function () {
             wrapper.css("margin-top", 0);
         }
     });
+
+    //image container height
+    function setImgHeight() {
+        var imgContainer = $('.img-container-js');
+        var width = imgContainer.width();
+        imgContainer.height(width/13*9);
+
+    }
+    $(window).on('resize', function(){
+        setImgHeight();
+    });
+    setImgHeight();
+
+
     $('.markAsCompleteBtn').click(function () {
         $('.complete_box').addClass('anticon anticon-check');
     });
