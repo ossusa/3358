@@ -29,7 +29,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[RelativeRoute("{searchText}")]
 		public ActionResult Index(String searchText)
 		{
-			var model = GetData(searchText, "MostRecent");
+			var model = GetData(searchText, "Most Recent");
 			return View("SearchResults", model);
 		}
 

@@ -88,7 +88,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string FinanceCategoryTitle = "Finance";
 		private const string PersonnelCategoryTitle = "Personnel";
 
-		private const string OrderByTopic = "ByTopic";
+		private const string OrderByTopic = "By Topic";
 		private const string OrderByMostPopular = "Most Popular";
 		private const string OrderByMostRecent = "Most Recent";
 		private const string OrderByAlphabeticalAZ = "Alphabetical AZ";
