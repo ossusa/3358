@@ -1632,7 +1632,7 @@ p {
   margin-bottom: 100px; }
 
 .resources__slide-img img {
-  width: 100%; }
+  width: auto; }
 
 .topic__title {
   margin: 0 0 20px;
