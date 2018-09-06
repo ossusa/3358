@@ -612,7 +612,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipMotivatingPeople);
-			category = new Categories("Motivating Volounteers",
+			category = new Categories("Motivating/Discipline ",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
@@ -680,7 +680,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			imageUrl = GetCategoryImageUrl(LeadershipStrategy);
-			category = new Categories("Organizational Strategies",
+			category = new Categories("Strategy",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
