@@ -1,6 +1,7 @@
 ﻿@model  SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel
 
 @{var emptyDuration = new TimeSpan(0, 0, 0);}
+@{var openDocumentLink = false;}
 @if (Model.Id != Guid.Empty)
 {
 	<div class="resources__logged">
@@ -9,24 +10,26 @@
 			<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span> @Model.ResourceDetails.Category.CategoryTitle</span></p>
 			<h6 class="resources__slide-title resources__logged-title">@Model.ResourceDetails.ResourceTitle</h6>
 			<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
+			@{openDocumentLink = Model.ResourceDetails.ResourceDescription != null && Model.ResourceDetails.ResourceDescription != String.Empty;}
 			<div class="resources__logged-buttons">
 				<button type="submit" formaction="@Model.ResourceUrl"
 						class="resourceFeaturedLink community__head-btn resources__logged-btn"
 						data-id="@Model.ResourceUrl"
 						data-id1="@Model.ResourceDetails.ResourceLink"
-						data-id2="@Model.ResourceDetails.ResourceDocument">
+						data-id2="@Model.ResourceDetails.ResourceDocument"
+						@(openDocumentLink ?"data-id3='OpenLink'":"data-id3=''")>
 					View
 				</button>
 				@if (Model.IsUserAuthorized)
 				{
-					<span class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
+					<span class="resources__slide-btn resources__slide-btn_logged" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 						@if (Model.IsResourceAddedToMyHandBook == true)
 						{
 							<span class='resources--plus anticon anticon-check'></span><span class="resources__logged-added">Added to MyHandBook</span>
 						}
 						else
 						{
-							<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
+							<button type="button" class="resources__slide-btn resources__slide-btn_logged addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
 						}
 					</span>
 				}
@@ -93,13 +96,15 @@
 			var resourceUrl = $(this).attr("data-id");
 			var resourceLinkUrl = $(this).attr('data-id1');
 			var resourceDocumentUrl = $(this).attr('data-id2');
+			var openResourceDocumentUrl = $(this).attr('data-id3');
 
-			window.location.href = resourceUrl;
-
-			if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
+			if (openResourceDocumentUrl == 'OpenLink') {
+				window.location.href = resourceUrl;
+			}
+			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
 				window.open(resourceLinkUrl);
 			}
-			if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
+			else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
 				window.open(resourceDocumentUrl);
 			}
 		});

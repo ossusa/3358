@@ -34,7 +34,7 @@
                     <div class="header__table-tr">
 
                             <!-- Logo ============================================= -->
-                        <a href="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
+                        <a class="header__logo-link" href="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
                             <div id="logo" class="header__logo">
                                 <asp:ContentPlaceHolder ID="logoHolder" runat="server">
                                 </asp:ContentPlaceHolder>

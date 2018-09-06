@@ -287,16 +287,21 @@
 
 
   .header__table-tr {
-    height: 72px;
+    height: 100px;
     padding: 16px 0 16px 16px !important;
+    .header__logo-link{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   .header__logo {
     padding: 0;
 
     img {
-      width: auto;
-      height: 40px;
+      height: 44px;
+      width: 269px;
       margin-left: 0;
     }
   }
@@ -317,7 +322,9 @@
   .header__table-td {
     display: none;
   }
-
+  .header__table-tr{
+    height: 72px;
+  }
   .header__mob {
     display: flex;
     justify-content: center;
