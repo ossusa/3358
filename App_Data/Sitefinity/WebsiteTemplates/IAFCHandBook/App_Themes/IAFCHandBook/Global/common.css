@@ -2067,6 +2067,13 @@ p {
     width: 100%; }
   .topics__ul-flex .topics__list:last-of-type a {
     margin-bottom: 0; }
+  .topics__img-back-text {
+    bottom: 10px;
+    left: 15px; }
+  .topics__img-back-info {
+    top: 10px;
+    left: 15px;
+    right: 17px; }
   .topics__content a {
     margin-bottom: 20px;
     height: 124px; }
