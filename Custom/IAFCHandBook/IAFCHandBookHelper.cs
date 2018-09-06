@@ -2320,11 +2320,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var myHandBookItem = GetOrCreateMyHandBook();
 			model.WeeklyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("WeeklyUpdates"));
 			model.MonthlyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("MonthlyUpdates"));
-
+			log.Error("GetAccount Start1");
 			var foollowedCategories = myHandBookItem.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c));
-
+			log.Error("GetAccount Start2");
 			foreach (var categoryId in foollowedCategories)
 			{
+				log.Error("GetAccount Start3");
 				var category = new IAFCHandBookTopicCategoryModel();
 				var topicCategoryDetails = GetTopicCategories(categoryId);
 
@@ -2333,9 +2334,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;
 
 				model.FollowedCategories.Add(category);
-				log.Error("GetAccount End");
+				log.Error("GetAccount Start4");
 			}
 
+			log.Error("GetAccount End");
 			return model;
 		}
 		#endregion GetAccount
