@@ -1951,13 +1951,15 @@ p {
   .community__topics-list {
     margin-bottom: 24px; }
   .resources__logged {
-    display: none;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: distribute;
     justify-content: space-between;
     padding: 48px;
     text-align: center; }
+  .resources__slide-btn_logged {
+    white-space: nowrap;
+    margin-left: 0; }
   .resources__logged-info {
     margin-bottom: 20px; }
   .tablet-br {
