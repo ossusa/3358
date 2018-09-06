@@ -3182,6 +3182,10 @@ p {
   .box-container {
     padding: 0 36px; } }
 
+@media screen and (max-width: 767px) {
+  .resources_desc-separate {
+    display: none; } }
+
 .resources-breadcrumbs {
   margin: 48px 0 24px;
   font-size: 16px;
@@ -3265,8 +3269,16 @@ p {
           font-family: 'Zilla Slab', serif;
           margin: 0;
           color: #4a4a4a;
-          font-size: 18px;
-          font-weight: 300; }
+          font-size: 1.25em;
+          font-weight: 300;
+          line-height: 1.2; }
+          .resources-single__left_post_title p:not(:last-child) {
+            margin: 0 0 40px; }
+          @media screen and (max-width: 767px) {
+            .resources-single__left_post_title p p:not(:last-child) {
+              margin-bottom: 24px; } }
+        .resources-single__left_post_title a {
+          color: #4a4a4a; }
         .resources-single__left_post_title ul, .resources-single__left_post_title ol {
           font-family: 'Zilla Slab', serif;
           color: #4a4a4a;
