@@ -20,14 +20,14 @@ $(document).ready(function () {
     /*Search in header*/
     var $search = '<li class="header__list header__list-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $(".header__list:contains('Account')");
-    var $liLogout = $(".header__list:contains('Signin')");
+    var $liLogout = $(".header__list:contains('SignIn')");
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
     $($search).insertBefore($liLogout);
     $($liSearch).appendTo('.header__list-search');
     $(".header__search").click(function (e) {
         e.preventDefault();
-        $('.mg-search-box').toggleClass('hidden');
+        $('.mg-search-box').show();
     });
     $("#site-search-submit").click(function (e) {
         e.preventDefault();
@@ -182,8 +182,9 @@ $(document).ready(function () {
         $(".header__sub_list:nth-of-type(2) .header__sub_list-link.colored").removeClass("colored");
         $(".header__sub_list:nth-of-type(3) .header__sub_list-link.colored").removeClass("colored");
         $(".header__sub_list:nth-of-type(4) .header__sub_list-link.colored").removeClass("colored");
+        $('.mg-search-box').hide();
     });
-    $('.header__list-link:nth-of-type(1), .header__sub_list, .header__sub_ul, .header__second_ul').click(function(event){
+    $('.header__list-link:nth-of-type(1), .header__sub_list, .header__sub_ul, .header__second_ul, .header__search, .mg-search-box').click(function(event){
         event.stopPropagation();
     });
     $('.header__sub_list-link').click(function(e){
@@ -292,8 +293,3 @@ $('.topics_seperator').each(function() {
         $(this).text($(this).text().substr(0, maxch-sep.length) + sep);
     }
 });
-// $(document).ready(function() {
-//     $('.active-link').removeClass('active-link');
-//     var currurl = window.location.pathname;
-//     var val=$('.header__list-link:has([href="'+currurl+'"])').addClass('active-link');
-// });
