@@ -1113,7 +1113,9 @@ p {
 .topics__content {
   padding: 0 0 76px; }
   .topics__content .topics__list {
-    width: 33.3%; }
+    width: 33.3% !important; }
+  .topics__content .topics__ul {
+    margin: 0 -12px; }
   .topics__content-last {
     margin-bottom: 0 !important; }
   .topics__content a {

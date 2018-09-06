@@ -1343,12 +1343,14 @@ p {
   &__content {
     padding: 0 0 76px;
     .topics__list{
-      width: 33.3%;
+      width: 33.3% !important;
+    }
+    .topics__ul{
+      margin: 0 -12px;
     }
     &-last {
       margin-bottom: 0 !important;
     }
-
     a {
       display: block;
       position: relative;
