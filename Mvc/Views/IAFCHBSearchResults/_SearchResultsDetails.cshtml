@@ -5,6 +5,12 @@
 @{bool isSectionOpen = false; }
 @{var emptyDuration = new TimeSpan(0, 0, 0);}
 @{var openDocumentLink = false;}
+@if(Model.Resources.Count()==0)
+{
+	<div>Nothig is found</div>
+}
+else
+{ 
 <div class="community__head-btn-select">
 	<select class="community__category-select" id="orderByList" onchange="doOrderBy()">
 		@foreach (var orderByItem in Model.OrderBy)
@@ -144,4 +150,4 @@
 	@:</section>
 }
 </div>
-
+}

@@ -1331,6 +1331,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				newTopicCategory.MyHandBookParentCategoryUrl = topicCategoryDetails.MyHandbookResourceParentCategoryUrl;
 				newTopicCategory.CategoryClass = topicCategoryDetails.CategoryClass;
 				newTopicCategory.CategorySvg = topicCategoryDetails.CategorySvg;
+				newTopicCategory.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;
 				moreTopicCategories.Add(newTopicCategory);
 			}
 
