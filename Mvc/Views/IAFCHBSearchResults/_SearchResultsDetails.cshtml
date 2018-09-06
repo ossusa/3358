@@ -10,26 +10,26 @@
 		{
 			if (orderByItem.Selected)
 			{
-				<option value=@orderByItem.Title selected>@orderByItem.Title</option>
+				<option value="@orderByItem.Title" selected>@orderByItem.Title</option>
 				{ selectedOrderBy = orderByItem.Title; }
 			}
 			else
 			{
-				<option value=@orderByItem.Title> @orderByItem.Title </option>
+				<option value="@orderByItem.Title"> @orderByItem.Title </option>
 			}
 		}
 	</select>
 </div>
 
 <div>
-	@if (selectedOrderBy != "ByTopic")
+	@if (selectedOrderBy != "By Topic")
 	{
 		@:<section class="complete__resources_slides">
 		}
 
 	@foreach (var item in Model.Resources)
 	{
-		if (selectedOrderBy == "ByTopic")
+		if (selectedOrderBy == "By Topic")
 		{
 			if (currentCategry != item.ResourceDetails.Category.CategoryTitle)
 			{
@@ -133,7 +133,7 @@
 		{ currentCategry = item.ResourceDetails.Category.CategoryTitle; }
 	}
 
-	@if (selectedOrderBy != "ByTopic")
+	@if (selectedOrderBy != "By Topic")
 	{
 	@:</section>
 }
