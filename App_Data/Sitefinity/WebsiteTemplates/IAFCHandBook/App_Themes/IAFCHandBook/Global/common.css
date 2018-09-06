@@ -1098,6 +1098,8 @@ p {
     .topics__text h2 img {
       height: 40px;
       margin-left: 16px; }
+  .topics__text_desc {
+    max-width: 612px; }
   .topics__text-first {
     padding: 100px 0 36px !important; }
   .topics__text-yellow h2 {
