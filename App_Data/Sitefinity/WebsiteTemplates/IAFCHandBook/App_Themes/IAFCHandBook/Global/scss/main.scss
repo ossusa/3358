@@ -2299,6 +2299,12 @@ p {
   display: none !important;
 }
 
+.parent-category-img {
+  height: 40px;
+  @media all and (max-width: 767px) {
+    height: 32px;
+  }
+}
 
 @media(max-width: 1500px){
   .topics__img-text{
