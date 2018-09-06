@@ -59,7 +59,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				ResourceCategoryDescription = resourceCategoryDescription;
 				ResourceParentCategoryDescription = resourceParentCategoryDescription;
 				CategorySvg = categorySvg;
-				CategoryClass = categoryClass;				
+				CategoryClass = categoryClass;
 			}
 
 			public String ResourceCategoryTile { get; set; }
@@ -543,7 +543,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			topicLeadershipCategories.Add(LeadershipEthics);
 			topicLeadershipCategories.Add(LeadershipGenerationalDifferences);
 			topicLeadershipCategories.Add(LeadershipLeadershipStyles);
-			topicLeadershipCategories.Add(LeadershipMotivatingPeople);									
+			topicLeadershipCategories.Add(LeadershipMotivatingPeople);
 			topicLeadershipCategories.Add(LeadershipStrategy);
 		}
 		#endregion InitTopicLeadershipCategories
@@ -557,9 +557,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			topicPersonnelCategories.Add(PersonnelRecruitment);
 			topicPersonnelCategories.Add(PersonnelRetention);
 			topicPersonnelCategories.Add(PersonnelVolunteerCareerRelations);
-			
-			
-			
+
+
+
 		}
 		#endregion InitTopicPersonnelCategoriesLists
 
@@ -580,7 +580,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			topicCommunityRelationsCategories.Add(CommunityRelationsCrisisCommunication);
 			topicCommunityRelationsCategories.Add(CommunityRelationsCustomerService);
 			topicCommunityRelationsCategories.Add(CommunityRelationsMarketingMedia);
-			topicCommunityRelationsCategories.Add(CommunityRelationsPolitics);			
+			topicCommunityRelationsCategories.Add(CommunityRelationsPolitics);
 		}
 		#endregion InitTopicCommunityRelationsCategories
 
@@ -1017,7 +1017,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					like.SetString("UrlName", new Lstring(Regex.Replace(liketitle, UrlNameCharsToReplace, UrlNameReplaceString)));
 					like.SetValue("Owner", SecurityManager.GetCurrentUserId());
 					like.SetValue("PublicationDate", DateTime.UtcNow);
-					
+
 					dynamicModuleManager.Lifecycle.Publish(like);
 					like.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
@@ -1345,7 +1345,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			var model = new IAFCHandBookCategoryResourcesModel();
 			var categoryId = GetCategoryGuidByName(categoryName);
-									
+
 			var categoryListResourcesIDs = new List<Guid>();
 			var topicCategory = GetTopicCategories(categoryId);
 
@@ -1353,7 +1353,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.ParenCategory.CategoryDescription = topicCategory.ResourceCategoryDescription;
 			model.ParenCategory.CategoryTitle = topicCategory.ResourceCategoryTile;
 			model.ParenCategory.CategoryUrl = topicCategory.ResourceCategoryUrl;
-			model.ParenCategory.TopicCategoryImageUrl = topicCategory.ResourceParentCategoryImageUrl;			
+			model.ParenCategory.TopicCategoryImageUrl = topicCategory.ResourceParentCategoryImageUrl;
 			model.ParenCategory.MyHandBookCategoryUrl = topicCategory.MyHandbookResourceCategoryUrl;
 			model.ParenCategory.MyHandBookParentCategoryUrl = topicCategory.MyHandbookResourceParentCategoryUrl;
 			model.ParenCategory.CategoryClass = topicCategory.CategoryClass;
@@ -1641,7 +1641,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 						var userFullName = String.Empty;
 						userFullName = GetUserName(currentUserGuid);
-						
+
 						var myHandBookTitle = "MyHandBook_" + userFullName;
 
 						myHandBookItem.SetValue("Title", myHandBookTitle);
@@ -1936,7 +1936,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 
 			Boolean returnData = false;
-			
+
 			try
 			{
 				if (isUserAuthorized)
@@ -2072,7 +2072,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			model.Menu.Add(topicMenuItem);
 
-			
+
 			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "My HandBook";
 			otherMenuItem.Url = MainPage + "/my-handbook/";
@@ -2324,12 +2324,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				model.WeeklyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("WeeklyUpdates"));
 				model.MonthlyUpdates = Convert.ToBoolean(myHandBookItem.GetValue("MonthlyUpdates"));
-				
+
 				var foollowedCategories = myHandBookItem.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c));
-				
+
 				foreach (var categoryId in foollowedCategories)
 				{
-				
+
 					var category = new IAFCHandBookTopicCategoryModel();
 					var topicCategoryDetails = GetTopicCategories(categoryId);
 
@@ -2337,9 +2337,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					category.CategoryTitle = topicCategoryDetails.ResourceCategoryTile;
 					category.ParentCategoryTitle = topicCategoryDetails.ResourceParentCategoryTitle;
 
-					model.FollowedCategories.Add(category);				
+					model.FollowedCategories.Add(category);
 				}
-				
+
 			}
 			catch (Exception e)
 			{
@@ -2409,9 +2409,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public void InitResourceTypeImages()
 		{
-			resourceTypeImages.Add("Video", hostUrl+DefaultVideoImgUrl);
-			resourceTypeImages.Add("Webinar", hostUrl+DefaultWebinarImgUrl);
-			resourceTypeImages.Add("Article", hostUrl+DefaultArticleImgUrl);
+			resourceTypeImages.Add("Video", hostUrl + DefaultVideoImgUrl);
+			resourceTypeImages.Add("Webinar", hostUrl + DefaultWebinarImgUrl);
+			resourceTypeImages.Add("Article", hostUrl + DefaultArticleImgUrl);
 
 			/*DefaultPodcastImgUrl;
 			DefaultChartImgUrl;		
@@ -2448,9 +2448,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public string GetCategoryImageUrl(Guid categoryId)
 		{
-			string categoryImageUrl = string.Empty;			
+			string categoryImageUrl = string.Empty;
 			try
-			{				
+			{
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 				var categoryIcon = dynamicModuleManager.GetDataItems(categoryIcons)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
@@ -2463,10 +2463,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			catch (Exception e)
 			{
 				log.Error($@"{nameof(GetCategoryImageUrl)} Error: {e.Message}");
-			}			
+			}
 			return categoryImageUrl;
 		}
-	
+
 	}
 }
 

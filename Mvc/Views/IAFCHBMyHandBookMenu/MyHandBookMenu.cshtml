@@ -1,6 +1,12 @@
 ﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookMyHandBookMenuModel
 @{var firstItem = false;}
 @{var childExist = false;}
+@{ var currentPageUrl = HttpContext.Current.Request.Path;
+	var isMenuItemActive = false;
+	var parentCategoryMenuActive = false;
+}
+
+
 <div class="header__mob">
 	<div class="header__mob-nav">
 		<div class="header__mob-box">
@@ -74,37 +80,64 @@
 </div>
 
 
-<div class="header__nav">
+<div class="header__nav">		
 	<ul class="header__ul">
+		@{ firstItem = true;}		
 		@foreach (var menuItem in Model.Menu)
 		{
 			if (menuItem.Visible)
 			{
 				<li class="header__list">
-					<a class="header__list-link" href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+					@if (firstItem)
+					{
+						isMenuItemActive = currentPageUrl.Contains("/topics/");
+						<a class="header__list-link @(isMenuItemActive?"active":string.Empty)" href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+					}
+					else
+					{
+						isMenuItemActive = currentPageUrl.Contains("/my-handbook") && menuItem.Url.Contains("/my-handbook") && !menuItem.Url.Contains("/Mxg/AuthService/");
+						<a class="header__list-link @(isMenuItemActive?"active":string.Empty)" href="@menuItem.Url"> <span>@menuItem.Title</span></a>
+					}
+
 					@if (menuItem.ChildMenuItem.Any())
 					{
-
-						<ul class="header__sub_ul">
+						<ul class="header__sub_ul">							
 							@foreach (var childItem in menuItem.ChildMenuItem)
 							{
 								if (childItem.ChildMenuItem.Any())
 								{
 									<li class="header__sub_list">
-										<a href="@childItem.Url" class="header__sub_list-link"> <span>@childItem.Title</span></a>
+										@{parentCategoryMenuActive = false;}
+										@foreach (var childChildItem in childItem.ChildMenuItem)
+										{
+											if (childChildItem.Url == currentPageUrl)
+											{
+												parentCategoryMenuActive = true;
+												break;
+											}
+										}
+										<a href="@childItem.Url" class="header__sub_list-link @(parentCategoryMenuActive?"active":string.Empty)">
+											<span>@childItem.Title</span>
+										</a>
 
 										<ul class="header__second_ul">
 											@foreach (var childChildItem in childItem.ChildMenuItem)
 											{
-												<li class="header__second_list"><a class="header__second_list-link" href="@childChildItem.Url"> <span>@childChildItem.Title</span></a></li>
+
+												<li class="header__second_list">
+													<a class="header__second_list-link @((childChildItem.Url==currentPageUrl)?"active":string.Empty))"
+													   href="@childChildItem.Url">
+														<span>@childChildItem.Title</span>
+													</a>
+												</li>
 											}
 										</ul>
 									</li>
 								}
 							}
 						</ul>
-
 					}
+					@{firstItem = false;}
 				</li>
 			}
 		}
