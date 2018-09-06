@@ -1581,7 +1581,7 @@ p {
   border-radius: 3px;
   background: transparent;
   padding: 0 0 0 12px;
-  height: 40px; }
+  height: 38px; }
   .selectric-community__category-select .selectric .label {
     font-family: "Nunito Sans", sans-serif;
     margin: 0;
@@ -2512,7 +2512,8 @@ p {
 .selectric .category__arrow {
   display: block;
   width: 38px;
-  height: 38px;
+  height: 37px;
+  margin-right: 1px;
   font-weight: 400;
   line-height: 38px;
   background-color: #fff;
