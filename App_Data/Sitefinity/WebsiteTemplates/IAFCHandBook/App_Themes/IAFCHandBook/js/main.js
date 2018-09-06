@@ -171,7 +171,7 @@ $(document).ready(function () {
         $('.header__sub_list .header__second_ul').not('.header__sub_list:nth-of-type(3) .header__second_ul').hide();
     });
     $('.header__sub_list:nth-of-type(4)').click(function() {
-        $(".header__sub_list:nth-of-type(3) .header__second_ul").show();
+        $(".header__sub_list:nth-of-type(4) .header__second_ul").show();
         $('.header__sub_list .header__second_ul').not('.header__sub_list:nth-of-type(4) .header__second_ul').hide();
     });
 
