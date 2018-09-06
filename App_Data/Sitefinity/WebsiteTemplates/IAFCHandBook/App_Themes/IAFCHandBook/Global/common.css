@@ -1929,9 +1929,14 @@ p {
   .community__topics {
     padding-bottom: 48px !important; }
   .topics__img-back-info {
-    font-size: 14px !important; }
+    font-size: 15px !important;
+    top: 10px;
+    left: 15px;
+    right: 17px; }
   .topics__img-back-text {
-    font-size: 14px; }
+    font-size: 15px;
+    bottom: 10px;
+    left: 15px; }
   .topics__img-text {
     font-size: 32px;
     white-space: normal; }
@@ -1946,13 +1951,15 @@ p {
   .community__topics-list {
     margin-bottom: 24px; }
   .resources__logged {
-    display: none;
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: distribute;
     justify-content: space-between;
     padding: 48px;
     text-align: center; }
+  .resources__slide-btn_logged {
+    white-space: nowrap;
+    margin-left: 0; }
   .resources__logged-info {
     margin-bottom: 20px; }
   .tablet-br {
@@ -2068,13 +2075,8 @@ p {
   .topics__ul-flex .topics__list:last-of-type a {
     margin-bottom: 0; }
   .topics__content a {
-    margin-right: 0;
     margin-bottom: 20px;
     height: 124px; }
-  .topics__ul-flex .topics__list:nth-of-type(2) a,
-  .topics__ul-flex .topics__list:nth-of-type(3) a,
-  .topics__ul-flex .topics__list:nth-of-type(4) a {
-    margin-right: 0; }
   .community__topics__list_img {
     height: 84px; }
   .community__topics {
@@ -2941,6 +2943,8 @@ p {
       margin-left: 0px; }
   .header__table-td {
     display: none; }
+  .header__table-tr {
+    height: 72px; }
   .header__mob {
     display: -ms-flexbox;
     display: flex;
@@ -4203,3 +4207,12 @@ addReplyCommentBtn {
   @media screen and (max-width: 767px) {
     .myhandbook_head-buttons {
       margin: 0 -28px; } }
+
+@media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
+  .slick-arrow {
+    top: auto; }
+  .slick-next {
+    right: 34%; }
+  .slick-prev {
+    margin-top: auto;
+    top: auto; } }

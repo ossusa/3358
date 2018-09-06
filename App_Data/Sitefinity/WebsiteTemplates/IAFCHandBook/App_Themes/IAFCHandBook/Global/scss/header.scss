@@ -322,7 +322,9 @@
   .header__table-td {
     display: none;
   }
-
+  .header__table-tr{
+    height: 72px;
+  }
   .header__mob {
     display: flex;
     justify-content: center;
