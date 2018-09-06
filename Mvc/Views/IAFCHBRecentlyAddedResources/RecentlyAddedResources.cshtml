@@ -10,7 +10,7 @@
 		@foreach (var item in Model)
 		{
 			<div class="resources__slide">
-				<div class="resources__slide-img" style="background: none; overflow: hidden">
+				<div class="resources__slide-img img-container-js" style="background: none; overflow: hidden">
 					@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<img src='@item.ResourceDetails.ImageUrl' />
