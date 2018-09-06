@@ -184,7 +184,7 @@ $(document).ready(function () {
         $(".header__sub_list:nth-of-type(4) .header__sub_list-link.colored").removeClass("colored");
         $('.mg-search-box').hide();
     });
-    $('.header__list-link:nth-of-type(1), .header__sub_list, .header__sub_ul, .header__second_ul').click(function(event){
+    $('.header__list-link:nth-of-type(1), .header__sub_list, .header__sub_ul, .header__second_ul, .header__search').click(function(event){
         event.stopPropagation();
     });
     $('.header__sub_list-link').click(function(e){
