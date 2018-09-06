@@ -2044,6 +2044,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public IAFCHandBookMyHandBookMenuModel GetMenu(String urlPath)
 		{
 			IAFCHandBookMyHandBookMenuModel model = new IAFCHandBookMyHandBookMenuModel();
+			var isUserSignIn = IsUserAuthorized();
+			model.IsUserAuthorized = isUserSignIn;
 			var topicMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			topicMenuItem.Title = "Topics";
 			topicMenuItem.Url = String.Empty;
@@ -2069,7 +2071,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			model.Menu.Add(topicMenuItem);
 
-			var isUserSignIn = IsUserAuthorized();
+			
 			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
 			otherMenuItem.Title = "My HandBook";
 			otherMenuItem.Url = MainPage + "/my-handbook/";

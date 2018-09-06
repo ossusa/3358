@@ -860,7 +860,19 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl + sharedUrl;
                 category.CategoryTitle = categoryDetails.ResourceCategoryTile;
                 myHandBookResourcesItem.Category = category;
-                myHandBookResourcesItem.SharedUserId = userGuid;
+				var otherCategories = topicParentCategories.Where(c => c != category.Id);
+				foreach(var otherCategoryItem in otherCategories)
+				{
+					var otherCategory = new IAFCHandBookTopicCategoryModel();
+					var otherCategoryDetails = GetTopicCategories(otherCategoryItem);
+					otherCategory.Id = otherCategoryItem;
+					otherCategory.MyHandBookCategoryUrl = otherCategoryDetails.MyHandbookResourceCategoryUrl + sharedUrl;
+					otherCategory.CategoryTitle = otherCategoryDetails.ResourceCategoryTile;
+					myHandBookResourcesItem.MoreCategories.Add(otherCategory);
+
+				}
+
+				myHandBookResourcesItem.SharedUserId = userGuid;
 				if (userGuid != null && userGuid != Guid.Empty)
 				{
 					myHandBookResourcesItem.SharedUser = GetUserName(userGuid) + "'s";
