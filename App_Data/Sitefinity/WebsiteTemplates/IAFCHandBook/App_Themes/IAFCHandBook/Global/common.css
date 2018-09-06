@@ -1237,8 +1237,10 @@ p {
   opacity: 1;
   transition: .3s ease-in-out;
   border-radius: 3px;
-  background: #5591AA;
   padding: 16px 20px; }
+
+.topics__list:active .topics__img-back-blue {
+  background: #5591AA; }
 
 .topics__list:active .topics__img-back-yellow {
   background: #BDA15F; }
@@ -1292,6 +1294,14 @@ p {
   margin-top: 54px;
   font-family: "Zilla Slab", serif;
   color: #9b9b9b; }
+
+.community__topics-list:hover .topics__img-back {
+  visibility: visible;
+  opacity: 1;
+  background: #5591AA;
+  transition: .3s ease-in-out;
+  border-radius: 3px;
+  padding: 16px 20px; }
 
 .maps {
   width: 792px;
@@ -1900,6 +1910,12 @@ p {
 
 .atm {
   display: none !important; }
+
+.parent-category-img {
+  height: 40px; }
+  @media all and (max-width: 767px) {
+    .parent-category-img {
+      height: 32px; } }
 
 @media (max-width: 1500px) {
   .topics__img-text {
