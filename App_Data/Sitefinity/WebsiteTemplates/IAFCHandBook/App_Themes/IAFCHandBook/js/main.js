@@ -146,9 +146,7 @@ $(document).ready(function () {
         imgContainer.height(width/13*9);
 
     }
-    $(window).on('resize', function(){
-        setImgHeight();
-    });
+
     setImgHeight();
 
 
