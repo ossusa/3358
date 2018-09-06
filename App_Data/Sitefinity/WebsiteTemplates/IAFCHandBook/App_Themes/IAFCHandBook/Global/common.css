@@ -3856,6 +3856,12 @@ addReplyCommentBtn {
 .label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover {
   color: #CF794A !important; }
 
+.label-personnel .selectric-items > .selectric-scroll > ul > li:hover {
+  color: #CF794A !important; }
+
+.label-personnel {
+  color: #CF794A !important; }
+
 .complete__resources_slides {
   margin: 0 -1%;
   width: auto; }
