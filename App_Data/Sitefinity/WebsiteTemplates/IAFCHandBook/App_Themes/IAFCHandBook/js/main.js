@@ -293,7 +293,7 @@ $('.topics__img-back-info').each(function() {
 });
 /*Fifth*/
 $('.resources_text-separate').each(function () {
-    var xFifth = 37;
+    var xFifth = 35;
     var yFifth = '...';
     if ($(this).text().length > (xFifth - yFifth.length)) {
         $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
