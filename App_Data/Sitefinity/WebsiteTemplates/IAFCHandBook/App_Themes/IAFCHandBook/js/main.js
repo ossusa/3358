@@ -270,7 +270,7 @@ if($(window).width() < 1109) {
         }
     });
 } else {
-    $('.complete-box .resources__slide-desc').each(function() {
+    $('.complete-box .resources__slide-desc, .handbook__template .resources__slide-desc').each(function() {
         var xSecond = 90;
         var ySecond = '...';
         if ($(this).text().length > (xSecond - ySecond.length)) {
