@@ -87,7 +87,11 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBMyHandBookCategoryResources")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 
@@ -103,7 +107,11 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookCategoryResources")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 

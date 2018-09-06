@@ -120,7 +120,11 @@
                 type: 'POST',
                 cache: false,
                 url: '@Url.Action("AddLike", "IAFCHBRecentlyAddedResources")',
-                data: { resourceId }                              
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}                             
             });
         });
 
@@ -137,7 +141,11 @@
                 type: 'POST',
                 cache: false,
                 url: '@Url.Action("AddDislike", "IAFCHBRecentlyAddedResources")',
-                data: { resourceId }
+				data: { resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
             });
         });
 

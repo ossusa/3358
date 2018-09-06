@@ -187,7 +187,11 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBMyHandBookResourceDetailsController")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 
@@ -203,7 +207,11 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookResourceDetailsController")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 
@@ -262,7 +270,11 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddCommentLike", "IAFCHBMyHandBookResourceDetailsController")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 
@@ -278,7 +290,11 @@
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddCommentDislike", "IAFCHBMyHandBookResourceDetailsController")',
-				data: { resourceId: resourceId }
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
 			});
 		});
 
