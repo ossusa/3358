@@ -171,7 +171,6 @@ $(document).ready(function () {
 
     $( ".img-container-js > img" ).each(function() {
         if ((this.width()/this.height()) > 13/9){
-            console.log(this.width());
             this.css({
                 'width': '100%',
                 'height': 'auto'
