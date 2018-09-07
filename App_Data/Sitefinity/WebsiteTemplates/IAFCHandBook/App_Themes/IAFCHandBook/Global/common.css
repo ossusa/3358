@@ -1557,7 +1557,12 @@ p {
   margin-bottom: 100px; }
 
 .resources__slide-img img {
-  width: auto; }
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
 
 .topic__title {
   margin: 0 0 20px;
