@@ -586,11 +586,21 @@ p {
       input[type="text"] {
         width: inherit !important;
         border: 1px solid #d8d8d8;
-        font-size: 18px;
+        font-size: 1.125em;
         font-weight: 400;
         outline: none;
-        color: #9b9b9b;
+        color: #666;
         font-family: $font_family_4;
+        &::placeholder {
+          color: #9b9b9b;
+          opacity: 1;
+        }
+        &:-ms-input-placeholder {
+          color: #9b9b9b;
+        }
+        &::-ms-input-placeholder {
+          color: #9b9b9b;
+        }
       }
       button[type="button"] {
         position: absolute;
