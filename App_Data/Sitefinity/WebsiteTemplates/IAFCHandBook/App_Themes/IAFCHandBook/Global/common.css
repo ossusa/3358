@@ -2208,9 +2208,6 @@ p {
     padding: 0;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
     border: 1px solid #D8D8D8; }
-    .accordion > .accordion__item:nth-of-type(1) > .accordion__title:hover {
-      color: #2b4b6b;
-      text-shadow: 1px 0 0 #2b4b6b; }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__arrow.accordion__sub-title:hover {
       color: #2b4b6b;
       text-shadow: 1px 0 0 #2b4b6b; }
