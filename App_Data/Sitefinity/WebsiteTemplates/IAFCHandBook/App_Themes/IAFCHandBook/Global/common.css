@@ -2296,7 +2296,7 @@ p {
     .accordion__item .accordion-active {
       background-color: #fff;
       color: #2b4b6b;
-      font-weight: bold; }
+      text-shadow: 1px 0 0 #2b4b6b; }
     .accordion__item .accordion__rotate {
       -ms-transform: rotate(180deg);
       transform: rotate(180deg); }
@@ -3080,6 +3080,10 @@ p {
     padding: 0 14px; }
   .header__mob-open {
     margin-right: 14px; } }
+
+.accordion__item.active {
+  text-shadow: 1px 0 0 #2B4B6B;
+  color: #2B4B6B; }
 
 .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title.active,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,

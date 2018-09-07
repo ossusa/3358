@@ -2939,7 +2939,7 @@ p {
     .accordion-active {
       background-color: $background_color_1;
       color: #2b4b6b;
-      font-weight: bold;
+      text-shadow: 1px 0 0 #2b4b6b;
     }
     .accordion__rotate {
       -webkit-transform: rotate(180deg);
