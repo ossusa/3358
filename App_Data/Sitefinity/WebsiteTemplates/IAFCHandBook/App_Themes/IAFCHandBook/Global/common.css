@@ -2144,7 +2144,9 @@ p {
   .community__topics-img {
     width: 100% !important; }
   .resources__slide-title {
-    font-size: 1.23em; }
+    font-size: 1.23em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; }
   .topics__img-text {
     font-size: 1.750em;
     white-space: nowrap; }
@@ -2219,9 +2221,7 @@ p {
     margin: 0;
     padding: 0;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #D8D8D8;
-    border-left: 1px solid #D8D8D8;
-    border-right: 1px solid #D8D8D8; }
+    border: 1px solid #D8D8D8; }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__arrow.accordion__sub-title:hover {
       color: #2b4b6b;
       text-shadow: 1px 0 0 #2b4b6b; }
@@ -2298,7 +2298,7 @@ p {
     .accordion__item .accordion-active {
       background-color: #fff;
       color: #2b4b6b;
-      font-weight: bold; }
+      text-shadow: 1px 0 0 #2b4b6b; }
     .accordion__item .accordion__rotate {
       -ms-transform: rotate(180deg);
       transform: rotate(180deg); }
@@ -3049,6 +3049,7 @@ p {
     height: 72px;
     background: #fff;
     border: 1px solid #D8D8D8;
+    border-bottom: 1px solid transparent;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1); }
   .header__mob-button {
     background: transparent;
@@ -3082,25 +3083,37 @@ p {
   .header__mob-open {
     margin-right: 14px; } }
 
-.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover
+.accordion__title.active,
+.accordion__item-link.active {
+  text-shadow: 1px 0 0 #2B4B6B;
+  color: #2B4B6B; }
+
+.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(1) .header__second_list-link.active {
   text-shadow: 1px 0 0 #5591AA;
   color: #5591AA; }
 
+.accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(2) .header__second_list-link.active {
   text-shadow: 1px 0 0 #BDA15F;
   color: #BDA15F; }
 
+.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(3) .header__second_list-link.active {
   text-shadow: 1px 0 0 #73AA56;
   color: #73AA56; }
 
+.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(4) .header__second_list-link.active {
@@ -3505,7 +3518,7 @@ p {
     .resources-single__right_header * {
       color: #2b4b6b;
       font-family: "Nunito Sans";
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: 700;
       margin: 0 0 16px; }
     .resources-single__right_list {
@@ -3564,7 +3577,7 @@ p {
     .resources-single__comments_list_header {
       color: #2b4b6b;
       font-family: "Nunito Sans";
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: 700;
       margin-bottom: 12px; }
     .resources-single__comments_list_container_items {

@@ -28,9 +28,9 @@
 						isMenuItemActive = currentPageUrl.Contains("/topics/");
 
 						@Html.Raw("<li class=\"accordion__item accordion__item--first\">")
-						<div class="accordion__title">
+						<div class="accordion__title @(isMenuItemActive?"active":string.Empty) ">
 							<div class="accordion__arrow anticon anticon-down"></div>							
-							<span class="accordion__title-text @(isMenuItemActive?"active":string.Empty)">@menuItem.Title</span>
+							<span class="accordion__title-text">@menuItem.Title</span>
 						</div>
 					}
 					else

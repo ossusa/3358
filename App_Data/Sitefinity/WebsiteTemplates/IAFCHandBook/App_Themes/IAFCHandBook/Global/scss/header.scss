@@ -351,6 +351,7 @@
     height: 72px;
     background: #fff;
     border: 1px solid #D8D8D8;
+    border-bottom: 1px solid transparent;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.10);
   }
   .header__mob-button {
@@ -391,25 +392,37 @@
     margin-right: 14px;
   }
 }
-.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover
+.accordion__title.active,
+.accordion__item-link.active{
+  text-shadow: 1px 0 0 $color_blue;
+  color: $color_blue;
+}
+.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(1) .header__second_list-link.active{
   text-shadow: 1px 0 0 $color_community;
   color: $color_community;
 }
+.accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(2) .header__second_list-link.active{
   text-shadow: 1px 0 0 $color_leadership;
   color: $color_leadership;
 }
+.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(3) .header__second_list-link.active{
   text-shadow: 1px 0 0 $color_finance;
   color: $color_finance;
 }
+.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title.active,
+.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(4) .header__second_list-link.active{
