@@ -1919,16 +1919,16 @@ p {
     .parent-category-img {
       height: 32px; } }
 
-.community__topics_community {
+.community__topics_community a {
   background-color: #5591AA; }
 
-.community__topics_leadership {
+.community__topics_leadership a {
   background-color: #BDA15F; }
 
-.community__topics_finance {
+.community__topics_finance a {
   background-color: #73AA56; }
 
-.community__topics_personnel {
+.community__topics_personnel a {
   background-color: #CF794A; }
 
 @media (max-width: 1500px) {
@@ -3213,9 +3213,12 @@ p {
   margin: 48px 0 24px;
   font-size: 1em;
   font-family: 'Zilla Slab';
-  color: #9b9b9b;
-  font-weight: 400;
+  font-weight: 500;
+  color: #666;
   letter-spacing: 0.5px; }
+  .resources-breadcrumbs span, .resources-breadcrumbs a {
+    color: #9b9b9b;
+    font-weight: 400; }
   @media screen and (min-width: 768px) and (max-width: 992px) {
     .resources-breadcrumbs {
       max-width: 588px;

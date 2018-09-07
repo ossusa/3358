@@ -90,9 +90,13 @@
     margin: 48px 0 24px;
     font-size: 1em;
     font-family: 'Zilla Slab';
-    color: #9b9b9b;
-    font-weight: 400;
+    font-weight: 500;
+    color: #666;
     letter-spacing: 0.5px;
+    span, a {
+      color: #9b9b9b;
+      font-weight: 400;
+    }
     @media screen and(min-width: 768px) and (max-width: 992px){
       max-width: 588px;
       width: 100%;
