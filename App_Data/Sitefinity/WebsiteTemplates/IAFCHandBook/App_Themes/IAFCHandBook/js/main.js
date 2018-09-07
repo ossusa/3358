@@ -46,7 +46,6 @@ $(document).ready(function () {
         var $breadcrumbLeadershipThird =  $(".selectric-community__title-select .label:contains('Leadership')");
         var $breadcrumbFinanceThird =  $(".selectric-community__title-select .label:contains('Finance')");
         var $breadcrumbPersonnelThird =  $(".selectric-community__title-select .label:contains('Personnel')");
-
         var $breadcrumbCommunity =  $(".community__breadcrumbs:contains('Community')");
         var $breadcrumbCommunitySecond = $(".resources-breadcrumbs").has("span:contains('Community')");
         var $breadcrumbLeadership =  $(".community__breadcrumbs:contains('Leadership')");
@@ -63,10 +62,18 @@ $(document).ready(function () {
         $($breadcrumbFinanceSecond).next().addClass('label-finance');
         $($breadcrumbPersonnel).next().addClass('label-personnel');
         $($breadcrumbPersonnelSecond).next().addClass('label-personnel');
-
         $($breadcrumbLeadershipThird).addClass('label-leadership');
         $($breadcrumbFinanceThird).addClass('label-finance');
         $($breadcrumbPersonnelThird).addClass('label-personnel');
+
+        var $liLeadership =  $(".selectric-handbook_title_select .selectric-items li:contains('Leadership')");
+        $($liLeadership).addClass('label-leadership');
+        var $liCommunity =  $(".selectric-handbook_title_select .selectric-items li:contains('Community')");
+        $($liCommunity).addClass('label-community');
+        var $liFinance =  $(".selectric-handbook_title_select .selectric-items li:contains('Finance')");
+        $($liFinance).addClass('label-finance');
+        var $liPersonnel =  $(".selectric-handbook_title_select .selectric-items li:contains('Personnel')");
+        $($liPersonnel).addClass('label-personnel');
     });
 
     /*OFF CANVAS MENU*/
