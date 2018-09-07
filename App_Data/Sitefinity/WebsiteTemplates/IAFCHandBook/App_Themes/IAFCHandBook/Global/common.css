@@ -3083,13 +3083,13 @@ p {
   .header__mob-open {
     margin-right: 14px; } }
 
-.accordion__item.active,
-.accordion__title.active {
+.accordion__title.active,
+.accordion__item-link.active {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
 .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title.active,
-.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-content > .accordion__sub-link.active,
+.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(1) .header__second_list-link.active {
@@ -3097,7 +3097,7 @@ p {
   color: #5591AA; }
 
 .accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-title.active,
-.accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-content > .accordion__sub-link.active,
+.accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(2) .header__second_list-link.active {
@@ -3105,7 +3105,7 @@ p {
   color: #BDA15F; }
 
 .accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-title.active,
-.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-content > .accordion__sub-link.active,
+.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(3) .header__second_list-link.active {
@@ -3113,7 +3113,7 @@ p {
   color: #73AA56; }
 
 .accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title.active,
-.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-content > .accordion__sub-link.active,
+.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-content > li > a.active,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(4) .header__second_list-link.active {
