@@ -157,7 +157,6 @@
         &:hover {
           text-shadow: 1px 0 0 $color_leadership;
           color: $color_leadership;
-          font-weight: bold;
         }
         &:focus {
           text-shadow: 1px 0 0 $color_leadership;
@@ -437,3 +436,6 @@
   text-shadow: 1px 0 0 $color_blue;
   color: $color_blue;
 }
+//.header_unlogged .header__sub_ul {
+//
+//}

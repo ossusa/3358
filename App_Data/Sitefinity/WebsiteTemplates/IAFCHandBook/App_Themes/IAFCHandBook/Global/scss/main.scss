@@ -1,38 +1,3 @@
-//$color_1: #000;
-//$color_2: inherit;
-//$color_3: #4A4A4A;
-//$color_4: #4a4a4a;
-//$color_5: #666666;
-//$color_6: #fff;
-//$color_community: #5591AA;
-//$color_leadership: #BDA15F;
-//$color_finance: #73AA56;
-//$color_personnel: #CF794A;
-//$color_blue: #2B4B6B;
-//$color_12: #9B9B9B;
-//$color_13: transparent;
-//$color_14: #666;
-//$color_15: white;
-//$color_16: #9b9b9b;
-//$color_17: #DF405A;
-//$color_18: red;
-//$color_19: #2b4b6b;
-//$color_20: #5591aa;
-//$font_family_1: sans-serif;
-//$font_family_2: monospace, monospace;
-//$font_family_3: 'icomoon';
-//$font_family_4: 'Nunito Sans', sans-serif;
-//$font_family_5: 'Zilla Slab', serif;
-//$font_family_6: 'Lato', sans-serif;
-//$font_family_7: "Font Awesome 5 Free";
-//$font_family_8: anticon;
-//$background_color_1: #fff;
-//$background_color_2: #2b4b6b;
-//$background_color_3: transparent;
-//$border_color_1: transparent #fff transparent transparent;
-//
-//@import "https://fonts.googleapis.com/css?family=Nunito+Sans:400,700|Zilla+Slab:300,400,500,600|Lato:400";
-//@import "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css";
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 @font-face {
   font-family: 'icomoon';
@@ -78,107 +43,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.font-smooth {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.mg-carousel {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.button{
-  &-default {
-    width: auto;
-    border-radius: 4px;
-    padding: 12px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 21px;
-    font-weight: bold;
-  }
-  &-blue {
-    width: auto;
-    border-radius: 4px;
-    padding: 12px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 21px;
-    font-weight: bold;
-    &-heavy {
-      width: auto;
-      border-radius: 4px;
-      padding: 12px 20px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 21px;
-      font-weight: bold;
-    }
-  }
-  &-red {
-    width: auto;
-    border-radius: 4px;
-    padding: 12px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 21px;
-    font-weight: bold;
-    &-heavy {
-      width: auto;
-      border-radius: 4px;
-      padding: 12px 20px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 21px;
-      font-weight: bold;
-    }
-  }
-}
 
-.ibutton-blue {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold;
-}
-.ibutton-blue-heavy {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold;
-}
-.ibutton-red {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold;
-}
-.ibutton-red-heavy {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold;
-}
-.button-orange {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold;
-}
+
 .button-arrow {
   width: auto;
   border-radius: 4px;
@@ -659,55 +525,22 @@ p {
   -o-transition: .1s ease-in-out;
   transition: .3s ease-in-out;
   &:hover {
-    //text-shadow: 1px 0 #2B4B6B;
+    text-shadow: 1px 0  $color_blue;
     color: $color_blue;
-    font-weight: bold !important;
   }
   &:focus {
-    //text-shadow: 1px 0 #2B4B6B;
+    text-shadow: 1px 0 0 $color_blue;
     color: $color_blue;
-    font-weight: bold;
   }
   &:active {
-    //text-shadow: 1px 0 #2B4B6B;
+    text-shadow: 1px 0 0 #2B4B6B;
     color: $color_blue;
-    font-weight: bold;
   }
 }
 .selectric-community_category_select .selectric-items{
   width: 101% !important;
 }
-//.k-popup {
-//  border: 0px solid transparent;
-//  -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-//  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-//  border-radius: 3px;
-//  .k-animation-container {
-//    .k-popup {
-//      -webkit-box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-//      box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.10);
-//      overflow: visible !important;
-//      width: 245px;
-//      margin-left: 0px;
-//      &:before {
-//        content: "";
-//        position: absolute;
-//        top: 10px;
-//        left: -9px;
-//        z-index: 1;
-//        display: block;
-//        width: 0;
-//        height: 0;
-//        border-style: solid;
-//        border-width: 8px 8px 8px 0;
-//        border-color: $border_color_1;
-//        line-height: 0px;
-//        _border-color: #000000 #ffffff #000000 #000000;
-//        //_filter: progid: DXImageTransform.Microsoft.Chroma(color='#000000');
-//      }
-//    }
-//  }
-//}
+
 .hb-jumbo {
   background: url('../images/hb-jumbo.png') 50% 50% no-repeat;
   background-size: cover;
@@ -3040,8 +2873,7 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_community;
-            //text-shadow: 1px 0 #5591AA;
-            font-weight: bold;
+            text-shadow: 1px 0 0 $color_community;
           }
         }
       }
@@ -3049,8 +2881,7 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_leadership;
-            //text-shadow: 1px 0 #BDA15F;
-            font-weight: bold;
+            text-shadow: 1px 0 0 $color_leadership;
           }
         }
       }
@@ -3058,8 +2889,7 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_finance;
-            //text-shadow: 1px 0 #73AA56;
-            font-weight: bold;
+            text-shadow: 1px 0 0 $color_finance;
           }
         }
       }
@@ -3067,8 +2897,7 @@ p {
         >.accordion__sub-title {
           &:hover {
             color: $color_personnel;
-            //text-shadow: 1px 0 #CF794A;
-            font-weight: bold;
+            text-shadow: 1px 0 0 $color_personnel;
           }
         }
       }
