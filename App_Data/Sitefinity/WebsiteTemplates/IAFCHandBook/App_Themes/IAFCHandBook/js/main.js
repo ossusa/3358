@@ -42,7 +42,11 @@ $(document).ready(function () {
     });
     $( "site-search" ).on( "keydown", function(event) {
         if(event.which == 13)
-            $('#site-search-submit').click();
+            $('#site-search-submit').click(function (e) {
+                e.preventDefault();
+                var qSecond = $('.site-search').val();
+                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
+            });
     });
     /*LABEL COLORS*/
     $(document).ready(function() {
