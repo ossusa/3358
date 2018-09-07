@@ -621,18 +621,22 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var img = resource.GetRelatedItems<Image>("featuredimage").FirstOrDefault();
 			if (img != null)
 			{
+				resourceInfo.ImageAlt = img.AlternativeText;
 				resourceInfo.ImageUrl = img.Url;
 			}
 			else
 			{
-				resourceInfo.ImagePlaceholderUrl = hostUrl+DefaultPaceholderImgUrl;
+				resourceInfo.ImagePlaceholderUrl = resourceTypeImages["Placeholder"].Url;
+				resourceInfo.ImagePlaceholderAlt = resourceTypeImages["Placeholder"].AlternativeText;
 				if (resourceTypeImages.ContainsKey(resourceTypeTitle))
 				{
-					resourceInfo.ImageSvgUrl = resourceTypeImages[resourceTypeTitle];
+					resourceInfo.ImageSvgUrl = resourceTypeImages[resourceTypeTitle].Url;
+					resourceInfo.ImageSvgAlt = resourceTypeImages[resourceTypeTitle].AlternativeText;
 				}
 				else
 				{
-					resourceInfo.ImageSvgUrl = DefaultArticleImgUrl;
+					resourceInfo.ImageSvgUrl = resourceTypeImages["Article"].Url;
+					resourceInfo.ImageSvgAlt = resourceTypeImages["Article"].AlternativeText;
 				}
 			}
 

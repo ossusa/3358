@@ -38,18 +38,18 @@
 		<div class="resources__logged-img-box ">
 			@if (Model.ResourceDetails.ImageUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
 			{
-				<img src='@Model.ResourceDetails.ImageUrl' />
+				<img src='@Model.ResourceDetails.ImageUrl' alt="@Model.ResourceDetails.ImageAlt" />
 			}
 			else
 			{
 				<div class="resources-placeholder">
 					<div class="placehoolder-background">
-						<img src="@Model.ResourceDetails.ImagePlaceholderUrl" >
+						<img src="@Model.ResourceDetails.ImagePlaceholderUrl" alt="@Model.ResourceDetails.ImagePlaceholderAlt" >
 					</div>
 					@if (Model.ResourceDetails.ImageSvgUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<div class="placeholder-type">
-							<img src="@Model.ResourceDetails.ImageSvgUrl" >
+							<img src="@Model.ResourceDetails.ImageSvgUrl"  alt="@Model.ResourceDetails.ImageSvgAlt">
 						</div>
 					}
 				</div>

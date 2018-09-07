@@ -26,6 +26,7 @@ using System.Threading.Tasks;
 using Telerik.Sitefinity.Security.Claims;
 using Telerik.Sitefinity.Services;
 using Telerik.Sitefinity.Services.Notifications;
+using Telerik.Sitefinity.Modules.Libraries;
 
 namespace SitefinityWebApp.Custom.IAFCHandBook
 {
@@ -287,7 +288,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private List<Guid> topicPersonnelCategories = new List<Guid>();
 		private List<Guid> topicCommunityRelationsCategories = new List<Guid>();
 		Dictionary<Guid, Categories> categoriesDictionaly = new Dictionary<Guid, Categories>();
-		Dictionary<string, string> resourceTypeImages = new Dictionary<string, string>();
+		Dictionary<string, Image> resourceTypeImages = new Dictionary<string, Image>();
 		private bool isUserAuthorized = false;
 		private string hostUrl = String.Empty;
 		#endregion Variables
@@ -2458,9 +2459,15 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public void InitResourceTypeImages()
 		{
-			resourceTypeImages.Add("Video", hostUrl + DefaultVideoImgUrl);
-			resourceTypeImages.Add("Webinar", hostUrl + DefaultWebinarImgUrl);
-			resourceTypeImages.Add("Article", hostUrl + DefaultArticleImgUrl);
+			LibrariesManager librariesManager = LibrariesManager.GetManager();
+			Image image = librariesManager.GetImages().Where(i => i.UrlName=="video").FirstOrDefault();
+			resourceTypeImages.Add("Video", image);
+			image = librariesManager.GetImages().Where(i => i.UrlName == "webinar").FirstOrDefault();
+			resourceTypeImages.Add("Webinar", image);
+			image = librariesManager.GetImages().Where(i => i.UrlName == "article").FirstOrDefault();
+			resourceTypeImages.Add("Article", image);
+			image = librariesManager.GetImages().Where(i => i.UrlName == "resource-placeholder").FirstOrDefault();
+			resourceTypeImages.Add("Placeholder", image);
 
 			/*DefaultPodcastImgUrl;
 			DefaultChartImgUrl;		
