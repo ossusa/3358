@@ -2158,7 +2158,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
 			var searchedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
-				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.GetValue<string>("Title").Contains(searchText));
+				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && ((d.GetValue<string>("Title").Contains(searchText))
+																							||(d.GetValue<string>("ResourceDescription").Contains(searchText))
+																							|| (d.GetValue<string>("shortsummary").Contains(searchText)))
+																							);
 
 			var searchedResourcesList = new List<DynamicContent>();
 			if (orderBy == OrderByTopic)
