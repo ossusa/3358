@@ -572,11 +572,24 @@ p {
       .hb-jumbo__search fieldset input[type="text"] {
         width: inherit !important;
         border: 1px solid #d8d8d8;
-        font-size: 18px;
+        font-size: 1.125em;
         font-weight: 400;
         outline: none;
-        color: #9b9b9b;
+        color: #666;
         font-family: "Nunito Sans", sans-serif; }
+        .hb-jumbo__search fieldset input[type="text"]::-webkit-input-placeholder {
+          color: #9b9b9b;
+          opacity: 1; }
+        .hb-jumbo__search fieldset input[type="text"]:-ms-input-placeholder {
+          color: #9b9b9b;
+          opacity: 1; }
+        .hb-jumbo__search fieldset input[type="text"]::placeholder {
+          color: #9b9b9b;
+          opacity: 1; }
+        .hb-jumbo__search fieldset input[type="text"]:-ms-input-placeholder {
+          color: #9b9b9b; }
+        .hb-jumbo__search fieldset input[type="text"]::-ms-input-placeholder {
+          color: #9b9b9b; }
       .hb-jumbo__search fieldset button[type="button"] {
         position: absolute;
         width: 20px;
