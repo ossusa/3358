@@ -810,6 +810,9 @@ addReplyCommentBtn{
 .label-leadership{
   color: $color_leadership !important;
 }
+.label-community{
+  color: $color_community !important;
+}
 .complete__resources_slides {
   margin: 0 -1%;
   width: auto;
@@ -821,4 +824,10 @@ addReplyCommentBtn{
 }
 .search-results .community__head-btn-select .selectric-wrapper{
   width: unset;
+}
+.selectric-handbook_title_select .selectric-items li.highlighted:after{
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  color: inherit;
 }
