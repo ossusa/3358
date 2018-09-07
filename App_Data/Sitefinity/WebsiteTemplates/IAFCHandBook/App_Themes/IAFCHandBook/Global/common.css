@@ -1922,13 +1922,25 @@ p {
 .community__topics_community a {
   background-color: #5591AA; }
 
+.community__topics_community:hover .topics__img-back {
+  background-color: #5591AA; }
+
 .community__topics_leadership a {
+  background-color: #BDA15F; }
+
+.community__topics_leadership:hover .topics__img-back {
   background-color: #BDA15F; }
 
 .community__topics_finance a {
   background-color: #73AA56; }
 
+.community__topics_finance:hover .topics__img-back {
+  background-color: #73AA56; }
+
 .community__topics_personnel a {
+  background-color: #CF794A; }
+
+.community__topics_personnel:hover .topics__img-back {
   background-color: #CF794A; }
 
 @media (max-width: 1500px) {
@@ -3070,6 +3082,7 @@ p {
   .header__mob-open {
     margin-right: 14px; } }
 
+.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(1) .header__second_list-link.active {
