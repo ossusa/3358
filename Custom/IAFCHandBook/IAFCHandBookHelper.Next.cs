@@ -782,8 +782,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     category.MyHandBookCategoryUrl = categoryDetails.MyHandbookResourceCategoryUrl + sharedUrl;
                     category.MyHandBookParentCategoryUrl = categoryDetails.MyHandbookResourceParentCategoryUrl + sharedUrl;
                     category.TopicCategoryImageUrl = categoryDetails.ResourceParentCategoryImageUrl;
-					category.CategorySvg = categoryDetails.CategorySvg;
-                    category.CategoryTitle = categoryDetails.ResourceCategoryTile;
+					category.CategorySvg = categoryDetails.CategoryImage.Url;
+					category.CategoryAlt = categoryDetails.CategoryImage.AlternativeText;
+
+					category.CategoryTitle = categoryDetails.ResourceCategoryTile;
                     category.CategoryDescription = categoryDetails.ResourceCategoryDescription;
 
                     var childCategoriesList = GetChildCategories(categoryItem);
@@ -813,7 +815,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                         childCategory.TopicCategoryImageUrl = childCategoryDetails.ResourceParentCategoryImageUrl;
                         childCategory.CategoryTitle = childCategoryDetails.ResourceCategoryTile;
                         childCategory.CategoryDescription = childCategoryDetails.ResourceCategoryDescription;
-						childCategory.CategorySvg = childCategoryDetails.CategorySvg;
+						childCategory.CategorySvg = childCategoryDetails.CategoryImage.Url;
+						childCategory.CategoryAlt = childCategoryDetails.CategoryImage.AlternativeText;
 						category.ChildCategories.Add(childCategory);
                     }
 

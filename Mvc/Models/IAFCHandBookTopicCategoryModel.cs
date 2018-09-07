@@ -29,6 +29,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public string MyHandBookResourcesTotalDuration { get; set; }
 		public List<IAFCHandBookTopicCategoryModel> ChildCategories { get; set; }
 		public string CategorySvg { get; set; }
+		public string CategoryAlt { get; set; }
 		public string CategoryClass { get; set; }
 		
 
