@@ -183,9 +183,7 @@ $(document).ready(function () {
 
     setInterval(function() {
         setImgHeight();
-        setWrapperHeight();
     }, 250);
-
 
 
 
