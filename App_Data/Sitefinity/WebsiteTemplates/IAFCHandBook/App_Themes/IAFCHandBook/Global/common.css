@@ -2400,7 +2400,7 @@ p {
   .community__breadcrumbs {
     margin-top: 14px; }
   .selectric-community__title-select .selectric-items {
-    width: 318px; }
+    width: 318px !important; }
   .resources__slide-footer {
     margin-top: 6px;
     -ms-flex-wrap: wrap;
