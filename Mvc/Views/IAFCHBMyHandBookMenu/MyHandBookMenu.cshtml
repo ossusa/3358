@@ -68,7 +68,7 @@
 										<ul class="accordion__sub-content">
 										@foreach (var childChildItem in childItem.ChildMenuItem)
 										{
-											<li> <a href="@childChildItem.Url" class=" accordion_sub-link @((childChildItem.Url==currentPageUrl)?"active":string.Empty)"> @childChildItem.Title</a></li>
+											<li> <a href="@childChildItem.Url" class=" accordion__sub-link @((childChildItem.Url==currentPageUrl)?"active":string.Empty)"> @childChildItem.Title</a></li>
 										}
 									</ul>
 								}
