@@ -2709,6 +2709,7 @@ p {
     .header__text-link {
       color: #fff;
       font-size: 0.875em;
+      font-weight: 500;
       font-family: "Lato", sans-serif; }
   .header__search {
     border: none;
@@ -2779,7 +2780,7 @@ p {
     background-color: #ffffff; }
   .header__sub_list {
     cursor: pointer;
-    padding: 9px 0 0 0; }
+    padding: 8px 0 0 0; }
     .header__sub_list:nth-of-type(1) {
       padding: 0; }
     .header__sub_list-link {
@@ -2840,7 +2841,7 @@ p {
     margin: 0;
     padding: 20px;
     list-style: none;
-    width: 257px;
+    width: 245px;
     border-radius: 3px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     background-color: #ffffff; }
@@ -2983,7 +2984,7 @@ p {
     background: transparent;
     border: none;
     outline: none;
-    margin-right: 22px;
+    margin-right: 28px;
     padding-left: 0px;
     padding-right: 0px;
     color: #9b9b9b;
@@ -3080,6 +3081,12 @@ p {
 .footer {
   border-top: 1px solid #9B9B9B;
   width: 100%; }
+  .footer_copyright {
+    margin-left: 24px;
+    margin-top: 1px; }
+    @media screen and (max-width: 767px) {
+      .footer_copyright {
+        margin-left: unset; } }
   .footer__info {
     display: -ms-flexbox;
     display: flex;
@@ -3090,20 +3097,22 @@ p {
     .footer__info-cols {
       display: -ms-flexbox;
       display: flex; }
-    .footer__info-col ul li a {
-      font-family: "Nunito Sans", sans-serif;
-      font-weight: 400;
-      color: #666666;
-      font-size: 1.00em;
-      z-index: 1000;
-      padding: .5em 15px .4em !important;
-      transition: .1s ease-in-out; }
-      .footer__info-col ul li a:hover {
-        text-shadow: 1px 0 0 #2B4B6B;
-        color: #2B4B6B; }
-      .footer__info-col ul li a:focus {
-        text-shadow: 1px 0 0 #2B4B6B;
-        color: #2B4B6B; }
+    .footer__info-col ul {
+      margin: 0 -12px; }
+      .footer__info-col ul li a {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 400;
+        color: #666666;
+        font-size: 1.00em;
+        z-index: 1000;
+        padding: 12px !important;
+        transition: .1s ease-in-out; }
+        .footer__info-col ul li a:hover {
+          text-shadow: 1px 0 0 #2B4B6B;
+          color: #2B4B6B; }
+        .footer__info-col ul li a:focus {
+          text-shadow: 1px 0 0 #2B4B6B;
+          color: #2B4B6B; }
 
 .footer__info {
   height: 72px; }
