@@ -26,7 +26,7 @@ $(document).ready(function () {
     $($liSearch).appendTo('.header__list-search');
     $(".header__search").click(function (e) {
         e.preventDefault();
-        $('.mg-search-box').show();
+        $('.mg-search-box').toggle();
     });
         $("#site-search-submit").click(function (e) {
             e.preventDefault();
