@@ -3051,6 +3051,7 @@ p {
   color: #2B4B6B; }
 
 .header_unlogged .header__sub_ul {
+  z-index: 3;
   width: 210px; }
 
 .header_unlogged .header__second_ul {
