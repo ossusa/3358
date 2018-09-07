@@ -166,7 +166,7 @@ $(document).ready(function () {
         var headerHeight = $( '#header').outerHeight();
         var footerHeight = $( '#footer').outerHeight();
         console.log(footerHeight);
-        var minHeight = windowHeight - headerHeight - footerHeight;
+        var minHeight = windowHeight - headerHeight - footerHeight*2;
         $('#content').css('min-height', minHeight);
     };
 
