@@ -3146,6 +3146,12 @@ p {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
+.header_unlogged .header__sub_ul {
+  left: -145px; }
+  @media screen and (max-width: 1109px) {
+    .header_unlogged .header__sub_ul {
+      left: -250px; } }
+
 .footer {
   border-top: 1px solid #9B9B9B; }
   .footer__info {
@@ -3944,6 +3950,9 @@ addReplyCommentBtn {
 .label-leadership {
   color: #BDA15F !important; }
 
+.label-community {
+  color: #5591AA !important; }
+
 .complete__resources_slides {
   margin: 0 -1%;
   width: auto; }
@@ -3954,6 +3963,13 @@ addReplyCommentBtn {
 
 .search-results .community__head-btn-select .selectric-wrapper {
   width: unset; }
+
+.selectric-handbook_title_select .selectric-items li.highlighted:after {
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  margin-left: 8px;
+  color: inherit; }
 
 .handbook__title {
   width: 100%;

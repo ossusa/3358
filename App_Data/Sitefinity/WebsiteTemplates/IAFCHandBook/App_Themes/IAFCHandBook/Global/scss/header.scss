@@ -437,3 +437,9 @@
   text-shadow: 1px 0 0 $color_blue;
   color: $color_blue;
 }
+.header_unlogged .header__sub_ul {
+  left: -145px;
+  @media screen and (max-width: 1109px){
+    left: -250px;
+  }
+}
