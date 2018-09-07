@@ -51,10 +51,10 @@
 							</div>
 							@if (childItem.ChildMenuItem.Any())
 							{
-								<ul class="accordion_sub_content">
+								<ul class="accordion_sub-content">
 								@foreach (var childChildItem in childItem.ChildMenuItem)
 								{
-									<li> <a href="@childChildItem.Url" class=" accordion_sub-link"> @childChildItem.Title</a></li>
+									<li> <a href="@childChildItem.Url" class="accordion_sub-link"> @childChildItem.Title</a></li>
 								}
 							</ul>
 							}
