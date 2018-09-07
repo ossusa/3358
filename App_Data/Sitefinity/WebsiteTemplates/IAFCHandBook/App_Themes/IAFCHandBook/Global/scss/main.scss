@@ -2553,7 +2553,7 @@ p {
     flex-direction: column-reverse;
   }
   .left_indicator_col{
-    align-items: flex-start;
+    align-self: flex-start;
   }
   .handbook__more {
     width: 48%;
