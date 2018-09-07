@@ -11,8 +11,9 @@
 				<div class="resources-single__left_post_video">
 					@if (Model.ResourceDetails.VideoEmbedCode != null && Model.ResourceDetails.VideoEmbedCode != String.Empty)
 					{
-						<iframe width="420" height="315"
-								src=@Model.ResourceDetails.VideoEmbedCode></iframe>
+						<video width="420" height="315" id="player1" preload="none">
+							<source type="video/youtube" src="@Model.ResourceDetails.VideoEmbedCode" />
+						</video>						
 					}
 				</div>
 				<div class="resources-single__left_post_title">
