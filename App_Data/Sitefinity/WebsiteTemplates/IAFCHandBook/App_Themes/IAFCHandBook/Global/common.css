@@ -84,102 +84,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.font-smooth {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.mg-carousel {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.button-default {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-
-.button-blue {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-  .button-blue-heavy {
-    width: auto;
-    border-radius: 4px;
-    padding: 12px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 21px;
-    font-weight: bold; }
-
-.button-red {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-  .button-red-heavy {
-    width: auto;
-    border-radius: 4px;
-    padding: 12px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 21px;
-    font-weight: bold; }
-
-.ibutton-blue {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-
-.ibutton-blue-heavy {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-
-.ibutton-red {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-
-.ibutton-red-heavy {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-
-.button-orange {
-  width: auto;
-  border-radius: 4px;
-  padding: 12px 20px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 21px;
-  font-weight: bold; }
-
 .button-arrow {
   width: auto;
   border-radius: 4px;
@@ -617,14 +521,14 @@ p {
   padding: 8px 20px 8px !important;
   transition: .3s ease-in-out; }
   .k-link:hover {
-    color: #2B4B6B;
-    font-weight: bold !important; }
+    text-shadow: 1px 0 #2B4B6B;
+    color: #2B4B6B; }
   .k-link:focus {
-    color: #2B4B6B;
-    font-weight: bold; }
+    text-shadow: 1px 0 0 #2B4B6B;
+    color: #2B4B6B; }
   .k-link:active {
-    color: #2B4B6B;
-    font-weight: bold; }
+    text-shadow: 1px 0 0 #2B4B6B;
+    color: #2B4B6B; }
 
 .selectric-community_category_select .selectric-items {
   width: 101% !important; }
@@ -2364,16 +2268,16 @@ p {
     height: 176px !important; }
   .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title:hover {
     color: #5591AA;
-    font-weight: bold; }
+    text-shadow: 1px 0 0 #5591AA; }
   .accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-title:hover {
     color: #BDA15F;
-    font-weight: bold; }
+    text-shadow: 1px 0 0 #BDA15F; }
   .accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-title:hover {
     color: #73AA56;
-    font-weight: bold; }
+    text-shadow: 1px 0 0 #73AA56; }
   .accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title:hover {
     color: #CF794A;
-    font-weight: bold; }
+    text-shadow: 1px 0 0 #CF794A; }
   .community__head-button-group {
     margin-bottom: 36px !important;
     margin-top: 32px !important; }
@@ -2905,8 +2809,7 @@ p {
       color: #5591AA; }
     .header__sub_list:nth-of-type(2) .header__second_list-link:hover {
       text-shadow: 1px 0 0 #BDA15F;
-      color: #BDA15F;
-      font-weight: bold; }
+      color: #BDA15F; }
     .header__sub_list:nth-of-type(2) .header__second_list-link:focus {
       text-shadow: 1px 0 0 #BDA15F;
       color: #BDA15F; }
@@ -3145,12 +3048,6 @@ p {
 .header__list-link.active {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
-
-.header_unlogged .header__sub_ul {
-  left: -145px; }
-  @media screen and (max-width: 1109px) {
-    .header_unlogged .header__sub_ul {
-      left: -250px; } }
 
 .footer {
   border-top: 1px solid #9B9B9B; }
