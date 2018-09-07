@@ -28,16 +28,11 @@ $(document).ready(function () {
         e.preventDefault();
         $('.mg-search-box').show();
     });
-    $(function(){
         $("#site-search-submit").click(function (e) {
             e.preventDefault();
             var q = $('#site-search').val();
             location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-            searchFunction();
         });
-    });
-
-
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
@@ -45,13 +40,6 @@ $(document).ready(function () {
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
 
-    $("#site-search").on("keypress", function(e){
-        if(e.which == 13){
-            $(function(){
-                $('#site-search-submit').click( searchFunction );
-            });
-        }
-    });
     /*LABEL COLORS*/
     $(document).ready(function() {
         var $breadcrumbPersonnelThird =  $(".selectric-community__title-select .label:contains('Personnel')");
