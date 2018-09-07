@@ -2333,11 +2333,22 @@ p {
   a {
     background-color: $color_community;
   }
+
+  &:hover {
+    .topics__img-back {
+      background-color: $color_community;
+    }
+  }
 }
 
 .community__topics_leadership {
   a {
     background-color:$color_leadership;
+  }
+  &:hover {
+    .topics__img-back {
+      background-color: $color_leadership;
+    }
   }
 }
 
@@ -2345,11 +2356,21 @@ p {
   a {
     background-color: $color_finance;
   }
+  &:hover {
+    .topics__img-back {
+      background-color: $color_finance;
+    }
+  }
 }
 
 .community__topics_personnel {
   a {
     background-color: $color_personnel;
+  }
+  &:hover {
+    .topics__img-back {
+      background-color: $color_personnel;
+    }
   }
 }
 
@@ -2787,12 +2808,6 @@ p {
     border: 1px solid #D8D8D8;
     >.accordion__item {
       &:nth-of-type(1) {
-        >.accordion__title {
-          &:hover {
-            color: $color_19;
-            text-shadow: 1px 0 0 $color_19;
-          }
-        }
         >.accordion__arrow.accordion__sub-title {
           &:hover {
             color: $color_19;
@@ -2955,6 +2970,9 @@ p {
     font-size: 1em;
     white-space: nowrap;
     color: $color_14;
+  }
+  .sticky .accordion{
+    height: 90%;
   }
   .footer__info {
     height: 72px;
