@@ -23,9 +23,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			var url = System.Web.HttpContext.Current.Request.Url.Host;
 			handBookHelper = new IAFCHandBookHelper(url);
 		}
-
 		
-
 		public IAFCHandBookMyHandBookModel GetData(String categoryName, String userId)
 		{
 			return handBookHelper.GetMyHandBookResourcesPerCategory(categoryName, userId);
@@ -36,6 +34,11 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult Index(String userid)
 		{
 			var model = GetData(CategoryName, userid);
+			if (model == null)
+			{
+				return Redirect(handBookHelper.PageNotFoundUrl());
+			}
+
 			var view = View("MyHandBookAllResourcesPerCategory", model);
 			return view;
 		}

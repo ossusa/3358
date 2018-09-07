@@ -32,6 +32,12 @@ namespace SitefinityWebApp.Mvc.Controllers
 		{
 			IAFCHandBookMyHandBookResourceModelModel model = new IAFCHandBookMyHandBookResourceModelModel();
 			model = handBookHelper.GetMyHandBookCategoryResourcesByName(CategoryName, userId);
+
+			if (model == null)
+			{
+				return Redirect(handBookHelper.PageNotFoundUrl());
+			}
+
 			return View("MyHandBookCategoryResources", model);
 		}
 		
@@ -41,7 +47,6 @@ namespace SitefinityWebApp.Mvc.Controllers
 		{
 
 			var categoryGuid = Guid.Parse(categoryId);
-
 			var model = handBookHelper.GetMyHandBookCategoryResourcesList(categoryGuid);
 
 
