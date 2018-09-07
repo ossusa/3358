@@ -1926,6 +1926,7 @@ p {
   .topics__img-text {
     font-size: 32px;
     width: unset;
+    max-width: unset;
     white-space: normal; }
   .community__topics-img {
     width: 270px !important;
@@ -3885,6 +3886,14 @@ addReplyCommentBtn {
     width: 48%;
     margin-left: 1%;
     margin-right: 1%; }
+
+.resources__logged .resources__logged-buttons {
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .resources__logged .resources__logged-buttons button {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-right: 0; }
 
 .search-results .community__head-btn-select .selectric-wrapper {
   width: unset; }
