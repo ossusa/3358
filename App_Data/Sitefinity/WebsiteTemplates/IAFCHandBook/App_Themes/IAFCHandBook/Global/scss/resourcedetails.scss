@@ -821,6 +821,15 @@ addReplyCommentBtn{
     margin-right: 1%;
   }
 }
+.resources__logged{
+  .resources__logged-buttons{
+    flex-direction: column;
+    button{
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+  }
+}
 .search-results .community__head-btn-select .selectric-wrapper{
   width: unset;
 }
