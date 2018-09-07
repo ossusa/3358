@@ -163,9 +163,11 @@ $(document).ready(function () {
     //set content's height to make footer always at the bottom
     function setWrapperHeight() {
         var windowHeight = $( window ).height();
-        var headerHeight = $( '#header').height();
-        var minHeight = windowHeight - headerHeight;
-        $('#wrapper').css('min-height', minHeight);
+        var headerHeight = $( '#header').outerHeight();
+        var footerHeight = $( '.footer').outerHeight();
+        console.log(footerHeight);
+        var minHeight = windowHeight - headerHeight - footerHeight;
+        $('#content').css('min-height', minHeight);
     };
 
 
@@ -350,7 +352,3 @@ var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
-$(".header_unlogged .header__sub_list-link").on("click", function (e) {
-    e.preventDefault;
-    $('.header_unlogged .header__second_ul').toggle();
-});

@@ -439,13 +439,21 @@
 .header_unlogged {
   .header__sub_ul{
     z-index: 3;
-    width: 210px
+    width: 275px;
+    left: -25px;
+    @media screen and (max-width: 1109px){
+      width: 210px;
+    }
   }
   .header__second_ul {
     position: unset;
     width: unset;
     box-shadow: unset;
+    margin-left: 20px;
     padding: 5px 5px 0 10px;
+    @media screen and (max-width: 1109px){
+      margin-left: 15px;
+    }
     &:before{
       content: '';
       display: none;
