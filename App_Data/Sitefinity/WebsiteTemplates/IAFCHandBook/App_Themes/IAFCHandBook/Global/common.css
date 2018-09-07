@@ -1556,7 +1556,7 @@ p {
 .community__section {
   margin-bottom: 100px; }
 
-.resources__slide-img img {
+.resources__slide-img > img {
   width: auto;
   position: absolute;
   top: 50%;
