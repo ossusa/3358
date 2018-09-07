@@ -3938,6 +3938,12 @@ addReplyCommentBtn {
 .label-personnel {
   color: #CF794A !important; }
 
+.label-finance {
+  color: #73AA56 !important; }
+
+.label-leadership {
+  color: #BDA15F !important; }
+
 .complete__resources_slides {
   margin: 0 -1%;
   width: auto; }
