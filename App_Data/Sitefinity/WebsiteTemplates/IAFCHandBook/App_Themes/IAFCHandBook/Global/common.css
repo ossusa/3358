@@ -2207,7 +2207,9 @@ p {
     margin: 0;
     padding: 0;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-    border: 1px solid #D8D8D8; }
+    border-bottom: 1px solid #D8D8D8;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8; }
     .accordion > .accordion__item:nth-of-type(1) > .accordion__arrow.accordion__sub-title:hover {
       color: #2b4b6b;
       text-shadow: 1px 0 0 #2b4b6b; }
@@ -2248,10 +2250,13 @@ p {
     background-color: #fff; }
     .accordion__item .accordion__title {
       position: relative;
-      display: block;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
       transition: background-color 0.2s;
       cursor: pointer;
-      padding: 12px 28px;
+      padding: 20px 28px;
       border-bottom: 1px solid #D8D8D8; }
       .accordion__item .accordion__title:hover {
         background-color: #fff;
