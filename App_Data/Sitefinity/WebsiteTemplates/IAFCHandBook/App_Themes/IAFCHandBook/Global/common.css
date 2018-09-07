@@ -3892,7 +3892,8 @@ addReplyCommentBtn {
   flex-direction: column; }
   .resources__logged .resources__logged-buttons button {
     margin: 0 auto;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    margin-right: 0; }
 
 .search-results .community__head-btn-select .selectric-wrapper {
   width: unset; }
