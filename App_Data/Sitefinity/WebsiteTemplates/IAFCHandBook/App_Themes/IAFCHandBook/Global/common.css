@@ -3290,8 +3290,9 @@ p {
         .resources-single__left_post_title ul, .resources-single__left_post_title ol {
           font-family: 'Zilla Slab', serif;
           color: #4a4a4a;
-          font-size: 18px;
-          font-weight: 300; }
+          font-size: 1.25em;
+          font-weight: 300;
+          line-height: 1.2; }
       .resources-single__left_post_comment_header {
         display: -ms-flexbox;
         display: flex;
