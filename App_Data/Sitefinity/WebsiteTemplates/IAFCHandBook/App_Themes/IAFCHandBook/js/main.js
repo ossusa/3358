@@ -28,11 +28,15 @@ $(document).ready(function () {
         e.preventDefault();
         $('.mg-search-box').show();
     });
-    $("#site-search-submit").click(function (e) {
-        e.preventDefault();
-        var q = $('#site-search').val();
-        location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+    $(function(){
+        $("#site-search-submit").click(function (e) {
+            e.preventDefault();
+            var q = $('#site-search').val();
+            location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+            searchFunction();
+        });
     });
+
 
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
@@ -40,12 +44,11 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
+
     $("#site-search").on("keypress", function(e){
         if(e.which == 13){
-            $("#site-search-submit").click(function (e) {
-                e.preventDefault();
-                var q = $('#site-search').val();
-                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+            $(function(){
+                $('#site-search-submit').click( searchFunction );
             });
         }
     });
