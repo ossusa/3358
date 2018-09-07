@@ -2808,12 +2808,6 @@ p {
     border: 1px solid #D8D8D8;
     >.accordion__item {
       &:nth-of-type(1) {
-        >.accordion__title {
-          &:hover {
-            color: $color_19;
-            text-shadow: 1px 0 0 $color_19;
-          }
-        }
         >.accordion__arrow.accordion__sub-title {
           &:hover {
             color: $color_19;
@@ -2976,6 +2970,9 @@ p {
     font-size: 1em;
     white-space: nowrap;
     color: $color_14;
+  }
+  .sticky .accordion{
+    height: 90%;
   }
   .footer__info {
     height: 72px;
