@@ -2068,6 +2068,9 @@ p {
     display: flex;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse; }
+  .left_indicator_col {
+    -ms-flex-align: start;
+    align-items: flex-start; }
   .handbook__more {
     width: 48%; }
   .complete__resources_slide {

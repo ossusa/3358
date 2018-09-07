@@ -2564,7 +2564,9 @@ p {
     display: flex;
     flex-direction: column-reverse;
   }
-
+  .left_indicator_col{
+    align-self: flex-start;
+  }
   .handbook__more {
     width: 48%;
   }
