@@ -3505,7 +3505,7 @@ p {
     .resources-single__right_header * {
       color: #2b4b6b;
       font-family: "Nunito Sans";
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: 700;
       margin: 0 0 16px; }
     .resources-single__right_list {
