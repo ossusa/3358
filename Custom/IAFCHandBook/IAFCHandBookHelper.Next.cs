@@ -850,6 +850,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     model.SharedUserId = userGuid;
 					model.SharedUser = GetUserName(userGuid) + "'s";
 					myHandBookItem = GetMyHandBookByID(userGuid);
+					if (myHandBookItem==null)
+					{
+						return null; 
+					}
                 }
 
                 model.Id = myHandBookItem.Id;
@@ -858,7 +862,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 var myHandBookResourcesItem = new IAFCHandBookMyHandBookResourceModelModel();
 
                 var categoryItem = GetCategoryGuidByName(categoryName);
-
+				if(categoryItem==Guid.Empty)
+				{
+					return null;
+				}
+				
                 var category = new IAFCHandBookTopicCategoryModel();
                 var categoryDetails = GetTopicCategories(categoryItem);
                 category.Id = categoryItem;
@@ -981,6 +989,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					model.SharedUser = GetUserName(userGuid) + "'s";
 
 					myHandBookItem = GetMyHandBookByID(userGuid);
+					if(myHandBookItem==null)
+					{
+						return null;
+					}
                 }
 
                 var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")

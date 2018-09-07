@@ -478,6 +478,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				case DepartmentAdministrationName:
 					categoryID = DepartmentAdministrationCategory;
 					break;
+				default:
+					categoryID = Guid.Empty;
+					break;
 			}
 			return categoryID;
 		}
@@ -1987,6 +1990,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region MyHandBookGetResourcesPerCategory
 		public IAFCHandBookMyHandBookModel GetMyHandBookResourcesPerCategory(String categoryName, String userId = null)
 		{
+			Guid userGuid;
+			var categoryId = GetCategoryGuidByName(categoryName);
+			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)) || (categoryId==Guid.Empty))
+			{
+				return null;
+			}
+			
+
 			return GetMyHandBookResourcesPerCategoryNext(categoryName, userId);
 		}
 		#endregion MyHandBookGetResourcesPerCategory
@@ -2002,6 +2013,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public IAFCHandBookMyHandBookResourceModelModel GetMyHandBookCategoryResourcesByName(String categoryName, String userId = null, String orderBy = OrderByMostRecent)
 		{
 			var categoryId = GetCategoryGuidByName(categoryName);
+			Guid userGuid;			
+			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)) || (categoryId == Guid.Empty))
+			{
+				return null;
+			}
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
 			model = GetCategoryResources(categoryId, false, userId, orderBy);
 			return model;
