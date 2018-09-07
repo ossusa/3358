@@ -3051,19 +3051,23 @@ p {
   .header__mob-open {
     margin-right: 14px; } }
 
-.header__sub_list:nth-of-type(1) .header__sub_list-link.colored {
+.header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
+.header__sub_list:nth-of-type(1) .header__sub_list-link.active {
   text-shadow: 1px 0 0 #5591AA;
   color: #5591AA; }
 
-.header__sub_list:nth-of-type(2) .header__sub_list-link.colored {
+.header__sub_list:nth-of-type(2) .header__sub_list-link.colored,
+.header__sub_list:nth-of-type(2) .header__sub_list-link.active {
   text-shadow: 1px 0 0 #BDA15F;
   color: #BDA15F; }
 
-.header__sub_list:nth-of-type(3) .header__sub_list-link.colored {
+.header__sub_list:nth-of-type(3) .header__sub_list-link.colored,
+.header__sub_list:nth-of-type(3) .header__sub_list-link.active {
   text-shadow: 1px 0 0 #73AA56;
   color: #73AA56; }
 
-.header__sub_list:nth-of-type(4) .header__sub_list-link.colored {
+.header__sub_list:nth-of-type(4) .header__sub_list-link.colored,
+.header__sub_list:nth-of-type(4) .header__sub_list-link.active {
   text-shadow: 1px 0 0 #CF794A;
   color: #CF794A; }
 
@@ -3071,7 +3075,7 @@ p {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
-.active-link {
+.header__list-link.active {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
