@@ -27,7 +27,7 @@ $(document).ready(function () {
     $(".header__search").click(function (e) {
         e.preventDefault();
         $('.mg-search-box').toggle();
-        $('.header__list:nth-of-type(1) > a').hide();
+        $('.header__sub_ul').hide();
     });
         $("#site-search-submit").click(function (e) {
             e.preventDefault();
