@@ -2567,7 +2567,6 @@ p {
       width: 150px;
     }
   }
-
   .community_indicator_col {
     display: flex;
     flex-direction: column-reverse;
@@ -3144,7 +3143,7 @@ p {
   }
   .selectric-community__title-select {
     .selectric-items {
-      width: 318px;
+      width: 318px !important;
     }
   }
   .resources__slide-footer {
