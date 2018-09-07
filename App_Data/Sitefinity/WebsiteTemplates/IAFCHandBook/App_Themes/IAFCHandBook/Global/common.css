@@ -364,13 +364,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   max-width: 1440px;
-  box-sizing: content-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+  box-sizing: content-box; }
 
 .box {
   padding-left: 120px;
