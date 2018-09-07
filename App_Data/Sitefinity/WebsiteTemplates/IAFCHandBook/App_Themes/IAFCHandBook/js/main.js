@@ -153,16 +153,7 @@ $(document).ready(function () {
         setImgHeight();
     }, 250);
 
-    //text truncate
-    $('.resources__slide-title').ellipsis();
 
-    $('.resources__slide-title').ellipsis({
-        lines: '2'
-    });
-
-    $('.resources__slide-title').ellipsis({
-        responsive: true
-    });
 
     $('.markAsCompleteBtn').click(function () {
         $('.complete_box').addClass('anticon anticon-check');
