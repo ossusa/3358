@@ -3513,7 +3513,7 @@ p {
           color: #666666;
           font-family: 'Zilla Slab', serif;
           font-weight: 500;
-          font-size: 12px;
+          font-size: 0.75em;
           text-transform: uppercase;
           letter-spacing: 1.2px;
           margin-bottom: 2px; }
@@ -3522,14 +3522,14 @@ p {
           .resources-single__right_list_item_title * {
             color: #2b4b6b;
             font-family: "Nunito Sans";
-            font-size: 16px;
+            font-size: 1em;
             font-weight: 700; }
     .resources-single__right_more {
       text-align: center; }
       .resources-single__right_more a {
         color: #666666;
         font-family: "Nunito Sans";
-        font-size: 16px;
+        font-size: 1em;
         font-weight: 700; }
   .resources-single__comments_list {
     margin-top: 15px; }
