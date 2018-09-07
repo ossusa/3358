@@ -891,6 +891,7 @@
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBRCategoryResourcesListController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBRecentlyAddedResourcesController.cs" />
+    <Compile Include="Mvc\Controllers\IAFCHBRederictController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourceDetailsController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBResourcesPerCategoryController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBSearchController.cs" />
