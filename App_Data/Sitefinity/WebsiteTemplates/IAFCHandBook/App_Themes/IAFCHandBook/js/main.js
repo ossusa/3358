@@ -170,6 +170,16 @@ $(document).ready(function () {
         $('#content').css('min-height', minHeight);
     };
 
+    $( ".img-container-js > img" ).each(function() {
+        var elem = $(this);
+        if ((this.width()/this.height()) < 13/9){
+            this.css({
+                'width': '100%',
+                'height': 'auto'
+            });
+        }
+    });
+
 
     setInterval(function() {
         setImgHeight();
