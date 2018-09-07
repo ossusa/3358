@@ -1252,6 +1252,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					return null;
 				}
 				model = GetResourceDetails(resourceItem, categoryId);
+				if (model==null)
+				{
+					return null;
+				}
 				model.MoreResources = GetMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
 				model.Comments = GetResourceComments(resourceItem);
 			}
@@ -2056,6 +2060,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Get My Hnadbook ResourceDetails by Name
 		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null)
 		{
+			if (!isUserAuthorized)
+			{
+				return null;
+			}
 			return GetMyHnadbookResourceDetailsNext(name, categoryId);
 		}
 		#endregion Get My Hnadbook ResourceDetails by Name

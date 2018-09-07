@@ -350,3 +350,7 @@ function myFunction(x) {
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
+
+$(".header__sub_list-link").on("click", function () {
+    $('.header_unlogged .header__second_ul').css("background", "red");
+});

@@ -581,7 +581,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			Guid categoryItem;
 			if (categoryId != null)
 			{
-				categoryItem = resourceCategoriesIDs.Where(c => c == categoryId).First();
+				categoryItem = resourceCategoriesIDs.Where(c => c == categoryId).FirstOrDefault();
+				if (categoryItem == Guid.Empty)
+				{
+					return null;
+				}
 			}
 			else
 			{
@@ -1121,8 +1125,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
             var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType)
                 .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
                 .Where(d => d.UrlName == name)
-                .First();
-
+                .FirstOrDefault();			
+			if (resourceItem == null)
+			{
+				return null;
+			}
             var model = GetResourceDetails(resourceItem, categoryId, true);
             model.MoreResources = GetMyHandBookMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
             model.Comments = GetResourceComments(resourceItem);
