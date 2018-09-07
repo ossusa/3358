@@ -68,7 +68,7 @@
         <!-- Content End ============================================= -->
 
         <!-- Footer ============================================= -->
-        <footer class="footer box">
+        <footer id="footer" class="footer box">
             <div class="footer__info">
                 <div class="footer__info-col">
                     <asp:ContentPlaceHolder ID="footerImage" runat="server">
