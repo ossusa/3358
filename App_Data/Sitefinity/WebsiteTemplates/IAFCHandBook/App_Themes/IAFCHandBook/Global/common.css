@@ -3074,6 +3074,10 @@ p {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
+.active {
+  text-shadow: 1px 0 0 #2B4B6B;
+  color: #2B4B6B; }
+
 .footer {
   border-top: 1px solid #9B9B9B; }
   .footer__info {
