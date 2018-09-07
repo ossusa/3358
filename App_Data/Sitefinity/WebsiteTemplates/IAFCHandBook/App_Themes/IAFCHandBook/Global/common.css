@@ -450,6 +450,7 @@ th {
 body {
   background-color: #fff;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
   color: #4A4A4A; }
@@ -1171,7 +1172,8 @@ p {
     position: absolute;
     top: 16px;
     left: 20px;
-    right: 22px; }
+    right: 22px;
+    line-height: 1.2; }
   .topics__img-back-text {
     color: #fff;
     font-family: "Nunito Sans", sans-serif;
@@ -1943,6 +1945,27 @@ p {
 .community__topics_personnel:hover .topics__img-back {
   background-color: #CF794A; }
 
+.resources__slide-article {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.ellip {
+  display: block;
+  height: 100%; }
+
+.ellip-line {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 100%; }
+
+.ellip,
+.ellip-line {
+  position: relative;
+  overflow: hidden; }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
@@ -2144,9 +2167,7 @@ p {
   .community__topics-img {
     width: 100% !important; }
   .resources__slide-title {
-    font-size: 1.23em;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; }
+    font-size: 1.23em; }
   .topics__img-text {
     font-size: 1.750em;
     white-space: nowrap; }
@@ -2441,9 +2462,6 @@ p {
     padding: 14px; }
   .handbook__template.complete__resources_slides .resources__slide-title {
     font-size: 1em; }
-  .handbook__template .resources__slide-article, .handbook__template .resources__slide-title, .handbook__template .resources__slide-desc {
-    overflow: hidden;
-    text-overflow: ellipsis; }
   .handbook__template .placeholder-type img {
     width: 100%; }
   .handbook__more {
@@ -3919,6 +3937,12 @@ addReplyCommentBtn {
 
 .label-personnel {
   color: #CF794A !important; }
+
+.label-finance {
+  color: #73AA56 !important; }
+
+.label-leadership {
+  color: #BDA15F !important; }
 
 .complete__resources_slides {
   margin: 0 -1%;
