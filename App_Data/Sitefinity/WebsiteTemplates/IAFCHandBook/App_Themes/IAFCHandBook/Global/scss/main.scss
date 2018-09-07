@@ -2330,7 +2330,19 @@ p {
 }
 
 .community__topics_community {
-  background-color: ;
+  background-color: $color_community;
+}
+
+.community__topics_leadership {
+  background-color:$color_leadership;
+}
+
+.community__topics_finance {
+  background-color: $color_finance;
+}
+
+.community__topics_personnel {
+  background-color: $color_personnel;
 }
 
 @media(max-width: 1500px){
