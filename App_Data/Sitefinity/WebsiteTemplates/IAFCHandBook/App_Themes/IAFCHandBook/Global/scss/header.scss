@@ -392,22 +392,22 @@
   }
 }
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
-.header__sub_list:nth-of-type(1) .header__sub_list-link.colored.active{
+.header__sub_list:nth-of-type(1) .header__sub_list-link.active{
   text-shadow: 1px 0 0 $color_community;
   color: $color_community;
 }
 .header__sub_list:nth-of-type(2) .header__sub_list-link.colored,
-.header__sub_list:nth-of-type(2) .header__sub_list-link.colored.active{
+.header__sub_list:nth-of-type(2) .header__sub_list-link.active{
   text-shadow: 1px 0 0 $color_leadership;
   color: $color_leadership;
 }
 .header__sub_list:nth-of-type(3) .header__sub_list-link.colored,
-.header__sub_list:nth-of-type(3) .header__sub_list-link.colored.active{
+.header__sub_list:nth-of-type(3) .header__sub_list-link.active{
   text-shadow: 1px 0 0 $color_finance;
   color: $color_finance;
 }
 .header__sub_list:nth-of-type(4) .header__sub_list-link.colored,
-.header__sub_list:nth-of-type(4) .header__sub_list-link.colored.active{
+.header__sub_list:nth-of-type(4) .header__sub_list-link.active{
   text-shadow: 1px 0 0 $color_personnel;
   color: $color_personnel;
 }
