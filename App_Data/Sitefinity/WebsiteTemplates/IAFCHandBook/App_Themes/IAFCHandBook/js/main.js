@@ -40,7 +40,10 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
-
+    $( "#site-search" ).on( "keydown", function(event) {
+        if(event.which == 13)
+            $('#site-search-submit').click();
+    });
     /*LABEL COLORS*/
     $(document).ready(function() {
         var $breadcrumbPersonnelThird =  $(".selectric-community__title-select .label:contains('Personnel')");
