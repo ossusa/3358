@@ -3071,7 +3071,7 @@ p {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
-.header__list-link .active {
+.header__list-link.active {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
