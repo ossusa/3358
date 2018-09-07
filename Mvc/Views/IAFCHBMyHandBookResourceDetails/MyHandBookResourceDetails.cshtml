@@ -1,6 +1,7 @@
 ﻿@model SitefinityWebApp.Mvc.Models.IAFCHandBookResourceModel
 
 @{var openDocumentLink = false;}
+@{var youTubeEmbeded = string.Empty;}
 <div class="handbook__title">
 	@if (Model.SharedUser != null && Model.SharedUser != string.Empty)
 	{
@@ -25,8 +26,11 @@
 				<div class="resources-single__left_post_video">
 					@if (Model.ResourceDetails.VideoEmbedCode != null && Model.ResourceDetails.VideoEmbedCode != String.Empty)
 					{
-						<iframe width="420" height="315"
-								src=@Model.ResourceDetails.VideoEmbedCode></iframe>
+						{ youTubeEmbeded = Model.ResourceDetails.VideoEmbedCode.Replace("youtu.be", "youtube.com/embed");
+						  youTubeEmbeded = youTubeEmbeded.Replace("youtube.com/watch?v=", "youtube.com/embed/");
+						}
+					<iframe width="420" height="315"
+							src="@youTubeEmbeded"></iframe>
 					}
 				</div>
 				<div class="resources-single__left_post_title">
@@ -124,7 +128,7 @@
 										data-id="@item.ResourceUrl"
 										data-id1="@item.ResourceDetails.ResourceLink"
 										data-id2="@item.ResourceDetails.ResourceDocument"
-										@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
+										@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
 									<span class="resources__slide-title">@item.ResourceDetails.ResourceTitle</span>
 								</button>
 							</div>
