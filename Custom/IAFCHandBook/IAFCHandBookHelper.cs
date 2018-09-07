@@ -139,6 +139,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Urls
 		//Urls
 		private const string MainPage = "/topics-and-tools/volunteer/vws/chiefs-a-rit";
+		private const string PageNotFound = MainPage+ "/page-not-found/";
 		private const string TopicCommunityUrl = MainPage + "/topics/community";
 		private const string TopicCommunityCrisisCommunicationUrl = MainPage + "/topics/community/crisis-communication";
 		private const string TopicCommunityCustomerServiceUrl = MainPage + "/topics/community/customer-service";
@@ -1234,15 +1235,27 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetResourceDetails by Name
 		public IAFCHandBookResourceModel GetResourceDetails(String name, Guid? categoryId = null)
 		{
+			var model = new IAFCHandBookResourceModel();
+			try
+			{
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
-			var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType).
-						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name).
-						First();
+				var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType).
+							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name)
+							.FirstOrDefault();
 
-			var model = GetResourceDetails(resourceItem, categoryId);
-			model.MoreResources = GetMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
-			model.Comments = GetResourceComments(resourceItem);
+				if (resourceItem==null)
+				{
+					return null;
+				}
+				model = GetResourceDetails(resourceItem, categoryId);
+				model.MoreResources = GetMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id);
+				model.Comments = GetResourceComments(resourceItem);
+			}
+			catch (Exception e)
+			{
+				log.Error("GetResourceDetails Error: " + e.StackTrace);
+			}
 
 			return model;
 		}
@@ -2465,6 +2478,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				log.Error($@"{nameof(GetCategoryImageUrl)} Error: {e.Message}");
 			}
 			return categoryImageUrl;
+		}
+
+		public string PageNotFoundUrl()
+		{
+			string notFoundUrl = hostUrl + PageNotFound;
+			return notFoundUrl;
 		}
 
 	}
