@@ -565,6 +565,10 @@ p {
     color: $color_6;
     position: relative;
     z-index: 2;
+    @media screen and (max-width: 1109px) {
+      width: 220px;
+      margin: 0 auto;
+    }
   }
   &__desc {
     color: $color_6;
@@ -876,7 +880,7 @@ p {
     z-index: 1;
     top: -119px;
     left: 50%;
-    margin-bottom: -49px;
+    margin-bottom: -48px;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -1078,7 +1082,7 @@ p {
     }
     &:before {
       font-family: $font_family_8 !important;
-      font-size: 2.250em;
+      font-size: 36px;
       line-height: 1;
       color: $color_15;
       -webkit-font-smoothing: antialiased;
@@ -1116,7 +1120,7 @@ p {
     }
     &:before {
       font-family: $font_family_8 !important;
-      font-size: 2.250em;
+      font-size: 36px;
       line-height: 1;
       color: $color_15;
       -webkit-font-smoothing: antialiased;
@@ -2622,7 +2626,7 @@ p {
     }
   }
   .hb-jumbo__desc {
-    padding: 65px 28px 7px;
+    padding: 16px 28px 0px;
   }
   .hb-jumbo {
     padding: 103px 0 148px;
