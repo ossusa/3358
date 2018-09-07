@@ -20,6 +20,7 @@
     &-link {
       color: $color_6;
       font-size: 0.875em;
+      font-weight: 500;
       font-family: $font_family_6;
     }
   }
@@ -105,7 +106,7 @@
       &:nth-of-type(1){
         padding: 0;
       }
-      padding: 9px 0 0 0;
+      padding: 8px 0 0 0;
       &-link{
         display: flex;
         justify-content: space-between;
@@ -194,7 +195,7 @@
       margin: 0;
       padding: 20px;
       list-style: none;
-      width: 257px;
+      width: 245px;
       border-radius: 3px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       background-color: #ffffff;
@@ -357,7 +358,7 @@
     background: transparent;
     border: none;
     outline: none;
-    margin-right: 22px;
+    margin-right: 28px;
     padding-left: 0px;
     padding-right: 0px;
     color: $color_16;

@@ -547,13 +547,13 @@ p {
 .hb-jumbo {
   background: url('../images/hb-jumbo.png') 50% 50% no-repeat;
   background-size: cover;
-  padding: 127px 0 189px;
+  padding: 127px 0 148px;
   text-align: center;
   display: block;
   position: relative;
   &::after {
     content: "";
-    background: rgba(43, 75, 107, 0.85);
+    background: rgba(#2B4B6B, 0.85);
     position: absolute;
     top: 0;
     left: 0;
@@ -565,6 +565,10 @@ p {
     color: $color_6;
     position: relative;
     z-index: 2;
+    @media screen and (max-width: 1109px) {
+      width: 220px;
+      margin: 0 auto;
+    }
   }
   &__desc {
     color: $color_6;
@@ -574,7 +578,7 @@ p {
   &__search {
     position: relative;
     z-index: 2;
-    margin: 34px 0 0 0;
+    margin: 36px 0 0 0;
     @media screen and (max-width: 767px){
       margin-top: 44px;
     }
@@ -586,11 +590,21 @@ p {
       input[type="text"] {
         width: inherit !important;
         border: 1px solid #d8d8d8;
-        font-size: 18px;
+        font-size: 1.125em;
         font-weight: 400;
         outline: none;
-        color: #9b9b9b;
+        color: #666;
         font-family: $font_family_4;
+        &::placeholder {
+          color: #9b9b9b;
+          opacity: 1;
+        }
+        &:-ms-input-placeholder {
+          color: #9b9b9b;
+        }
+        &::-ms-input-placeholder {
+          color: #9b9b9b;
+        }
       }
       button[type="button"] {
         position: absolute;
@@ -726,8 +740,8 @@ p {
     }
     &-article {
       font-family: $font_family_5;
-      font-weight: 500;
-      margin: 0 0 1px 0;
+      font-weight: 500 !important;
+      margin: 0 0 4px 0;
       letter-spacing: 1.2px;
       color: $color_14;
       text-transform: uppercase;
@@ -866,7 +880,7 @@ p {
     z-index: 1;
     top: -119px;
     left: 50%;
-    margin-bottom: -49px;
+    margin-bottom: -48px;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -893,6 +907,7 @@ p {
     }
     &-title {
       font-size: 1.5em;
+      margin-bottom: 4px;
     }
     &-desc {
       font-size: 1.125em;
@@ -1838,7 +1853,7 @@ p {
 //  display: inline-block;
 //}
 
-.resources__slide-img img {
+.resources__slide-img > img {
   //height: 100%;
   //min-width: 100%;
   //position: relative;
@@ -2324,6 +2339,7 @@ p {
   .topics__img-text {
     font-size: 32px;
     width: unset;
+    max-width: unset;
     white-space: normal;
   }
   .community__topics-img {
@@ -2610,7 +2626,7 @@ p {
     }
   }
   .hb-jumbo__desc {
-    padding: 65px 28px 7px;
+    padding: 16px 28px 0px;
   }
   .hb-jumbo {
     padding: 103px 0 148px;

@@ -161,21 +161,29 @@ $(document).ready(function () {
     };
 
     //set content's height to make footer always at the bottom
-    function setWrapperHeight() {
+    /*function setWrapperHeight() {
         var windowHeight = $( window ).height();
         var headerHeight = $( '#header').outerHeight();
-        var footerHeight = $( '.footer').outerHeight();
-        console.log(footerHeight);
-        var minHeight = windowHeight - headerHeight - footerHeight;
+        var footerHeight = $( '#footer').outerHeight();
+        var minHeight = windowHeight - headerHeight - footerHeight*2;
         $('#content').css('min-height', minHeight);
-    };
+    };*/
+
+    $( ".img-container-js > img" ).each(function() {
+        var elem = $(this);
+        console.log(elem);
+        if ((elem.width()/elem.height()) > 13/9){
+            elem.css({
+                'width': '100%',
+                'height': 'auto'
+            });
+        }
+    });
 
 
     setInterval(function() {
         setImgHeight();
-        setWrapperHeight();
     }, 250);
-
 
 
 
