@@ -547,7 +547,7 @@ p {
 .hb-jumbo {
   background: url('../images/hb-jumbo.png') 50% 50% no-repeat;
   background-size: cover;
-  padding: 127px 0 189px;
+  padding: 127px 0 148px;
   text-align: center;
   display: block;
   position: relative;
@@ -565,6 +565,10 @@ p {
     color: $color_6;
     position: relative;
     z-index: 2;
+    @media screen and (max-width: 1109px) {
+      width: 220px;
+      margin: 0 auto;
+    }
   }
   &__desc {
     color: $color_6;
@@ -574,7 +578,7 @@ p {
   &__search {
     position: relative;
     z-index: 2;
-    margin: 34px 0 0 0;
+    margin: 36px 0 0 0;
     @media screen and (max-width: 767px){
       margin-top: 44px;
     }
@@ -736,8 +740,8 @@ p {
     }
     &-article {
       font-family: $font_family_5;
-      font-weight: 500;
-      margin: 0 0 1px 0;
+      font-weight: 500 !important;
+      margin: 0 0 4px 0;
       letter-spacing: 1.2px;
       color: $color_14;
       text-transform: uppercase;
@@ -876,7 +880,7 @@ p {
     z-index: 1;
     top: -119px;
     left: 50%;
-    margin-bottom: -49px;
+    margin-bottom: -48px;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -903,6 +907,7 @@ p {
     }
     &-title {
       font-size: 1.5em;
+      margin-bottom: 4px;
     }
     &-desc {
       font-size: 1.125em;
@@ -2621,7 +2626,7 @@ p {
     }
   }
   .hb-jumbo__desc {
-    padding: 65px 28px 7px;
+    padding: 16px 28px 0px;
   }
   .hb-jumbo {
     padding: 103px 0 148px;

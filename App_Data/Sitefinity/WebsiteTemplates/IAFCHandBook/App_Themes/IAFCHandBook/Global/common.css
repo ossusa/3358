@@ -536,7 +536,7 @@ p {
 .hb-jumbo {
   background: url("../images/hb-jumbo.png") 50% 50% no-repeat;
   background-size: cover;
-  padding: 127px 0 189px;
+  padding: 127px 0 148px;
   text-align: center;
   display: block;
   position: relative; }
@@ -553,6 +553,10 @@ p {
     color: #fff;
     position: relative;
     z-index: 2; }
+    @media screen and (max-width: 1109px) {
+      .hb-jumbo__title {
+        width: 220px;
+        margin: 0 auto; } }
   .hb-jumbo__desc {
     color: #fff;
     position: relative;
@@ -560,7 +564,7 @@ p {
   .hb-jumbo__search {
     position: relative;
     z-index: 2;
-    margin: 34px 0 0 0; }
+    margin: 36px 0 0 0; }
     @media screen and (max-width: 767px) {
       .hb-jumbo__search {
         margin-top: 44px; } }
@@ -692,8 +696,8 @@ p {
       border-bottom-right-radius: 3px; }
     .resources__slide-article {
       font-family: "Zilla Slab", serif;
-      font-weight: 500;
-      margin: 0 0 1px 0;
+      font-weight: 500 !important;
+      margin: 0 0 4px 0;
       letter-spacing: 1.2px;
       color: #666;
       text-transform: uppercase;
@@ -793,7 +797,7 @@ p {
     z-index: 1;
     top: -119px;
     left: 50%;
-    margin-bottom: -49px;
+    margin-bottom: -48px;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
     .resources__logged-buttons {
@@ -813,7 +817,8 @@ p {
         width: 384px;
         height: 266px; }
     .resources__logged-title {
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      margin-bottom: 4px; }
     .resources__logged-desc {
       font-size: 1.125em; }
     .resources__logged-added {
@@ -2121,7 +2126,7 @@ p {
     width: 279px !important;
     height: 50px; }
   .hb-jumbo__desc {
-    padding: 65px 28px 7px; }
+    padding: 16px 28px 0px; }
   .hb-jumbo {
     padding: 103px 0 148px; }
   .resources {
@@ -3909,13 +3914,17 @@ addReplyCommentBtn {
     margin-left: 1%;
     margin-right: 1%; }
 
-.resources__logged .resources__logged-buttons {
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  .resources__logged .resources__logged-buttons button {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    margin-right: 0; }
+@media screen and (max-width: 767px) {
+  .resources__logged .resources__logged-buttons {
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .resources__logged .resources__logged-buttons button {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      margin-right: 0; } }
+
+.resources__slide-btn_logged {
+  margin-left: 0; }
 
 .search-results .community__head-btn-select .selectric-wrapper {
   width: unset; }

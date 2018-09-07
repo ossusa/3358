@@ -821,6 +821,7 @@ addReplyCommentBtn{
     margin-right: 1%;
   }
 }
+@media screen and (max-width: 767px){
 .resources__logged{
   .resources__logged-buttons{
     flex-direction: column;
@@ -830,6 +831,10 @@ addReplyCommentBtn{
       margin-right: 0;
     }
   }
+}
+}
+.resources__slide-btn_logged{
+  margin-left: 0;
 }
 .search-results .community__head-btn-select .selectric-wrapper{
   width: unset;
