@@ -40,31 +40,29 @@
 
 					if (menuItem.ChildMenuItem.Any())
 					{
+
+						@Html.Raw("<div class=\"accordion__content\">");
 						foreach (var childItem in menuItem.ChildMenuItem)
-						{
-							childExist = true;
-							@Html.Raw("<div class=\"accordion__content\">");
-								<div class="accordion__sub-item">
-									<div class="accordion__sub-title">
-										<div class="accordion__sub-arrow anticon anticon-down"></div>
-										<span class="accordion__title-text"> @childItem.Title</span>
+						{							
+							<div class="accordion__sub-item">
+								<div class="accordion__sub-title">
+									<div class="accordion__sub-arrow anticon anticon-down"></div>
+									<span class="accordion__title-text"> @childItem.Title</span>
 								</div>
-									@if (childItem.ChildMenuItem.Any())
+								@if (childItem.ChildMenuItem.Any())
+								{
+									foreach (var childChildItem in childItem.ChildMenuItem)
 									{
-										foreach (var childChildItem in childItem.ChildMenuItem)
-										{
-											<ul class="accordion_sub_content">
-												<li> <a href="@childChildItem.Url" class=" accordion_sub-link"> @childChildItem.Title</a></li>
-											</ul>
-										}
-									}								
+										<ul class="accordion_sub_content">
+											<li> <a href="@childChildItem.Url" class=" accordion_sub-link"> @childChildItem.Title</a></li>
+										</ul>
+									}
+								}
 							</div>
 						}
-						if (childExist)
-						{
-							@Html.Raw("</div>");
-							childExist = false;
-						}
+						@Html.Raw("</div>");
+
+						
 					}
 					if (firstItem)
 					{
@@ -144,3 +142,5 @@
 		}
 	</ul>
 </div>
+
+
