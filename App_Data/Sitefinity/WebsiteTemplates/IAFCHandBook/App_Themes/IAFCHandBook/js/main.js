@@ -169,6 +169,7 @@ $(document).ready(function () {
         $('#content').css('min-height', minHeight);
     };*/
 
+    /*
     $( ".img-container-js > img" ).each(function() {
         if ((this.width()/this.height()) > 13/9){
             this.css({
@@ -176,7 +177,7 @@ $(document).ready(function () {
                 'height': 'auto'
             });
         }
-    });
+    });*/
 
 
     setInterval(function() {
