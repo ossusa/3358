@@ -159,6 +159,9 @@ $(document).ready(function () {
         setImgHeight();
     }, 250);
 
+    //set content's height to make footer always at the bottom
+
+
 
 
     $('.markAsCompleteBtn').click(function () {
