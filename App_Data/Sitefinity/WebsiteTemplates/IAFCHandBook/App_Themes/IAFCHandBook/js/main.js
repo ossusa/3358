@@ -68,6 +68,12 @@ $(document).ready(function () {
 
         var $liLeadership =  $(".selectric-handbook_title_select .selectric-items li:contains('Leadership')");
         $($liLeadership).addClass('label-leadership');
+        var $liCommunity =  $(".selectric-handbook_title_select .selectric-items li:contains('Community')");
+        $($liCommunity).addClass('label-community');
+        var $liFinance =  $(".selectric-handbook_title_select .selectric-items li:contains('Finance')");
+        $($liFinance).addClass('label-finance');
+        var $liPersonnel =  $(".selectric-handbook_title_select .selectric-items li:contains('Personnel')");
+        $($liPersonnel).addClass('label-personnel');
     });
 
     /*OFF CANVAS MENU*/
