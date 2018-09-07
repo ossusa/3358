@@ -2144,7 +2144,9 @@ p {
   .community__topics-img {
     width: 100% !important; }
   .resources__slide-title {
-    font-size: 1.23em; }
+    font-size: 1.23em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; }
   .topics__img-text {
     font-size: 1.750em;
     white-space: nowrap; }
@@ -3516,7 +3518,7 @@ p {
     .resources-single__right_header * {
       color: #2b4b6b;
       font-family: "Nunito Sans";
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: 700;
       margin: 0 0 16px; }
     .resources-single__right_list {
@@ -3575,7 +3577,7 @@ p {
     .resources-single__comments_list_header {
       color: #2b4b6b;
       font-family: "Nunito Sans";
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: 700;
       margin-bottom: 12px; }
     .resources-single__comments_list_container_items {

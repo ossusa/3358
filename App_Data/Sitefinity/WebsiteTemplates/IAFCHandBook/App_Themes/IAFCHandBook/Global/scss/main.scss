@@ -2689,6 +2689,9 @@ p {
 
   .resources__slide-title {
     font-size: 1.23em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   .topics__img-text{
     font-size: 1.750em;
