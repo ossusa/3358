@@ -364,7 +364,13 @@ body {
   margin: 0 auto;
   overflow: hidden;
   max-width: 1440px;
-  box-sizing: content-box; }
+  box-sizing: content-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .box {
   padding-left: 120px;
@@ -3063,7 +3069,8 @@ p {
     display: none; }
 
 .footer {
-  border-top: 1px solid #9B9B9B; }
+  border-top: 1px solid #9B9B9B;
+  width: 100%; }
   .footer__info {
     display: -ms-flexbox;
     display: flex;
