@@ -262,13 +262,6 @@ if($(window).width() < 1109) {
             $(this).text($(this).text().substr(0, xSecondTitle-ySecondTitle.length) + ySecondTitle);
         }
     });
-    $('.resources_desc-separate').each(function () {
-        var xFifthTitle = 72;
-        var yFifthTitle = '...';
-        if ($(this).text().length > (xFifthTitle - yFifthTitle.length)) {
-            $(this).text($(this).text().substr(0, xFifthTitle - yFifthTitle.length) + yFifthTitle);
-        }
-    });
 } else {
     $('.complete-box .resources__slide-desc, .handbook__template .resources__slide-desc').each(function() {
         var xSecond = 90;
@@ -296,10 +289,33 @@ $('.topics__img-back-info').each(function() {
     }
 });
 /*Fifth*/
-$('.resources_text-separate').each(function () {
-    var xFifth = 35;
-    var yFifth = '...';
-    if ($(this).text().length > (xFifth - yFifth.length)) {
-        $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        $('.resources_text-separate').each(function () {
+            var xFifth = 24;
+            var yFifth = '...';
+            if ($(this).text().length > (xFifth - yFifth.length)) {
+                $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
+            }
+        });
+        $('.resources_desc-separate').each(function () {
+            var xFifthTitle = 64;
+            var yFifthTitle = '...';
+            if ($(this).text().length > (xFifthTitle - yFifthTitle.length)) {
+                $(this).text($(this).text().substr(0, xFifthTitle - yFifthTitle.length) + yFifthTitle);
+            }
+        });
+    } else {
+        $('.resources_text-separate').each(function () {
+            var xFifth = 35;
+            var yFifth = '...';
+            if ($(this).text().length > (xFifth - yFifth.length)) {
+                $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
+            }
+        });
     }
-});
+}
+
+var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
