@@ -12,6 +12,7 @@
     }
     &-col {
       ul {
+        margin: 0 -12px;
         li {
           a {
             font-family: $font_family_4;
@@ -19,7 +20,7 @@
             color: $color_5;
             font-size: 1.00em;
             z-index: 1000;
-            padding: .5em 15px .4em !important;
+            padding: 12px !important;
             transition: .1s ease-in-out;
             &:hover {
               text-shadow: 1px 0 0 $color_blue;
