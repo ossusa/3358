@@ -40,9 +40,11 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
+
     $(document).ready(function () {
         $($liLogout).closest('.header__table-tr').addClass('header_unlogged');
     });
+
     /*LABEL COLORS*/
     $(document).ready(function() {
         var $breadcrumbLeadershipThird =  $(".selectric-community__title-select .label:contains('Leadership')");
