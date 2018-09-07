@@ -30,7 +30,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return handBookHelper.GetMyHnadbookResourceDetails(name);
 
 		}
-		[RelativeRoute("{name}")]
+		[RelativeRoute("{name?}")]
 		public ActionResult Index(String name)
 		{
 			var model = GetData(name);

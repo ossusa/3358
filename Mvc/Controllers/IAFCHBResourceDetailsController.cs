@@ -44,7 +44,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return View("ResourceDetails", model);			
 		}
 
-		[RelativeRoute("{name}")]
+		[RelativeRoute("{name?}")]
 		public ActionResult GetResourceDetails(string name)
 		{
 			var model = GetData(name);
