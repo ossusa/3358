@@ -2333,11 +2333,22 @@ p {
   a {
     background-color: $color_community;
   }
+
+  &:hover {
+    .topics__img-back {
+      background-color: $color_community;
+    }
+  }
 }
 
 .community__topics_leadership {
   a {
     background-color:$color_leadership;
+  }
+  &:hover {
+    .topics__img-back {
+      background-color: $color_leadership;
+    }
   }
 }
 
@@ -2345,11 +2356,21 @@ p {
   a {
     background-color: $color_finance;
   }
+  &:hover {
+    .topics__img-back {
+      background-color: $color_finance;
+    }
+  }
 }
 
 .community__topics_personnel {
   a {
     background-color: $color_personnel;
+  }
+  &:hover {
+    .topics__img-back {
+      background-color: $color_personnel;
+    }
   }
 }
 

@@ -37,6 +37,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 		{
 			var id = Guid.Parse(categoryId);
 			var model = handBookHelper.GetResourceDetails(name, id);
+			if (model== null)
+			{
+				return Redirect(handBookHelper.PageNotFoundUrl());
+			}
 			return View("ResourceDetails", model);			
 		}
 
@@ -44,6 +48,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public ActionResult GetResourceDetails(string name)
 		{
 			var model = GetData(name);
+			if (model == null)
+			{
+				return Redirect(handBookHelper.PageNotFoundUrl());
+			}
 			return View("ResourceDetails", model);
 		}
 
