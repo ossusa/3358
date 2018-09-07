@@ -46,6 +46,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 			}
 			
 			var model = GetData(orderByItem);
+			if (model == null)
+			{
+				return Redirect(handBookHelper.PageNotFoundUrl());
+			}
 			var view = View("ResourcesPerCategory", model);
 			return view;
 		}

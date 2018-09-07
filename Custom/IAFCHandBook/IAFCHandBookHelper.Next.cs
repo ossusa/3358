@@ -385,6 +385,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			try
 			{
 				Guid categoryID = GetCategoryGuidByName(categoryName);
+				if(categoryID==Guid.Empty)
+				{
+					return null;
+				}
 				var topicCategory = GetTopicCategories(categoryID);
 
 				model.Category.Id = categoryID;
