@@ -574,6 +574,7 @@ p {
         border: 1px solid #d8d8d8;
         font-size: 18px;
         font-weight: 400;
+        outline: none;
         color: #9b9b9b;
         font-family: "Nunito Sans", sans-serif; }
       .hb-jumbo__search fieldset button[type="button"] {
@@ -3048,6 +3049,18 @@ p {
 .header__list-link.active {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
+
+.header_unlogged .header__sub_ul {
+  width: 210px; }
+
+.header_unlogged .header__second_ul {
+  position: unset;
+  width: 180px;
+  box-shadow: unset;
+  padding: 5px 5px 0 10px; }
+  .header_unlogged .header__second_ul:before {
+    content: '';
+    display: none; }
 
 .footer {
   border-top: 1px solid #9B9B9B; }
