@@ -158,12 +158,20 @@ $(document).ready(function () {
         var imgContainer = $('.img-container-js');
         var width = imgContainer.width();
         imgContainer.height(width/13*9 -2);
-    }
-    setInterval(function() {
-        setImgHeight();
-    }, 250);
+    };
 
     //set content's height to make footer always at the bottom
+    function setWrapperHeight() {
+        var minHeight = $( window ).height(); - $( '#header').height();;
+        $('#wrapper').css('min-height', minHeight);
+    };
+
+
+    setInterval(function() {
+        setImgHeight();
+        setWrapperHeight();
+    }, 250);
+
 
 
 
