@@ -3083,8 +3083,8 @@ p {
   .header__mob-open {
     margin-right: 14px; } }
 
-.accordion__item.active,
-.accordion__title.active {
+.accordion__title.active,
+.accordion__item-link.active {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
