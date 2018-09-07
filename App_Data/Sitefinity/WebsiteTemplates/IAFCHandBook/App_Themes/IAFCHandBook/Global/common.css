@@ -2797,9 +2797,6 @@ p {
       .header__list-link:hover {
         text-shadow: 1px 0 0 #2B4B6B;
         color: #2B4B6B; }
-      .header__list-link .active {
-        text-shadow: 1px 0 0 #2B4B6B;
-        color: #2B4B6B; }
     .header__list:nth-of-type(1) .header__list-link {
       width: 86px; }
       .header__list:nth-of-type(1) .header__list-link:after {
@@ -3074,7 +3071,7 @@ p {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
-.active {
+.header__list-link .active {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
