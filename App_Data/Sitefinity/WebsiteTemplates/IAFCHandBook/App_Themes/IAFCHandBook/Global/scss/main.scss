@@ -547,7 +547,7 @@ p {
 .hb-jumbo {
   background: url('../images/hb-jumbo.png') 50% 50% no-repeat;
   background-size: cover;
-  padding: 127px 0 189px;
+  padding: 127px 0 148px;
   text-align: center;
   display: block;
   position: relative;
@@ -574,7 +574,7 @@ p {
   &__search {
     position: relative;
     z-index: 2;
-    margin: 34px 0 0 0;
+    margin: 36px 0 0 0;
     @media screen and (max-width: 767px){
       margin-top: 44px;
     }
@@ -736,8 +736,8 @@ p {
     }
     &-article {
       font-family: $font_family_5;
-      font-weight: 500;
-      margin: 0 0 1px 0;
+      font-weight: 500 !important;
+      margin: 0 0 4px 0;
       letter-spacing: 1.2px;
       color: $color_14;
       text-transform: uppercase;
@@ -903,6 +903,7 @@ p {
     }
     &-title {
       font-size: 1.5em;
+      margin-bottom: 4px;
     }
     &-desc {
       font-size: 1.125em;
@@ -1077,7 +1078,7 @@ p {
     }
     &:before {
       font-family: $font_family_8 !important;
-      font-size: 36px;
+      font-size: 2.250em;
       line-height: 1;
       color: $color_15;
       -webkit-font-smoothing: antialiased;
@@ -1115,7 +1116,7 @@ p {
     }
     &:before {
       font-family: $font_family_8 !important;
-      font-size: 36px;
+      font-size: 2.250em;
       line-height: 1;
       color: $color_15;
       -webkit-font-smoothing: antialiased;
