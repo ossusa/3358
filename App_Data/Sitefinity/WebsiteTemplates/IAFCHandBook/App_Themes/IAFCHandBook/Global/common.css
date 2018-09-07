@@ -3146,6 +3146,12 @@ p {
   text-shadow: 1px 0 0 #2B4B6B;
   color: #2B4B6B; }
 
+.header_unlogged .header__sub_ul {
+  left: -145px; }
+  @media screen and (max-width: 1109px) {
+    .header_unlogged .header__sub_ul {
+      left: -250px; } }
+
 .footer {
   border-top: 1px solid #9B9B9B; }
   .footer__info {
