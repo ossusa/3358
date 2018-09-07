@@ -436,6 +436,18 @@
   text-shadow: 1px 0 0 $color_blue;
   color: $color_blue;
 }
-//.header_unlogged .header__sub_ul {
-//
-//}
+.header_unlogged {
+  .header__sub_ul{
+    width: 210px
+  }
+  .header__second_ul {
+    position: unset;
+    width: 180px;
+    box-shadow: unset;
+    padding: 5px 5px 0 10px;
+    &:before{
+      content: '';
+      display: none;
+    }
+  }
+}
