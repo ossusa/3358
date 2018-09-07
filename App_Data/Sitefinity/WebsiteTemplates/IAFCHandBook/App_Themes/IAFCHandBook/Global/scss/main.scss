@@ -2807,9 +2807,7 @@ p {
     margin: 0;
     padding: 0;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.10);
-    border-bottom: 1px solid #D8D8D8;
-    border-left: 1px solid #D8D8D8;
-    border-right: 1px solid #D8D8D8;
+    border: 1px solid #D8D8D8;
     >.accordion__item {
       &:nth-of-type(1) {
         >.accordion__arrow.accordion__sub-title {
@@ -2944,7 +2942,7 @@ p {
     .accordion-active {
       background-color: $background_color_1;
       color: #2b4b6b;
-      font-weight: bold;
+      text-shadow: 1px 0 0 #2b4b6b;
     }
     .accordion__rotate {
       -webkit-transform: rotate(180deg);
