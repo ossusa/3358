@@ -162,7 +162,9 @@ $(document).ready(function () {
 
     //set content's height to make footer always at the bottom
     function setWrapperHeight() {
-        var minHeight = $( window ).height(); - $( '#header').height();;
+        var windowHeight = $( window ).height();
+        var headerHeight = $( '#header').height();
+        var minHeight = windowHeight - headerHeight;
         $('#wrapper').css('min-height', minHeight);
     };
 
