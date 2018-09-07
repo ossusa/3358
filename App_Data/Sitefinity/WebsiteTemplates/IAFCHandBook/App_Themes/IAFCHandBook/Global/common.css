@@ -3558,7 +3558,7 @@ p {
     .resources-single__comments_list_header {
       color: #2b4b6b;
       font-family: "Nunito Sans";
-      font-size: 20px;
+      font-size: 1.25em;
       font-weight: 700;
       margin-bottom: 12px; }
     .resources-single__comments_list_container_items {
