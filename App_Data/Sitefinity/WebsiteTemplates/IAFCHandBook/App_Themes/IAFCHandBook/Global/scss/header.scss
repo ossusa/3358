@@ -392,7 +392,8 @@
   }
 }
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
-.header__sub_list:nth-of-type(1) .header__sub_list-link.active{
+.header__sub_list:nth-of-type(1) .header__sub_list-link.active,
+.header__sub_list:nth-of-type(1) .header__second_list-link.active{
   text-shadow: 1px 0 0 $color_community;
   color: $color_community;
 }
