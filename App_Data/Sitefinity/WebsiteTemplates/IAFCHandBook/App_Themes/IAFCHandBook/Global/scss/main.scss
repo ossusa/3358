@@ -1422,6 +1422,7 @@ p {
         top: 16px;
         left: 20px;
         right: 22px;
+        line-height: 1.2;
 
       }
       &-text {
@@ -2690,9 +2691,6 @@ p {
 
   .resources__slide-title {
     font-size: 1.23em;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical !important;
   }
   .topics__img-text{
     font-size: 1.750em;
