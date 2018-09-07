@@ -1945,6 +1945,11 @@ p {
 .community__topics_personnel:hover .topics__img-back {
   background-color: #CF794A; }
 
+.resources__slide-article {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
@@ -2441,9 +2446,6 @@ p {
     padding: 14px; }
   .handbook__template.complete__resources_slides .resources__slide-title {
     font-size: 1em; }
-  .handbook__template .resources__slide-article, .handbook__template .resources__slide-title, .handbook__template .resources__slide-desc {
-    overflow: hidden;
-    text-overflow: ellipsis; }
   .handbook__template .placeholder-type img {
     width: 100%; }
   .handbook__more {
