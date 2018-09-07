@@ -156,7 +156,7 @@ $(document).ready(function () {
     $('.resources__slide-title').ellipsis();
 
     $('.resources__slide-title').ellipsis({
-        lines: '2'
+        lines: 2
     });
 
     $('.resources__slide-title').ellipsis({
