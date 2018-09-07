@@ -40,14 +40,19 @@ $(document).ready(function () {
         var qSecond = $('.site-search').val();
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
-    $( "#site-search" ).on( "keydown", function(event) {
-        if(event.which == 13)
-            $("#site-search-submit").click(function (e) {
-                e.preventDefault();
-                var q = $('#site-search').val();
-                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-            });
+    $("#site-search").on("keypress", function(e){
+        if(e.which == 13){
+            alert("You've pressed the enter key!");
+        }
     });
+    // $( "#site-search" ).on( "keydown", function(event) {
+    //     if(event.which == 13)
+    //         $("#site-search-submit").click(function (e) {
+    //             e.preventDefault();
+    //             var q = $('#site-search').val();
+    //             location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+    //         });
+    // });
     /*LABEL COLORS*/
     $(document).ready(function() {
         var $breadcrumbPersonnelThird =  $(".selectric-community__title-select .label:contains('Personnel')");
