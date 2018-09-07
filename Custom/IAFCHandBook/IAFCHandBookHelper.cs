@@ -1717,7 +1717,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public IAFCHandBookMyHandBookModel GetMyHandBook(String userId = null)
 		{
 			Guid userGuid;									
-			if((userId==null && !isUserAuthorized)||!Guid.TryParse(userId, out userGuid))
+			if((userId==null && !isUserAuthorized)||(userId!=null &&!Guid.TryParse(userId, out userGuid)))
 			{
 				return null;
 			}
