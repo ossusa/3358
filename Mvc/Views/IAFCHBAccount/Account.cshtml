@@ -6,12 +6,12 @@
 	<h4 class="topic__subtitle">Login Information</h4>
 	<div class="resources__logged-buttons">
 		<div class="edit-button">
-			<button type="submit" formaction="/Mxg/AuthService/SignInByHelix/?ReturnUrl=@Request.Url.AbsoluteUri" class="community__head-btn resources__logged-btn"> Edit Login </button>
+			<button type="submit" formaction="https://members.iafc.org/profile/edit_profile.aspx" class="community__head-btn resources__logged-btn">Update Profile </button>
 		</div>
 	</div>
 
 	<h4 class="topic__subtitle">Email Digest</h4>
-	<p>A summary of all the latest resources from the topics you follow:</p>
+	<p>A summary of new resources added to topics you follow:</p>
 	
 	<div id="followedCategoriesViewID">
 		@Html.Partial("_FollowedCategories", Model.FollowedCategories)
