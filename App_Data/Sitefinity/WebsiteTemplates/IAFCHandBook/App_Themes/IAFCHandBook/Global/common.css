@@ -3084,6 +3084,9 @@ p {
   .footer_copyright {
     margin-left: 24px;
     margin-top: 1px; }
+    @media screen and (max-width: 767px) {
+      .footer_copyright {
+        margin-left: unset; } }
   .footer__info {
     display: -ms-flexbox;
     display: flex;
