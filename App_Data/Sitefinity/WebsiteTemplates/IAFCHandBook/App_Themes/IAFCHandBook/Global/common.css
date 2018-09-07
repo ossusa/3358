@@ -3919,6 +3919,9 @@ addReplyCommentBtn {
       margin-bottom: 20px;
       margin-right: 0; } }
 
+.resources__slide-btn_logged {
+  margin-left: 0; }
+
 .search-results .community__head-btn-select .selectric-wrapper {
   width: unset; }
 
