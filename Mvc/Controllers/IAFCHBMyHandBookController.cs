@@ -44,7 +44,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 				model = GetSharedHandBook(userid);
 			}
 
-
+			if (model == null)
+			{
+				return Redirect(handBookHelper.PageNotFoundUrl());
+			}
 			return View("MyHandBook",model);
 		}
 
