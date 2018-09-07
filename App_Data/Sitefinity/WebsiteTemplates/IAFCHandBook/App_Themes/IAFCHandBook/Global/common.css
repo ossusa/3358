@@ -450,6 +450,7 @@ th {
 body {
   background-color: #fff;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
   color: #4A4A4A; }

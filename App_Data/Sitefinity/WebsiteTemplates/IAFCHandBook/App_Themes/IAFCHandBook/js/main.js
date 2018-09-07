@@ -27,6 +27,7 @@ $(document).ready(function () {
     $(".header__search").click(function (e) {
         e.preventDefault();
         $('.mg-search-box').toggle();
+        $('.header__list:nth-of-type(1) > a').hide();
     });
         $("#site-search-submit").click(function (e) {
             e.preventDefault();
@@ -154,6 +155,7 @@ $(document).ready(function () {
     $('.header__list:nth-of-type(1) > a').click(function (e) {
         e.preventDefault();
         $('.header__sub_ul').toggle();
+        $('.mg-search-box').hide();
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(".header__sub_list:nth-of-type(1) .header__second_ul").show();
