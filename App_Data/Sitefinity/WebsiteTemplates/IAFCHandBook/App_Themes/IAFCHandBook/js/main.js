@@ -43,6 +43,8 @@ $(document).ready(function () {
 
     /*LABEL COLORS*/
     $(document).ready(function() {
+        var $breadcrumbLeadershipThird =  $(".selectric-community__title-select .label:contains('Leadership')");
+        var $breadcrumbFinanceThird =  $(".selectric-community__title-select .label:contains('Finance')");
         var $breadcrumbPersonnelThird =  $(".selectric-community__title-select .label:contains('Personnel')");
 
         var $breadcrumbCommunity =  $(".community__breadcrumbs:contains('Community')");
@@ -62,6 +64,8 @@ $(document).ready(function () {
         $($breadcrumbPersonnel).next().addClass('label-personnel');
         $($breadcrumbPersonnelSecond).next().addClass('label-personnel');
 
+        $($breadcrumbLeadershipThird).addClass('label-leadership');
+        $($breadcrumbFinanceThird).addClass('label-finance');
         $($breadcrumbPersonnelThird).addClass('label-personnel');
     });
 
