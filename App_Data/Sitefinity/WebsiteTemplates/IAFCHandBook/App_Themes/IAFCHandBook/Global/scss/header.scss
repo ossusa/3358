@@ -398,7 +398,7 @@
   color: $color_blue;
 }
 .accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-title.active,
-.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-link.active,
+.accordion__content > .accordion__sub-item:nth-of-type(1) > .accordion__sub-content > .accordion__sub-link.active,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(1) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(1) .header__second_list-link.active{
@@ -406,7 +406,7 @@
   color: $color_community;
 }
 .accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-title.active,
- .accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-link.active,
+ .accordion__content > .accordion__sub-item:nth-of-type(2) > .accordion__sub-content > .accordion__sub-link.active,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(2) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(2) .header__second_list-link.active{
@@ -414,7 +414,7 @@
   color: $color_leadership;
 }
 .accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-title.active,
-.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-link.active,
+.accordion__content > .accordion__sub-item:nth-of-type(3) > .accordion__sub-content > .accordion__sub-link.active,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(3) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(3) .header__second_list-link.active{
@@ -422,7 +422,7 @@
   color: $color_finance;
 }
 .accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-title.active,
-.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-link.active,
+.accordion__content > .accordion__sub-item:nth-of-type(4) > .accordion__sub-content > .accordion__sub-link.active,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.colored,
 .header__sub_list:nth-of-type(4) .header__sub_list-link.active,
 .header__sub_list:nth-of-type(4) .header__second_list-link.active{
