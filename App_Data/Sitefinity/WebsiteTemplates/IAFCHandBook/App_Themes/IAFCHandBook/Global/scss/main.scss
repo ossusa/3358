@@ -472,6 +472,7 @@ th {
 body {
   background-color: $background_color_1;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
   font-family: $font_family_4;
   color: $color_3;
@@ -613,7 +614,7 @@ p {
 .mg-search-box {
   background-color: $background_color_1;
   position: absolute;
-  top: 63px;
+  top: 74px;
   right: 0;
   z-index: 2;
   padding: 20px;

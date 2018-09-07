@@ -1699,6 +1699,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					myHandBook = myHandBookModuleData.First();
 				}
+				else
+				{
+					return null;
+				}
 			}
 			catch (Exception e)
 			{
@@ -1712,6 +1716,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region GetMyHandBook
 		public IAFCHandBookMyHandBookModel GetMyHandBook(String userId = null)
 		{
+			Guid userGuid;									
+			if((userId==null && !isUserAuthorized)||(userId!=null &&!Guid.TryParse(userId, out userGuid)))
+			{
+				return null;
+			}
 			return GetMyHandBookNext(userId);
 		}
 		#endregion GetMyHandBook

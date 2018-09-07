@@ -450,6 +450,7 @@ th {
 body {
   background-color: #fff;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
   color: #4A4A4A; }
@@ -574,7 +575,7 @@ p {
 .mg-search-box {
   background-color: #fff;
   position: absolute;
-  top: 63px;
+  top: 74px;
   right: 0;
   z-index: 2;
   padding: 20px; }

@@ -26,28 +26,21 @@ $(document).ready(function () {
     $($liSearch).appendTo('.header__list-search');
     $(".header__search").click(function (e) {
         e.preventDefault();
-        $('.mg-search-box').show();
+        $('.mg-search-box').toggle();
+        $('.header__sub_ul').hide();
     });
-    $("#site-search-submit").click(function (e) {
-        e.preventDefault();
-        var q = $('#site-search').val();
-        location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-    });
-
+        $("#site-search-submit").click(function (e) {
+            e.preventDefault();
+            var q = $('#site-search').val();
+            location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+        });
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
         var qSecond = $('.site-search').val();
         location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
-    $( "#site-search" ).on( "keydown", function(event) {
-        if(event.which == 13)
-            $("#site-search-submit").click(function (e) {
-                e.preventDefault();
-                var q = $('#site-search').val();
-                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-            });
-    });
+
     /*LABEL COLORS*/
     $(document).ready(function() {
         var $breadcrumbPersonnelThird =  $(".selectric-community__title-select .label:contains('Personnel')");
@@ -162,6 +155,7 @@ $(document).ready(function () {
     $('.header__list:nth-of-type(1) > a').click(function (e) {
         e.preventDefault();
         $('.header__sub_ul').toggle();
+        $('.mg-search-box').hide();
     });
     $('.header__sub_list:nth-of-type(1)').click(function() {
         $(".header__sub_list:nth-of-type(1) .header__second_ul").show();

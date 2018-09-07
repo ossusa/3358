@@ -728,8 +728,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 {
                     sharedUrl = "/" + userId;
                     var userGuid = Guid.Parse(userId);
+					
                     myHandBookItem = GetMyHandBookByID(userGuid);
-                    model.SharedUserId = userGuid;
+					if (myHandBookItem==null)
+					{
+						return null;
+					}
+					model.SharedUserId = userGuid;
 					model.SharedUser = GetUserName(userGuid)+"'s";
                 }
                 else
