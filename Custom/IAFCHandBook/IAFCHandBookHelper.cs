@@ -1233,6 +1233,19 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			return GetResourceDetailsNext(resource, categoryId, isMyHandBookItem);
 		}
+	
+
+		public IAFCHandBookResourceModel GetResourceDetailsUI(DynamicContent resource, string categoryName, bool isMyHandBookItem = false)
+		{
+			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+			if (categoryId == Guid.Empty)
+			{
+				return null; 
+			}
+			return GetResourceDetails(resource, categoryId, isMyHandBookItem);
+		}
+
 
 		#endregion GetResourceDetails by Item
 
@@ -1267,13 +1280,25 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			return model;
 		}
-		#endregion GetResourceDetails by Name
 
-		#endregion GetResourceDetails
+		public IAFCHandBookResourceModel GetResourceDetailsUI(String name, string categoryName = null)
+		{
+			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+			if (categoryId == Guid.Empty)
+			{
+				return null;
+			}
+			return GetResourceDetails(name, categoryId);
+		}
+		
+			#endregion GetResourceDetails by Name
 
-		#region GetFeaturedResources
+			#endregion GetResourceDetails
 
-		public IAFCHandBookResourceModel GetFeaturedResourcesData()
+			#region GetFeaturedResources
+
+			public IAFCHandBookResourceModel GetFeaturedResourcesData()
 		{
 			return GetFeaturedResourcesDataNext();
 		}
@@ -2069,6 +2094,18 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				return null;
 			}
 			return GetMyHnadbookResourceDetailsNext(name, categoryId);
+		}
+
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsUI(string name, string categoryName = null)
+		{
+			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+			if (categoryId == Guid.Empty)
+			{
+				return null;
+			}
+
+			return GetMyHnadbookResourceDetails(name, categoryId);
 		}
 		#endregion Get My Hnadbook ResourceDetails by Name
 

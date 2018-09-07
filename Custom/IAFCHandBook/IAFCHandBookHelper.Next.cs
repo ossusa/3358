@@ -517,9 +517,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceDetails.Category.CategoryUrl + "/resourcedetails/" + resource.UrlName.ToString();
 				}
 
+
 				if (handBookResourceModel.ResourceDetails.IsResourceHasMoreThen1Category && categoryId!=null)
 				{
-					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceUrl + "," + categoryId.ToString();
+					
+					TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+					var categoryName = taxonomyManager.GetTaxon(categoryId.Value).Name;
+					handBookResourceModel.ResourceUrl = handBookResourceModel.ResourceUrl + "," + categoryName;
 				}
 
 				var handBookLikeModel = new IAFCHandBookLikesModel

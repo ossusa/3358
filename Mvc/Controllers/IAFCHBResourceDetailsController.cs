@@ -32,11 +32,11 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return handBookHelper.GetResourceDetails(name);
 		}
 
-		[RelativeRoute("{name},{categoryId?}")]
-		public ActionResult GetResourceDetails(string name, string categoryId)
+		[RelativeRoute("{name},{categoryName?}")]
+		public ActionResult GetResourceDetails(string name, string categoryName)
 		{
-			var id = Guid.Parse(categoryId);
-			var model = handBookHelper.GetResourceDetails(name, id);
+			
+			var model = handBookHelper.GetResourceDetailsUI(name, categoryName);
 			if (model== null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());

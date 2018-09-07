@@ -27,7 +27,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public IAFCHandBookResourceModel GetData(string name)
 		{
 
-			return handBookHelper.GetMyHnadbookResourceDetails(name);
+			return handBookHelper.GetMyHnadbookResourceDetailsUI(name);
 
 		}
 		[RelativeRoute("{name?}")]
@@ -41,11 +41,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return View("MyHandBookResourceDetails", model);
 		}
 
-		[RelativeRoute("{name},{categoryId?}")]
-		public ActionResult Index(string name, string categoryId)
-		{
-			var id = Guid.Parse(categoryId);
-			var model = handBookHelper.GetMyHnadbookResourceDetails(name, id);
+		[RelativeRoute("{name},{categoryName?}")]
+		public ActionResult Index(string name, string categoryName)
+		{			
+			var model = handBookHelper.GetMyHnadbookResourceDetailsUI(name, categoryName);
 			if (model == null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
