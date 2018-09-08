@@ -523,6 +523,7 @@
     margin: 52px -120px 100px;
     @media screen and (max-width: 1109px) {
       margin: 52px -90px 100px;
+      padding: 48px 0 0;
     }
     @media screen and (max-width: 767px){
       padding: 36px 0 16px;
@@ -813,6 +814,9 @@ addReplyCommentBtn{
 .complete__resources_slides {
   margin: 0 -12px;
   width: auto;
+  @media screen and (max-width: 1109px) {
+    margin: 0;
+  }
   .resources__slide {
     width: 48%;
     margin-left: 1%;
