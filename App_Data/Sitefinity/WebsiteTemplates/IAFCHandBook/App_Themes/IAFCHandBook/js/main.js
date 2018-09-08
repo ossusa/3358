@@ -65,7 +65,7 @@ $(document).ready(function () {
     });
 
     if( $(".header__list-link  > span").text().indexOf('SignIn') >= 0) {
-        $(".header__table-tr").addClass("thisClass");
+        $(".header__table-tr").addClass("header_unlogged");
     }
 
 
