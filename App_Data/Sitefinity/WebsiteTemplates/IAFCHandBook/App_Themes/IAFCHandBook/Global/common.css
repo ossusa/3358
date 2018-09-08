@@ -3086,13 +3086,14 @@ p {
 .header_unlogged .header__sub_ul {
   z-index: 3;
   width: 275px;
-  left: -25px; }
+  left: -25px;
+  height: unset; }
   @media screen and (max-width: 1109px) {
     .header_unlogged .header__sub_ul {
       width: 210px; } }
 
 .header_unlogged .header__second_ul {
-  position: unset;
+  position: static;
   width: unset;
   box-shadow: unset;
   margin-left: 20px;
