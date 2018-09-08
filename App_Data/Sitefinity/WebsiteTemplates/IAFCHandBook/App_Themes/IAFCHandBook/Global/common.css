@@ -3492,7 +3492,7 @@ p {
     @media screen and (max-width: 767px) {
       .resources-single__right {
         padding: 24px 28px 21px; } }
-    .resources-single__right_header * {
+    .resources-single__right_header p {
       color: #2b4b6b;
       font-family: "Nunito Sans";
       font-size: 1.25em;
