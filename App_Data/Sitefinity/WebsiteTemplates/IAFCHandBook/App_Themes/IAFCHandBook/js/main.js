@@ -64,11 +64,11 @@ $(document).ready(function () {
         $($liLogout).closest('.header__table-tr').addClass('header_unlogged');
     });
     /*FOR IE*/
-    //
-    // if( $(".header__list-link  > span").text().indexOf('SignIn') >= 0) {
-    //     $(".header__table-tr").addClass("header_unlogged");
-    // }
-    //
+
+    if( $(".header__list-link  > span").text().indexOf('SignIn') >= 0) {
+        $(".header__table-tr").addClass("header_unlogged");
+    }
+
 
 
     /*LABEL COLORS*/
