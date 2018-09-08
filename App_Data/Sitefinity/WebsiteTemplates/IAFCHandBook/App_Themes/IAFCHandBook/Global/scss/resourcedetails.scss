@@ -635,7 +635,7 @@
   }
 
   &__head-btn-select {
-    margin-top: 20px;
+    margin-top: 20px !important;
     @media screen and (max-width: 767px) {
       margin-bottom: 0;
     }
