@@ -63,6 +63,15 @@ $(document).ready(function () {
     $(document).ready(function () {
         $($liLogout).closest('.header__table-tr').addClass('header_unlogged');
     });
+    /*FOR IE*/
+
+    for (const a of document.querySelectorAll("span")) {
+        if (a.textContent.includes("SignIn")) {
+            console.log(a.textContent)
+            var element = document.getElementsByClassName("header__table-tr");
+            element.classList.add("header_unlogged");
+        }
+    }
 
     /*LABEL COLORS*/
     $(document).ready(function() {
