@@ -3087,15 +3087,15 @@ p {
   z-index: 3;
   width: 275px;
   left: -25px;
-  height: unset; }
+  height: auto; }
   @media screen and (max-width: 1109px) {
     .header_unlogged .header__sub_ul {
       width: 210px; } }
 
 .header_unlogged .header__second_ul {
   position: static;
-  width: unset;
-  box-shadow: unset;
+  width: auto;
+  box-shadow: none;
   margin-left: 20px;
   padding: 5px 5px 0 10px; }
   @media screen and (max-width: 1109px) {
