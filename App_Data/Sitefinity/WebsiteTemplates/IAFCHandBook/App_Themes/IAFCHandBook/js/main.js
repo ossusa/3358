@@ -29,11 +29,18 @@ $(document).ready(function () {
         $('.mg-search-box').toggle();
         $('.header__sub_ul').hide();
     });
+
         $("#site-search-submit").click(function (e) {
             e.preventDefault();
             var q = $('#site-search').val();
             location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
         });
+        $('#site-search').keypress(function(e){
+            if(e.which == 13){//Enter key pressed
+                $('#site-search-submit').click();//Trigger search button click event
+            }
+        });
+
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
