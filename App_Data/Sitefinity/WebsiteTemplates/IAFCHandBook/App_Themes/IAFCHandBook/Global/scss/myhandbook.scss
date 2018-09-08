@@ -110,6 +110,7 @@
     font-size: 1em;
     font-weight: 400;
     border: none;
+    padding: 0;
     background: transparent;
     outline: none;
     button{
@@ -391,4 +392,10 @@
   @media screen and (max-width: 767px){
     margin: 0 -28px;
   }
+}
+.handbook_breadcrumbs{
+  margin: 54px 0 0;
+}
+.handbook_share{
+  margin-right: 24px;
 }

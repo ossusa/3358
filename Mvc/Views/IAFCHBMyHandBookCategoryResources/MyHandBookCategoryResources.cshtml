@@ -21,7 +21,7 @@
 	</div>
 
 
-	<div class="resources-breadcrumbs">
+	<div class="resources-breadcrumbs handbook_breadcrumbs">
 		<span>My HandBook ></span>
 		<a href='@Model.Category.MyHandBookParentCategoryUrl'><span>@Model.Category.ParentCategoryTitle </span></a>
 	</div>
@@ -37,7 +37,7 @@
 		<div class="complete__head-buttons">
 			@if (Model.SharedUserId == Guid.Empty)
 			{
-				<button type="button" class="editBtn progressindicator_share"><i class="anticon anticon-setting"></i> Edit  </button>
+				<button type="button" class="editBtn progressindicator_share handbook_share"><i class="anticon anticon-setting"></i> Edit  </button>
 				<button type="button" class="cancelBtn progressindicator_share"><i class="anticon anticon-close"></i> Cancel  </button>
 				<div class="progressindicator_share">
 					<div id="shareBtn" class="addthis_inline_share_toolbox_n7k8">

@@ -519,7 +519,7 @@
 .complete {
   &_section {
     background-color: #efefef;
-    padding: 64px 0 72px;
+    padding: 64px 0 24px;
     margin: 52px -120px 100px;
     @media screen and (max-width: 1109px) {
       margin: 52px -90px 100px;
@@ -613,7 +613,7 @@
     align-items: center;
   }
   &__progressindicator_wrapper {
-    margin: 17px 0 48px;
+    margin: 16px 0 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;

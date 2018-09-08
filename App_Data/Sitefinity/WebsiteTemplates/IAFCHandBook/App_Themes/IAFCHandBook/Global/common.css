@@ -3626,7 +3626,7 @@ p {
 
 .complete_section {
   background-color: #efefef;
-  padding: 64px 0 72px;
+  padding: 64px 0 24px;
   margin: 52px -120px 100px; }
   @media screen and (max-width: 1109px) {
     .complete_section {
@@ -3719,7 +3719,7 @@ p {
   align-items: center; }
 
 .complete__progressindicator_wrapper {
-  margin: 17px 0 48px;
+  margin: 16px 0 48px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -4062,6 +4062,7 @@ addReplyCommentBtn {
   font-size: 1em;
   font-weight: 400;
   border: none;
+  padding: 0;
   background: transparent;
   outline: none; }
   .progressindicator_share button {
@@ -4334,6 +4335,12 @@ addReplyCommentBtn {
   @media screen and (max-width: 767px) {
     .myhandbook_head-buttons {
       margin: 0 -28px; } }
+
+.handbook_breadcrumbs {
+  margin: 54px 0 0; }
+
+.handbook_share {
+  margin-right: 24px; }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
