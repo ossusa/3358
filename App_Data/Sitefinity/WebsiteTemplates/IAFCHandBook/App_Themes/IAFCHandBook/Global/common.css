@@ -2706,6 +2706,10 @@ p {
   -ms-flex-pack: start;
   justify-content: flex-start; }
 
+.selectric-community__title-select .selectric .category__arrow {
+  width: 17px;
+  margin-left: 24px; }
+
 .header {
   width: auto;
   margin: 0 auto;
