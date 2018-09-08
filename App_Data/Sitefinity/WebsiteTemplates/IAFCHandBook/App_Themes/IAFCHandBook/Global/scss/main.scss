@@ -3191,3 +3191,6 @@ p {
 .resources__slider .resources__slide{
   border: none;
 }
+#content{
+  min-height: calc(100vh - 282px);
+}
