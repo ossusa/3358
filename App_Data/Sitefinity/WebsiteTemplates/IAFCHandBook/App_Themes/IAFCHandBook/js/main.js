@@ -63,15 +63,17 @@ $(document).ready(function () {
     $(document).ready(function () {
         $($liLogout).closest('.header__table-tr').addClass('header_unlogged');
     });
-    /*FOR IE*/
+    
+    $('.header__list-link span').each(function(i) {
+        var $element = $(this)[i];
 
-    for (const a of document.querySelectorAll("span")) {
-        if (a.textContent.includes("SignIn")) {
-            console.log(a.textContent)
-            var element = document.getElementsByClassName("header__table-tr");
-            element.classList.add("header_cool");
+        if( $element.text() == 'SignIn' ) {
+           $('.header__table-tr').addClass('cool');
         }
-    }
+    });
+
+
+
 
     /*LABEL COLORS*/
     $(document).ready(function() {
