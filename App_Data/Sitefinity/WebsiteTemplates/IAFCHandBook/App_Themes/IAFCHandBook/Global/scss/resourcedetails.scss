@@ -551,7 +551,7 @@
   }
   &__resources {
     &_slide {
-      margin: 0 1% 48px !important;
+      margin: 0 12px 48px !important;
       @media screen and (max-width: 1109px) {
         width: 46% !important;
       }
@@ -635,9 +635,6 @@
 
   &__head-btn-select {
     margin-top: 20px;
-    @media screen and (max-width: 1109px) {
-      margin-top: 24px;
-    }
     @media screen and (max-width: 767px) {
       margin-bottom: 0;
     }
@@ -814,7 +811,7 @@ addReplyCommentBtn{
   color: $color_community !important;
 }
 .complete__resources_slides {
-  margin: 0 -1%;
+  margin: 0 -12px;
   width: auto;
   .resources__slide {
     width: 48%;

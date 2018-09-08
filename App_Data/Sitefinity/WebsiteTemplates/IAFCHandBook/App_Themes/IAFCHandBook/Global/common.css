@@ -3651,7 +3651,7 @@ p {
       opacity: 1; }
 
 .complete__resources_slide {
-  margin: 0 1% 48px !important; }
+  margin: 0 12px 48px !important; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
       width: 46% !important; } }
@@ -3743,9 +3743,6 @@ p {
 
 .complete__head-btn-select {
   margin-top: 20px; }
-  @media screen and (max-width: 1109px) {
-    .complete__head-btn-select {
-      margin-top: 24px; } }
   @media screen and (max-width: 767px) {
     .complete__head-btn-select {
       margin-bottom: 0; } }
@@ -3914,7 +3911,7 @@ addReplyCommentBtn {
   color: #5591AA !important; }
 
 .complete__resources_slides {
-  margin: 0 -1%;
+  margin: 0 -12px;
   width: auto; }
   .complete__resources_slides .resources__slide {
     width: 48%;
