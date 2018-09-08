@@ -3635,7 +3635,7 @@ p {
   @media screen and (max-width: 767px) {
     .complete_section {
       padding: 36px 0 16px;
-      margin: 40px -28px 67px; } }
+      margin: 40px -28px 68px; } }
   .complete_section-title {
     margin-bottom: 16px;
     font-size: 40px;
@@ -3658,7 +3658,7 @@ p {
       width: 46% !important; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
-      margin: 0 0 16px !important;
+      margin: 0 0 24px !important;
       width: 100% !important; } }
   .complete__resources_slide img {
     height: 266px;
