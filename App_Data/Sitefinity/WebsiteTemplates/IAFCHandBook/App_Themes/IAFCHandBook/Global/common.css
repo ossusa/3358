@@ -3939,6 +3939,13 @@ addReplyCommentBtn {
   margin-left: 8px;
   color: inherit; }
 
+.separate__slide-desc {
+  font-family: "Zilla Slab", serif;
+  margin: 0; }
+  @media screen and (max-width: 1109px) {
+    .separate__slide-desc {
+      font-size: 15px; } }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
@@ -4079,6 +4086,7 @@ addReplyCommentBtn {
       justify-content: center !important;
       width: 50vw;
       padding-left: 0 !important;
+      padding-right: 0 !important;
       margin-bottom: 48px; } }
   @media screen and (max-width: 767px) {
     .progressindicator_share {
