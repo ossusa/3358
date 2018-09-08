@@ -29,16 +29,26 @@ $(document).ready(function () {
         $('.mg-search-box').toggle();
         $('.header__sub_ul').hide();
     });
-        $("#site-search-submit").click(function (e) {
-            e.preventDefault();
+    $(function(){
+        $('#site-search-submit').on('keypress click', function(e){
             var q = $('#site-search').val();
-            location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-        });
-        $('#site-search').keypress(function(e){
-            if(e.which == 13){
-                $('#site-search-submit').click();
+            if (e.which === 13 || e.type === 'click') {
+                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
             }
         });
+    });
+
+        // $("#site-search-submit").click(function (e) {
+        //     e.preventDefault();
+        //     var q = $('#site-search').val();
+        //     location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+        // });
+        // $('#site-search').keypress(function(e){
+        //
+        //     if(e.which == 13){
+        //         $('#site-search-submit').click();
+        //     }
+        // });
 
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
