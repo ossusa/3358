@@ -29,6 +29,7 @@ $(document).ready(function () {
         $('.mg-search-box').toggle();
         $('.header__sub_ul').hide();
     });
+
     $(function(){
         $('#site-search-submit').on('keypress click', function(e){
             e.preventDefault();
@@ -38,7 +39,18 @@ $(document).ready(function () {
             }
         });
     });
+    $(function () {
 
+        $('body').off('keypress.enter').on('keypress.enter', function (e) {
+            if (e.which == 13 && e.target.type != 'textarea') {
+                var $btn = $(e.target).closest('.header__list-search').find(".hidden__search, button");
+                if ($btn.length) {
+                    $btn.click();
+                    return false;
+                }
+            }
+        });
+    });
         // $("#site-search-submit").click(function (e) {
         //     e.preventDefault();
         //     var q = $('#site-search').val();
