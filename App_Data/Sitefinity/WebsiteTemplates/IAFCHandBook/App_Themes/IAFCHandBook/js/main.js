@@ -29,8 +29,8 @@ $(document).ready(function () {
         $('.mg-search-box').toggle();
         $('.header__sub_ul').hide();
     });
-        $("#site-search-submit").click(function () {
-            // e.preventDefault();
+        $("#site-search-submit").click(function (e) {
+            e.preventDefault();
             var q = $('#site-search').val();
             location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
         });
