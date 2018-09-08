@@ -64,14 +64,9 @@ $(document).ready(function () {
         $($liLogout).closest('.header__table-tr').addClass('header_unlogged');
     });
 
-    $('span').each(function(i) {
-        var $element = $(this)[i];
-
-        if( $element.text() == 'SignIn' ) {
-           $('.header__table-tr').addClass('cool');
-        }
-    });
-
+    if( $(".header__list-link  > span").text().indexOf('SignIn') >= 0) {
+        $(".header__table-tr").addClass("thisClass");
+    }
 
 
 
