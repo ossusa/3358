@@ -90,7 +90,7 @@
       flex-direction: column-reverse;
     }
     @media screen and (max-width: 767px){
-      margin-bottom: 36px;
+      margin-bottom: 36px !important;
     }
     &-col{
       display: flex;
@@ -136,6 +136,7 @@
       justify-content: center !important;
       width: 50vw;
       padding-left: 0 !important;
+      padding-right: 0 !important;
       margin-bottom: 48px;
     }
     @media screen and (max-width: 767px){

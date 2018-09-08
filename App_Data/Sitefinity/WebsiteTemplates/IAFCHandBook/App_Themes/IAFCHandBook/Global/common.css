@@ -4031,7 +4031,7 @@ addReplyCommentBtn {
       flex-direction: column-reverse; } }
   @media screen and (max-width: 767px) {
     .progressindicator__wrapper {
-      margin-bottom: 36px; } }
+      margin-bottom: 36px !important; } }
   .progressindicator__wrapper-col {
     display: -ms-flexbox;
     display: flex; }
