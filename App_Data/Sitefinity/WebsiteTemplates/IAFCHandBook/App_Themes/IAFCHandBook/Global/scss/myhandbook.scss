@@ -192,7 +192,7 @@
   &__wrapper {
     display: flex;
     align-items: flex-start;
-    margin: 0 -12px 50px;
+    margin: 0 -12px 290px;
     @media screen and (max-width: 1440px){
       flex-wrap: wrap;
     }
@@ -301,7 +301,7 @@
       border-radius: 0 0 3px 3px;
       border: 1px solid #efefef;
       background-color: $color_15 !important;
-      padding: 16px 20px;
+      padding: 16px 20px 14px;
       @media screen and (max-width: 1440px){
         width: 282px;
       }

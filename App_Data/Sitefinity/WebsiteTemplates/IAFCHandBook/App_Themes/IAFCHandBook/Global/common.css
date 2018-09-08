@@ -2789,6 +2789,7 @@ p {
     position: absolute;
     top: 45px;
     z-index: 2;
+    height: 155px;
     margin: 0;
     padding: 20px;
     list-style: none;
@@ -3747,7 +3748,9 @@ p {
 
 .complete__head-buttons {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center; }
   @media screen and (max-width: 1109px) {
     .complete__head-buttons {
       display: none; } }
@@ -4135,7 +4138,7 @@ addReplyCommentBtn {
   display: flex;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin: 0 -12px 50px; }
+  margin: 0 -12px 290px; }
   @media screen and (max-width: 1440px) {
     .handbook_category__wrapper {
       -ms-flex-wrap: wrap;
@@ -4244,7 +4247,7 @@ addReplyCommentBtn {
     border-radius: 0 0 3px 3px;
     border: 1px solid #efefef;
     background-color: white !important;
-    padding: 16px 20px; }
+    padding: 16px 20px 14px; }
     @media screen and (max-width: 1440px) {
       .handbook_category__item__links {
         width: 282px; } }

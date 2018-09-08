@@ -644,6 +644,7 @@
   }
   &__head-buttons {
     display: flex;
+    align-items: center;
     @media screen and (max-width: 1109px) {
       display: none;
     }
