@@ -69,7 +69,7 @@ $(document).ready(function () {
         if (a.textContent.includes("SignIn")) {
             console.log(a.textContent)
             var element = document.getElementsByClassName("header__table-tr");
-            element.classList.add("header_unlogged");
+            element.classList.add("header_cool");
         }
     }
 
