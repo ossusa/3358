@@ -63,8 +63,8 @@ $(document).ready(function () {
     $(document).ready(function () {
         $($liLogout).closest('.header__table-tr').addClass('header_unlogged');
     });
-    
-    $('.header__list-link span').each(function(i) {
+
+    $('span').each(function(i) {
         var $element = $(this)[i];
 
         if( $element.text() == 'SignIn' ) {
