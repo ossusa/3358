@@ -302,6 +302,13 @@ if($(window).width() < 767) {
             $(this).text($(this).text().substr(0, xTitle-yTitle.length) + yTitle);
         }
     });
+    $('.separate__slide-desc').each(function() {
+        var xSixths = 63;
+        var ySixths = '...';
+        if ($(this).text().length > (xSixths - ySixths.length)) {
+            $(this).text($(this).text().substr(0, xSixths-ySixths.length) + ySixths);
+        }
+    });
 }
 
 /*Second title and  desc*/

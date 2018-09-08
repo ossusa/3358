@@ -847,3 +847,10 @@ addReplyCommentBtn{
   margin-left: 8px;
   color: inherit;
 }
+.separate__slide-desc{
+  font-family: "Zilla Slab", serif;
+  margin: 0;
+  @media screen and (max-width: 1109px) {
+    font-size: 15px;
+  }
+}

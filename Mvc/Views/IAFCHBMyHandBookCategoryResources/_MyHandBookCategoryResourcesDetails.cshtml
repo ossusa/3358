@@ -74,7 +74,7 @@
 						@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 					<span class="resources__slide-title">@item.ResourceDetails.ResourceTitle</span>
 				</button>
-				<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+				<p class="separate__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 			</div>
 			<div class="resources__slide-footer">
 				@if (item.IsUserAuthorized)
@@ -206,7 +206,7 @@
 									@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 								<span class="resources__slide-title">@item.ResourceDetails.ResourceTitle</span>
 							</button>
-							<p class="resources__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+							<p class="separate__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 						</div>
 						<div class="resources__slide-footer">
 							@if (item.IsUserAuthorized)
