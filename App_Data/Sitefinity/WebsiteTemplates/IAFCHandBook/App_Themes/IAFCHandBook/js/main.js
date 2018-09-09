@@ -181,16 +181,16 @@ $(document).ready(function () {
 
     //image container height
     function setImgHeight() {
-        var imgContainer = $('.img-container-js');
-        var width = imgContainer.width();
-        imgContainer.height(width/13*9 -2);
+        //var imgContainer = $('.img-container-js');
+        //var width = imgContainer.width();
+        //imgContainer.height(width/13*9 -2);
         $('.img-container-js').each(function(){
           var a = $(this).height($(this).width()/13*9 -2);
             console.log(a);
         })
     };
 
-    
+    //image positioning within container
     $( ".img-container-js > img" ).each(function() {
         if (this.naturalWidth/this.naturalHeight < 13/9){
             $(this).css({
