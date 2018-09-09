@@ -888,9 +888,7 @@ p {
       position: relative;
       width: 384px;
       height: 266px; }
-      .resources__logged-img-box img {
-        width: 384px;
-        height: 266px; }
+      
     .resources__logged-title {
       font-size: 1.5em; }
     .resources__logged-desc {

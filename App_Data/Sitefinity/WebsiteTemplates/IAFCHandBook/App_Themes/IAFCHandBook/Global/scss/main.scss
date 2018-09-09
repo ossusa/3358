@@ -899,10 +899,9 @@ p {
     &-img-box {
       position: relative;
       width: 384px;
-      height: 266px;      
-      img {
-        width: 384px;
-        height: 266px;
+      height: 266px;
+      @media (max-width: 767px){
+        width: 100%;
       }
     }
     &-title {

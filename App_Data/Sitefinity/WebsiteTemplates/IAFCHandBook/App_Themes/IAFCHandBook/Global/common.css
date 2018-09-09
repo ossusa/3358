@@ -813,9 +813,9 @@ p {
       position: relative;
       width: 384px;
       height: 266px; }
-      .resources__logged-img-box img {
-        width: 384px;
-        height: 266px; }
+      @media (max-width: 767px) {
+        .resources__logged-img-box {
+          width: 100%; } }
     .resources__logged-title {
       font-size: 1.5em;
       margin-bottom: 4px; }
