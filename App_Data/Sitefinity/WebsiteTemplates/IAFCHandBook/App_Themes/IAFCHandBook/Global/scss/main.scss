@@ -899,7 +899,7 @@ p {
     &-img-box {
       position: relative;
       width: 384px;
-      height: 266px;
+      height: 266px;      
       img {
         width: 384px;
         height: 266px;
@@ -2536,11 +2536,11 @@ p {
     padding: 24px;
   }
   .resources__logged-img-box {
-    width: auto;
-    height: 235px;
+    width: 100%;
+    height: auto;
     img {
-      width: 78vw;
-      height: 235px;
+      width: 100%;
+      height: auto;
     }
   }
   .community__topics-list {
