@@ -186,7 +186,6 @@ $(document).ready(function () {
         //imgContainer.height(width/13*9 -2);
         $('.img-container-js').each(function(){
           var a = $(this).height($(this).width()/13*9 -2);
-            console.log(a);
         })
     };
 

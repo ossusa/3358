@@ -2391,8 +2391,7 @@ p {
     display: none; }
   .resources__logged-img-box {
     position: relative;
-    width: 384px;
-    height: 266px; } }
+    width: 100%; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
