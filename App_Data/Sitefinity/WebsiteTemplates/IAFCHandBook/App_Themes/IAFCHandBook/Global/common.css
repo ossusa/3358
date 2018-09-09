@@ -813,17 +813,9 @@ p {
       position: relative;
       width: 384px;
       height: 266px; }
-      @media (max-width: 767px) {
-        .resources__logged-img-box {
-          width: 100%;
-          height: auto; } }
       .resources__logged-img-box img {
         width: 384px;
         height: 266px; }
-        @media (max-width: 767px) {
-          .resources__logged-img-box img {
-            width: 100%;
-            height: auto; } }
     .resources__logged-title {
       font-size: 1.5em;
       margin-bottom: 4px; }
@@ -2081,10 +2073,10 @@ p {
     padding: 24px; }
   .resources__logged-img-box {
     width: 100%;
-    height: 235px; }
+    height: auto; }
     .resources__logged-img-box img {
-      width: 78vw;
-      height: 235px; }
+      width: 100%;
+      height: auto; }
   .community__topics-list {
     margin-bottom: 20px; }
   .topics__ul-flex .topics__list {
