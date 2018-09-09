@@ -186,24 +186,15 @@ $(document).ready(function () {
         imgContainer.height(width/13*9 -2);
     };
 
-    //set content's height to make footer always at the bottom
-    /*function setWrapperHeight() {
-        var windowHeight = $( window ).height();
-        var headerHeight = $( '#header').outerHeight();
-        var footerHeight = $( '#footer').outerHeight();
-        var minHeight = windowHeight - headerHeight - footerHeight*2;
-        $('#content').css('min-height', minHeight);
-    };*/
-
-    /*
+    
     $( ".img-container-js > img" ).each(function() {
-        if ((this.width()/this.height()) > 13/9){
-            this.css({
+        if ((this.naturalWidth/this.naturalHeight > 13/9){
+            $(this).css({
                 'width': '100%',
                 'height': 'auto'
             });
         }
-    });*/
+    });
 
 
     setInterval(function() {
