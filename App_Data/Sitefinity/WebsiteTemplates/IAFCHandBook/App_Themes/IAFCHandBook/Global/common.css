@@ -1828,20 +1828,17 @@ p {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-#shareBtn {
-  margin-left: 16px; }
-  .resources-single #shareBtn {
-    margin-left: 0; }
-  #shareBtn .addthis_button_compact {
-    color: #9b9b9b;
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 1em;
-    font-weight: 400;
-    border: none;
-    background: transparent;
-    outline: none; }
-  #shareBtn #atstbx {
-    display: none !important; }
+#shareBtn .addthis_button_compact {
+  color: #9b9b9b;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  border: none;
+  background: transparent;
+  outline: none; }
+
+#shareBtn #atstbx {
+  display: none !important; }
 
 .atm {
   display: none !important; }
