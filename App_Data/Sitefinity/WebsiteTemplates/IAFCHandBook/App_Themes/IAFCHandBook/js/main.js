@@ -184,6 +184,10 @@ $(document).ready(function () {
         var imgContainer = $('.img-container-js');
         var width = imgContainer.width();
         imgContainer.height(width/13*9 -2);
+        $('.img-container-js').each(function(){
+          var a = $(this).height($(this).width()/13*9 -2);
+            console.log(a);
+        })
     };
 
     
