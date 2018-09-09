@@ -560,13 +560,7 @@
         width: 100% !important;
       }
       img {      
-        display: block;
-        @media screen and (max-width: 1109px) {
-          height: 195px;
-        }
-        @media screen and (max-width: 767px) {
-          height: 221px;
-        }
+        display: block;       
       }
       &-info {
         padding: 20px 25px 20px 20px;
