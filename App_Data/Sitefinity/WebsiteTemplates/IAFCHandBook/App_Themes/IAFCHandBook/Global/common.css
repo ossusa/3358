@@ -1879,22 +1879,6 @@ p {
   overflow: hidden;
   text-overflow: ellipsis; }
 
-.ellip {
-  display: block;
-  height: 100%; }
-
-.ellip-line {
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-  max-width: 100%; }
-
-.ellip,
-.ellip-line {
-  position: relative;
-  overflow: hidden; }
-
 @media (max-width: 1500px) {
   .topics__img-text {
     font-size: 2.2vw; } }
@@ -2404,7 +2388,11 @@ p {
   .slick-track .resources__slide {
     margin-right: 12px; }
   .slick-track .single-post-comments {
-    display: none; } }
+    display: none; }
+  .resources__logged-img-box {
+    position: relative;
+    width: 384px;
+    height: 266px; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {

@@ -2239,24 +2239,7 @@ p {
   text-overflow: ellipsis;
 }
 
-.ellip {
-  display: block;
-  height: 100%;
-}
 
-.ellip-line {
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-  max-width: 100%;
-}
-
-.ellip,
-.ellip-line {
-  position: relative;
-  overflow: hidden;
-}
 
 @media(max-width: 1500px){
   .topics__img-text{
@@ -3104,6 +3087,11 @@ p {
       display: none;
     }
   }
+
+  .resources__logged-img-box {
+    position: relative;
+    width: 100%;
+}
 }
 @media (max-width: 382px) {
   .resources__slide-info {
