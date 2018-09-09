@@ -1603,7 +1603,7 @@ p {
   margin-bottom: 16px; }
 
 .handbook__more {
-  width: 31.3%;
+  width: 31.2%;
   -ms-flex-item-align: stretch;
   -ms-grid-row-align: stretch;
   align-self: stretch;
@@ -1647,7 +1647,7 @@ p {
   overflow: hidden; }
 
 .complete__resources_slide {
-  width: 31.3% !important;
+  width: 31.2% !important;
   border: 1px solid #EFEFEF;
   border-radius: 3px; }
 
@@ -1828,17 +1828,20 @@ p {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-#shareBtn .addthis_button_compact {
-  color: #9b9b9b;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1em;
-  font-weight: 400;
-  border: none;
-  background: transparent;
-  outline: none; }
-
-#shareBtn #atstbx {
-  display: none !important; }
+#shareBtn {
+  margin-left: 16px; }
+  .resources-single #shareBtn {
+    margin-left: 0; }
+  #shareBtn .addthis_button_compact {
+    color: #9b9b9b;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    border: none;
+    background: transparent;
+    outline: none; }
+  #shareBtn #atstbx {
+    display: none !important; }
 
 .atm {
   display: none !important; }
