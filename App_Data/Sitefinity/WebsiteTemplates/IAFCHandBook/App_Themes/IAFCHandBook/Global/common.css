@@ -3308,15 +3308,15 @@ p {
           @media screen and (max-width: 767px) {
             .resources-single__left_post_title h5 {
               margin-bottom: 4px; } }
-        .resources-single__left_post_title p {
+        .resources-single__left_post_title p, .resources-single__left_post_title div {
           font-family: 'Zilla Slab', serif;
           margin: 0;
           color: #4a4a4a;
           font-size: 1.25em;
           font-weight: 300;
           line-height: 1.2;
-          margin: 0 0 40px; }
-          .resources-single__left_post_title p:last-child {
+          margin: 0 0 24px; }
+          .resources-single__left_post_title p:last-child, .resources-single__left_post_title div:last-child {
             margin: 0; }
         .resources-single__left_post_title a {
           color: #4a4a4a; }
