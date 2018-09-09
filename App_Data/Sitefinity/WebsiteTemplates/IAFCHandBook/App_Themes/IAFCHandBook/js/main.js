@@ -188,7 +188,7 @@ $(document).ready(function () {
 
     
     $( ".img-container-js > img" ).each(function() {
-        if ((this.naturalWidth/this.naturalHeight > 13/9){
+        if (this.naturalWidth/this.naturalHeight < 13/9){
             $(this).css({
                 'width': '100%',
                 'height': 'auto'
