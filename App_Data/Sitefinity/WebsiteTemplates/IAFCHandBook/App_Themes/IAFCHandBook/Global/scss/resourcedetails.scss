@@ -179,14 +179,10 @@
             font-size: 1.25em;
             font-weight: 300;
             line-height: 1.2;
-            &:not(:last-child) {
-              margin: 0 0 40px;
-            }
-            @media screen and (max-width: 767px) {
-              p:not(:last-child) {
-                margin-bottom: 24px;
-              }
-            }
+            margin: 0 0 40px;
+            &:last-child {
+              margin: 0;
+            }          
           }
           a{
             color: #4a4a4a;

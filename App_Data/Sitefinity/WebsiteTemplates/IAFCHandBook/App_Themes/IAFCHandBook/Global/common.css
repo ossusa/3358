@@ -3314,12 +3314,10 @@ p {
           color: #4a4a4a;
           font-size: 1.25em;
           font-weight: 300;
-          line-height: 1.2; }
-          .resources-single__left_post_title p:not(:last-child) {
-            margin: 0 0 40px; }
-          @media screen and (max-width: 767px) {
-            .resources-single__left_post_title p p:not(:last-child) {
-              margin-bottom: 24px; } }
+          line-height: 1.2;
+          margin: 0 0 40px; }
+          .resources-single__left_post_title p:last-child {
+            margin: 0; }
         .resources-single__left_post_title a {
           color: #4a4a4a; }
         .resources-single__left_post_title ul, .resources-single__left_post_title ol {
