@@ -126,7 +126,7 @@
           color: $color_community;
         }
       }
-      .header__sub_list-link {
+      .header__sub_list-link, .header__second_list-link  {
         font-weight: 400;
       }
       &:nth-of-type(2) > .header__sub_list-link {
