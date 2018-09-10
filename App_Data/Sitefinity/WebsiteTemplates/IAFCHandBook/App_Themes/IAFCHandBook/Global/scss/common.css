@@ -3011,7 +3011,7 @@ p {
           padding: 16px;
           color: #9b9b9b;
           font-family: "Nunito Sans";
-          font-size: 18px;
+          font-size: 1.25em;
           text-align: center;
           cursor: pointer; }
           .resources-single__left_post_comment_changer div:not(:last-child) {
