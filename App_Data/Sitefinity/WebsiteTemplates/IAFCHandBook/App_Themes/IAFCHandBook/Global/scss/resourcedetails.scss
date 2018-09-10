@@ -182,18 +182,25 @@
             margin: 0 0 24px;
             &:last-child {
               margin: 0;
-            }          
+            }
+            * {
+              font-size: 1em;
+            }
           }
           p {
             font-size: 1em;
           }
           a{
             color: #4a4a4a;
+            font-size: 1em;
+          }
+          span {
+            font-size: 1em;
           }
           ul, ol {
             font-family: 'Zilla Slab', serif;
             color: #4a4a4a;
-            font-size: 1.25em;
+            font-size: 1em;
             font-weight: 300;
             line-height: 1.2;
           }
