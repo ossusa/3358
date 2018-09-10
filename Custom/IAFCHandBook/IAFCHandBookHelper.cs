@@ -2098,11 +2098,15 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsUI(string name, string categoryName = null)
 		{
-			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
-			if (categoryId == Guid.Empty)
+			Guid? categoryId = null;
+			if(categoryName !=null)
 			{
-				return null;
+				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+				categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+				if (categoryId == Guid.Empty)
+				{
+					return null;
+				}
 			}
 
 			return GetMyHnadbookResourceDetails(name, categoryId);
