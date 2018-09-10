@@ -187,6 +187,12 @@
           color: $color_personnel;
         }
       }
+
+      .header__second_list-link:hover:after {
+        content: "\E61F";
+        display: block;
+        font-family: anticon;
+      }
     }
 }
   &__second{
