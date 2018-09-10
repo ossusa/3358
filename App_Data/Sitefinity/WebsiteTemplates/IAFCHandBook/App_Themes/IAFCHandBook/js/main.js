@@ -185,19 +185,11 @@ $(document).ready(function () {
         //var width = imgContainer.width();
         //imgContainer.height(width/13*9 -2);
         $('.img-container-js').each(function(){
-          var a = $(this).height($(this).width()/13*9 -2);
+          $(this).height($(this).width()/13*9 -2);
         })
     };
 
-    //image positioning within container
-    $( ".img-container-js > img" ).each(function() {
-        if (this.naturalWidth/this.naturalHeight < 13/9){
-            $(this).css({
-                'width': '100%',
-                'height': 'auto'
-            });
-        }
-    });
+
 
 
     setInterval(function() {
@@ -381,6 +373,18 @@ function myFunction(x) {
         });
     }
 }
+
+$( window ).load(function() {
+    //image positioning within container
+    $( ".img-container-js > img" ).each(function() {
+        if (this.naturalWidth/this.naturalHeight < 13/9){
+            $(this).css({
+                'width': '100%',
+                'height': 'auto'
+            });
+        }
+    });
+});
 
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
 myFunction(x) // Call listener function at run time
