@@ -29,6 +29,7 @@
 	</div>
 </div>
 @{int columnCounter = 0; }
+<p>@Model.MyResources.Count();</p>
 @foreach (var item in Model.MyResources)
 {
 	if (columnCounter == 0)
@@ -39,18 +40,18 @@
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{
-				<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt"/>
+				<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
 			}
 			else
 			{
 				<div class="resources-placeholder">
 					<div class="placehoolder-background">
-						<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt" >
+						<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
 					</div>
 					@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<div class="placeholder-type">
-							<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt" >
+							<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
 						</div>
 					}
 				</div>
@@ -71,7 +72,7 @@
 						data-id="@item.ResourceUrl"
 						data-id1="@item.ResourceDetails.ResourceLink"
 						data-id2="@item.ResourceDetails.ResourceDocument"
-						@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
+						@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
 					<span class="resources__slide-title">@item.ResourceDetails.ResourceTitle</span>
 				</button>
 				<p class="separate__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
@@ -203,7 +204,7 @@
 									data-id="@item.ResourceUrl"
 									data-id1="@item.ResourceDetails.ResourceLink"
 									data-id2="@item.ResourceDetails.ResourceDocument"
-									@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
+									@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
 								<span class="resources__slide-title">@item.ResourceDetails.ResourceTitle</span>
 							</button>
 							<p class="separate__slide-desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
