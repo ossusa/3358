@@ -103,7 +103,7 @@
       margin: 40px auto 24px;
     }
     @media screen and(max-width: 767px) {
-      margin: 20px auto;
+      margin: 28px auto 20px;
     }
     a{
       color: #9b9b9b;
@@ -380,7 +380,7 @@
       &_list{
         display: flex;
         flex-direction: column;
-        margin-bottom: 15px;
+        margin-bottom: 16px;
         margin-top: 16px;
         padding: 0;
         &_item{
@@ -459,7 +459,8 @@
               *{
                 color: #2b4b6b;
                 font-family: "Nunito Sans";
-                font-size: 16px;
+                font-size: 1em;
+                line-height: 1.4;
                 font-weight: 700;
               }
             }
@@ -468,7 +469,8 @@
               width: 100%;
               color: #666666;
               font-family: "Nunito Sans";
-              font-size: 16px;
+              font-size: 1em;
+              line-height: 1.4;
               font-weight: 400;
               margin-bottom: 4px;
             }
@@ -482,7 +484,7 @@
             &_bottom{
               display: flex;
               justify-content: space-between;
-              margin-bottom: 14px;
+              margin-bottom: 16px;
               .single-post-statistic button:not(:last-child){
                 margin-right: 23px;
               }
@@ -491,7 +493,7 @@
                 align-items: center;
                 color: #9b9b9b;
                 font-family: "Nunito Sans";
-                font-size: 13px;
+                font-size: .813em;
                 font-weight: 400;
               }
             }
