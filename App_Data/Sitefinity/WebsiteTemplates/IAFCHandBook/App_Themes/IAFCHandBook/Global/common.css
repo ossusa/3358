@@ -2258,7 +2258,7 @@ p {
     border-bottom: 1px solid #d8d8d8;
     list-style: none; }
   .accordion__sub-link {
-    font-size: 1em;
+    font-size: .8em;
     white-space: nowrap;
     color: #666; }
   .accordion__sub-content li {
