@@ -3578,14 +3578,16 @@ p {
           .resources-single__comments_list_container_items_item_title * {
             color: #2b4b6b;
             font-family: "Nunito Sans";
-            font-size: 16px;
+            font-size: 1em;
+            line-height: 1.4;
             font-weight: 700; }
         .resources-single__comments_list_container_items_item_text {
           max-width: 690px;
           width: 100%;
           color: #666666;
           font-family: "Nunito Sans";
-          font-size: 16px;
+          font-size: 1em;
+          line-height: 1.4;
           font-weight: 400;
           margin-bottom: 4px; }
         .resources-single__comments_list_container_items_item .resources-single__comments_list_container_items {
