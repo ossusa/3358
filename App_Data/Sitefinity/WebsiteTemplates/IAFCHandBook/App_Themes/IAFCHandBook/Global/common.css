@@ -167,7 +167,9 @@ template {
 
 a {
   text-decoration: none;
-  background: transparent; }
+  background: transparent;
+  color: #2B4B6B;
+  font-weight: 600; }
   a:active {
     outline: 0; }
   a:hover {
@@ -3322,7 +3324,6 @@ p {
         .resources-single__left_post_title p {
           font-size: 1em; }
         .resources-single__left_post_title a {
-          color: #4a4a4a;
           font-size: 1em;
           color: #2B4B6B;
           font-weight: 600; }
