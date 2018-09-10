@@ -126,6 +126,9 @@
           color: $color_community;
         }
       }
+      .header__sub_list-link {
+        font-weight: 400;
+      }
       &:nth-of-type(2) > .header__sub_list-link {
         &:hover {
           text-shadow: 1px 0 0 $color_leadership;
