@@ -84,7 +84,7 @@
 									<div class="textarea-container">
 										<textarea placeholder="Add a comment…" name="commentName" id="@string.Format("{0}_{1}", "comment", Model.Id.ToString())"></textarea>
 									</div>
-									<button type="button" class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
+									<button type="button"  id="addCommnetBtnID"  class="addCommentBtn" data-id="@Model.Id.ToString()"> Add Comment </button>
 								</div>
 							</div>
 						}
@@ -255,6 +255,7 @@
 			//Add Comment
 			$('.addCommentBtn').click(function () {
 
+				$("#addCommnetBtnID").attr('disabled', 'disabled');
 				var resourceId = $(this).attr('data-id');
 				var commentMsg = $('#comment_' + resourceId).val();
 				var comment = commentMsg;
@@ -273,6 +274,7 @@
 						$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
 						$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
 						bindEdit();
+						$("#addCommnetBtnID").removeAttr('disabled');
 					}
 
 				});
@@ -280,7 +282,7 @@
 
 			//Add Comment Like
 			$('.addCommentLike').click(function () {
-								var isAdding = true;
+				var isAdding = true;
 				var likeAddamount = 1;
 				var resourceId = $(this).attr('data-id');
 				var isDisLikeEnabled = $('#commentDislikes_' + resourceId).is(':disabled');
@@ -346,7 +348,7 @@
 			$('.commentReplyBtn').click(function () {
 
 				var commentId = $(this).attr('data-id');
-
+				
 				$.ajax({
 					type: 'POST',
 					cache: false,
@@ -355,7 +357,7 @@
 					success: function (response) {
 						$("#replyCommentBtn_" + commentId).html("");
 						$("#commentRepliesInputView_" + commentId).html(response);
-						bindEdit();
+						bindEdit();						
 					}
 				});
 			});
@@ -364,6 +366,7 @@
 			$('.addReplyCommentBtn').click(function () {
 
 				var commentId = $(this).attr('data-id');
+				$("#addReplyCommentBtn_" + commentId).attr('disabled', 'disabled');
 				var commentMsg = $('#replyComment_' + commentId).val();
 				var comment = commentMsg;
 
@@ -376,6 +379,8 @@
 						$("#commentRepliesInputView_" + commentId).html(" ");
 						$("#commentRepliesView_" + commentId).html(commentsResults);
 						$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="' + commentId + '"> Reply </button>');
+						bindEdit();
+						$("#addReplyCommentBtn_" + commentId).removeAttr('disabled');
 					}
 
 				});

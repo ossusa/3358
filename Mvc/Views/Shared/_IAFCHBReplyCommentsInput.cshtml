@@ -5,7 +5,7 @@
 		<div class="textarea-container">
 			<textarea placeholder="Add a reply…" id="@string.Format("{0}_{1}", "replyComment", Model.ToString())"></textarea>
 		</div>
-		<button type="button" class="addReplyCommentBtn" data-id="@Model.ToString()"> Add Reply </button>
+		<button type="button" id="@string.Format("{0}_{1}", "addReplyCommentBtn", Model.ToString())" class="addReplyCommentBtn" data-id="@Model.ToString()"> Add Reply </button>
 	</div>
 </div>
 </div>
