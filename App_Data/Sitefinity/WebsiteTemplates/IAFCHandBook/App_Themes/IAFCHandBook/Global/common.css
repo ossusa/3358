@@ -3476,7 +3476,7 @@ p {
         .resources-single__left_post_comment_changer div {
           -ms-flex: 1;
           flex: 1;
-          padding: 16px;
+          padding: 16px 0;
           color: #9b9b9b;
           font-family: "Nunito Sans";
           font-size: 1.25em;
