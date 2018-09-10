@@ -182,7 +182,10 @@
             margin: 0 0 24px;
             &:last-child {
               margin: 0;
-            }          
+            }
+            * {
+              font-size: 1em;
+            }
           }
           p {
             font-size: 1em;
