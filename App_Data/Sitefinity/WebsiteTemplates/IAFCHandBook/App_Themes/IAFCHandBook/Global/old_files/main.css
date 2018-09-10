@@ -967,9 +967,7 @@ p {
       position: relative;
       width: 384px;
       height: 266px; }
-      .resources__logged-img-box img {
-        width: 384px;
-        height: 266px; }
+     
     .resources__logged-title {
       font-size: 1.5em; }
     .resources__logged-desc {
@@ -1883,8 +1881,7 @@ p {
     margin-right: 0 !important; }
   .community__topics-img {
     width: 100% !important; }
-  .resources__slide-img {
-    height: 221px; }
+  
   .resources__slide-title {
     font-size: 1.23em; }
   .topics__list:hover .topics__img-back {
@@ -2193,8 +2190,7 @@ p {
     margin-bottom: 10px; }
   .resources__community-slide-info {
     height: 154px !important; }
-  .resources__community-img img {
-    height: 221px; }
+  
   .box-about {
     padding-left: 28px;
     padding-right: 28px; }

@@ -90,7 +90,7 @@
       flex-direction: column-reverse;
     }
     @media screen and (max-width: 767px){
-      margin-bottom: 36px;
+      margin-bottom: 36px !important;
     }
     &-col{
       display: flex;
@@ -110,6 +110,7 @@
     font-size: 1em;
     font-weight: 400;
     border: none;
+    padding: 0;
     background: transparent;
     outline: none;
     button{
@@ -136,6 +137,7 @@
       justify-content: center !important;
       width: 50vw;
       padding-left: 0 !important;
+      padding-right: 0 !important;
       margin-bottom: 48px;
     }
     @media screen and (max-width: 767px){
@@ -192,7 +194,7 @@
   &__wrapper {
     display: flex;
     align-items: flex-start;
-    margin: 0 -12px 50px;
+    margin: 0 -12px 290px;
     @media screen and (max-width: 1440px){
       flex-wrap: wrap;
     }
@@ -301,7 +303,7 @@
       border-radius: 0 0 3px 3px;
       border: 1px solid #efefef;
       background-color: $color_15 !important;
-      padding: 16px 20px;
+      padding: 16px 20px 14px;
       @media screen and (max-width: 1440px){
         width: 282px;
       }
@@ -390,4 +392,10 @@
   @media screen and (max-width: 767px){
     margin: 0 -28px;
   }
+}
+.handbook_breadcrumbs{
+  margin: 54px 0 0;
+}
+.handbook_share{
+  margin-right: 24px;
 }

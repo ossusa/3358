@@ -130,7 +130,7 @@
       max-width: 790px;
       min-width: 430px;
       width: 100%;
-      margin-right: 50px;
+      margin-right: 48px;
       @media screen and (max-width: 768px){
         min-width: auto;
         margin-right: 0;
@@ -141,7 +141,7 @@
         width: 100%;
         &_video{
           width: 100%;
-          margin-bottom: 14px;
+          margin-bottom: 24px;
           iframe{
             width: 100% !important;
             height: 444px !important;
@@ -172,21 +172,20 @@
               margin-bottom: 4px;
             }
           }
-          p{
+          p, div{
             font-family: 'Zilla Slab', serif;
             margin: 0;
             color: #4a4a4a;
             font-size: 1.25em;
             font-weight: 300;
             line-height: 1.2;
-            &:not(:last-child) {
-              margin: 0 0 40px;
-            }
-            @media screen and (max-width: 767px) {
-              p:not(:last-child) {
-                margin-bottom: 24px;
-              }
-            }
+            margin: 0 0 24px;
+            &:last-child {
+              margin: 0;
+            }          
+          }
+          p {
+            font-size: 1em;
           }
           a{
             color: #4a4a4a;
@@ -370,7 +369,7 @@
         padding: 24px 28px 21px;
       }
       &_header{
-        *{
+        p{
           color: #2b4b6b;
           font-family: "Nunito Sans";
           font-size: 1.25em;
@@ -388,7 +387,7 @@
           display: flex;
           flex-direction: column;
           width: 100%;
-          padding: 25px 0 24px;
+          padding: 24px 0;
           border-bottom: 1px solid #d8d8d8;
           &:first-child{
             padding-top: 0;
@@ -519,14 +518,15 @@
 .complete {
   &_section {
     background-color: #efefef;
-    padding: 64px 0 72px;
+    padding: 64px 0 24px;
     margin: 52px -120px 100px;
     @media screen and (max-width: 1109px) {
       margin: 52px -90px 100px;
+      padding: 48px 0 0;
     }
     @media screen and (max-width: 767px){
       padding: 36px 0 16px;
-      margin: 40px -28px 67px;
+      margin: 40px -28px 68px;
     }
     &-title {
       margin-bottom: 16px;
@@ -551,23 +551,16 @@
   }
   &__resources {
     &_slide {
-      margin: 0 1% 48px !important;
+      margin: 0 12px 48px !important;
       @media screen and (max-width: 1109px) {
         width: 46% !important;
       }
       @media screen and (max-width: 767px) {
-        margin: 0 0 16px !important;
+        margin: 0 0 24px !important;
         width: 100% !important;
       }
-      img {
-        height: 266px;
-        display: block;
-        @media screen and (max-width: 1109px) {
-          height: 195px;
-        }
-        @media screen and (max-width: 767px) {
-          height: 221px;
-        }
+      img {      
+        display: block;       
       }
       &-info {
         padding: 20px 25px 20px 20px;
@@ -613,7 +606,7 @@
     align-items: center;
   }
   &__progressindicator_wrapper {
-    margin: 17px 0 48px;
+    margin: 16px 0 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -634,16 +627,14 @@
   }
 
   &__head-btn-select {
-    margin-top: 20px;
-    @media screen and (max-width: 1109px) {
-      margin-top: 24px;
-    }
+    margin-top: 20px !important;
     @media screen and (max-width: 767px) {
       margin-bottom: 0;
     }
   }
   &__head-buttons {
     display: flex;
+    align-items: center;
     @media screen and (max-width: 1109px) {
       display: none;
     }
@@ -813,8 +804,11 @@ addReplyCommentBtn{
   color: $color_community !important;
 }
 .complete__resources_slides {
-  margin: 0 -1%;
+  margin: 0 -12px;
   width: auto;
+  @media screen and (max-width: 1109px) {
+    margin: 0;
+  }
   .resources__slide {
     width: 48%;
     margin-left: 1%;
@@ -845,4 +839,11 @@ addReplyCommentBtn{
   font-family: anticon;
   margin-left: 8px;
   color: inherit;
+}
+.separate__slide-desc{
+  font-family: "Zilla Slab", serif;
+  margin: 0;
+  @media screen and (max-width: 1109px) {
+    font-size: 15px;
+  }
 }

@@ -29,11 +29,30 @@ $(document).ready(function () {
         $('.mg-search-box').toggle();
         $('.header__sub_ul').hide();
     });
-        $("#site-search-submit").click(function (e) {
+
+    $(function(){
+        $('#site-search-submit').on('keypress click', function(e){
             e.preventDefault();
             var q = $('#site-search').val();
-            location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+            if (e.which === 13 || e.type === 'click') {
+                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+            }
         });
+    });
+    $(function () {
+
+        $('body').off('keypress.enter').on('keypress.enter', function (e) {
+            if (e.which == 13 && e.target.type != 'textarea') {
+                var $btn = $(e.target).closest('.header__list-search').find(".hidden__search, button");
+                if ($btn.length) {
+                    $btn.click();
+                    return false;
+                }
+            }
+        });
+    });
+
+
     /*Mob search*/
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
@@ -44,6 +63,13 @@ $(document).ready(function () {
     $(document).ready(function () {
         $($liLogout).closest('.header__table-tr').addClass('header_unlogged');
     });
+    /*FOR IE*/
+
+    if( $(".header__list-link  > span").text().indexOf('SignIn') >= 0) {
+        $(".header__table-tr").addClass("header_unlogged");
+    }
+
+
 
     /*LABEL COLORS*/
     $(document).ready(function() {
@@ -155,29 +181,23 @@ $(document).ready(function () {
 
     //image container height
     function setImgHeight() {
-        var imgContainer = $('.img-container-js');
-        var width = imgContainer.width();
-        imgContainer.height(width/13*9 -2);
+        //var imgContainer = $('.img-container-js');
+        //var width = imgContainer.width();
+        //imgContainer.height(width/13*9 -2);
+        $('.img-container-js').each(function(){
+          var a = $(this).height($(this).width()/13*9 -2);
+        })
     };
 
-    //set content's height to make footer always at the bottom
-    /*function setWrapperHeight() {
-        var windowHeight = $( window ).height();
-        var headerHeight = $( '#header').outerHeight();
-        var footerHeight = $( '#footer').outerHeight();
-        var minHeight = windowHeight - headerHeight - footerHeight*2;
-        $('#content').css('min-height', minHeight);
-    };*/
-
-    /*
+    //image positioning within container
     $( ".img-container-js > img" ).each(function() {
-        if ((this.width()/this.height()) > 13/9){
-            this.css({
+        if (this.naturalWidth/this.naturalHeight < 13/9){
+            $(this).css({
                 'width': '100%',
                 'height': 'auto'
             });
         }
-    });*/
+    });
 
 
     setInterval(function() {
@@ -281,6 +301,13 @@ if($(window).width() < 767) {
         var yTitle = '...';
         if ($(this).text().length > (xTitle - yTitle.length)) {
             $(this).text($(this).text().substr(0, xTitle-yTitle.length) + yTitle);
+        }
+    });
+    $('.separate__slide-desc').each(function() {
+        var xSixths = 63;
+        var ySixths = '...';
+        if ($(this).text().length > (xSixths - ySixths.length)) {
+            $(this).text($(this).text().substr(0, xSixths-ySixths.length) + ySixths);
         }
     });
 }
