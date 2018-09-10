@@ -482,7 +482,7 @@
             &_bottom{
               display: flex;
               justify-content: space-between;
-              margin-bottom: 14px;
+              margin-bottom: 16px;
               .single-post-statistic button:not(:last-child){
                 margin-right: 23px;
               }
@@ -491,7 +491,7 @@
                 align-items: center;
                 color: #9b9b9b;
                 font-family: "Nunito Sans";
-                font-size: 13px;
+                font-size: .813em;
                 font-weight: 400;
               }
             }
