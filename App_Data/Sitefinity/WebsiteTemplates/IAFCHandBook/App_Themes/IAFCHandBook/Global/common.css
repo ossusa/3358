@@ -2945,7 +2945,7 @@ p {
 
 @media (max-width: 767px) {
   .header__text {
-    padding: 8px 28px; }
+    padding: 8px 7.5%; }
   .header__logo {
     padding: 0; }
     .header__logo img {
@@ -3025,8 +3025,6 @@ p {
     top: 0; } }
 
 @media (max-width: 370px) {
-  .header__text {
-    padding: 0 14px; }
   .header__mob-open {
     margin-right: 14px; } }
 
