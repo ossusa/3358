@@ -3598,7 +3598,7 @@ p {
           display: flex;
           -ms-flex-pack: justify;
           justify-content: space-between;
-          margin-bottom: 14px; }
+          margin-bottom: 16px; }
           .resources-single__comments_list_container_items_item_bottom .single-post-statistic button:not(:last-child) {
             margin-right: 23px; }
           .resources-single__comments_list_container_items_item_bottom_reply {
