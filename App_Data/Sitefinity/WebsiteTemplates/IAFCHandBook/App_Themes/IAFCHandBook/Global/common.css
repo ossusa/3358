@@ -3095,6 +3095,13 @@ p {
     content: '';
     display: none; }
 
+@media (max-width: 374px) {
+  .header__table-tr {
+    height: 68px; }
+  .header__logo img {
+    height: 40px;
+    width: auto; } }
+
 .footer {
   border-top: 1px solid #9B9B9B;
   width: 100%; }

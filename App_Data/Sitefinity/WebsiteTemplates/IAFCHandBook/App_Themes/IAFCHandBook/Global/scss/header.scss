@@ -460,3 +460,14 @@
     }
   }
 }
+
+@media (max-width: 374px) {
+  .header__table-tr {
+    height: 68px;
+  }
+
+  .header__logo img {
+    height: 40px;
+    width: auto;
+  }
+}
