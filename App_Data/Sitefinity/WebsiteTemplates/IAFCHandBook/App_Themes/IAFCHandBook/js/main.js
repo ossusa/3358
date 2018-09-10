@@ -386,7 +386,7 @@ $(window).on('load', function() {
     });
 
     $('.resources__slide-desc').each(function(){
-        $clamp($(this), {clamp: 2});
+        $clamp(this, {clamp: 2});
     })
 });
 
