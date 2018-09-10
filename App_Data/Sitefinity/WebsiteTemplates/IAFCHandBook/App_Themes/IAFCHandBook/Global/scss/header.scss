@@ -188,10 +188,12 @@
         }
       }
 
-      .header__second_list-link:hover:after {
+      .header__second_list-link:hover:after, .header__second_list-link.active:after {
         content: "\E61F";
-        display: block;
+        display: inline;
         font-family: anticon;
+        padding-left: 8px;
+        vertical-align: middle;
       }
     }
 }
