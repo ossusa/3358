@@ -2458,8 +2458,7 @@ p {
 
 .selectric-wrapper {
   position: relative;
-  cursor: pointer;
-  display: inline-block; }
+  cursor: pointer; }
 
 .selectric-responsive {
   width: 100%; }
