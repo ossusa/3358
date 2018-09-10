@@ -93,7 +93,6 @@
       position: absolute;
       top: 45px;
       z-index: 2;
-      height: 155px;
       margin: 0;
       padding: 20px;
       list-style: none;
@@ -217,7 +216,7 @@
       &:nth-of-type(1){
         padding: 0;
       }
-      padding: 9px 0 0 0;
+      padding: 8px 0 0 0;
       &-link{
         color: #666666;
         font-family: "Nunito Sans", sans-serif;

@@ -2791,7 +2791,6 @@ p {
     position: absolute;
     top: 45px;
     z-index: 2;
-    height: 155px;
     margin: 0;
     padding: 20px;
     list-style: none;
@@ -2877,7 +2876,7 @@ p {
       border-width: 15px 15px 15px 0;
       border-color: transparent #ffffff transparent transparent; }
   .header__second_list {
-    padding: 9px 0 0 0; }
+    padding: 8px 0 0 0; }
     .header__second_list:nth-of-type(1) {
       padding: 0; }
     .header__second_list-link {
