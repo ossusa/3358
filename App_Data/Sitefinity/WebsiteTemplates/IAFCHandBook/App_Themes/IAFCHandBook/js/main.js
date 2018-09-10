@@ -205,7 +205,7 @@ $(document).ready(function () {
 
         $('.header__second_list-link').removeClass('active');
 
-        self.toggleClass('active');
+
     });
 
 
