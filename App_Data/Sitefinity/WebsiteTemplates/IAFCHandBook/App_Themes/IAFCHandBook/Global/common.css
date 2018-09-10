@@ -3082,6 +3082,8 @@ p {
   width: 275px;
   left: -25px;
   height: auto; }
+  .header_unlogged .header__sub_ul a {
+    font-weight: 400; }
   @media screen and (max-width: 1109px) {
     .header_unlogged .header__sub_ul {
       width: 210px; } }

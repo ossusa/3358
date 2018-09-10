@@ -440,6 +440,9 @@
     width: 275px;
     left: -25px;
     height: auto;
+    a {
+      font-weight: 400;
+    }
     @media screen and (max-width: 1109px){
       width: 210px;
     }

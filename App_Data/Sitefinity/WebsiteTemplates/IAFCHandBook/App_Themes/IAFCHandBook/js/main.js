@@ -385,9 +385,10 @@ $(window).on('load', function() {
         }
     });
 
+    //text truncate
     $('.resources__slide-desc').each(function(){
         $clamp(this, {clamp: 2});
-    })
+    });
 });
 
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
