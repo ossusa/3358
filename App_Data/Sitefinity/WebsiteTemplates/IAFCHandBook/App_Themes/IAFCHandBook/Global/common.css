@@ -3319,7 +3319,10 @@ p {
         .resources-single__left_post_title p {
           font-size: 1em; }
         .resources-single__left_post_title a {
-          color: #4a4a4a; }
+          color: #4a4a4a;
+          font-size: 1em; }
+        .resources-single__left_post_title span {
+          font-size: 1em; }
         .resources-single__left_post_title ul, .resources-single__left_post_title ol {
           font-family: 'Zilla Slab', serif;
           color: #4a4a4a;
