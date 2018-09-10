@@ -2492,6 +2492,14 @@ p {
   .community__topics__list_img{
     height: 100px;
   }
+  .resources__logged-img-box {
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -2518,14 +2526,6 @@ p {
 
   .resources__logged {
     padding: 24px;
-  }
-  .resources__logged-img-box {
-    width: 100%;
-    height: auto;
-    img {
-      width: 100%;
-      height: auto;
-    }
   }
   .community__topics-list {
     margin-bottom: 20px;
@@ -3180,9 +3180,5 @@ p {
   min-height: calc(100vh - 282px);
 }
 
-@media (max-width: 767px) {
-  .resources__logged-img-box {
-    width: 100% !important;
-  }
-}
+
 

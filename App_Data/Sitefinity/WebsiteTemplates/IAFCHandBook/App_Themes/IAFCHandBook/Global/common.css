@@ -2037,7 +2037,13 @@ p {
   .topics__content a {
     height: 147px; }
   .community__topics__list_img {
-    height: 100px; } }
+    height: 100px; }
+  .resources__logged-img-box {
+    width: 100%;
+    height: auto; }
+    .resources__logged-img-box img {
+      width: 100%;
+      height: auto; } }
 
 @media (max-width: 767px) {
   h1 {
@@ -2056,12 +2062,6 @@ p {
     padding: 0 10px; }
   .resources__logged {
     padding: 24px; }
-  .resources__logged-img-box {
-    width: 100%;
-    height: auto; }
-    .resources__logged-img-box img {
-      width: 100%;
-      height: auto; }
   .community__topics-list {
     margin-bottom: 20px; }
   .topics__ul-flex .topics__list {
@@ -2449,10 +2449,6 @@ p {
 
 #content {
   min-height: calc(100vh - 282px); }
-
-@media (max-width: 767px) {
-  .resources__logged-img-box {
-    width: 100% !important; } }
 
 .selectric-wrapper {
   position: relative;
