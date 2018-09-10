@@ -2450,6 +2450,10 @@ p {
 #content {
   min-height: calc(100vh - 282px); }
 
+@media (max-width: 767px) {
+  .resources__logged-img-box {
+    width: 100% !important; } }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer;
