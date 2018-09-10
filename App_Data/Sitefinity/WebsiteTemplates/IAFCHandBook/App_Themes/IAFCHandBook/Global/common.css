@@ -2254,14 +2254,17 @@ p {
   .accordion__item-link {
     color: #666; }
   .accordion__sub-content {
-    padding: 15px 0;
+    padding: 12px 28px;
     border-bottom: 1px solid #d8d8d8;
     list-style: none; }
   .accordion__sub-link {
-    padding: 4px 28px;
     font-size: 1em;
     white-space: nowrap;
     color: #666; }
+  .accordion__sub-content li {
+    margin-bottom: 8px; }
+    .accordion__sub-content li:last-child {
+      margin-bottom: 0; }
   .sticky .accordion {
     height: 90%; }
   .footer__info {
