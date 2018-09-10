@@ -127,7 +127,7 @@
 				url: '@Url.Action("MarkAsComplete", "IAFCHBMyHandBookCategoryResources")',
 				data: { resourceId: resourceId, categoryId: categoryId },
 				success: function (response) {
-					$('#myHandBookResourcesDetails_' + categoryId).html(response);
+					$('#myHandBookResourcesDetails_' + resourceId).html(response);
 					hideButtons();
 					bindEdit();
 				}
