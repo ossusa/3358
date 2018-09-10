@@ -3239,7 +3239,7 @@ p {
       margin: 40px auto 24px; } }
   @media screen and (max-width: 767px) {
     .resources-breadcrumbs {
-      margin: 20px auto; } }
+      margin: 28px auto 20px; } }
   .resources-breadcrumbs a {
     color: #9b9b9b;
     font-weight: 400;
@@ -3509,7 +3509,7 @@ p {
       display: flex;
       -ms-flex-direction: column;
       flex-direction: column;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       margin-top: 16px;
       padding: 0; }
       .resources-single__right_list_item {

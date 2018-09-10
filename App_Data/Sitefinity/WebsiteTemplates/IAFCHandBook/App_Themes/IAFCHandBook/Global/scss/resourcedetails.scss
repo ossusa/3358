@@ -103,7 +103,7 @@
       margin: 40px auto 24px;
     }
     @media screen and(max-width: 767px) {
-      margin: 20px auto;
+      margin: 28px auto 20px;
     }
     a{
       color: #9b9b9b;
@@ -380,7 +380,7 @@
       &_list{
         display: flex;
         flex-direction: column;
-        margin-bottom: 15px;
+        margin-bottom: 16px;
         margin-top: 16px;
         padding: 0;
         &_item{
