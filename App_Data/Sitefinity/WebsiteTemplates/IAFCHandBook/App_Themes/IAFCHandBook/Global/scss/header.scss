@@ -188,7 +188,7 @@
         }
       }
 
-      .header__second_list-link:hover:after, .header__second_list-link.active:after {
+      .header__second_list-link:hover:after, .header__second_list-link.active:after, .header__second_list-link:focus {
         content: "\E61F";
         display: inline;
         font-family: anticon;
