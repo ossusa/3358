@@ -2052,7 +2052,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				return null;
 			}
 			var model = new IAFCHandBookMyHandBookResourceModelModel();
-			model = GetCategoryResources(categoryId, false, userId, orderBy);
+			model = GetCategoryResources(categoryId, true, userId, orderBy);
 			return model;
 		}
 		#endregion GetMyHandBookCategoryResources

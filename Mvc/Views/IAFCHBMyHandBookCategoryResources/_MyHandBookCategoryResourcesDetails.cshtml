@@ -28,7 +28,7 @@
 		</select>
 	</div>
 </div>
-<p>@Model.MyResources.Count();</p>
+@{int columnCounter = 0; }
 @foreach (var item in Model.MyResources)
 {
 	if (columnCounter == 0)
