@@ -12,6 +12,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public int Likes { get; set; }
 		public int Dislikes { get; set; }
 		public bool IsResourceLiked { get; set; }
+		public bool IsResourceDisliked { get; set; }
 		public IAFCHandBookLikesModel()
 		{
 

@@ -71,7 +71,7 @@
 							<div class="single-post-statistic">
 								<button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button"
 										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Likes" title="Add Like"
-										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked) ? "disabled='disabled'" : "")>
+										@((!Model.IsUserAuthorized || Model.Likes.IsResourceDisliked) ? "disabled='disabled'" : "")>
 									<span>@Model.Likes.Likes</span>
 								</button>
 								<button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button"
@@ -185,17 +185,29 @@
 
 		//Add Like
 		$('.addLike').click(function () {
+			var isAdding = true;
+			var likeAddamount = 1;
 			var resourceId = $(this).attr('data-id');
-			$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
-			$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
+			var isDisLikeEnabled = $('#resourceDislikes_' + resourceId).is(':disabled');
+			if (isDisLikeEnabled) {
+				isAdding = false;
+				likeAddamount = -1;
+				$("#resourceDislikes_" + resourceId).removeAttr('disabled');
+			}
+			else {
+				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
+			}
+
 			var likesAmmount = $(this).attr('data-id1');
-			$("#resourceLikes_" + resourceId).html(parseInt(likesAmmount) + 1);
+			var newLikeResult = parseInt(likesAmmount) + likeAddamount;
+			$("#resourceLikes_" + resourceId).html(newLikeResult);
+			likesAmmount = $(this).attr('data-id1', newLikeResult);
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBMyHandBookResourceDetailsController")',
-				data: { resourceId: resourceId },
+				data: { resourceId: resourceId, isAdding: isAdding  },
 				dataType: "json",
 				success: function (response) {
 					console.log(response)
@@ -205,17 +217,30 @@
 
 		//Add Dislike
 		$('.addDislike').click(function () {
+			var isAdding = true;
+			var dislikeAddamount = 1;
 			var resourceId = $(this).attr('data-id');
-			$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
-			$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
+			var isLikeEnabled = $('#resourceLikes_' + resourceId).is(':disabled');
+
+			if (isLikeEnabled) {
+				isAdding = false;
+				var dislikeAddamount = -1;
+				$("#resourceLikes_" + resourceId).removeAttr('disabled');
+			}
+			else {
+				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+			}
+
 			var disLikesAmmount = $(this).attr('data-id1');
-			$("#resourceDislikes_" + resourceId).html(parseInt(disLikesAmmount) + 1);
+			var newLDilsikeResult = parseInt(disLikesAmmount) + dislikeAddamount;
+			$("#resourceDislikes_" + resourceId).html(newLDilsikeResult);
+			disLikesAmmount = $(this).attr('data-id1', newLDilsikeResult);
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookResourceDetailsController")',
-				data: { resourceId: resourceId },
+				data: { resourceId: resourceId, isAdding: isAdding  },
 				dataType: "json",
 				success: function (response) {
 					console.log(response)
@@ -268,11 +293,24 @@
 
 		//Add Comment Like
 		$('.addCommentLike').click(function () {
+			
+			var isAdding = true;
+			var likeAddamount = 1;
 			var resourceId = $(this).attr('data-id');
-			$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
-			$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
-			var commentLikesAmmount = $(this).attr('data-id1');
-			$("#commentLikes_" + resourceId).html(parseInt(commentLikesAmmount) + 1);
+			var isDisLikeEnabled = $('#commentDislikes_' + resourceId).is(':disabled');
+			if (isDisLikeEnabled) {
+				isAdding = false;
+				likeAddamount = -1;
+				$("#commentDislikes_" + resourceId).removeAttr('disabled');
+			}
+			else {
+				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
+			}
+			var likesAmmount = $(this).attr('data-id1');
+			var newCommentLikeResult = parseInt(likesAmmount) + likeAddamount;
+			$("#commentLikes_" + resourceId).html(newCommentLikeResult);
+			likesAmmount = $(this).attr('data-id1', newCommentLikeResult);
+
 
 			$.ajax({
 				type: 'POST',
@@ -288,11 +326,24 @@
 
 		//Add Comment Dislike
 		$('.addCommentDislike').click(function () {
+			var isAdding = true;
+			var dislikeAddamount = 1;
 			var resourceId = $(this).attr('data-id');
-			$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
-			$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
-			var commentDisLikesAmmount = $(this).attr('data-id1');
-			$("#commentDislikes_" + resourceId).html(parseInt(commentDisLikesAmmount) + 1);
+			var isLikeEnabled = $('#commentLikes_' + resourceId).is(':disabled');
+
+			if (isLikeEnabled) {
+				isAdding = false;
+				var dislikeAddamount = -1;
+				$("#commentLikes_" + resourceId).removeAttr('disabled');
+			}
+			else {
+				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+			}
+
+			var disLikesAmmount = $(this).attr('data-id1');
+			var newCommentDilsikeResult = parseInt(disLikesAmmount) + dislikeAddamount;
+			$("#commentDislikes_" + resourceId).html(newCommentDilsikeResult);
+			disLikesAmmount = $(this).attr('data-id1', newCommentDilsikeResult);
 
 			$.ajax({
 				type: 'POST',
