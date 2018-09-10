@@ -70,19 +70,30 @@
 	function bindEdit(){
 
 		//Add Like
-		$('.addLike').click(function ()  {
-
+		$('.addLike').click(function ()  {		
+			var isAdding = true;
+			var likeAddamount = 1;
 			var resourceId = $(this).attr('data-id');
-			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
-			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');			
+			var isDisLikeEnabled = $('#resourceDisLikesBtn_' + resourceId).is(':disabled');
+			if (isDisLikeEnabled) {
+				isAdding = false;
+				likeAddamount = -1;
+				$("#resourceDisLikesBtn_" + resourceId).removeAttr('disabled');
+			}
+			else {
+				$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
+			}
 			var likesAmmount = $(this).attr('data-id1');
-			$("#resourceLikes_" + resourceId).html(parseInt(likesAmmount) + 1);
+			var newLikeResult = parseInt(likesAmmount) + likeAddamount;
+			$("#resourceLikes_" + resourceId).html(newLikeResult);
+			likesAmmount = $(this).attr('data-id1', newLikeResult);
+
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddLike", "IAFCHBMyHandBookAllResourcesPerCategory")',
-				data: { resourceId: resourceId },
+				data: { resourceId: resourceId, isAdding: isAdding  },
 				dataType: "json",
 				success: function (response) {
 					console.log(response)
@@ -92,17 +103,30 @@
 
 		//Add Dislike
 		$('.addDislike').click(function () {
+			var isAdding = true;
+			var dislikeAddamount = 1;
 			var resourceId = $(this).attr('data-id');
-			$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
-			$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');			
+			var isLikeEnabled = $('#resourceLikesBtn_' + resourceId).is(':disabled');
+
+			if (isLikeEnabled) {
+				isAdding = false;
+				var dislikeAddamount = -1;
+				$("#resourceLikesBtn_" + resourceId).removeAttr('disabled');
+			}
+			else {
+				$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+			}
+
 			var disLikesAmmount = $(this).attr('data-id1');
-			$("#resourceDislikes_" + resourceId).html(parseInt(disLikesAmmount) + 1);
+			var newLDilsikeResult = parseInt(disLikesAmmount) + dislikeAddamount;
+			$("#resourceDislikes_" + resourceId).html(newLDilsikeResult);
+			disLikesAmmount = $(this).attr('data-id1', newLDilsikeResult);
 
 			$.ajax({
 				type: 'POST',
 				cache: false,
 				url: '@Url.Action("AddDislike", "IAFCHBMyHandBookAllResourcesPerCategory")',
-				data: { resourceId: resourceId },
+				data: { resourceId: resourceId, isAdding: isAdding  },
 				dataType: "json",
 				success: function (response) {
 					console.log(response)

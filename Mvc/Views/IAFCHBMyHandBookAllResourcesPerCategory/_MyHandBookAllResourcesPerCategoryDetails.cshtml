@@ -107,7 +107,7 @@
 					<div class="single-post-statistic">
 						<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
 								class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
-								@((!item.IsUserAuthorized || item.Likes.IsResourceLiked) ? "disabled='disabled'" : "")>
+								@((!item.IsUserAuthorized || item.Likes.IsResourceDisliked) ? "disabled='disabled'" : "")>
 							<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 								<span>@item.Likes.Likes</span>
 							</span>

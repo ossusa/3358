@@ -478,7 +478,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					Likes = Convert.ToInt32(resItem.GetValue("AmountOfLikes")),
 					Dislikes = Convert.ToInt32(resItem.GetValue("AmountOfDislikes")),
-					IsResourceLiked = IsResourceLiked(resItem.GetRelatedItems("Likes").First().Id)
+					IsResourceLiked = IsResourceLiked(resItem.GetRelatedItems("Likes").First().Id),
+					IsResourceDisliked = IsResourceDisliked(resItem.GetRelatedItems("Likes").First().Id)
 				};
 				
 				moreResourcesItem.Likes = likesModel;
@@ -530,7 +531,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					Likes = Convert.ToInt32(resource.GetValue("AmountOfLikes")),
 					Dislikes = Convert.ToInt32(resource.GetValue("AmountOfDislikes")),
-					IsResourceLiked  = IsResourceLiked(resource.GetRelatedItems("Likes").First().Id)
+					IsResourceLiked = IsResourceLiked(resource.GetRelatedItems("Likes").First().Id),
+					IsResourceDisliked = IsResourceDisliked(resource.GetRelatedItems("Likes").First().Id)
 				};
 
 				handBookResourceModel.Likes = handBookLikeModel;
@@ -1186,7 +1188,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 {
                     Likes = Convert.ToInt32(resItem.GetValue("AmountOfLikes")),
                     Dislikes = Convert.ToInt32(resItem.GetValue("AmountOfDislikes")),
-					IsResourceLiked = IsResourceLiked(resItem.GetRelatedItems("Likes").First().Id)
+					IsResourceLiked = IsResourceLiked(resItem.GetRelatedItems("Likes").First().Id),
+					IsResourceDisliked = IsResourceDisliked(resItem.GetRelatedItems("Likes").First().Id)
+
 				};
                 moreResourcesItem.Likes = likesModel;
 

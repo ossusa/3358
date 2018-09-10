@@ -29,7 +29,7 @@
 					<div class="single-post-statistic">
 						<button id="@string.Format("{0}_{1}", "commentLikes" , commentItem.Id.ToString())" type="button" 
 								class="addCommentLike anticon anticon-like-o" data-id="@commentItem.Id.ToString()" data-id1="@commentItem.Likes.Likes"  title="Add Like"
-								@((!commentItem.UserAuthorized || commentItem.Likes.IsResourceLiked)? "disabled='disabled'" : "")> 
+								@((!commentItem.UserAuthorized || commentItem.Likes.IsResourceDisliked)? "disabled='disabled'" : "")> 
 							<span>@commentItem.Likes.Likes</span> 
 						</button>
 						<button id="@string.Format("{0}_{1}", "commentDislikes" , commentItem.Id.ToString())" type="button" 
