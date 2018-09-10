@@ -385,7 +385,9 @@ $(window).on('load', function() {
         }
     });
 
-    $clamp($('.resources__slide-desc'), {clamp: 2});
+    $('.resources__slide-desc').each(function(){
+        $clamp($(this), {clamp: 2});
+    })
 });
 
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
