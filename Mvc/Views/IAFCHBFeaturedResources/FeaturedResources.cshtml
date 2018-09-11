@@ -10,9 +10,10 @@
 			<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span> @Model.ResourceDetails.Category.CategoryTitle</span></p>
 			<h6 class="resources__slide-title resources__logged-title">@Model.ResourceDetails.ResourceTitle</h6>
 			<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
-			@{openDocumentLink = Model.ResourceDetails.ResourceDescription != null && Model.ResourceDetails.ResourceDescription != String.Empty;}
+			@{openDocumentLink = ((Model.ResourceDetails.ResourceDescription != null && Model.ResourceDetails.ResourceDescription != String.Empty)
+					|| (Model.ResourceDetails.ResourceTypeName == "video"));}
 			<div class="resources__logged-buttons">
-				<button type="submit" formaction="@Model.ResourceUrl"
+				<button type="button" 
 						class="resourceFeaturedLink community__head-btn resources__logged-btn"
 						data-id="@Model.ResourceUrl"
 						data-id1="@Model.ResourceDetails.ResourceLink"

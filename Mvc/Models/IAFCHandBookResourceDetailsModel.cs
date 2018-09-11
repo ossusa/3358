@@ -20,6 +20,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public string ResourceDocument { get; set; }
 		public IAFCHandBookTopicCategoryModel Category { get; set; }
 		public string ResourceType { get; set; }
+		public string ResourceTypeName { get; set; }
 		public TimeSpan Duration { get; set; }
 		public string DurationStr { get; set; }
 		public string ImageUrl { get; set; }

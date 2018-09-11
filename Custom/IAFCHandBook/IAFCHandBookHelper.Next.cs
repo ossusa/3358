@@ -560,6 +560,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 
 			string resourceTypeTitle = string.Empty;
+			string resourceTypeName = string.Empty;
 			string resourceCategoryTitle = string.Empty;
 			string resourceCategoryUrl = string.Empty;
 			string resourceParentCategoryTitle = string.Empty;
@@ -581,7 +582,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var resourceTypesID = resource.GetPropertyValue<TrackedList<Guid>>("resourcetypes").First();
 			if (resourceTypesID != null)
 			{
-				resourceTypeTitle = taxonomyManager.GetTaxon(resourceTypesID).Title.ToString();
+				var resourceType = taxonomyManager.GetTaxon(resourceTypesID);
+				resourceTypeTitle = resourceType.Title;
+				resourceTypeName = resourceType.Name;
 			}
 
 			// get first category
@@ -623,6 +626,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceInfo.Category.MyHandBookCategoryUrl = myHandbookResourceCategoryUrl;
 			resourceInfo.Category.MyHandBookParentCategoryUrl = myHandbookResourceParentCategoryUrl;
 			resourceInfo.ResourceType = resourceTypeTitle;
+			resourceInfo.ResourceTypeName = resourceTypeName;
 
 			var img = resource.GetRelatedItems<Image>("featuredimage").FirstOrDefault();
 			if (img != null)
