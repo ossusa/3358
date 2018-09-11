@@ -3999,6 +3999,16 @@ addReplyCommentBtn {
   margin-left: 8px;
   color: inherit; }
 
+.label-community > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after,
+.label-leadership > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after,
+.label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after,
+.label-finance > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after {
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  margin-left: 8px;
+  color: inherit; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
