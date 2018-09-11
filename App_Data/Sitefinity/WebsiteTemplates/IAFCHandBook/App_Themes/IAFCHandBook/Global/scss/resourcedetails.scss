@@ -857,3 +857,14 @@ addReplyCommentBtn{
     font-size: 15px;
   }
 }
+
+.left_indicator_col > .selectric-handbook_title_select > .selectric-items > ul > li.label-community:after:hover,
+.left_indicator_col > .selectric-handbook_title_select > .selectric-items > ul > li.label-leadership:after:hover,
+.left_indicator_col > .selectric-handbook_title_select > .selectric-items > ul > li.label-personnel:after:hover,
+.left_indicator_col > .selectric-handbook_title_select > .selectric-items > ul > li.label-finance:after:hover{
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  margin-left: 8px;
+  color: inherit;
+}
