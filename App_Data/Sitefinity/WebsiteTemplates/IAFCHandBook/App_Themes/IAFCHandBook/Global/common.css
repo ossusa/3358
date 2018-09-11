@@ -167,9 +167,7 @@ template {
 
 a {
   text-decoration: none;
-  background: transparent;
-  color: #2B4B6B;
-  font-weight: 600; }
+  background: transparent; }
   a:active {
     outline: 0; }
   a:hover {
