@@ -1114,7 +1114,7 @@ $(function () {
         nativeOnMobile: false
     });
 });
-$(function () {
+$(window).load(function() {
     $('.community__category-select').selectric({
         nativeOnMobile: false
     });
