@@ -4412,12 +4412,12 @@ addReplyCommentBtn {
   padding: 0 12px;
   width: unset !important; }
 
-.clicked-dislike {
+.clicked-dislike:before {
   content: "\E64B";
   font-family: anticon !important;
   display: inline-block; }
 
-.clicked-like {
+.clicked-like:before {
   content: "\E64C";
   font-family: anticon !important;
   display: inline-block; }
