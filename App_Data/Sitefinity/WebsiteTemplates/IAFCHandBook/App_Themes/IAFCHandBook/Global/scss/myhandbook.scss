@@ -333,24 +333,28 @@
       &.Community{
         a:hover{
           color: $color_community;
+          text-shadow: 1px 0 0 $color_community;
         }
       }
       &.Leadership{
         background: #b89c5c;
         a:hover{
           color: $color_leadership;
+          text-shadow: 1px 0 0 $color_leadership;
         }
       }
       &.Finance{
         background: #6ea352;
         a:hover{
           color: $color_finance;
+          text-shadow: 1px 0 0 $color_finance;
         }
       }
       &.Personnel{
         background: #bf754d;
         a:hover{
           color: $color_personnel;
+          text-shadow: 1px 0 0 $color_personnel;
         }
       }
     }

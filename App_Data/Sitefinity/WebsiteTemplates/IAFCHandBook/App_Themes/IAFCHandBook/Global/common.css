@@ -4344,19 +4344,23 @@ addReplyCommentBtn {
         font-size: 1em;
         display: inline-block; }
     .handbook_category__item__links.Community a:hover {
-      color: #5591AA; }
+      color: #5591AA;
+      text-shadow: 1px 0 0 #5591AA; }
     .handbook_category__item__links.Leadership {
       background: #b89c5c; }
       .handbook_category__item__links.Leadership a:hover {
-        color: #BDA15F; }
+        color: #BDA15F;
+        text-shadow: 1px 0 0 #BDA15F; }
     .handbook_category__item__links.Finance {
       background: #6ea352; }
       .handbook_category__item__links.Finance a:hover {
-        color: #73AA56; }
+        color: #73AA56;
+        text-shadow: 1px 0 0 #73AA56; }
     .handbook_category__item__links.Personnel {
       background: #bf754d; }
       .handbook_category__item__links.Personnel a:hover {
-        color: #CF794A; }
+        color: #CF794A;
+        text-shadow: 1px 0 0 #CF794A; }
 
 .removeBtn {
   color: #b5354a;
