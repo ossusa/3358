@@ -94,7 +94,7 @@
 </form>
 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
-<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/clamp.min.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.ellipsis.min.js"></script>
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
 <script>
     var currentYear = (new Date()).getFullYear();
