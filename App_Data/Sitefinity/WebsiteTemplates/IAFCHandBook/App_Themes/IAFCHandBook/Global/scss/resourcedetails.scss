@@ -858,10 +858,10 @@ addReplyCommentBtn{
   }
 }
 
-.left_indicator_col > .selectric-handbook_title_select > .label-community:after,
-.left_indicator_col > .selectric-handbook_title_select > .label-leadership:after,
-.left_indicator_col > .selectric-handbook_title_select > .label-personnel:after,
-.left_indicator_col > .selectric-handbook_title_select > .label-finance:after{
+.selectric-community__title-select > .label-community:after,
+.selectric-community__title-select > .label-leadership:after,
+.selectric-community__title-select > .label-personnel:after,
+.selectric-community__title-select > .label-finance:after{
   content: "\E61F";
   display: block;
   font-family: anticon;
