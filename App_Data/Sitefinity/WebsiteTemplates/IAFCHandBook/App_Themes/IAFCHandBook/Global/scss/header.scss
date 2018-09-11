@@ -488,7 +488,9 @@
 .header__sub_list:nth-of-type(4) > .header__second_ul > .header__second_list:nth-of-type(5) {
   width: 155px;
 }
-.header_unlogged .header__sub_list:nth-of-type(1) > .header__second_ul > .header__second_list:nth-of-type(3),
-.header_unlogged .header__sub_list:nth-of-type(2) > .header__second_ul > .header__second_list:nth-of-type(4){
-  width: 120px;
+@media screen and (max-width: 1109px){
+  .header_unlogged .header__sub_list:nth-of-type(1) > .header__second_ul > .header__second_list:nth-of-type(3),
+  .header_unlogged .header__sub_list:nth-of-type(2) > .header__second_ul > .header__second_list:nth-of-type(4){
+    width: 120px;
+  }
 }
