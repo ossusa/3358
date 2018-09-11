@@ -2462,6 +2462,11 @@ p {
 #content {
   min-height: calc(100vh - 282px); }
 
+.test {
+  background: #000;
+  color: #333;
+  border: none; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
