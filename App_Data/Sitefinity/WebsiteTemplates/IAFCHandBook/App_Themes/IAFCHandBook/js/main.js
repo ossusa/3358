@@ -195,9 +195,9 @@ $(document).ready(function () {
 
 
 
-    $('.markAsCompleteBtn').each(function() {
-        $('.markAsCompleteBtn').click(function() {
-        $('.complete_box').addClass('anticon anticon-check');
+    $('.markAsCompleteBtn').click(function() {
+        $('.complete_box').each(function() {
+        $(this).addClass('anticon anticon-check');
     });
     });
     $('.header__list:nth-of-type(1) > a').click(function (e) {
