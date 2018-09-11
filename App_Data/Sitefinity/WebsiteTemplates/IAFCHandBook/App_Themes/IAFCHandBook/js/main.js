@@ -201,14 +201,10 @@ $(document).ready(function () {
 
         $('.resources__slide-title').each(function(){
             $(this).truncate({
-                lines: 1
+                lines: 2
             });
         });
 
-        $('.resources__slide-article').each(function(){
-            $(this).truncate({
-                lines: 1
-            });
         });
     }, 250);
 
