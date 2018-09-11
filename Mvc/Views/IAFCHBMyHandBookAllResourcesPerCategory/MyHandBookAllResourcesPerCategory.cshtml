@@ -78,10 +78,10 @@
 			if (isDisLikeEnabled) {
 				isAdding = false;
 				likeAddamount = -1;
-				$("#resourceDisLikesBtn_" + resourceId).removeAttr('disabled');
+				$("#resourceDisLikesBtn_" + resourceId).prop('disabled', false);
 			}
 			else {
-				$("#resourceDisLikesBtn_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceDisLikesBtn_" + resourceId).prop('disabled', true);
 			}
 			var likesAmmount = $(this).attr('data-id1');
 			var newLikeResult = parseInt(likesAmmount) + likeAddamount;
@@ -111,10 +111,10 @@
 			if (isLikeEnabled) {
 				isAdding = false;
 				var dislikeAddamount = -1;
-				$("#resourceLikesBtn_" + resourceId).removeAttr('disabled');
+				$("#resourceLikesBtn_" + resourceId).prop('disabled', false);
 			}
 			else {
-				$("#resourceLikesBtn_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceLikesBtn_" + resourceId).prop('disabled', true);
 			}
 
 			var disLikesAmmount = $(this).attr('data-id1');
