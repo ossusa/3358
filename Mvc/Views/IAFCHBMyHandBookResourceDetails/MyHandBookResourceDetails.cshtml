@@ -71,12 +71,12 @@
 							<div class="single-post-statistic">
 								<button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button"
 										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Likes" title="Add Like"
-										@((!Model.IsUserAuthorized || Model.Likes.IsResourceDisliked) ? "disabled='disabled'" : "")>
+										@((!Model.IsUserAuthorized || Model.Likes.IsResourceDisliked) ? "disabled" : "")>
 									<span>@Model.Likes.Likes</span>
 								</button>
 								<button id="@string.Format("{0}_{1}", "resourceDislikes" , Model.Id.ToString())" type="button"
 										class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Dislikes" title="Add Dislike"
-										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked) ? "disabled='disabled'" : "")>
+										@((!Model.IsUserAuthorized || Model.Likes.IsResourceLiked) ? "disabled" : "")>
 									<span>@Model.Likes.Dislikes</span>
 								</button>
 							</div>
@@ -136,12 +136,12 @@
 							<div class="single-post-statistic">
 								<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button"
 										class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
-										@((!Model.IsUserAuthorized || item.Likes.IsResourceLiked) ? "disabled='disabled'" : "")>
+										@((!Model.IsUserAuthorized || item.Likes.IsResourceLiked) ? "disabled" : "")>
 									<span>@item.Likes.Likes</span>
 								</button>
 								<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())" type="button"
 										class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
-										@((!Model.IsUserAuthorized || item.Likes.IsResourceLiked) ? "disabled='disabled'" : "")>
+										@((!Model.IsUserAuthorized || item.Likes.IsResourceLiked) ? "disabled" : "")>
 									<span>@item.Likes.Dislikes</span>
 								</button>
 							</div>
@@ -193,10 +193,10 @@
 			if (isDisLikeEnabled) {
 				isAdding = false;
 				likeAddamount = -1;
-				$("#resourceDislikes_" + resourceId).removeAttr('disabled');
+				$("#resourceDislikes_" + resourceId).prop('disabled', false);
 			}
 			else {
-				$("#resourceDislikes_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceDislikes_" + resourceId).prop('disabled', true);
 			}
 
 			var likesAmmount = $(this).attr('data-id1');
@@ -226,10 +226,10 @@
 			if (isLikeEnabled) {
 				isAdding = false;
 				var dislikeAddamount = -1;
-				$("#resourceLikes_" + resourceId).removeAttr('disabled');
+				$("#resourceLikes_" + resourceId).prop('disabled', false);
 			}
 			else {
-				$("#resourceLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#resourceLikes_" + resourceId).prop('disabled', true);
 			}
 
 			var disLikesAmmount = $(this).attr('data-id1');
@@ -271,7 +271,7 @@
 		//Add Comment
 		$('.addCommentBtn').click(function () {
 			var resourceId = $(this).attr('data-id');
-			$("#addCommnetBtnID").attr('disabled', 'disabled');
+			$("#addCommnetBtnID").prop('disabled', true);
 			var commentMsg = $('#comment_' + resourceId).val();
 			var comment = commentMsg;
 			var commentAmount = parseInt($('#commentsAmountHeaderID').attr('data-id')) + 1;
@@ -289,7 +289,7 @@
 					$("#commentsAmountHeaderID").html((commentAmount).toString() + " comments");
 					$("#commentsAmountBottomID").html((commentAmount).toString() + " comments");
 					bindEdit();
-					$("#addCommnetBtnID").removeAttr('disabled');
+					$("#addCommnetBtnID").prop('disabled', false);
 				}
 			});
 		});
@@ -304,10 +304,10 @@
 			if (isDisLikeEnabled) {
 				isAdding = false;
 				likeAddamount = -1;
-				$("#commentDislikes_" + resourceId).removeAttr('disabled');
+				$("#commentDislikes_" + resourceId).prop('disabled', false);
 			}
 			else {
-				$("#commentDislikes_" + resourceId).attr('disabled', 'disabled');
+				$("#commentDislikes_" + resourceId).prop('disabled', true);
 			}
 			var likesAmmount = $(this).attr('data-id1');
 			var newCommentLikeResult = parseInt(likesAmmount) + likeAddamount;
@@ -337,10 +337,10 @@
 			if (isLikeEnabled) {
 				isAdding = false;
 				var dislikeAddamount = -1;
-				$("#commentLikes_" + resourceId).removeAttr('disabled');
+				$("#commentLikes_" + resourceId).prop('disabled', false);
 			}
 			else {
-				$("#commentLikes_" + resourceId).attr('disabled', 'disabled');
+				$("#commentLikes_" + resourceId).prop('disabled', true);
 			}
 
 			var disLikesAmmount = $(this).attr('data-id1');
@@ -380,7 +380,7 @@
 		//Add Reply Comment Button Pressed
 		$('.addReplyCommentBtn').click(function () {
 			var commentId = $(this).attr('data-id');
-			$("#addReplyCommentBtn_" + commentId).attr('disabled', 'disabled');
+			$("#addReplyCommentBtn_" + commentId).prop('disabled', true);
 			var commentMsg = $('#replyComment_' + commentId).val();
 			var comment = commentMsg;
 
@@ -394,7 +394,7 @@
 					$("#commentRepliesView_" + commentId).html(commentsResults);
 					$("#replyCommentBtn_" + commentId).html('<button type="button" class="commentReplyBtn" data-id="' + commentId + '"> Reply </button>');
 					bindEdit();
-					$("#addReplyCommentBtn_" + commentId).removeAttr('disabled');
+					$("#addReplyCommentBtn_" + commentId).prop('disabled', false);
 				}
 			});
 		});
