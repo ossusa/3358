@@ -1369,7 +1369,9 @@ p {
     margin-left: 0; }
   .community__head-btn-active {
     background: #2b4b6b;
-    color: #fff; }
+    color: #fff;
+    width: unset !important;
+    padding: 0 12px; }
   .community__head-btn-select select {
     border: 1px solid #2b4b6b;
     border-radius: 3px;

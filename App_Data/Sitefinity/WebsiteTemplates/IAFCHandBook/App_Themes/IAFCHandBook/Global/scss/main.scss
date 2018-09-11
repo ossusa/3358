@@ -1574,6 +1574,8 @@ p {
       &-active {
         background: #2b4b6b;
         color: $color_6;
+        width: unset !important;
+        padding: 0 12px;
       }
       &-select {
         select {
