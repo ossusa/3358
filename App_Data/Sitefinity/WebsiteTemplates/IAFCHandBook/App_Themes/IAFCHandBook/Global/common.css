@@ -2899,7 +2899,6 @@ p {
       border-width: 15px 15px 15px 0;
       border-color: transparent #ffffff transparent transparent; }
   .header__second_list {
-    width: 177px;
     padding: 8px 0 0 0; }
     .header__second_list:nth-of-type(1) {
       padding: 0; }
