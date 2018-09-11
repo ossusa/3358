@@ -264,16 +264,16 @@ $(document).ready(function() {
         $(this).toggleClass('clicked-dislike');
         $('.addLike').removeClass('clicked-like');
     });
+    $('.addCommentLike').click(function(){
+        $(this).toggleClass('clicked-like');
+        $('.addCommentDislike').removeClass('clicked-dislike');
+    });
+    $('.addCommentDislike').click(function(){
+        $(this).toggleClass('clicked-dislike');
+        $('.addCommentLike').removeClass('clicked-like');
+    });
 });
-$('.addCommentLike').click(function(){
-    $(this).toggleClass('clicked-like');
-    $('.addCommentDislike').removeClass('clicked-dislike');
-});
-$('.addCommentDislike').click(function(){
-    $(this).toggleClass('clicked-dislike');
-    $('.addCommentLike').removeClass('clicked-like');
-});
-});
+
 
 /*TEXT CUTTING*/
 /*First title and desc*/
