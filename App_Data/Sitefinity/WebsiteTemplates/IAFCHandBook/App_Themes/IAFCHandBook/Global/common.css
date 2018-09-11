@@ -3091,6 +3091,7 @@ p {
 
 .header_unlogged .header__sub_ul {
   z-index: 3;
+  width: 275px;
   left: -25px;
   height: auto; }
   .header_unlogged .header__sub_ul a {
