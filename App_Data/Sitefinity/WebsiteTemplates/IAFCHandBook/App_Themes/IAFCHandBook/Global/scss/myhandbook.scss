@@ -318,6 +318,7 @@
         font-size: 1em;
         font-weight: 400;
         padding-bottom: 4px;
+        transition: .3s ease-in-out;
         &:hover{
           &:after{
             content: "\E61F";

@@ -4335,7 +4335,8 @@ addReplyCommentBtn {
       font-family: "Nunito Sans", sans-serif;
       font-size: 1em;
       font-weight: 400;
-      padding-bottom: 4px; }
+      padding-bottom: 4px;
+      transition: .3s ease-in-out; }
       .handbook_category__item__links a:hover:after {
         content: "\E61F";
         font-family: anticon;
