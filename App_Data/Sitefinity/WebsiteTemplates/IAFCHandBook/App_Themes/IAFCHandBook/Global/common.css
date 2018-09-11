@@ -2596,6 +2596,7 @@ p {
   display: none;
   position: absolute;
   top: 100%;
+  overflow: hidden;
   left: -1px;
   background: #f8f8f8;
   border: 1px solid #c4c4c4;
@@ -2712,6 +2713,9 @@ p {
 .selectric-community__title-select .selectric .category__arrow {
   width: 17px;
   margin-left: 24px; }
+
+.search-results .community__head-btn-select {
+  width: 202px; }
 
 .header {
   width: auto;
