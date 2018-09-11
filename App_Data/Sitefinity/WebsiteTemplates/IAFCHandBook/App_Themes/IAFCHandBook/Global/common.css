@@ -3127,7 +3127,7 @@ p {
     height: 40px;
     width: auto; } }
 
-.header__sub_list:nth-of-type(4) > .header__second_list:nth-of-type(5) {
+.header__sub_list:nth-of-type(4) > .header__second_ul > .header__second_list:nth-of-type(5) {
   width: 155px; }
 
 .footer {
