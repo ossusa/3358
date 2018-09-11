@@ -191,8 +191,6 @@ $(document).ready(function () {
 
     setInterval(function() {
         setImgHeight();
-
-        });
     }, 250);
 
 
