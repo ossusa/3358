@@ -440,6 +440,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				model.Resources = listOfMyResources;
 				model.Category.ResourcesTotalDuration = totalDuration.ToString();
+				model.Category.TotalDuration = totalDuration;
 				model.Category.ResourcesAmount = resourcesAmount;
 				model.MoreCategories = GetMoreCategories(model.Category.Id);
 				model.IsCategoryFollowed = IsCategoryFollowed(model.Category.Id);
