@@ -193,15 +193,9 @@ $(document).ready(function () {
         setImgHeight();
     }, 250);
 
-    $(".markAsCompleteBtn").click(function() {
-        $(".complete_box").each(function() {
-            $( this ).addClass('anticon anticon-check');
-        });
+    $('.complete_box').on('click', event => {
+        $(event.currentTarget).addClass('anticon anticon-check');
     });
-
-    // $('.markAsCompleteBtn').click(function() {
-    //     $('.complete_box').addClass('anticon anticon-check');
-    // });
     $('.header__list:nth-of-type(1) > a').click(function (e) {
         e.preventDefault();
         $('.header__sub_ul').toggle();
