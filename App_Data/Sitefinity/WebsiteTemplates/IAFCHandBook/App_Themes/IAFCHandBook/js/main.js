@@ -196,7 +196,17 @@ $(document).ready(function () {
     }, 250);
 
 
+    //text truncate
+    //$('.resources__slide-desc').each(function(){
+       // $(this).truncate({
+      //      lines: 2
+     //   });
+     //   });
 
+   // $('.resources__slide-title').each(function(){
+      //  $(this).truncate({
+        //    lines: 2});
+       // });
 
 
 
