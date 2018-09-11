@@ -4379,6 +4379,12 @@ addReplyCommentBtn {
 .handbook_share {
   margin-right: 24px; }
 
+.community__head-following {
+  background: #2b4b6b;
+  color: #fff;
+  padding: 0 12px;
+  width: unset; }
+
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
     top: auto; }
