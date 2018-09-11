@@ -15,6 +15,7 @@ using Telerik.Sitefinity.Publishing;
 using Telerik.Sitefinity.RelatedData;
 using Telerik.Sitefinity.Security;
 using Telerik.Sitefinity.Taxonomies;
+using Telerik.Sitefinity.Taxonomies.Model;
 
 namespace SitefinityWebApp.Custom.IAFCHandBook
 {
@@ -473,6 +474,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var moreResourcesItem = new IAFCHandBookMoreResourcesModel();
 				moreResourcesItem.Id = resItem.Id;
 				moreResourcesItem.ResourceDetails = GetResourceDetailsInfo(resItem, categoryID);
+				
 
 				var likesModel = new IAFCHandBookLikesModel
 				{
@@ -487,7 +489,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceDetails.Category.CategoryUrl + "/resourcedetails/" + resItem.UrlName.ToString();
 				if (moreResourcesItem.ResourceDetails.IsResourceHasMoreThen1Category)
 				{
-					moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceUrl + "," + categoryID.ToString();
+					TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+					var categoryName = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Id == categoryID).Select(t => t.Name).FirstOrDefault();
+
+					moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceUrl + "," + categoryName;
 				}
 				moreResources.Add(moreResourcesItem);
 			}
@@ -1201,7 +1206,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceDetails.Category.MyHandBookCategoryUrl + "/resourcedetails/" + resItem.UrlName.ToString();
 				if(moreResourcesItem.ResourceDetails.IsResourceHasMoreThen1Category)
 				{
-					moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceUrl + "," + categoryID.ToString();
+					TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+					var categoryName = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Id == categoryID).Select(t => t.Name).FirstOrDefault();
+					moreResourcesItem.ResourceUrl = moreResourcesItem.ResourceUrl + "," + categoryName;
 				}
 
 				moreResources.Add(moreResourcesItem);
