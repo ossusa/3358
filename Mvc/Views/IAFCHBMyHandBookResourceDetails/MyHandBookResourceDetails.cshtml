@@ -123,7 +123,8 @@
 								@item.ResourceDetails.ResourceType
 							</div>
 							<div class="resources-single__right_list_item_title">
-								@{openDocumentLink = item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty;}
+								@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+										|| (item.ResourceDetails.ResourceTypeName == "video"));}
 								<button type="button" class="resourceLink"
 										data-id="@item.ResourceUrl"
 										data-id1="@item.ResourceDetails.ResourceLink"

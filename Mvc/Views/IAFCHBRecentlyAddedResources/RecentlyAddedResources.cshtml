@@ -44,7 +44,8 @@
 						</div>
 					}
 				</div>
-				@{openDocumentLink = item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty;}
+				@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+							|| (item.ResourceDetails.ResourceTypeName == "video")) ;}
 				<div class="resources__slide-info">
 					<div class="resources__slide-box">
 						<p class="resources__slide-article">@item.ResourceDetails.ResourceType</p>
