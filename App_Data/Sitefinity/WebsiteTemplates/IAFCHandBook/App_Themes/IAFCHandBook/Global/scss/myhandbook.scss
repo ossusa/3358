@@ -410,3 +410,13 @@
   padding: 0 12px;
   width: unset !important;
 }
+.clicked-dislike{
+  content: "\E64B";
+  font-family: anticon!important;
+  display: inline-block;
+}
+.clicked-like{
+  content: "\E64C";
+  font-family: anticon!important;
+  display: inline-block;
+}

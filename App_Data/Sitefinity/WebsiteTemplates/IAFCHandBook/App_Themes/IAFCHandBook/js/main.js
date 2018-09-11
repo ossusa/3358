@@ -255,6 +255,15 @@ $(document).ready(function() {
     $(".header__list:nth-of-type(1) > a").click(function(){
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
+    /*LIKES COLORING*/
+    $('.addLike').click(function(){
+        $(this).toggleClass('clicked-like');
+        $('.addDislike').removeClass('clicked-dislike');
+    });
+    $('.addDislike').click(function(){
+        $(this).toggleClass('clicked-dislike');
+        $('.addLike').removeClass('clicked-like');
+    });
 });
 
 /*TEXT CUTTING*/
