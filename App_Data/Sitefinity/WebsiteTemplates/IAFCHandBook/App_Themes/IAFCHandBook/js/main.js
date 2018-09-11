@@ -221,7 +221,7 @@ $(document).ready(function () {
 
 
 
-    $('.complete_box').on('click', event => {
+    $('.complete_box').on('click', function (event) {
         $(event.currentTarget).addClass('anticon anticon-check');
     });
     $('.header__list:nth-of-type(1) > a').click(function (e) {
