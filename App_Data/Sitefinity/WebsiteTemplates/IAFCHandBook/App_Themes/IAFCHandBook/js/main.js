@@ -193,6 +193,34 @@ $(document).ready(function () {
         setImgHeight();
     }, 250);
 
+
+    //text truncate
+    $('.resources__slide-desc').each(function(){
+        $(this).ellipsis({
+            lines: 2,             // force ellipsis after a certain number of lines. Default is 'auto'
+            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
+        });
+    });
+
+    $('.resources__slide-title').each(function(){
+        $(this).ellipsis({
+            lines: 1,             // force ellipsis after a certain number of lines. Default is 'auto'
+            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
+        });
+    });
+
+    $('.resources__slide-article').each(function(){
+        $(this).ellipsis({
+            lines: 1,             // force ellipsis after a certain number of lines. Default is 'auto'
+            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
+        });
+    });
+
+
+
     $('.complete_box').on('click', event => {
         $(event.currentTarget).addClass('anticon anticon-check');
     });
@@ -397,31 +425,6 @@ $(window).on('load', function() {
         }
     });
 
-
-    //text truncate
-    $('.resources__slide-desc').each(function(){
-        $(this).ellipsis({
-            lines: 2,             // force ellipsis after a certain number of lines. Default is 'auto'
-            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
-            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-        });
-    });
-
-    $('.resources__slide-title').each(function(){
-        $(this).ellipsis({
-            lines: 1,             // force ellipsis after a certain number of lines. Default is 'auto'
-            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
-            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-        });
-    });
-
-    $('.resources__slide-article').each(function(){
-        $(this).ellipsis({
-            lines: 1,             // force ellipsis after a certain number of lines. Default is 'auto'
-            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
-            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-        });
-    });
 });
 
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
