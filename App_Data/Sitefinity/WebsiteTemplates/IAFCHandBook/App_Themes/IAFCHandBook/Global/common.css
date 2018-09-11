@@ -4383,7 +4383,7 @@ addReplyCommentBtn {
   background: #2b4b6b;
   color: #fff;
   padding: 0 12px;
-  width: unset; }
+  width: unset !important; }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
