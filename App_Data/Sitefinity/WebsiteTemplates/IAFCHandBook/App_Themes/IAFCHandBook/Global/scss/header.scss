@@ -147,6 +147,9 @@
           color: $color_personnel;
         }
       }
+      &:nth-of-type(4) > .header__sub_list-link:nth-of-type(5) {
+        width: 155px;
+      }
       &:nth-of-type(1) .header__second_list-link{
         &:hover {
           text-shadow: 1px 0 0 $color_community;

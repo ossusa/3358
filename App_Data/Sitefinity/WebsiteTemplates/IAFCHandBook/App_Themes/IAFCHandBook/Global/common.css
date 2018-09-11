@@ -2844,6 +2844,8 @@ p {
     .header__sub_list:nth-of-type(4) > .header__sub_list-link:hover {
       text-shadow: 1px 0 0 #CF794A;
       color: #CF794A; }
+    .header__sub_list:nth-of-type(4) > .header__sub_list-link:nth-of-type(5) {
+      width: 155px; }
     .header__sub_list:nth-of-type(1) .header__second_list-link:hover {
       text-shadow: 1px 0 0 #5591AA;
       color: #5591AA; }
