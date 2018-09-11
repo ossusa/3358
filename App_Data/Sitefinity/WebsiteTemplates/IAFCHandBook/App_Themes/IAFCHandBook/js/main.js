@@ -256,13 +256,13 @@ $(document).ready(function() {
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
     /*LIKES COLORING*/
-    $('.addLike').click(function(){
+    $('.addLike, .addCommentLike').click(function(){
         $(this).toggleClass('clicked-like');
-        $('.addDislike').removeClass('clicked-dislike');
+        $('.addDislike, .addCommentDislike').removeClass('clicked-dislike');
     });
-    $('.addDislike').click(function(){
+    $('.addDislike, .addCommentDislike').click(function(){
         $(this).toggleClass('clicked-dislike');
-        $('.addLike').removeClass('clicked-like');
+        $('.addLike, .addCommentLike').removeClass('clicked-like');
     });
 });
 
