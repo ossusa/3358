@@ -2722,6 +2722,37 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return notFoundUrl;
 		}
 
+		public bool AddLikeForResourceUI(Guid resourceID, String resourceType, int likeAddAmount, int dislikeAddAmount)
+		{
+			var isAddingLike = false;
+			var isAddingDisLike = false;
+			bool isAddedLikes = false;
+			if (likeAddAmount == 1)
+			{
+				isAddingLike = true;
+				AddLikeForResource(resourceID, resourceType, isAddingLike);
+			}
+			else if (likeAddAmount == -1)
+			{
+				isAddingLike = false;
+				AddLikeForResource(resourceID, resourceType, isAddingLike);
+			}
+
+			if (dislikeAddAmount == 1)
+			{
+				isAddingDisLike = true;
+				AddDislikeForResource(resourceID, resourceType, isAddingDisLike);
+			}
+			else if (dislikeAddAmount == -1)
+			{
+				isAddingDisLike = false;
+				AddDislikeForResource(resourceID, resourceType, isAddingDisLike);
+			}
+
+			isAddedLikes = true;
+			return isAddedLikes;
+		}
+
 	}
 }
 
