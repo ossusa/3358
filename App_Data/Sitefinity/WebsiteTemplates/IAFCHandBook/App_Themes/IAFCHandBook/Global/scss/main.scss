@@ -563,11 +563,18 @@ p {
   }
   &__title {
     color: $color_6;
+    padding: 0 120px;
     position: relative;
     z-index: 2;
     @media screen and (max-width: 1109px) {
-      width: 220px;
       margin: 0 auto;
+      padding: 0 90px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 0 28px;
+    }
+    @media screen and (max-width: 370px) {
+      padding: 0 14px;
     }
   }
   &__desc {
