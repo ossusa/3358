@@ -226,7 +226,7 @@ $(document).ready(function () {
 
     var elements = document.getElementsByClassName('resources__slide-desc');
     ellipsis.add(elements);
-    ESresize();
+    $(window).trigger('resize');
 
     //text truncate
     //$('.resources__slide-desc').each(function(){
