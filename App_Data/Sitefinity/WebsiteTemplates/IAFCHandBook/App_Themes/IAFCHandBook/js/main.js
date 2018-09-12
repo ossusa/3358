@@ -190,7 +190,7 @@ $(document).ready(function () {
         break_word: true //default the ellipsis can truncate words
     };
 
-    var ellipsis = Ellipsis(conf);
+    var ellipsis = Ellipsis();
 
     //image container height
     function setImgHeight() {
