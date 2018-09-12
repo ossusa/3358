@@ -4469,3 +4469,8 @@ addReplyCommentBtn {
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .resources__slide-info {
     height: 185px !important; } }
+
+@-moz-document url-prefix() {
+  @media (max-width: 767px) {
+    .resources__slide-info {
+      height: 190px; } } }
