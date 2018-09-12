@@ -2048,7 +2048,6 @@ p {
     flex-direction: column;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 48px;
     text-align: center; } }
 
 @media (max-width: 767px) {
@@ -2067,7 +2066,9 @@ p {
   .container {
     padding: 0 10px; }
   .resources__logged {
-    padding: 24px; }
+    padding: 24px;
+    top: -35px;
+    margin-bottom: -15px; }
   .community__topics-list {
     margin-bottom: 20px; } }
   @media (max-width: 767px) and (max-width: 767px) {

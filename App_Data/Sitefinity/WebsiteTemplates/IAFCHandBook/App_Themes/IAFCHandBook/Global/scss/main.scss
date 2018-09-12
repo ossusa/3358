@@ -2504,7 +2504,6 @@ p {
   .resources__logged {
     flex-direction: column;
     justify-content: space-between;
-    padding: 48px;
     text-align: center;
   }
 }
@@ -2532,6 +2531,8 @@ p {
 
   .resources__logged {
     padding: 24px;
+    top: -35px;
+    margin-bottom: -15px;
   }
   .community__topics-list {
     margin-bottom: 20px;
