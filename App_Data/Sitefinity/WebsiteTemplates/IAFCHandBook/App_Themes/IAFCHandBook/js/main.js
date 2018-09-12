@@ -193,15 +193,7 @@ $(document).ready(function () {
     setInterval(function() {
         setImgHeight();
     }, 250);
-
-
-    $(window).resize(function () {
-        console.log("resize");
-    });
-
-
-
-
+    setImgHeight();
 
 
 
