@@ -2037,7 +2037,18 @@ p {
   .topics__content a {
     height: 147px; }
   .community__topics__list_img {
-    height: 100px; } }
+    height: 100px; }
+  .resources__logged {
+    top: -70px;
+    padding: 24px 24px 24px 31px; } }
+  @media screen and (max-width: 1109px) and (max-width: 930px) {
+    .resources__logged {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 48px;
+      text-align: center; } }
 
 @media (max-width: 767px) {
   h1 {
@@ -2063,13 +2074,6 @@ p {
       width: 100%; } }
 
 @media (max-width: 767px) {
-  .resources__logged {
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 48px;
-    text-align: center; }
   .topics__ul-flex .topics__list {
     width: 100%; }
   .topics__ul-flex .topics__list:last-of-type a {
