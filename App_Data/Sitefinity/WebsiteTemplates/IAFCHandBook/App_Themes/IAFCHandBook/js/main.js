@@ -195,36 +195,6 @@ $(document).ready(function () {
     }, 250);
     setImgHeight();
 
-    //resize
-    $(window).resize(function () {
-        //text truncate on resize
-        $('.resources__slide-desc').each(function(){
-            $(this).ellipsis({
-                lines: 2,             // force ellipsis after a certain number of lines. Default is 'auto'
-                responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-            });
-        });
-
-        $('.resources__slide-title').each(function(){console.log(this);
-            $(this).ellipsis({
-                lines: 2,           // force ellipsis after a certain number of lines. Default is 'auto'
-                responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-            });
-        });
-
-        $('.separate__slide-desc').each(function(){
-            $(this).ellipsis({
-                lines: 2,           // force ellipsis after a certain number of lines. Default is 'auto'
-                responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-            });
-        });
-
-    });
-
-
-
-
-
 
 
 
