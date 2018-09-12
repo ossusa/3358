@@ -2041,14 +2041,15 @@ p {
   .resources__logged {
     top: -70px;
     padding: 24px 24px 24px 31px; } }
-  @media screen and (max-width: 1109px) and (max-width: 930px) {
-    .resources__logged {
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      padding: 48px;
-      text-align: center; } }
+
+@media screen and (max-width: 930px) {
+  .resources__logged {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 48px;
+    text-align: center; } }
 
 @media (max-width: 767px) {
   h1 {

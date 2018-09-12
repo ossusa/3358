@@ -2498,15 +2498,16 @@ p {
   .resources__logged{
     top: -70px;
     padding: 24px 24px 24px 31px;
-    @media screen and (max-width: 930px){
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 48px;
-        text-align: center;
-    }
   }
 }
-
+@media screen and (max-width: 930px){
+  .resources__logged {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px;
+    text-align: center;
+  }
+}
 @media (max-width: 767px) {
   h1 {
     line-height: 50px;
