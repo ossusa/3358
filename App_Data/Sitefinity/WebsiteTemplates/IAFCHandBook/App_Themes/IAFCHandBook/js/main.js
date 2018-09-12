@@ -194,51 +194,30 @@ $(document).ready(function () {
         setImgHeight();
     }, 250);
 
-    //trigger resize
-    function ESresize(){
-        /*
-         * Trigger window resize function in javascript
-         * source path : http://codrate.com/questions/how-can-trigger-the-window-resize-event-manually-in-javascript
-         */
-        if (typeof (Event) === 'function') {
-            // modern browsers
-            window.dispatchEvent(new Event('resize'));
-        } else {
-            //This will be executed on old browsers and especially IE
-            var resizeEvent = window.document.createEvent('UIEvents');
-            resizeEvent.initUIEvent('resize', true, false, window, 0);
-            window.dispatchEvent(resizeEvent);
-        }
-    }
 
+    $('.foo').ellipsis({
+        lines: 3,             // force ellipsis after a certain number of lines. Default is 'auto'
+        ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+        responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
+    });
 
-    var conf = {
-        ellipsis: '…', //default ellipsis value
-        debounce: 0, //if you want to chill out your memory usage on resizing
-        responsive: true, //if you want the ellipsis to move with the window resizing
-        className: '.clamp', //default class to apply the ellipsis
-        lines: 2 ,//default number of lines when the ellipsis will appear
-        portrait: null ,//default no change, put a number of lines if you want a different number of lines in portrait mode,
-        break_word: true //default the ellipsis can truncate words
-    };
-
-    var ellipsis = Ellipsis(conf);
-
-    var elements = document.getElementsByClassName('resources__slide-desc');
-    ellipsis.add(elements);
-    $(window).trigger('resize');
 
     //text truncate
-    //$('.resources__slide-desc').each(function(){
-       // $(this).truncate({
-       //    lines: 2
-      //  });
-   //    });
+    $('.resources__slide-desc').each(function(){
+        $(this).ellipsis({
+            lines: 3,             // force ellipsis after a certain number of lines. Default is 'auto'
+            ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
+        });
+    });
 
- //   $('.resources__slide-title').each(function(){
-  //      $(this).truncate({
-  //          lines: 2});
-  //      });
+    $('.resources__slide-title').each(function(){
+      $(this).ellipsis({
+          lines: 3,             // force ellipsis after a certain number of lines. Default is 'auto'
+          ellipClass: 'ellip',  // class used for ellipsis wrapper and to namespace ellip line
+          responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
+      });
+    });
 
 
 
