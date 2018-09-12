@@ -207,6 +207,20 @@ $(document).ready(function () {
   //      });
 
 
+    var conf = {
+        ellipsis: '…', //default ellipsis value
+        debounce: 0, //if you want to chill out your memory usage on resizing
+        responsive: true, //if you want the ellipsis to move with the window resizing
+        className: '.clamp', //default class to apply the ellipsis
+        lines: 2 ,//default number of lines when the ellipsis will appear
+        portrait: null ,//default no change, put a number of lines if you want a different number of lines in portrait mode,
+        break_word: true //default the ellipsis can truncate words
+    };
+
+    var ellipsis = Ellipsis(conf);
+    var elements = document.getElementsByClassName('resources__slide-desc');
+    ellipsis.add(elements);
+
 
     $('.complete_box').on('click', function (event) {
         $(event.currentTarget).addClass('anticon anticon-check');
@@ -412,9 +426,6 @@ $(window).on('load', function() {
         }
     });
 
-    var ellipsis = Ellipsis();
-    var elements = document.getElementsByClassName('.resources__slide-desc');
-    ellipsis.add(elements);
 });
 
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
