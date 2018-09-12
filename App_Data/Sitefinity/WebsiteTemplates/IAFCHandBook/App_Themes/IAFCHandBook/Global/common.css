@@ -4088,7 +4088,7 @@ addReplyCommentBtn {
     padding: 0 28px; } }
 
 .all_progressindicator__wrapper {
-  margin: 0 0 21px 0; }
+  margin: 0 0 21px 0 !important; }
 
 .handboox_subcontainer {
   max-width: 1200px;
