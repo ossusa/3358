@@ -2487,6 +2487,13 @@ p {
   position: relative;
   overflow: hidden; }
 
+.resourceFeaturedLink {
+  transition: .3s ease-in-out;
+  width: 120px !important; }
+  .resourceFeaturedLink:hover {
+    background: #2b4b6b;
+    color: #fff; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
