@@ -195,18 +195,20 @@ $(document).ready(function () {
 
 
     //text truncate
-    $('.resources__slide-desc').each(function(){
-        $(this).truncate({
-           lines: 2
-        });
-       });
+    //$('.resources__slide-desc').each(function(){
+       // $(this).truncate({
+       //    lines: 2
+      //  });
+   //    });
 
-    $('.resources__slide-title').each(function(){
-        $(this).truncate({
-            lines: 2});
-        });
+ //   $('.resources__slide-title').each(function(){
+  //      $(this).truncate({
+  //          lines: 2});
+  //      });
 
-
+    var ellipsis = Ellipsis();
+    var elements = document.getElementsByClassName('.resources__slide-desc');
+    ellipsis.add(elements);
 
     $('.complete_box').on('click', function (event) {
         $(event.currentTarget).addClass('anticon anticon-check');
