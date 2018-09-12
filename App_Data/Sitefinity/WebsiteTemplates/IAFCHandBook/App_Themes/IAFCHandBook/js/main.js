@@ -191,7 +191,7 @@ $(document).ready(function () {
     };
 
     setInterval(function() {
-
+        setImgHeight();
     }, 250);
     setImgHeight();
 
@@ -219,8 +219,6 @@ $(document).ready(function () {
             });
         });
 
-        //set img height on resize
-        setImgHeight();
     });
 
 
