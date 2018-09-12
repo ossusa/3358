@@ -1721,7 +1721,8 @@ p {
         display: block;
         font-family: anticon !important;
         color: #2b4b6b;
-        margin-left: 8px; }
+        margin-left: 8px;
+        transition: .3s ease-in-out; }
       .account-template .edit-button .resources__logged-btn:hover:after {
         color: #fff; }
   .account-template input[type="checkbox"] {
@@ -1783,7 +1784,7 @@ p {
   .account-template p {
     margin-top: 0; }
   .account-template .follow_title {
-    margin-top: 32px; }
+    margin: 32px 0 12px; }
   .account-template h6 {
     color: #2B4B6B; }
   .account-template .follow_categories {
@@ -1795,7 +1796,7 @@ p {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 12px 0;
+    padding-bottom: 12px;
     border-bottom: 1px solid #d8d8d8; }
   .account-template .unfollowBtn {
     color: #9b9b9b;
