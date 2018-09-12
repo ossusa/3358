@@ -540,6 +540,9 @@ p {
   text-align: center;
   display: block;
   position: relative; }
+  @media screen and (max-width: 1109px) {
+    .hb-jumbo {
+      padding: 40px 0 48px; } }
   .hb-jumbo::after {
     content: "";
     background: rgba(43, 75, 107, 0.85);
@@ -560,9 +563,6 @@ p {
         padding: 0 90px; } }
     @media screen and (max-width: 767px) {
       .hb-jumbo__title {
-        padding: 0 28px; } }
-    @media screen and (max-width: 370px) {
-      .hb-jumbo__title {
         padding: 0 14px; } }
   .hb-jumbo__desc {
     color: #fff;
@@ -574,7 +574,7 @@ p {
     margin: 36px 0 0 0; }
     @media screen and (max-width: 767px) {
       .hb-jumbo__search {
-        margin-top: 44px; } }
+        margin-top: 30px; } }
     .hb-jumbo__search fieldset {
       position: relative;
       width: 700px;
@@ -2136,9 +2136,9 @@ p {
     width: 279px !important;
     height: 50px; }
   .hb-jumbo__desc {
-    padding: 16px 28px 0px; }
+    padding: 10px 20px 0px; }
   .hb-jumbo {
-    padding: 103px 0 148px; }
+    padding: 30px 0 40px; }
   .resources {
     padding: 36px 28px 85px; }
   .slick-prev {

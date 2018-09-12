@@ -551,6 +551,9 @@ p {
   text-align: center;
   display: block;
   position: relative;
+  @media screen and (max-width: 1109px){
+    padding: 40px 0 48px;
+  }
   &::after {
     content: "";
     background: rgba(#2B4B6B, 0.85);
@@ -571,9 +574,6 @@ p {
       padding: 0 90px;
     }
     @media screen and (max-width: 767px) {
-      padding: 0 28px;
-    }
-    @media screen and (max-width: 370px) {
       padding: 0 14px;
     }
   }
@@ -587,7 +587,7 @@ p {
     z-index: 2;
     margin: 36px 0 0 0;
     @media screen and (max-width: 767px){
-      margin-top: 44px;
+      margin-top: 30px;
     }
     fieldset {
       position: relative;
@@ -2634,10 +2634,10 @@ p {
     }
   }
   .hb-jumbo__desc {
-    padding: 16px 28px 0px;
+    padding: 10px 20px 0px;
   }
   .hb-jumbo {
-    padding: 103px 0 148px;
+    padding: 30px 0 40px;
   }
   .resources {
     padding: 36px 28px 85px;
