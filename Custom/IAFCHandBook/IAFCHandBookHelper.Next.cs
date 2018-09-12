@@ -249,12 +249,38 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					resDataTemp.CreateRelation(file, "attachfiles");
 				}
 
+
+				var likeExists = resMaster.GetRelatedItems<DynamicContent>("Likes").ToList().Any();
+				if(!likeExists)
+				{
+					var likeTitle = resDataTemp.GetValue("Title") + "_like";
+					
+					// Create like
+					DynamicContent likeMaster = dynamicModuleManager.CreateDataItem(resourceLikesType);
+					likeMaster.SetValue("Title", likeTitle);
+					likeMaster.SetValue("AmountOfLikes", 0);
+					likeMaster.SetValue("AmountOfDislikes", 0);
+					likeMaster.UrlName = new Lstring(Regex.Replace(likeTitle, UrlNameCharsToReplace, UrlNameReplaceString));
+					likeMaster.Owner = SecurityManager.GetCurrentUserId();
+					likeMaster.PublicationDate = currentUtcDateTime;
+					likeMaster.DateCreated = currentUtcDateTime;
+
+					dynamicModuleManager.Lifecycle.Publish(likeMaster);					
+					resDataTemp.CreateRelation(likeMaster, "Likes");
+
+				}
+
 				resDataTemp.UrlName = new Lstring(Regex.Replace(title, UrlNameCharsToReplace, UrlNameReplaceString));
 				resDataTemp.PublicationDate = currentUtcDateTime;
 				resDataTemp.LastModified = currentUtcDateTime;
 				resDataTemp.LastModifiedBy = SecurityManager.GetCurrentUserId();
 
+
+
 				resDataMaster = dynamicModuleManager.Lifecycle.CheckIn(resDataTemp) as DynamicContent;
+
+
+
 				dynamicModuleManager.Lifecycle.Publish(resDataMaster);
 				dynamicModuleManager.SaveChanges();
 			}
