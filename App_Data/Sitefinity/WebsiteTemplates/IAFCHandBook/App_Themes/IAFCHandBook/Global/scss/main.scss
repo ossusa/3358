@@ -3220,5 +3220,12 @@ p {
   position: relative;
   overflow: hidden;
 }
+.resourceFeaturedLink{
+  width: 120px !important;
+  &:hover{
+    background: #2b4b6b;
+    color: #fff;
+  }
+}
 
 
