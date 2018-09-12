@@ -4088,11 +4088,14 @@ addReplyCommentBtn {
     padding: 0 28px; } }
 
 .all_progressindicator__wrapper {
-  margin: 0 0 21px 0 !important; }
+  margin: 0 0 36px 0 !important; }
 
 .all_complete_resources_slides {
   margin-top: 36px;
-  margin-bottom: 9px; }
+  margin-bottom: 24px; }
+
+.all_handbook {
+  margin: 0 !important; }
 
 .handboox_subcontainer {
   max-width: 1200px;

@@ -15,7 +15,7 @@
 	<div class="community_indicator_col">
 		
 		<div class="left_indicator_col">
-			<select class="community__title-select handbook_title_select" id="UrlList" onchange="doNavigate()">
+			<select class="community__title-select handbook_title_select all_handbook" id="UrlList" onchange="doNavigate()">
 				<option value=@myHandBookResource.Category.MyHandBookCategoryUrl>@myHandBookResource.Category.CategoryTitle</option>
 				@foreach (var item in myHandBookResource.MoreCategories)
 				{
