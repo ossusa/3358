@@ -857,3 +857,24 @@ addReplyCommentBtn{
     font-size: 15px;
   }
 }
+
+.left_indicator_col .selectric-community__title-select li.label-community:hover:after,
+.left_indicator_col .selectric-community__title-select li.label-leadership:hover:after,
+.left_indicator_col .selectric-community__title-select li.label-personnel:hover:after,
+.left_indicator_col .selectric-community__title-select li.label-finance:hover:after{
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  margin-left: 8px;
+  color: inherit;
+}
+.label-community > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after,
+.label-leadership > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after,
+.label-personnel > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after,
+.label-finance > .selectric-community__title-select > .selectric-items > .selectric-scroll > ul > li:hover:after{
+  content: "\E61F";
+  display: block;
+  font-family: anticon;
+  margin-left: 8px;
+  color: inherit;
+}

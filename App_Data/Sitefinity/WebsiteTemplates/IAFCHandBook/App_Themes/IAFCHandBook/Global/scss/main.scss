@@ -132,8 +132,6 @@ template {
 a {
   text-decoration: none;
   background: transparent;
-  color: #2B4B6B;
-  font-weight: 600;
   &:active {
     outline: 0;
   }
@@ -1576,6 +1574,8 @@ p {
       &-active {
         background: #2b4b6b;
         color: $color_6;
+        width: unset !important;
+        padding: 0 12px;
       }
       &-select {
         select {
@@ -1986,15 +1986,18 @@ p {
   .topic__subtitle {
     width: 100%;
     margin-bottom: 24px;
+    margin-left: 12px;
+    @media screen and (max-width: 767px){
+      margin-left: 0;
+    }
   }
 
   .complete__resources_slides {
     margin-bottom: 36px;
-  }
-
-  .complete__resources_slides {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0 -12px;
+    @media screen and (max-width: 767px){
+      margin: 0;
+    }
   }
 }
 
@@ -3198,5 +3201,24 @@ p {
   border: none;
 }
 
+
+.ellip {
+  display: block;
+  height: 100%;
+}
+
+.ellip-line {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 100%;
+}
+
+.ellip,
+.ellip-line {
+  position: relative;
+  overflow: hidden;
+}
 
 

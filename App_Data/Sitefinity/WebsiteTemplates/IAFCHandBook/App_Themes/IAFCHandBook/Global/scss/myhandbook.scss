@@ -318,6 +318,7 @@
         font-size: 1em;
         font-weight: 400;
         padding-bottom: 4px;
+        transition: .3s ease-in-out;
         &:hover{
           &:after{
             content: "\E61F";
@@ -333,24 +334,28 @@
       &.Community{
         a:hover{
           color: $color_community;
+          text-shadow: 1px 0 0 $color_community;
         }
       }
       &.Leadership{
         background: #b89c5c;
         a:hover{
           color: $color_leadership;
+          text-shadow: 1px 0 0 $color_leadership;
         }
       }
       &.Finance{
         background: #6ea352;
         a:hover{
           color: $color_finance;
+          text-shadow: 1px 0 0 $color_finance;
         }
       }
       &.Personnel{
         background: #bf754d;
         a:hover{
           color: $color_personnel;
+          text-shadow: 1px 0 0 $color_personnel;
         }
       }
     }
@@ -398,4 +403,20 @@
 }
 .handbook_share{
   margin-right: 24px;
+}
+.community__head-following{
+  background: #2b4b6b;
+  color: #fff;
+  padding: 0 12px;
+  width: unset !important;
+}
+.clicked-dislike:before{
+  content: "\E64B";
+  font-family: anticon!important;
+  display: inline-block;
+}
+.clicked-like:before{
+  content: "\E64C";
+  font-family: anticon!important;
+  display: inline-block;
 }
