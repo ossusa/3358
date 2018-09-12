@@ -179,6 +179,19 @@ $(document).ready(function () {
         }
     });
 
+
+    var conf = {
+        ellipsis: '…', //default ellipsis value
+        debounce: 0, //if you want to chill out your memory usage on resizing
+        responsive: true, //if you want the ellipsis to move with the window resizing
+        className: '.clamp', //default class to apply the ellipsis
+        lines: 2 ,//default number of lines when the ellipsis will appear
+        portrait: null ,//default no change, put a number of lines if you want a different number of lines in portrait mode,
+        break_word: true //default the ellipsis can truncate words
+    };
+
+    var ellipsis = Ellipsis();
+
     //image container height
     function setImgHeight() {
         //var imgContainer = $('.img-container-js');
@@ -191,20 +204,25 @@ $(document).ready(function () {
 
     setInterval(function() {
         setImgHeight();
+        var elements = document.getElementsByClassName('resources__slide-desc');
+        ellipsis.add(elements);
     }, 250);
 
 
     //text truncate
     //$('.resources__slide-desc').each(function(){
        // $(this).truncate({
-      //      lines: 2
-     //   });
-     //   });
+       //    lines: 2
+      //  });
+   //    });
 
-   // $('.resources__slide-title').each(function(){
-      //  $(this).truncate({
-        //    lines: 2});
-       // });
+ //   $('.resources__slide-title').each(function(){
+  //      $(this).truncate({
+  //          lines: 2});
+  //      });
+
+
+
 
 
 
