@@ -759,9 +759,9 @@ p {
       -ms-flex-pack: distribute;
       justify-content: space-between; }
   .resources__logged-article {
-    font-size: 13px;
+    font-size: 0.813em;
     letter-spacing: 1.3px;
-    font-weight: 600; }
+    font-weight: 600 !important; }
     .resources__logged-article > span {
       font-weight: 500; }
   .resources--plus {
@@ -821,7 +821,8 @@ p {
       font-size: 1.5em;
       margin-bottom: 4px; }
     .resources__logged-desc {
-      font-size: 1.125em; }
+      font-size: 1.125em;
+      font-weight: 300; }
     .resources__logged-added {
       border: none;
       outline: none;

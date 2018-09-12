@@ -831,9 +831,9 @@ p {
     }
   }
   &__logged-article {
-    font-size: 13px;
+    font-size: 0.813em;
     letter-spacing: 1.3px;
-    font-weight: 600;
+    font-weight: 600 !important;
     >span {
       font-weight: 500;
     }
@@ -911,6 +911,7 @@ p {
     }
     &-desc {
       font-size: 1.125em;
+      font-weight: 300;
     }
     &-added {
       border: none;
