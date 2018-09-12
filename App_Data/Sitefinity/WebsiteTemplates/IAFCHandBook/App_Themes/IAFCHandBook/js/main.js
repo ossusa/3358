@@ -195,16 +195,16 @@ $(document).ready(function () {
 
 
     //text truncate
-    //$('.resources__slide-desc').each(function(){
-       // $(this).truncate({
-      //      lines: 2
-     //   });
-     //   });
+    $('.resources__slide-desc').each(function(){
+        $(this).truncate({
+           lines: 2
+        });
+       });
 
-   // $('.resources__slide-title').each(function(){
-      //  $(this).truncate({
-        //    lines: 2});
-       // });
+    $('.resources__slide-title').each(function(){
+        $(this).truncate({
+            lines: 2});
+        });
 
 
 
