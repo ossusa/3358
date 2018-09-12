@@ -191,12 +191,13 @@ $(document).ready(function () {
     };
 
     setInterval(function() {
-        setImgHeight();
-    }, 250);
 
-    //text truncate on resize
+    }, 250);
+    setImgHeight();
+
+    //resize
     $(window).resize(function () {
-        //text truncate
+        //text truncate on resize
         $('.resources__slide-desc').each(function(){
             $(this).ellipsis({
                 lines: 2,             // force ellipsis after a certain number of lines. Default is 'auto'
@@ -217,6 +218,9 @@ $(document).ready(function () {
                 responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
             });
         });
+
+        //set img height on resize
+        setImgHeight();
     });
 
 
