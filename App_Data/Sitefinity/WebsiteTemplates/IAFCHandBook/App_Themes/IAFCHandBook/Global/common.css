@@ -2388,7 +2388,7 @@ p {
   .handbook__template.complete__resources_slides .resources__slide-info.resources__community-slide-info {
     width: 55%;
     height: auto !important;
-    padding: 14px; }
+    padding: 14px 14px 0; }
   .handbook__template.complete__resources_slides .resources__slide-title {
     font-size: 1em; }
   .handbook__template .placeholder-type img {
@@ -4454,3 +4454,7 @@ addReplyCommentBtn {
   .slick-prev {
     margin-top: auto;
     top: auto; } }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .resources__slide-info {
+    height: 185px !important; } }
