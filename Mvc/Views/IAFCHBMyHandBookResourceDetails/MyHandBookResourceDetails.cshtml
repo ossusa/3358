@@ -506,20 +506,7 @@
 			});
 		});
 
-		//share
-		$('.shareBtn').click(function () {
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("Share", "IAFCHBMyHandBookResourceDetailsController")',
-				dataType: "json",
-				success: function (response) {
-					if (response == true) {
-						$('#share').html("Shared");
-					}
-				}
-			});
-		});
+
 
 		//Open  Resource Details
 		$('.resourceLink').click(function () {
