@@ -197,13 +197,13 @@ $(document).ready(function () {
     //text truncate
     $('.resources__slide-desc').each(function(){
         $(this).truncate({
-           lines: 2
+           lines: 1
         });
        });
 
     $('.resources__slide-title').each(function(){
         $(this).truncate({
-            lines: 2});
+            lines: 1});
         });
 
 
