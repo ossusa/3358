@@ -1,0 +1,9 @@
+//firefox styles go here
+
+@-moz-document url-prefix() {
+  @media (max-width: 767px) {
+    .resources__slide-info {
+      height: 190px !important;
+    }
+  }
+}
