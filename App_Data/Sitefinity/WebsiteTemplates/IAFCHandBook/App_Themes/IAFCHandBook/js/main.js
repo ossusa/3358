@@ -424,6 +424,15 @@ $(window).on('load', function() {
         });
     });
 
+    $('.separate__slide-desc').each(function(){
+        console.log(this);
+        $(this).ellipsis({
+            lines: 2,           // force ellipsis after a certain number of lines. Default is 'auto'
+            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
+        });
+    });
+
+
 });
 
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
