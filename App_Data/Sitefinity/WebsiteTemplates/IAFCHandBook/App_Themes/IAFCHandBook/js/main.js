@@ -206,9 +206,7 @@ $(document).ready(function () {
   //          lines: 2});
   //      });
 
-    var ellipsis = Ellipsis();
-    var elements = document.getElementsByClassName('.resources__slide-desc');
-    ellipsis.add(elements);
+
 
     $('.complete_box').on('click', function (event) {
         $(event.currentTarget).addClass('anticon anticon-check');
@@ -414,6 +412,9 @@ $(window).on('load', function() {
         }
     });
 
+    var ellipsis = Ellipsis();
+    var elements = document.getElementsByClassName('.resources__slide-desc');
+    ellipsis.add(elements);
 });
 
 var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
