@@ -2067,8 +2067,8 @@ p {
     padding: 0 10px; }
   .resources__logged {
     padding: 24px;
-    top: -35px;
-    margin-bottom: -15px; }
+    top: -65px;
+    margin-bottom: -25px; }
   .community__topics-list {
     margin-bottom: 20px; } }
   @media (max-width: 767px) and (max-width: 767px) {
@@ -2111,6 +2111,8 @@ p {
     padding: 10px 15px; }
   .resources__slide-desc {
     font-size: 15px; }
+  .mob-br-none {
+    display: none; }
   .mobile-br {
     display: block; }
   .mobile-br-none {

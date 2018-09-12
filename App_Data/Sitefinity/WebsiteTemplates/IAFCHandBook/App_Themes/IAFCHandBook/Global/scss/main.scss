@@ -2531,8 +2531,8 @@ p {
 
   .resources__logged {
     padding: 24px;
-    top: -35px;
-    margin-bottom: -15px;
+    top: -65px;
+    margin-bottom: -25px;
   }
   .community__topics-list {
     margin-bottom: 20px;
@@ -2598,7 +2598,9 @@ p {
   .resources__slide-desc {
     font-size: 15px;
   }
-
+  .mob-br-none{
+    display: none;
+  }
   .mobile-br {
     display: block;
   }
