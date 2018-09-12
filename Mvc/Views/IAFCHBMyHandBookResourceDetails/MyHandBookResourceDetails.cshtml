@@ -168,8 +168,10 @@
 
 	$(document).ready(function () {
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
-		doShareUrl();
 		bindEdit();
+		console.log('bindEdit');
+        doShareUrl();
+        console.log('doShareUrl');
 	});
 
 
@@ -177,15 +179,15 @@
 
 		var url = window.location.href;
 		$.ajax({
-			async: false,
+			async: true,
 			type: 'POST',
 			cache: false,
-			url: '@Url.Action("Share", "IAFCHBMyHandBookResourceDetailsController")',
+			url: '@Url.Action("Share", "IAFCHBMyHandBookResourceDetails")',
 			data: { url: url },
 			dataType: "json",
 			success: function (response) {
 				addthis_share.url = response;
-				console.log(response);
+				console.log('response ', response);
 			}
 		});
 	};
