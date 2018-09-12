@@ -4087,6 +4087,9 @@ addReplyCommentBtn {
   .handbook_container {
     padding: 0 28px; } }
 
+.all_progressindicator__wrapper {
+  margin: 0 0 21px 0; }
+
 .handboox_subcontainer {
   max-width: 1200px;
   margin: 0 auto; }
