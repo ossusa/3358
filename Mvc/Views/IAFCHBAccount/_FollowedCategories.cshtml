@@ -6,18 +6,22 @@
 	{
 		if (parentCategory != category.ParentCategoryTitle)
 		{
-		<div class="follow_categories">
-				<h5 class="follow_title">@category.ParentCategoryTitle</h5>
-			<div class="category_follow">
-				<h6> @category.CategoryTitle</h6>
-				<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
+			@Html.Raw("<div class=\"follow_categories\">");
+			<h5 class="follow_title">@category.ParentCategoryTitle</h5>
+		}
+		<div class="category_follow">
+			<h6> @category.CategoryTitle</h6>
+			<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
 				<div class="unfollow">
-					<button type="button" class="unfollowBtn" data-id="@category.Id.ToString()" >Unfollow</button>
+					<button type="button" class="unfollowBtn" data-id="@category.Id.ToString()">Unfollow</button>
 				</div>
 			</div>
-			</div>
-		</div>			
+		</div>
+		if (parentCategory != category.ParentCategoryTitle)
+		{
+			@Html.Raw("</div>");
 		}
-	{ parentCategory = category.ParentCategoryTitle; }
+
+		{ parentCategory = category.ParentCategoryTitle; }
 	}
 </div>
