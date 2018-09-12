@@ -85,7 +85,8 @@
 			dataType: "json",
 			success: function (response) {
 				addthis_share.url = response;
-                addthis_share.title= '@Model.SharedUser HANDBOOK';
+                addthis_share.title= 'International Association of Fire Chiefs';
+                addthis_share.description = @Model.SharedUser + ' HANDBOOK';
 			}
 		});
 	}
