@@ -3221,6 +3221,7 @@ p {
   overflow: hidden;
 }
 .resourceFeaturedLink{
+  transition: .3s ease-in-out;
   width: 120px !important;
   &:hover{
     background: #2b4b6b;
