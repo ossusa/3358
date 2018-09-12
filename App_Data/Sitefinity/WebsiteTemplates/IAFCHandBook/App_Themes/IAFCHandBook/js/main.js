@@ -195,7 +195,9 @@ $(document).ready(function () {
     }, 250);
 
 
-
+    $(window).resize(function () {
+        console.log("resize");
+    });
 
 
 
