@@ -551,12 +551,19 @@ p {
     z-index: 1; }
   .hb-jumbo__title {
     color: #fff;
+    padding: 0 120px;
     position: relative;
     z-index: 2; }
     @media screen and (max-width: 1109px) {
       .hb-jumbo__title {
-        width: 220px;
-        margin: 0 auto; } }
+        margin: 0 auto;
+        padding: 0 90px; } }
+    @media screen and (max-width: 767px) {
+      .hb-jumbo__title {
+        padding: 0 28px; } }
+    @media screen and (max-width: 370px) {
+      .hb-jumbo__title {
+        padding: 0 14px; } }
   .hb-jumbo__desc {
     color: #fff;
     position: relative;
