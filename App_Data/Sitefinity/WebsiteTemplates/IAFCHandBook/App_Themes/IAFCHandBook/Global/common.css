@@ -808,6 +808,9 @@ p {
     margin-bottom: -48px;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
+    @media all and (max-width: 767px) {
+      .resources__logged {
+        height: auto; } }
     .resources__logged-buttons {
       display: -ms-flexbox;
       display: flex;

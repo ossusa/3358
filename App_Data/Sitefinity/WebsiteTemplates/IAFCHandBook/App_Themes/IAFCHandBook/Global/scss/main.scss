@@ -892,6 +892,10 @@ p {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+
+    @media all and (max-width: 767px) {
+      height: auto;
+    }
     &-buttons {
       display: -webkit-box;
       display: -ms-flexbox;
