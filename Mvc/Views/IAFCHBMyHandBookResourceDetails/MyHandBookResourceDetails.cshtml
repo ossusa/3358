@@ -179,7 +179,7 @@
 
 		var url = window.location.href;
 		$.ajax({
-			async: false,
+			async: true,
 			type: 'POST',
 			cache: false,
 			url: '@Url.Action("Share", "IAFCHBMyHandBookResourceDetailsController")',
