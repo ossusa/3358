@@ -190,6 +190,8 @@ $(document).ready(function () {
         })
     };
 
+
+    /*
     //set width for elements that should be truncated
     function textTruncateWidth() {
         $('.resources__slide-desc').each(function(){
@@ -204,16 +206,14 @@ $(document).ready(function () {
             $(this).width($(this).width());
         });
     };
+    */
 
     setInterval(function() {
         setImgHeight();
     }, 250);
     setImgHeight();
 
-    setInterval(function() {
-        textTruncateWidth();
-    }, 250);
-    textTruncateWidth();
+
 
 
     $('.complete_box').on('click', function (event) {
