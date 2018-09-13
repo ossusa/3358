@@ -10,13 +10,13 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--<meta property="og:title" content="Chief's A-RIT Administrative Rapid Information Tool" />-->
+    <meta property="og:title" content="Chief's A-RIT Administrative Rapid Information Tool" />
     <meta property="og:url" content="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/" />
-    <!--<meta property="og:image" content="https://dev-staging.iafc.org/images/default-source/1logos/iacfhandbook-logo.png" />-->
-    <!--<meta property="og:description" content="A digital resource guide for education,
+    <meta property="og:image" content="https://dev-staging.iafc.org/images/default-source/1logos/iacfhandbook-logo.png" />
+    <meta property="og:description" content="A digital resource guide for education,
                                              training and guidance on administrative
                                              tasks associated with leading and managing
-                                             your volunteer fire department." />-->
+                                             your volunteer fire department." />
 </head>
 <body>
 
