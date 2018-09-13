@@ -111,11 +111,19 @@
 					<p>More Resources in <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
 				</div>
 				<ul class="resources-single__right_list">
+					@{ var firstItem = true;}
 					@foreach (var item in Model.MoreResources)
 					{
 						<li class="resources-single__right_list_item">
 							<div class="resources-single__right_list_item_type">
-								@item.ResourceDetails.ResourceType
+								@if (firstItem == true)
+								{
+									<span> MOST RECENT &middot @item.ResourceDetails.ResourceType</span>
+								}
+								else
+								{
+									item.ResourceDetails.ResourceType
+								}
 							</div>
 							<div class="resources-single__right_list_item_title">
 								@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
