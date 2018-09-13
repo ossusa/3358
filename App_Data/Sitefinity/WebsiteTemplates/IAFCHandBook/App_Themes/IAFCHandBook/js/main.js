@@ -295,21 +295,21 @@ $(document).ready(function() {
         $(this).toggleClass('clicked-dislike');
         $('.addCommentLike').removeClass('clicked-like');
     });
-    
+
     /*COOKIES LIKES*/
-    $('.addLike').addClass('cookie-like').attr('data-type', 'like');
-    $('.addDislike').addClass('cookie-dislike').attr('data-type', 'dislike');
-    function refreshButtonState(buttonElement) {
-        var buttonType = $(buttonElement).attr('data-type');
-        $(buttonElement).toggleClass('clicked', $.cookie(buttonType));
-    }
-
-    $('.cookie-like, .cookie-dislike').on('click', function (e) {
-        var buttonType = $(this).attr('data-type');
-        $.cookie(buttonType, !($(this).is('.clicked')) ? 1 : 0);
-
-        refreshButtonState(this);
-    });
+    // $('.addLike').addClass('cookie-like').attr('data-type', 'like');
+    // $('.addDislike').addClass('cookie-dislike').attr('data-type', 'dislike');
+    // function refreshButtonState(buttonElement) {
+    //     var buttonType = $(buttonElement).attr('data-type');
+    //     $(buttonElement).toggleClass('clicked', $.cookie(buttonType));
+    // }
+    //
+    // $('.cookie-like, .cookie-dislike').on('click', function (e) {
+    //     var buttonType = $(this).attr('data-type');
+    //     $.cookie(buttonType, !($(this).is('.clicked')) ? 1 : 0);
+    //
+    //     refreshButtonState(this);
+    // });
 
 
 
