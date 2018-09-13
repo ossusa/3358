@@ -5,7 +5,7 @@
 <div class="handbook__title">
 	@if (Model.SharedUser != null && Model.SharedUser != string.Empty)
 	{
-		<h1>@Model.SharedUser HANDBOOK</h1>
+		<h1>@Model.SharedUser A-RIT</h1>
 	}
 	else
 	{
@@ -15,7 +15,7 @@
 
 <div class="box box-container">
 	<div class="resources-breadcrumbs">
-		<a href="~/topics-and-tools/volunteer/vws/chiefs-a-rit/my-handbook"><span> MY HANDBOOK</span></a> >
+		<a href="~/topics-and-tools/volunteer/vws/chiefs-a-rit/my-handbook"><span> MY A-RIT</span></a> >
 		<a href="@Model.ResourceDetails.Category.MyHandBookParentCategoryUrl"> <span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> >
 		<a href="@Model.ResourceDetails.Category.MyHandBookCategoryUrl"> <span>@Model.ResourceDetails.Category.CategoryTitle</span></a> >
 		@Model.ResourceDetails.ResourceTitle

@@ -35,7 +35,7 @@
 					}
 					else
 					{
-						isMenuItemActive = currentPageUrl.Contains("/my-handbook") && menuItem.Url.Contains("/my-handbook") && !menuItem.Url.Contains("/Mxg/AuthService/");
+						isMenuItemActive = currentPageUrl.Contains("/my-a-rit") && menuItem.Url.Contains("/my-a-rit") && !menuItem.Url.Contains("/Mxg/AuthService/");
 						isMenuItemActive = isMenuItemActive || menuItem.Url == currentPageUrl;
 
 						<li class="accordion__item">							
@@ -106,7 +106,7 @@
 					}
 					else
 					{
-						isMenuItemActive = currentPageUrl.Contains("/my-handbook") && menuItem.Url.Contains("/my-handbook") && !menuItem.Url.Contains("/Mxg/AuthService/");
+						isMenuItemActive = currentPageUrl.Contains("/my-a-rit") && menuItem.Url.Contains("/my-a-rit") && !menuItem.Url.Contains("/Mxg/AuthService/");
 						isMenuItemActive = isMenuItemActive || menuItem.Url == currentPageUrl;
 						<a class="header__list-link @(isMenuItemActive?"active":string.Empty)" href="@menuItem.Url"> <span>@menuItem.Title</span></a>
 					}

@@ -3,7 +3,7 @@
 <div class="handbook__title">
 	@if (Model.SharedUser != null && Model.SharedUser != string.Empty)
 	{
-		<h1>@Model.SharedUser HANDBOOK</h1>
+		<h1>@Model.SharedUser A-RIT</h1>
 	}
 	else
 	{
@@ -22,7 +22,7 @@
 
 
 	<div class="resources-breadcrumbs handbook_breadcrumbs">
-		<span>My HandBook ></span>
+		<span>My A-RIT ></span>
 		<a href='@Model.Category.MyHandBookParentCategoryUrl'><span>@Model.Category.ParentCategoryTitle </span></a>
 	</div>
 
@@ -220,7 +220,7 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$("#addSharedToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+						$("#addSharedToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
 					}
 				}
 			});
