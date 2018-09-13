@@ -207,7 +207,6 @@ $(document).ready(function () {
 
     setInterval(function() {
         setImgHeight();
-        textTruncateWidth();
     }, 250);
     setImgHeight();
 
