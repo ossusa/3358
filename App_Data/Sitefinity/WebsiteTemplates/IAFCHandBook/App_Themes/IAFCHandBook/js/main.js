@@ -261,14 +261,14 @@ $(document).ready(function() {
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
     /*LIKES COLORING*/
-    // $('.addLike').click(function(){
-    //     $(this).toggleClass('clicked-like');
-    //     $('.addDislike').removeClass('clicked-dislike');
-    // });
-    // $('.addDislike').click(function(){
-    //     $(this).toggleClass('clicked-dislike');
-    //     $('.addLike').removeClass('clicked-like');
-    // });
+    $('.addLike').click(function(){
+        $(this).toggleClass('clicked-like');
+        $('.addDislike').removeClass('clicked-dislike');
+    });
+    $('.addDislike').click(function(){
+        $(this).toggleClass('clicked-dislike');
+        $('.addLike').removeClass('clicked-like');
+    });
     $('.addCommentLike').click(function(){
         $(this).toggleClass('clicked-like');
         $('.addCommentDislike').removeClass('clicked-dislike');
@@ -277,42 +277,6 @@ $(document).ready(function() {
         $(this).toggleClass('clicked-dislike');
         $('.addCommentLike').removeClass('clicked-like');
     });
-});
-
-// Get Cookie
-var like_color = $.cookie('like_color');
-
-// Cookie Exists
-if (like_color){
-    $('.addLike').toggleClass(like_color);
-}
-// Cookie Doesn't Exist
-else {
-    $('.addLike').toggleClass('clicked-like');
-}
-
-$('.addLike').on('click', function (event) {
-    $(event.currentTarget).toggleClass('clicked-like');
-    $('.addDislike').removeClass('clicked-dislike');
-    $.cookie('like_color', 'clicked-like');
-});
-
-
-var dislike_color = $.cookie('dislike_color');
-
-// Cookie Exists
-if (dislike_color){
-    $('.addDislike').toggleClass(dislike_color);
-}
-// Cookie Doesn't Exist
-else {
-    $('.addDislike').toggleClass('clicked-dislike');
-}
-
-$('.addDislike').on('click', function (event) {
-    $(event.currentTarget).toggleClass('clicked-dislike');
-    $('.addLike').removeClass('clicked-like');
-    $.cookie('dislike_color', 'clicked-dislike');
 });
 
 
