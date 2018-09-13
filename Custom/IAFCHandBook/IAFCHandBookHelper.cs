@@ -98,7 +98,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string commentResource = "Comment";
 		private const string resourceResource = "Resource";
 		private const string topicMenuUrl = "chiefs-a-rit/topics";
-		private const string MyHandBookMenuUrl = "chiefs-a-rit/my-handbook";
+		private const string MyHandBookMenuUrl = "chiefs-a-rit/my-a-rit";
 
 		#region DynamicTypes
 		private Type handBookResourcesType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.IAFCHandBookResourcesData.Iafchandbookresourcesdata");
@@ -2314,8 +2314,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 
 			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "My HandBook";
-			otherMenuItem.Url = MainPage + "/my-handbook/";
+			otherMenuItem.Title = "My A-RIT";
+			otherMenuItem.Url = MainPage + "/my-a-rit/";
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
