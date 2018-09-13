@@ -295,7 +295,7 @@ $(document).ready(function() {
         $(this).toggleClass('clicked-dislike');
         $('.addCommentLike').removeClass('clicked-like');
     });
-    
+
     /*COOKIES LIKES*/
     $('.addLike').addClass('cookie-like').attr('data-type', 'like');
     $('.addDislike').addClass('cookie-dislike').attr('data-type', 'dislike');
