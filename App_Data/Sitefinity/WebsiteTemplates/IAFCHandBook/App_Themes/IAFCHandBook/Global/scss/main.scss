@@ -3245,4 +3245,8 @@ p {
   }
 }
 
-
+.resources__slide-desc, .resources__slide-title, .separate__slide-desc {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

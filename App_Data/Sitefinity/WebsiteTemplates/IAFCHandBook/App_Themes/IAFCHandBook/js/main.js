@@ -190,6 +190,24 @@ $(document).ready(function () {
         })
     };
 
+
+    /*
+    //set width for elements that should be truncated
+    function textTruncateWidth() {
+        $('.resources__slide-desc').each(function(){
+            $(this).width($(this).width());
+        });
+
+        $('.resources__slide-title').each(function(){
+            $(this).width($(this).width());
+        });
+
+        $('.separate__slide-desc').each(function(){
+            $(this).width($(this).width());
+        });
+    };
+    */
+
     setInterval(function() {
         setImgHeight();
     }, 250);
@@ -402,27 +420,20 @@ $(window).on('load', function() {
         }
     });
 
+    /*
     //text truncate
     $('.resources__slide-desc').each(function(){
-        $(this).ellipsis({
-            lines: 2,             // force ellipsis after a certain number of lines. Default is 'auto'
-            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-        });
+        $clamp(this, {clamp: 2, useNativeClamp: false});
     });
 
     $('.resources__slide-title').each(function(){
-        $(this).ellipsis({
-            lines: 2,           // force ellipsis after a certain number of lines. Default is 'auto'
-            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-        });
+        $clamp(this, {clamp: 1, useNativeClamp: false});
     });
 
     $('.separate__slide-desc').each(function(){
-        $(this).ellipsis({
-            lines: 2,           // force ellipsis after a certain number of lines. Default is 'auto'
-            responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
-        });
+        $clamp(this, {clamp: 1, useNativeClamp: false});
     });
+    */
 
 
 });
