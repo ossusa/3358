@@ -50,7 +50,7 @@
 					@if (Model.IsUserAuthorized)
 					{
 						<div id="addAllToMyHandBook" class="community__head-btn">
-							<button type="button" class="addAllToMyHandBook" data-id="@Model.Category.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add All to MyHandBook </button>
+							<button type="button" class="addAllToMyHandBook" data-id="@Model.Category.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add All to My A-RIT </button>
 						</div>
 						if (Model.IsCategoryFollowed)
 						{
@@ -120,7 +120,7 @@
 				url: '@Url.Action("AddAllToMyHandBook", "IAFCHBResourcesPerCategory")',
 				data: { categoryId: categoryId, orderBy: orderByValue},
 				success: function (response) {
-					$("#addAllToMyHandBook").html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+					$("#addAllToMyHandBook").html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
 					$("#partViewID").html(response);
 					bindEdit();
 				}

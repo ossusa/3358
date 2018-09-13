@@ -7,26 +7,26 @@
 	{
 		if (parentCategory != String.Empty && parentCategory != category.ParentCategoryTitle)
 		{
-			@Html.Raw("</div>");
-			@Html.Raw("</div>");
+			@Html.Raw("</div>");			
 		}
 		if (parentCategory != category.ParentCategoryTitle)
 		{
 			parentCategory = category.ParentCategoryTitle;
 			@Html.Raw("<div class=\"follow_categories\">");
 			<h5 class="follow_title">@category.ParentCategoryTitle</h5>
-			@Html.Raw("<div class=\"category_follow\">");
-		}
 
-		<h6> @category.CategoryTitle</h6>
-		<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
-			<div class="unfollow">
-				<button type="button" class="unfollowBtn" data-id="@category.Id.ToString()">Unfollow</button>
+		}
+		<div class="category_follow">
+			<h6> @category.CategoryTitle</h6>
+			<div id="@string.Format("{0}_{1}", "unfollow", category.Id.ToString())">
+				<div class="unfollow">
+					<button type="button" class="unfollowBtn" data-id="@category.Id.ToString()">Unfollow</button>
+				</div>
 			</div>
 		</div>
 	}
 
-	@Html.Raw("</div>")
+	
 	@Html.Raw("</div>")
 
 </div>

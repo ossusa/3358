@@ -26,11 +26,11 @@
 					<span class="resources__slide-btn resources__slide-btn_logged" id="@string.Format("{0}_{1}", "addToMyHandBook", Model.Id.ToString())">
 						@if (Model.IsResourceAddedToMyHandBook == true)
 						{
-							<span class='resources--plus anticon anticon-check'></span><span class="resources__logged-added">Added to MyHandBook</span>
+							<span class='resources--plus anticon anticon-check'></span><span class="resources__logged-added">Added to My A-RIT</span>
 						}
 						else
 						{
-							<button type="button" class="resources__slide-btn resources__slide-btn_logged addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook </button>
+							<button type="button" class="resources__slide-btn resources__slide-btn_logged addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to My A-RIT </button>
 						}
 					</span>
 				}
@@ -86,7 +86,7 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+						$("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
 					}
 				}
 			});

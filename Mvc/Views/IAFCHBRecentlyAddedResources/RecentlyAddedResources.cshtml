@@ -65,11 +65,11 @@
 							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
 								@if (item.IsResourceAddedToMyHandBook == true)
 								{
-									<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
+									<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
 								}
 								else
 								{
-									<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to MyHandBook</button>
+									<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to My A-RIT</button>
 								}
 							</div>
 						}
@@ -243,7 +243,7 @@
                 dataType: "json",
                 success: function (response) {
                     if (response == true) {
-                        $("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+                        $("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
                     }
                 }
             });

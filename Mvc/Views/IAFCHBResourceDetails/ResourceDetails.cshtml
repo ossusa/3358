@@ -33,11 +33,11 @@
 									<div id="addToMyHandBook">
 										@if (Model.IsResourceAddedToMyHandBook == true)
 										{
-											<span class='resources--plus anticon anticon-check'></span><span>Added to MyHandBook</span>
+											<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
 										}
 										else
 										{
-											<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@Model.Id.ToString()"> <i class="anticon anticon-plus"></i> Add to MyHandBook </button>
+											<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@Model.Id.ToString()"> <i class="anticon anticon-plus"></i> Add to My A-RIT </button>
 										}
 									</div>
 								</div>
@@ -303,7 +303,7 @@
 					dataType: "json",
 					success: function (response) {
 						if (response == true) {
-							$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Added to MyHandBook");
+							$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
 						}
 					}
 				});
