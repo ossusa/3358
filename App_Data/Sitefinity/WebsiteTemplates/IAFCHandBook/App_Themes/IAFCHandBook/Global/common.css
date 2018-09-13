@@ -3705,7 +3705,6 @@ p {
 
 @media screen and (max-width: 768px) {
   .community__section .resources__slide {
-    width: 588px !important;
     margin-right: 0 !important; } }
 
 .complete_section {
