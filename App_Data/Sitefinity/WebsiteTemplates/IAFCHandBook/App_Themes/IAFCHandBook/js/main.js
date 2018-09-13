@@ -404,15 +404,15 @@ $(window).on('load', function() {
 
     //text truncate
     $('.resources__slide-desc').each(function(){
-        $clamp(this, {clamp: 2});
+        $clamp(this, {clamp: 2, useNativeClamp: false});
     });
 
     $('.resources__slide-title').each(function(){
-        $clamp(this, {clamp: 1});
+        $clamp(this, {clamp: 1, useNativeClamp: false});
     });
 
     $('.separate__slide-desc').each(function(){
-        $clamp(this, {clamp: 1});
+        $clamp(this, {clamp: 1, useNativeClamp: false});
     });
 
 
