@@ -211,7 +211,10 @@ $(document).ready(function () {
     }, 250);
     setImgHeight();
 
-
+    setInterval(function() {
+        textTruncateWidth();
+    }, 250);
+    textTruncateWidth();
 
 
     $('.complete_box').on('click', function (event) {
