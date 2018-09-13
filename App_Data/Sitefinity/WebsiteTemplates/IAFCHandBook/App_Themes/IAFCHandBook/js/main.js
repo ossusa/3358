@@ -190,8 +190,24 @@ $(document).ready(function () {
         })
     };
 
+    //set width for elements that should be truncated
+    function textTruncateWidth() {
+        $('.resources__slide-desc').each(function(){
+            $(this).css('width', $(this).width());
+        });
+
+        $('.resources__slide-title').each(function(){
+            $(this).css('width', $(this).width());
+        });
+
+        $('.separate__slide-desc').each(function(){
+            $(this).css('width', $(this).width());
+        });
+    };
+
     setInterval(function() {
         setImgHeight();
+        textTruncateWidth();
     }, 250);
     setImgHeight();
 
@@ -402,6 +418,7 @@ $(window).on('load', function() {
         }
     });
 
+    /*
     //text truncate
     $('.resources__slide-desc').each(function(){
         $clamp(this, {clamp: 2, useNativeClamp: false});
@@ -414,6 +431,7 @@ $(window).on('load', function() {
     $('.separate__slide-desc').each(function(){
         $clamp(this, {clamp: 1, useNativeClamp: false});
     });
+    */
 
 
 });
