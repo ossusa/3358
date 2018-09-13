@@ -193,15 +193,15 @@ $(document).ready(function () {
     //set width for elements that should be truncated
     function textTruncateWidth() {
         $('.resources__slide-desc').each(function(){
-            $(this).css('width', $(this).width());
+            $(this).width($(this).width() - 20);
         });
 
         $('.resources__slide-title').each(function(){
-            $(this).css('width', $(this).width());
+            $(this).width($(this).width() - 20);
         });
 
         $('.separate__slide-desc').each(function(){
-            $(this).css('width', $(this).width() - 20);
+            $(this).width($(this).width() - 20);
         });
     };
 
