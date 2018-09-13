@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" %>
+
+<!doctype html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/css/lib/anticon.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta property="og:title" content="Chief's A-RIT Administrative Rapid Information Tool" />
+    <meta property="og:url" content="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/my-handbook//e9b6e55c-7836-6c70-9642-ff00005f0421" />
+    <meta property="og:image" content="http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg" />
+    <meta property="og:description" content="I'm the description" />
+</head>
+<body>
+
+<form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:ContentPlaceHolder ID="JavaScript" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Document Wrapper============================================= -->
+
+
+        <!-- Header ============================================= -->
+        <header id="header" class="header">
+
+            <!-- Header Text ============================================= -->
+            <div id="headerText" class="header__text">
+                <div class='sfContentBlock'><a href="https://www.iafc.org/" class="header__text-link" target="_blank">International Association of Fire Chiefs</a></div>
+            </div>
+            <!-- Header Text End ============================================= -->
+            <div class="box box-mobile">
+                <div class="header_wrapper">
+                    <div class="header__table-tr">
+
+                            <!-- Logo ============================================= -->
+                         <a class="header__logo-link" href="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
+                            <div id="logo" class="header__logo">
+                                <div class="sfimageWrp">	        
+					<img id="logoHolderImageID" title="IACFHandBook" src="/images/default-source/iacfhandbook/iacfhandbook-logo.png?sfvrsn=79b18a0d_10&amp;MaxWidth=365&amp;MaxHeight=85&amp;ScaleUp=false&amp;Quality=High&amp;Method=ResizeFitToAreaArguments&amp;Signature=49F371DCB3E6A13D803A4D7E00B73DB045C8BFCD" alt="IACFHandBook" />
+				</div>
+                                
+                            </div>
+                        </a>
+                            <!-- Logo ============================================= -->
+                        <div class="header__table-td">
+                            <!-- Menu ============================================= -->
+                                <nav id="primaryMenu">
+                                    <asp:ContentPlaceHolder ID="menuHolder" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </nav>
+                        </div>
+                        <!-- Menu end ============================================= -->                         
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header ============================================= -->
+    <div id="wrapper">
+        <!-- Content ============================================= -->
+        <section id="content">
+            <!-- Content ============================================= -->
+
+            <asp:ContentPlaceHolder ID="contentHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <!-- Content Ends ============================================= -->
+        </section>
+        <!-- Content End ============================================= -->
+
+        <!-- Footer ============================================= -->
+        <footer id="footer" class="footer box">
+            <div class="footer__info">
+                <div class="footer__info-col">
+                    <div class="sfimageWrp">
+	        
+			<img id="footerImageID" title="IACF" src="/images/default-source/iacfhandbook/iacf.png?sfvrsn=a9be8a0d_4&amp;MaxWidth=145&amp;MaxHeight=&amp;ScaleUp=false&amp;Quality=High&amp;Method=ResizeFitToAreaArguments&amp;Signature=0155182ED502B4E02F3BA64C26041E6050F861B3" alt="IACF" style="margin-left:-15px;" />
+
+		    </div>
+                </div>
+                <div class="footer__info-cols">
+                    <div class="footer__info-col">
+                        <asp:ContentPlaceHolder ID="footerMenu" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="footer__info-col footer_copyright">
+                        <span>&copy;</span> <span id="copyrightIAFC"> </span> <span> IAFC </span>
+                        <asp:ContentPlaceHolder ID="footerCurentYear" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End ============================================= -->
+    </div>
+
+    <!-- Document Wrapper end ============================================= -->
+</form>
+<script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.ellipsis.min.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
+<script>
+    var currentYear = (new Date()).getFullYear();
+    $(document).ready(function() {
+        $("#copyrightIAFC").text(currentYear);
+    });
+</script>
+
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8d31d05878dee2"></script>
+</body>
+</html>
