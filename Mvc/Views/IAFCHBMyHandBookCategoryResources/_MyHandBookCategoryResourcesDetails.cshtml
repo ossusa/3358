@@ -28,13 +28,10 @@
 		</select>
 	</div>
 </div>
-@{int columnCounter = 0; }
+
+<section class="complete__resources_slides">
 @foreach (var item in Model.MyResources)
-{
-	if (columnCounter == 0)
-	{
-		@Html.Raw("<section class='complete__resources_slides'>");
-	}
+{	
 	<div class="resources__slide complete__resources_slide">
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
@@ -67,7 +64,7 @@
 			<div class="resources__slide-box">
 				<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
 				@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-						|| (item.ResourceDetails.ResourceTypeName == "video"));}
+						  || (item.ResourceDetails.ResourceTypeName == "video"));}
 				<button type="button" class="resourceLink"
 						data-id="@item.ResourceUrl"
 						data-id1="@item.ResourceDetails.ResourceLink"
@@ -122,7 +119,7 @@
 								class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-								@(!item.IsUserAuthorized? "disabled":"")>
+								@(!item.IsUserAuthorized ? "disabled" : "")>
 							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 								<span>@item.Likes.Likes</span>
 							</div>
@@ -131,7 +128,7 @@
 								class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-								@(!item.IsUserAuthorized? "disabled":"") >
+								@(!item.IsUserAuthorized ? "disabled" : "")>
 							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 								<span>@item.Likes.Dislikes</span>
 							</div>
@@ -140,38 +137,18 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	if (columnCounter == 6)
-	{
-		columnCounter = 0;
-		@Html.Raw("</section>")
-	}
-	else
-	{
-		columnCounter++;
-
-	}
+	</div>	
 }
-@{
-	if (columnCounter != 0)
-	{
-		@Html.Raw("</section>")
-	}
-}
+</section>
 
 
 <div class="complete_section">
 	<div class="box">
 		<h3 class="complete_section-title">Complete </h3>
-		<div>
-			@{int columnCompleteCounter = 0; }
+		<div>			
+			<section class="complete__resources_slides">
 			@foreach (var item in Model.MyCompletedResources)
-			{
-				if (columnCompleteCounter == 0)
-				{
-					@Html.Raw("<section class='complete__resources_slides'>");
-				}
+			{				
 				<div class="resources__slide complete__resources_slide">
 					<div class="resources__community-img img-container-js">
 						@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
@@ -204,7 +181,7 @@
 						<div class="resources__slide-box">
 							<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
 							@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-									|| (item.ResourceDetails.ResourceTypeName == "video"));}
+										|| (item.ResourceDetails.ResourceTypeName == "video"));}
 							<button type="button" class="resourceLink"
 									data-id="@item.ResourceUrl"
 									data-id1="@item.ResourceDetails.ResourceLink"
@@ -254,7 +231,7 @@
 											class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 											data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-											@(!item.IsUserAuthorized? "disabled":"")>
+											@(!item.IsUserAuthorized ? "disabled" : "")>
 										<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
 											<span>@item.Likes.Likes</span>
 										</div>
@@ -263,7 +240,7 @@
 											class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 											data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-											@(!item.IsUserAuthorized? "disabled":"") >
+											@(!item.IsUserAuthorized ? "disabled" : "")>
 										<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
 											<span>@item.Likes.Dislikes</span>
 										</div>
@@ -273,23 +250,9 @@
 						</div>
 					</div>
 				</div>
-				if (columnCompleteCounter == 6)
-				{
-					columnCompleteCounter = 0;
-					@Html.Raw("</section>")
-				}
-				else
-				{
-					columnCompleteCounter++;
-
-				}
+				
 			}
-			@{
-				if (columnCompleteCounter != 0)
-				{
-					@Html.Raw("</section>")
-				}
-			}
+			</section>			
 		</div>
 	</div>
 </div>
