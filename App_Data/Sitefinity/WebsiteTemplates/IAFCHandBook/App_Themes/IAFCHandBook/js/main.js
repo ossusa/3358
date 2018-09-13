@@ -201,7 +201,7 @@ $(document).ready(function () {
         });
 
         $('.separate__slide-desc').each(function(){
-            $(this).css('width', $(this).width());
+            $(this).css('width', ($(this).width() - $('.resources__slide-info').outerWidth() + $('.resources__slide-info').innerWidth()));
         });
     };
 
