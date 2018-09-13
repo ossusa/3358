@@ -101,8 +101,8 @@
 </form>
 <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script>
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
-<!--<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.ellipsis.min.js"></script>-->
-<!--<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>-->
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.ellipsis.min.js"></script>
+<script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/main.js"></script>
 <script>
     var currentYear = (new Date()).getFullYear();
     $(document).ready(function() {
@@ -110,6 +110,6 @@
     });
 </script>
 
-<!--<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8d31d05878dee2"></script>-->
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8d31d05878dee2"></script>
 </body>
 </html>
