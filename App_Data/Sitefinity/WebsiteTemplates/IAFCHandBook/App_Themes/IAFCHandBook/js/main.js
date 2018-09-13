@@ -412,7 +412,7 @@ $(window).on('load', function() {
 
     $('.resources__slide-title').each(function(){
         $(this).ellipsis({
-            lines: 2,           // force ellipsis after a certain number of lines. Default is 'auto'
+            lines: 1,           // force ellipsis after a certain number of lines. Default is 'auto'
             responsive: true      // set to true if you want ellipsis to update on window resize. Default is false
         });
     });
