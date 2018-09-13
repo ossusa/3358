@@ -40,7 +40,7 @@
                          <a class="header__logo-link" href="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
                             <div id="logo" class="header__logo">
                                 <div class="sfimageWrp">	        
-					<img id="logoHolderImageID" title="IACFHandBook" src="/images/default-source/iacfhandbook/iacfhandbook-logo.png?sfvrsn=79b18a0d_10&amp;MaxWidth=365&amp;MaxHeight=85&amp;ScaleUp=false&amp;Quality=High&amp;Method=ResizeFitToAreaArguments&amp;Signature=49F371DCB3E6A13D803A4D7E00B73DB045C8BFCD" alt="IACFHandBook" />
+					<img id="logoHolderImageID" title="IACFHandBook" src="https://dev-staging.iafc.org/images/default-source/1logos/iacfhandbook-logo.png" alt="IACFHandBook logo" />
 				</div>
                                 
                             </div>
