@@ -5,15 +5,12 @@
 <head id="Head1" runat="server">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/Global/css/lib/anticon.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta property="og:title" content="Chief's A-RIT Administrative Rapid Information Tool" />
-    <meta property="og:url" content="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/my-handbook//e9b6e55c-7836-6c70-9642-ff00005f0421" />
-    <meta property="og:image" content="http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg" />
-    <meta property="og:description" content="I'm the description" />
+
 </head>
 <body>
 
@@ -106,6 +103,6 @@
     });
 </script>
 
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8d31d05878dee2"></script>
+<!--<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8d31d05878dee2"></script>-->
 </body>
 </html>
