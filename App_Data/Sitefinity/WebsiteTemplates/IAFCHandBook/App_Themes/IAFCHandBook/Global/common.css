@@ -4050,6 +4050,30 @@ addReplyCommentBtn {
   margin-left: 8px;
   color: inherit; }
 
+/*cookies stuff*/
+.cookie-like:before,
+.cookie-dislike:before,
+.cookie-like.clicked:before,
+.cookie-dislike.clicked:before {
+  display: block;
+  font-family: anticon !important; }
+
+.cookie-like:before {
+  content: "\E69D";
+  background: #000; }
+
+.cookie-dislike:before {
+  content: "\E69E";
+  background: #000; }
+
+.cookie-like.clicked:before {
+  content: "\E64C";
+  background: red; }
+
+.cookie-dislike.clicked:before {
+  content: "\E64B";
+  background: red; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
