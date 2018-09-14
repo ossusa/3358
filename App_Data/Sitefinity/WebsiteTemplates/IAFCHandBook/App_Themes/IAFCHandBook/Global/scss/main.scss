@@ -2252,12 +2252,12 @@ p {
   }
 }
 
-.resources__slide-article {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
+//.resources__slide-article {
+//  white-space: nowrap;
+//  overflow: hidden;
+//  text-overflow: ellipsis;
+//}
+//
 
 
 @media(max-width: 1500px){
@@ -3216,26 +3216,26 @@ p {
   color: #333;
   border: none;
 }
-
-
-.ellip {
-  display: block;
-  height: 100%;
-}
-
-.ellip-line {
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-  max-width: 100%;
-}
-
-.ellip,
-.ellip-line {
-  position: relative;
-  overflow: hidden;
-}
+//
+//
+//.ellip {
+//  display: block;
+//  height: 100%;
+//}
+//
+//.ellip-line {
+//  display: inline-block;
+//  text-overflow: ellipsis;
+//  white-space: nowrap;
+//  word-wrap: normal;
+//  max-width: 100%;
+//}
+//
+//.ellip,
+//.ellip-line {
+//  position: relative;
+//  overflow: hidden;
+//}
 .resourceFeaturedLink{
   transition: .3s ease-in-out;
   width: 120px !important;
@@ -3245,8 +3245,8 @@ p {
   }
 }
 
-.resources__slide-desc, .resources__slide-title, .separate__slide-desc {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
+//.resources__slide-desc, .resources__slide-title, .separate__slide-desc {
+//  white-space: nowrap;
+//  text-overflow: ellipsis;
+//  overflow: hidden;
+//}
