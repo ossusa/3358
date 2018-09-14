@@ -495,7 +495,7 @@ $('.sm_truncate_hover').each(function() {
 });
 /*MY HB M&MEDIA PAGE TITLE*/
 $('.sm_truncate_title').each(function() {
-    var xSeven = 38;
+    var xSeven = 26;
     var ySeven = '...';
     if ($(this).text().length > (xSeven - ySeven.length)) {
         $(this).text($(this).text().substr(0, xSeven-ySeven.length) + ySeven);
