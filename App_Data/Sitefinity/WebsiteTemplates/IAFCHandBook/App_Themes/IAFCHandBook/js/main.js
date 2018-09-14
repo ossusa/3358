@@ -487,7 +487,7 @@ if($(window).width() > 1109) {
 }
 /*M&MEDIA PAGE HOVER*/
 $('.sm_truncate_hover').each(function() {
-    var xSix = 120;
+    var xSix = 91;
     var ySix = '...';
     if ($(this).text().length > (xSix - ySix.length)) {
         $(this).text($(this).text().substr(0, xSix-ySix.length) + ySix);
