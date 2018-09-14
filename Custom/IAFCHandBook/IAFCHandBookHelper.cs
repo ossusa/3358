@@ -2337,7 +2337,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "LogOut";
+			otherMenuItem.Title = "Log Out";
 			otherMenuItem.Url = "/Mxg/AuthService/SignOut/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
