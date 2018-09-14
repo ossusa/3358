@@ -617,7 +617,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			image = GetCategoryImage(LeadershipMotivatingPeople);
-			category = new Categories("Motivating/ Discipline",
+			category = new Categories("Motivating / Discipline",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicLeadershipUrl,
@@ -909,7 +909,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			resourceCategoryTitle = resourceCategoryItem.Title.ToString();
 			resourceCategoryDescription = resourceCategoryItem.Description.ToString();
 			image = GetCategoryImage(CommunityRelationsMarketingMedia);
-			category = new Categories("Marketing &Media",
+			category = new Categories("Marketing & Media",
 				resourceCategoryDescription,
 				resourceParenCategoryDescription,
 				TopicCommunityUrl,
@@ -2326,7 +2326,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "SignIn";
+			otherMenuItem.Title = "Sign In";
 			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = !isUserSignIn;
 			model.Menu.Add(otherMenuItem);
