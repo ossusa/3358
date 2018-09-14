@@ -551,12 +551,12 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1; }
+    z-index: 0; }
   .hb-jumbo__title {
     color: #fff;
     padding: 0 120px;
     position: relative;
-    z-index: 2; }
+    z-index: 1; }
     @media screen and (max-width: 1109px) {
       .hb-jumbo__title {
         margin: 0 auto;
@@ -567,7 +567,7 @@ p {
   .hb-jumbo__desc {
     color: #fff;
     position: relative;
-    z-index: 2; }
+    z-index: 1; }
   .hb-jumbo__search {
     position: relative;
     z-index: 2;
