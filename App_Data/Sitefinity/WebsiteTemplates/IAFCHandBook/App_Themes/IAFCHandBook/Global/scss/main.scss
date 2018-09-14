@@ -827,12 +827,9 @@ p {
       margin: 0;
       margin-top: 13px;
       font-size: 0.813em;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: space-between;
-      -ms-flex-pack: distribute;
       justify-content: space-between;
+      align-items: center;
     }
   }
   &__logged-article {
@@ -3243,8 +3240,10 @@ p {
   }
 }
 
-//.resources__slide-desc, .resources__slide-title, .separate__slide-desc {
-//  white-space: nowrap;
-//  text-overflow: ellipsis;
-//  overflow: hidden;
-//}
+@media (max-width: 1170px){
+  .complete__resources_slide {
+    .single-post-comments {
+      display: none;
+    }
+  }
+}

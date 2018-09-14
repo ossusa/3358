@@ -764,8 +764,10 @@ p {
       font-size: 0.813em;
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-pack: distribute;
-      justify-content: space-between; }
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-align: center;
+      align-items: center; }
   .resources__logged-article {
     font-size: 0.813em;
     letter-spacing: 1.3px;
@@ -2486,6 +2488,10 @@ p {
   .resourceFeaturedLink:hover {
     background: #2b4b6b;
     color: #fff; }
+
+@media (max-width: 1170px) {
+  .complete__resources_slide .single-post-comments {
+    display: none; } }
 
 .selectric-wrapper {
   position: relative;
