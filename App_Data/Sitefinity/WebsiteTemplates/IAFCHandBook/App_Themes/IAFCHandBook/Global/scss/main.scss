@@ -787,6 +787,7 @@ p {
       &:first-child {
         margin-left: 0;
         padding: 0;
+        white-space: nowrap;
       }
       span {
         margin-right: 0px;
