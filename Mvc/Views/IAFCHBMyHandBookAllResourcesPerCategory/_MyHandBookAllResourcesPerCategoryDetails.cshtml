@@ -23,7 +23,7 @@
 		@Html.Raw("<section class='handbook__template complete__resources_slides all_complete_resources_slides'>");
 	}
 	{ columnCounterForMoreResources++; }
-	<div class="resources__slide complete__resources_slide">
+	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) resources__slide complete__resources_slide">
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{
@@ -70,7 +70,7 @@
 				{
 					if (Model.SharedUserId == Guid.Empty)
 					{
-						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
+						<div class="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString()) resources__slide-btn ">
 							<div class="markAsCompleteResource">
 								<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
 							</div>
@@ -107,21 +107,25 @@
 
 					<div class="single-post-statistic">
 						<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-								class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
+								class="@string.Format("{0}_{1}","resourceLikesCls", item.Id.ToString()) addLike anticon anticon-like-o" 
+								data-id="@item.Id.ToString()" 
+								data-id1="@item.Likes.Likes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 								@(!item.IsUserAuthorized? "disabled":"")>
-							<span class="resources--like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+							<span class="@string.Format("{0}_{1}", "resourceLikes", item.Id.ToString()) resources--like">
 								<span>@item.Likes.Likes</span>
 							</span>
 						</button>
 
-						<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-								class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
+						<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())" 
+								class ="@string.Format("{0}_{1}","resourceDisLikesCls", item.Id.ToString()) addDislike anticon anticon-dislike-o" 
+								data-id="@item.Id.ToString()" 
+								data-id1="@item.Likes.Dislikes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 								@(!item.IsUserAuthorized? "disabled":"")>
-							<span class="resources--dislike" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+							<span class="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString()) resources--dislike">
 								<span>@item.Likes.Dislikes</span>
 							</span>
 						</button>

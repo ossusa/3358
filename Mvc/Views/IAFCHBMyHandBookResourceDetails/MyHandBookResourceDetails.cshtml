@@ -15,7 +15,7 @@
 
 <div class="box box-container">
 	<div class="resources-breadcrumbs">
-		<a href="~/topics-and-tools/volunteer/vws/chiefs-a-rit/my-handbook"><span> MY A-RIT</span></a> >
+		<a href="~/topics-and-tools/volunteer/vws/chiefs-a-rit/my-handbook"><span> My A-RIT</span></a> >
 		<a href="@Model.ResourceDetails.Category.MyHandBookParentCategoryUrl"> <span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> >
 		<a href="@Model.ResourceDetails.Category.MyHandBookCategoryUrl"> <span>@Model.ResourceDetails.Category.CategoryTitle</span></a> >
 		@Model.ResourceDetails.ResourceTitle
@@ -257,8 +257,8 @@
 			if (isResourceLiked == "liked") {
 				if (isResourceDisliked == "disliked") {
 					dislikeAddAmount = -1;
-					$("#resourceLikes_" + resourceId).attr('data-id3', "disliked");
-					$("#resourceDisLikes_" + resourceId).attr('data-id3', "disliked");
+					$("#resourceLikes_" + resourceId).attr('data-id3', "not_disliked");
+					$("#resourceDisLikes_" + resourceId).attr('data-id3', "not_disliked");
 				}
 				else {
 					dislikeAddAmount = 1;
@@ -417,8 +417,8 @@
 			if (isResourceLiked == "liked") {
 				if (isResourceDisliked == "disliked") {
 					dislikeAddAmount = -1;
-					$("#commentLikes_" + resourceId).attr('data-id3', "disliked");
-					$("#commentDislikes_" + resourceId).attr('data-id3', "disliked");
+					$("#commentLikes_" + resourceId).attr('data-id3', "not_disliked");
+					$("#commentDislikes_" + resourceId).attr('data-id3', "not_disliked");
 				}
 				else {
 					dislikeAddAmount = 1;
