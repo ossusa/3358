@@ -1230,9 +1230,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#region GetResourceDetails by Item
 
-		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false)
+		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false, string userId = null)
 		{
-			return GetResourceDetailsNext(resource, categoryId, isMyHandBookItem);
+			return GetResourceDetailsNext(resource, categoryId, isMyHandBookItem, userId);
 		}
 	
 
@@ -2236,17 +2236,22 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetMyHandBookCategoryResources
 
 		#region Get My Hnadbook ResourceDetails by Name
-		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null)
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null, string userId= null)
 		{
 			if (!isUserAuthorized)
 			{
 				return null;
 			}
-			return GetMyHnadbookResourceDetailsNext(name, categoryId);
+			return GetMyHnadbookResourceDetailsNext(name, categoryId, userId);
 		}
 
-		public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsUI(string name, string categoryName = null)
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsUI(string name, string categoryName = null, string userId=null)
 		{
+			Guid userGuid;
+			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)))
+			{
+				return null;
+			}
 			Guid? categoryId = null;
 			if(categoryName !=null)
 			{
@@ -2258,14 +2263,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 			}
 
-			return GetMyHnadbookResourceDetails(name, categoryId);
+			return GetMyHnadbookResourceDetails(name, categoryId, userId);
 		}
 		#endregion Get My Hnadbook ResourceDetails by Name
 
 		#region Get My Hand Book MoreResources
-		public List<IAFCHandBookMoreResourcesModel> GetMyHandBookMoreResources(Guid resourceId, Guid categoryID)
+		public List<IAFCHandBookMoreResourcesModel> GetMyHandBookMoreResources(Guid resourceId, Guid categoryID, string userId = null)
 		{
-			return GetMyHandBookMoreResourcesNext(resourceId, categoryID);
+			return GetMyHandBookMoreResourcesNext(resourceId, categoryID, userId);
 		}
 		#endregion Get My Hand Book MoreResources
 

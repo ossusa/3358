@@ -46,5 +46,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public List<IAFCHandBookMoreResourcesModel> MoreResources {get;set;}
 		public int MoreThen5Resources { get; set; }	
 		public string SharedUser { get; set; }
+		public Guid UserId { get; set; }
+		public Guid SharedUserId { get; set; }
 	}
 }

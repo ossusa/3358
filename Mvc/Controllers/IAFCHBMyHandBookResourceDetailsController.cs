@@ -24,16 +24,16 @@ namespace SitefinityWebApp.Mvc.Controllers
 		private const string commentResource = "Comment";
 		private const string resourceResource = "Resource";
 		
-		public IAFCHandBookResourceModel GetData(string name)
+		public IAFCHandBookResourceModel GetData(string name, string userId)
 		{
 
-			return handBookHelper.GetMyHnadbookResourceDetailsUI(name);
+			return handBookHelper.GetMyHnadbookResourceDetailsUI(name, null, userId);
 
 		}
-		[RelativeRoute("{name?}")]
-		public ActionResult Index(String name)
+		[RelativeRoute("{name?}/{userid?}")]
+		public ActionResult Index(String name, string userid)
 		{
-			var model = GetData(name);
+			var model = GetData(name, userid );
 			if (model == null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
@@ -41,14 +41,15 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return View("MyHandBookResourceDetails", model);
 		}
 
-		[RelativeRoute("{name},{categoryName?}")]
-		public ActionResult Index(string name, string categoryName)
+		[RelativeRoute("{name},{categoryName?}/{userid?}")]
+		public ActionResult Index(string name, string categoryName, string userid)
 		{			
-			var model = handBookHelper.GetMyHnadbookResourceDetailsUI(name, categoryName);
+			var model = handBookHelper.GetMyHnadbookResourceDetailsUI(name, categoryName, userid);
 			if (model == null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
+			
 			return View("MyHandBookResourceDetails", model);
 		}
 
@@ -134,10 +135,10 @@ namespace SitefinityWebApp.Mvc.Controllers
 		}
 
 		[RelativeRoute("Share"), HttpPost]
-		public ActionResult Share()
+		public ActionResult Share(String url)
 		{
-			Boolean share = true;
-			return Json(share);
+			String sharedUrl = handBookHelper.GenerateSharedUrl(url);
+			return Json(sharedUrl);
 		}
 
 	}
