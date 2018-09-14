@@ -3441,6 +3441,9 @@ p {
               margin-top: 16px; } }
           .resources-single__left_post_comment_header_right .single-post-comments {
             margin-right: 16px; }
+            @media screen and (max-width: 970px) {
+              .resources-single__left_post_comment_header_right .single-post-comments {
+                display: none; } }
             @media screen and (max-width: 767px) {
               .resources-single__left_post_comment_header_right .single-post-comments {
                 margin-right: 24px; } }

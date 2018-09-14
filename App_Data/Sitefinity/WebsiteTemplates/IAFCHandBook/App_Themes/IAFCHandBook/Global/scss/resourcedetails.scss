@@ -254,6 +254,9 @@
               }
               .single-post-comments{
                 margin-right: 16px;
+                @media screen and (max-width: 970px){
+                  display: none;
+                }
                 @media screen and (max-width: 767px){
                   margin-right: 24px;
                 }
