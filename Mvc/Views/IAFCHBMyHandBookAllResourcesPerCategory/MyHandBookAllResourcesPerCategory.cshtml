@@ -197,7 +197,7 @@
 				data: {  resourceId: resourceId, categoryId: categoryId},
 				success: function (response) {					
 					$('#markAsComplete_' + resourceId).html('<div class="completedResource"> <div class="complete_box anticon anticon-check"></div>Complete </div>');
-					$('#markAsComplete_' + resourceId).addClass('resources_slide_marked');
+					$('#resourceSlideComplete_' + resourceId).addClass('resources_slide_marked');
 					hideButtons();
 					bindEdit();
 				}

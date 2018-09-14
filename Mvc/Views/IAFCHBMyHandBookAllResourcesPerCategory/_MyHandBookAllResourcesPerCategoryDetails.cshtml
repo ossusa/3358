@@ -23,7 +23,7 @@
 		@Html.Raw("<section class='handbook__template complete__resources_slides all_complete_resources_slides'>");
 	}
 	{ columnCounterForMoreResources++; }
-	<div class="resources__slide complete__resources_slide">
+	<div id="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString())" class="resources__slide complete__resources_slide">
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{
