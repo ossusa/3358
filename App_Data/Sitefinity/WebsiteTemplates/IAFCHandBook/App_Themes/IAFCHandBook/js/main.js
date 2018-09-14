@@ -424,13 +424,23 @@ $('.big_truncate_title').each(function() {
     }
 });
 /*MAIN PAGE DESC*/
-$('.big_truncate_desc').each(function() {
-    var xTwo = 114;
-    var yTwo = '...';
-    if ($(this).text().length > (xTwo - yTwo.length)) {
-        $(this).text($(this).text().substr(0, xTwo-yTwo.length) + yTwo);
-    }
-});
+if($(window).width() > 767) {
+    $('.big_truncate_desc').each(function() {
+        var xTwo = 114;
+        var yTwo = '...';
+        if ($(this).text().length > (xTwo - yTwo.length)) {
+            $(this).text($(this).text().substr(0, xTwo-yTwo.length) + yTwo);
+        }
+    });
+} else {
+    $('.big_truncate_desc').each(function() {
+        var xTwo = 80;
+        var yTwo = '...';
+        if ($(this).text().length > (xTwo - yTwo.length)) {
+            $(this).text($(this).text().substr(0, xTwo-yTwo.length) + yTwo);
+        }
+    });
+}
 /*MAIN PAGE HOVER*/
 if($(window).width() > 1109) {
     $('.big_truncate_hover').each(function() {
