@@ -738,7 +738,8 @@ p {
         font-size: 13px; }
       .resources__slide-btn:first-child {
         margin-left: 0;
-        padding: 0; }
+        padding: 0;
+        white-space: nowrap; }
       .resources__slide-btn span {
         margin-right: 0px; }
       .resources__slide-btn img:nth-of-type(even) {
@@ -4025,6 +4026,10 @@ addReplyCommentBtn {
   color: inherit; }
 
 /*cookies stuff*/
+@media screen and (max-width: 767px) {
+  .slide_desc_none {
+    display: none; } }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
