@@ -72,7 +72,7 @@
 						@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
 					<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
 				</button>
-				<p class="separate__slide-desc sm_truncate_desc slide_desc_none">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+				<p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 			</div>
 			<div class="resources__slide-footer">
 				@if (item.IsUserAuthorized)
