@@ -504,7 +504,7 @@ $('.sm_truncate_title').each(function() {
 /*MY HB M&MEDIA PAGE DESC*/
 if($(window).width() > 1109) {
     $('.sm_truncate_desc').each(function() {
-        var xEight = 80;
+        var xEight = 55;
         var yEight = '...';
         if ($(this).text().length > (xEight - yEight.length)) {
             $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
