@@ -684,15 +684,12 @@ p {
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
       height: 404px;
-      //height: auto;
       background: url(../images/resources-img.png) no-repeat;
       background-size: cover;
       img {
         height: 100%;
         min-width: 100%;
         position: relative;
-       // -o-object-fit: cover;
-       // object-fit: cover;
       }
     }
     &-label {
