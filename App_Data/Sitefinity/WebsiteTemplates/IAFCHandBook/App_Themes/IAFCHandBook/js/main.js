@@ -339,39 +339,39 @@ $(window).on('load', function() {
 // }
 
 /*Second title and  desc*/
-if($(window).width() < 1109) {
-    $('.complete__resources_slide .resources__slide-desc, .handbook__template .resources__slide-desc').each(function() {
-        var xSecond = 63;
-        var ySecond = '...';
-        if ($(this).text().length > (xSecond - ySecond.length)) {
-            $(this).text($(this).text().substr(0, xSecond-ySecond.length) + ySecond);
-        }
-    });
-    $('.complete-box .resources__slide-title, .handbook__template .resources__slide-title').each(function() {
-        var xSecondTitle = 47;
-        var ySecondTitle = '...';
-        if ($(this).text().length > (xSecondTitle - ySecondTitle.length)) {
-            $(this).text($(this).text().substr(0, xSecondTitle-ySecondTitle.length) + ySecondTitle);
-        }
-    });
-} else {
-    $('.complete-box .resources__slide-desc, .handbook__template .resources__slide-desc').each(function() {
-        var xSecond = 90;
-        var ySecond = '...';
-        if ($(this).text().length > (xSecond - ySecond.length)) {
-            $(this).text($(this).text().substr(0, xSecond-ySecond.length) + ySecond);
-        }
-    });
-
-}
-/*Third*/
-$('.topics_seperator').each(function() {
-    var xThird = 106;
-    var yThird = '...';
-    if ($(this).text().length > (xThird - yThird.length)) {
-        $(this).text($(this).text().substr(0, xThird-yThird.length) + yThird);
-    }
-});
+// if($(window).width() < 1109) {
+//     $('.complete__resources_slide .resources__slide-desc, .handbook__template .resources__slide-desc').each(function() {
+//         var xSecond = 63;
+//         var ySecond = '...';
+//         if ($(this).text().length > (xSecond - ySecond.length)) {
+//             $(this).text($(this).text().substr(0, xSecond-ySecond.length) + ySecond);
+//         }
+//     });
+//     $('.complete-box .resources__slide-title, .handbook__template .resources__slide-title').each(function() {
+//         var xSecondTitle = 47;
+//         var ySecondTitle = '...';
+//         if ($(this).text().length > (xSecondTitle - ySecondTitle.length)) {
+//             $(this).text($(this).text().substr(0, xSecondTitle-ySecondTitle.length) + ySecondTitle);
+//         }
+//     });
+// } else {
+//     $('.complete-box .resources__slide-desc, .handbook__template .resources__slide-desc').each(function() {
+//         var xSecond = 90;
+//         var ySecond = '...';
+//         if ($(this).text().length > (xSecond - ySecond.length)) {
+//             $(this).text($(this).text().substr(0, xSecond-ySecond.length) + ySecond);
+//         }
+//     });
+//
+// }
+// /*Third*/
+// $('.topics_seperator').each(function() {
+//     var xThird = 106;
+//     var yThird = '...';
+//     if ($(this).text().length > (xThird - yThird.length)) {
+//         $(this).text($(this).text().substr(0, xThird-yThird.length) + yThird);
+//     }
+// });
 /*Fourth*/
 // $('.topics__img-back-info').each(function() {
 //     var xFourth = 116;
@@ -380,37 +380,37 @@ $('.topics_seperator').each(function() {
 //         $(this).text($(this).text().substr(0, xFourth-yFourth.length) + yFourth);
 //     }
 // });
-/*Fifth*/
-function myFunction(x) {
-    if (x.matches) { // If media query matches
-        $('.resources_text-separate').each(function () {
-            var xFifth = 24;
-            var yFifth = '...';
-            if ($(this).text().length > (xFifth - yFifth.length)) {
-                $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
-            }
-        });
-        $('.resources_desc-separate').each(function () {
-            var xFifthTitle = 64;
-            var yFifthTitle = '...';
-            if ($(this).text().length > (xFifthTitle - yFifthTitle.length)) {
-                $(this).text($(this).text().substr(0, xFifthTitle - yFifthTitle.length) + yFifthTitle);
-            }
-        });
-    } else {
-        $('.resources_text-separate').each(function () {
-            var xFifth = 35;
-            var yFifth = '...';
-            if ($(this).text().length > (xFifth - yFifth.length)) {
-                $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
-            }
-        });
-    }
-}
-var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
-
+// /*Fifth*/
+// function myFunction(x) {
+//     if (x.matches) { // If media query matches
+//         $('.resources_text-separate').each(function () {
+//             var xFifth = 24;
+//             var yFifth = '...';
+//             if ($(this).text().length > (xFifth - yFifth.length)) {
+//                 $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
+//             }
+//         });
+//         $('.resources_desc-separate').each(function () {
+//             var xFifthTitle = 64;
+//             var yFifthTitle = '...';
+//             if ($(this).text().length > (xFifthTitle - yFifthTitle.length)) {
+//                 $(this).text($(this).text().substr(0, xFifthTitle - yFifthTitle.length) + yFifthTitle);
+//             }
+//         });
+//     } else {
+//         $('.resources_text-separate').each(function () {
+//             var xFifth = 35;
+//             var yFifth = '...';
+//             if ($(this).text().length > (xFifth - yFifth.length)) {
+//                 $(this).text($(this).text().substr(0, xFifth - yFifth.length) + yFifth);
+//             }
+//         });
+//     }
+// }
+// var x = window.matchMedia("(min-width: 767px) and (max-width: 1109px)")
+// myFunction(x) // Call listener function at run time
+// x.addListener(myFunction) // Attach listener function on state changes
+//
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -493,3 +493,29 @@ $('.sm_truncate_hover').each(function() {
         $(this).text($(this).text().substr(0, xSix-ySix.length) + ySix);
     }
 });
+/*MY HB M&MEDIA PAGE TITLE*/
+$('.sm_truncate_title').each(function() {
+    var xSeven = 38;
+    var ySeven = '...';
+    if ($(this).text().length > (xSeven - ySeven.length)) {
+        $(this).text($(this).text().substr(0, xSeven-ySeven.length) + ySeven);
+    }
+});
+/*MY HB M&MEDIA PAGE DESC*/
+if($(window).width() > 1109) {
+    $('.sm_truncate_desc').each(function() {
+        var xEight = 80;
+        var yEight = '...';
+        if ($(this).text().length > (xEight - yEight.length)) {
+            $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
+        }
+    });
+} else {
+    $('.sm_truncate_desc').each(function() {
+        var xEight = 51;
+        var yEight = '...';
+        if ($(this).text().length > (xEight - yEight.length)) {
+            $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
+        }
+    });
+}
