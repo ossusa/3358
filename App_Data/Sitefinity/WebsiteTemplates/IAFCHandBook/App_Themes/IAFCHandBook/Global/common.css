@@ -4474,6 +4474,9 @@ addReplyCommentBtn {
   font-family: anticon !important;
   display: inline-block; }
 
+.resources_slide_marked {
+  opacity: 0.5; }
+
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
     top: auto; }
