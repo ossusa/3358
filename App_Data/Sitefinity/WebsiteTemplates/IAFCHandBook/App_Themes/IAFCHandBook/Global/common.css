@@ -4046,6 +4046,9 @@ addReplyCommentBtn {
 .community_info {
   height: 181px; }
 
+.resources_block_active {
+  display: block !important; }
+
 .handbook__title {
   width: 100%;
   padding: 0 8.35%;
