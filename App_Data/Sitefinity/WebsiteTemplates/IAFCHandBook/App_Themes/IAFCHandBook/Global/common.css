@@ -1797,7 +1797,7 @@ p {
   .account-template p {
     margin-top: 0; }
   .account-template .follow_title {
-    margin: 32px 0 12px; }
+    margin: 32px 0 0; }
   .account-template h6 {
     color: #2B4B6B; }
   .account-template .follow_categories {
@@ -1809,7 +1809,7 @@ p {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding-bottom: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid #d8d8d8; }
   .account-template .unfollowBtn {
     color: #9b9b9b;
