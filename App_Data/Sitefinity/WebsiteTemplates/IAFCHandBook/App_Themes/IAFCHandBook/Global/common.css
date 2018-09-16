@@ -3886,6 +3886,7 @@ p {
   .community_indicator_col {
     margin: 0;
     margin-bottom: 12px; } }
+  @media screen and (max-width: 1109px) and (max-width: 767px) {
     .community_indicator_col {
       margin-bottom: 16px; } }
 
@@ -4093,6 +4094,10 @@ addReplyCommentBtn {
   @media screen and (max-width: 1109px) {
     .all_complete_resources_slides {
       margin-bottom: 8px; } }
+  @media screen and (max-width: 767px) {
+    .all_complete_resources_slides {
+      margin-top: 20px;
+      margin-bottom: 36px; } }
 
 .selectric-all_handbook {
   margin: 0 !important; }
@@ -4128,7 +4133,7 @@ addReplyCommentBtn {
 
 @media screen and (max-width: 767px) {
   .handbook__template .progressindicator__wrapper {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px !important; } }
 
 @media screen and (max-width: 767px) {
   .handbook__template .resources__slide-time {

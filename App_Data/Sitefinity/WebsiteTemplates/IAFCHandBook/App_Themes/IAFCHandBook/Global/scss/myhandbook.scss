@@ -46,6 +46,10 @@
   @media screen and (max-width: 1109px) {
     margin-bottom: 8px;
   }
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+    margin-bottom: 36px;
+  }
 }
 .selectric-all_handbook{
   margin: 0 !important;
@@ -81,7 +85,7 @@
   .progressindicator{
     &__wrapper {
       @media screen and (max-width: 767px){
-        margin-bottom: 20px;
+        margin-bottom: 20px !important;
       }
     }
   }
