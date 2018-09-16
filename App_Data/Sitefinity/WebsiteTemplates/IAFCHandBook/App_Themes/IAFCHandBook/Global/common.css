@@ -3884,7 +3884,10 @@ p {
   .handbook__social-buttons {
     margin: 0 -90px; }
   .community_indicator_col {
-    margin: 0; } }
+    margin: 0;
+    margin-bottom: 12px; } }
+    .community_indicator_col {
+      margin-bottom: 16px; } }
 
 .handbook__social-buttons {
   display: -ms-flexbox;
@@ -4087,6 +4090,9 @@ addReplyCommentBtn {
 .all_complete_resources_slides {
   margin-top: 36px;
   margin-bottom: 24px; }
+  @media screen and (max-width: 1109px) {
+    .all_complete_resources_slides {
+      margin-bottom: 8px; } }
 
 .selectric-all_handbook {
   margin: 0 !important; }
@@ -4197,7 +4203,7 @@ addReplyCommentBtn {
       margin-bottom: 48px; } }
   @media screen and (max-width: 767px) {
     .progressindicator_share {
-      margin-bottom: 36px; } }
+      margin-bottom: 28px; } }
 
 .progressindicator__label {
   width: 124px;
