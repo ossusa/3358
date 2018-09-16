@@ -520,7 +520,7 @@
 					window.open(resourceDocumentUrl);
 				}
 			});
-
+            if($(window).width() < 1109) {
 			$('.resources-single-comment').on('click tap', function () {
 				if (!$(this).hasClass('active')) {
 					$(this).addClass('active');
@@ -540,6 +540,7 @@
 					$('.resources-single__left_post_comment_textarea > div').hide();
 				}
 			})
+			}
 		});
 	}
 
