@@ -119,7 +119,7 @@
       @media screen and (max-width: 767px){
         max-width: 320px;
         flex-wrap: wrap;
-        margin: 0 auto;
+        margin: 0 auto 0 0;
       }
     }
   }
@@ -472,7 +472,7 @@
   }
   @media screen and (max-width: 767px){
     margin: 0 auto;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
   }
   .complete_block_first{

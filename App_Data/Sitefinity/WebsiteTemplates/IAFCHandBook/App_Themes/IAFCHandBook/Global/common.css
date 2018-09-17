@@ -2337,7 +2337,7 @@ p {
     width: 100%;
     margin-bottom: 16px; }
   .complete__progressindicator_wrapper .community__head-btn-select {
-    margin: 24px auto 0;
+    margin: 24px auto 0 0;
     width: 320px; } }
   @media screen and (max-width: 767px) and (max-width: 370px) {
     .complete__progressindicator_wrapper .community__head-btn-select {
@@ -3862,8 +3862,8 @@ p {
   align-items: center; }
   @media screen and (max-width: 767px) {
     .complete-box .community__head-title {
-      -ms-flex-pack: center;
-      justify-content: center; } }
+      -ms-flex-pack: start;
+      justify-content: flex-start; } }
 
 @media screen and (max-width: 1109px) {
   .complete-box .single-post-comments {
@@ -4213,7 +4213,7 @@ addReplyCommentBtn {
         max-width: 320px;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        margin: 0 auto; } }
+        margin: 0 auto 0 0; } }
 
 .progressindicator_share {
   color: #9b9b9b;
@@ -4558,8 +4558,8 @@ addReplyCommentBtn {
   @media screen and (max-width: 767px) {
     .complete_blocks_first {
       margin: 0 auto;
-      -ms-flex-align: center;
-      align-items: center;
+      -ms-flex-align: start;
+      align-items: flex-start;
       -ms-flex-direction: column;
       flex-direction: column; } }
   .complete_blocks_first .complete_block_first {
