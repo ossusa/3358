@@ -475,6 +475,11 @@
     align-items: flex-start;
     flex-direction: column;
   }
+  .complete_blocks_big{
+    @media screen and (max-width: 900px){
+      margin: 0 auto;
+    }
+  }
   .complete_block_first{
     width: 31.3%;
     margin: 0 1% 48px;
@@ -499,6 +504,17 @@
   }
   .complete_block_big{
     width: 48%;
+    @media screen and (max-width: 1109px){
+      width: 46%;
+    }
+    @media screen and (max-width: 900px){
+      width: 100%;
+      margin: 0 auto 48px;
+    }
+    @media screen and (max-width: 767px){
+      width: 100%;
+      margin: 0 auto 24px;
+    }
   }
 }
 .complete_section .complete_block_first{
