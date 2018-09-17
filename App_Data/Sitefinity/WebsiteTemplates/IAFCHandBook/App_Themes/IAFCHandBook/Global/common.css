@@ -1058,8 +1058,7 @@ p {
 .topics__content {
   padding: 0 0 76px; }
   .topics__content .topics__list {
-    width: 33.3%;
-    transition: .3s ease-in-out; }
+    width: 33.3%; }
   .topics__content .topics__ul {
     margin: 0 -12px; }
   .topics__content-last {
@@ -1077,6 +1076,8 @@ p {
     background: #5591aa; }
     .topics__content-blue a:hover .topics__img-back {
       background: #5591aa; }
+    .topics__content-blue a .topics__img-back {
+      transition: .3s ease-in-out; }
   .topics__content-yellow a {
     background: #BDA15F; }
     .topics__content-yellow a:hover .topics__img-back {

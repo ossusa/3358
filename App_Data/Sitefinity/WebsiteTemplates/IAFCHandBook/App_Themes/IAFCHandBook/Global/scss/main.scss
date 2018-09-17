@@ -1211,7 +1211,6 @@ p {
     padding: 0 0 76px;
     .topics__list{
       width: 33.3%;
-      transition: .3s ease-in-out;
     }
     .topics__ul{
       margin: 0 -12px;
@@ -1235,6 +1234,9 @@ p {
         .topics__img-back{
           background: #5591aa;
         }
+      }
+      .topics__img-back {
+        transition: .3s ease-in-out;
       }
     }
     &-yellow a{
