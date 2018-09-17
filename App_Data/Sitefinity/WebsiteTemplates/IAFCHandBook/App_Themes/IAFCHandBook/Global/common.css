@@ -3860,6 +3860,10 @@ p {
   justify-content: space-between;
   -ms-flex-align: center;
   align-items: center; }
+  @media screen and (max-width: 767px) {
+    .complete-box .community__head-title {
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 @media screen and (max-width: 1109px) {
   .complete-box .single-post-comments {
@@ -4573,6 +4577,9 @@ addReplyCommentBtn {
       .complete_blocks_first .complete_block_first {
         margin: 0 0 24px;
         width: 320px; } }
+    @media screen and (max-width: 375px) {
+      .complete_blocks_first .complete_block_first {
+        width: 100%; } }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {

@@ -490,5 +490,8 @@
       margin: 0 0 24px;
       width: 320px;
     }
+    @media screen and (max-width: 375px){
+      width: 100%;
+    }
   }
 }
