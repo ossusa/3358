@@ -165,12 +165,13 @@
 </div>
 
 <script>
-	$('#shareBtn').css('pointer-events', 'initial');
-	var url = window.location.href;
 
-	 var addthis_share = {
-		url: url
-	};
+    window.addthis_share = {
+        url: window.location.href,
+        title: 'International Association of Fire Chiefs',
+        description: '@Model.SharedUser' + 'HANDBOOK',
+        media: 'http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg'
+    };
 
 	$(document).ready(function () {
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
