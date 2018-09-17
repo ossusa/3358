@@ -4149,10 +4149,9 @@ addReplyCommentBtn {
   margin-bottom: 24px; }
   @media screen and (max-width: 1109px) {
     .all_complete_resources_slides {
-      margin-bottom: 8px; } }
-  @media screen and (max-width: 900px) {
-    .all_complete_resources_slides {
-      margin: 0; } }
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 0 -24px 8px 0; } }
   @media screen and (max-width: 767px) {
     .all_complete_resources_slides {
       margin-top: 20px;
