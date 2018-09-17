@@ -4160,6 +4160,9 @@ addReplyCommentBtn {
   @media screen and (max-width: 1109px) {
     .all_complete_resources_slides .complete__resources_slide {
       width: 47% !important; } }
+  @media screen and (max-width: 767px) {
+    .all_complete_resources_slides .complete__resources_slide {
+      width: 100% !important; } }
 
 .selectric-all_handbook {
   margin: 0 !important; }
