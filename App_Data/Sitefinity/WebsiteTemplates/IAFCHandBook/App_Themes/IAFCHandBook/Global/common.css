@@ -2347,7 +2347,7 @@ p {
   .selectric-community__category-select .selectric {
     width: 100% !important; }
   .selectric-community_category_select .selectric-items {
-    width: 100.5% !important; }
+    width: 100.6% !important; }
   .community__head-btns-grp {
     width: 100%; }
   .community__head-button {
@@ -3837,10 +3837,6 @@ p {
   @media screen and (max-width: 767px) {
     .complete__progressindicator_wrapper {
       margin: 13px 0 36px; } }
-  @media screen and (max-width: 767px) {
-    .complete__progressindicator_wrapper .complete__head-btn-select .selectric-community__category-select .selectric-items,
-    .complete__progressindicator_wrapper .complete__head-btn-select .selectric-community__category-select {
-      width: 100% !important; } }
 
 .complete__head-btn-select {
   margin-top: 20px !important; }
