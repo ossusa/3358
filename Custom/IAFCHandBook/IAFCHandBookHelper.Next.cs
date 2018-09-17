@@ -113,7 +113,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				resDataMaster.PublicationDate = currentUtcDateTime;
 				resDataMaster.DateCreated = currentUtcDateTime;
 
-				var likeTitle = $@"{title}_{handBookResourcesType.Name}";
+				var likeTitle = $@"{title}_{"HR_like"}";
 
 				var likeTitleExists = dynamicModuleManager.GetDataItems(resourceLikesType)
 					.Where(i => i.GetValue<string>("Title").ToLower() == likeTitle.ToLower())
@@ -132,9 +132,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				likeMaster.UrlName = new Lstring(Regex.Replace(likeTitle, UrlNameCharsToReplace, UrlNameReplaceString));
 				likeMaster.Owner = SecurityManager.GetCurrentUserId();
 				likeMaster.PublicationDate = currentUtcDateTime;
-				likeMaster.DateCreated = currentUtcDateTime;
-
+				likeMaster.DateCreated = currentUtcDateTime;				
 				dynamicModuleManager.Lifecycle.Publish(likeMaster);
+				likeMaster.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
 				resDataMaster.CreateRelation(resMaster, relationFieldName);
 				resDataMaster.CreateRelation(likeMaster, "Likes");
@@ -250,10 +250,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 
 
-				var likeExists = resMaster.GetRelatedItems<DynamicContent>("Likes").ToList().Any();
+				var likeExists = resDataMaster.GetRelatedItems<DynamicContent>("Likes").ToList().Any();
 				if(!likeExists)
 				{
-					var likeTitle = resDataTemp.GetValue("Title") + "_like";
+					var likeTitle = resDataTemp.GetValue("Title") + "HR_like";
 					
 					// Create like
 					DynamicContent likeMaster = dynamicModuleManager.CreateDataItem(resourceLikesType);
@@ -265,7 +265,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					likeMaster.PublicationDate = currentUtcDateTime;
 					likeMaster.DateCreated = currentUtcDateTime;
 
-					dynamicModuleManager.Lifecycle.Publish(likeMaster);					
+					dynamicModuleManager.Lifecycle.Publish(likeMaster);
+					likeMaster.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 					resDataTemp.CreateRelation(likeMaster, "Likes");
 
 				}
@@ -275,13 +276,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				resDataTemp.LastModified = currentUtcDateTime;
 				resDataTemp.LastModifiedBy = SecurityManager.GetCurrentUserId();
 
-
-
 				resDataMaster = dynamicModuleManager.Lifecycle.CheckIn(resDataTemp) as DynamicContent;
-
-
-
 				dynamicModuleManager.Lifecycle.Publish(resDataMaster);
+				resDataMaster.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
+
 				dynamicModuleManager.SaveChanges();
 			}
 			catch (Exception e)
@@ -297,17 +295,28 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			try
 			{
 				var relationFieldName = GetRelatedResourceFieldName(resourceType);
-
-				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				
+				var providerName = string.Empty;
+				var transactionName = "createIAFCHandBookResourcesDataTransaction";								
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
 
 				var res = dynamicModuleManager.GetDataItem(resourceType, resourceID);
 
 				var resDataList = res.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName);
 				var resData = resDataList.First() as DynamicContent;
-				DynamicContent resDataMaster = dynamicModuleManager.Lifecycle.GetMaster(resData) as DynamicContent;
+				var likeExists = resData.GetRelatedItems<DynamicContent>("Likes").ToList().Any();
+				if (likeExists)
+				{
+					var likeItem =resData.GetRelatedItems<DynamicContent>("Likes").ToList().First();
+					var likeMaster = dynamicModuleManager.Lifecycle.GetMaster(likeItem) as DynamicContent;
+					dynamicModuleManager.Provider.DeleteDataItem(likeMaster);
 
+				}
+				DynamicContent resDataMaster = dynamicModuleManager.Lifecycle.GetMaster(resData) as DynamicContent;
 				dynamicModuleManager.Provider.DeleteDataItem(resDataMaster);
-				dynamicModuleManager.SaveChanges();
+
+				//dynamicModuleManager.SaveChanges();
+				TransactionManager.CommitTransaction(transactionName);
 			}
 			catch (Exception e)
 			{
