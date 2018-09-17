@@ -572,7 +572,7 @@
   }
   &__resources {
     &_slide {
-      margin: 0 12px 48px !important;
+      margin: 0 24px 48px 0 !important;
       @media screen and (max-width: 1109px) {
         width: 46% !important;
       }
@@ -833,6 +833,9 @@ addReplyCommentBtn{
 .complete__resources_slides {
   margin: 0 -24px 0 0;
   width: auto;
+  @media screen and (max-width: 900px){
+    margin: 0;
+  }
   .resources__slide {
     width: 48%;
     margin-left: 0;
