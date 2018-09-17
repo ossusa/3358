@@ -1076,6 +1076,8 @@ p {
     background: #5591aa; }
     .topics__content-blue a:hover .topics__img-back {
       background: #5591aa; }
+    .topics__content-blue a .topics__img-back {
+      transition: .3s ease-in-out; }
   .topics__content-yellow a {
     background: #BDA15F; }
     .topics__content-yellow a:hover .topics__img-back {
@@ -1151,7 +1153,6 @@ p {
 .topics__list:hover .topics__img-back {
   visibility: visible;
   opacity: 1;
-  transition: .3s ease-in-out;
   border-radius: 3px;
   padding: 16px 20px; }
 

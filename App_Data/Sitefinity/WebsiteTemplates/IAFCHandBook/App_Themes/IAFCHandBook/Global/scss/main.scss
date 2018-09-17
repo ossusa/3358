@@ -1235,6 +1235,9 @@ p {
           background: #5591aa;
         }
       }
+      .topics__img-back {
+        transition: .3s ease-in-out;
+      }
     }
     &-yellow a{
       background: #BDA15F;
@@ -1325,7 +1328,6 @@ p {
       .topics__img-back {
         visibility: visible;
         opacity: 1;
-        transition: .3s ease-in-out;
         border-radius: 3px;
         padding: 16px 20px;
       }
