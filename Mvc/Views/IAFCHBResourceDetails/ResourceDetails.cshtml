@@ -168,8 +168,8 @@
 
     window.addthis_share = {
         url: window.location.href,
-        title: 'International Association of Fire Chiefs',
-        description: '@Model.SharedUser' + 'HANDBOOK',
+        title: '@Model.ResourceDetails.ResourceTitle',
+        description: '@Html.Raw(Model.ResourceDetails.ResourceDescription)',
         media: 'http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg'
     };
 
