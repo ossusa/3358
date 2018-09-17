@@ -3316,7 +3316,8 @@ p {
   @media screen and (max-width: 767px) {
     .resources__single {
       margin: 0 -28px;
-      min-width: auto; } }
+      min-width: auto;
+      width: unset; } }
 
 .resources-single {
   display: -ms-flexbox;
