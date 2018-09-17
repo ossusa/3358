@@ -24,7 +24,7 @@
 
         <!-- Header ============================================= -->
         <header id="header" class="header">
-        <img style="visibility:hidden" src="https://1.bp.blogspot.com/-_0JXDpvIF1U/WaxcVIT7HxI/AAAAAAAAAnM/gSfCaKXo79ACEHN2LiERWPUV4nSGyYcsACLcBGAs/s1600/4_fraktal3608ab310dc594c738706a02f4962899f.jpg">
+        <img style="position: absolute; top: -100%" src="http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg">
 
             <!-- Header Text ============================================= -->
             <div id="headerText" class="header__text">
