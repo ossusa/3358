@@ -4264,7 +4264,7 @@ addReplyCommentBtn {
         margin-bottom: 16px; } }
   @media screen and (max-width: 360px) {
     .progressindicator__label {
-      width: 124px; } }
+      width: 138px; } }
   .progressindicator__label .time {
     font-weight: 700;
     font-size: 1.250em;
