@@ -1204,7 +1204,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
 						}
 					}
-					replyCommentDetails.Likes = GetResourceLikesInfo(commentItem, commentResource);
+					replyCommentDetails.Likes = GetResourceLikesInfo(replyCommentItem, commentResource);
 
 					replyCommentList.Add(replyCommentDetails);
 

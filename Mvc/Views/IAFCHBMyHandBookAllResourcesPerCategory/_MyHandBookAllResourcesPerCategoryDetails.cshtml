@@ -107,7 +107,7 @@
 
 					<div class="single-post-statistic">
 						<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-								class="@string.Format("{0}_{1}","resourceLikesCls", item.Id.ToString()) addLike anticon anticon-like-o" 
+								class="@string.Format("{0}_{1}","resourceLikesCls", item.Id.ToString()) addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
 								data-id="@item.Id.ToString()" 
 								data-id1="@item.Likes.Likes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
@@ -119,7 +119,7 @@
 						</button>
 
 						<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())" 
-								class ="@string.Format("{0}_{1}","resourceDisLikesCls", item.Id.ToString()) addDislike anticon anticon-dislike-o" 
+								class ="@string.Format("{0}_{1}","resourceDisLikesCls", item.Id.ToString()) addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
 								data-id="@item.Id.ToString()" 
 								data-id1="@item.Likes.Dislikes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
