@@ -4106,6 +4106,10 @@ addReplyCommentBtn {
   .handbook_container {
     padding: 0 28px; } }
 
+@media screen and (max-width: 360px) {
+  .handbook_container {
+    padding: 0 14px; } }
+
 .all_progressindicator__wrapper {
   margin: 0 0 36px 0 !important; }
 
