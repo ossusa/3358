@@ -1072,12 +1072,12 @@ p {
     margin-left: 12px;
     height: 200px;
     border-radius: 3px; }
+  .topics__content .topics__img-back {
+    transition: .3s ease-in-out; }
   .topics__content-blue a {
     background: #5591aa; }
     .topics__content-blue a:hover .topics__img-back {
       background: #5591aa; }
-    .topics__content-blue a .topics__img-back {
-      transition: .3s ease-in-out; }
   .topics__content-yellow a {
     background: #BDA15F; }
     .topics__content-yellow a:hover .topics__img-back {

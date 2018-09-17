@@ -1228,15 +1228,15 @@ p {
       height: 200px;
       border-radius: 3px;
     }
+    .topics__img-back {
+      transition: .3s ease-in-out;
+    }
     &-blue a{
       background: #5591aa;
       &:hover{
         .topics__img-back{
           background: #5591aa;
         }
-      }
-      .topics__img-back {
-        transition: .3s ease-in-out;
       }
     }
     &-yellow a{
