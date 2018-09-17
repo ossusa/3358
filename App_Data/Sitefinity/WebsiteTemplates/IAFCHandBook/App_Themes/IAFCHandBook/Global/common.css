@@ -2426,13 +2426,24 @@ p {
     display: none; }
   .resources__logged-img-box {
     position: relative;
-    width: 100%; } }
+    width: 100%; }
+  .complete__progressindicator_wrapper
+.complete__head-btn-select
+.selectric-community__category-select
+.selectric-items {
+    width: 100.6% !important; }
+  .complete__progressindicator_wrapper
+.complete__head-btn-select
+.selectric-community__category-select {
+    width: 100% !important; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
     height: 220px; } }
 
 @media (max-width: 370px) {
+  .selectric-community__title-select .selectric .label {
+    font-size: 2.50em; }
   .resources__logged-buttons {
     -ms-flex-direction: column;
     flex-direction: column;
