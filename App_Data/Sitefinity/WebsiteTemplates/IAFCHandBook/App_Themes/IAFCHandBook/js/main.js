@@ -288,7 +288,8 @@ $(window).on('load', function() {
     });
 
 });
-
+$(document).ready(function () {
+    function textTruncate(){
 /*MAIN PAGE TITLE*/
 if($(window).width() > 360) {
     $('.big_truncate_title').each(function () {
@@ -321,6 +322,15 @@ if($(window).width() > 360) {
         }
     });
     }
+    }
+    $(document).ready(function () {
+        textTruncate();//run when page first loads
+    });
+
+    $(window).resize(function () {
+        textTruncate();
+    });
+
 /*MAIN PAGE DESC*/
 if($(window).width() > 767) {
     $('.big_truncate_desc').each(function() {
@@ -427,3 +437,4 @@ if($(window).width() > 1109) {
         }
     });
 }
+});
