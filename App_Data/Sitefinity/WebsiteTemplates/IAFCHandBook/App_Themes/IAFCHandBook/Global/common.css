@@ -4152,7 +4152,7 @@ addReplyCommentBtn {
       margin-bottom: 8px; } }
   @media screen and (max-width: 900px) {
     .all_complete_resources_slides {
-      margin: 0 -24px 0 0 !important; } }
+      margin: 0; } }
   @media screen and (max-width: 767px) {
     .all_complete_resources_slides {
       margin-top: 20px;
