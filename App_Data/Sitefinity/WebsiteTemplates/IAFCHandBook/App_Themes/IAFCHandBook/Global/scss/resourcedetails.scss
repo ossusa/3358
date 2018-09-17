@@ -829,8 +829,9 @@ addReplyCommentBtn{
   color: $color_community !important;
 }
 .complete__resources_slides {
-  margin: 0 -12px;
+  margin: 0 -2%;
   width: auto;
+  max-width: 1220px;
   @media screen and (max-width: 1109px) {
     margin: 0;
   }

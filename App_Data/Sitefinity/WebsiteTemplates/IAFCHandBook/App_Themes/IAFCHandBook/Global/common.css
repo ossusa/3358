@@ -4012,8 +4012,9 @@ addReplyCommentBtn {
   color: #5591AA !important; }
 
 .complete__resources_slides {
-  margin: 0 -12px;
-  width: auto; }
+  margin: 0 -2%;
+  width: auto;
+  max-width: 1220px; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slides {
       margin: 0; } }
@@ -4534,6 +4535,33 @@ addReplyCommentBtn {
 
 .resources_slide_marked {
   opacity: 0.5; }
+
+.complete_blocks_first {
+  margin: 0 -2%;
+  width: auto;
+  max-width: 1220px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .complete_blocks_first .complete_block_first {
+    width: 31.2%;
+    margin: 0 2% 48px;
+    border: 1px solid #EFEFEF;
+    border-radius: 3px;
+    transition: .3s ease-in-out;
+    outline: none; }
+    @media screen and (max-width: 1109px) {
+      .complete_blocks_first .complete_block_first {
+        width: 50%; } }
+    @media screen and (max-width: 767px) {
+      .complete_blocks_first .complete_block_first {
+        margin: 0 0 24px;
+        width: 100%; } }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
