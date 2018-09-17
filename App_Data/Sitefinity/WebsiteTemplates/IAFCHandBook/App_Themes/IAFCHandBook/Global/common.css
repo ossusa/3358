@@ -4018,6 +4018,9 @@ addReplyCommentBtn {
 .complete__resources_slides {
   margin: 0 -24px 0 0;
   width: auto; }
+  @media screen and (max-width: 900px) {
+    .complete__resources_slides {
+      margin: 0; } }
   .complete__resources_slides .resources__slide {
     width: 48%;
     margin-left: 0;
