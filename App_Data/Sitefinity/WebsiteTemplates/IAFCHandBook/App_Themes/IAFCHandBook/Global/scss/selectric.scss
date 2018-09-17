@@ -235,10 +235,10 @@
 .selectric-community__title-select .selectric .category__arrow{
     width: 17px;
     margin-left: 24px;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 370px) {
         width: unset;
-        margin-left: unset;
         display: flex;
+        margin-left: 12px;
     }
 }
 .search-results .community__head-btn-select{
