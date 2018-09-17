@@ -670,6 +670,7 @@ p {
       height: 26px;
       border-radius: 3px;
       color: #666;
+      white-space: nowrap;
       font-weight: 700;
       font-size: 0.938em; }
       .resources__slide-label a {
