@@ -1058,7 +1058,8 @@ p {
 .topics__content {
   padding: 0 0 76px; }
   .topics__content .topics__list {
-    width: 33.3%; }
+    width: 33.3%;
+    transition: .3s ease-in-out; }
   .topics__content .topics__ul {
     margin: 0 -12px; }
   .topics__content-last {
@@ -1151,7 +1152,6 @@ p {
 .topics__list:hover .topics__img-back {
   visibility: visible;
   opacity: 1;
-  transition: .3s ease-in-out;
   border-radius: 3px;
   padding: 16px 20px; }
 

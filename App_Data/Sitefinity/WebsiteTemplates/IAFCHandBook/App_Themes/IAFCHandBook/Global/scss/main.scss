@@ -1211,6 +1211,7 @@ p {
     padding: 0 0 76px;
     .topics__list{
       width: 33.3%;
+      transition: .3s ease-in-out;
     }
     .topics__ul{
       margin: 0 -12px;
@@ -1325,7 +1326,6 @@ p {
       .topics__img-back {
         visibility: visible;
         opacity: 1;
-        transition: .3s ease-in-out;
         border-radius: 3px;
         padding: 16px 20px;
       }
