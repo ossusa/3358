@@ -196,6 +196,9 @@
         margin-bottom: 16px;
       }
     }
+    @media screen and (max-width: 360px){
+      width: 124px;
+    }
     .time{
       font-weight: 700;
       font-size: 1.250em;
@@ -244,6 +247,9 @@
         margin-bottom: 24px;
       }
     }
+    @media screen and (max-width: 360px){
+      width: 100%;
+    }
     &:hover {
       box-shadow: 0 6px 15px 0 rgba(0,0,0,0.15);
     }
@@ -262,6 +268,9 @@
       }
       @media screen and (max-width: 767px){
         width: 320px;
+      }
+      @media screen and (max-width: 360px){
+        width: 100%;
       }
       img{
         position: absolute;

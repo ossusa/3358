@@ -2965,6 +2965,9 @@ p {
     .community__head-btn-select {
       margin: 24px auto 0;
       width: 320px;
+      @media screen and (max-width: 360px) {
+        width: 100%;
+      }
     }
   }
   .selectric-community__category-select {
