@@ -477,7 +477,7 @@
   }
   .complete_blocks_big{
     @media screen and (max-width: 900px){
-      margin: 0 auto;
+      margin: 0 auto !important;
     }
   }
   .complete_block_first{
