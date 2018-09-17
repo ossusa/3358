@@ -509,6 +509,11 @@
       display: flex;
       margin: 0 0 24px;
       width: 100%;
+      .resources__community-slide-info{
+        width: 55%;
+        height: auto !important;
+        padding: 14px 14px 0;
+      }
     }
     .resources__community-img{
       width: 45%;

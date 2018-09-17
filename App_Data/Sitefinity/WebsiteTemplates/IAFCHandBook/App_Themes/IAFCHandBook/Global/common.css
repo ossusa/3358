@@ -4593,6 +4593,10 @@ addReplyCommentBtn {
     display: flex;
     margin: 0 0 24px;
     width: 100%; }
+    .handbook__template .complete_block_first .resources__community-slide-info {
+      width: 55%;
+      height: auto !important;
+      padding: 14px 14px 0; }
   .handbook__template .resources__community-img {
     width: 45%; }
     .handbook__template .resources__community-img img {
