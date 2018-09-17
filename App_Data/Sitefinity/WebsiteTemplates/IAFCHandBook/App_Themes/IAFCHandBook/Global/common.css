@@ -670,6 +670,7 @@ p {
       height: 26px;
       border-radius: 3px;
       color: #666;
+      white-space: nowrap;
       font-weight: 700;
       font-size: 0.938em; }
       .resources__slide-label a {
@@ -2332,7 +2333,12 @@ p {
     margin-bottom: 16px; }
   .complete__progressindicator_wrapper .community__head-btn-select {
     margin: 24px auto 0;
-    width: 320px; }
+    width: 320px; } }
+  @media screen and (max-width: 767px) and (max-width: 360px) {
+    .complete__progressindicator_wrapper .community__head-btn-select {
+      width: 100%; } }
+
+@media (max-width: 767px) {
   .selectric-community__category-select .selectric {
     width: 100% !important; }
   .selectric-community_category_select .selectric-items {
@@ -3303,15 +3309,20 @@ p {
     font-weight: 400;
     letter-spacing: 0.5px; }
 
-@media screen and (max-width: 767px) {
-  .resources__single {
-    margin: 0 -28px; } }
+.resources__single {
+  max-width: 790px;
+  min-width: 430px;
+  width: 100%; }
+  @media screen and (max-width: 767px) {
+    .resources__single {
+      margin: 0 -28px;
+      min-width: auto; } }
 
 .resources-single {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 100px; }
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1109px) {
     .resources-single {
       -ms-flex-direction: column;
       flex-direction: column; } }
@@ -3531,7 +3542,7 @@ p {
         border-top: 1px solid #d8d8d8;
         border-bottom: 1px solid #d8d8d8;
         margin-top: 32px; }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1109px) {
           .resources-single__left_post_comment_changer {
             display: -ms-flexbox;
             display: flex;
@@ -3706,6 +3717,9 @@ p {
     .complete_section {
       padding: 36px 0 16px;
       margin: 40px -28px 68px; } }
+  @media screen and (max-width: 360px) {
+    .complete_section {
+      margin: 40px -14px 68px; } }
   .complete_section-title {
     margin-bottom: 16px;
     font-size: 40px;
@@ -4254,6 +4268,9 @@ addReplyCommentBtn {
       .progressindicator__label:nth-of-type(1) {
         margin-right: 16px;
         margin-bottom: 16px; } }
+  @media screen and (max-width: 360px) {
+    .progressindicator__label {
+      width: 138px; } }
   .progressindicator__label .time {
     font-weight: 700;
     font-size: 1.250em;
@@ -4302,6 +4319,9 @@ addReplyCommentBtn {
       width: 320px; }
       .handbook_category__item:nth-of-type(2) {
         margin-bottom: 24px; } }
+  @media screen and (max-width: 360px) {
+    .handbook_category__item {
+      width: 100%; } }
   .handbook_category__item:hover {
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.15); }
   .handbook_category__item__image {
@@ -4322,6 +4342,9 @@ addReplyCommentBtn {
     @media screen and (max-width: 767px) {
       .handbook_category__item__image {
         width: 320px; } }
+    @media screen and (max-width: 360px) {
+      .handbook_category__item__image {
+        width: 100%; } }
     .handbook_category__item__image img {
       position: absolute;
       height: 135px;
