@@ -482,6 +482,9 @@
     border-radius: 3px;
     transition: .3s ease-in-out;
     outline: none;
+    &:hover{
+      box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15);
+    }
     @media screen and (max-width: 1109px){
       width: 46%;
       margin: 0 2% 48px;
@@ -511,7 +514,7 @@
       width: 100%;
       .resources__community-slide-info{
         width: 55%;
-        height: auto;
+        height: auto !important;
         padding: 14px 14px 0;
       }
       .resources__slide-title{

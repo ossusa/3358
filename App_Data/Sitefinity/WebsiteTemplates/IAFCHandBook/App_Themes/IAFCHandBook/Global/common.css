@@ -4569,6 +4569,8 @@ addReplyCommentBtn {
     border-radius: 3px;
     transition: .3s ease-in-out;
     outline: none; }
+    .complete_blocks_first .complete_block_first:hover {
+      box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.15); }
     @media screen and (max-width: 1109px) {
       .complete_blocks_first .complete_block_first {
         width: 46%;
@@ -4595,7 +4597,7 @@ addReplyCommentBtn {
     width: 100%; }
     .handbook__template .complete_block_first .resources__community-slide-info {
       width: 55%;
-      height: auto;
+      height: auto !important;
       padding: 14px 14px 0; }
     .handbook__template .complete_block_first .resources__slide-title {
       font-size: 1em; }
