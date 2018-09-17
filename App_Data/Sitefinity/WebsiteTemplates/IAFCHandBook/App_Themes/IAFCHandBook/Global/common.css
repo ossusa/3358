@@ -1465,6 +1465,9 @@ p {
     align-items: center;
     background: transparent;
     border: none; }
+    @media screen and (max-width: 767px) {
+      .selectric-community__title-select .selectric {
+        width: 100%; } }
     .selectric-community__title-select .selectric .label {
       margin: 0;
       font-family: "Nunito Sans", sans-serif;
@@ -2344,7 +2347,7 @@ p {
   .selectric-community__category-select .selectric {
     width: 100% !important; }
   .selectric-community_category_select .selectric-items {
-    width: 100.5% !important; }
+    width: 100.6% !important; }
   .community__head-btns-grp {
     width: 100%; }
   .community__head-button {
@@ -2426,13 +2429,24 @@ p {
     display: none; }
   .resources__logged-img-box {
     position: relative;
-    width: 100%; } }
+    width: 100%; }
+  .complete__progressindicator_wrapper
+.complete__head-btn-select
+.selectric-community__category-select
+.selectric-items {
+    width: 100.6% !important; }
+  .complete__progressindicator_wrapper
+.complete__head-btn-select
+.selectric-community__category-select {
+    width: 100% !important; } }
 
 @media (max-width: 382px) {
   .resources__slide-info {
     height: 220px; } }
 
 @media (max-width: 370px) {
+  .selectric-community__title-select .selectric .label {
+    font-size: 2.50em; }
   .resources__logged-buttons {
     -ms-flex-direction: column;
     flex-direction: column;
@@ -2749,6 +2763,12 @@ p {
 .selectric-community__title-select .selectric .category__arrow {
   width: 17px;
   margin-left: 24px; }
+  @media screen and (max-width: 767px) {
+    .selectric-community__title-select .selectric .category__arrow {
+      width: unset;
+      margin-left: unset;
+      display: -ms-flexbox;
+      display: flex; } }
 
 .search-results .community__head-btn-select {
   width: 202px; }
@@ -3817,10 +3837,6 @@ p {
   @media screen and (max-width: 767px) {
     .complete__progressindicator_wrapper {
       margin: 13px 0 36px; } }
-  @media screen and (max-width: 767px) {
-    .complete__progressindicator_wrapper .complete__head-btn-select .selectric-community__category-select .selectric-items,
-    .complete__progressindicator_wrapper .complete__head-btn-select .selectric-community__category-select {
-      width: 100% !important; } }
 
 .complete__head-btn-select {
   margin-top: 20px !important; }

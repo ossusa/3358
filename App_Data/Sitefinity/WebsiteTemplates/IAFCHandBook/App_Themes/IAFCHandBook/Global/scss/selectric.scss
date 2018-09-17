@@ -235,6 +235,11 @@
 .selectric-community__title-select .selectric .category__arrow{
     width: 17px;
     margin-left: 24px;
+    @media screen and (max-width: 767px) {
+        width: unset;
+        margin-left: unset;
+        display: flex;
+    }
 }
 .search-results .community__head-btn-select{
     width: 202px;

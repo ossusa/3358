@@ -1688,6 +1688,9 @@ p {
     align-items: center;
     background: transparent;
     border: none;
+    @media screen and (max-width: 767px){
+      width: 100%;
+    }
     .label {
       margin: 0;
       font-family: $font_family_4;
@@ -2979,7 +2982,7 @@ p {
     }
   }
   .selectric-community_category_select .selectric-items{
-    width: 100.5% !important;
+    width: 100.6% !important;
   }
   .community__head-btns-grp {
     width: 100%;
@@ -3125,6 +3128,17 @@ p {
     position: relative;
     width: 100%;
 }
+  .complete__progressindicator_wrapper
+  .complete__head-btn-select
+  .selectric-community__category-select
+  .selectric-items{
+    width: 100.6% !important;
+  }
+  .complete__progressindicator_wrapper
+  .complete__head-btn-select
+  .selectric-community__category-select{
+    width: 100% !important;
+  }
 }
 @media (max-width: 382px) {
   .resources__slide-info {
@@ -3132,6 +3146,14 @@ p {
   }
 }
 @media (max-width: 370px) {
+
+  .selectric-community__title-select {
+    .selectric {
+      .label {
+        font-size: 2.50em;
+      }
+    }
+  }
   .resources__logged-buttons {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
