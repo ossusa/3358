@@ -338,6 +338,9 @@
       @media screen and (max-width: 767px){
         width: 320px;
       }
+      @media screen and (max-width: 370px){
+        width: 100%;
+      }
       a{
         display: flex;
         align-items: center;

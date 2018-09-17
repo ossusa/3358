@@ -4414,6 +4414,9 @@ addReplyCommentBtn {
     @media screen and (max-width: 767px) {
       .handbook_category__item__links {
         width: 320px; } }
+    @media screen and (max-width: 370px) {
+      .handbook_category__item__links {
+        width: 100%; } }
     .handbook_category__item__links a {
       display: -ms-flexbox;
       display: flex;
