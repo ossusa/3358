@@ -118,6 +118,7 @@
     @media screen and (max-width: 767px){
       margin: 0 -28px;
       min-width: auto;
+      width: unset;
     }
   }
   &-single{
