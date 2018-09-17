@@ -1228,9 +1228,6 @@ p {
       height: 200px;
       border-radius: 3px;
     }
-    .topics__img-back {
-      transition: .3s ease-in-out;
-    }
     &-blue a{
       background: #5591aa;
       &:hover{
@@ -1328,6 +1325,7 @@ p {
       .topics__img-back {
         visibility: visible;
         opacity: 1;
+        transition: .3s ease-in-out;
         border-radius: 3px;
         padding: 16px 20px;
       }
@@ -1941,9 +1939,7 @@ p {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  @media screen and (max-width: 900px){
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
 
   img {
     border-radius: 3px 3px 0 0;
@@ -2148,7 +2144,6 @@ p {
     border: none;
     background: transparent;
     outline: none;
-    white-space: nowrap;
     &:before{
       position: relative;
       content: "\E633";
@@ -2195,7 +2190,7 @@ p {
     font-weight: 400;
     border: none;
     background: transparent;
-    outline: none;    
+    outline: none;
   }
 
   #atstbx {
@@ -3033,7 +3028,7 @@ p {
     }
   }
 
- 
+
   .box-about {
     padding-left: 28px;
     padding-right: 28px;
@@ -3167,7 +3162,6 @@ p {
     -webkit-box-pack: space-between;
     -ms-flex-pack: distribute;
     justify-content: space-between;
-    align-items: flex-start;
     button {
       margin: 0 0 10px 0;
     }

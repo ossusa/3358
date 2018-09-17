@@ -1072,8 +1072,6 @@ p {
     margin-left: 12px;
     height: 200px;
     border-radius: 3px; }
-  .topics__content .topics__img-back {
-    transition: .3s ease-in-out; }
   .topics__content-blue a {
     background: #5591aa; }
     .topics__content-blue a:hover .topics__img-back {
@@ -1153,6 +1151,7 @@ p {
 .topics__list:hover .topics__img-back {
   visibility: visible;
   opacity: 1;
+  transition: .3s ease-in-out;
   border-radius: 3px;
   padding: 16px 20px; }
 
@@ -1658,11 +1657,9 @@ p {
   -ms-flex-pack: start;
   justify-content: flex-start;
   -ms-flex-align: start;
-  align-items: flex-start; }
-  @media screen and (max-width: 900px) {
-    .complete__resources_slides {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; } }
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .complete__resources_slides img {
     border-radius: 3px 3px 0 0;
     width: auto; }
@@ -1827,8 +1824,7 @@ p {
     font-weight: 400;
     border: none;
     background: transparent;
-    outline: none;
-    white-space: nowrap; }
+    outline: none; }
     .account-template .unfollowBtn:before {
       position: relative;
       content: "\E633";
@@ -2455,9 +2451,7 @@ p {
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: distribute;
-    justify-content: space-between;
-    -ms-flex-align: start;
-    align-items: flex-start; }
+    justify-content: space-between; }
     .resources__logged-buttons button {
       margin: 0 0 10px 0; }
   .resources__logged {
@@ -3765,11 +3759,8 @@ p {
       opacity: 1; }
 
 .complete__resources_slide {
-  margin: 0 24px 48px 0 !important; }
+  margin: 0 12px 48px !important; }
   @media screen and (max-width: 1109px) {
-    .complete__resources_slide {
-      width: 48% !important; } }
-  @media screen and (max-width: 900px) {
     .complete__resources_slide {
       width: 46% !important; } }
   @media screen and (max-width: 767px) {
@@ -3801,12 +3792,10 @@ p {
   justify-content: flex-start !important;
   -ms-flex-align: start;
   align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%;
   margin: 0 -2%; }
-  @media screen and (max-width: 900px) {
-    .complete__resources_slides {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slides {
       margin: 0 auto; } }
@@ -4023,19 +4012,15 @@ addReplyCommentBtn {
   color: #5591AA !important; }
 
 .complete__resources_slides {
-  margin: 0 -24px 0 0;
+  margin: 0 -12px;
   width: auto; }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1109px) {
     .complete__resources_slides {
       margin: 0; } }
   .complete__resources_slides .resources__slide {
     width: 48%;
-    margin-left: 0;
-    margin-right: 24px; }
-    @media screen and (max-width: 900px) {
-      .complete__resources_slides .resources__slide {
-        width: 100%;
-        margin-right: 0; } }
+    margin-left: 1%;
+    margin-right: 1%; }
 
 @media screen and (max-width: 767px) {
   .resources__logged .resources__logged-buttons {
@@ -4146,31 +4131,14 @@ addReplyCommentBtn {
 
 .all_complete_resources_slides {
   margin-top: 36px;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  max-width: 1220px;
-  margin-bottom: 24px;
-  margin: 0 -3% 0 0; }
+  margin-bottom: 24px; }
   @media screen and (max-width: 1109px) {
     .all_complete_resources_slides {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      margin: 0 -24px 8px 0; } }
+      margin-bottom: 8px; } }
   @media screen and (max-width: 767px) {
     .all_complete_resources_slides {
       margin-top: 20px;
-      margin-bottom: 12px;
-      margin-right: 0; } }
-  .all_complete_resources_slides .complete__resources_slide {
-    margin: 0 2% 48px 0 !important;
-    width: 31% !important; }
-    @media screen and (max-width: 1109px) {
-      .all_complete_resources_slides .complete__resources_slide {
-        width: 47.3% !important; } }
-    @media screen and (max-width: 767px) {
-      .all_complete_resources_slides .complete__resources_slide {
-        width: 100% !important;
-        margin-right: 0; } }
+      margin-bottom: 12px; } }
 
 .selectric-all_handbook {
   margin: 0 !important; }
