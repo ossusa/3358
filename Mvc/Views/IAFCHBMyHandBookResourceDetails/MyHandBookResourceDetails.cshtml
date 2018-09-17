@@ -175,17 +175,15 @@
 	</div>
 </div>
 <script>
-	var addthis_share = {
-	    url: "https://www.google.com.ua"
-	};
-
 	$(document).ready(function () {
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
-        doShareUrl();
-        console.log('doShareUrl');
 		bindEdit();
-		console.log('bindEdit');
-
+        window.addthis_share = {
+            url: window.location.href + '@Model.UserId',
+            title: 'International Association of Fire Chiefs',
+            description: '@Model.SharedUser' + 'HANDBOOK',
+            media: 'http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg'
+        };
 	});
 
 
@@ -528,21 +526,6 @@
 		});
 	};
 
-    function doShareUrl() {
 
-        var url = window.location.href;
-        $.ajax({
-            async: false,
-            type: 'POST',
-            cache: false,
-            url: '@Url.Action("Share", "IAFCHBMyHandBookResourceDetails")',
-            data: { url: url },
-            dataType: "json",
-            success: function (response) {
-                addthis_share.url = response;
-                console.log('response ', response);
-            }
-        });
-    };
 
 </script>
