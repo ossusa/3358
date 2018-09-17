@@ -3768,6 +3768,9 @@ p {
   margin: 0 24px 48px 0 !important; }
   @media screen and (max-width: 1109px) {
     .complete__resources_slide {
+      width: 48% !important; } }
+  @media screen and (max-width: 900px) {
+    .complete__resources_slide {
       width: 46% !important; } }
   @media screen and (max-width: 767px) {
     .complete__resources_slide {
