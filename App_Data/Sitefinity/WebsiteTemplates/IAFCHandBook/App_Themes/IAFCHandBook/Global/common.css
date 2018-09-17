@@ -4595,8 +4595,12 @@ addReplyCommentBtn {
     width: 100%; }
     .handbook__template .complete_block_first .resources__community-slide-info {
       width: 55%;
-      height: auto !important;
+      height: auto;
       padding: 14px 14px 0; }
+    .handbook__template .complete_block_first .resources__slide-title {
+      font-size: 1em; }
+    .handbook__template .complete_block_first .resources__slide-footer {
+      display: none; }
   .handbook__template .resources__community-img {
     width: 45%; }
     .handbook__template .resources__community-img img {

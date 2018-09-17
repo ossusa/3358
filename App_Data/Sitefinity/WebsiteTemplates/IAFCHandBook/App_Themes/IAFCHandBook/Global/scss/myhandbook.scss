@@ -511,8 +511,14 @@
       width: 100%;
       .resources__community-slide-info{
         width: 55%;
-        height: auto !important;
+        height: auto;
         padding: 14px 14px 0;
+      }
+      .resources__slide-title{
+        font-size: 1em;
+      }
+      .resources__slide-footer{
+        display: none;
       }
     }
     .resources__community-img{
