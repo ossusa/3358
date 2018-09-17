@@ -52,6 +52,12 @@
   @media screen and (max-width: 767px) {
     margin-top: 20px;
     margin-bottom: 12px;
+    margin-right: 0;
+  }
+  .complete__resources_slide{
+    @media screen and (max-width: 1109px) {
+      width: 47% !important;
+    }
   }
 }
 .selectric-all_handbook{

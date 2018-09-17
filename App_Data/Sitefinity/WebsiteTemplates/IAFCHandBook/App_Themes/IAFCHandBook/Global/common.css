@@ -4155,7 +4155,11 @@ addReplyCommentBtn {
   @media screen and (max-width: 767px) {
     .all_complete_resources_slides {
       margin-top: 20px;
-      margin-bottom: 12px; } }
+      margin-bottom: 12px;
+      margin-right: 0; } }
+  @media screen and (max-width: 1109px) {
+    .all_complete_resources_slides .complete__resources_slide {
+      width: 47% !important; } }
 
 .selectric-all_handbook {
   margin: 0 !important; }
