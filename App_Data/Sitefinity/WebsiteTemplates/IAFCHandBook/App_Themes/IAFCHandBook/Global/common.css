@@ -4166,10 +4166,11 @@ addReplyCommentBtn {
     width: 31% !important; }
     @media screen and (max-width: 1109px) {
       .all_complete_resources_slides .complete__resources_slide {
-        width: 47.5% !important; } }
+        width: 47.3% !important; } }
     @media screen and (max-width: 767px) {
       .all_complete_resources_slides .complete__resources_slide {
-        width: 100% !important; } }
+        width: 100% !important;
+        margin-right: 0; } }
 
 .selectric-all_handbook {
   margin: 0 !important; }
