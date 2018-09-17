@@ -475,9 +475,9 @@
     align-items: flex-start;
     flex-direction: column;
   }
-  .complete_blocks_big{
+  &.complete_blocks_big{
     @media screen and (max-width: 900px){
-      margin: 0 auto !important;
+      margin: 0 auto;
     }
   }
   .complete_block_first{

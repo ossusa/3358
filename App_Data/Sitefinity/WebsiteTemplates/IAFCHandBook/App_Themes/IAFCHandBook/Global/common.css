@@ -4555,8 +4555,8 @@ addReplyCommentBtn {
       -ms-flex-direction: column;
       flex-direction: column; } }
   @media screen and (max-width: 900px) {
-    .complete_blocks_first .complete_blocks_big {
-      margin: 0 auto !important; } }
+    .complete_blocks_first.complete_blocks_big {
+      margin: 0 auto; } }
   .complete_blocks_first .complete_block_first {
     width: 31.3%;
     margin: 0 1% 48px;
