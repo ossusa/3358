@@ -670,9 +670,11 @@ p {
       height: 26px;
       border-radius: 3px;
       color: #666;
-      white-space: nowrap;
       font-weight: 700;
       font-size: 0.938em; }
+      @media (max-width: 370px) {
+        .resources__slide-label {
+          height: unset; } }
       .resources__slide-label a {
         color: #666; }
     .resources__slide-time {
@@ -2334,7 +2336,7 @@ p {
   .complete__progressindicator_wrapper .community__head-btn-select {
     margin: 24px auto 0;
     width: 320px; } }
-  @media screen and (max-width: 767px) and (max-width: 360px) {
+  @media screen and (max-width: 767px) and (max-width: 370px) {
     .complete__progressindicator_wrapper .community__head-btn-select {
       width: 100%; } }
 
@@ -3718,7 +3720,7 @@ p {
     .complete_section {
       padding: 36px 0 16px;
       margin: 40px -28px 68px; } }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 370px) {
     .complete_section {
       margin: 40px -14px 68px; } }
   .complete_section-title {
@@ -4104,6 +4106,10 @@ addReplyCommentBtn {
   .handbook_container {
     padding: 0 28px; } }
 
+@media screen and (max-width: 370px) {
+  .handbook_container {
+    padding: 0 14px; } }
+
 .all_progressindicator__wrapper {
   margin: 0 0 36px 0 !important; }
 
@@ -4269,7 +4275,7 @@ addReplyCommentBtn {
       .progressindicator__label:nth-of-type(1) {
         margin-right: 16px;
         margin-bottom: 16px; } }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 370px) {
     .progressindicator__label {
       width: 138px; } }
   .progressindicator__label .time {
@@ -4320,7 +4326,7 @@ addReplyCommentBtn {
       width: 320px; }
       .handbook_category__item:nth-of-type(2) {
         margin-bottom: 24px; } }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 370px) {
     .handbook_category__item {
       width: 100%; } }
   .handbook_category__item:hover {
@@ -4343,7 +4349,7 @@ addReplyCommentBtn {
     @media screen and (max-width: 767px) {
       .handbook_category__item__image {
         width: 320px; } }
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 370px) {
       .handbook_category__item__image {
         width: 100%; } }
     .handbook_category__item__image img {
@@ -4408,6 +4414,9 @@ addReplyCommentBtn {
     @media screen and (max-width: 767px) {
       .handbook_category__item__links {
         width: 320px; } }
+    @media screen and (max-width: 370px) {
+      .handbook_category__item__links {
+        width: 100%; } }
     .handbook_category__item__links a {
       display: -ms-flexbox;
       display: flex;

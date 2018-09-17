@@ -701,9 +701,11 @@ p {
       height: 26px;
       border-radius: 3px;
       color: #666;
-      white-space: nowrap;
       font-weight: 700;
       font-size: 0.938em;
+      @media (max-width: 370px){
+        height: unset;
+      }
       a {
         color: $color_14;
       }
@@ -2966,7 +2968,7 @@ p {
     .community__head-btn-select {
       margin: 24px auto 0;
       width: 320px;
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 370px) {
         width: 100%;
       }
     }
