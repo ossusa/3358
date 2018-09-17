@@ -1939,7 +1939,9 @@ p {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-wrap: wrap;
+  @media screen and (max-width: 900px){
+    flex-wrap: wrap;
+  }
 
   img {
     border-radius: 3px 3px 0 0;
