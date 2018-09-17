@@ -502,3 +502,20 @@
     opacity: 1;
   }
 }
+
+.handbook__template{
+  @media screen and (max-width: 767px){
+    .complete_block_first{
+      display: flex;
+      margin: 0 0 24px;
+      width: 100%;
+    }
+    .resources__community-img{
+      width: 45%;
+      img{
+        border-radius: 3px 3px 0 0;
+      }
+    }
+  }
+
+}

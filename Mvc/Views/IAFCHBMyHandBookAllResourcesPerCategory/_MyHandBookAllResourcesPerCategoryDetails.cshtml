@@ -20,10 +20,10 @@
 {
 	if (columnCounter == 0)
 	{
-		@Html.Raw("<section class='handbook__template complete__resources_slides all_complete_resources_slides'>");
+		@Html.Raw("<section class='handbook__template all_complete_resources_slides complete_blocks_first'>");
 	}
 	{ columnCounterForMoreResources++; }
-	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) resources__slide complete__resources_slide">
+	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) complete_block_first">
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{

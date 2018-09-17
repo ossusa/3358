@@ -4587,6 +4587,17 @@ addReplyCommentBtn {
   .complete_section .complete_block_first:hover {
     opacity: 1; }
 
+@media screen and (max-width: 767px) {
+  .handbook__template .complete_block_first {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 24px;
+    width: 100%; }
+  .handbook__template .resources__community-img {
+    width: 45%; }
+    .handbook__template .resources__community-img img {
+      border-radius: 3px 3px 0 0; } }
+
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
     top: auto; }
