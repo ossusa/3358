@@ -703,7 +703,7 @@ p {
       color: #666;
       font-weight: 700;
       font-size: 0.938em;
-      @media (max-width: 360px){
+      @media (max-width: 370px){
         height: unset;
       }
       a {
@@ -2968,7 +2968,7 @@ p {
     .community__head-btn-select {
       margin: 24px auto 0;
       width: 320px;
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 370px) {
         width: 100%;
       }
     }
