@@ -459,8 +459,7 @@
   opacity: 0.5;
 }
 
-.complete_blocks_first,
-.complete_blocks_search{
+.complete_blocks_first{
   margin: 0 -1%;
   width: auto;
   max-width: 1220px;
@@ -494,5 +493,12 @@
     @media screen and (max-width: 375px){
       width: 100%;
     }
+  }
+}
+.complete_section .complete_block_first{
+  opacity: 0.5;
+  transition: .3s ease-in-out;
+  &:hover{
+    opacity: 1;
   }
 }
