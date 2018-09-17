@@ -322,14 +322,7 @@ if($(window).width() > 360) {
         }
     });
     }
-    }
-    $(document).ready(function () {
-        textTruncate();//run when page first loads
-    });
 
-    $(window).resize(function () {
-        textTruncate();
-    });
 
 /*MAIN PAGE DESC*/
 if($(window).width() > 767) {
@@ -437,4 +430,12 @@ if($(window).width() > 1109) {
         }
     });
 }
+    }
+    $(document).ready(function () {
+        textTruncate();
+    });
+
+    $(window).resize(function () {
+        textTruncate();
+    });
 });
