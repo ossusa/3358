@@ -69,12 +69,6 @@
 
 
 	$(document).ready(function () {
-		//doShareUrl();
-       //
-        //<meta property="og:image" content="http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg" />
-        //<meta property="og:description" content="I'm the description" />
-
-      	console.log("@Model.UserId");
         window.addthis_share = {
             url: window.location.href + '/@Model.UserId',
             title: 'International Association of Fire Chiefs',
@@ -84,21 +78,6 @@
 
 	});
 
-	function doShareUrl() {
-
-		var url = window.location.href;
-		$.ajax({
-			async: false,
-			type: 'POST',
-			cache: false,
-			url: '@Url.Action("Share", "IAFCHBMyHandBook")',
-			data: { url: url },
-			dataType: "json",
-			success: function (response) {
-
-			}
-		});
-	}
 
 
 </script>
