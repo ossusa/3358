@@ -3309,9 +3309,14 @@ p {
     font-weight: 400;
     letter-spacing: 0.5px; }
 
-@media screen and (max-width: 767px) {
-  .resources__single {
-    margin: 0 -28px; } }
+.resources__single {
+  max-width: 790px;
+  min-width: 430px;
+  width: 100%; }
+  @media screen and (max-width: 767px) {
+    .resources__single {
+      margin: 0 -28px;
+      min-width: auto; } }
 
 .resources-single {
   display: -ms-flexbox;
