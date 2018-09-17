@@ -44,7 +44,10 @@
 }
 .all_complete_resources_slides{
   margin-top: 36px;
+  flex-wrap: wrap;
+  max-width: 1220px;
   margin-bottom: 24px;
+  margin: 0 -3% 0 0;
   @media screen and (max-width: 1109px) {
     flex-wrap: wrap;
     margin: 0 -24px 8px 0;
@@ -55,8 +58,10 @@
     margin-right: 0;
   }
   .complete__resources_slide{
+    margin: 0 2% 48px 0 !important;
+    width: 31% !important;
     @media screen and (max-width: 1109px) {
-      width: 45.9% !important;
+      width: 47.5% !important;
     }
     @media screen and (max-width: 767px) {
       width: 100% !important;

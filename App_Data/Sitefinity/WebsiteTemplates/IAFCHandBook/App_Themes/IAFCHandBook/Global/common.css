@@ -4146,7 +4146,11 @@ addReplyCommentBtn {
 
 .all_complete_resources_slides {
   margin-top: 36px;
-  margin-bottom: 24px; }
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 1220px;
+  margin-bottom: 24px;
+  margin: 0 -3% 0 0; }
   @media screen and (max-width: 1109px) {
     .all_complete_resources_slides {
       -ms-flex-wrap: wrap;
@@ -4157,12 +4161,15 @@ addReplyCommentBtn {
       margin-top: 20px;
       margin-bottom: 12px;
       margin-right: 0; } }
-  @media screen and (max-width: 1109px) {
-    .all_complete_resources_slides .complete__resources_slide {
-      width: 45.9% !important; } }
-  @media screen and (max-width: 767px) {
-    .all_complete_resources_slides .complete__resources_slide {
-      width: 100% !important; } }
+  .all_complete_resources_slides .complete__resources_slide {
+    margin: 0 2% 48px 0 !important;
+    width: 31% !important; }
+    @media screen and (max-width: 1109px) {
+      .all_complete_resources_slides .complete__resources_slide {
+        width: 47.5% !important; } }
+    @media screen and (max-width: 767px) {
+      .all_complete_resources_slides .complete__resources_slide {
+        width: 100% !important; } }
 
 .selectric-all_handbook {
   margin: 0 !important; }
