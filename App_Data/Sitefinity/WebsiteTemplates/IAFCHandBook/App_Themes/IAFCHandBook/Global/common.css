@@ -674,8 +674,7 @@ p {
       font-size: 0.938em; }
       @media (max-width: 360px) {
         .resources__slide-label {
-          height: unset;
-          right: 12px; } }
+          height: unset; } }
       .resources__slide-label a {
         color: #666; }
     .resources__slide-time {
