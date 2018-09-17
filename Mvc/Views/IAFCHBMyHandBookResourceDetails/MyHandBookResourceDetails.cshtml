@@ -72,14 +72,16 @@
 							</div>
 							<div class="single-post-statistic">
 								<button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button"
-										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Likes" title="Add Like"
+										class="addLike anticon anticon-like-o @(Model.Likes.IsResourceLiked?"clicked-like":"" )" 
+										data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Likes" title="Add Like"
 										data-id2="@(Model.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(Model.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
 									<span>@Model.Likes.Likes</span>
 								</button>
 								<button id="@string.Format("{0}_{1}", "resourceDisLikes" , Model.Id.ToString())" type="button"
-										class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Dislikes" title="Add Dislike"
+										class="addDislike anticon anticon-dislike-o @(Model.Likes.IsResourceDisliked? "clicked-dislike":"")" 
+										data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Dislikes" title="Add Dislike"
 										data-id2="@(Model.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(Model.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
@@ -153,14 +155,16 @@
 							</div>
 							<div class="single-post-statistic">
 								<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button"
-										class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
+										class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
+										data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 										data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
 									<span>@item.Likes.Likes</span>
 								</button>
 								<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDisLikes" , item.Id.ToString())" type="button"
-										class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
+										class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
+										data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 										data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
