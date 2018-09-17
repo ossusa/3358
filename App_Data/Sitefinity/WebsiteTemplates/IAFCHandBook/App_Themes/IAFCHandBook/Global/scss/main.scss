@@ -1920,26 +1920,10 @@ p {
   transition: .3s ease-in-out;
 }
 
-.complete__resources_slides {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
 
-  img {
-    border-radius: 3px 3px 0 0;
-    width: auto;
-  }
-}
 
 .img-container-js {
   overflow: hidden;
-}
-
-.complete__resources_slide {
-  width: 31.2% !important;
-  border: 1px solid #EFEFEF;
-  border-radius: 3px;
 }
 
 .resources__slide {
@@ -1988,14 +1972,6 @@ p {
     margin-left: 12px;
     @media screen and (max-width: 767px){
       margin-left: 0;
-    }
-  }
-
-  .complete__resources_slides {
-    margin-bottom: 36px;
-    margin: 0 -12px;
-    @media screen and (max-width: 767px){
-      margin: 0;
     }
   }
 }
@@ -2460,14 +2436,6 @@ p {
   .handbook__more {
     width: 48%;
   }
-
-  .complete__resources_slide {
-    width: 48%;
-    .single-post-comments {
-      display: none;
-    }
-  }
-
   .topic__title {
     font-size: 2.75em;
     line-height: 50px;
@@ -3052,32 +3020,6 @@ p {
   }
 
   .handbook__template {
-    &.complete__resources_slides {
-      .complete__resources_slide {
-        width: 100%;
-        display: flex;
-      }
-
-      .resources__slide-footer {
-        display: none;
-      }
-
-      .resources__community-img {
-        width: 45%;
-      }
-      .resources__slide-info {
-        &.resources__community-slide-info {
-          width: 55%;
-          height: auto!important;
-          padding: 14px 14px 0;
-        }
-      }
-
-      .resources__slide-title {
-        font-size: 1em;
-      }
-    }
-
     .placeholder-type {
       img {
         width: 100%;
@@ -3219,44 +3161,11 @@ p {
 #content{
   min-height: calc(100vh - 282px);
 }
-.test{
-  background: #000;
-  color: #333;
-  border: none;
-}
-//
-//
-//.ellip {
-//  display: block;
-//  height: 100%;
-//}
-//
-//.ellip-line {
-//  display: inline-block;
-//  text-overflow: ellipsis;
-//  white-space: nowrap;
-//  word-wrap: normal;
-//  max-width: 100%;
-//}
-//
-//.ellip,
-//.ellip-line {
-//  position: relative;
-//  overflow: hidden;
-//}
 .resourceFeaturedLink{
   transition: .3s ease-in-out;
   width: 120px !important;
   &:hover{
     background: #2b4b6b;
     color: #fff;
-  }
-}
-
-@media (max-width: 1170px){
-  .complete__resources_slide {
-    .single-post-comments {
-      display: none;
-    }
   }
 }
