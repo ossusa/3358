@@ -52,7 +52,8 @@ namespace SitefinityWebApp
         private void SystemManager_ApplicationStart(object sender, EventArgs e)
         {
 			EventHub.Subscribe<IDynamicContentCreatedEvent>(evt => DynamicContentCreatedEventHandler(evt));
-            EventHub.Subscribe<IDynamicContentUpdatedEvent>(evt => DynamicContentUpdatedEventHandler(evt));			
+            EventHub.Subscribe<IDynamicContentUpdatedEvent>(evt => DynamicContentUpdatedEventHandler(evt));
+			EventHub.Subscribe<IDynamicContentDeletingEvent>(evt => DynamicContentDeletedEventHandler(evt));
 		}
 
 		private void OnSitefinityAppInitialized(object sender, EventArgs args)
@@ -136,12 +137,33 @@ namespace SitefinityWebApp
             }
         }
 
-        /*void SystemManager_ApplicationStart(object sender, EventArgs e)
+		private void DynamicContentDeletedEventHandler(IDynamicContentDeletingEvent evt)
+		{
+
+			var item = evt.Item;
+			var itemType = item.GetType();
+			var url = System.Web.HttpContext.Current.Request.Url.Host;
+			var helper = new IAFCHandBookHelper(url);
+
+			if (itemType == helper.ResourceType ||
+				itemType == helper.ExternalResourcesType)
+			{				
+				if (item.Status == ContentLifecycleStatus.Live)
+				{
+					if (helper.IsHandBookResourcesDataExistsFor(item.Id, itemType))
+					{
+						helper.DeleteIAFCHandBookResourcesData(item.Id, itemType);
+					}
+				}
+			}
+		}
+
+		/*void SystemManager_ApplicationStart(object sender, EventArgs e)
         {
             SFRoutes.RegisterType();
         }*/
 
-        protected void Application_BeginRequest(Object sender, EventArgs e)
+		protected void Application_BeginRequest(Object sender, EventArgs e)
 	    {
             // will init a placeholder,
 	        /*var user = MxAppHost.Instance.Container.Resolve<ISiteAppRunner>().SiteUser.Instance() as VisitUserModel?? new VisitUserModel();
