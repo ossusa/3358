@@ -1688,6 +1688,9 @@ p {
     align-items: center;
     background: transparent;
     border: none;
+    @media screen and (max-width: 767px){
+      width: 100%;
+    }
     .label {
       margin: 0;
       font-family: $font_family_4;

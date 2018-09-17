@@ -1465,6 +1465,9 @@ p {
     align-items: center;
     background: transparent;
     border: none; }
+    @media screen and (max-width: 767px) {
+      .selectric-community__title-select .selectric {
+        width: 100%; } }
     .selectric-community__title-select .selectric .label {
       margin: 0;
       font-family: "Nunito Sans", sans-serif;
@@ -2760,6 +2763,12 @@ p {
 .selectric-community__title-select .selectric .category__arrow {
   width: 17px;
   margin-left: 24px; }
+  @media screen and (max-width: 767px) {
+    .selectric-community__title-select .selectric .category__arrow {
+      width: unset;
+      margin-left: unset;
+      display: -ms-flexbox;
+      display: flex; } }
 
 .search-results .community__head-btn-select {
   width: 202px; }
