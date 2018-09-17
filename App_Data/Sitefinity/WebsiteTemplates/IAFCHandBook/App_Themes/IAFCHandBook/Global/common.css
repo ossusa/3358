@@ -2446,7 +2446,7 @@ p {
 
 @media (max-width: 370px) {
   .selectric-community__title-select .selectric .label {
-    font-size: 2.50em; }
+    font-size: 2.250em; }
   .resources__logged-buttons {
     -ms-flex-direction: column;
     flex-direction: column;
@@ -2763,12 +2763,12 @@ p {
 .selectric-community__title-select .selectric .category__arrow {
   width: 17px;
   margin-left: 24px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 370px) {
     .selectric-community__title-select .selectric .category__arrow {
       width: unset;
-      margin-left: unset;
       display: -ms-flexbox;
-      display: flex; } }
+      display: flex;
+      margin-left: 12px; } }
 
 .search-results .community__head-btn-select {
   width: 202px; }
@@ -4506,6 +4506,9 @@ addReplyCommentBtn {
   @media screen and (max-width: 767px) {
     .myhandbook_head-buttons {
       margin: 0 -28px; } }
+  @media screen and (max-width: 370px) {
+    .myhandbook_head-buttons {
+      margin: 0 -14px; } }
 
 .handbook_breadcrumbs {
   margin: 54px 0 0; }
