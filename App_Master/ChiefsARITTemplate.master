@@ -10,6 +10,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <meta property="og:title" content="Title Here" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit" />
+    <meta property="og:image" content="http://s11.stc.all.kpcdn.net/share/i/12/9307910/inx960x640.jpg" />
+    <meta property="og:description" content="Description Here" />
+    <meta property="og:site_name" content="Site Name, i.e. Moz" />
+
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit">
     <meta name="twitter:title" content="Page Title">
