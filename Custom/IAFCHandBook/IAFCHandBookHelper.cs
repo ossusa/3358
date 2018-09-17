@@ -135,6 +135,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public const String FinanceName = "finance";
 		public const String CommunityName = "community-relations";
 		public const String DepartmentAdministrationName = "department-administration";
+
+		public const String ProjectVWSARIT = "project-vws-a-rit";
 		#endregion CategoriesName
 
 		#region Urls
@@ -2758,6 +2760,53 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return isAddedLikes;
 		}
 
+		public List<VWSARITResourcesListModel> GetVWSARITResources()
+		{
+			var model = new List<VWSARITResourcesListModel>();
+			try
+			{
+				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+				var ProjectVWSARITGuid = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == ProjectVWSARIT).Select(c => c.Id).First();
+
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				var ProjectVWSARITExternalResourcesList = dynamicModuleManager.GetDataItems(externalResourcesType)
+					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+					.ToArray()
+					.Where(r => r.GetValue<TrackedList<Guid>>("feeding").Contains(ProjectVWSARITGuid)).ToList();
+
+				var ProjectVWSARITResourcesList = dynamicModuleManager.GetDataItems(resourceType)
+					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+					.ToArray()
+					.Where(r => r.GetValue<TrackedList<Guid>>("feeding").Contains(ProjectVWSARITGuid));
+
+				
+
+				foreach (var item in ProjectVWSARITExternalResourcesList)
+				{
+					var externalResourceItemDetails = new VWSARITResourcesListModel();
+					externalResourceItemDetails.Id = item.Id;
+					externalResourceItemDetails.ResourceTitle = item.GetValue("Title").ToString();
+					externalResourceItemDetails.CreatedDate = item.DateCreated;
+					model.Add(externalResourceItemDetails);
+				}
+
+				foreach (var resourceItem in ProjectVWSARITResourcesList)
+				{
+					var resourceItemDetails = new VWSARITResourcesListModel();
+					resourceItemDetails.Id = resourceItem.Id;
+					resourceItemDetails.ResourceTitle = resourceItem.GetValue("Title").ToString();
+					resourceItemDetails.CreatedDate = resourceItem.DateCreated;
+					model.Add(resourceItemDetails);
+				}
+			}
+			catch (Exception e)
+			{
+				log.Error("GetVWSARITResources Error: " + e.StackTrace);
+			}
+
+			return model.OrderByDescending(m=>m.CreatedDate).ToList();
+		}
 	}
 }
 

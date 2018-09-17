@@ -903,6 +903,7 @@
     <Compile Include="Mvc\Controllers\ResourceLibraryController.cs" />
     <Compile Include="Mvc\Controllers\SearchbloxController.cs" />
     <Compile Include="Mvc\Controllers\SharedController.cs" />
+    <Compile Include="Mvc\Controllers\VWSARITResourcesListController.cs" />
     <Compile Include="Mvc\Models\AccountModel.cs" />
     <Compile Include="Mvc\Models\AuthServiceModel.cs" />
     <Compile Include="Mvc\Models\BlendedListItem.cs" />
@@ -942,6 +943,7 @@
     <None Include="Mvc\Views\IAFCHBMyHandBookMenu\MyHandBookMenu.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourcesPerCategory\ResourcesPerCategory.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourcesPerCategory\_ResourcesPerCategoryDetails.cshtml" />
+    <Compile Include="Mvc\Models\VWSARITResourcesListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WidgetDesigners\Account\AccountDesigner.cs" />
     <Compile Include="WidgetDesigners\AuthService\AuthServiceDesigner.cs" />
@@ -1296,6 +1298,7 @@
     <Content Include="Mvc\Views\IAFCHBSearchResults\SearchResults.cshtml" />
     <Content Include="Mvc\Views\IAFCHBSearchResults\_SearchResultsDetails.cshtml" />
     <Content Include="Mvc\Views\IAFCHBRCategoryResourcesList\CategoryResourcesList.cshtml" />
+    <Content Include="Mvc\Views\VWSARITResourcesList\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="SampleTemplate.cshtml">
       <Generator>RazorGenerator</Generator>
