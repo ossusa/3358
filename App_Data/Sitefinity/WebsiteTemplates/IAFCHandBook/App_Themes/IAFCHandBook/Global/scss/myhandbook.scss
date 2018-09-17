@@ -460,22 +460,26 @@
 }
 
 .complete_blocks_first{
-  margin: 0 -2%;
+  margin: 0 -1%;
   width: auto;
   max-width: 1220px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
+  @media screen and (max-width: 1109px){
+    margin: 0 -2%;
+  }
   .complete_block_first{
-    width: 31.2%;
-    margin: 0 2% 48px;
+    width: 31.3%;
+    margin: 0 1% 48px;
     border: 1px solid #EFEFEF;
     border-radius: 3px;
     transition: .3s ease-in-out;
     outline: none;
     @media screen and (max-width: 1109px){
-      width: 50%;
+      width: 46%;
+      margin: 0 2% 48px;
     }
     @media screen and (max-width: 767px){
       margin: 0 0 24px;
