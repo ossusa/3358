@@ -289,122 +289,117 @@ $(window).on('load', function() {
 
 });
 
-//text truncate
-$(window).resize(function() {
-    /*MAIN PAGE TITLE*/
-    $('.big_truncate_title').each(function() {
-        var xOne = 39;
-        var yOne = '...';
-        if ($(this).text().length > (xOne - yOne.length)) {
-            $(this).text($(this).text().substr(0, xOne-yOne.length) + yOne);
-        }
-    });
-    /*MAIN PAGE DESC*/
-    if($(window).width() > 767) {
-        $('.big_truncate_desc').each(function() {
-            var xTwo = 114;
-            var yTwo = '...';
-            if ($(this).text().length > (xTwo - yTwo.length)) {
-                $(this).text($(this).text().substr(0, xTwo-yTwo.length) + yTwo);
-            }
-        });
-    } else {
-        $('.big_truncate_desc').each(function() {
-            var xTwo = 80;
-            var yTwo = '...';
-            if ($(this).text().length > (xTwo - yTwo.length)) {
-                $(this).text($(this).text().substr(0, xTwo-yTwo.length) + yTwo);
-            }
-        });
-    }
-    /*MAIN PAGE HOVER*/
-    if($(window).width() > 1109) {
-        $('.big_truncate_hover').each(function() {
-            var xThree = 116;
-            var yThree = '...';
-            if ($(this).text().length > (xThree - yThree.length)) {
-                $(this).text($(this).text().substr(0, xThree-yThree.length) + yThree);
-            }
-        });
-    } else {
-        $('.big_truncate_hover').each(function() {
-            var xThree = 155;
-            var yThree = '...';
-            if ($(this).text().length > (xThree - yThree.length)) {
-                $(this).text($(this).text().substr(0, xThree-yThree.length) + yThree);
-            }
-        });
-    }
-    /*M&MEDIA PAGE TITLE*/
-    if($(window).width() > 1109) {
-        $('.big_truncate_title_sec').each(function() {
-            var xFour = 39;
-            var yFour = '...';
-            if ($(this).text().length > (xFour - yFour.length)) {
-                $(this).text($(this).text().substr(0, xFour-yFour.length) + yFour);
-            }
-        });
-    } else {
-        $('.big_truncate_title_sec').each(function() {
-            var xFour = 25;
-            var yFour = '...';
-            if ($(this).text().length > (xFour - yFour.length)) {
-                $(this).text($(this).text().substr(0, xFour-yFour.length) + yFour);
-            }
-        });
-    }
-    /*M&MEDIA PAGE DESC*/
-    if($(window).width() > 1109) {
-        $('.big_truncate_desc_sec').each(function() {
-            var xFive = 126;
-            var yFive = '...';
-            if ($(this).text().length > (xFive - yFive.length)) {
-                $(this).text($(this).text().substr(0, xFive-yFive.length) + yFive);
-            }
-        });
-    } else {
-        $('.big_truncate_desc_sec').each(function() {
-            var xFive = 56;
-            var yFive = '...';
-            if ($(this).text().length > (xFive - yFive.length)) {
-                $(this).text($(this).text().substr(0, xFive-yFive.length) + yFive);
-            }
-        });
-    }
-    /*M&MEDIA PAGE HOVER*/
-    $('.sm_truncate_hover').each(function() {
-        var xSix = 91;
-        var ySix = '...';
-        if ($(this).text().length > (xSix - ySix.length)) {
-            $(this).text($(this).text().substr(0, xSix-ySix.length) + ySix);
-        }
-    });
-    /*MY HB M&MEDIA PAGE TITLE*/
-    $('.sm_truncate_title').each(function() {
-        var xSeven = 28;
-        var ySeven = '...';
-        if ($(this).text().length > (xSeven - ySeven.length)) {
-            $(this).text($(this).text().substr(0, xSeven-ySeven.length) + ySeven);
-        }
-    });
-    /*MY HB M&MEDIA PAGE DESC*/
-    if($(window).width() > 1109) {
-        $('.sm_truncate_desc').each(function() {
-            var xEight = 55;
-            var yEight = '...';
-            if ($(this).text().length > (xEight - yEight.length)) {
-                $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
-            }
-        });
-    } else {
-        $('.sm_truncate_desc').each(function() {
-            var xEight = 51;
-            var yEight = '...';
-            if ($(this).text().length > (xEight - yEight.length)) {
-                $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
-            }
-        });
+/*MAIN PAGE TITLE*/
+$('.big_truncate_title').each(function() {
+    var xOne = 39;
+    var yOne = '...';
+    if ($(this).text().length > (xOne - yOne.length)) {
+        $(this).text($(this).text().substr(0, xOne-yOne.length) + yOne);
     }
 });
-
-
+/*MAIN PAGE DESC*/
+if($(window).width() > 767) {
+    $('.big_truncate_desc').each(function() {
+        var xTwo = 114;
+        var yTwo = '...';
+        if ($(this).text().length > (xTwo - yTwo.length)) {
+            $(this).text($(this).text().substr(0, xTwo-yTwo.length) + yTwo);
+        }
+    });
+} else {
+    $('.big_truncate_desc').each(function() {
+        var xTwo = 80;
+        var yTwo = '...';
+        if ($(this).text().length > (xTwo - yTwo.length)) {
+            $(this).text($(this).text().substr(0, xTwo-yTwo.length) + yTwo);
+        }
+    });
+}
+/*MAIN PAGE HOVER*/
+if($(window).width() > 1109) {
+    $('.big_truncate_hover').each(function() {
+        var xThree = 116;
+        var yThree = '...';
+        if ($(this).text().length > (xThree - yThree.length)) {
+            $(this).text($(this).text().substr(0, xThree-yThree.length) + yThree);
+        }
+    });
+} else {
+    $('.big_truncate_hover').each(function() {
+        var xThree = 155;
+        var yThree = '...';
+        if ($(this).text().length > (xThree - yThree.length)) {
+            $(this).text($(this).text().substr(0, xThree-yThree.length) + yThree);
+        }
+    });
+}
+/*M&MEDIA PAGE TITLE*/
+if($(window).width() > 1109) {
+    $('.big_truncate_title_sec').each(function() {
+        var xFour = 39;
+        var yFour = '...';
+        if ($(this).text().length > (xFour - yFour.length)) {
+            $(this).text($(this).text().substr(0, xFour-yFour.length) + yFour);
+        }
+    });
+} else {
+    $('.big_truncate_title_sec').each(function() {
+        var xFour = 25;
+        var yFour = '...';
+        if ($(this).text().length > (xFour - yFour.length)) {
+            $(this).text($(this).text().substr(0, xFour-yFour.length) + yFour);
+        }
+    });
+}
+/*M&MEDIA PAGE DESC*/
+if($(window).width() > 1109) {
+    $('.big_truncate_desc_sec').each(function() {
+        var xFive = 126;
+        var yFive = '...';
+        if ($(this).text().length > (xFive - yFive.length)) {
+            $(this).text($(this).text().substr(0, xFive-yFive.length) + yFive);
+        }
+    });
+} else {
+    $('.big_truncate_desc_sec').each(function() {
+        var xFive = 56;
+        var yFive = '...';
+        if ($(this).text().length > (xFive - yFive.length)) {
+            $(this).text($(this).text().substr(0, xFive-yFive.length) + yFive);
+        }
+    });
+}
+/*M&MEDIA PAGE HOVER*/
+$('.sm_truncate_hover').each(function() {
+    var xSix = 91;
+    var ySix = '...';
+    if ($(this).text().length > (xSix - ySix.length)) {
+        $(this).text($(this).text().substr(0, xSix-ySix.length) + ySix);
+    }
+});
+/*MY HB M&MEDIA PAGE TITLE*/
+$('.sm_truncate_title').each(function() {
+    var xSeven = 28;
+    var ySeven = '...';
+    if ($(this).text().length > (xSeven - ySeven.length)) {
+        $(this).text($(this).text().substr(0, xSeven-ySeven.length) + ySeven);
+    }
+});
+/*MY HB M&MEDIA PAGE DESC*/
+if($(window).width() > 1109) {
+    $('.sm_truncate_desc').each(function() {
+        var xEight = 55;
+        var yEight = '...';
+        if ($(this).text().length > (xEight - yEight.length)) {
+            $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
+        }
+    });
+} else {
+    $('.sm_truncate_desc').each(function() {
+        var xEight = 51;
+        var yEight = '...';
+        if ($(this).text().length > (xEight - yEight.length)) {
+            $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
+        }
+    });
+}
