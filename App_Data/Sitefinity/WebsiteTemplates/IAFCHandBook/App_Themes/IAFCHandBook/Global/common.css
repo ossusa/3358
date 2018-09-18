@@ -4553,7 +4553,9 @@ addReplyCommentBtn {
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .resources__slide-info {
-    height: 185px !important; } }
+    height: 185px !important; }
+  .selectric-community__title-select .selectric {
+    overflow: visible; } }
 
 @-moz-document url-prefix() {
   @media (max-width: 767px) {
