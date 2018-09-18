@@ -3198,3 +3198,11 @@ p {
     margin-right: 0 !important;
   }
 }
+
+.all-resources {
+  #shareBtn {
+    @media (max-width: 1108px) {
+      margin-left: 0 !important;
+    }
+  }
+}
