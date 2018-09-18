@@ -2467,13 +2467,8 @@ p {
     background: #2b4b6b;
     color: #fff; }
 
-.unfollowBtn {
-  white-space: nowrap; }
-
-@media (max-width: 370px) {
-  .account-template .resources__logged-buttons {
-    -ms-flex-align: start;
-    align-items: flex-start; } }
+.handbook__social-buttons #shareBtn {
+  margin-left: 0; }
 
 @media (min-width: 1109px) {
   .handbook_share {
