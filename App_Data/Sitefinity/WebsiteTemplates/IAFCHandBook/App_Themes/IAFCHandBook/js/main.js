@@ -268,11 +268,11 @@ $(document).ready(function() {
     });
     $('.addCommentLike').click(function(){
         $(this).toggleClass('clicked-like');
-        $('.addCommentDislike').removeClass('clicked-dislike');
+        $(this).closest('.single-post-statistic').find(".addCommentDislike").removeClass('clicked-dislike');
     });
     $('.addCommentDislike').click(function(){
         $(this).toggleClass('clicked-dislike');
-        $('.addCommentLike').removeClass('clicked-like');
+        $(this).closest('.single-post-statistic').find(".addCommentLike").removeClass('clicked-like');
     });
 });
 
