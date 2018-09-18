@@ -3409,7 +3409,8 @@ p {
           display: -ms-flexbox;
           display: flex;
           -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+          margin-left: auto; }
           @media screen and (max-width: 767px) {
             .resources-single__left_post_comment_header_right {
               margin-top: 16px; } }
