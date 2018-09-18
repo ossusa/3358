@@ -2479,6 +2479,10 @@ p {
   .handbook_share {
     margin-right: 0 !important; } }
 
+@media (max-width: 1108px) {
+  .all-resources #shareBtn {
+    margin-left: 0 !important; } }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
