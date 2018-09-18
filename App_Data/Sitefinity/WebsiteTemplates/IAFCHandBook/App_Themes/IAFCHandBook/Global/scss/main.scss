@@ -3181,6 +3181,28 @@ p {
     color: #fff;
   }
 }
-.handbook__social-buttons #shareBtn{
-  margin-left: 0;
+
+
+.unfollowBtn {
+  white-space: nowrap;
+}
+
+.account-template .resources__logged-buttons {
+  @media (max-width: 370px) {
+    align-items: flex-start;
+  }
+}
+
+.handbook_share {
+  @media (min-width: 1109px) {
+    margin-right: 0 !important;
+  }
+}
+
+.all-resources {
+  #shareBtn {
+    @media (max-width: 1108px) {
+      margin-left: 0 !important;
+    }
+  }
 }
