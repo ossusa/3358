@@ -1,0 +1,16 @@
+﻿<div>
+	@Html.ActionLink("Download", "DownloadCSV", "IAFCHBExportUser")
+</div>
+<script>
+
+	
+			
+		
+
+	function exportCSV() {
+
+		window.location.href = '@Url.Action("DownloadCSV", "IAFCHBExportUserController")';
+	}
+		
+	
+</script>

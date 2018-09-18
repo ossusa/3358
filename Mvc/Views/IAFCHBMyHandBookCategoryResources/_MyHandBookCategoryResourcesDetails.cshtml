@@ -29,10 +29,10 @@
 	</div>
 </div>
 
-<section class="complete__resources_slides">
+<section class="complete_blocks_first">
 @foreach (var item in Model.MyResources)
 {	
-	<div class="resources__slide complete__resources_slide">
+	<div class="complete_block_first">
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{
@@ -116,7 +116,8 @@
 					}
 					<div class="single-post-statistic">
 						<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-								class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
+								class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
+								data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 								@(!item.IsUserAuthorized ? "disabled" : "")>
@@ -125,7 +126,8 @@
 							</div>
 						</button>
 						<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-								class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
+								class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
+								data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 								@(!item.IsUserAuthorized ? "disabled" : "")>
@@ -146,10 +148,10 @@
 	<div class="box">
 		<h3 class="complete_section-title">Complete </h3>
 		<div>			
-			<section class="complete__resources_slides">
+			<section class="complete_blocks_first">
 			@foreach (var item in Model.MyCompletedResources)
 			{				
-				<div class="resources__slide complete__resources_slide">
+				<div class="complete_block_first">
 					<div class="resources__community-img img-container-js">
 						@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 						{
@@ -228,7 +230,8 @@
 								}
 								<div class="single-post-statistic">
 									<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-											class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
+											class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
+											data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 											data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 											@(!item.IsUserAuthorized ? "disabled" : "")>
@@ -237,7 +240,8 @@
 										</div>
 									</button>
 									<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-											class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
+											class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
+											data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 											data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 											@(!item.IsUserAuthorized ? "disabled" : "")>

@@ -79,6 +79,8 @@
 			var likeAddAmount = 0;
 			var dislikeAddAmount = 0;
 			var resourceId = $(this).attr('data-id');
+			$("#resourceLikesBtn_" + resourceId).prop('disabled', true);
+			$("#resourceDisLikesBtn_" + resourceId).prop('disabled', true);
 			var isResourceLiked = $(this).attr('data-id2');
 			var isResourceDisliked = $(this).attr('data-id3');
 			if (isResourceDisliked == "disliked") {
@@ -126,7 +128,8 @@
 				data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount) },
 				dataType: "json",
 				success: function (response) {
-					console.log(response)
+					$("#resourceLikesBtn_" + resourceId).prop('disabled', false);
+					$("#resourceDisLikesBtn_" + resourceId).prop('disabled', false);
 				}
 			});
 		});
@@ -136,6 +139,8 @@
 			var likeAddAmount = 0;
 			var dislikeAddAmount = 0;
 			var resourceId = $(this).attr('data-id');
+			$("#resourceLikesBtn_" + resourceId).prop('disabled', true);
+			$("#resourceDisLikesBtn_" + resourceId).prop('disabled', true);
 			var isResourceLiked = $(this).attr('data-id2');
 			var isResourceDisliked = $(this).attr('data-id3');
 			if (isResourceLiked == "liked") {
@@ -184,7 +189,8 @@
 				data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount) },
 				dataType: "json",
 				success: function (response) {
-					console.log(response)
+					$("#resourceLikesBtn_" + resourceId).prop('disabled', false);
+					$("#resourceDisLikesBtn_" + resourceId).prop('disabled', false);
 				}
 			});
 		});

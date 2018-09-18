@@ -73,6 +73,8 @@
 			var likeAddAmount = 0;
 			var dislikeAddAmount = 0;
 			var resourceId = $(this).attr('data-id');
+			$(".resourceLikesCls_" + resourceId).prop('disabled', true);
+			$(".resourceDisLikesCls_" + resourceId).prop('disabled', true);
 			var isResourceLiked = $(".resourceLikesCls_" + resourceId).attr('data-id2');
 			var isResourceDisliked = $(".resourceLikesCls_" + resourceId).attr('data-id3');
 			if (isResourceDisliked == "disliked") {
@@ -113,7 +115,6 @@
 			likesAmmount = $(".resourceLikesCls_" + resourceId).attr('data-id1', newLikeResult);
 			dislikesAmmount = $(".resourceDisLikesCls_" + resourceId).attr('data-id1', newDisLikeResult);
 
-
 			$.ajax({
 				type: 'POST',
 				cache: false,
@@ -121,7 +122,8 @@
 				data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount) },
 				dataType: "json",
 				success: function (response) {
-					console.log(response)
+					$(".resourceLikesCls_" + resourceId).prop('disabled', false);
+					$(".resourceDisLikesCls_" + resourceId).prop('disabled', false);
 				}
 			});
 		});
@@ -131,6 +133,8 @@
 			var likeAddAmount = 0;
 			var dislikeAddAmount = 0;
 			var resourceId = $(this).attr('data-id');
+			$(".resourceLikesCls_" + resourceId).prop('disabled', true);
+			$(".resourceDisLikesCls_" + resourceId).prop('disabled', true);
 			var isResourceLiked = $(".resourceDisLikesCls_" + resourceId).attr('data-id2');
 			var isResourceDisliked = $(".resourceDisLikesCls_" + resourceId).attr('data-id3');
 			if (isResourceLiked == "liked") {
@@ -179,7 +183,8 @@
 				data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount) },
 				dataType: "json",
 				success: function (response) {
-					console.log(response)
+					$(".resourceLikesCls_" + resourceId).prop('disabled', false);
+					$(".resourceDisLikesCls_" + resourceId).prop('disabled', false);
 				}
 			});
 		});

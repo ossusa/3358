@@ -49,21 +49,23 @@
 								</a>
 							</div>
 						</div>
-						<div class="resources-single__left_post_comment_header_right">
+						<div class="resources-single__left_post_comment_header_right left_comment_area">
 							<div class="single-post-comments" id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
 								<i class="material-icons">chat_bubble_outline</i>
 								@Model.CommentsAmount Comments
 							</div>
 							<div class="single-post-statistic">
 								<button id="@string.Format("{0}_{1}", "resourceLikes" , Model.Id.ToString())" type="button"
-										class="addLike anticon anticon-like-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Likes" title="Add Like"
+										class="addLike anticon anticon-like-o @(Model.Likes.IsResourceLiked?"clicked-like":"" )" 
+										data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Likes" title="Add Like"
 										data-id2="@(Model.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(Model.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
 									<span>@Model.Likes.Likes</span>
 								</button>
 								<button id="@string.Format("{0}_{1}", "resourceDisLikes" , Model.Id.ToString())" type="button"
-										class="addDislike anticon anticon-dislike-o" data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Dislikes" title="Add Dislike"
+										class="addDislike anticon anticon-dislike-o @(Model.Likes.IsResourceDisliked? "clicked-dislike":"")" 
+										data-id="@Model.Id.ToString()" data-id1="@Model.Likes.Dislikes" title="Add Dislike"
 										data-id2="@(Model.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(Model.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
@@ -139,14 +141,16 @@
 							</div>
 							<div class="single-post-statistic">
 								<button title="Add Like" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())" type="button"
-										class="addLike anticon anticon-like-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
+										class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
+										data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 										data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
 									<span>@item.Likes.Likes</span>
 								</button>
 								<button title="Add Dislike" id="@string.Format("{0}_{1}", "resourceDisLikes" , item.Id.ToString())" type="button"
-										class="addDislike anticon anticon-dislike-o" data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
+										class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
+										data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 										data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 										@(!Model.IsUserAuthorized? "disabled":"")>
@@ -227,32 +231,34 @@
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#resourceLikes_" + resourceId).prop('disabled', true);
+				$("#resourceDisLikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceDisliked == "disliked") {
 					if (isResourceLiked == "liked") {
 						likeAddAmount = -1;
-						$("#resourceLikes_" + resourceId).attr('data-id2', "not_liked");
-						$("#resourceDisLikes_" + resourceId).attr('data-id2', "not_liked");
+						$("#resourceLikes_" + resourceId).attr('data-id2', "not_liked");						
+						$("#resourceDisLikes_" + resourceId).attr('data-id2', "not_liked");												
 					}
 					else {
 						likeAddAmount = 1;
 						dislikeAddAmount = -1;
-						$("#resourceLikes_" + resourceId).attr('data-id2', "liked");
-						$("#resourceDisLikes_" + resourceId).attr('data-id2', "liked");
+						$("#resourceLikes_" + resourceId).attr('data-id2', "liked");						
+						$("#resourceDisLikes_" + resourceId).attr('data-id2', "liked");												
 						$("#resourceLikes_" + resourceId).attr('data-id3', "not_disliked");
-						$("#resourceDisLikes_" + resourceId).attr('data-id3', "not_disliked");
+						$("#resourceDisLikes_" + resourceId).attr('data-id3', "not_disliked");						
 					}
 				}
 				else {
 					if (isResourceLiked == "liked") {
 						likeAddAmount = -1;
-						$("#resourceLikes_" + resourceId).attr('data-id2', "not_liked");
+						$("#resourceLikes_" + resourceId).attr('data-id2', "not_liked");						
 						$("#resourceDisLikes_" + resourceId).attr('data-id2', "not_liked");
 					}
 					else {
 						likeAddAmount = 1;
-						$("#resourceLikes_" + resourceId).attr('data-id2', "liked");
+						$("#resourceLikes_" + resourceId).attr('data-id2', "liked");						
 						$("#resourceDisLikes_" + resourceId).attr('data-id2', "liked");
 					}
 				}
@@ -273,7 +279,8 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#resourceLikes_" + resourceId).prop('disabled', false);
+						$("#resourceDisLikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
@@ -283,21 +290,23 @@
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#resourceLikes_" + resourceId).prop('disabled', true);
+				$("#resourceDisLikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceLiked == "liked") {
 					if (isResourceDisliked == "disliked") {
 						dislikeAddAmount = -1;
 						$("#resourceLikes_" + resourceId).attr('data-id3', "not_disliked");
-						$("#resourceDisLikes_" + resourceId).attr('data-id3', "not_disliked");
+						$("#resourceDisLikes_" + resourceId).attr('data-id3', "not_disliked");						
 					}
 					else {
 						dislikeAddAmount = 1;
 						likeAddAmount = -1;
-						$("#resourceLikes_" + resourceId).attr('data-id2', "not_liked");
+						$("#resourceLikes_" + resourceId).attr('data-id2', "not_liked");						
 						$("#resourceDisLikes_" + resourceId).attr('data-id2', "not_liked");
 						$("#resourceLikes_" + resourceId).attr('data-id3', "disliked");
-						$("#resourceDisLikes_" + resourceId).attr('data-id3', "disliked");
+						$("#resourceDisLikes_" + resourceId).attr('data-id3', "disliked");						
 					}
 				}
 				else {
@@ -310,8 +319,7 @@
 					else {
 						dislikeAddAmount = 1;
 						$("#resourceLikes_" + resourceId).attr('data-id3', "disliked");
-						$("#resourceDisLikes_" + resourceId).attr('data-id3', "disliked");
-
+						$("#resourceDisLikes_" + resourceId).attr('data-id3', "disliked");						
 					}
 				}
 
@@ -331,7 +339,8 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#resourceLikes_" + resourceId).prop('disabled', false);
+						$("#resourceDisLikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
@@ -385,10 +394,12 @@
 			});
 
 			//Add Comment Like
-			$('.addCommentLike').click(function () {				
+			$('.addCommentLike').click(function () {
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#commentLikes_" + resourceId).prop('disabled', true);
+				$("#commentDislikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceDisliked == "disliked") {
@@ -435,16 +446,19 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#commentLikes_" + resourceId).prop('disabled', false);
+						$("#commentDislikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
 
 			//Add Comment Dislike
-			$('.addCommentDislike').click(function () {				
+			$('.addCommentDislike').click(function () {
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#commentLikes_" + resourceId).prop('disabled', true);
+				$("#commentDislikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceLiked == "liked") {
@@ -494,7 +508,8 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#commentLikes_" + resourceId).prop('disabled', false);
+						$("#commentDislikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
@@ -503,7 +518,7 @@
 			$('.commentReplyBtn').click(function () {
 
 				var commentId = $(this).attr('data-id');
-				
+
 				$.ajax({
 					type: 'POST',
 					cache: false,
@@ -512,7 +527,7 @@
 					success: function (response) {
 						$("#replyCommentBtn_" + commentId).html("");
 						$("#commentRepliesInputView_" + commentId).html(response);
-						bindEdit();						
+						bindEdit();
 					}
 				});
 			});

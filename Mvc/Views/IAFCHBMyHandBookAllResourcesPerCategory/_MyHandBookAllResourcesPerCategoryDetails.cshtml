@@ -20,10 +20,10 @@
 {
 	if (columnCounter == 0)
 	{
-		@Html.Raw("<section class='handbook__template complete__resources_slides all_complete_resources_slides'>");
+		@Html.Raw("<section class='handbook__template all_complete_resources_slides complete_blocks_first'>");
 	}
 	{ columnCounterForMoreResources++; }
-	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) resources__slide complete__resources_slide">
+	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) complete_block_first">
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{
@@ -107,7 +107,7 @@
 
 					<div class="single-post-statistic">
 						<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-								class="@string.Format("{0}_{1}","resourceLikesCls", item.Id.ToString()) addLike anticon anticon-like-o" 
+								class="@string.Format("{0}_{1}","resourceLikesCls", item.Id.ToString()) addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
 								data-id="@item.Id.ToString()" 
 								data-id1="@item.Likes.Likes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
@@ -119,7 +119,7 @@
 						</button>
 
 						<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())" 
-								class ="@string.Format("{0}_{1}","resourceDisLikesCls", item.Id.ToString()) addDislike anticon anticon-dislike-o" 
+								class ="@string.Format("{0}_{1}","resourceDisLikesCls", item.Id.ToString()) addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
 								data-id="@item.Id.ToString()" 
 								data-id1="@item.Likes.Dislikes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"

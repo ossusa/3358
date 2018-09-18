@@ -1204,7 +1204,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 							commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
 						}
 					}
-					replyCommentDetails.Likes = GetResourceLikesInfo(commentItem, commentResource);
+					replyCommentDetails.Likes = GetResourceLikesInfo(replyCommentItem, commentResource);
 
 					replyCommentList.Add(replyCommentDetails);
 
@@ -1723,10 +1723,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						var myHandBookTitle = "MyHandBook_" + userFullName;
 
 						myHandBookItem.SetValue("Title", myHandBookTitle);
-						myHandBookItem.SetValue("UserId", currentUserGuid);
+						myHandBookItem.SetValue("UserId", currentUserGuid);						
 						myHandBookItem.SetString("UrlName", new Lstring(Regex.Replace(myHandBookTitle, UrlNameCharsToReplace, UrlNameReplaceString)));
 						myHandBookItem.SetValue("Owner", SecurityManager.GetCurrentUserId());
 						myHandBookItem.SetValue("PublicationDate", DateTime.UtcNow);
+
 
 						dynamicModuleManager.Lifecycle.Publish(myHandBookItem);
 						myHandBookItem.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
@@ -2453,7 +2454,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
 				var checkOutHandBook = dynamicModuleManager.Lifecycle.CheckOut(masterHandBook) as DynamicContent;
 
-				checkOutHandBook.Organizer.AddTaxa("Category", categoryId);
+				checkOutHandBook.Organizer.AddTaxa("Category", categoryId);				
 
 				masterHandBook = dynamicModuleManager.Lifecycle.CheckIn(checkOutHandBook) as DynamicContent;
 				dynamicModuleManager.Lifecycle.Publish(masterHandBook);
@@ -2806,6 +2807,79 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 
 			return model.OrderByDescending(m=>m.CreatedDate).ToList();
+		}
+
+		public string GetUsers()
+		{
+			string returnData = string.Empty;
+
+
+
+			try
+			{
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				var handBookArray = dynamicModuleManager.GetDataItems(myHandBookType)
+							.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+							.ToArray();
+				foreach(var handBookItem in handBookArray)
+				{
+					var handBookItemLine = string.Empty;
+					var lastUpdatedDate = handBookItem.GetValue<DateTime>("LastModified");
+					var userId = handBookItem.GetValue<Guid>("UserId");
+
+					UserProfileManager profileManager = UserProfileManager.GetManager();
+					UserManager userManager = UserManager.GetManager();
+					User user = userManager.GetUser(userId);
+					SitefinityProfile profile = null;
+					String firstName = string.Empty;
+					String lastName = string.Empty;
+					String email = string.Empty;
+
+					if (user != null)
+					{
+						profile = profileManager.GetUserProfile<SitefinityProfile>(user);
+						if (profile != null)
+						{
+							firstName = profile.FirstName;
+							lastName = profile.LastName;
+							email = profile.User.Email;
+						}
+						else
+						{
+
+							firstName = user.FirstName;
+							lastName= user.LastName;
+							email = user.Email;
+						}
+					}
+
+					var categories = handBookItem.GetValue<TrackedList<Guid>>("Category")
+						.ToArray();
+					string categoryList = string.Empty;
+					foreach(var catrgoryItem in categories)
+					{
+						categoryList = categoryList + GetTopicCategories(catrgoryItem).ResourceCategoryTile + ";";
+					}
+					string userDetail = lastUpdatedDate.ToString() + ","
+						+ ", "
+						+ userId.ToString() + ", "
+						+ firstName + ", "
+						+ lastName + ", "
+						+ email + ", "
+						+ DateTime.UtcNow.ToString() + ", "
+						+ categoryList + ", "
+						+ System.Environment.NewLine;
+					returnData = returnData + userDetail;
+				}
+
+			}
+
+			catch (Exception e)
+			{
+				log.Error("GetUsers" + e.Message);
+			}
+
+			return returnData;
 		}
 	}
 }

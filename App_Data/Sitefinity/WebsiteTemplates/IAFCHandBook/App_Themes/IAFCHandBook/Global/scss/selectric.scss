@@ -236,6 +236,7 @@
     width: 17px;
     margin-left: 24px;
     @media screen and (max-width: 370px) {
+        width: auto;
         width: unset;
         display: flex;
         margin-left: 12px;
