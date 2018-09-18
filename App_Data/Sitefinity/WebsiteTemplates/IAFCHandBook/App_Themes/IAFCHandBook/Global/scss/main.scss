@@ -3211,3 +3211,8 @@ p {
     height: auto !important;
   }
 }
+
+.resources__title {
+  position: relative;
+  z-index: 1;
+}

@@ -2486,6 +2486,10 @@ p {
   .resources__logged {
     height: auto !important; } }
 
+.resources__title {
+  position: relative;
+  z-index: 1; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
