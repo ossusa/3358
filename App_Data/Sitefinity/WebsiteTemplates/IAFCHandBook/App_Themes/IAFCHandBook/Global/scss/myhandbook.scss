@@ -571,3 +571,14 @@
     margin-left: 0;
   }
 }
+.edit-icon{
+  @media screen and (max-width: 1109px){
+    text-align: right;
+    width: 100%;
+  }
+}
+.centered{
+  @media screen and (max-width: 930px){
+    justify-content: center;
+  }
+}

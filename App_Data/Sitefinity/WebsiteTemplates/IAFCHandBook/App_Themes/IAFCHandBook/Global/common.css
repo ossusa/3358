@@ -2833,6 +2833,9 @@ p {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
     background-color: #ffffff; }
+    @media screen and (max-width: 1109px) {
+      .header__sub_ul {
+        left: -32px; } }
   .header__sub_list {
     cursor: pointer;
     padding: 8px 0 0 0; }
@@ -4562,6 +4565,16 @@ addReplyCommentBtn {
 @media screen and (max-width: 767px) {
   .left_comment_area {
     margin-left: 0; } }
+
+@media screen and (max-width: 1109px) {
+  .edit-icon {
+    text-align: right;
+    width: 100%; } }
+
+@media screen and (max-width: 930px) {
+  .centered {
+    -ms-flex-pack: center;
+    justify-content: center; } }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
