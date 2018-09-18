@@ -231,6 +231,8 @@
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#resourceLikes_" + resourceId).prop('disabled', true);
+				$("#resourceDisLikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceDisliked == "disliked") {
@@ -277,7 +279,8 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#resourceLikes_" + resourceId).prop('disabled', false);
+						$("#resourceDisLikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
@@ -287,6 +290,8 @@
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#resourceLikes_" + resourceId).prop('disabled', true);
+				$("#resourceDisLikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceLiked == "liked") {
@@ -334,7 +339,8 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#resourceLikes_" + resourceId).prop('disabled', false);
+						$("#resourceDisLikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
@@ -392,6 +398,8 @@
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#commentLikes_" + resourceId).prop('disabled', true);
+				$("#commentDislikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceDisliked == "disliked") {
@@ -438,7 +446,8 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#commentLikes_" + resourceId).prop('disabled', false);
+						$("#commentDislikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
@@ -448,6 +457,8 @@
 				var likeAddAmount = 0;
 				var dislikeAddAmount = 0;
 				var resourceId = $(this).attr('data-id');
+				$("#commentLikes_" + resourceId).prop('disabled', true);
+				$("#commentDislikes_" + resourceId).prop('disabled', true);
 				var isResourceLiked = $(this).attr('data-id2');
 				var isResourceDisliked = $(this).attr('data-id3');
 				if (isResourceLiked == "liked") {
@@ -497,7 +508,8 @@
 					data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
 					dataType: "json",
 					success: function (response) {
-						console.log(response)
+						$("#commentLikes_" + resourceId).prop('disabled', false);
+						$("#commentDislikes_" + resourceId).prop('disabled', false);
 					}
 				});
 			});
