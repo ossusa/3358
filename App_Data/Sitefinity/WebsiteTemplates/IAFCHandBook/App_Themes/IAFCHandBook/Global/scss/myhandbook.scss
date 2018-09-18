@@ -501,6 +501,11 @@
     @media screen and (max-width: 375px){
       width: 100%;
     }
+    .single-post-comments{
+      @media screen and (max-width: 1024px){
+        display: none;
+      }
+    }
   }
   .complete_block_big{
     width: 48%;
@@ -514,6 +519,14 @@
     @media screen and (max-width: 767px){
       width: 100%;
       margin: 0 auto 24px;
+    }
+    .single-post-comments{
+      @media screen and (max-width: 1024px){
+        display: block;
+      }
+      @media screen and (max-width: 767px){
+        display: none;
+      }
     }
   }
 }
