@@ -101,6 +101,9 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       border-radius: 3px;
       background-color: #ffffff;
+      @media screen and (max-width: 1109px){
+        left: -32px;
+      }
   }
     &_list{
       cursor: pointer;
