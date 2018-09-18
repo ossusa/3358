@@ -2477,7 +2477,7 @@ p {
 
 @media (min-width: 1109px) {
   .handbook_share {
-    margin-right: 0; } }
+    margin-right: 0 !important; } }
 
 .selectric-wrapper {
   position: relative;
