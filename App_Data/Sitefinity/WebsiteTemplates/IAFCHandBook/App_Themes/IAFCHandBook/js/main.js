@@ -258,13 +258,13 @@ $(document).ready(function() {
         $(".header__list:nth-of-type(1) > a").addClass("colored-list");
     });
     /*LIKES COLORING*/
-    $('.addLike').click(function(){
+    $(".addLike").click(function() {
         $(this).toggleClass('clicked-like');
-        $('.addDislike').removeClass('clicked-dislike');
+        $(this).closest('.single-post-statistic').find(".addDislike").removeClass('clicked-dislike');
     });
     $('.addDislike').click(function(){
         $(this).toggleClass('clicked-dislike');
-        $('.addLike').removeClass('clicked-like');
+        $(this).closest('.single-post-statistic').find(".addLike").removeClass('clicked-like');
     });
     $('.addCommentLike').click(function(){
         $(this).toggleClass('clicked-like');
