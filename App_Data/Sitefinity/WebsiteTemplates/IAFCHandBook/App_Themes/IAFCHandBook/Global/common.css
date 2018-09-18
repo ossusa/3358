@@ -4572,6 +4572,11 @@ addReplyCommentBtn {
     text-align: right;
     width: 100%; } }
 
+@media screen and (max-width: 930px) {
+  .centered {
+    -ms-flex-pack: center;
+    justify-content: center; } }
+
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
     top: auto; }

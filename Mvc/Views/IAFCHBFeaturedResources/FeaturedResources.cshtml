@@ -12,7 +12,7 @@
 			<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
 			@{openDocumentLink = ((Model.ResourceDetails.ResourceDescription != null && Model.ResourceDetails.ResourceDescription != String.Empty)
 					|| (Model.ResourceDetails.ResourceTypeName == "video"));}
-			<div class="resources__logged-buttons">
+			<div class="resources__logged-buttons centered">
 				<button type="button" 
 						class="resourceFeaturedLink community__head-btn resources__logged-btn"
 						data-id="@Model.ResourceUrl"

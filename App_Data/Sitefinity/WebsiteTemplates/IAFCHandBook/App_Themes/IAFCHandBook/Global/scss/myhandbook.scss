@@ -577,3 +577,8 @@
     width: 100%;
   }
 }
+.centered{
+  @media screen and (max-width: 930px){
+    justify-content: center;
+  }
+}
