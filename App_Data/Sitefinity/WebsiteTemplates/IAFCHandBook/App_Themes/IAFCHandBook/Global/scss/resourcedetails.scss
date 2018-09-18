@@ -118,6 +118,7 @@
     @media screen and (max-width: 767px){
       margin: 0 -28px;
       min-width: auto;
+      width: auto;
       width: unset;
     }
   }
@@ -807,6 +808,7 @@ addReplyCommentBtn{
   margin-left: 0;
 }
 .search-results .community__head-btn-select .selectric-wrapper{
+  width: auto;
   width: unset;
 }
 .selectric-handbook_title_select .selectric-items li.highlighted:after{
