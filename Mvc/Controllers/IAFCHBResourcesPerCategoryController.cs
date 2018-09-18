@@ -23,6 +23,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 		{
 			var url = System.Web.HttpContext.Current.Request.Url.Host;
 			handBookHelper = new IAFCHandBookHelper(url);
+
+			
 		}
 		
 		public IAFCHandBookResourcesPerCatergoryModel GetData(String orderBy)
