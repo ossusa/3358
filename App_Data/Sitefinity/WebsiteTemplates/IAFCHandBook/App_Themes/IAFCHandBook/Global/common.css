@@ -4551,6 +4551,11 @@ addReplyCommentBtn {
   .left_comment_area {
     margin-left: 0; } }
 
+@media screen and (max-width: 1109px) {
+  .edit-icon {
+    text-align: right;
+    width: 100%; } }
+
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
     top: auto; }
