@@ -2466,6 +2466,14 @@ p {
     background: #2b4b6b;
     color: #fff; }
 
+.unfollowBtn {
+  white-space: nowrap; }
+
+@media (max-width: 370px) {
+  .account-template .resources__logged-buttons {
+    -ms-flex-align: start;
+    align-items: flex-start; } }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }

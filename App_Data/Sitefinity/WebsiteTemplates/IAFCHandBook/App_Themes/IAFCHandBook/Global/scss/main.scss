@@ -3180,3 +3180,13 @@ p {
     color: #fff;
   }
 }
+
+.unfollowBtn {
+  white-space: nowrap;
+}
+
+.account-template .resources__logged-buttons {
+  @media (max-width: 370px) {
+    align-items: flex-start;
+  }
+}

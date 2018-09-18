@@ -61,9 +61,13 @@
 	$(document).ready(function () {
 		$('.removeResource').hide();		
 		$('.cancelBtn').hide();
-		doShareUrl();
 		bindEdit();
-	});
+        addthis_share = {
+            url: window.location.href + '/@Model.UserId',
+            title: 'International Association of Fire Chiefs',
+            description: 'My A-RIT - ' + '@item.CategoryTitle'
+        };
+    });
 	
 
 	function bindEdit(){
@@ -317,21 +321,5 @@
 		window.location.href = document.getElementById("UrlList").value;
 	}
 
-	function doShareUrl() {
-
-		var url = window.location.href;
-		$.ajax({
-			async: false,
-			type: 'POST',
-			cache: false,
-			url: '@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',
-			data: { url: url },
-			dataType: "json",
-			success: function (response) {
-				addthis_share.url = response;
-				$('#shareBtn').css('pointer-events', 'initial');
-			}
-		});
-	}
 
 </script>

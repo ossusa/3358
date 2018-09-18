@@ -58,7 +58,7 @@
 
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
 <script>
-	var addthis_share = {};
+	var addthis_share;
 
 	$('.shareBtn').click(function() {
 		$('.addthis_button_compact').trigger('click');
@@ -68,8 +68,12 @@
 		$('.removeResource').hide();
 		$('.removeCompletedResource').hide();
 		$('.cancelBtn').hide();
-		doShareUrl();
 		bindEdit();
+        addthis_share = {
+            url: window.location.href + '/@Model.UserId',
+            title: 'International Association of Fire Chiefs',
+            description: 'My A-RIT - ' + '@Model.Category.CategoryTitle'
+        };
 	});
 
 	function bindEdit() {
@@ -366,20 +370,6 @@
 		window.location.href = document.getElementById("UrlList").value;
 	}
 
-	function doShareUrl() {
 
-		var url = window.location.href;
-		$.ajax({
-			async: false,
-			type: 'POST',
-			cache: false,
-			url: '@Url.Action("Share", "IAFCHBMyHandBookCategoryResources")',
-			data: { url: url },
-			dataType: "json",
-			success: function (response) {
-				addthis_share.url = response;
-			}
-		});
-	}
 
 </script>
