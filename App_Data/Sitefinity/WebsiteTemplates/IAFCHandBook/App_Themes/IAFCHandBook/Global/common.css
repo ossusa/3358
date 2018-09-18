@@ -2475,6 +2475,10 @@ p {
     -ms-flex-align: start;
     align-items: flex-start; } }
 
+@media (min-width: 1109px) {
+  .handbook_share {
+    margin-right: 0; } }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }

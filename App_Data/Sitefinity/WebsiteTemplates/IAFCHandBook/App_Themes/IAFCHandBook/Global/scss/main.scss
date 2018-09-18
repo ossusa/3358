@@ -3191,3 +3191,9 @@ p {
     align-items: flex-start;
   }
 }
+
+.handbook_share {
+  @media (min-width: 1109px) {
+    margin-right: 0;
+  }
+}
