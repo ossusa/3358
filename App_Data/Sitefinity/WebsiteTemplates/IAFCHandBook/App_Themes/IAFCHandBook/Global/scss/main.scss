@@ -2003,6 +2003,7 @@ p {
     }
     .resources__logged-btn {
       transition: .3s ease-in-out;
+      white-space: nowrap;
       &:after {
         content: "\E61F";
         display: block;
