@@ -118,6 +118,7 @@
     @media screen and (max-width: 767px){
       margin: 0 -28px;
       min-width: auto;
+      width: auto;
       width: unset;
     }
   }
@@ -254,14 +255,12 @@
             &_right{
               display: flex;
               align-items: center;
+              margin-left: auto;
               @media screen and (max-width: 767px){
                 margin-top: 16px;
               }
               .single-post-comments{
                 margin-right: 16px;
-                @media screen and (max-width: 970px){
-                  display: none;
-                }
                 @media screen and (max-width: 767px){
                   margin-right: 24px;
                 }
@@ -809,6 +808,7 @@ addReplyCommentBtn{
   margin-left: 0;
 }
 .search-results .community__head-btn-select .selectric-wrapper{
+  width: auto;
   width: unset;
 }
 .selectric-handbook_title_select .selectric-items li.highlighted:after{
