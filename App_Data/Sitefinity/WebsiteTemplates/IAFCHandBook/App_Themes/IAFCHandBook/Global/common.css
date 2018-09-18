@@ -2467,6 +2467,9 @@ p {
     background: #2b4b6b;
     color: #fff; }
 
+.handbook__social-buttons #shareBtn {
+  margin-left: 0; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
