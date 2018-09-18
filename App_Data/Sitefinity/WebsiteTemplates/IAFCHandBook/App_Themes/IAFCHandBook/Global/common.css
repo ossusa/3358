@@ -2483,6 +2483,10 @@ p {
   .all-resources #shareBtn {
     margin-left: 0 !important; } }
 
+@media (max-width: 930px) {
+  .resources__logged {
+    height: auto !important; } }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }

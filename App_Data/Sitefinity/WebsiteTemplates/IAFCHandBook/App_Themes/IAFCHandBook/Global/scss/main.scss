@@ -3206,3 +3206,9 @@ p {
     }
   }
 }
+
+.resources__logged {
+  @media (max-width: 930px) {
+    height: auto !important;
+  }
+}
