@@ -2807,6 +2807,7 @@ p {
     display: none;
     position: absolute;
     top: 45px;
+    left: 0;
     z-index: 2;
     margin: 0;
     padding: 20px;
@@ -4541,6 +4542,10 @@ addReplyCommentBtn {
     width: 45%; }
     .handbook__template .resources__community-img img {
       border-radius: 3px 3px 0 0; } }
+
+@media screen and (max-width: 767px) {
+  .left_comment_area {
+    margin-left: 0; } }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
