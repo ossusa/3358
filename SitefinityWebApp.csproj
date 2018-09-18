@@ -883,6 +883,7 @@
     <Compile Include="Mvc\Controllers\BlendedNewsListController.cs" />
     <Compile Include="Mvc\Controllers\EventsCalendarController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBAccountController.cs" />
+    <Compile Include="Mvc\Controllers\IAFCHBExportUserController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBFeaturedResourcesController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookAllResourcesPerCategoryController.cs" />
     <Compile Include="Mvc\Controllers\IAFCHBMyHandBookController.cs" />
@@ -940,6 +941,7 @@
     <Content Include="Mvc\Views\IAFCHBFeaturedResources\FeaturedResources.cshtml" />
     <Content Include="Mvc\Views\IAFCHBAccount\Account.cshtml" />
     <Content Include="Mvc\Views\IAFCHBAccount\_FollowedCategories.cshtml" />
+    <Content Include="Mvc\Views\IAFCHBExportUser\Index.cshtml" />
     <None Include="Mvc\Views\IAFCHBMyHandBookMenu\MyHandBookMenu.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourcesPerCategory\ResourcesPerCategory.cshtml" />
     <Content Include="Mvc\Views\IAFCHBResourcesPerCategory\_ResourcesPerCategoryDetails.cshtml" />
