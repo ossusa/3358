@@ -344,6 +344,10 @@
               display: flex;
               margin: 36px -28px 0;
             }
+            @media screen and (max-width: 370px){
+              display: flex;
+              margin: 36px -14px 0;
+            }
             div{
               flex: 1;
               padding: 16px 0;
