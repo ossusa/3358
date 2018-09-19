@@ -75,7 +75,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			meta = new HtmlMeta();
 			meta.Attributes.Add("property", "og:description");
-			meta.Content = new MvcHtmlString(model.ResourceDetails.ResourceDescription).ToHtmlString();
+			meta.Content = model.ResourceDetails.ResourceSummary;
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();
