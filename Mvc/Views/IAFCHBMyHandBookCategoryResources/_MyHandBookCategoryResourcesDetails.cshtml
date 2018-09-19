@@ -273,3 +273,31 @@
 	</div>
 }
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
+<script>
+    /*MY HB M&MEDIA PAGE TITLE*/
+    $('.sm_truncate_title').each(function() {
+        var xSeven = 28;
+        var ySeven = '...';
+        if ($(this).text().length > (xSeven - ySeven.length)) {
+            $(this).text($(this).text().substr(0, xSeven-ySeven.length) + ySeven);
+        }
+    });
+    /*MY HB M&MEDIA PAGE DESC*/
+    if($(window).width() > 1109) {
+        $('.sm_truncate_desc').each(function() {
+            var xEight = 55;
+            var yEight = '...';
+            if ($(this).text().length > (xEight - yEight.length)) {
+                $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
+            }
+        });
+    } else {
+        $('.sm_truncate_desc').each(function() {
+            var xEight = 51;
+            var yEight = '...';
+            if ($(this).text().length > (xEight - yEight.length)) {
+                $(this).text($(this).text().substr(0, xEight-yEight.length) + yEight);
+            }
+        });
+    }
+</script>
