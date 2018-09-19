@@ -2424,7 +2424,7 @@ p {
   .community__head-btn:nth-of-type(1) {
     white-space: nowrap; }
   .community__head-following {
-    padding: 0 7px; }
+    padding: 0 7px !important; }
   .community__head-btn-active {
     padding: 0 7px; }
   .selectric-community__title-select .selectric .label {
