@@ -52,7 +52,7 @@
 				</div>
 				<div class="resources__slide-info resources__community-slide-info">
 					<div class="resources__slide-box">
-						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+						<a href="@item.ResourceUrl"><p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p></a>
 						@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
 								|| (item.ResourceDetails.ResourceTypeName == "video"));}
 						<button type="button" class="resourceLink"
@@ -61,8 +61,8 @@
 								data-id2="@item.ResourceDetails.ResourceDocument"
 								@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 							<span class="resources__slide-title big_truncate_title_sec">@item.ResourceDetails.ResourceTitle</span>
-							<p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
-						</button>						
+						</button>
+						<a href="@item.ResourceUrl"><p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p></a>
 					</div>
 					<div class="resources__slide-footer">
 						@if (item.IsUserAuthorized)

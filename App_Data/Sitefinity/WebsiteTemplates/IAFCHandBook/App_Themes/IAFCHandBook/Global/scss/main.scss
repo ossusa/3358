@@ -342,19 +342,25 @@ body {
   padding: 0;
   font-family: $font_family_4;
   color: $color_3;
+  //@media screen and (max-width: 320px){
+  //  overflow-x: scroll;
+  //}
 }
 #wrapper {
   width: auto;
   margin: 0 auto;
   overflow: hidden;
   max-width: 1440px;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: space-between;
+  //@media screen and (max-width: 320px){
+  //  overflow-x: unset;
+  //}
 }
-
+.header__mob-form{
+  @media screen and (max-width: 320px){
+    display: flex;
+  }
+}
 .box {
   padding-left: 120px;
   padding-right: 120px;
@@ -703,9 +709,9 @@ p {
       color: #666;
       font-weight: 700;
       font-size: 0.938em;
-      @media (max-width: 370px){
-        height: auto;
-        height: unset;
+      @media (max-width: 415px){
+        max-width: 190px;
+        min-height: 26px;
       }
       a {
         color: $color_14;
@@ -3089,7 +3095,16 @@ p {
   }
 }
 @media (max-width: 370px) {
-
+  .community_title-label{
+    font-size: 2.25em;
+  }
+  .community__head-btn:nth-of-type(2),
+  .community__head-btn:nth-of-type(1){
+    white-space: nowrap;
+  }
+  .community__head-btn-active{
+    padding: 0 7px;
+  }
   .selectric-community__title-select {
     .selectric {
       .label {
