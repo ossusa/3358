@@ -27,5 +27,23 @@ namespace SitefinityWebApp.Mvc.Controllers
 			var model = handBookHelper.GetMenu(urlPath);
 			return View("MyHandBookMenu",model);
 		}
+
+		[RelativeRoute("{name},{categoryName?}/{userid?}")]
+		public ActionResult Index1(string name, string categoryName, string userid)
+		{
+			var url = System.Web.HttpContext.Current.Request.Url;
+			var urlPath = url.AbsoluteUri;
+			var model = handBookHelper.GetMenu(urlPath);
+			return View("MyHandBookMenu", model);
+		}
+
+		[RelativeRoute("{name?}/{userid?}")]
+		public ActionResult Index2(string name, string userid)
+		{
+			var url = System.Web.HttpContext.Current.Request.Url;
+			var urlPath = url.AbsoluteUri;
+			var model = handBookHelper.GetMenu(urlPath);
+			return View("MyHandBookMenu", model);
+		}
 	}
 }

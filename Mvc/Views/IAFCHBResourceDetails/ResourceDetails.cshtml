@@ -175,10 +175,10 @@
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
 		bindEdit();
 
-        addthis_share = {
-            url:  Window.location           
-        }
-
+		addthis_share = {
+			url: '@Model.ResourceUrl'
+		}
+	});
 
 
 	function bindEdit() {
