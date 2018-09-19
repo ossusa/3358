@@ -869,8 +869,12 @@ p {
   .resources__community-img {
     position: relative;
     width: 100%; }
+    .resources__community-img a {
+      display: block;
+      height: 100%; }
     .resources__community-img img {
-      width: 100%; }
+      width: 100%;
+      height: 100%; }
   .resources__community-label {
     display: none; }
     .resources__community-label a {
@@ -2511,6 +2515,15 @@ p {
 .resources__title {
   position: relative;
   z-index: 1; }
+
+.placehoolder-background a, .placeholder-type a {
+  display: block;
+  position: relative; }
+  .placehoolder-background a img, .placeholder-type a img {
+    position: relative;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); }
 
 .selectric-wrapper {
   position: relative;
