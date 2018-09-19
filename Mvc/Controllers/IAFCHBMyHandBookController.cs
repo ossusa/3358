@@ -53,6 +53,13 @@ namespace SitefinityWebApp.Mvc.Controllers
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
+
+			AddMetaTags(model, userid);
+			return View("MyHandBook",model);
+		}
+
+		public void AddMetaTags(IAFCHandBookMyHandBookModel model, string userid)
+		{
 			var page = (Page)SystemManager.CurrentHttpContext.CurrentHandler;
 
 			var meta = new HtmlMeta();
@@ -61,11 +68,11 @@ namespace SitefinityWebApp.Mvc.Controllers
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();
-			meta.Attributes.Add("property", "og:title");			
+			meta.Attributes.Add("property", "og:title");
 			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool";
 			page.Header.Controls.Add(meta);
 
-			
+
 			meta = new HtmlMeta();
 			meta.Attributes.Add("property", "og:description");
 			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool Description";
@@ -102,8 +109,6 @@ namespace SitefinityWebApp.Mvc.Controllers
 			meta.Name = "twitter:card";
 			meta.Attributes.Add("value", "summary");
 			page.Header.Controls.Add(meta);
-			
-			return View("MyHandBook",model);
 		}
 
 		[RelativeRoute("Share"), HttpPost]

@@ -3248,5 +3248,11 @@ p {
 .placehoolder-background, .placeholder-type {
   a {
     display: block;
+    position: relative;
+    img {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
