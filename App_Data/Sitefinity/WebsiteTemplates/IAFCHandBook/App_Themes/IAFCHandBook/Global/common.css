@@ -3561,6 +3561,11 @@ p {
             display: -ms-flexbox;
             display: flex;
             margin: 36px -28px 0; } }
+        @media screen and (max-width: 370px) {
+          .resources-single__left_post_comment_changer {
+            display: -ms-flexbox;
+            display: flex;
+            margin: 36px -14px 0; } }
         .resources-single__left_post_comment_changer div {
           -ms-flex: 1;
           flex: 1;
