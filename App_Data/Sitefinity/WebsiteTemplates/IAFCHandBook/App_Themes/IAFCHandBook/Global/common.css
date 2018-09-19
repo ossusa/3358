@@ -1545,6 +1545,9 @@ p {
   box-shadow: none;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px; }
+  @media screen and (max-width: 767px) {
+    .selectric-community__category-select .selectric-items {
+      width: 100.5%; } }
   .selectric-community__category-select .selectric-items ul {
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.938em;
@@ -2753,6 +2756,9 @@ p {
 
 .search-results .community__head-btn-select {
   width: 202px; }
+  @media screen and (max-width: 767px) {
+    .search-results .community__head-btn-select {
+      width: 100%; } }
 
 .header {
   width: auto;
