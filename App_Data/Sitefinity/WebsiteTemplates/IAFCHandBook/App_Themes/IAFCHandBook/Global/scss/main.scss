@@ -1780,6 +1780,9 @@ p {
     box-shadow: none;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    @media screen and (max-width: 767px){
+      width: 100.5% !important;
+    }
     ul {
       font-family: $font_family_4;
       font-size: 0.938em;
@@ -2936,7 +2939,7 @@ p {
   .complete__progressindicator_wrapper {
     .community__head-btn-select {
       margin: 24px auto 0 0;
-      width: 320px;
+      width: 100%;
       @media screen and (max-width: 370px) {
         width: 100%;
       }
@@ -3025,7 +3028,7 @@ p {
 
   .progressindicator__label:not(:last-child) {
     margin-bottom: 16px;
-
+    flex: 1;
   }
 
   .handbook__more {
@@ -3072,7 +3075,7 @@ p {
   .complete__head-btn-select
   .selectric-community__category-select
   .selectric-items{
-    width: 100.6% !important;
+    width: 100.3% !important;
   }
   .complete__progressindicator_wrapper
   .complete__head-btn-select
