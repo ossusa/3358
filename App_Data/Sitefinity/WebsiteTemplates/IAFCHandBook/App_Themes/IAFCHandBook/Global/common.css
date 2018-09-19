@@ -1545,6 +1545,9 @@ p {
   box-shadow: none;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px; }
+  @media screen and (max-width: 767px) {
+    .selectric-community__category-select .selectric-items {
+      width: 100.5% !important; } }
   .selectric-community__category-select .selectric-items ul {
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.938em;
@@ -2315,7 +2318,7 @@ p {
     margin-bottom: 16px; }
   .complete__progressindicator_wrapper .community__head-btn-select {
     margin: 24px auto 0 0;
-    width: 320px; } }
+    width: 100%; } }
   @media screen and (max-width: 767px) and (max-width: 370px) {
     .complete__progressindicator_wrapper .community__head-btn-select {
       width: 100%; } }
@@ -2372,7 +2375,9 @@ p {
     -ms-flex-align: end;
     align-items: flex-end; }
   .progressindicator__label:not(:last-child) {
-    margin-bottom: 16px; }
+    margin-bottom: 16px;
+    -ms-flex: 1;
+    flex: 1; }
   .handbook__more {
     width: 320px; }
   .handbook__template .placeholder-type img {
@@ -2397,7 +2402,7 @@ p {
 .complete__head-btn-select
 .selectric-community__category-select
 .selectric-items {
-    width: 100.6% !important; }
+    width: 100.3% !important; }
   .complete__progressindicator_wrapper
 .complete__head-btn-select
 .selectric-community__category-select {
@@ -2751,6 +2756,9 @@ p {
 
 .search-results .community__head-btn-select {
   width: 202px; }
+  @media screen and (max-width: 767px) {
+    .search-results .community__head-btn-select {
+      width: 100%; } }
 
 .header {
   width: auto;
@@ -4144,7 +4152,7 @@ addReplyCommentBtn {
         margin: 0 auto 0 0; } }
     @media screen and (max-width: 767px) {
       .progressindicator__wrapper-col {
-        max-width: 320px;
+        width: 100%;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         margin: 0 auto 0 0; } }
@@ -4523,6 +4531,9 @@ addReplyCommentBtn {
     @media screen and (max-width: 1189px) {
       .complete_blocks_first .complete_block_first .single-post-comments {
         display: none; } }
+    @media screen and (max-width: 767px) {
+      .complete_blocks_first .complete_block_first-mob {
+        width: 100%; } }
   .complete_blocks_first .complete_block_big {
     width: 48%; }
     @media screen and (max-width: 1109px) {

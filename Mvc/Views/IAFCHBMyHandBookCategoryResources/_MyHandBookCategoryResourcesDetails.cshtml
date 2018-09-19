@@ -42,7 +42,7 @@
 <section class="complete_blocks_first">
 	@foreach (var item in Model.MyResources)
 	{
-		<div class="complete_block_first">
+		<div class="complete_block_first complete_block_first-mob">
 			<div class="resources__community-img img-container-js">
 				@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 				{
@@ -162,7 +162,7 @@
 				<section class="complete_blocks_first">
 					@foreach (var item in Model.MyCompletedResources)
 					{
-						<div class="complete_block_first">
+						<div class="complete_block_first complete_block_first-mob">
 							<div class="resources__community-img img-container-js">
 								@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 								{

@@ -244,4 +244,7 @@
 }
 .search-results .community__head-btn-select{
     width: 202px;
+    @media screen and (max-width: 767px){
+        width: 100%;
+    }
 }

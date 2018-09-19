@@ -117,7 +117,7 @@
         margin: 0 auto 0 0;
       }
       @media screen and (max-width: 767px){
-        max-width: 320px;
+        width: 100%;
         flex-wrap: wrap;
         margin: 0 auto 0 0;
       }
@@ -505,6 +505,11 @@
     .single-post-comments{
       @media screen and (max-width: 1189px){
         display: none;
+      }
+    }
+    &-mob{
+      @media screen and (max-width: 767px){
+        width: 100%;
       }
     }
   }
