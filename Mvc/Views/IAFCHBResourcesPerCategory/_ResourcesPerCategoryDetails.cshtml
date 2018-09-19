@@ -62,7 +62,7 @@
 								@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 							<span class="resources__slide-title big_truncate_title_sec">@item.ResourceDetails.ResourceTitle</span>
 						</button>
-						<p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+						<a href="@item.ResourceUrl"><p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p></a>
 					</div>
 					<div class="resources__slide-footer">
 						@if (item.IsUserAuthorized)
