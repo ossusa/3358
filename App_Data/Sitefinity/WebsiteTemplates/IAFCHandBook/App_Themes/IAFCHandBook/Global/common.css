@@ -815,6 +815,9 @@ p {
     margin-bottom: -48px;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
+    @media screen and (max-width: 930px) {
+      .resources__logged {
+        height: auto; } }
     @media all and (max-width: 767px) {
       .resources__logged {
         height: auto; } }
