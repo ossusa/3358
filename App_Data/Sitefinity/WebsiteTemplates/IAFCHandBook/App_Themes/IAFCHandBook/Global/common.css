@@ -2512,6 +2512,9 @@ p {
   position: relative;
   z-index: 1; }
 
+.placehoolder-background a, .placeholder-type a {
+  display: block; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
