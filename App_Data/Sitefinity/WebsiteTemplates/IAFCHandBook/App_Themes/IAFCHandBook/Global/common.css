@@ -2520,7 +2520,7 @@ p {
   display: block;
   position: relative; }
   .placehoolder-background a img, .placeholder-type a img {
-    position: absolute;
+    position: relative;
     left: 50%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
