@@ -92,8 +92,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private const string OrderByTopic = "By Topic";
 		private const string OrderByMostPopular = "Most Popular";
 		private const string OrderByMostRecent = "Most Recent";
-		private const string OrderByAlphabeticalAZ = "Alphabetical AZ";
-		private const string OrderByAlphabeticalZA = "Alphabetical ZA";
+		private const string OrderByAlphabeticalAZ = "Alphabetical A-Z";
+		private const string OrderByAlphabeticalZA = "Alphabetical Z-A";
 
 		private const string commentResource = "Comment";
 		private const string resourceResource = "Resource";
@@ -2334,13 +2334,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "Sign In";
+			otherMenuItem.Title = "LOGIN";
 			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = !isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "Log Out";
+			otherMenuItem.Title = "LOGOUT";
 			otherMenuItem.Url = "/Mxg/AuthService/SignOut/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);

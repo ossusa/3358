@@ -40,8 +40,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 			if (orderby !=null &&(
 				orderby == "Most Popular" ||
 				orderby == "Most Recent" ||
-				orderby == "Alphabetical AZ" ||
-				orderby == "Alphabetical ZA"))
+				orderby == "Alphabetical A-Z" ||
+				orderby == "Alphabetical Z-A"))
 			{
 
 				orderByItem = orderby;
@@ -99,8 +99,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 			if (orderby != null && (
 				orderby == "Most Popular" ||
 				orderby == "Most Recent" ||
-				orderby == "Alphabetical AZ" ||
-				orderby == "Alphabetical ZA"))
+				orderby == "Alphabetical A-Z" ||
+				orderby == "Alphabetical Z-A"))
 			{
 
 				orderByItem = orderby;

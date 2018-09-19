@@ -1256,8 +1256,7 @@ p {
 
 .maps {
   width: 792px;
-  margin: 0 auto;
-  padding: 0 0 100px 0; }
+  margin: 0 auto; }
   .maps__info {
     font-family: "Nunito Sans", sans-serif;
     line-height: 22px; }
@@ -2486,6 +2485,14 @@ p {
   .all-resources #shareBtn {
     margin-left: 0 !important; } }
 
+@media (max-width: 930px) {
+  .resources__logged {
+    height: auto !important; } }
+
+.resources__title {
+  position: relative;
+  z-index: 1; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
@@ -3538,8 +3545,7 @@ p {
           margin: 14px 0; }
       .resources-single__left_post_comment_changer {
         display: none;
-        border-top: 1px solid #d8d8d8;
-        border-bottom: 1px solid #d8d8d8;
+        border: 1px solid #d8d8d8;
         margin-top: 32px; }
         @media screen and (max-width: 1109px) {
           .resources-single__left_post_comment_changer {

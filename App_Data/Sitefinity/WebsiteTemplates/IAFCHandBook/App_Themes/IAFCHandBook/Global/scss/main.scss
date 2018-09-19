@@ -1446,7 +1446,6 @@ p {
 .maps {
   width: 792px;
   margin: 0 auto;
-  padding: 0 0 100px 0;
   &__info {
     font-family: $font_family_4;
     line-height: 22px;
@@ -3207,4 +3206,15 @@ p {
       margin-left: 0 !important;
     }
   }
+}
+
+.resources__logged {
+  @media (max-width: 930px) {
+    height: auto !important;
+  }
+}
+
+.resources__title {
+  position: relative;
+  z-index: 1;
 }
