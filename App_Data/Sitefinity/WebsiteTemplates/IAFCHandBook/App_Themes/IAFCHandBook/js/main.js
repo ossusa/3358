@@ -440,7 +440,7 @@ if($(window).width() > 1109) {
     });
     if($(window).width() < 325) {
         $('.sm_truncate_title').each(function() {
-            var xSmallest = 20;
+            var xSmallest = 23;
             var ySmallest = '...';
             if ($(this).text().length > (xSmallest - ySmallest.length)) {
                 $(this).text($(this).text().substr(0, xSmallest-ySmallest.length) + ySmallest);
