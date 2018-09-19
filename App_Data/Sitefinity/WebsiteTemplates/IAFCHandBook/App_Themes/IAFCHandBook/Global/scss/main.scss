@@ -342,9 +342,9 @@ body {
   padding: 0;
   font-family: $font_family_4;
   color: $color_3;
-  @media screen and (max-width: 320px){
-    overflow-x: scroll;
-  }
+  //@media screen and (max-width: 320px){
+  //  overflow-x: scroll;
+  //}
 }
 #wrapper {
   width: auto;
@@ -352,9 +352,9 @@ body {
   overflow: hidden;
   max-width: 1440px;
   box-sizing: content-box;
-  @media screen and (max-width: 320px){
-    overflow-x: unset;
-  }
+  //@media screen and (max-width: 320px){
+  //  overflow-x: unset;
+  //}
 }
 .header__mob-form{
   @media screen and (max-width: 320px){
