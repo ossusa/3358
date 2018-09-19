@@ -372,6 +372,11 @@ body {
     #wrapper {
       overflow-x: unset; } }
 
+@media screen and (max-width: 320px) {
+  .header__mob-form {
+    display: -ms-flexbox;
+    display: flex; } }
+
 .box {
   padding-left: 120px;
   padding-right: 120px; }

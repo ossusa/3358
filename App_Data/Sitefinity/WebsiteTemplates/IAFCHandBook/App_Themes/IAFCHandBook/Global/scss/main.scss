@@ -356,7 +356,11 @@ body {
     overflow-x: unset;
   }
 }
-
+.header__mob-form{
+  @media screen and (max-width: 320px){
+    display: flex;
+  }
+}
 .box {
   padding-left: 120px;
   padding-right: 120px;
