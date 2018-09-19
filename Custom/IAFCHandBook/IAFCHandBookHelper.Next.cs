@@ -1171,6 +1171,43 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     myChildResourceItem.MoreThen5Resources = (myHandBookResourcesAmount - 5) < 0 ? 0 : myHandBookResourcesAmount - 5;
                     model.MyResources.Add(myChildResourceItem);
                 }
+				if (userId !=null)
+				{
+					var myChildCompletedResourceForSharedPageItem = new IAFCHandBookResourceModel();
+					foreach (var resourceCompletedItem in showAllResources ? categoryCompletedResources : categoryCompletedResources.Take(5))
+					{
+						myChildCompletedResourceForSharedPageItem = GetResourceDetails(resourceCompletedItem, categoryId, showAsMyHandBookItem, userId);
+						model.MyResources.Add(myChildCompletedResourceForSharedPageItem);
+					}
+
+
+					if (orderBy == OrderByMostRecent)
+					{
+						model.MyResources.OrderByDescending(r => r.DateCreated)
+							.ToList();
+						
+					}
+					else if (orderBy == OrderByMostPopular)
+					{
+						model.MyResources
+							.OrderByDescending(r => r.Likes.Likes)
+							.ToList();
+					}
+					else if (orderBy == OrderByAlphabeticalAZ)
+					{
+						model.MyResources
+							.OrderBy(r => r.ResourceTitle)
+							.ToList();
+						
+					}
+					else if (orderBy == OrderByAlphabeticalZA)
+					{
+						model.MyResources
+							.OrderByDescending(r => r.ResourceTitle)
+							.ToList();
+						
+					}
+				}
 
                 var myChildCompletedResourceItem = new IAFCHandBookResourceModel();
                 foreach (var resourceCompletedItem in showAllResources ? categoryCompletedResources : categoryCompletedResources.Take(5))

@@ -2,11 +2,21 @@
 
 @{var emptyDuration = new TimeSpan(0, 0, 0);}
 @{var openDocumentLink = false;}
+
 <div class="complete__progressindicator_wrapper">
 	<div class="progressindicator__wrapper-col">
-		<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookCompletedResources </div> Complete</div>
-		<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookInCompletedResources </div> Incomplete</div>
-		<div class="progressindicator__label"><div class="time">@Model.Category.TotalDuration.ToString() </div> Time Remaining</div>
+		@if (Model.SharedUser == null || Model.SharedUser == string.Empty)
+		{
+			<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookCompletedResources </div> Complete</div>
+			<div class="progressindicator__label"><div class="time">@Model.Category.MyHandBookInCompletedResources </div> Incomplete</div>
+			<div class="progressindicator__label"><div class="time">@Model.Category.TotalDuration.ToString() </div> Time Remaining</div>
+		}
+		else
+		{
+			var resAmount = Model.Category.MyHandBookCompletedResources + Model.Category.MyHandBookInCompletedResources; 
+			<div class="progressindicator__label"><div class="time">@resAmount </div> Resources</div>
+			<div class="progressindicator__label"><div class="time">@Model.Category.TotalDuration.ToString() </div> </div>
+		}
 	</div>
 	<div class="community__head-btn-select complete__head-btn-select">
 		<select class="community__category-select" id="orderByList"
@@ -30,236 +40,236 @@
 </div>
 
 <section class="complete_blocks_first">
-@foreach (var item in Model.MyResources)
-{	
-	<div class="complete_block_first">
-		<div class="resources__community-img img-container-js">
-			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
-			{
-				<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
-			}
-			else
-			{
-				<div class="resources-placeholder">
-					<div class="placehoolder-background">
-						<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
-					</div>
-					@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
-					{
-						<div class="placeholder-type">
-							<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
-						</div>
-					}
-				</div>
-			}
-			@if (item.ResourceDetails.Duration != emptyDuration)
-			{
-				<div class="resources__slide-time">
-					<div class="resources--time">&nbsp;</div>
-					@item.ResourceDetails.Duration
-				</div>
-			}
-		</div>
-		<div class="complete__resources_slide-info">
-			<div class="resources__slide-box">
-				<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-				@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-						  || (item.ResourceDetails.ResourceTypeName == "video"));}
-				<button type="button" class="resourceLink"
-						data-id="@item.ResourceUrl"
-						data-id1="@item.ResourceDetails.ResourceLink"
-						data-id2="@item.ResourceDetails.ResourceDocument"
-						@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
-					<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
-				</button>
-				<p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
-			</div>
-			<div class="resources__slide-footer">
-				@if (item.IsUserAuthorized)
+	@foreach (var item in Model.MyResources)
+	{
+		<div class="complete_block_first">
+			<div class="resources__community-img img-container-js">
+				@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 				{
-					if (Model.SharedUserId == Guid.Empty)
-					{
-						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
-							<div class="markAsCompleteResource">
-								<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
-							</div>
-						</div>
-						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove", item.Id.ToString())">
-							<div class="removeResource">
-								<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
-									<i class="anticon anticon-close"></i>Remove
-								</button>
-							</div>
-						</div>
-					}
-					else
-					{
-						<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addSharedToMyHandBook", item.Id.ToString())">
-							<div id="addSharedToMyHandBook">
-								@if (item.IsResourceAddedToMyHandBook == true)
-								{
-									<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
-								}
-								else
-								{
-									<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
-								}
-							</div>
-						</div>
-					}
+					<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
 				}
-
-				<div class="resources-single__left_post_comment_header_right">
-					@if (openDocumentLink)
+				else
+				{
+					<div class="resources-placeholder">
+						<div class="placehoolder-background">
+							<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
+						</div>
+						@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+						{
+							<div class="placeholder-type">
+								<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
+							</div>
+						}
+					</div>
+				}
+				@if (item.ResourceDetails.Duration != emptyDuration)
+				{
+					<div class="resources__slide-time">
+						<div class="resources--time">&nbsp;</div>
+						@item.ResourceDetails.Duration
+					</div>
+				}
+			</div>
+			<div class="complete__resources_slide-info">
+				<div class="resources__slide-box">
+					<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+					@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+								|| (item.ResourceDetails.ResourceTypeName == "video"));}
+					<button type="button" class="resourceLink"
+							data-id="@item.ResourceUrl"
+							data-id1="@item.ResourceDetails.ResourceLink"
+							data-id2="@item.ResourceDetails.ResourceDocument"
+							@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
+						<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
+					</button>
+					<p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+				</div>
+				<div class="resources__slide-footer">
+					@if (item.IsUserAuthorized)
 					{
-						<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+						if (Model.SharedUserId == Guid.Empty)
+						{
+							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
+								<div class="markAsCompleteResource">
+									<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+								</div>
+							</div>
+							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove", item.Id.ToString())">
+								<div class="removeResource">
+									<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
+										<i class="anticon anticon-close"></i>Remove
+									</button>
+								</div>
+							</div>
+						}
+						else
+						{
+							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addSharedToMyHandBook", item.Id.ToString())">
+								<div id="addSharedToMyHandBook">
+									@if (item.IsResourceAddedToMyHandBook == true)
+									{
+										<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
+									}
+									else
+									{
+										<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
+									}
+								</div>
+							</div>
+						}
 					}
-					<div class="single-post-statistic">
-						<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-								class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
-								data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
-								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
-								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-								@(!item.IsUserAuthorized ? "disabled" : "")>
-							<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-								<span>@item.Likes.Likes</span>
-							</div>
-						</button>
-						<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-								class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
-								data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
-								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
-								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-								@(!item.IsUserAuthorized ? "disabled" : "")>
-							<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-								<span>@item.Likes.Dislikes</span>
-							</div>
-						</button>
+
+					<div class="resources-single__left_post_comment_header_right">
+						@if (openDocumentLink)
+						{
+							<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+						}
+						<div class="single-post-statistic">
+							<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
+									class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )"
+									data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
+									data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
+									data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
+									@(!item.IsUserAuthorized ? "disabled" : "")>
+								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+									<span>@item.Likes.Likes</span>
+								</div>
+							</button>
+							<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
+									class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")"
+									data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
+									data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
+									data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
+									@(!item.IsUserAuthorized ? "disabled" : "")>
+								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+									<span>@item.Likes.Dislikes</span>
+								</div>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>	
-}
+	}
 </section>
 
 @if (Model.SharedUser == null || Model.SharedUser == string.Empty)
 {
-<div class="complete_section">
-	<div class="box">
-		<h3 class="complete_section-title">Complete </h3>
-		<div>			
-			<section class="complete_blocks_first">
-			@foreach (var item in Model.MyCompletedResources)
-			{				
-				<div class="complete_block_first">
-					<div class="resources__community-img img-container-js">
-						@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
-						{
-							<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
-						}
-						else
-						{
-							<div class="resources-placeholder">
-								<div class="placehoolder-background">
-									<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
-								</div>
-								@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+	<div class="complete_section">
+		<div class="box">
+			<h3 class="complete_section-title">Complete </h3>
+			<div>
+				<section class="complete_blocks_first">
+					@foreach (var item in Model.MyCompletedResources)
+					{
+						<div class="complete_block_first">
+							<div class="resources__community-img img-container-js">
+								@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 								{
-									<div class="placeholder-type">
-										<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
-									</div>
-								}
-							</div>
-						}
-						@if (item.ResourceDetails.Duration != emptyDuration)
-						{
-							<div class="resources__slide-time">
-								<div class="resources--time">&nbsp;</div>
-								@item.ResourceDetails.Duration
-							</div>
-						}
-					</div>
-					<div class="complete__resources_slide-info">
-						<div class="resources__slide-box">
-							<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-							@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-										|| (item.ResourceDetails.ResourceTypeName == "video"));}
-							<button type="button" class="resourceLink"
-									data-id="@item.ResourceUrl"
-									data-id1="@item.ResourceDetails.ResourceLink"
-									data-id2="@item.ResourceDetails.ResourceDocument"
-									@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
-								<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
-							</button>
-							<p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
-						</div>
-						<div class="resources__slide-footer">
-							@if (item.IsUserAuthorized)
-							{
-								if (Model.SharedUserId == Guid.Empty)
-								{
-									<div class="completedResource">
-										<div class="complete_box anticon anticon-check"></div>Complete
-									</div>
-									<div class="removeCompletedResource">
-										<button type="button" class="removeComplenedBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
-											<i class="anticon anticon-close"></i>Remove
-										</button>
-									</div>
+									<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
 								}
 								else
 								{
-									<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addSharedToMyHandBook", item.Id.ToString())">
-										<div id="addSharedToMyHandBook">
-											@if (item.IsResourceAddedToMyHandBook == true)
-											{
-												<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
-											}
-											else
-											{
-												<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
-											}
+									<div class="resources-placeholder">
+										<div class="placehoolder-background">
+											<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
 										</div>
+										@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+										{
+											<div class="placeholder-type">
+												<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
+											</div>
+										}
 									</div>
 								}
-							}
-							<div class="resources-single__left_post_comment_header_right">
-								@if (openDocumentLink)
+								@if (item.ResourceDetails.Duration != emptyDuration)
 								{
-									<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+									<div class="resources__slide-time">
+										<div class="resources--time">&nbsp;</div>
+										@item.ResourceDetails.Duration
+									</div>
 								}
-								<div class="single-post-statistic">
-									<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-											class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
-											data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
-											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
-											data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-											@(!item.IsUserAuthorized ? "disabled" : "")>
-										<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-											<span>@item.Likes.Likes</span>
-										</div>
+							</div>
+							<div class="complete__resources_slide-info">
+								<div class="resources__slide-box">
+									<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+									@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+												  || (item.ResourceDetails.ResourceTypeName == "video"));}
+									<button type="button" class="resourceLink"
+											data-id="@item.ResourceUrl"
+											data-id1="@item.ResourceDetails.ResourceLink"
+											data-id2="@item.ResourceDetails.ResourceDocument"
+											@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
+										<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
 									</button>
-									<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-											class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
-											data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
-											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
-											data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
-											@(!item.IsUserAuthorized ? "disabled" : "")>
-										<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-											<span>@item.Likes.Dislikes</span>
+									<p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+								</div>
+								<div class="resources__slide-footer">
+									@if (item.IsUserAuthorized)
+									{
+										if (Model.SharedUserId == Guid.Empty)
+										{
+											<div class="completedResource">
+												<div class="complete_box anticon anticon-check"></div>Complete
+											</div>
+											<div class="removeCompletedResource">
+												<button type="button" class="removeComplenedBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
+													<i class="anticon anticon-close"></i>Remove
+												</button>
+											</div>
+										}
+										else
+										{
+											<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addSharedToMyHandBook", item.Id.ToString())">
+												<div id="addSharedToMyHandBook">
+													@if (item.IsResourceAddedToMyHandBook == true)
+													{
+														<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
+													}
+													else
+													{
+														<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
+													}
+												</div>
+											</div>
+										}
+									}
+									<div class="resources-single__left_post_comment_header_right">
+										@if (openDocumentLink)
+										{
+											<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+										}
+										<div class="single-post-statistic">
+											<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
+													class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )"
+													data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
+													data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
+													data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
+													@(!item.IsUserAuthorized ? "disabled" : "")>
+												<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+													<span>@item.Likes.Likes</span>
+												</div>
+											</button>
+											<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
+													class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")"
+													data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
+													data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
+													data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
+													@(!item.IsUserAuthorized ? "disabled" : "")>
+												<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+													<span>@item.Likes.Dislikes</span>
+												</div>
+											</button>
 										</div>
-									</button>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				
-			}
-			</section>			
+
+					}
+				</section>
+			</div>
 		</div>
 	</div>
-</div>
 }
 <script src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/js/jquery.selectric.js"></script>
