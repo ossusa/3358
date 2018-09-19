@@ -2418,6 +2418,8 @@ p {
     height: 220px; } }
 
 @media (max-width: 370px) {
+  .community_title-label {
+    font-size: 2.25em; }
   .selectric-community__title-select .selectric .label {
     font-size: 2.250em; }
   .resources__logged-buttons {
