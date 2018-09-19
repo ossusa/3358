@@ -75,7 +75,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			meta = new HtmlMeta();
 			meta.Attributes.Add("property", "og:description");
-			meta.Content = model.ResourceDetails.ResourceDescription;
+			meta.Content = new MvcHtmlString(model.ResourceDetails.ResourceDescription).ToHtmlString();
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();
@@ -89,8 +89,30 @@ namespace SitefinityWebApp.Mvc.Controllers
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();
-			meta.Attributes.Add("property", "og:image");
-			meta.Content = model.ResourceDetails.ImageUrl;
+			meta.Attributes.Add("property", "og:image");			
+			if (model.ResourceDetails.ImageUrl != null && model.ResourceDetails.ImageUrl != String.Empty)
+			{
+				meta.Content = model.ResourceDetails.ImageUrl;
+			}
+			else
+			{
+				meta.Content = model.ResourceDetails.ImageSvgUrl;
+			}
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:video");
+			meta.Content = model.ResourceDetails.VideoEmbedCode;
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:video:height");
+			meta.Content = "385";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:video:width");
+			meta.Content = "640";
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();

@@ -5,8 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using Telerik.Sitefinity.Mvc;
 using Telerik.Sitefinity.Mvc.ActionFilters;
+using Telerik.Sitefinity.Services;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -38,6 +41,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
+			AddMetaTags(model, userid);
 			return View("MyHandBookResourceDetails", model);
 		}
 
@@ -49,9 +53,84 @@ namespace SitefinityWebApp.Mvc.Controllers
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
-			
+			AddMetaTags(model, userid);
 			return View("MyHandBookResourceDetails", model);
 		}
+
+		public void AddMetaTags(IAFCHandBookResourceModel model, string userid)
+		{
+			var page = (Page)SystemManager.CurrentHttpContext.CurrentHandler;
+			var meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:type");
+			meta.Content = "article";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:title");
+			meta.Content = model.ResourceDetails.ResourceTitle;
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:description");
+			meta.Content = new MvcHtmlString(model.ResourceDetails.ResourceDescription).ToHtmlString();
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:url");
+			if (userid == null)
+			{
+				meta.Content = handBookHelper.GenerateSharedUrl(System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/'));
+			}
+			else
+			{
+				System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/');
+			}
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:site_name");
+			meta.Content = @"Chief's Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:image");
+			if (model.ResourceDetails.ImageUrl != null && model.ResourceDetails.ImageUrl != String.Empty)
+			{
+				meta.Content = model.ResourceDetails.ImageUrl;
+			}
+			else
+			{
+				meta.Content = model.ResourceDetails.ImageSvgUrl;
+			}
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:video");
+			meta.Content = model.ResourceDetails.VideoEmbedCode;
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:video:height");
+			meta.Content = "385";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:video:width");
+			meta.Content = "640";
+			page.Header.Controls.Add(meta);
+	 
+		    meta = new HtmlMeta();
+			meta.Name = "description";
+			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "twitter:card";
+			meta.Attributes.Add("value", "summary");
+			page.Header.Controls.Add(meta);
+
+		}
+
 
 		[RelativeRoute("AddLike"), HttpPost]	
 		public ActionResult AddLike(String resourceId, int likeAddAmount, int dislikeAddAmount)
