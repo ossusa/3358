@@ -185,9 +185,7 @@
 	var addthis_share;
 	$(document).ready(function () {
         addthis_share = {
-            url: window.location.href + '/@Model.UserId',
-            title: '@Model.ResourceDetails.ResourceTitle',
-            description: '@Html.Raw(Model.ResourceDetails.ResourceDescription)'
+            url: window.location.href + '/@Model.UserId'
         };
 
 		$("title").text("@Model.ResourceDetails.ResourceTitle");

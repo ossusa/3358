@@ -175,9 +175,7 @@
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
 		bindEdit();
         addthis_share = {
-            url: window.location.href,
-            title: '@Model.ResourceDetails.ResourceTitle',
-            description: '@Html.Raw(Model.ResourceDetails.ResourceDescription)'
+            url: window.location.href
         };
 	});
 
