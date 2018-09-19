@@ -80,7 +80,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			meta = new HtmlMeta();
 			meta.Attributes.Add("property", "og:url");
-			meta.Content = handBookHelper.GenerateSharedUrl(System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/'));
+			meta.Content = System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/');
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();
