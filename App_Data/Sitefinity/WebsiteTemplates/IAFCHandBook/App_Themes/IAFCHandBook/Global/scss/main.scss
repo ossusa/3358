@@ -709,9 +709,9 @@ p {
       color: #666;
       font-weight: 700;
       font-size: 0.938em;
-      @media (max-width: 370px){
-        height: auto;
-        height: unset;
+      @media (max-width: 415px){
+        max-width: 190px;
+        min-height: 26px;
       }
       a {
         color: $color_14;
