@@ -2936,7 +2936,7 @@ p {
   .complete__progressindicator_wrapper {
     .community__head-btn-select {
       margin: 24px auto 0 0;
-      width: 320px;
+      width: 100%;
       @media screen and (max-width: 370px) {
         width: 100%;
       }
@@ -3025,7 +3025,7 @@ p {
 
   .progressindicator__label:not(:last-child) {
     margin-bottom: 16px;
-
+    flex: 1;
   }
 
   .handbook__more {
