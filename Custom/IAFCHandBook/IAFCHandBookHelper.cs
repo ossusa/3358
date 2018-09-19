@@ -2241,7 +2241,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Get My Hnadbook ResourceDetails by Name
 		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null, string userId= null)
 		{
-			if (!isUserAuthorized)
+			Guid userGuid;
+			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)))
 			{
 				return null;
 			}
