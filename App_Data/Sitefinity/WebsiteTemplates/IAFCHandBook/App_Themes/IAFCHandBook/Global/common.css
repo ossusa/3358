@@ -2513,7 +2513,8 @@ p {
   z-index: 1; }
 
 .placehoolder-background a, .placeholder-type a {
-  display: block; }
+  display: block;
+  position: relative; }
 
 .selectric-wrapper {
   position: relative;
