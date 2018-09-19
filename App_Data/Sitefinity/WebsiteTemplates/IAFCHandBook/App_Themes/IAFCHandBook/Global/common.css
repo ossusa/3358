@@ -4531,8 +4531,9 @@ addReplyCommentBtn {
     @media screen and (max-width: 1189px) {
       .complete_blocks_first .complete_block_first .single-post-comments {
         display: none; } }
-    .complete_blocks_first .complete_block_first-mob {
-      width: 100%; }
+    @media screen and (max-width: 767px) {
+      .complete_blocks_first .complete_block_first-mob {
+        width: 100%; } }
   .complete_blocks_first .complete_block_big {
     width: 48%; }
     @media screen and (max-width: 1109px) {

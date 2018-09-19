@@ -508,7 +508,9 @@
       }
     }
     &-mob{
-      width: 100%;
+      @media screen and (max-width: 767px){
+        width: 100%;
+      }
     }
   }
   .complete_block_big{
