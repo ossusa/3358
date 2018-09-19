@@ -2334,13 +2334,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "Sign In";
+			otherMenuItem.Title = "LOGIN";
 			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = !isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "Log Out";
+			otherMenuItem.Title = "LOGOUT";
 			otherMenuItem.Url = "/Mxg/AuthService/SignOut/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
