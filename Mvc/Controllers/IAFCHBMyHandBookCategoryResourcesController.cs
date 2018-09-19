@@ -71,7 +71,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			}
 			else
 			{
-				System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/');
+				meta.Content = System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/');
 			}
 			page.Header.Controls.Add(meta);
 
