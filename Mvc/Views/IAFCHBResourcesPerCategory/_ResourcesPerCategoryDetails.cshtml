@@ -24,7 +24,7 @@
 					{
 						<div class="resources-placeholder">
 							<div class="placehoolder-background">
-								<a href="@item.ResourceUrl"></a><img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt" ></a>
+								<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt" ></a>
 							</div>
 							@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 							{
@@ -61,8 +61,8 @@
 								data-id2="@item.ResourceDetails.ResourceDocument"
 								@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 							<span class="resources__slide-title big_truncate_title_sec">@item.ResourceDetails.ResourceTitle</span>
-							<p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
-						</button>						
+						</button>
+						<p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					</div>
 					<div class="resources__slide-footer">
 						@if (item.IsUserAuthorized)
