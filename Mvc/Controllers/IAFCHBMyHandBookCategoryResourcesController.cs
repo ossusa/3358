@@ -9,6 +9,9 @@ using System.Web.Mvc;
 using Telerik.Sitefinity.Mvc;
 using SitefinityWebApp.Mvc.Models;
 using Telerik.Sitefinity.Mvc.ActionFilters;
+using System.Web.UI.HtmlControls;
+using Telerik.Sitefinity.Services;
+using System.Web.UI;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -37,10 +40,63 @@ namespace SitefinityWebApp.Mvc.Controllers
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
-
+			AddMetaTags(model, userId);
 			return View("MyHandBookCategoryResources", model);
 		}
-		
+
+
+		public void AddMetaTags(IAFCHandBookMyHandBookResourceModelModel model, string userid)
+		{
+			var page = (Page)SystemManager.CurrentHttpContext.CurrentHandler;
+			var meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:type");
+			meta.Content = "article";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:title");
+			meta.Content = model.Category.CategoryTitle;
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:description");
+			meta.Content = "Chief's A-RIT Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:url");
+			if (userid == null)
+			{
+				meta.Content = handBookHelper.GenerateSharedUrl(System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/'));
+			}
+			else
+			{
+				System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/');
+			}
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:site_name");
+			meta.Content = @"Chief's Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:image");
+			meta.Content = "https://dev-staging.iafc.org/images/default-source/1logos/iacfhandbook-logo.png";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "description";
+			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "twitter:card";
+			meta.Attributes.Add("value", "summary");
+			page.Header.Controls.Add(meta);
+
+		}
+
 
 		[RelativeRoute("GetResources"), HttpPost, StandaloneResponseFilter]
 		public ActionResult GetResources(String categoryId)

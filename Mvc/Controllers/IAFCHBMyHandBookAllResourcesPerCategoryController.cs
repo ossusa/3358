@@ -3,9 +3,13 @@ using SitefinityWebApp.Custom.IAFCHandBook;
 using SitefinityWebApp.Mvc.Models;
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using Telerik.Sitefinity.Mvc;
 using Telerik.Sitefinity.Mvc.ActionFilters;
+using Telerik.Sitefinity.Services;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -38,9 +42,62 @@ namespace SitefinityWebApp.Mvc.Controllers
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
-
+			AddMetaTags(model, userid);
 			var view = View("MyHandBookAllResourcesPerCategory", model);
 			return view;
+		}
+
+		public void AddMetaTags(IAFCHandBookMyHandBookModel model, string userid)
+		{
+			var page = (Page)SystemManager.CurrentHttpContext.CurrentHandler;
+			var meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:type");
+			meta.Content = "article";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:title");
+			meta.Content = model.MyHandBookResurces.First().Category.CategoryTitle;
+			page.Header.Controls.Add(meta);
+
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:description");
+			meta.Content = "Chief's A-RIT Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:url");
+			if (userid == null)
+			{
+				meta.Content = handBookHelper.GenerateSharedUrl(System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/'));
+			}
+			else
+			{
+				System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/');
+			}			
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:site_name");
+			meta.Content = @"Chief's Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:image");
+			meta.Content = "https://dev-staging.iafc.org/images/default-source/1logos/iacfhandbook-logo.png";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "description";
+			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "twitter:card";
+			meta.Attributes.Add("value", "summary");
+			page.Header.Controls.Add(meta);
+
 		}
 
 		[RelativeRoute("AddLike"), HttpPost]
