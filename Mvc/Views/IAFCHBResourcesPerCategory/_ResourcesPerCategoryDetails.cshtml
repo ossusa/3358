@@ -29,7 +29,7 @@
 							@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 							{
 								<div class="placeholder-type">
-									<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
+									<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt"></a>
 								</div>
 							}
 						</div>
