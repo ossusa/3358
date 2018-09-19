@@ -677,10 +677,10 @@ p {
       color: #666;
       font-weight: 700;
       font-size: 0.938em; }
-      @media (max-width: 370px) {
+      @media (max-width: 415px) {
         .resources__slide-label {
-          height: auto;
-          height: unset; } }
+          max-width: 190px;
+          min-height: 26px; } }
       .resources__slide-label a {
         color: #666; }
     .resources__slide-time {
