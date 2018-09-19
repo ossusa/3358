@@ -24,12 +24,12 @@
 					{
 						<div class="resources-placeholder">
 							<div class="placehoolder-background">
-								<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt" >
+								<a href="@item.ResourceUrl"></a><img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt" ></a>
 							</div>
 							@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 							{
 								<div class="placeholder-type">
-									<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt"></a>
+									<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
 								</div>
 							}
 						</div>
