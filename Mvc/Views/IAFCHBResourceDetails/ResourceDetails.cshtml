@@ -174,12 +174,15 @@
 	$(document).ready(function () {
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
 		bindEdit();
+
 		var resourceUrl = '@Model.ResourceUrl';
 		var homePageUrl =  window.location.origin;
 		var fullUrl = homePageUrl + resourceUrl;
 		addthis_share = {
 			url: fullUrl
-		}
+
+		
+		
 	});
 
 
