@@ -52,7 +52,7 @@
 				</div>
 				<div class="resources__slide-info resources__community-slide-info">
 					<div class="resources__slide-box">
-						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+						<a href="@item.ResourceUrl"><p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p></a>
 						@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
 								|| (item.ResourceDetails.ResourceTypeName == "video"));}
 						<button type="button" class="resourceLink"
