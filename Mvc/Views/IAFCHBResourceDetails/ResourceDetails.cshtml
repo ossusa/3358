@@ -174,11 +174,11 @@
 	$(document).ready(function () {
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
 		bindEdit();
+
         addthis_share = {
-            url: window.location.href
-            
+            url: '@Model.ResourceUrl'            
         }
-	});
+
 
 
 	function bindEdit() {
