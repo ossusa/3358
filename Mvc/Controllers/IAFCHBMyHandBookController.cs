@@ -64,6 +64,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool";
 			page.Header.Controls.Add(meta);
 
+			
 			meta = new HtmlMeta();
 			meta.Attributes.Add("property", "og:description");
 			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool Description";
@@ -83,6 +84,20 @@ namespace SitefinityWebApp.Mvc.Controllers
 			meta.Attributes.Add("property", "og:image");
 			meta.Content = "image_url";
 			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "description";
+			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "twitter:card";
+			meta.Attributes.Add("value", "summary");
+			page.Header.Controls.Add(meta);
+
+
+
+
 
 			return View("MyHandBook",model);
 		}
