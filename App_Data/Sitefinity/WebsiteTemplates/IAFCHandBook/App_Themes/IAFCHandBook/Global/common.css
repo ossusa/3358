@@ -3353,7 +3353,7 @@ p {
     margin-right: 48px; }
     @media screen and (max-width: 768px) {
       .resources-single__left {
-        min-width: auto;
+        min-width: 100%;
         margin-right: 0; } }
     .resources-single__left_post {
       display: -ms-flexbox;
