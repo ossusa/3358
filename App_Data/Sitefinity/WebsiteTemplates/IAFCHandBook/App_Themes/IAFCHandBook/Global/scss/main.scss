@@ -3098,6 +3098,9 @@ p {
   .community_title-label{
     font-size: 2.25em;
   }
+  .community__head-btn:nth-of-type(2){
+    white-space: nowrap;
+  }
   .selectric-community__title-select {
     .selectric {
       .label {
