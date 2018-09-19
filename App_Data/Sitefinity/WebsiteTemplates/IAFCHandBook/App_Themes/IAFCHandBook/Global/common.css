@@ -785,7 +785,7 @@ p {
     font-size: 18px;
     background: url(../images/time.png) no-repeat 50% 50%;
     width: 19px;
-    height: 15px; }
+    height: 14px; }
   .resources--dislike-img {
     margin-right: 4px;
     font-size: 16px; }
@@ -3315,16 +3315,12 @@ p {
     font-weight: 400;
     letter-spacing: 0.5px; }
 
-.resources__single {
-  max-width: 790px;
-  min-width: 430px;
-  width: 100%; }
-  @media screen and (max-width: 767px) {
-    .resources__single {
-      margin: 0 -28px;
-      min-width: auto;
-      width: auto;
-      width: unset; } }
+@media screen and (max-width: 767px) {
+  .resources__single {
+    margin: 0 -28px;
+    min-width: auto;
+    width: auto;
+    width: unset; } }
 
 .resources-single {
   display: -ms-flexbox;
