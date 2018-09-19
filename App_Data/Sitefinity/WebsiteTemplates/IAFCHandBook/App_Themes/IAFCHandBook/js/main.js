@@ -278,7 +278,7 @@ $(document).ready(function() {
 
 $(window).on('load', function() {
     //image positioning within container
-    $( ".img-container-js > img" ).each(function() {
+    $( ".img-container-js > a > img" ).each(function() {
         if (this.naturalWidth/this.naturalHeight < 13/9){
             $(this).css({
                 'width': '100%',
