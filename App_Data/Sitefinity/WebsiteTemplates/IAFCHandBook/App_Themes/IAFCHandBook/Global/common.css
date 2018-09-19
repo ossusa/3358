@@ -2425,6 +2425,8 @@ p {
     white-space: nowrap; }
   .community__head-btn-active {
     padding: 0 7px; }
+  .community__head-following {
+    padding: 0 7px; }
   .selectric-community__title-select .selectric .label {
     font-size: 2.250em; }
   .resources__logged-buttons {

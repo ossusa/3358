@@ -94,11 +94,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			meta.Name = "twitter:card";
 			meta.Attributes.Add("value", "summary");
 			page.Header.Controls.Add(meta);
-
-
-
-
-
+			
 			return View("MyHandBook",model);
 		}
 

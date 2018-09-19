@@ -6,8 +6,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using Telerik.Sitefinity.Mvc;
 using Telerik.Sitefinity.Mvc.ActionFilters;
+using Telerik.Sitefinity.Services;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -41,6 +44,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
+			AddMetaTags(model);
 			return View("ResourceDetails", model);			
 		}
 
@@ -52,7 +56,53 @@ namespace SitefinityWebApp.Mvc.Controllers
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
 			}
+			AddMetaTags(model);
 			return View("ResourceDetails", model);
+		}
+		public void AddMetaTags(IAFCHandBookResourceModel model)
+		{
+			var page = (Page)SystemManager.CurrentHttpContext.CurrentHandler;
+			var meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:type");
+			meta.Content = "video";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:title");
+			meta.Content = model.ResourceDetails.ResourceTitle;
+			page.Header.Controls.Add(meta);
+
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:description");
+			meta.Content = model.ResourceDetails.ResourceDescription;
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:url");
+			meta.Content = handBookHelper.GenerateSharedUrl(System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/'));
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:site_name");
+			meta.Content = @"Chief's Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Attributes.Add("property", "og:image");
+			meta.Content = model.ResourceDetails.ImageUrl;
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "description";
+			meta.Content = @"Chief's A-RIT Administrative Rapid Information Tool";
+			page.Header.Controls.Add(meta);
+
+			meta = new HtmlMeta();
+			meta.Name = "twitter:card";
+			meta.Attributes.Add("value", "summary");
+			page.Header.Controls.Add(meta);
+
 		}
 
 		[RelativeRoute("AddLike"), HttpPost]		
