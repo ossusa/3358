@@ -2519,6 +2519,11 @@ p {
 .placehoolder-background a, .placeholder-type a {
   display: block;
   position: relative; }
+  .placehoolder-background a img, .placeholder-type a img {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); }
 
 .selectric-wrapper {
   position: relative;
