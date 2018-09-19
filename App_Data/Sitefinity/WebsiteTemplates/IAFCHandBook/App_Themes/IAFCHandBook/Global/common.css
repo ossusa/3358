@@ -1547,7 +1547,7 @@ p {
   border-bottom-right-radius: 3px; }
   @media screen and (max-width: 767px) {
     .selectric-community__category-select .selectric-items {
-      width: 100.5%; } }
+      width: 100.5% !important; } }
   .selectric-community__category-select .selectric-items ul {
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.938em;
