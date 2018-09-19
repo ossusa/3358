@@ -184,8 +184,9 @@
 <script>
 	var addthis_share;
 	$(document).ready(function () {
+		var sharedUrl = window.location.origin + '@Model.ResourceUrl'+'/@Model.UserId';		
         addthis_share = {
-			url: '@Model.ResourceUrl'+'/@Model.UserId'
+			url: sharedUrl
         };
 
 		$("title").text("@Model.ResourceDetails.ResourceTitle");

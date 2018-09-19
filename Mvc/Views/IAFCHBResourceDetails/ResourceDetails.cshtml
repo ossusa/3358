@@ -174,9 +174,10 @@
 	$(document).ready(function () {
 		$("title").text("@Model.ResourceDetails.ResourceTitle");
 		bindEdit();
-
+		
+		var sharedUrl = window.location.origin + '@Model.ResourceUrl';		
 		addthis_share = {
-			url: '@Model.ResourceUrl'
+			url: sharedUrl
 		}
 	});
 
