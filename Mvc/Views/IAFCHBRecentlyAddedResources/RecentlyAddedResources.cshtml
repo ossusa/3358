@@ -13,18 +13,18 @@
 				<div class="resources__slide-img img-container-js" style="background: none; overflow: hidden">
 					@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
-						<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
+						<a href="@item.ResourceUrl"><img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" /></a>
 					}
 					else
 					{
 						<div class="resources-placeholder">
 							<div class="placehoolder-background">
-								<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
+								<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt"></a>
 							</div>
 							@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 							{
 								<div class="placeholder-type">
-									<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
+									<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt"></a>
 								</div>
 							}
 						</div>
@@ -56,7 +56,7 @@
 								@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 							<span class="resources__slide-title big_truncate_title">@item.ResourceDetails.ResourceTitle</span>
 						</button>
-						<p class="resources__slide-desc big_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
+						<a href="@item.ResourceUrl"><p class="resources__slide-desc big_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p></a>
 					</div>
 
 					<div class="resources__slide-footer">

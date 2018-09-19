@@ -39,6 +39,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		{
 
 			IAFCHandBookMyHandBookModel model = new IAFCHandBookMyHandBookModel();
+			
 			if (userid == null)
 			{
 				model = GetData();
@@ -72,7 +73,14 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			meta = new HtmlMeta();
 			meta.Attributes.Add("property", "og:url");
-			meta.Content = handBookHelper.GenerateSharedUrl(System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/'));
+			if (userid == null)
+			{
+				meta.Content = handBookHelper.GenerateSharedUrl(System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/'));
+			}
+			else
+			{
+				System.Web.HttpContext.Current.Request.Url.AbsoluteUri.TrimEnd('/');
+			}
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();
@@ -82,7 +90,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			meta = new HtmlMeta();
 			meta.Attributes.Add("property", "og:image");
-			meta.Content = "image_url";
+			meta.Content = "https://dev-staging.iafc.org/images/default-source/1logos/iacfhandbook-logo.png";
 			page.Header.Controls.Add(meta);
 
 			meta = new HtmlMeta();
