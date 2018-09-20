@@ -1411,6 +1411,9 @@ p {
     width: auto !important;
     width: unset !important;
     padding: 0 12px; }
+    @media screen and (max-width: 767px) {
+      .community__head-btn-active {
+        width: inherit !important; } }
   .community__head-btn-select select {
     border: 1px solid #2b4b6b;
     border-radius: 3px;
