@@ -2510,8 +2510,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var myHandBookItem = GetOrCreateMyHandBook();				
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().Count();
-				var myHandBookCompletedResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>().Count();
+				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>()
+					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId))
+					.Count();
+				var myHandBookCompletedResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>()
+					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId))
+					.Count();
 
 				var allResourcesPerCaterory = dynamicModuleManager.GetDataItems(handBookResourcesType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
