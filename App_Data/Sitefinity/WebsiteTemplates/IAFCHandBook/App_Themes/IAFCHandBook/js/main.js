@@ -448,21 +448,15 @@ if($(window).width() > 1109) {
         });
     }
 
-    $(document).ready(function() {
-        $('fieldset').keyup(function() {
-            var empty = false;
-            $('fieldset').each(function() {
-                if ($(this).val().length == 0) {
-                    empty = true;
-                }
-            });
-            if (empty) {
-                $('.searchBtn').attr('disabled', 'disabled');
-            } else {
-                $('.searchBtn').removeAttr('disabled');
-            }
-        });
-    });
 });
 
 
+$(document).ready(function(){
+    $('.searchBtn').attr('disabled',true);
+    $('.k-input').keyup(function(){
+        if($(this).val().length !=0)
+            $('.searchBtn').attr('disabled', false);
+        else
+            $('.searchBtn').attr('disabled',true);
+    })
+});
