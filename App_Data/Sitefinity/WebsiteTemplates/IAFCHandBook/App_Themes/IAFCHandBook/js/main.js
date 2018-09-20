@@ -447,9 +447,9 @@ if($(window).width() > 1109) {
             }
         });
     }
-    if(window.matchMedia('(max-width: 990px) and (min-width: 901px)').matches) {
-        $('.comment_span').text($('.comment_span').text().replace('Comments', ''));
-    }
+    // if(window.matchMedia('(max-width: 990px) and (min-width: 901px)').matches) {
+    //     $('.comment_span').text($('.comment_span').text().replace('Comments', ''));
+    // }
 });
 
 
