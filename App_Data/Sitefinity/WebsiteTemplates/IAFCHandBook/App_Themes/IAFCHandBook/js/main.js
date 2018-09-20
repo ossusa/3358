@@ -452,11 +452,11 @@ if($(window).width() > 1109) {
 
 
 $(document).ready(function(){
-    $('.searchBtn, .search-box').attr('disabled',true);
+    $('.searchBtn, .search-box, .header__mob-search').attr('disabled',true);
     $('.k-input').keyup(function(){
         if($(this).val().length !=0)
-            $('.searchBtn, .hidden__search').attr('disabled', false);
+            $('.searchBtn, .hidden__search, .header__mob-button').attr('disabled', false);
         else
-            $('.searchBtn, .hidden__search').attr('disabled',true);
+            $('.searchBtn, .hidden__search, .header__mob-button').attr('disabled',true);
     })
 });
