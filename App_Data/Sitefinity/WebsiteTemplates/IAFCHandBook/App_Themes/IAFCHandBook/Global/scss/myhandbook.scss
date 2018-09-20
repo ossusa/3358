@@ -528,7 +528,7 @@
     }
     .single-post-comments{
       @media screen and (max-width: 1189px){
-        display: block;
+        display: flex;
       }
       @media screen and (max-width: 767px){
         display: none;

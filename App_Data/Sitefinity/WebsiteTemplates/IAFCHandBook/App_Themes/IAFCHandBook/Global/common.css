@@ -4593,7 +4593,8 @@ addReplyCommentBtn {
         margin: 0 auto 24px; } }
     @media screen and (max-width: 1189px) {
       .complete_blocks_first .complete_block_big .single-post-comments {
-        display: block; } }
+        display: -ms-flexbox;
+        display: flex; } }
     @media screen and (max-width: 767px) {
       .complete_blocks_first .complete_block_big .single-post-comments {
         display: none; } }
