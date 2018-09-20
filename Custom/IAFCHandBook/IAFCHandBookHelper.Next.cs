@@ -477,7 +477,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				model.Category.ResourcesTotalDuration = totalDuration.ToString();
 				model.Category.TotalDuration = totalDuration;
 				model.Category.ResourcesAmount = resourcesAmount;
-				model.MoreCategories = GetMoreCategories(model.Category.Id);
+				model.MoreCategories = GetMoreCategories(model.Category.Id, null);
 				model.IsCategoryFollowed = IsCategoryFollowed(model.Category.Id);
 				model.IsAllResourcesAddedToMyHandBook = IsAllResourcesAddedToMyHandBook(model.Category.Id);
 				model.IsUserAuthorized = isUserAuthorized;
@@ -1162,7 +1162,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 category.MyHandBookInCompletedResources = myHandBookResourcesAmount;
 
                 model.Category = category;
-                model.MoreCategories = GetMoreCategories(categoryId);
+                model.MoreCategories = GetMoreCategories(categoryId, sharedUrl);
 
                 var myChildResourceItem = new IAFCHandBookResourceModel();
                 foreach (var resourceItem in showAllResources ? categoryResources : categoryResources.Take(5))

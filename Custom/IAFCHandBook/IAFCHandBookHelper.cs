@@ -1336,7 +1336,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#region Categories Methods
 
 		#region GetMoreCategories
-		private List<IAFCHandBookTopicCategoryModel> GetMoreCategories(Guid categoryId)
+		private List<IAFCHandBookTopicCategoryModel> GetMoreCategories(Guid categoryId, string sharedUrl)
 		{
 			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 			var moreTopicCategories = new List<IAFCHandBookTopicCategoryModel>();
@@ -1376,8 +1376,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				newTopicCategory.CategoryUrl = topicCategoryDetails.ResourceCategoryUrl;
 				newTopicCategory.TopicCategoryImageUrl = topicCategoryDetails.ResourceParentCategoryImageUrl;
 				newTopicCategory.ResourcesAmount = categoryResourceAmount;
-				newTopicCategory.MyHandBookCategoryUrl = topicCategoryDetails.MyHandbookResourceCategoryUrl;
-				newTopicCategory.MyHandBookParentCategoryUrl = topicCategoryDetails.MyHandbookResourceParentCategoryUrl;
+				newTopicCategory.MyHandBookCategoryUrl = topicCategoryDetails.MyHandbookResourceCategoryUrl + sharedUrl;
+				newTopicCategory.MyHandBookParentCategoryUrl = topicCategoryDetails.MyHandbookResourceParentCategoryUrl + sharedUrl;
 				newTopicCategory.CategoryClass = topicCategoryDetails.CategoryClass;
 				newTopicCategory.CategorySvg = topicCategoryDetails.CategoryImage.Url;
 				newTopicCategory.CategoryAlt = topicCategoryDetails.CategoryImage.AlternativeText;
