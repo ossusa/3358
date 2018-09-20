@@ -449,9 +449,9 @@ if($(window).width() > 1109) {
     }
 
     $(document).ready(function() {
-        $('.k-input').keyup(function() {
+        $('fieldset').keyup(function() {
             var empty = false;
-            $('.k-input').each(function() {
+            $('fieldset').each(function() {
                 if ($(this).val().length == 0) {
                     empty = true;
                 }
