@@ -3360,12 +3360,24 @@ p {
     font-weight: 400;
     letter-spacing: 0.5px; }
 
-@media screen and (max-width: 767px) {
-  .resources__single {
-    margin: 0 -28px;
-    min-width: auto;
-    width: auto;
-    width: unset; } }
+.resources__single {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  max-width: 360px; }
+  @media screen and (max-width: 767px) {
+    .resources__single {
+      max-width: 300px; } }
+  @media screen and (max-width: 767px) {
+    .resources__single {
+      margin: 0 -28px;
+      min-width: auto;
+      width: auto;
+      width: unset; } }
 
 .resources-single {
   display: -ms-flexbox;

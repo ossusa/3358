@@ -112,6 +112,14 @@
     }
   }
   &__single{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 360px;
+    @media screen and (max-width: 767px){
+      max-width: 300px;
+    }
     @media screen and (max-width: 767px){
       margin: 0 -28px;
       min-width: auto;
