@@ -680,7 +680,8 @@ p {
       @media (max-width: 415px) {
         .resources__slide-label {
           max-width: 190px;
-          min-height: 26px; } }
+          min-height: 26px;
+          height: auto; } }
       .resources__slide-label a {
         color: #666; }
     .resources__slide-time {
