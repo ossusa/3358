@@ -2297,7 +2297,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var isUserSignIn = IsUserAuthorized();
 			model.IsUserAuthorized = isUserSignIn;
 			var topicMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			topicMenuItem.Title = "Topics";
+			topicMenuItem.Title = "TOPICS";
 			topicMenuItem.Url = String.Empty;
 			topicMenuItem.Visible = true;
 			foreach (var categoryItem in topicParentCategories)
@@ -2323,13 +2323,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 
 			var otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "My A-RIT";
+			otherMenuItem.Title = "MY A-RIT";
 			otherMenuItem.Url = MainPage + "/my-a-rit/";
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "Account";
+			otherMenuItem.Title = "ACCOUNT";
 			otherMenuItem.Url = MainPage + "/account/";
 			otherMenuItem.Visible = isUserSignIn;
 			model.Menu.Add(otherMenuItem);
@@ -2498,6 +2498,37 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return returnData;
 		}
 		#endregion IsCategoryFollowed
+
+		#region IsAllResourcesAddedToMyHandBook
+		public Boolean IsAllResourcesAddedToMyHandBook(Guid categoryId)
+		{
+
+			Boolean returnData = false;
+			var i = 0;
+			try
+			{
+				var myHandBookItem = GetOrCreateMyHandBook();				
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+
+				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>().Count();
+				var myHandBookCompletedResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>().Count();
+
+				var allResourcesPerCaterory = dynamicModuleManager.GetDataItems(handBookResourcesType)
+					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId)).Count();
+
+				if (allResourcesPerCaterory == myHandBookResources + myHandBookCompletedResources)
+				{
+					returnData = true;
+				}
+			}
+			catch (Exception e)
+			{
+				log.Error("IsAllResourcesAddedToMyHandBook Error: " + categoryId.ToString() + e.Message);
+			}
+			return returnData;
+		}
+		#endregion IsAllResourcesAddedToMyHandBook
 
 		#region SendNotification
 		private void SendNotification(Guid resourceId)

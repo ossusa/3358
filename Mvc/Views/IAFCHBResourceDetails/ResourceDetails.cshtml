@@ -110,7 +110,7 @@
 		<div class="resources__single">
 			<div class="resources-single__right">
 				<div class="resources-single__right_header">
-					<p>More Resources in <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
+					<p>More <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
 				</div>
 				<ul class="resources-single__right_list">
 					@{ var firstItem = true;}
@@ -161,7 +161,7 @@
 					}
 				</ul>
 				<div class="resources-single__right_more">
-					<a href='@Model.ResourceDetails.Category.CategoryUrl'>See More</a>
+					<a href='@Model.ResourceDetails.Category.CategoryUrl'>All @Model.ResourceDetails.Category.CategoryTitle</a>
 				</div>
 			</div>
 		</div>

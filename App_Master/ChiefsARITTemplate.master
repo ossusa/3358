@@ -82,9 +82,8 @@
                         <asp:ContentPlaceHolder ID="footerMenu" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
-                    <div class="footer__info-col footer_copyright">
-                        <span>&copy;</span> <span id="copyrightIAFC"> </span> <span> IAFC </span>
-                        <asp:ContentPlaceHolder ID="footerCurentYear" runat="server">
+                    <div class="footer__info-col footer_copyright">                        
+                        <asp:ContentPlaceHolder ID="footerCopyrigtPlace" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
                 </div>
