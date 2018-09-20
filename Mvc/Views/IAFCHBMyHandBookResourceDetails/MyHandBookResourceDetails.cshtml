@@ -57,13 +57,15 @@
 									</div>
 								</div>
 							}
-
-							<div id="shareBtn" class="resources-single__left_post_comment_header_left_share addthis_inline_share_toolbox_n7k8">
-								<a class="addthis_button_compact">
-									<i class="anticon anticon-share-alt"></i>
-									<span>Share</span>
-								</a>
-							</div>
+							@if (Model.SharedUserId == Guid.Empty)
+							{
+								<div id="shareBtn" class="resources-single__left_post_comment_header_left_share addthis_inline_share_toolbox_n7k8">
+									<a class="addthis_button_compact">
+										<i class="anticon anticon-share-alt"></i>
+										<span>Share</span>
+									</a>
+								</div>
+							}
 						</div>
 						<div class="resources-single__left_post_comment_header_right left_comment_area">
 							<div class="single-post-comments" id="commentsAmountHeaderID" data-id="@Model.CommentsAmount.ToString()">
