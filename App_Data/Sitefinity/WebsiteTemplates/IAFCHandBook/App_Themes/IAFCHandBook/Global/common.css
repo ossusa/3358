@@ -4642,8 +4642,9 @@ addReplyCommentBtn {
   .progressindicator_share.centered {
     padding-right: 0px !important; } }
 
-.comment_span:after {
-  content: ''; }
+@media (max-width: 990px) and (min-width: 901px) {
+  .comment_span {
+    display: none; } }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {

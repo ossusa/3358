@@ -592,6 +592,8 @@
     padding-right: 0px !important;
   }
 }
-.comment_span:after{
-  content: '';
+@media (max-width: 990px) and (min-width: 901px) {
+  .comment_span{
+    display: none;
+  }
 }
