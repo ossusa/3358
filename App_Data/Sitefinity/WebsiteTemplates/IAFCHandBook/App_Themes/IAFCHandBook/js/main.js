@@ -447,6 +447,7 @@ if($(window).width() > 1109) {
             }
         });
     }
+    $('.ghost_btn').text('Access this Resource');
 });
 
 

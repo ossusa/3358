@@ -42,6 +42,22 @@
   padding-left: 40px;
   margin: 0; }
 
+.ghost_btn {
+  position: relative;
+  background: transparent;
+  padding: 10px 24px;
+  margin: 0;
+  color: #434f68;
+  font-family: "Nunito Sans";
+  font-size: 14px !important;
+  font-weight: 400;
+  border-radius: 3px;
+  border: 1px solid #434f68;
+  transition: 0.3s ease-in-out; }
+  .ghost_btn:hover {
+    background: #2b4b6b;
+    color: #fff; }
+
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 @font-face {
   font-family: 'icomoon';
@@ -2491,7 +2507,7 @@ p {
   border: none; }
 
 #content {
-  min-height: calc(100vh - 282px); }
+  min-height: calc(100vh - 212px); }
 
 .resourceFeaturedLink {
   transition: .3s ease-in-out;
@@ -3236,6 +3252,14 @@ p {
     .footer__info-cols {
       display: -ms-flexbox;
       display: flex; }
+      @media screen and (max-width: 1195px) {
+        .footer__info-cols {
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-pack: center;
+          justify-content: center; } }
     .footer__info-col ul {
       margin: 0 -12px; }
       .footer__info-col ul li a {
@@ -3262,6 +3286,14 @@ p {
 @media (max-width: 767px) {
   .footer__info {
     height: auto; } }
+
+.clear {
+  display: none; }
+
+.copyright-links {
+  text-align: center; }
+  .copyright-links a {
+    color: inherit; }
 
 .single-post-statistic {
   display: -ms-flexbox;
@@ -3360,12 +3392,28 @@ p {
     font-weight: 400;
     letter-spacing: 0.5px; }
 
-@media screen and (max-width: 767px) {
-  .resources__single {
-    margin: 0 -28px;
-    min-width: auto;
-    width: auto;
-    width: unset; } }
+.resources__single {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  max-width: 360px; }
+  @media screen and (max-width: 1300px) {
+    .resources__single {
+      max-width: 300px; } }
+  @media screen and (max-width: 1109px) {
+    .resources__single {
+      max-width: 790px;
+      min-width: 430px; } }
+  @media screen and (max-width: 767px) {
+    .resources__single {
+      margin: 0 -28px;
+      min-width: auto;
+      width: auto;
+      width: unset; } }
 
 .resources-single {
   display: -ms-flexbox;
