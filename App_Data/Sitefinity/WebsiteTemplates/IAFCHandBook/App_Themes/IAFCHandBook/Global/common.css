@@ -4642,6 +4642,9 @@ addReplyCommentBtn {
   .progressindicator_share.centered {
     padding-right: 0px !important; } }
 
+.comment_span:after {
+  content: ''; }
+
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
     top: auto; }
