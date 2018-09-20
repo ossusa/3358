@@ -3235,17 +3235,9 @@ p {
     justify-content: space-between; }
     .footer__info-cols {
       display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -ms-flex-align: center;
-      align-items: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
+      display: flex; }
       @media screen and (max-width: 1195px) {
         .footer__info-cols {
-          display: -ms-flexbox;
-          display: flex;
           -ms-flex-direction: column;
           flex-direction: column;
           -ms-flex-align: center;
