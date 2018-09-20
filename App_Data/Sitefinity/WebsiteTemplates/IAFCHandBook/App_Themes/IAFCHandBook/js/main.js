@@ -452,11 +452,11 @@ if($(window).width() > 1109) {
 
 
 $(document).ready(function(){
-    $('.searchBtn').attr('disabled',true);
+    $('.searchBtn, .search-box').attr('disabled',true);
     $('.k-input').keyup(function(){
         if($(this).val().length !=0)
-            $('.searchBtn').attr('disabled', false);
+            $('.searchBtn, .hidden__search').attr('disabled', false);
         else
-            $('.searchBtn').attr('disabled',true);
+            $('.searchBtn, .hidden__search').attr('disabled',true);
     })
 });
