@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     /*SEARCH IN HEADER*/
     var $search = '<li class="header__list header__list-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
-    var $li = $(".header__list:contains('Account')");
+    var $li = $(".header__list:contains('ACCOUNT')");
     var $liLogout = $(".header__list:contains('LOGIN')");
     var $liSearch = '<div class="mg-search-box hidden"><div class="relative"><label for="site-search" class="visuallyhidden">Search</label><input type="text" class="search-box" id="site-search" placeholder="Search"><button id="site-search-submit" class="hidden__search anticon anticon-search" type="submit"></button></div></div>';
     $($search).insertAfter($li);
