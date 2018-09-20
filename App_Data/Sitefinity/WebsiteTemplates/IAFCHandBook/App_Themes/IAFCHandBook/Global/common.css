@@ -1389,7 +1389,11 @@ p {
   font-size: 0.875em;
   height: 40px;
   background: transparent;
-  margin-left: 16px; }
+  margin-left: 16px;
+  transition: .3s ease-in-out; }
+  .community__head-btn:hover {
+    background: #2b4b6b;
+    color: #fff; }
   .community__head-btn:nth-of-type(2) {
     width: 91px; }
   .community__head-btn button {

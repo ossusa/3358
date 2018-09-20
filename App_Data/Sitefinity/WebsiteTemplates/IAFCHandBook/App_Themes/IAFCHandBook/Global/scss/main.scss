@@ -1583,6 +1583,11 @@ p {
       height: 40px;
       background: transparent;
       margin-left: 16px;
+      transition: .3s ease-in-out;
+      &:hover{
+        background: #2b4b6b;
+        color: #fff;
+      }
       &:nth-of-type(2) {
         width: 91px;
       }
