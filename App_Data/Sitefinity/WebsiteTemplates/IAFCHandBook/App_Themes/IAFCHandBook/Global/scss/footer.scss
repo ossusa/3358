@@ -14,9 +14,16 @@
     align-items: center;
     justify-content: space-between;
     &-cols {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
+      @media screen and (max-width: 1195px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     &-col {
       ul {
@@ -57,5 +64,14 @@
 @media (max-width: 767px) {
   .footer__info {
     height: auto;
+  }
+}
+.clear{
+  display: none;
+}
+.copyright-links{
+  text-align: center;
+  a{
+    color: inherit;
   }
 }
