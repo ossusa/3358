@@ -479,6 +479,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				model.Category.ResourcesAmount = resourcesAmount;
 				model.MoreCategories = GetMoreCategories(model.Category.Id);
 				model.IsCategoryFollowed = IsCategoryFollowed(model.Category.Id);
+				model.IsAllResourcesAddedToMyHandBook = IsAllResourcesAddedToMyHandBook(model.Category.Id);
 				model.IsUserAuthorized = isUserAuthorized;
 			}
 			catch (Exception e)
