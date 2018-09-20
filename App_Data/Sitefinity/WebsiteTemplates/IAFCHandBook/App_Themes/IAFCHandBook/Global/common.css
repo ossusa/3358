@@ -42,6 +42,21 @@
   padding-left: 40px;
   margin: 0; }
 
+.ghost_btn {
+  background: transparent;
+  padding: 10px 24px;
+  margin: 0;
+  color: #434f68;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 3px;
+  border: 1px solid #434f68;
+  transition: 0.3s ease-in-out; }
+  .ghost_btn:hover {
+    background: #2b4b6b;
+    color: #fff; }
+
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 @font-face {
   font-family: 'icomoon';
