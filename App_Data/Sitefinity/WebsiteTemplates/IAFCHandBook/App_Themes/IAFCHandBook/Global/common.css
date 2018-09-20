@@ -2503,6 +2503,10 @@ p {
 .unfollowBtn {
   white-space: nowrap; }
 
+@media (max-width: 767px) {
+  .account-template .resources__logged-buttons {
+    margin-bottom: 32px; } }
+
 @media (max-width: 370px) {
   .account-template .resources__logged-buttons {
     -ms-flex-align: start;

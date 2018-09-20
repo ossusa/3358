@@ -3224,6 +3224,9 @@ p {
 }
 
 .account-template .resources__logged-buttons {
+  @media (max-width: 767px) {
+    margin-bottom: 32px;
+  }
   @media (max-width: 370px) {
     align-items: flex-start;
   }
