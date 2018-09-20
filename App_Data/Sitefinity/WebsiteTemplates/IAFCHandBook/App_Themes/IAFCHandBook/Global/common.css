@@ -3388,6 +3388,10 @@ p {
   @media screen and (max-width: 1300px) {
     .resources__single {
       max-width: 300px; } }
+  @media screen and (max-width: 1109px) {
+    .resources__single {
+      max-width: 790px;
+      min-width: 430px; } }
   @media screen and (max-width: 767px) {
     .resources__single {
       margin: 0 -28px;

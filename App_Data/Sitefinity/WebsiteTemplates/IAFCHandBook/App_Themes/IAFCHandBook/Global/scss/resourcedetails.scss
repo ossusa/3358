@@ -120,6 +120,10 @@
     @media screen and (max-width: 1300px){
       max-width: 300px;
     }
+    @media screen and (max-width: 1109px){
+      max-width: 790px;
+      min-width: 430px;
+    }
     @media screen and (max-width: 767px){
       margin: 0 -28px;
       min-width: auto;
@@ -136,7 +140,6 @@
     @media screen and (max-width: 767px){
       padding-bottom: 57px;
     }
-
     &__left{
       max-width: 790px;
       min-width: 430px;
