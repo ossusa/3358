@@ -3369,7 +3369,7 @@ p {
   -ms-flex-align: end;
   align-items: flex-end;
   max-width: 360px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1300px) {
     .resources__single {
       max-width: 300px; } }
   @media screen and (max-width: 767px) {
