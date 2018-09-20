@@ -680,7 +680,8 @@ p {
       @media (max-width: 415px) {
         .resources__slide-label {
           max-width: 190px;
-          min-height: 26px; } }
+          min-height: 26px;
+          height: auto; } }
       .resources__slide-label a {
         color: #666; }
     .resources__slide-time {
@@ -1388,7 +1389,11 @@ p {
   font-size: 0.875em;
   height: 40px;
   background: transparent;
-  margin-left: 16px; }
+  margin-left: 16px;
+  transition: .3s ease-in-out; }
+  .community__head-btn:hover {
+    background: #2b4b6b;
+    color: #fff; }
   .community__head-btn:nth-of-type(2) {
     width: 91px; }
   .community__head-btn button {
@@ -1406,6 +1411,9 @@ p {
     width: auto !important;
     width: unset !important;
     padding: 0 12px; }
+    @media screen and (max-width: 767px) {
+      .community__head-btn-active {
+        width: inherit !important; } }
   .community__head-btn-select select {
     border: 1px solid #2b4b6b;
     border-radius: 3px;
@@ -2494,6 +2502,10 @@ p {
 
 .unfollowBtn {
   white-space: nowrap; }
+
+@media (max-width: 767px) {
+  .account-template .resources__logged-buttons {
+    margin-bottom: 32px; } }
 
 @media (max-width: 370px) {
   .account-template .resources__logged-buttons {
@@ -4581,7 +4593,8 @@ addReplyCommentBtn {
         margin: 0 auto 24px; } }
     @media screen and (max-width: 1189px) {
       .complete_blocks_first .complete_block_big .single-post-comments {
-        display: block; } }
+        display: -ms-flexbox;
+        display: flex; } }
     @media screen and (max-width: 767px) {
       .complete_blocks_first .complete_block_big .single-post-comments {
         display: none; } }
@@ -4624,6 +4637,14 @@ addReplyCommentBtn {
   .centered {
     -ms-flex-pack: center;
     justify-content: center; } }
+
+@media screen and (max-width: 1109px) {
+  .progressindicator_share.centered {
+    padding-right: 0px !important; } }
+
+@media (max-width: 990px) and (min-width: 901px) {
+  .comment_span {
+    display: none; } }
 
 @media screen and (-ms-high-contrast: active) and (max-width: 767px), (-ms-high-contrast: none) and (max-width: 767px) {
   .slick-arrow {
