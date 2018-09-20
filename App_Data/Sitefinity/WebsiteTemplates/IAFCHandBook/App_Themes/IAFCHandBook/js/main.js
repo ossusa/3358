@@ -447,7 +447,22 @@ if($(window).width() > 1109) {
             }
         });
     }
-    $('.ghost_btn').text('Access this Resource');
+
+    $(document).ready(function() {
+        $('.k-input').keyup(function() {
+            var empty = false;
+            $('.k-input').each(function() {
+                if ($(this).val().length == 0) {
+                    empty = true;
+                }
+            });
+            if (empty) {
+                $('.searchBtn').attr('disabled', 'disabled');
+            } else {
+                $('.searchBtn').removeAttr('disabled');
+            }
+        });
+    });
 });
 
 
