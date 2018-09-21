@@ -36,10 +36,6 @@ $(document).ready(function () {
             var q = $('#site-search').val();
             if (e.which === 13 || e.type === 'click') {
                 location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-                if ($('#site-search').val() == "" ) {
-                    e.preventDefault();
-                    return false;
-                }
             }
         });
     });
@@ -50,6 +46,10 @@ $(document).ready(function () {
                 if ($btn.length) {
                     $btn.click();
                     return false;
+                } else{
+                    if ($('#site-search').val().length !=0) {
+                        alert('Evrika');
+                    }
                 }
             }
         });
@@ -469,6 +469,7 @@ $(document).ready(function(){
         else
             $('#site-search-submit').attr('disabled',true);
     })
+
     $('.header__mob-button').attr('disabled',true);
     $('.header__mob-search').keyup(function(){
         if($(this).val().length !=0)
