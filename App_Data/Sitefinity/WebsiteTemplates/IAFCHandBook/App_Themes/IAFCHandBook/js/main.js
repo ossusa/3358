@@ -36,8 +36,10 @@ $(document).ready(function () {
             var q = $('#site-search').val();
             if (e.which === 13 || e.type === 'click') {
                 location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-            } else ($('#site-search').val() == "" && e.which == 13) {
-                e.preventDefault();
+                if ($('#site-search').val() == "" ) {
+                    e.preventDefault();
+                    return false;
+                }
             }
         });
     });
