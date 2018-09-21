@@ -42,22 +42,28 @@
 <section class="complete_blocks_first">
 	@foreach (var item in Model.MyResources)
 	{
-		<div class="complete_block_first complete_block_first-mob">
+	@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+	|| (item.ResourceDetails.ResourceTypeName == "video"));}
+		<div class="complete_block_first complete_block_first-mob resourceLink"
+			 data-id="@item.ResourceUrl"
+			 data-id1="@item.ResourceDetails.ResourceLink"
+			 data-id2="@item.ResourceDetails.ResourceDocument"
+			 @(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
 			<div class="resources__community-img img-container-js">
 				@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 				{
-					<a href="@item.ResourceUrl"><img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" /></a>
+					<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
 				}
 				else
 				{
 					<div class="resources-placeholder">
 						<div class="placehoolder-background">
-							<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt"></a>
+							<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
 						</div>
 						@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 						{
 							<div class="placeholder-type">
-								<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt"></a>
+								<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
 							</div>
 						}
 					</div>
@@ -73,16 +79,8 @@
 			<div class="complete__resources_slide-info">
 				<div class="resources__slide-box">
 					<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-					@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-								|| (item.ResourceDetails.ResourceTypeName == "video"));}
-					<button type="button" class="resourceLink"
-							data-id="@item.ResourceUrl"
-							data-id1="@item.ResourceDetails.ResourceLink"
-							data-id2="@item.ResourceDetails.ResourceDocument"
-							@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
-						<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
-					</button>
-					<a href="@item.ResourceUrl"><p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p></a>
+					<div class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</div>
+					<p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 				</div>
 				<div class="resources__slide-footer">
 					@if (item.IsUserAuthorized)
