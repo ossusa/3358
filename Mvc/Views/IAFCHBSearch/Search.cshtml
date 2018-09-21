@@ -29,7 +29,13 @@
 	function doSearch() {
 		var searchStr = document.getElementById("searchText").value;
 		var searchPageUrl = "/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/" + searchStr;
-		window.location.href = searchPageUrl;
+        if ($('.k-input').val().length !=0) {
+            window.location.href = searchPageUrl;
+        } else{
+            e.preventDefault();
+            return false;
+        }
 	}
+
 
 </script>

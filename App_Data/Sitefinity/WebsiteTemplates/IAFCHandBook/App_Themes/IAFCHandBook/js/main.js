@@ -35,12 +35,16 @@ $(document).ready(function () {
             e.preventDefault();
             var q = $('#site-search').val();
             if (e.which === 13 || e.type === 'click') {
-                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+                if ($('#site-search').val().length !=0) {
+                    location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+                } else{
+                    e.preventDefault();
+                    return false;
+                }
             }
         });
     });
     $(function () {
-
         $('body').off('keypress.enter').on('keypress.enter', function (e) {
             if (e.which == 13 && e.target.type != 'textarea') {
                 var $btn = $(e.target).closest('.header__list-search').find(".hidden__search, button");
@@ -447,7 +451,32 @@ if($(window).width() > 1109) {
             }
         });
     }
-    $('.ghost_btn').text('Access this Resource');
+
 });
 
 
+$(document).ready(function(){
+    $('.searchBtn').attr('disabled',true);
+    $('.k-input').keyup(function(){
+        if($(this).val().length !=0)
+            $('.searchBtn').attr('disabled', false);
+        else
+            $('.searchBtn').attr('disabled',true);
+    })
+    $('#site-search-submit').attr('disabled',true);
+    $('#site-search').keyup(function(){
+        if($(this).val().length !=0)
+            $('#site-search-submit').attr('disabled', false);
+        else
+            $('#site-search-submit').attr('disabled',true);
+    })
+
+    $('.header__mob-button').attr('disabled',true);
+    $('.header__mob-search').keyup(function(){
+        if($(this).val().length !=0)
+            $('.header__mob-button').attr('disabled', false);
+        else
+            $('.header__mob-button').attr('disabled',true);
+    })
+
+});
