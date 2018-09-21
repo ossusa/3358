@@ -14,6 +14,8 @@
 				@Html.Raw("<section class='complete_blocks_first complete_blocks_big'>");
 			}
 
+		@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+		|| (item.ResourceDetails.ResourceTypeName == "video"));}
 			<div class="complete_block_first complete_block_big resourceLink"
 					data-id="@item.ResourceUrl"
 					data-id1="@item.ResourceDetails.ResourceLink"
@@ -57,8 +59,7 @@
 				<div class="resources__slide-info resources__community-slide-info">
 					<div class="resources__slide-box">
 						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-						@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-								|| (item.ResourceDetails.ResourceTypeName == "video"));}
+
 						<button type="button" class="resourceLink"
 								data-id="@item.ResourceUrl"
 								data-id1="@item.ResourceDetails.ResourceLink"
