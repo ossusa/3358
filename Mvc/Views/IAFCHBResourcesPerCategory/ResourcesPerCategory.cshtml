@@ -173,7 +173,7 @@
 		});
 
 		//Open  Resource Details
-		$('.resourceLink').click(function () {
+		$('.resourceLink').click(function (e) {
             if ($(e.target).hasClass('.resources__slide-footer')) return;
             else {
                 var resourceUrl = $(this).attr("data-id");
