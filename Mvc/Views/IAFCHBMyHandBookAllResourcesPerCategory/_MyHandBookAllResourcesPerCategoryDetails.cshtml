@@ -18,14 +18,16 @@
 
 @foreach (var item in Model.MyResources)
 {
-openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-|| (item.ResourceDetails.ResourceTypeName == "video"));
+
 	if (columnCounter == 0)
 	{
 		@Html.Raw("<section class='handbook__template all_complete_resources_slides complete_blocks_first'>");
 	}
 	{ columnCounterForMoreResources++; }
 
+
+	openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+	|| (item.ResourceDetails.ResourceTypeName == "video"));
 	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) complete_block_first resourceLink"
 		data-id="@item.ResourceUrl"
 		data-id1="@item.ResourceDetails.ResourceLink"
