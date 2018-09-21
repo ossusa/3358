@@ -30,39 +30,14 @@ $(document).ready(function () {
         $('.header__sub_ul').hide();
     });
 
-    $('.k-input').bind("keyup keypress", function(e) {
-        var code = e.keyCode || e.which;
-        if (code  == 13) {
-            if($(this).val()==''){
-                e.preventDefault();
-                return false;
-            }
-        }
-    });
-    $('#site-search').bind("keyup keypress", function(e) {
-        var code = e.keyCode || e.which;
-        if (code  == 13) {
-            if($(this).val()==''){
-                e.preventDefault();
-                return false;
-            }
-        }
-    });
-    $('.header__mob-search').bind("keyup keypress", function(e) {
-        var code = e.keyCode || e.which;
-        if (code  == 13) {
-            if($(this).val()==''){
-                e.preventDefault();
-                return false;
-            }
-        }
-    });
     $(function(){
         $('#site-search-submit').on('keypress click', function(e){
             e.preventDefault();
             var q = $('#site-search').val();
             if (e.which === 13 || e.type === 'click') {
                 location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+            } else if ($(this).val() == "" && e.keyCode == 13) {
+                e.preventDefault();
             }
         });
     });
