@@ -73,7 +73,7 @@ $(document).ready(function () {
         $(".header__table-tr").addClass("header_unlogged");
     }
 
-
+    $('a[href^="/privacy-policy"]').attr('target','_blank');
 
     /*LABEL COLORS*/
     $(document).ready(function() {
