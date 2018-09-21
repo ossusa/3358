@@ -16,12 +16,12 @@
 
 		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
 		|| (item.ResourceDetails.ResourceTypeName == "video"));
-			<div class="complete_block_first complete_block_big">
-				<div class="resources__community-img img-container-js resourceLink"
-					 data-id="@item.ResourceUrl"
-					 data-id1="@item.ResourceDetails.ResourceLink"
-					 data-id2="@item.ResourceDetails.ResourceDocument"
-					 @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
+			<div class="complete_block_first complete_block_big resourceLink"
+				 data-id="@item.ResourceUrl"
+				 data-id1="@item.ResourceDetails.ResourceLink"
+				 data-id2="@item.ResourceDetails.ResourceDocument"
+				 @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
+				<div class="resources__community-img img-container-js resourceLink">
 								@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
@@ -57,11 +57,7 @@
 					}
 				</div>
 				<div class="resources__slide-info resources__community-slide-info">
-					<div class="resources__slide-box resourceLink"
-						 data-id="@item.ResourceUrl"
-						 data-id1="@item.ResourceDetails.ResourceLink"
-						 data-id2="@item.ResourceDetails.ResourceDocument"
-						 @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
+					<div class="resources__slide-box">
 						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
 
 
@@ -80,7 +76,7 @@
 									}
 									else
 									{
-										<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
+										<button type="button" class="click-cancel-js addToMyHandBook resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
 									}
 								</div>
 							</div>
@@ -88,12 +84,12 @@
 						<div class="resources-single__left_post_comment_header_right">
 							@if (openDocumentLink)
 							{
-								<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span class="comment_span">@item.CommentsAmount Comments</span></a>
+								<a href="@item.ResourceUrl" class="click-cancel-js single-post-comments"><i class="material-icons">chat_bubble_outline</i><span class="comment_span">@item.CommentsAmount Comments</span></a>
 							}
 
 							<div class="single-post-statistic">
 								<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-										class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
+										class="click-cancel-js addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )"
 										data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 										data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
@@ -105,7 +101,7 @@
 
 
 								<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-										class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
+										class="click-cancel-js addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")"
 										data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 										data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 										data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
@@ -115,8 +111,6 @@
 									</span>
 								</button>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
