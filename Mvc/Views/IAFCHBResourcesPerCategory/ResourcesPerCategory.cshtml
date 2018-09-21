@@ -173,23 +173,25 @@
 		});
 
 		//Open  Resource Details
-		$('.resourceLink').click(function () {
-			var resourceUrl = $(this).attr("data-id");
-			var resourceLinkUrl = $(this).attr('data-id1');
-			var resourceDocumentUrl = $(this).attr('data-id2');
-			var openResourceDocumentUrl = $(this).attr('data-id3');
+		$('.resourceLink').click(function (e) {
+            if ($(e.target).hasClass('resources__slide-footer')) return;
+            else {
+                var resourceUrl = $(this).attr("data-id");
+                var resourceLinkUrl = $(this).attr('data-id1');
+                var resourceDocumentUrl = $(this).attr('data-id2');
+                var openResourceDocumentUrl = $(this).attr('data-id3');
 
-			if (openResourceDocumentUrl == "OpenLink") {
-				window.location.href = resourceUrl;
-			}
-			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
-				window.open(resourceLinkUrl);
-			}
-			else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
-				window.open(resourceDocumentUrl);
+                if (openResourceDocumentUrl == "OpenLink") {
+                    window.location.href = resourceUrl;
+                }
+                else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
+                    window.open(resourceLinkUrl);
+                }
+                else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
+                    window.open(resourceDocumentUrl);
+                }
 			}
 		});
-
 	}
 
 

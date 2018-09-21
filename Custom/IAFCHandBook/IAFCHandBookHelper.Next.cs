@@ -1247,18 +1247,24 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
         public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsNext(string name, Guid? categoryId, string userId=null)
         {
             DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+
 			var model = new IAFCHandBookResourceModel();
+			var myHandBookItem = new DynamicContent();
 			if (userId !=null)
 			{				
-					var myHandBookItem = GetMyHandBookByID(Guid.Parse(userId));
+					myHandBookItem = GetMyHandBookByID(Guid.Parse(userId));
 					if (myHandBookItem == null)
 					{
 						return null;
 					}
 				model.SharedUser = GetUserName(Guid.Parse(userId)) + "'s";
 				model.SharedUserId = Guid.Parse(userId);
-
 			}
+			else
+			{
+				myHandBookItem = GetOrCreateMyHandBook();
+			}
+			
             var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType)
                 .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
                 .Where(d => d.UrlName == name)
@@ -1267,7 +1273,21 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			{
 				return null;
 			}
-            model = GetResourceDetails(resourceItem, categoryId, true, userId);			
+
+			var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
+				  .ToList();
+			var myCompletedHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyCompletedResources")
+				.ToList();
+
+			var myHandBookResourcesExisxt = myHandBookResources.Where(r => r.Id == resourceItem.Id).Any();
+			var myCompletedHandBookResourcesExisxt = myCompletedHandBookResources.Where(r => r.Id == resourceItem.Id).Any();
+
+			if (!myHandBookResourcesExisxt 	&& !myCompletedHandBookResourcesExisxt)
+			{
+				return null;
+			}
+
+			model = GetResourceDetails(resourceItem, categoryId, true, userId);			
             model.MoreResources = GetMyHandBookMoreResources(resourceItem.Id, model.ResourceDetails.Category.Id, userId);
             model.Comments = GetResourceComments(resourceItem);
 			

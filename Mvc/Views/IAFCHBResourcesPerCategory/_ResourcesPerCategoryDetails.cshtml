@@ -14,22 +14,28 @@
 				@Html.Raw("<section class='complete_blocks_first complete_blocks_big'>");
 			}
 
-			<div class="complete_block_first complete_block_big">
+		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+		|| (item.ResourceDetails.ResourceTypeName == "video"));
+			<div class="complete_block_first complete_block_big resourceLink"
+					data-id="@item.ResourceUrl"
+					data-id1="@item.ResourceDetails.ResourceLink"
+					data-id2="@item.ResourceDetails.ResourceDocument"
+					@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 				<div class="resources__community-img img-container-js">
-					@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
+								@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
-						<a href="@item.ResourceUrl"><img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" /></a>
+						<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
 					}
 					else
 					{
 						<div class="resources-placeholder">
 							<div class="placehoolder-background">
-								<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt" ></a>
+								<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt" >
 							</div>
 							@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 							{
 								<div class="placeholder-type">
-									<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt"></a>
+									<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
 								</div>
 							}
 						</div>
@@ -52,17 +58,12 @@
 				</div>
 				<div class="resources__slide-info resources__community-slide-info">
 					<div class="resources__slide-box">
-						<a href="@item.ResourceUrl"><p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p></a>
-						@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-								|| (item.ResourceDetails.ResourceTypeName == "video"));}
-						<button type="button" class="resourceLink"
-								data-id="@item.ResourceUrl"
-								data-id1="@item.ResourceDetails.ResourceLink"
-								data-id2="@item.ResourceDetails.ResourceDocument"
-								@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-							<span class="resources__slide-title big_truncate_title_sec">@item.ResourceDetails.ResourceTitle</span>
-						</button>
-						<a href="@item.ResourceUrl"><p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p></a>
+						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
+
+
+							<div class="resources__slide-title big_truncate_title_sec">@item.ResourceDetails.ResourceTitle</div>
+
+						<p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					</div>
 					<div class="resources__slide-footer">
 						@if (item.IsUserAuthorized)
