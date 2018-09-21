@@ -36,9 +36,10 @@ $(document).ready(function () {
             var q = $('#site-search').val();
             if (e.which === 13 || e.type === 'click') {
                 if ($('#site-search').val().length !=0) {
-                    alert('Evrika');
-                } else{
                     location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+                } else{
+                    alert('Evrika');
+
                 }
             }
         });
