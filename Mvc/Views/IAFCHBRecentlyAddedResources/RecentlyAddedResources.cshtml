@@ -9,22 +9,26 @@
 	<div class="resources__slider">
 		@foreach (var item in Model)
 		{
-			<div class="resources__slide">
+			<div class="resources__slide resourceLink"
+				 data-id="@item.ResourceUrl"
+				 data-id1="@item.ResourceDetails.ResourceLink"
+				 data-id2="@item.ResourceDetails.ResourceDocument"
+				 @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 				<div class="resources__slide-img img-container-js" style="background: none; overflow: hidden">
 					@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
-						<a href="@item.ResourceUrl"><img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" /></a>
+						<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
 					}
 					else
 					{
 						<div class="resources-placeholder">
 							<div class="placehoolder-background">
-								<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt"></a>
+								<img src="@item.ResourceDetails.ImagePlaceholderUrl" alt="@item.ResourceDetails.ImagePlaceholderAlt">
 							</div>
 							@if (item.ResourceDetails.ImageSvgUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 							{
 								<div class="placeholder-type">
-									<a href="@item.ResourceUrl"><img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt"></a>
+									<img src="@item.ResourceDetails.ImageSvgUrl" alt="@item.ResourceDetails.ImageSvgAlt">
 								</div>
 							}
 						</div>
@@ -32,7 +36,7 @@
 					<!--<object type="image/svg+xml" data="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/community-multiply.svg" alt="">-->
 					<div class="resources__slide-label">
 						<span> @item.ResourceDetails.Category.ParentCategoryTitle </span> >
-						<a class="" href="@item.ResourceDetails.Category.CategoryUrl">
+						<a class="click-cancel-js" href="@item.ResourceDetails.Category.CategoryUrl">
 							<span>@item.ResourceDetails.Category.CategoryTitle</span>
 						</a>
 					</div>
@@ -49,14 +53,8 @@
 				<div class="resources__slide-info">
 					<div class="resources__slide-box">
 						<p class="resources__slide-article">@item.ResourceDetails.ResourceType</p>
-						<button type="button" class="resourceLink"
-								data-id="@item.ResourceUrl"
-								data-id1="@item.ResourceDetails.ResourceLink"
-								data-id2="@item.ResourceDetails.ResourceDocument"
-								@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-							<span class="resources__slide-title big_truncate_title">@item.ResourceDetails.ResourceTitle</span>
-						</button>
-						<a href="@item.ResourceUrl"><p class="resources__slide-desc big_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p></a>
+						<div class="resources__slide-title big_truncate_title">@item.ResourceDetails.ResourceTitle</div>
+						<p class="resources__slide-desc big_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					</div>
 
 					<div class="resources__slide-footer">
@@ -258,23 +256,25 @@
 		});
 
 		//Open Recently Added Resource Details
-		$('.resourceLink').click(function () {
-			var resourceUrl = $(this).attr("data-id");
-			var resourceLinkUrl = $(this).attr('data-id1');
-			var resourceDocumentUrl = $(this).attr('data-id2');
-			var openResourceDocumentUrl = $(this).attr('data-id3');
+        $('.resourceLink').click(function (e) {
+            if ($(e.target).hasClass('click-cancel-js')) return;
+            else {
+                var resourceUrl = $(this).attr("data-id");
+                var resourceLinkUrl = $(this).attr('data-id1');
+                var resourceDocumentUrl = $(this).attr('data-id2');
+                var openResourceDocumentUrl = $(this).attr('data-id3');
 
-
-			if (openResourceDocumentUrl == "OpenLink") {
-				window.location.href = resourceUrl;
-			}
-			else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
-				window.open(resourceLinkUrl);
-			} 
-			else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
-				window.open(resourceDocumentUrl);
-			}
-		});
+                if (openResourceDocumentUrl == "OpenLink") {
+                    window.location.href = resourceUrl;
+                }
+                else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
+                    window.open(resourceLinkUrl);
+                }
+                else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
+                    window.open(resourceDocumentUrl);
+                }
+            }
+        });
 
     });
 
