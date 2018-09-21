@@ -473,4 +473,32 @@ $(document).ready(function(){
         else
             $('.header__mob-button').attr('disabled',true);
     })
+
+    $('.k-input').bind("keyup keypress", function(e) {
+        var code = e.keyCode || e.which;
+        if (code  == 13) {
+            if($(this).val()==''){
+                e.preventDefault();
+                return false;
+            }
+        }
+    });
+    $('#site-search').bind("keyup keypress", function(e) {
+        var code = e.keyCode || e.which;
+        if (code  == 13) {
+            if($(this).val()==''){
+                e.preventDefault();
+                return false;
+            }
+        }
+    });
+    $('.header__mob-search').bind("keyup keypress", function(e) {
+        var code = e.keyCode || e.which;
+        if (code  == 13) {
+            if($(this).val()==''){
+                e.preventDefault();
+                return false;
+            }
+        }
+    });
 });
