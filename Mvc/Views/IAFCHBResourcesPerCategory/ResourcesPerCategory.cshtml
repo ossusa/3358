@@ -174,7 +174,7 @@
 
 		//Open  Resource Details
 		$('.resourceLink').click(function () {
-            if (!$(e.target).hasClass('container')) return;
+            if ((e.target).hasClass('resources__slide-footer')) return;
             else {
                 var resourceUrl = $(this).attr("data-id");
                 var resourceLinkUrl = $(this).attr('data-id1');
