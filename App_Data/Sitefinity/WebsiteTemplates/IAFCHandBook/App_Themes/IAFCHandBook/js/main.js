@@ -51,10 +51,6 @@ $(document).ready(function () {
                 if ($btn.length) {
                     $btn.click();
                     return false;
-                } else{
-                    if ($('#site-search').val().length !=0) {
-                        alert('Evrika');
-                    }
                 }
             }
         });
