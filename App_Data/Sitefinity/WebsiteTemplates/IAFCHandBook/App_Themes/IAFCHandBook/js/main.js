@@ -38,8 +38,8 @@ $(document).ready(function () {
                 if ($('#site-search').val().length !=0) {
                     location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
                 } else{
-                    alert('Evrika');
-
+                    e.preventDefault();
+                    return false;
                 }
             }
         });
