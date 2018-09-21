@@ -35,7 +35,11 @@ $(document).ready(function () {
             e.preventDefault();
             var q = $('#site-search').val();
             if (e.which === 13 || e.type === 'click') {
-                location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+                if ($('#site-search').val().length !=0) {
+                    alert('Evrika');
+                } else{
+                    location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
+                }
             }
         });
     });
