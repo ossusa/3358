@@ -60,13 +60,9 @@
 					<div class="resources__slide-box">
 						<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
 
-						<button type="button" class="resourceLink"
-								data-id="@item.ResourceUrl"
-								data-id1="@item.ResourceDetails.ResourceLink"
-								data-id2="@item.ResourceDetails.ResourceDocument"
-								@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-							<span class="resources__slide-title big_truncate_title_sec">@item.ResourceDetails.ResourceTitle</span>
-						</button>
+
+							<div class="resources__slide-title big_truncate_title_sec">@item.ResourceDetails.ResourceTitle</div>
+
 						<p class="resources__slide-desc big_truncate_desc_sec">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 					</div>
 					<div class="resources__slide-footer">
