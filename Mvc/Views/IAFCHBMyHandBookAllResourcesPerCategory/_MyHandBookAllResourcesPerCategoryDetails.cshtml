@@ -70,12 +70,12 @@
 					{
 						<div class="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString()) resources__slide-btn ">
 							<div class="markAsCompleteResource">
-								<button type="button" class="markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+								<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
 							</div>
 						</div>
 						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove", item.Id.ToString())">
 							<div class="removeResource">
-								<button type="button" class="removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
+								<button type="button" class="click-cancel-js removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
 									<i class="anticon anticon-close"></i>Remove
 								</button>
 							</div>
@@ -91,7 +91,7 @@
 								}
 								else
 								{
-									<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
+									<button type="button" class="click-cancel-js addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
 								}
 							</div>
 						</div>
@@ -100,12 +100,12 @@
 				<div class="resources-single__left_post_comment_header_right">
 					@if (openDocumentLink)
 					{
-						<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+						<a href="@item.ResourceUrl" class="click-cancel-js single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
 					}
 
 					<div class="single-post-statistic">
 						<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-								class="@string.Format("{0}_{1}","resourceLikesCls", item.Id.ToString()) addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )"
+								class="@string.Format("{0}_{1}","resourceLikesCls", item.Id.ToString()) addLike anticon click-cancel-js anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )"
 								data-id="@item.Id.ToString()"
 								data-id1="@item.Likes.Likes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
@@ -117,7 +117,7 @@
 						</button>
 
 						<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())" 
-								class ="@string.Format("{0}_{1}","resourceDisLikesCls", item.Id.ToString()) addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")"
+								class ="@string.Format("{0}_{1}","resourceDisLikesCls", item.Id.ToString()) addDislike anticon click-cancel-js anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")"
 								data-id="@item.Id.ToString()" 
 								data-id1="@item.Likes.Dislikes"
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
