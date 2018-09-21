@@ -36,13 +36,12 @@ $(document).ready(function () {
             var q = $('#site-search').val();
             if (e.which === 13 || e.type === 'click') {
                 location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + q;
-            } else if ($(q) == "" && e.keyCode == 13) {
+            } else if ($('#site-search').val() == "" && e.which == 13) {
                 e.preventDefault();
             }
         });
     });
     $(function () {
-
         $('body').off('keypress.enter').on('keypress.enter', function (e) {
             if (e.which == 13 && e.target.type != 'textarea') {
                 var $btn = $(e.target).closest('.header__list-search').find(".hidden__search, button");
