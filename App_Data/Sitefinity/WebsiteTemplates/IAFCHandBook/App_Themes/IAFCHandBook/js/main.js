@@ -61,12 +61,7 @@ $(document).ready(function () {
     $(".site-search-submit").click(function (e) {
         e.preventDefault();
         var qSecond = $('.site-search').val();
-        if ($('.site-search').val().length !=0) {
-            location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
-        } else{
-            e.preventDefault();
-            return false;
-        }
+        location.href = '/topics-and-tools/volunteer/vws/chiefs-a-rit/search-results/' + qSecond;
     });
 
     $(document).ready(function () {
