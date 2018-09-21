@@ -14,8 +14,8 @@
 				@Html.Raw("<section class='complete_blocks_first complete_blocks_big'>");
 			}
 
-		@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-		|| (item.ResourceDetails.ResourceTypeName == "video"));}
+		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+		|| (item.ResourceDetails.ResourceTypeName == "video"));
 			<div class="complete_block_first complete_block_big resourceLink"
 					data-id="@item.ResourceUrl"
 					data-id1="@item.ResourceDetails.ResourceLink"
