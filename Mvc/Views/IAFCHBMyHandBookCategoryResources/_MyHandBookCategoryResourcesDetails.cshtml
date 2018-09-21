@@ -42,8 +42,8 @@
 <section class="complete_blocks_first">
 	@foreach (var item in Model.MyResources)
 	{
-	@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-	|| (item.ResourceDetails.ResourceTypeName == "video"));}
+	openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+	|| (item.ResourceDetails.ResourceTypeName == "video"));
 		<div class="complete_block_first complete_block_first-mob resourceLink"
 			 data-id="@item.ResourceUrl"
 			 data-id1="@item.ResourceDetails.ResourceLink"
