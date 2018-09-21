@@ -11,7 +11,7 @@
 		{
 
 		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-		|| (item.ResourceDetails.ResourceTypeName == "video")) ;
+		|| (item.ResourceDetails.ResourceTypeName == "video"));
 			<div class="resources__slide resourceLink"
 				 data-id="@item.ResourceUrl"
 				 data-id1="@item.ResourceDetails.ResourceLink"
@@ -68,20 +68,20 @@
 								}
 								else
 								{
-									<button type="button" class="resources__slide-btn addToMyHandBook" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to My A-RIT</button>
+									<button type="button" class="resources__slide-btn addToMyHandBook click-cancel-js" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to My A-RIT</button>
 								}
 							</div>
 						}
 							<div class="resources-single__left_post_comment_header_right">
 								@if (openDocumentLink)
 								{
-								<a class="single-post-comments" href="@item.ResourceUrl">
+								<a class="single-post-comments click-cancel-js" href="@item.ResourceUrl">
 									<i class="material-icons">chat_bubble_outline</i>
 									<span>@item.CommentsAmount Comments</span>
 								</a>
 								}
 								<div class="single-post-statistic">
-									<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
+									<button class="click-cancel-js" type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
 											class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )" 
 											data-id="@item.Id.ToString()"  data-id1="@item.Likes.Likes"
 											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
@@ -93,7 +93,7 @@
 											<span>@item.Likes.Likes</span>
 										</span>
 									</button>
-									<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
+									<button class="click-cancel-js" type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
 											class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")" 
 											data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
