@@ -160,6 +160,14 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 			return Json(addToMyHandBook);
 		}
+		[RelativeRoute("AddSharedToMyHandBook"), HttpPost]
+		public ActionResult AddSharedToMyHandBook(String resourceId)
+		{
+			var id = Guid.Parse(resourceId);
+			var addedToMyHandBool = handBookHelper.AddToMyHandBook(id);
+
+			return Json(addedToMyHandBool);
+		}
 
 		[RelativeRoute("AddComment"), HttpPost]
 		[StandaloneResponseFilter]

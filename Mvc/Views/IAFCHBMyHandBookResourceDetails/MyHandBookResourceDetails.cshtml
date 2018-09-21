@@ -44,18 +44,36 @@
 						<div class="resources-single__left_post_comment_header_left">
 							@if (Model.IsUserAuthorized)
 							{
-								<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "markAsComplete", Model.Id.ToString())">
-									<div id="markAsComplete">
-										@if (Model.IsResourceCompleted == true)
-										{
-											<span><div class="complete_box anticon anticon-check"></div>Completed</span>
-										}
-										else
-										{
-											<button type="button" class="markAsCompleteBtn" data-id="@Model.Id"><div class="complete_box"></div> Mark As Complete </button>
-										}
+								if (Model.SharedUserId == Guid.Empty)
+								{
+									<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "markAsComplete", Model.Id.ToString())">
+										<div id="markAsComplete">
+											@if (Model.IsResourceCompleted == true)
+											{
+												<span><div class="complete_box anticon anticon-check"></div>Completed</span>
+											}
+											else
+											{
+												<button type="button" class="markAsCompleteBtn" data-id="@Model.Id"><div class="complete_box"></div> Mark As Complete </button>
+											}
+										</div>
 									</div>
-								</div>
+								}
+								else
+								{
+									<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addSharedToMyHandBook", Model.Id.ToString())">
+										<div id="addSharedToMyHandBook">
+											@if (Model.IsResourceAddedToMyHandBook == true)
+											{
+												<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
+											}
+											else
+											{
+												<button type="button" class="addSharedToMyHandBookBtn" data-id="@Model.Id"><div class="complete_box"></div> Add to My A-RIT</button>
+											}
+										</div>
+									</div>
+								}
 							}
 							@if (Model.SharedUserId == Guid.Empty)
 							{
@@ -378,6 +396,24 @@
 				}
 			});
 		});
+
+		//Add Shared Resource to My Hand Book
+		$('.addSharedToMyHandBookBtn').click(function ()  {
+			var resourceId = $(this).attr('data-id');
+			$.ajax({
+				type: 'POST',
+				cache: false,
+				url: '@Url.Action("AddSharedToMyHandBook", "IAFCHBMyHandBookResourceDetailsController")',
+				data: { resourceId: resourceId },
+				dataType: "json",
+				success: function (response) {
+					if (response == true) {
+						$("#addSharedToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
+					}
+				}
+			});
+		});
+
 
 		//Add Comment
 		$('.addCommentBtn').click(function () {
