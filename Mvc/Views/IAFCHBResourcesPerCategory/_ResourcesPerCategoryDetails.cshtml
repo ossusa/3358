@@ -16,12 +16,13 @@
 
 		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
 		|| (item.ResourceDetails.ResourceTypeName == "video"));
-			<div class="complete_block_first complete_block_big resourceLink"
-					data-id="@item.ResourceUrl"
-					data-id1="@item.ResourceDetails.ResourceLink"
-					data-id2="@item.ResourceDetails.ResourceDocument"
-					@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-				<div class="resources__community-img img-container-js">
+			<div class="complete_block_first complete_block_big resourceLink">
+				<div class="resources__community-img img-container-js resourceLink"
+					 data-id="@item.ResourceUrl"
+					 data-id1="@item.ResourceDetails.ResourceLink"
+					 data-id2="@item.ResourceDetails.ResourceDocument"
+					 @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
+				>
 								@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
