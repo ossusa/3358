@@ -23,7 +23,13 @@
 		@Html.Raw("<section class='handbook__template all_complete_resources_slides complete_blocks_first'>");
 	}
 	{ columnCounterForMoreResources++; }
-	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) complete_block_first">
+	openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+	|| (item.ResourceDetails.ResourceTypeName == "video"));
+	<div class="@string.Format("{0}_{1}", "resourceSlideComplete", item.Id.ToString()) complete_block_first resourceLink"
+		data-id="@item.ResourceUrl"
+		data-id1="@item.ResourceDetails.ResourceLink"
+		data-id2="@item.ResourceDetails.ResourceDocument"
+		@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 		<div class="resources__community-img img-container-js">
 			@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 			{
@@ -54,14 +60,7 @@
 		<div class="resources__slide-info resources__community-slide-info community_info">
 			<div class="resources__slide-box">
 				<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-				@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-						|| (item.ResourceDetails.ResourceTypeName == "video"));}
-				<button type="button" class="resourceLink"
-						data-id="@item.ResourceUrl"
-						data-id1="@item.ResourceDetails.ResourceLink"
-						data-id2="@item.ResourceDetails.ResourceDocument"
-						@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
-					<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
+				<div class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</div>
 				</button>
 				<a href="@item.ResourceUrl"><p class="resources__slide-desc sm_truncate_desc slide_desc_none">@Html.Raw(item.ResourceDetails.ResourceSummary)</p></a>
 			</div>
