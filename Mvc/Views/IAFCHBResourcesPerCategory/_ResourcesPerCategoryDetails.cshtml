@@ -21,7 +21,7 @@
 				 data-id1="@item.ResourceDetails.ResourceLink"
 				 data-id2="@item.ResourceDetails.ResourceDocument"
 				 @(openDocumentLink ? "data-id3=OpenLink":"data-id3=\"\"")>
-				<div class="resources__community-img img-container-js resourceLink">
+				<div class="resources__community-img img-container-js">
 								@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<img src='@item.ResourceDetails.ImageUrl' alt="@item.ResourceDetails.ImageAlt" />
