@@ -2857,7 +2857,18 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var handBookArray = dynamicModuleManager.GetDataItems(myHandBookType)
 							.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
 							.ToArray();
-				foreach(var handBookItem in handBookArray)
+				string csv = "User edit date, Helix ID, Ind ID, First Name, Last Name, Email, Date, Grp ID, ";
+				foreach (var topicItem in topicCategories.Select(t => new { GetTopicCategories(t).ResourceCategoryTile, 
+																			GetTopicCategories(t).ResourceParentCategoryTitle})
+														.OrderBy(t=> t.ResourceParentCategoryTitle)
+														.ThenBy(t=> t.ResourceCategoryTile))
+
+				{
+					
+					csv = csv + "Opt-In " + topicItem.ResourceParentCategoryTitle + ": " + topicItem.ResourceCategoryTile +", ";
+				}
+				csv = csv + System.Environment.NewLine; 
+				foreach (var handBookItem in handBookArray)
 				{
 					var handBookItemLine = string.Empty;
 					var lastUpdatedDate = handBookItem.GetValue<DateTime>("LastModified");
@@ -2892,9 +2903,18 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					var categories = handBookItem.GetValue<TrackedList<Guid>>("Category")
 						.ToArray();
 					string categoryList = string.Empty;
-					foreach(var catrgoryItem in categories)
+					foreach (var topicItem in topicCategories.Select(t => new
 					{
-						categoryList = categoryList + GetTopicCategories(catrgoryItem).ResourceCategoryTile + ";";
+						Id = t,
+						ResourceCategoryTile = GetTopicCategories(t).ResourceCategoryTile,
+						ResourceParentCategoryTitle = GetTopicCategories(t).ResourceParentCategoryTitle
+					})
+														.OrderBy(t => t.ResourceParentCategoryTitle)
+														.ThenBy(t => t.ResourceCategoryTile))
+
+					{
+
+						categoryList = categoryList + (categories.Contains(topicItem.Id)? "yes" : "no")+ ", ";
 					}
 					string userDetail = lastUpdatedDate.ToString() + ","
 						+ ", "
@@ -2903,13 +2923,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 						+ lastName + ", "
 						+ email + ", "
 						+ DateTime.UtcNow.ToString() + ", "
-						+ categoryList + ", "
+						+ "A-RIT" + ", "
+						+ categoryList
 						+ System.Environment.NewLine;
 					returnData = returnData + userDetail;
 				}
-
-			}
-
+				returnData = csv + returnData;
+			}		
 			catch (Exception e)
 			{
 				log.Error("GetUsers" + e.Message);

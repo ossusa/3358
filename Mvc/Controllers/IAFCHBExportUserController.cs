@@ -26,9 +26,8 @@ namespace SitefinityWebApp.Mvc.Controllers
 		public FileContentResult DownloadCSV()
 		{
 			string filename = "Users_"+DateTime.UtcNow.ToString("yyyyMMddhhmmss")+".csv";
-
-			string csv = "User edit date, Helix ID, Ind ID, First Name, Last Name, Email, Date, Grp ID, Opt -in to XYZ subtopic(for each topic" + System.Environment.NewLine;
-			csv = csv + handBookHelper.GetUsers();
+			
+			var csv = handBookHelper.GetUsers();
 			return File(new System.Text.UTF8Encoding().GetBytes(csv), "text/csv", filename);
 		}
 	}
