@@ -3986,7 +3986,8 @@ addReplyCommentBtn {
   background: transparent;
   outline: none;
   text-align: left;
-  padding: 0; }
+  padding: 0;
+  cursor: pointer; }
 
 .addReplyCommentBtn {
   background: transparent;
