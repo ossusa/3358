@@ -39,21 +39,25 @@
 				}
 			</div>
 		</div>
-		<div class="resources__logged-img-box img-container-js">
+		<div class="resources__logged-img-box img-container-js resourceFeaturedLink"
+			 data-id="@Model.ResourceUrl"
+			 data-id1="@Model.ResourceDetails.ResourceLink"
+			 data-id2="@Model.ResourceDetails.ResourceDocument"
+			 @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 			@if (Model.ResourceDetails.ImageUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
 			{
-				<a href="@Model.ResourceUrl"><img src='@Model.ResourceDetails.ImageUrl' alt="@Model.ResourceDetails.ImageAlt" /></a>
+				<img src='@Model.ResourceDetails.ImageUrl' alt="@Model.ResourceDetails.ImageAlt" />
 			}
 			else
 			{
 				<div class="resources-placeholder">
 					<div class="placehoolder-background">
-						<a href="@Model.ResourceUrl"><img src="@Model.ResourceDetails.ImagePlaceholderUrl" alt="@Model.ResourceDetails.ImagePlaceholderAlt" ></a>
+						<img src="@Model.ResourceDetails.ImagePlaceholderUrl" alt="@Model.ResourceDetails.ImagePlaceholderAlt" >
 					</div>
 					@if (Model.ResourceDetails.ImageSvgUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
 					{
 						<div class="placeholder-type">
-							<a href="@Model.ResourceUrl"><img src="@Model.ResourceDetails.ImageSvgUrl"  alt="@Model.ResourceDetails.ImageSvgAlt"></a>
+							<img src="@Model.ResourceDetails.ImageSvgUrl"  alt="@Model.ResourceDetails.ImageSvgAlt">
 						</div>
 					}
 				</div>
