@@ -94,15 +94,15 @@ else
 					{
 						if (item.IsResourceCompleted)
 						{
-							<div class="completedResource">
-								<div class="complete_box anticon anticon-check"></div>Complete
+							<div class="completedResource click-cancel-js">
+								<div class="complete_box anticon anticon-check click-cancel-js"></div>Complete
 							</div>
 						}
 						else if (item.IsResourceAddedToMyHandBook && !item.IsResourceCompleted)
 						{
 							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
 								<div class="markAsCompleteResource">
-									<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+									<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box click-cancel-js"></div>Mark As Complete</button>
 								</div>
 							</div>
 						}
@@ -110,7 +110,7 @@ else
 						{
 							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
 								<div class="addToMyHandBook">
-									<button type="button" class="click-cancel-js addToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
+									<button type="button" class="click-cancel-js addToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus click-cancel-js"></span> Add to My A-RIT </button>
 								</div>
 							</div>
 						}
@@ -118,7 +118,7 @@ else
 					<div class="resources-single__left_post_comment_header_right">
 						@if (openDocumentLink)
 						{
-							<a href="@item.ResourceUrl" class="click-cancel-js single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+							<a href="@item.ResourceUrl" class="click-cancel-js single-post-comments"><i class="material-icons click-cancel-js">chat_bubble_outline</i><span class="click-cancel-js">@item.CommentsAmount</span></a>
 						}
 						<div class="single-post-statistic">
 							<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
