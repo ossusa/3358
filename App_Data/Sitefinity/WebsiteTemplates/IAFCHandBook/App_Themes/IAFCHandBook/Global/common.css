@@ -2856,7 +2856,7 @@ p {
   .header__logo {
     padding: 8px 0; }
     .header__logo img {
-      margin-left: -19px;
+      margin-left: -45px;
       width: 381px;
       height: 87px; }
   .header__ul {
@@ -3061,7 +3061,7 @@ p {
     .header__logo img {
       height: 76px;
       width: 300px;
-      margin-left: 0; } }
+      margin-left: -15px; } }
 
 @media (max-width: 767px) {
   .header__text {
@@ -3069,7 +3069,7 @@ p {
   .header__logo {
     padding: 0; }
     .header__logo img {
-      margin-left: 0px;
+      margin-left: -23px;
       width: 269px;
       height: 67px; }
   .header__nav {
@@ -3225,6 +3225,7 @@ p {
     height: 68px; }
   .header__logo img {
     height: 50px;
+    margin-left: -15px;
     width: auto; } }
 
 .header__sub_list:nth-of-type(4) > .header__second_ul > .header__second_list:nth-of-type(5) {

@@ -46,7 +46,7 @@
   &__logo {
     padding: 8px 0;
     img {
-      margin-left: -19px;
+      margin-left: -45px;
       width: 381px;
       height: 87px;
     }
@@ -306,7 +306,7 @@
     img {
       height: 76px;
       width: 300px;
-      margin-left: 0;
+      margin-left: -15px;
     }
   }
 }
@@ -317,7 +317,7 @@
   .header__logo {
     padding: 0;
     img {
-      margin-left: 0px;
+      margin-left: -23px;
       width: 269px;
       height: 67px;
     }
@@ -485,6 +485,7 @@
 
   .header__logo img {
     height: 50px;
+    margin-left: -15px;
     width: auto;
   }
 }
