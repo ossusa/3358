@@ -89,13 +89,13 @@
 						{
 							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
 								<div class="markAsCompleteResource">
-									<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box"></div>Mark As Complete</button>
+									<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box click-cancel-js"></div>Mark As Complete</button>
 								</div>
 							</div>
 							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove", item.Id.ToString())">
 								<div class="removeResource">
 									<button type="button" class="click-cancel-js removeBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
-										<i class="anticon anticon-close"></i>Remove
+										<i class="anticon anticon-close click-cancel-js"></i>Remove
 									</button>
 								</div>
 							</div>
@@ -106,11 +106,11 @@
 								<div id="addSharedToMyHandBook">
 									@if (item.IsResourceAddedToMyHandBook == true)
 									{
-										<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
+										<span class='resources--plus anticon anticon-check click-cancel-js'></span><span>Added to My A-RIT</span>
 									}
 									else
 									{
-										<button type="button" class="click-cancel-js addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
+										<button type="button" class="click-cancel-js addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus click-cancel-js"></span> Add to My A-RIT </button>
 									}
 								</div>
 							</div>
@@ -120,7 +120,7 @@
 					<div class="resources-single__left_post_comment_header_right">
 						@if (openDocumentLink)
 						{
-							<a href="@item.ResourceUrl" class="click-cancel-js single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+							<a href="@item.ResourceUrl" class="click-cancel-js single-post-comments"><i class="material-icons click-cancel-js">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
 						}
 						<div class="single-post-statistic">
 							<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
@@ -129,8 +129,8 @@
 									data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 									data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 									@(!item.IsUserAuthorized ? "disabled" : "")>
-								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-									<span>@item.Likes.Likes</span>
+								<div class="click-cancel-js" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+									<span class="click-cancel-js">@item.Likes.Likes</span>
 								</div>
 							</button>
 							<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
@@ -139,8 +139,8 @@
 									data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 									data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 									@(!item.IsUserAuthorized ? "disabled" : "")>
-								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-									<span>@item.Likes.Dislikes</span>
+								<div class="click-cancel-js" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+									<span class="click-cancel-js">@item.Likes.Dislikes</span>
 								</div>
 							</button>
 						</div>
@@ -160,7 +160,13 @@
 				<section class="complete_blocks_first">
 					@foreach (var item in Model.MyCompletedResources)
 					{
-						<div class="complete_block_first complete_block_first-mob">
+					openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
+					|| (item.ResourceDetails.ResourceTypeName == "video"));
+						<div class="complete_block_first complete_block_first-mob resourceLink"
+							 data-id="@item.ResourceUrl"
+							 data-id1="@item.ResourceDetails.ResourceLink"
+							 data-id2="@item.ResourceDetails.ResourceDocument"
+							 @(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
 							<div class="resources__community-img img-container-js">
 								@if (item.ResourceDetails.ImageUrl != null && item.ResourceDetails.ImageUrl != String.Empty)
 								{
@@ -191,15 +197,7 @@
 							<div class="complete__resources_slide-info">
 								<div class="resources__slide-box">
 									<p class="resources__slide-article"> @item.ResourceDetails.ResourceType</p>
-									@{openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
-												  || (item.ResourceDetails.ResourceTypeName == "video"));}
-									<button type="button" class="resourceLink"
-											data-id="@item.ResourceUrl"
-											data-id1="@item.ResourceDetails.ResourceLink"
-											data-id2="@item.ResourceDetails.ResourceDocument"
-											@(openDocumentLink ? "data-id3=OpenLink" : "data-id3=\"\"")>
-										<span class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</span>
-									</button>
+									<div class="resources__slide-title sm_truncate_title">@item.ResourceDetails.ResourceTitle</div>
 									<p class="separate__slide-desc sm_truncate_desc">@Html.Raw(item.ResourceDetails.ResourceSummary)</p>
 								</div>
 								<div class="resources__slide-footer">
@@ -207,12 +205,12 @@
 									{
 										if (Model.SharedUserId == Guid.Empty)
 										{
-											<div class="completedResource">
-												<div class="complete_box anticon anticon-check"></div>Complete
+											<div class="completedResource click-cancel-js">
+												<div class="complete_box anticon anticon-check click-cancel-js"></div>Complete
 											</div>
 											<div class="removeCompletedResource">
-												<button type="button" class="removeComplenedBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
-													<i class="anticon anticon-close"></i>Remove
+												<button type="button" class="click-cancel-js removeComplenedBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id">
+													<i class="anticon anticon-close click-cancel-js"></i>Remove
 												</button>
 											</div>
 										}
@@ -222,11 +220,11 @@
 												<div id="addSharedToMyHandBook">
 													@if (item.IsResourceAddedToMyHandBook == true)
 													{
-														<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
+														<span class='resources--plus anticon anticon-check click-cancel-js'></span><span class="click-cancel-js">Added to My A-RIT</span>
 													}
 													else
 													{
-														<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span> Add to My A-RIT </button>
+														<button type="button" class="addSharedToMyHandBookBtn resources__slide-btn click-cancel-js" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus click-cancel-js"></span> Add to My A-RIT </button>
 													}
 												</div>
 											</div>
@@ -235,27 +233,27 @@
 									<div class="resources-single__left_post_comment_header_right">
 										@if (openDocumentLink)
 										{
-											<a href="@item.ResourceUrl" class="single-post-comments"><i class="material-icons">chat_bubble_outline</i><span>@item.CommentsAmount</span></a>
+											<a href="@item.ResourceUrl" class="single-post-comments click-cancel-js"><i class="material-icons click-cancel-js">chat_bubble_outline</i><span class="click-cancel-js">@item.CommentsAmount</span></a>
 										}
 										<div class="single-post-statistic">
 											<button type="button" id="@string.Format("{0}_{1}","resourceLikesBtn", item.Id.ToString())"
-													class="addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )"
+													class="click-cancel-js addLike anticon anticon-like-o @(item.Likes.IsResourceLiked?"clicked-like":"" )"
 													data-id="@item.Id.ToString()" data-id1="@item.Likes.Likes"
 													data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 													data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 													@(!item.IsUserAuthorized ? "disabled" : "")>
-												<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-													<span>@item.Likes.Likes</span>
+												<div class="click-cancel-js" id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
+													<span class="click-cancel-js">@item.Likes.Likes</span>
 												</div>
 											</button>
 											<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
-													class="addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")"
+													class="click-cancel-js addDislike anticon anticon-dislike-o @(item.Likes.IsResourceDisliked? "clicked-dislike":"")"
 													data-id="@item.Id.ToString()" data-id1="@item.Likes.Dislikes"
 													data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 													data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 													@(!item.IsUserAuthorized ? "disabled" : "")>
-												<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-													<span>@item.Likes.Dislikes</span>
+												<div class="click-cancel-js" id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
+													<span class="click-cancel-js">@item.Likes.Dislikes</span>
 												</div>
 											</button>
 										</div>

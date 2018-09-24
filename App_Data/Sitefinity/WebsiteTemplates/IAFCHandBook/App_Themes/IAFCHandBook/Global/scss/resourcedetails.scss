@@ -730,7 +730,13 @@ addReplyCommentBtn{
   outline: none;
   text-align: left;
   padding: 0;
+  cursor: pointer;
 }
+
+.resourceFeaturedLink {
+  cursor: pointer;
+}
+
 .addReplyCommentBtn{
   background: transparent;
   padding: 10px 24px;
