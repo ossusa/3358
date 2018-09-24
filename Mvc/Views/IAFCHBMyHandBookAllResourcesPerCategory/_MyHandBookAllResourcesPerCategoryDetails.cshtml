@@ -112,7 +112,7 @@
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 								@(!item.IsUserAuthorized? "disabled":"")>
 							<span class="@string.Format("{0}_{1}", "resourceLikes", item.Id.ToString()) resources--like">
-								<span>@item.Likes.Likes</span>
+								<span class="click-cancel-js">@item.Likes.Likes</span>
 							</span>
 						</button>
 

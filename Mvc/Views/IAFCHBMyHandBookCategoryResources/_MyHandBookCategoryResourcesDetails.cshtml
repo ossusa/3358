@@ -130,7 +130,7 @@
 									data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 									@(!item.IsUserAuthorized ? "disabled" : "")>
 								<div id="@string.Format("{0}_{1}", "resourceLikes" , item.Id.ToString())">
-									<span>@item.Likes.Likes</span>
+									<span class="click-cancel-js">@item.Likes.Likes</span>
 								</div>
 							</button>
 							<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
@@ -140,7 +140,7 @@
 									data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 									@(!item.IsUserAuthorized ? "disabled" : "")>
 								<div id="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString())">
-									<span>@item.Likes.Dislikes</span>
+									<span class="click-cancel-js">@item.Likes.Dislikes</span>
 								</div>
 							</button>
 						</div>

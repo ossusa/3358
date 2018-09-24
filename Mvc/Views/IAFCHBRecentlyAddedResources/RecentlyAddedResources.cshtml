@@ -40,7 +40,7 @@
 					<div class="resources__slide-label">
 						<span> @item.ResourceDetails.Category.ParentCategoryTitle </span> >
 						<a class="click-cancel-js" href="@item.ResourceDetails.Category.CategoryUrl">
-							<span>@item.ResourceDetails.Category.CategoryTitle</span>
+							<span class="click-cancel-js">@item.ResourceDetails.Category.CategoryTitle</span>
 						</a>
 					</div>
 					@if (item.ResourceDetails.Duration != emptyDuration)
@@ -64,11 +64,11 @@
 							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
 								@if (item.IsResourceAddedToMyHandBook == true)
 								{
-									<span class='resources--plus anticon anticon-check'></span><span>Added to My A-RIT</span>
+									<span class='resources--plus anticon anticon-check'></span><span class="click-cancel-js">Added to My A-RIT</span>
 								}
 								else
 								{
-									<button type="button" class="resources__slide-btn addToMyHandBook click-cancel-js" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to My A-RIT</button>
+									<button type="button" class="resources__slide-btn addToMyHandBook click-cancel-js" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus click-cancel-js"></span>Add to My A-RIT</button>
 								}
 							</div>
 						}
@@ -76,8 +76,8 @@
 								@if (openDocumentLink)
 								{
 								<a class="single-post-comments click-cancel-js" href="@item.ResourceUrl">
-									<i class="material-icons">chat_bubble_outline</i>
-									<span>@item.CommentsAmount Comments</span>
+									<i class="material-icons click-cancel-js">chat_bubble_outline</i>
+									<span class="click-cancel-js">@item.CommentsAmount Comments</span>
 								</a>
 								}
 								<div class="single-post-statistic">
@@ -89,8 +89,8 @@
 											@(!item.IsUserAuthorized? "disabled":"")>
 
 						
-										<span class="resources--like" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )">
-											<span>@item.Likes.Likes</span>
+										<span class="resources--like click-cancel-js" id="@string.Format("{0}_{1}","resourceLikes", item.Id.ToString() )">
+											<span class="click-cancel-js">@item.Likes.Likes</span>
 										</span>
 									</button>
 									<button type="button" id="@string.Format("{0}_{1}","resourceDisLikesBtn", item.Id.ToString())"
@@ -99,8 +99,8 @@
 											data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 											data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 											@(!item.IsUserAuthorized? "disabled":"")  >
-										<span class="resources--dislike" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
-											<span>@item.Likes.Dislikes</span>
+										<span class="resources--dislike click-cancel-js" id="@string.Format("{0}_{1}","resourceDislikes", item.Id.ToString())">
+											<span class="click-cancel-js">@item.Likes.Dislikes</span>
 										</span>
 									</button>
 								</div>
