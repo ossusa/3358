@@ -111,7 +111,7 @@
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 								@(!item.IsUserAuthorized? "disabled":"")>
-							<span class="@string.Format("{0}_{1}", "resourceLikes", item.Id.ToString()) resources--like">
+							<span class="@string.Format("{0}_{1}", "resourceLikes", item.Id.ToString()) resources--like click-cancel-js">
 								<span class="click-cancel-js">@item.Likes.Likes</span>
 							</span>
 						</button>
@@ -123,7 +123,7 @@
 								data-id2="@(item.Likes.IsResourceLiked? "liked" : "not_liked")"
 								data-id3="@(item.Likes.IsResourceDisliked? "disliked" : "not_disliked")"
 								@(!item.IsUserAuthorized? "disabled":"")>
-							<span class="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString()) resources--dislike">
+							<span class="@string.Format("{0}_{1}", "resourceDislikes" , item.Id.ToString()) resources--dislike click-cancel-js">
 								<span class="click-cancel-js">@item.Likes.Dislikes</span>
 							</span>
 						</button>
