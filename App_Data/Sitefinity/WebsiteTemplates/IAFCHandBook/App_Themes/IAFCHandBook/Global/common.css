@@ -2856,7 +2856,9 @@ p {
   .header__logo {
     padding: 8px 0; }
     .header__logo img {
-      margin-left: -19px; }
+      margin-left: -19px;
+      width: 381px;
+      height: 87px; }
   .header__ul {
     display: -ms-flexbox;
     display: flex;
