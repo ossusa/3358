@@ -241,8 +241,9 @@
   }
   &__table-tr {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 24px 120px;
+    padding: 6px 120px;
     @media (max-width: 1109px){
       padding: 16px 0 16px 16px;
     }
@@ -306,8 +307,8 @@
   .header__logo {
     padding: 0;
     img {
-      height: 44px;
-      width: 269px;
+      height: 76px;
+      width: 300px;
       margin-left: 0;
     }
   }
@@ -320,6 +321,8 @@
     padding: 0;
     img {
       margin-left: 0px;
+      width: 269px;
+      height: 67px;
     }
   }
   .header__nav {

@@ -3003,9 +3003,11 @@ p {
   .header__table-tr {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 24px 120px; }
+    padding: 6px 120px; }
     @media (max-width: 1109px) {
       .header__table-tr {
         padding: 16px 0 16px 16px; } }
@@ -3058,8 +3060,8 @@ p {
   .header__logo {
     padding: 0; }
     .header__logo img {
-      height: 44px;
-      width: 269px;
+      height: 76px;
+      width: 300px;
       margin-left: 0; } }
 
 @media (max-width: 767px) {
@@ -3068,7 +3070,9 @@ p {
   .header__logo {
     padding: 0; }
     .header__logo img {
-      margin-left: 0px; }
+      margin-left: 0px;
+      width: 269px;
+      height: 67px; }
   .header__nav {
     display: none; }
   .header__table-tr {
