@@ -3026,9 +3026,6 @@ p {
 
 .header__logo {
   padding: 0; }
-  .header__logo img {
-    height: 52px;
-    margin-left: 0; }
 
 .sticky {
   position: fixed;
@@ -3225,7 +3222,7 @@ p {
   .header__table-tr {
     height: 68px; }
   .header__logo img {
-    height: 40px;
+    height: 50px;
     width: auto; } }
 
 .header__sub_list:nth-of-type(4) > .header__second_ul > .header__second_list:nth-of-type(5) {
