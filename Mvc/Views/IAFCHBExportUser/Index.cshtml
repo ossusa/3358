@@ -1,16 +1,10 @@
 ﻿<div>
-	@Html.ActionLink("Download", "DownloadCSV", "IAFCHBExportUser")
+	@Html.ActionLink("Download A-RIT users", "DownloadCSV", "IAFCHBExportUser")
 </div>
 <script>
-
-	
-			
-		
-
 	function exportCSV() {
 
 		window.location.href = '@Url.Action("DownloadCSV", "IAFCHBExportUserController")';
 	}
-		
-	
+			
 </script>
