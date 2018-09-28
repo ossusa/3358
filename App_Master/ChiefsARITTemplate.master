@@ -73,7 +73,7 @@
                 <div class="footer__info-col">
                     <div class="sfimageWrp">
 	        
-			<img id="footerImageID" title="IACF" src="/images/default-source/iacfhandbook/iacf.png?MaxWidth=145&amp;MaxHeight=&amp;ScaleUp=false&amp;Quality=High&amp;Method=ResizeFitToAreaArguments&amp;Signature=0155182ED502B4E02F3BA64C26041E6050F861B3" alt="IACF" style="margin-left:-15px;" />
+			<img id="footerImageID" title="IACF" src="/images/default-source/iacfhandbook/iacf.png?MaxWidth=145&amp;MaxHeight=&amp;ScaleUp=false&amp;Quality=High" alt="IACF" style="margin-left:-15px;" />
 
 		    </div>
                 </div>
