@@ -33,10 +33,10 @@
                     <div class="header__table-tr">
 
                             <!-- Logo ============================================= -->
-                         <a class="header__logo-link" href="https://dev-staging.iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
+                         <a class="header__logo-link" href="https://iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
                             <div id="logo" class="header__logo">
                                 <div class="sfimageWrp">	        
-					<img id="logoHolderImageID" title="IACFHandBook" src="https://dev-staging.iafc.org/images/default-source/1logos/iacfhandbook-logo.png" alt="Chief's A-RIT" />
+					<img id="logoHolderImageID" title="IACFHandBook" src="https://iafc.org/images/default-source/1logos/iacfhandbook-logo.png" alt="Chief's A-RIT" />
 				</div>
                                 
                             </div>
