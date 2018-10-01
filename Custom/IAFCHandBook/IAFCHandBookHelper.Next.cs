@@ -646,12 +646,15 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 			// get first resource type
-			var resourceTypesID = resource.GetPropertyValue<TrackedList<Guid>>("resourcetypes").First();
-			if (resourceTypesID != null)
+			var resourceTypes = resource.GetPropertyValue<TrackedList<Guid>>("resourcetypes");
+			if (resourceTypes.Any())
 			{
+				var resourceTypesID = resource.GetPropertyValue<TrackedList<Guid>>("resourcetypes").First();
+
 				var resourceType = taxonomyManager.GetTaxon(resourceTypesID);
 				resourceTypeTitle = resourceType.Title;
 				resourceTypeName = resourceType.Name;
+
 			}
 
 			// get first category

@@ -1180,35 +1180,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				commentDetails.Likes = GetResourceLikesInfo(commentItem, commentResource);
 
 
-				var replyComments = commentItem.GetRelatedItems("Reply").Cast<DynamicContent>().ToArray();
+				var replyComments = commentItem.GetRelatedItems("Reply").Cast<DynamicContent>();
 				var replyCommentList = new List<IAFCHandBookCommentModel>();
-				foreach (var replyCommentItem in replyComments.OrderByDescending(c => c.DateCreated))
-				{
-					var replyCommentDetails = new IAFCHandBookCommentModel();
-					replyCommentDetails.Id = replyCommentItem.Id;
-					replyCommentDetails.CommentText = replyCommentItem.GetValue("CommentText").ToString();
-					replyCommentDetails.DateCreated = replyCommentItem.DateCreated;
-					replyCommentDetails.Author.Id = replyCommentItem.Owner;
-					user = userManager.GetUser(replyCommentItem.Owner);
-					profile = null;
 
-					if (user != null)
-					{
-						profile = profileManager.GetUserProfile<SitefinityProfile>(user);
-						if (profile != null)
-						{
-							commentDetails.Author.UserName = profile.FirstName + " " + profile.LastName;
-						}
-						else
-						{
-							commentDetails.Author.UserName = user.FirstName + " " + user.LastName;
-						}
-					}
-					replyCommentDetails.Likes = GetResourceLikesInfo(replyCommentItem, commentResource);
-
-					replyCommentList.Add(replyCommentDetails);
-
-				}
+				replyCommentList = GetReplyComments(replyComments);
 
 				commentDetails.RepliedComments = replyCommentList;
 
@@ -1216,6 +1191,47 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 
 			return resourceCommentList;
+		}
+
+		public List<IAFCHandBookCommentModel> GetReplyComments(IQueryable<DynamicContent> replyCommentArry)
+		{
+			UserProfileManager profileManager = UserProfileManager.GetManager();
+			UserManager userManager = UserManager.GetManager();
+			var replyCommentList = new List<IAFCHandBookCommentModel>();
+			foreach (var replyCommentItem in replyCommentArry.OrderByDescending(c => c.DateCreated))
+			{
+				var replyCommentDetails = new IAFCHandBookCommentModel();
+				replyCommentDetails.Id = replyCommentItem.Id;
+				replyCommentDetails.CommentText = replyCommentItem.GetValue("CommentText").ToString();
+				replyCommentDetails.DateCreated = replyCommentItem.DateCreated;
+				replyCommentDetails.Author.Id = replyCommentItem.Owner;
+				var user = userManager.GetUser(replyCommentItem.Owner);
+				SitefinityProfile profile = null;
+
+				if (user != null)
+				{
+					profile = profileManager.GetUserProfile<SitefinityProfile>(user);
+					if (profile != null)
+					{
+						replyCommentDetails.Author.UserName = profile.FirstName + " " + profile.LastName;
+					}
+					else
+					{
+						replyCommentDetails.Author.UserName = user.FirstName + " " + user.LastName;
+					}
+				}
+				replyCommentDetails.Likes = GetResourceLikesInfo(replyCommentItem, commentResource);
+
+				var replyReplyComments = replyCommentItem.GetRelatedItems("Reply").Cast<DynamicContent>();
+				var replyRepyCommentList = new List<IAFCHandBookCommentModel>();
+
+				replyRepyCommentList = GetReplyComments(replyReplyComments);
+
+				replyCommentDetails.RepliedComments = replyRepyCommentList;
+				replyCommentList.Add(replyCommentDetails);
+
+			}
+			return replyCommentList;
 		}
 		#endregion GetResourceComments
 
