@@ -849,6 +849,9 @@ p {
     font-weight: 600 !important;
     >span {
       font-weight: 500;
+      >a {
+        color: inherit;
+      }
     }
   }
   &--plus {

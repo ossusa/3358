@@ -800,6 +800,8 @@ p {
     font-weight: 600 !important; }
     .resources__logged-article > span {
       font-weight: 500; }
+      .resources__logged-article > span > a {
+        color: inherit; }
   .resources--plus {
     font-size: 1.00em;
     margin-right: 8px !important; }
