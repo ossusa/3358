@@ -2537,7 +2537,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
 					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId)).Count();
 
-				if (allResourcesPerCaterory == myHandBookResources + myHandBookCompletedResources)
+				if ((allResourcesPerCaterory == myHandBookResources + myHandBookCompletedResources )&& allResourcesPerCaterory!=0)
 				{
 					returnData = true;
 				}
