@@ -7,11 +7,9 @@
 	<div class="resources__logged">
 
 		<div class="resources__logged-info">
-			<a href="@Model.ResourceUrl">
 				<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span> @Model.ResourceDetails.Category.CategoryTitle</span></p>
 				<h6 class="resources__slide-title resources__logged-title">@Model.ResourceDetails.ResourceTitle</h6>
 				<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
-			</a>
 			
 			@{openDocumentLink = ((Model.ResourceDetails.ResourceDescription != null && Model.ResourceDetails.ResourceDescription != String.Empty)
 					|| (Model.ResourceDetails.ResourceTypeName == "video"));}
