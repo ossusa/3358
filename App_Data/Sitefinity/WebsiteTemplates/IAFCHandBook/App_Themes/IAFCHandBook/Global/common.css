@@ -2509,10 +2509,11 @@ p {
 #content {
   min-height: calc(100vh - 212px); }
 
-.resourceFeaturedLink {
+.resourceFeaturedLinky {
   transition: .3s ease-in-out;
-  width: 120px !important; }
-  .resourceFeaturedLink:hover {
+  width: 120px !important;
+  cursor: pointer; }
+  .resourceFeaturedLinky:hover {
     background: #2b4b6b;
     color: #fff; }
 
