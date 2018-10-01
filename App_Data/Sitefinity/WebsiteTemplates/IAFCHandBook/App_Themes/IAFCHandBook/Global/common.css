@@ -2554,6 +2554,9 @@ p {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
 
+.resource-link-js {
+  cursor: pointer; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
