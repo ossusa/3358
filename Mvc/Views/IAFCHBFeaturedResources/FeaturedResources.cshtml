@@ -7,12 +7,21 @@
 	<div class="resources__logged">
 
 		<div class="resources__logged-info">
-			<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
-				<h6 class="resources__slide-title resources__logged-title">@Model.ResourceDetails.ResourceTitle</h6>
-				<p class="resources__slide-desc resources__logged-desc">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
-			
 			@{openDocumentLink = ((Model.ResourceDetails.ResourceDescription != null && Model.ResourceDetails.ResourceDescription != String.Empty)
-					|| (Model.ResourceDetails.ResourceTypeName == "video"));}
+			|| (Model.ResourceDetails.ResourceTypeName == "video"));}
+			<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span>@Model.ResourceDetails.Category.CategoryTitle</span></p>
+				<h6 data-id="@Model.ResourceUrl"
+					data-id1="@Model.ResourceDetails.ResourceLink"
+					data-id2="@Model.ResourceDetails.ResourceDocument"
+					@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")
+					class="resources__slide-title resources__logged-title resource-link-js">@Model.ResourceDetails.ResourceTitle</h6>
+				<p data-id="@Model.ResourceUrl"
+				   data-id1="@Model.ResourceDetails.ResourceLink"
+				   data-id2="@Model.ResourceDetails.ResourceDocument"
+				   @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")
+			       class="resources__slide-desc resources__logged-desc resource-link-js">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
+			
+
 			<div class="resources__logged-buttons centered">
 				<button type="button" 
 						class="resourceFeaturedLink resourceFeaturedLinky community__head-btn resources__logged-btn"
@@ -37,7 +46,7 @@
 				}
 			</div>
 		</div>
-		<div class="resources__logged-img-box img-container-js resourceFeaturedLink"
+		<div class="resources__logged-img-box img-container-js resource-link-js"
 			 data-id="@Model.ResourceUrl"
 			 data-id1="@Model.ResourceDetails.ResourceLink"
 			 data-id2="@Model.ResourceDetails.ResourceDocument"
@@ -98,7 +107,7 @@
 		});
 
 		//Open Featured Resource Details
-		$('.resourceFeaturedLink').click(function () {
+		$('.resourceFeaturedLink, .resource-link-js').click(function () {
 			var resourceUrl = $(this).attr("data-id");
 			var resourceLinkUrl = $(this).attr('data-id1');
 			var resourceDocumentUrl = $(this).attr('data-id2');
