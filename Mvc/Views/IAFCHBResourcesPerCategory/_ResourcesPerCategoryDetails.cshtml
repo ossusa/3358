@@ -68,7 +68,7 @@
 					<div class="resources__slide-footer">
 						@if (item.IsUserAuthorized)
 						{
-							<div class="resources__slide-btn single-post-add" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
+							<div class="resources__slide-btn single-post-add click-cancel-js" id="@string.Format("{0}_{1}", "addToMyHandBook", item.Id.ToString())">
 								<div id="addToMyHandBook">
 									@if (item.IsResourceAddedToMyHandBook == true)
 									{
@@ -320,7 +320,7 @@
 				dataType: "json",
 				success: function (response) {
 					if (response == true) {
-						$(tag_id).html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
+						$(tag_id).html("<span class='resources--plus anticon anticon-check click-cancel-js'></span>Added to My A-RIT");
 					}
 				}
 			});

@@ -129,7 +129,7 @@
 				url: '@Url.Action("AddAllToMyHandBook", "IAFCHBResourcesPerCategory")',
 				data: { categoryId: categoryId, orderBy: orderByValue},
 				success: function (response) {
-					$("#addAllToMyHandBook").html("<span class='resources--plus anticon anticon-check'></span>Added to My A-RIT");
+					$("#addAllToMyHandBook").html("<span class='resources--plus anticon anticon-check click-cancel-js'></span>Added to My A-RIT");
 					$("#partViewID").html(response);
 					bindEdit();
 				}
