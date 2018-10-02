@@ -9,7 +9,7 @@
 		<div class="resources__logged-info">
 			@{openDocumentLink = ((Model.ResourceDetails.ResourceDescription != null && Model.ResourceDetails.ResourceDescription != String.Empty)
 			|| (Model.ResourceDetails.ResourceTypeName == "video"));}
-			<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span><a href=">@Model.ResourceDetails.Category.CategoryUrl">@Model.ResourceDetails.Category.CategoryTitle</a></span></p>
+			<p class="resources__slide-article resources__logged-article">Featured @Model.ResourceDetails.ResourceType • <span><a href="@Model.ResourceDetails.Category.CategoryUrl">@Model.ResourceDetails.Category.CategoryTitle</a></span></p>
 				<h6 data-id="@Model.ResourceUrl"
 					data-id1="@Model.ResourceDetails.ResourceLink"
 					data-id2="@Model.ResourceDetails.ResourceDocument"
