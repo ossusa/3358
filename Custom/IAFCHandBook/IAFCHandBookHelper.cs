@@ -27,6 +27,7 @@ using Telerik.Sitefinity.Security.Claims;
 using Telerik.Sitefinity.Services;
 using Telerik.Sitefinity.Services.Notifications;
 using Telerik.Sitefinity.Modules.Libraries;
+using System.Threading;
 
 namespace SitefinityWebApp.Custom.IAFCHandBook
 {
@@ -34,7 +35,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 	public partial class IAFCHandBookHelper
 	{
 		private ILog log = LogManager.GetLogger(typeof(IAFCHandBookHelper));
-
+		private static object _likeLock = new object();
 		#region Struct
 		private struct Categories
 		{
@@ -329,79 +330,91 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public void InitCategoriesGuid()
 		{
 			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+			var TopicCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == "2-topics").ToArray().Where(c => c.Parent == null).First();
+			var TopicCategotyId = TopicCategory.Id;
+
+			var FeaturedCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == "1-featured").ToArray().Where(c => c.Parent == null).First();
+			var FeaturedCategotyId = FeaturedCategory.Id;
+
+			//Other
+			var currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == DepartmentAdministrationName).ToArray().Where(c => c.ParentId == TopicCategotyId).First();
+			DepartmentAdministrationCategory = currentResourceCategory.Id;
+
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == Featured_VWS_A_RITName).ToArray().Where(c => c.ParentId == FeaturedCategotyId).First();
+			Featured_VWS_A_RIT = currentResourceCategory.Id;
+
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipName).ToArray().Where(c => c.ParentId == TopicCategotyId).First();
+			LeadershipCategory = currentResourceCategory.Id;
+
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelName).ToArray().Where(c => c.ParentId == TopicCategotyId).First();
+			PersonnelCategory = currentResourceCategory.Id;
+
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceName).ToArray().Where(c => c.ParentId == DepartmentAdministrationCategory).First();
+			FinanceCategory = currentResourceCategory.Id;
+
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityName).ToArray().Where(c => c.ParentId == DepartmentAdministrationCategory).First();
+			CommunityCategory = currentResourceCategory.Id;
+
+			
+
 			//Leadership
-			var currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipMotivatingPeopleName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipMotivatingPeopleName).ToArray().Where(c => c.ParentId == LeadershipCategory).First();
 			LeadershipMotivatingPeople = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipLeadershipStylesName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipLeadershipStylesName).ToArray().Where(c => c.ParentId == LeadershipCategory).First();
 			LeadershipLeadershipStyles = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipEthicsName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipEthicsName).ToArray().Where(c => c.ParentId == LeadershipCategory).First();
 			LeadershipEthics = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipGenerationalDifferencesName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipGenerationalDifferencesName).ToArray().Where(c => c.ParentId == LeadershipCategory).First();
 			LeadershipGenerationalDifferences = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipStrategyName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipStrategyName).ToArray().Where(c => c.ParentId == DepartmentAdministrationCategory).First();
 			LeadershipStrategy = currentResourceCategory.Id;
 
 			//Personnel
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelVolunteerCareerRelationsName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelVolunteerCareerRelationsName).ToArray().Where(c => c.ParentId == PersonnelCategory).First();
 			PersonnelVolunteerCareerRelations = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelRecruitmentName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelRecruitmentName).ToArray().Where(c => c.ParentId == PersonnelCategory).First();
 			PersonnelRecruitment = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelRetentionName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelRetentionName).ToArray().Where(c => c.ParentId == PersonnelCategory).First();
 			PersonnelRetention = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelLegalIssuesName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelLegalIssuesName).ToArray().Where(c => c.ParentId == PersonnelCategory).First();
 			PersonnelLegalIssues = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelInsuranceName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelInsuranceName).ToArray().Where(c => c.ParentId == PersonnelCategory).First();
 			PersonnelInsurance = currentResourceCategory.Id;
 
 			//Finance
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceBudgetingName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceBudgetingName).ToArray().Where(c => c.ParentId == FinanceCategory).First();
 			FinanceBudgeting = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceFundraisingName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceFundraisingName).ToArray().Where(c => c.ParentId == FinanceCategory).First();
 			FinanceFundraising = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceLegalIssuesName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceLegalIssuesName).ToArray().Where(c => c.ParentId == FinanceCategory).First();
 			FinanceLegalIssues = currentResourceCategory.Id;
 
 			//Community Relations
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsCustomerServiceName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsCustomerServiceName).ToArray().Where(c => c.ParentId == CommunityCategory).First();
 			CommunityRelationsCustomerService = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsMarketingMediaName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsMarketingMediaName).ToArray().Where(c => c.ParentId == CommunityCategory).First();
 			CommunityRelationsMarketingMedia = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsPoliticsName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsPoliticsName).ToArray().Where(c=>c.ParentId == CommunityCategory).First();
 			CommunityRelationsPolitics = currentResourceCategory.Id;
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsCrisisCommunicationName).First();
+			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityRelationsCrisisCommunicationName).ToArray().Where(c => c.ParentId == DepartmentAdministrationCategory).First();
 			CommunityRelationsCrisisCommunication = currentResourceCategory.Id;
 
-			//Other
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == Featured_VWS_A_RITName).First();
-			Featured_VWS_A_RIT = currentResourceCategory.Id;
+		
 
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == LeadershipName).First();
-			LeadershipCategory = currentResourceCategory.Id;
-
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == PersonnelName).First();
-			PersonnelCategory = currentResourceCategory.Id;
-
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == FinanceName).First();
-			FinanceCategory = currentResourceCategory.Id;
-
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == CommunityName).First();
-			CommunityCategory = currentResourceCategory.Id;
-
-			currentResourceCategory = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == DepartmentAdministrationName).First();
-			DepartmentAdministrationCategory = currentResourceCategory.Id;
+			
 		}
 		#endregion InitCategoriesGuid
 
@@ -1501,40 +1514,46 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var resourceLike = resource.GetRelatedItems(commentFieldText).Cast<DynamicContent>().First();
 				currentLikes = Convert.ToInt32(resourceLike.GetValue("AmountOfLikes"));
 
-				if (isAdding)
+				if ((isAdding && !IsResourceLiked(resourceLike.Id)) || (!isAdding && IsResourceLiked(resourceLike.Id)))
 				{
-					currentLikes = currentLikes + 1;
-				}
-				else
-				{
-					currentLikes = currentLikes - 1;
-				}
-				var masterResourceLike = dynamicModuleManager.Lifecycle.GetMaster(resourceLike);
-				DynamicContent checkOutLikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceLike) as DynamicContent;
-				checkOutLikeItem.SetValue("AmountOfLikes", currentLikes);
-				ILifecycleDataItem checkInLikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutLikeItem);
-				dynamicModuleManager.Lifecycle.Publish(checkInLikeItem);
+					if (isAdding)
+					{
+						currentLikes = currentLikes + 1;
+					}
+					else
+					{
+						currentLikes = currentLikes - 1;
+					}
+					if (currentLikes >= 0)
+					{
+						var masterResourceLike = dynamicModuleManager.Lifecycle.GetMaster(resourceLike);
+						DynamicContent checkOutLikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceLike) as DynamicContent;
+						checkOutLikeItem.SetValue("AmountOfLikes", currentLikes);
+						ILifecycleDataItem checkInLikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutLikeItem);
+						dynamicModuleManager.Lifecycle.Publish(checkInLikeItem);
 
-				if (resourceTypeItem == handBookResourcesType)
-				{
-					var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
-					var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
+						if (resourceTypeItem == handBookResourcesType)
+						{
+							var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
+							var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
 
-					resourceTemp.SetValue("AmountOfLikes", currentLikes);
+							resourceTemp.SetValue("AmountOfLikes", currentLikes);
 
-					resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
-					dynamicModuleManager.Lifecycle.Publish(resourceMaster);
-				}
+							resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
+							dynamicModuleManager.Lifecycle.Publish(resourceMaster);
+						}
 
-				dynamicModuleManager.SaveChanges();
+						dynamicModuleManager.SaveChanges();
 
-				if (isAdding)
-				{
-					AddToLikedResources(resourceLike.Id);
-				}
-				else
-				{
-					RemoveFromLikedResources(resourceLike.Id);
+						if (isAdding)
+						{
+							AddToLikedResources(resourceLike.Id);
+						}
+						else
+						{
+							RemoveFromLikedResources(resourceLike.Id);
+						}
+					}
 				}
 
 			}
@@ -1574,41 +1593,47 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				var masterResourceDislike = dynamicModuleManager.Lifecycle.GetMaster(resourceDislike);
 
-				if (isAdding)
+				if ((isAdding && !IsResourceDisliked(resourceDislike.Id)) || (!isAdding && IsResourceDisliked(resourceDislike.Id)))
 				{
-					currentDislikes = currentDislikes + 1;
+					if (isAdding)
+					{
+						currentDislikes = currentDislikes + 1;
+					}
+					else
+					{
+						currentDislikes = currentDislikes - 1;
+					}
+
+					if (currentDislikes >= 0)
+					{
+
+						DynamicContent checkOutDislikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceDislike) as DynamicContent;
+						checkOutDislikeItem.SetValue("AmountOfDislikes", currentDislikes);
+						ILifecycleDataItem checkInDislikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutDislikeItem);
+						dynamicModuleManager.Lifecycle.Publish(checkInDislikeItem);
+
+						if (resourceTypeItem == handBookResourcesType)
+						{
+							var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
+							var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
+
+							resourceTemp.SetValue("AmountOfDislikes", currentDislikes);
+
+							resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
+							dynamicModuleManager.Lifecycle.Publish(resourceMaster);
+						}
+
+						dynamicModuleManager.SaveChanges();
+						if (isAdding)
+						{
+							AddToDislikedResources(resourceDislike.Id);
+						}
+						else
+						{
+							RemoveFromDisLikedResources(resourceDislike.Id);
+						}
+					}
 				}
-				else
-				{
-					currentDislikes = currentDislikes - 1;
-				}
-
-				DynamicContent checkOutDislikeItem = dynamicModuleManager.Lifecycle.CheckOut(masterResourceDislike) as DynamicContent;
-				checkOutDislikeItem.SetValue("AmountOfDislikes", currentDislikes);
-				ILifecycleDataItem checkInDislikeItem = dynamicModuleManager.Lifecycle.CheckIn(checkOutDislikeItem);
-				dynamicModuleManager.Lifecycle.Publish(checkInDislikeItem);
-
-				if (resourceTypeItem == handBookResourcesType)
-				{
-					var resourceMaster = dynamicModuleManager.Lifecycle.GetMaster(resource);
-					var resourceTemp = dynamicModuleManager.Lifecycle.CheckOut(resourceMaster) as DynamicContent;
-
-					resourceTemp.SetValue("AmountOfDislikes", currentDislikes);
-
-					resourceMaster = dynamicModuleManager.Lifecycle.CheckIn(resourceTemp);
-					dynamicModuleManager.Lifecycle.Publish(resourceMaster);
-				}
-
-				dynamicModuleManager.SaveChanges();
-				if (isAdding)
-				{
-					AddToDislikedResources(resourceDislike.Id);
-				}
-				else
-				{
-					RemoveFromDisLikedResources(resourceDislike.Id);
-				}
-
 			}
 			catch (Exception e)
 			{
@@ -2784,33 +2809,52 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public bool AddLikeForResourceUI(Guid resourceID, String resourceType, int likeAddAmount, int dislikeAddAmount)
 		{
-			var isAddingLike = false;
-			var isAddingDisLike = false;
-			bool isAddedLikes = false;
-			if (likeAddAmount == 1)
+			try
 			{
-				isAddingLike = true;
-				AddLikeForResource(resourceID, resourceType, isAddingLike);
-			}
-			else if (likeAddAmount == -1)
-			{
-				isAddingLike = false;
-				AddLikeForResource(resourceID, resourceType, isAddingLike);
-			}
+				bool lockTaken = false;
+				Monitor.TryEnter(_likeLock, new TimeSpan(0,5,0),ref lockTaken);
+				{
+					if (lockTaken)
+					{
+						var isAddingLike = false;
+						var isAddingDisLike = false;
+						bool isAddedLikes = false;
+						if (likeAddAmount == 1)
+						{
+							isAddingLike = true;
+							AddLikeForResource(resourceID, resourceType, isAddingLike);
+						}
+						else if (likeAddAmount == -1)
+						{
+							isAddingLike = false;
+							AddLikeForResource(resourceID, resourceType, isAddingLike);
+						}
 
-			if (dislikeAddAmount == 1)
-			{
-				isAddingDisLike = true;
-				AddDislikeForResource(resourceID, resourceType, isAddingDisLike);
-			}
-			else if (dislikeAddAmount == -1)
-			{
-				isAddingDisLike = false;
-				AddDislikeForResource(resourceID, resourceType, isAddingDisLike);
-			}
+						if (dislikeAddAmount == 1)
+						{
+							isAddingDisLike = true;
+							AddDislikeForResource(resourceID, resourceType, isAddingDisLike);
+						}
+						else if (dislikeAddAmount == -1)
+						{
+							isAddingDisLike = false;
+							AddDislikeForResource(resourceID, resourceType, isAddingDisLike);
+						}
 
-			isAddedLikes = true;
-			return isAddedLikes;
+						isAddedLikes = true;
+						return isAddedLikes;
+					}
+					else
+					{
+						log.Error("AddLikeForResourceUI locked");
+						return false;
+					}
+				}
+			}
+			finally
+			{
+				Monitor.Exit(_likeLock);
+			}
 		}
 
 		public List<VWSARITResourcesListModel> GetVWSARITResources()
