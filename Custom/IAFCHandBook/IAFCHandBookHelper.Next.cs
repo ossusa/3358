@@ -851,7 +851,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 var hbResTotalDuration = GetTotalDuration(myHandBookResources);
                 var hbComplResTotalDuration = GetTotalDuration(myCompletedHandBookResources);
                 var totalDuration = new TimeSpan();
-                totalDuration = totalDuration.Add(hbResTotalDuration).Add(hbComplResTotalDuration);
+                totalDuration = totalDuration.Add(hbResTotalDuration);
                 myHandBookResourcesItem.TotalDuration = myHandBookResourcesItem.TotalDuration.Add(totalDuration);
 
                 foreach (var categoryItem in topicParentCategories)
@@ -882,7 +882,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     var hbCategoryResTotalDuration = GetTotalDuration(categoryResources);
                     var hbCategoryComplResTotalDuration = GetTotalDuration(categoryCompletedResources);
                     var categoryTotalDuration = new TimeSpan();
-                    categoryTotalDuration = categoryTotalDuration.Add(hbCategoryResTotalDuration).Add(hbCategoryComplResTotalDuration);
+                    categoryTotalDuration = categoryTotalDuration.Add(hbCategoryResTotalDuration);
                     category.TotalDuration = category.TotalDuration.Add(categoryTotalDuration);
 
                     foreach (var childItem in childCategoriesList)
@@ -1019,7 +1019,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     var hbCategoryResTotalDuration = GetTotalDuration(categoryResources);
                     var hbCategoryComplResTotalDuration = GetTotalDuration(categoryCompletedResources);
                     var categoryTotalDuration = new TimeSpan();
-                    categoryTotalDuration = categoryTotalDuration.Add(hbCategoryResTotalDuration).Add(hbCategoryComplResTotalDuration);
+                    categoryTotalDuration = categoryTotalDuration.Add(hbCategoryResTotalDuration);
                     childCategory.TotalDuration = childCategory.TotalDuration.Add(categoryTotalDuration);
                     childCategory.MyHandBookCompletedResources = categoryCompletedResources.Count();
                     var myHandBookResourcesAmount = categoryResources.Count();
@@ -1158,7 +1158,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 var hbCategoryResTotalDuration = GetTotalDuration(categoryResources);
                 var hbCategoryComplResTotalDuration = GetTotalDuration(categoryCompletedResources);
                 var categoryTotalDuration = new TimeSpan();
-                categoryTotalDuration = categoryTotalDuration.Add(hbCategoryResTotalDuration).Add(hbCategoryComplResTotalDuration);
+                categoryTotalDuration = categoryTotalDuration.Add(hbCategoryResTotalDuration);
                 category.TotalDuration = category.TotalDuration.Add(categoryTotalDuration);
                 category.MyHandBookCompletedResources = categoryCompletedResources.Count();
                 var myHandBookResourcesAmount = categoryResources.Count();
