@@ -16,7 +16,7 @@ $(document).ready(function () {
         }]
     });
     $(function(){
-    var $ieLogo = '<img id="logoHolderImageID" title="IACFHandBook" src="images/Chiefs_ARIT_Logo.png" alt="Chief\'s A-RIT">';
+    var $ieLogo = '<img id="logoHolderImageID" title="IACFHandBook" src="../../../../Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/Chiefs_ARIT_Logo.png" alt="Chief\'s A-RIT">';
 
     if (/MSIE 10/i.test(navigator.userAgent)) {
         window.alert('isIE10');
