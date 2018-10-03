@@ -3242,6 +3242,24 @@ p {
   .header_unlogged .header__sub_list:nth-of-type(2) > .header__second_ul > .header__second_list:nth-of-type(4) {
     width: 120px; } }
 
+.logo-ie {
+  margin-left: -20px !important;
+  width: auto !important;
+  height: 87px !important; }
+  @media screen and (max-width: 1109px) {
+    .logo-ie {
+      height: 76px !important;
+      margin-left: -10px !important; } }
+  @media screen and (max-width: 767px) {
+    .logo-ie {
+      margin-left: 0 !important;
+      width: 269px !important;
+      height: 67px !important; } }
+  @media screen and (max-width: 374px) {
+    .logo-ie {
+      height: 50px !important;
+      width: auto !important; } }
+
 .footer {
   border-top: 1px solid #9B9B9B;
   width: 100%; }
