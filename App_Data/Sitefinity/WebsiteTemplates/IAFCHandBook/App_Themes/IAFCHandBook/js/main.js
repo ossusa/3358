@@ -19,19 +19,16 @@ $(document).ready(function () {
     var $ieLogo = '<img id="logoHolderImageID" title="IACFHandBook" src="../../../../Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/Chiefs_ARIT_Logo.png" alt="Chief\'s A-RIT" class="logo-ie">';
 
     if (/MSIE 10/i.test(navigator.userAgent)) {
-        window.alert('isIE10');
         $('.logo').hide();
         $('.header__logo > .sfimageWrp').append($ieLogo);
     }
 
     if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
-        window.location = 'pages/core/ie.htm';
         $('.logo').hide();
         $('.header__logo > .sfimageWrp').append($ieLogo);
     }
 
     if (/Edge\/\d./i.test(navigator.userAgent)){
-        window.alert('Microsoft Edge');
         $('.logo').hide();
         $('.header__logo > .sfimageWrp').append($ieLogo);
     }
