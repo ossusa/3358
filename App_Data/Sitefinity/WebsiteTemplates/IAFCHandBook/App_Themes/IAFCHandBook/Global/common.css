@@ -3243,9 +3243,9 @@ p {
     width: 120px; } }
 
 .logo-ie {
-  margin-left: -20px;
-  width: auto;
-  height: 87px; }
+  margin-left: -20px !important;
+  width: auto !important;
+  height: 87px !important; }
 
 .footer {
   border-top: 1px solid #9B9B9B;
