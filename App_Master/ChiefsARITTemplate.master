@@ -37,7 +37,6 @@
                             <div id="logo" class="header__logo">
                                 <div class="sfimageWrp">
                                 <img id="logoHolderImageID" title="IACFHandBook" src="https://www.iafc.org/images/default-source/1logos/iacfhandbook-logo.svg?Status=Temp&sfvrsn=9004850d_2" alt="Chief's A-RIT" class="logo"/>
-                                    <!--<img id="logoHolderImageID" title="IACFHandBook" src="../../../../Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/Chiefs_ARIT_Logo.png" alt="Chief's A-RIT" class="logo-ie">-->
 				            </div>
                             </div>
                         </a>
