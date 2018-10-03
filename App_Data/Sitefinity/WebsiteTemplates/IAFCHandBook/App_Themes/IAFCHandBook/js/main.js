@@ -16,7 +16,7 @@ $(document).ready(function () {
         }]
     });
     $(function(){
-    var $ieLogo = '<img id="logoHolderImageID" title="IACFHandBook" src="/Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/Chiefs_ARIT_Logo.png" alt="Chief\'s A-RIT" class="logo-ie">';
+    var $ieLogo = '<img id="logoHolderImageID" title="IACFHandBook" src="Sitefinity/WebsiteTemplates/IAFCHandBook/App_Themes/IAFCHandBook/images/Chiefs_ARIT_Logo.png" alt="Chief\'s A-RIT" class="logo-ie">';
 
     if (/MSIE 10/i.test(navigator.userAgent)) {
         $('.logo').hide();

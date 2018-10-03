@@ -503,4 +503,19 @@
   margin-left: -20px !important;
   width: auto !important;
   height: 87px !important;
+  @media screen and (max-width: 1109px){
+    height: 76px;
+    width: 300px;
+    margin-left: -15px;
+  }
+  @media screen and (max-width: 767px){
+    margin-left: -23px;
+    width: 269px;
+    height: 67px;
+  }
+  @media screen and (max-width: 374px){
+    height: 50px;
+    margin-left: -15px;
+    width: auto;
+  }
 }

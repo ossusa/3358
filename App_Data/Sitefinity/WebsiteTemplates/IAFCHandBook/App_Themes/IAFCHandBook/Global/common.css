@@ -3246,6 +3246,21 @@ p {
   margin-left: -20px !important;
   width: auto !important;
   height: 87px !important; }
+  @media screen and (max-width: 1109px) {
+    .logo-ie {
+      height: 76px;
+      width: 300px;
+      margin-left: -15px; } }
+  @media screen and (max-width: 767px) {
+    .logo-ie {
+      margin-left: -23px;
+      width: 269px;
+      height: 67px; } }
+  @media screen and (max-width: 374px) {
+    .logo-ie {
+      height: 50px;
+      margin-left: -15px;
+      width: auto; } }
 
 .footer {
   border-top: 1px solid #9B9B9B;
