@@ -3242,6 +3242,11 @@ p {
   .header_unlogged .header__sub_list:nth-of-type(2) > .header__second_ul > .header__second_list:nth-of-type(4) {
     width: 120px; } }
 
+.logo-ie {
+  margin-left: -20px;
+  width: auto;
+  height: 87px; }
+
 .footer {
   border-top: 1px solid #9B9B9B;
   width: 100%; }
