@@ -15,7 +15,27 @@ $(document).ready(function () {
             }
         }]
     });
+    $(function(){
+    var $ieLogo = '<img id="logoHolderImageID" title="IACFHandBook" src="images/Chiefs_ARIT_Logo.png" alt="Chief\'s A-RIT">';
 
+    if (/MSIE 10/i.test(navigator.userAgent)) {
+        window.alert('isIE10');
+        $('.logo').hide();
+        $('.header__logo > .sfimageWrp').append('$ieLogo');
+    }
+
+    if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
+        window.location = 'pages/core/ie.htm';
+        $('.logo').hide();
+        $('.header__logo > .sfimageWrp').append('$ieLogo');
+    }
+
+    if (/Edge\/\d./i.test(navigator.userAgent)){
+        window.alert('Microsoft Edge');
+        $('.logo').hide();
+        $('.header__logo > .sfimageWrp').append($ieLogo);
+    }
+    });
     /*SEARCH IN HEADER*/
     var $search = '<li class="header__list header__list-search"><button class="header__search anticon anticon-search" type="submit"></button></li>';
     var $li = $(".header__list:contains('ACCOUNT')");
