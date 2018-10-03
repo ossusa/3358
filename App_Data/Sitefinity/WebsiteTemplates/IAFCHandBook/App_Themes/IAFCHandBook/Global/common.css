@@ -3252,13 +3252,12 @@ p {
       margin-left: -15px !important; } }
   @media screen and (max-width: 767px) {
     .logo-ie {
-      margin-left: -23px !important;
+      margin-left: 0 !important;
       width: 269px !important;
       height: 67px !important; } }
   @media screen and (max-width: 374px) {
     .logo-ie {
       height: 50px !important;
-      margin-left: -15px !important;
       width: auto !important; } }
 
 .footer {
