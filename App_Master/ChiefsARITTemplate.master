@@ -20,40 +20,40 @@
     <!-- Document Wrapper============================================= -->
 
 
-        <!-- Header ============================================= -->
-        <header id="header" class="header">
+    <!-- Header ============================================= -->
+    <header id="header" class="header">
 
-            <!-- Header Text ============================================= -->
-            <div id="headerText" class="header__text">
-                <div class='sfContentBlock'><a href="https://www.iafc.org/" class="header__text-link" target="_blank">International Association of Fire Chiefs</a></div>
-            </div>
-            <!-- Header Text End ============================================= -->
-            <div class="box box-mobile">
-                <div class="header_wrapper">
-                    <div class="header__table-tr">
+        <!-- Header Text ============================================= -->
+        <div id="headerText" class="header__text">
+            <div class='sfContentBlock'><a href="https://www.iafc.org/" class="header__text-link" target="_blank">International Association of Fire Chiefs</a></div>
+        </div>
+        <!-- Header Text End ============================================= -->
+        <div class="box box-mobile">
+            <div class="header_wrapper">
+                <div class="header__table-tr">
 
-                            <!-- Logo ============================================= -->
-                         <a class="header__logo-link" href="https://iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
-                            <div id="logo" class="header__logo">
-                                <div class="sfimageWrp">
+                    <!-- Logo ============================================= -->
+                    <a class="header__logo-link" href="https://iafc.org/topics-and-tools/volunteer/vws/chiefs-a-rit/">
+                        <div id="logo" class="header__logo">
+                            <div class="sfimageWrp">
                                 <img id="logoHolderImageID" title="IACFHandBook" src="https://www.iafc.org/images/default-source/1logos/iacfhandbook-logo.svg?Status=Temp&sfvrsn=9004850d_2" alt="Chief's A-RIT" class="logo"/>
-				            </div>
                             </div>
-                        </a>
-                            <!-- Logo ============================================= -->
-                        <div class="header__table-td">
-                            <!-- Menu ============================================= -->
-                                <nav id="primaryMenu">
-                                    <asp:ContentPlaceHolder ID="menuHolder" runat="server">
-                                    </asp:ContentPlaceHolder>
-                                </nav>
                         </div>
-                        <!-- Menu end ============================================= -->                         
+                    </a>
+                    <!-- Logo ============================================= -->
+                    <div class="header__table-td">
+                        <!-- Menu ============================================= -->
+                        <nav id="primaryMenu">
+                            <asp:ContentPlaceHolder ID="menuHolder" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </nav>
                     </div>
+                    <!-- Menu end ============================================= -->
                 </div>
             </div>
-        </header>
-        <!-- End Header ============================================= -->
+        </div>
+    </header>
+    <!-- End Header ============================================= -->
     <div id="wrapper">
         <!-- Content ============================================= -->
         <section id="content">
@@ -71,17 +71,17 @@
             <div class="footer__info">
                 <div class="footer__info-col">
                     <div class="sfimageWrp">
-	        
-			<img id="footerImageID" title="IACF" src="/images/default-source/iacfhandbook/iacf.png?MaxWidth=145&amp;MaxHeight=&amp;ScaleUp=false&amp;Quality=High" alt="IACF" style="margin-left:-15px;" />
 
-		    </div>
+                        <img id="footerImageID" title="IACF" src="/images/default-source/iacfhandbook/iacf.png?MaxWidth=145&amp;MaxHeight=&amp;ScaleUp=false&amp;Quality=High" alt="IACF" style="margin-left:-15px;" />
+
+                    </div>
                 </div>
                 <div class="footer__info-cols">
                     <div class="footer__info-col">
                         <asp:ContentPlaceHolder ID="footerMenu" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
-                    <div class="footer__info-col footer_copyright">                        
+                    <div class="footer__info-col footer_copyright">
                         <asp:ContentPlaceHolder ID="footerCopyrigtPlace" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
