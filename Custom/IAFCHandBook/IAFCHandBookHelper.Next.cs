@@ -148,7 +148,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error($@"{nameof(CreateIAFCHandBookResourcesData)} Error: {e.Message}");
+				log.Error($@"{nameof(CreateIAFCHandBookResourcesData)} Error: {e.StackTrace}");
 			}
 		}
 		#endregion  CreateIAFCHandBookResourcesData
@@ -284,7 +284,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error($@"{nameof(UpdateIAFCHandBookResourcesData)} Error: {e.Message}");
+				log.Error($@"{nameof(UpdateIAFCHandBookResourcesData)} Error: {e.StackTrace}");
 			}
 		}
 		#endregion UpdateIAFCHandBookResourcesData
@@ -320,7 +320,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error($@"{nameof(DeleteIAFCHandBookResourcesData)} Error: {e.Message}");
+				log.Error($@"{nameof(DeleteIAFCHandBookResourcesData)} Error: {e.StackTrace}");
 			}
 		}
 		#endregion DeleteIAFCHandBookResourcesData
@@ -406,7 +406,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error($@"{nameof(GetFeaturedResourcesDataNext)} Error: {e.Message}");
+				log.Error($@"{nameof(GetFeaturedResourcesDataNext)} Error: {e.StackTrace}");
 			}
 
 			return handBookResourceModel;
@@ -480,11 +480,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				model.MoreCategories = GetMoreCategories(model.Category.Id, null);
 				model.IsCategoryFollowed = IsCategoryFollowed(model.Category.Id);
 				model.IsAllResourcesAddedToMyHandBook = IsAllResourcesAddedToMyHandBook(model.Category.Id);
-				model.IsUserAuthorized = isUserAuthorized;
+				model.IsUserAuthorized = IsUserAuthorized();
 			}
 			catch (Exception e)
 			{
-				log.Error($@"{nameof(GetResourcesPerCategoryNext)} Error: {e.Message}");
+				log.Error($@"{nameof(GetResourcesPerCategoryNext)} Error: {e.StackTrace}");
 			}
 
 			return model;
@@ -622,13 +622,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var resourceCompleted = IsResourceMarkedAsComplete(handBookResourceModel.Id);
 				handBookResourceModel.IsResourceAddedToMyHandBook = IsResourceAddedToMyHandBook(handBookResourceModel.Id) || resourceCompleted;
 				handBookResourceModel.IsResourceCompleted = resourceCompleted;
-				handBookResourceModel.IsUserAuthorized = isUserAuthorized;
+				handBookResourceModel.IsUserAuthorized = IsUserAuthorized();
 				
 
 			}
 			catch (Exception e)
 			{
-				log.Error($@"{nameof(GetResourceDetailsNext)} Error: {e.Message}");
+				log.Error($@"{nameof(GetResourceDetailsNext)} Error: {e.StackTrace}");
 			}
 
 			return handBookResourceModel;
@@ -932,7 +932,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
             }
             catch (Exception e)
             {
-                log.Error($@"{nameof(GetMyHandBookNext)} Error: {e.Message}");
+                log.Error($@"{nameof(GetMyHandBookNext)} Error: {e.StackTrace}");
             }
 
             return model;
@@ -1071,7 +1071,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
             }
             catch (Exception e)
             {
-                log.Error($@"{nameof(GetMyHandBookResourcesPerCategoryNext)} Error: {e.Message}");
+                log.Error($@"{nameof(GetMyHandBookResourcesPerCategoryNext)} Error: {e.StackTrace}");
             }
             return model;
         }
@@ -1244,7 +1244,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
             }
             catch (Exception e)
             {
-                log.Error($@"{nameof(GetCategoryResourcesNext)} Error: {e.Message}");
+                log.Error($@"{nameof(GetCategoryResourcesNext)} Error: {e.StackTrace}");
             }
             return model;
         }

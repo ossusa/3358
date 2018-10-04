@@ -291,20 +291,27 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		private List<Guid> topicPersonnelCategories = new List<Guid>();
 		private List<Guid> topicCommunityRelationsCategories = new List<Guid>();
 		Dictionary<Guid, Categories> categoriesDictionaly = new Dictionary<Guid, Categories>();
-		Dictionary<string, Image> resourceTypeImages = new Dictionary<string, Image>();
-		private bool isUserAuthorized = false;
+		Dictionary<string, Image> resourceTypeImages = new Dictionary<string, Image>();		
 		private string hostUrl = String.Empty;
 		#endregion Variables
 
 		#region Constructor
 		public IAFCHandBookHelper(string hostPath)
 		{
-			hostUrl = "https://" + hostPath;
-			isUserAuthorized = IsUserAuthorized();
-			InitResourceTypeImages();
-			InitCategoriesGuid();
-			InitCategoriesLists();
-			InitCategoryDictionary();
+			try
+			{
+				hostUrl = "https://" + hostPath;
+				IsUserAuthorized();
+				InitResourceTypeImages();
+				InitCategoriesGuid();
+				InitCategoriesLists();
+				InitCategoryDictionary();
+			}
+			catch (Exception e)  
+			{
+				log.Error("IAFCHandBookHelper constructor: " + e.StackTrace);
+			}
+
 
 		}
 		#endregion Constructor
@@ -1069,7 +1076,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("Can not get Likes for Resource ID = '" + resource.Id.ToString() + "' " + e.Message);
+				log.Error("Can not get Likes for Resource ID = '" + resource.Id.ToString() + "' " + e.StackTrace);
 			}
 
 			return resourceLike;
@@ -1559,7 +1566,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("add like error " + e.Message);
+				log.Error("add like error " + e.StackTrace);
 			}
 
 			return currentLikes;
@@ -1637,7 +1644,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("add dislike error " + e.Message);
+				log.Error("add dislike error " + e.StackTrace);
 			}
 
 			return currentDislikes;
@@ -1719,7 +1726,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("Create Comment Error: " + e.Message);
+				log.Error("Create Comment Error: " + e.StackTrace);
 			}
 
 		}
@@ -1780,7 +1787,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("MyHandbook" + e.Message);
+				log.Error("MyHandbook" + e.StackTrace);
 			}
 
 			return myHandBook;
@@ -1813,7 +1820,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("MyHandbook" + e.Message);
+				log.Error("MyHandbook" + e.StackTrace);
 			}
 
 			return myHandBook;
@@ -1824,7 +1831,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public IAFCHandBookMyHandBookModel GetMyHandBook(String userId = null)
 		{
 			Guid userGuid;									
-			if((userId==null && !isUserAuthorized)||(userId!=null &&!Guid.TryParse(userId, out userGuid)))
+			if((userId==null && !IsUserAuthorized()) ||(userId!=null &&!Guid.TryParse(userId, out userGuid)))
 			{
 				return null;
 			}
@@ -1863,7 +1870,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("AddToMyHandBook Error: " + e.Message);
+				log.Error("AddToMyHandBook Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -1904,7 +1911,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("AddToMyHandBook Error: " + e.Message);
+				log.Error("AddToMyHandBook Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -1936,7 +1943,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("MarkAsComplete Error: " + e.Message);
+				log.Error("MarkAsComplete Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -1967,7 +1974,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("RemoveResource Error: " + e.Message);
+				log.Error("RemoveResource Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -1995,7 +2002,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("IsResourceAddedToMyHandBook Error: " + e.Message);
+				log.Error("IsResourceAddedToMyHandBook Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2023,7 +2030,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("IsResourceMarkedAsComplete Error: " + e.Message);
+				log.Error("IsResourceMarkedAsComplete Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2053,7 +2060,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("AddToLikedResources Error: " + e.Message);
+				log.Error("AddToLikedResources Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2084,7 +2091,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("RemoveFromLikedResources Error: " + e.Message);
+				log.Error("RemoveFromLikedResources Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2114,7 +2121,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("AddToDislikedResources Error: " + e.Message);
+				log.Error("AddToDislikedResources Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2145,7 +2152,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("RemoveFromLikedResources Error: " + e.Message);
+				log.Error("RemoveFromLikedResources Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2159,7 +2166,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			try
 			{
-				if (isUserAuthorized)
+				if (IsUserAuthorized())
 				{
 					var myHandBookItem = GetOrCreateMyHandBook();
 
@@ -2176,7 +2183,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("IsResourceLiked Error: " + e.Message);
+				log.Error("IsResourceLiked Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2190,7 +2197,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			try
 			{
-				if (isUserAuthorized)
+				if (IsUserAuthorized())
 				{
 					var myHandBookItem = GetOrCreateMyHandBook();
 
@@ -2207,7 +2214,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("IsResourceDisLiked Error: " + e.Message);
+				log.Error("IsResourceDisLiked Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2218,7 +2225,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			Guid userGuid;
 			var categoryId = GetCategoryGuidByName(categoryName);
-			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)) || (categoryId==Guid.Empty))
+			if ((userId == null && !IsUserAuthorized()) || (userId != null && !Guid.TryParse(userId, out userGuid)) || (categoryId==Guid.Empty))
 			{
 				return null;
 			}
@@ -2240,7 +2247,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			var categoryId = GetCategoryGuidByName(categoryName);
 			Guid userGuid;			
-			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)) || (categoryId == Guid.Empty))
+			if ((userId == null && !IsUserAuthorized()) || (userId != null && !Guid.TryParse(userId, out userGuid)) || (categoryId == Guid.Empty))
 			{
 				return null;
 			}
@@ -2283,7 +2290,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null, string userId= null, string orderBy= OrderByMostPopular)
 		{
 			Guid userGuid;
-			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)))
+			if ((userId == null && !IsUserAuthorized()) || (userId != null && !Guid.TryParse(userId, out userGuid)))
 			{
 				return null;
 			}
@@ -2293,7 +2300,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsUI(string name, string categoryName = null, string userId=null, string orderBy = OrderByMostPopular)
 		{
 			Guid userGuid;
-			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)))
+			if ((userId == null && !IsUserAuthorized()) || (userId != null && !Guid.TryParse(userId, out userGuid)))
 			{
 				return null;
 			}
@@ -2475,7 +2482,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("Sent Email Error:" + e.Message);
+				log.Error("Sent Email Error:" + e.StackTrace);
 			}
 
 		}
@@ -2506,7 +2513,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("FollowCategory Error: " + e.Message);
+				log.Error("FollowCategory Error: " + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2534,7 +2541,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("IsCategoryFollowed Error: " + categoryId.ToString() + e.Message);
+				log.Error("IsCategoryFollowed Error: " + categoryId.ToString() + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2569,7 +2576,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("IsAllResourcesAddedToMyHandBook Error: " + categoryId.ToString() + e.Message);
+				log.Error("IsAllResourcesAddedToMyHandBook Error: " + categoryId.ToString() + e.StackTrace);
 			}
 			return returnData;
 		}
@@ -2637,7 +2644,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("Send Notification Error: " + e.Message);
+				log.Error("Send Notification Error: " + e.StackTrace);
 			}
 		}
 		#endregion SendNotification
@@ -2671,7 +2678,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error("GetAccount " + e.Message);
+				log.Error("GetAccount " + e.StackTrace);
 			}
 
 			return model;
@@ -2796,7 +2803,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			catch (Exception e)
 			{
-				log.Error($@"{nameof(GetCategoryImage)} Error: {e.Message}");
+				log.Error($@"{nameof(GetCategoryImage)} Error: {e.StackTrace}");
 			}
 			return image;
 		}
@@ -2992,7 +2999,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}		
 			catch (Exception e)
 			{
-				log.Error("GetUsers" + e.Message);
+				log.Error("GetUsers" + e.StackTrace);
 			}
 
 			return returnData;

@@ -38,6 +38,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[RelativeRoute("{name},{categoryName?}")]
 		public ActionResult GetResourceDetails(string name, string categoryName)
 		{
+			
 			var index = categoryName.IndexOf('!')-1;
 			var length = categoryName.Length-1;
 			string parsedCategoryName = categoryName;
