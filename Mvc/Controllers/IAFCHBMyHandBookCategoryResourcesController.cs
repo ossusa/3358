@@ -69,6 +69,21 @@ namespace SitefinityWebApp.Mvc.Controllers
 			return View("MyHandBookCategoryResources", model);
 		}
 
+		[RelativeRoute("{orderBy}/{userid?}")]
+		public ActionResult Index(string orderBy, String userId)
+		{
+			
+			IAFCHandBookMyHandBookResourceModelModel model = new IAFCHandBookMyHandBookResourceModelModel();
+			model = handBookHelper.GetMyHandBookCategoryResourcesByName(CategoryName, userId, orderBy);
+
+			if (model == null)
+			{
+				return Redirect(handBookHelper.PageNotFoundUrl());
+			}
+			AddMetaTags(model, userId);
+			return View("MyHandBookCategoryResources", model);
+		}
+		
 
 
 		public void AddMetaTags(IAFCHandBookMyHandBookResourceModelModel model, string userid)
