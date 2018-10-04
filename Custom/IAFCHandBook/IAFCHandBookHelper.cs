@@ -2769,12 +2769,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				profile = profileManager.GetUserProfile<SitefinityProfile>(user);
 				if (profile != null)
 				{
-					userName = profile.Nickname;
+					userName = profile.FirstName;
 				}
 				else
 				{
 
-					userName = user.FirstName + " " + user.LastName;
+					userName = user.FirstName;
 				}
 			}
 			return userName;
