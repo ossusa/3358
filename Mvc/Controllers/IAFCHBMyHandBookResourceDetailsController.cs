@@ -27,16 +27,26 @@ namespace SitefinityWebApp.Mvc.Controllers
 		private const string commentResource = "Comment";
 		private const string resourceResource = "Resource";
 		
-		public IAFCHandBookResourceModel GetData(string name, string userId)
+		public IAFCHandBookResourceModel GetData(string name, string userId, string orderBy)
 		{
 
-			return handBookHelper.GetMyHnadbookResourceDetailsUI(name, null, userId);
+			return handBookHelper.GetMyHnadbookResourceDetailsUI(name, null, userId, orderBy);
 
 		}
 		[RelativeRoute("{name?}/{userid?}")]
 		public ActionResult Index(String name, string userid)
 		{
-			var model = GetData(name, userid );
+			var index = name.IndexOf('!') - 1;
+			var length = name.Length - 1;
+			string orderBy = null;
+			string parsedName = name;
+			if (index != -2)
+			{
+				parsedName = name.Sub(0, index);
+				orderBy = name.Sub(index + 2, length);
+			}
+
+			var model = GetData(parsedName, userid, orderBy);
 			if (model == null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
@@ -47,8 +57,18 @@ namespace SitefinityWebApp.Mvc.Controllers
 
 		[RelativeRoute("{name},{categoryName?}/{userid?}")]
 		public ActionResult Index(string name, string categoryName, string userid)
-		{			
-			var model = handBookHelper.GetMyHnadbookResourceDetailsUI(name, categoryName, userid);
+		{
+			var index = categoryName.IndexOf('!') - 1;
+			var length = categoryName.Length - 1;
+			string parsedCategoryName = categoryName;
+			string orderBy = null;
+			if (index != -2)
+			{
+				parsedCategoryName = categoryName.Sub(0, index);
+				orderBy = categoryName.Sub(index + 2, length);
+			}
+
+			var model = handBookHelper.GetMyHnadbookResourceDetailsUI(name, parsedCategoryName, userid, orderBy);
 			if (model == null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());

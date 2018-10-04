@@ -30,16 +30,25 @@ namespace SitefinityWebApp.Mvc.Controllers
 			handBookHelper = new IAFCHandBookHelper(url);
 		}
 
-		public IAFCHandBookResourceModel GetData(string name)
+		public IAFCHandBookResourceModel GetData(string name, string orderBy)
 		{
-			return handBookHelper.GetResourceDetails(name);
+			return handBookHelper.GetResourceDetails(name, null,orderBy);
 		}
 
 		[RelativeRoute("{name},{categoryName?}")]
 		public ActionResult GetResourceDetails(string name, string categoryName)
 		{
+			var index = categoryName.IndexOf('!')-1;
+			var length = categoryName.Length-1;
+			string parsedCategoryName = categoryName;
+			string orderBy = null;
+			if (index != -2)
+			{
+				parsedCategoryName = categoryName.Sub(0, index);
+				orderBy = categoryName.Sub(index+2, length);
+			}
 			
-			var model = handBookHelper.GetResourceDetailsUI(name, categoryName);
+			var model = handBookHelper.GetResourceDetailsUI(name, parsedCategoryName, orderBy);
 			if (model== null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());
@@ -51,7 +60,17 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[RelativeRoute("{name?}")]
 		public ActionResult GetResourceDetails(string name)
 		{
-			var model = GetData(name);
+			var index = name.IndexOf('!')-1;
+			var length = name.Length-1;
+			string orderBy = null;
+			string parsedName = name;
+			if (index != -2)
+			{
+				parsedName = name.Sub(0, index);
+				orderBy = name.Sub(index+2, length);
+			}
+		
+			var model = GetData(parsedName, orderBy);
 			if (model == null)
 			{
 				return Redirect(handBookHelper.PageNotFoundUrl());

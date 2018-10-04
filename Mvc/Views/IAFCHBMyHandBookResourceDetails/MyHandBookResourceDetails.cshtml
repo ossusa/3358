@@ -3,6 +3,28 @@
 @{var openDocumentLink = false;}
 @{var youTubeEmbeded = string.Empty;}
 @{ var myARITUrl = "/topics-and-tools/volunteer/vws/chiefs-a-rit/my-a-rit";}
+@{ var categoryUrl = Model.ResourceDetails.Category.MyHandBookCategoryUrl;
+	if (Model.OrderBy != null)
+	{
+
+		var index = categoryUrl.LastIndexOf('/') - 1;
+		var length = categoryUrl.Length - 1;
+		string parsedCategoryUrl = categoryUrl;
+		string guid = null;
+		if (Model.SharedUser != null)
+		{
+			if (index != -2)
+			{
+				parsedCategoryUrl = categoryUrl.Sub(0, index);
+				guid = categoryUrl.Sub(index + 2, length);
+			}
+		}
+
+		categoryUrl = parsedCategoryUrl + "/" + Model.OrderBy +"/"+guid;
+
+	}
+}
+
 <div class="handbook__title">
 	@if (Model.SharedUser != null && Model.SharedUser != string.Empty)
 	{
@@ -19,7 +41,7 @@
 	<div class="resources-breadcrumbs">		
 		<a href="@myARITUrl"><span> My A-RIT</span></a> >
 		<a href="@Model.ResourceDetails.Category.MyHandBookParentCategoryUrl"> <span>@Model.ResourceDetails.Category.ParentCategoryTitle</span></a> >
-		<a href="@Model.ResourceDetails.Category.MyHandBookCategoryUrl"> <span>@Model.ResourceDetails.Category.CategoryTitle</span></a> >
+		<a href="@categoryUrl"> <span>@Model.ResourceDetails.Category.CategoryTitle</span></a> >
 		@Model.ResourceDetails.ResourceTitle
 	</div>
 	<div class="resources-single">
@@ -195,7 +217,7 @@
 					}
 				</ul>
 				<div class="resources-single__right_more">
-					<a href='@Model.ResourceDetails.Category.MyHandBookCategoryUrl'>All @Model.ResourceDetails.Category.CategoryTitle</a>
+					<a href='@categoryUrl'>All @Model.ResourceDetails.Category.CategoryTitle</a>
 				</div>
 			</div>
 		</div>

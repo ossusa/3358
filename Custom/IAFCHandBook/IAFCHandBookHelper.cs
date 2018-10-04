@@ -1261,13 +1261,13 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		#region GetResourceDetails by Item
 
-		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false, string userId = null)
+		public IAFCHandBookResourceModel GetResourceDetails(DynamicContent resource, Guid? categoryId, bool isMyHandBookItem = false, string userId = null, string orderBy = OrderByMostPopular)
 		{
-			return GetResourceDetailsNext(resource, categoryId, isMyHandBookItem, userId);
+			return GetResourceDetailsNext(resource, categoryId, isMyHandBookItem, userId, orderBy);
 		}
 	
 
-		public IAFCHandBookResourceModel GetResourceDetailsUI(DynamicContent resource, string categoryName, bool isMyHandBookItem = false)
+		public IAFCHandBookResourceModel GetResourceDetailsUI(DynamicContent resource, string categoryName, bool isMyHandBookItem = false, string orderBy = OrderByMostPopular)
 		{
 			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
@@ -1275,14 +1275,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			{
 				return null; 
 			}
-			return GetResourceDetails(resource, categoryId, isMyHandBookItem);
+			return GetResourceDetails(resource, categoryId, isMyHandBookItem, null, orderBy);
 		}
 
 
 		#endregion GetResourceDetails by Item
 
 		#region GetResourceDetails by Name
-		public IAFCHandBookResourceModel GetResourceDetails(String name, Guid? categoryId = null)
+		public IAFCHandBookResourceModel GetResourceDetails(String name, Guid? categoryId = null, string orderBy = OrderByMostPopular)
 		{
 			var model = new IAFCHandBookResourceModel();
 			try
@@ -1297,7 +1297,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				{
 					return null;
 				}
-				model = GetResourceDetails(resourceItem, categoryId);
+				model = GetResourceDetails(resourceItem, categoryId, false, null, orderBy);
 				if (model==null)
 				{
 					return null;
@@ -1313,7 +1313,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			return model;
 		}
 
-		public IAFCHandBookResourceModel GetResourceDetailsUI(String name, string categoryName = null)
+		public IAFCHandBookResourceModel GetResourceDetailsUI(String name, string categoryName = null, string orderby = OrderByMostPopular)
 		{
 			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
 			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
@@ -1321,7 +1321,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			{
 				return null;
 			}
-			return GetResourceDetails(name, categoryId);
+			return GetResourceDetails(name, categoryId, orderby);
 		}
 		
 			#endregion GetResourceDetails by Name
@@ -2280,17 +2280,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		#endregion GetMyHandBookCategoryResources
 
 		#region Get My Hnadbook ResourceDetails by Name
-		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null, string userId= null)
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetails(string name, Guid? categoryId = null, string userId= null, string orderBy= OrderByMostPopular)
 		{
 			Guid userGuid;
 			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)))
 			{
 				return null;
 			}
-			return GetMyHnadbookResourceDetailsNext(name, categoryId, userId);
+			return GetMyHnadbookResourceDetailsNext(name, categoryId, userId, orderBy);
 		}
 
-		public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsUI(string name, string categoryName = null, string userId=null)
+		public IAFCHandBookResourceModel GetMyHnadbookResourceDetailsUI(string name, string categoryName = null, string userId=null, string orderBy = OrderByMostPopular)
 		{
 			Guid userGuid;
 			if ((userId == null && !isUserAuthorized) || (userId != null && !Guid.TryParse(userId, out userGuid)))
@@ -2308,7 +2308,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 			}
 
-			return GetMyHnadbookResourceDetails(name, categoryId, userId);
+			return GetMyHnadbookResourceDetails(name, categoryId, userId, orderBy);
 		}
 		#endregion Get My Hnadbook ResourceDetails by Name
 

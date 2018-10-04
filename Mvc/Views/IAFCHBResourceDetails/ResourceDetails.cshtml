@@ -2,8 +2,14 @@
 
 @{var openDocumentLink = false;}
 @{var youTubeEmbeded = string.Empty;}
+@{ var categoryUrl = Model.ResourceDetails.Category.CategoryUrl;
+	if (Model.OrderBy != null)
+	{
+		categoryUrl = categoryUrl + "/" + Model.OrderBy;
+	}
+}
 <div class="box box-container">
-	<div class="resources-breadcrumbs"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span> > <a href="@Model.ResourceDetails.Category.CategoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
+	<div class="resources-breadcrumbs"><span>@Model.ResourceDetails.Category.ParentCategoryTitle</span> > <a href="@categoryUrl"><span>@Model.ResourceDetails.Category.CategoryTitle</span></a> > @Model.ResourceTitle </div>
 
 	<div class="resources-single">
 		<div class="resources-single__left">
@@ -161,7 +167,7 @@
 					}
 				</ul>
 				<div class="resources-single__right_more">
-					<a href='@Model.ResourceDetails.Category.CategoryUrl'>All @Model.ResourceDetails.Category.CategoryTitle</a>
+					<a href='@categoryUrl'>All @Model.ResourceDetails.Category.CategoryTitle</a>
 				</div>
 			</div>
 		</div>

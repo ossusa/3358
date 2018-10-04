@@ -36,6 +36,7 @@ namespace SitefinityWebApp.Mvc.Models
 		public string ResourceTitle { get; set; }
 		public DateTime DateCreated { get; set; }
 		public string ResourceUrl { get; set; }
+		public string OrderBy { get; set; }
 		public int CommentsAmount { get; set; }
 		public Boolean IsResourceAddedToMyHandBook { get; set; }
 		public Boolean IsResourceCompleted { get; set; }

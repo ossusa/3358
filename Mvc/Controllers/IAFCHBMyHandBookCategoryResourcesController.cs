@@ -33,8 +33,33 @@ namespace SitefinityWebApp.Mvc.Controllers
 		[RelativeRoute("{userid?}")]
 		public ActionResult Index(String userId)
 		{
+			string parsedOrderBy = null;
+			string guid = userId;
+
+			if (userId != null)
+			{
+				var index = userId.LastIndexOf('/') - 1;
+				var length = userId.Length - 1;
+				
+				if (index != -2)
+				{
+					parsedOrderBy = userId.Sub(0, index);
+					guid = userId.Sub(index + 2, length);
+				}
+				else
+				{
+					Guid userGuid;
+					if (!Guid.TryParse(userId, out userGuid))
+					{
+						guid = null;
+						parsedOrderBy = userId;
+					}
+
+				}
+			}
+
 			IAFCHandBookMyHandBookResourceModelModel model = new IAFCHandBookMyHandBookResourceModelModel();
-			model = handBookHelper.GetMyHandBookCategoryResourcesByName(CategoryName, userId);
+			model = handBookHelper.GetMyHandBookCategoryResourcesByName(CategoryName, guid, parsedOrderBy);
 
 			if (model == null)
 			{
@@ -43,6 +68,7 @@ namespace SitefinityWebApp.Mvc.Controllers
 			AddMetaTags(model, userId);
 			return View("MyHandBookCategoryResources", model);
 		}
+
 
 
 		public void AddMetaTags(IAFCHandBookMyHandBookResourceModelModel model, string userid)
