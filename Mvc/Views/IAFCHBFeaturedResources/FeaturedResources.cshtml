@@ -24,7 +24,7 @@
 
 			<div class="resources__logged-buttons centered">
 				<button type="button" 
-						class="resourceFeaturedLink resourceFeaturedLinky community__head-btn resources__logged-btn"
+						class="resourceFeaturedLink resourceFeaturedLinky community__head-btn resources__logged-btn resource-link-js"
 						data-id="@Model.ResourceUrl"
 						data-id1="@Model.ResourceDetails.ResourceLink"
 						data-id2="@Model.ResourceDetails.ResourceDocument"
@@ -109,7 +109,7 @@
         });
 
         //Open Featured Resource Details
-        $('.resourceFeaturedLink, .resource-link-js, .resourceLink').click(function () {
+        $('.resource-link-js').click(function () {
             var resourceUrl = $(this).attr("data-id");
             var resourceLinkUrl = $(this).attr('data-id1');
             var resourceDocumentUrl = $(this).attr('data-id2');

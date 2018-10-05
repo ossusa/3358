@@ -12,7 +12,7 @@
 
 		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
 		|| (item.ResourceDetails.ResourceTypeName == "video"));
-			<div class="resources__slide resourceLink"
+			<div class="resources__slide resourceLink resource-link-js"
 				 data-id="@item.ResourceUrl"
 				 data-id1="@item.ResourceDetails.ResourceLink"
 				 data-id2="@item.ResourceDetails.ResourceDocument"
@@ -255,27 +255,6 @@
                 }
             });
         });
-
-        //Open Recently Added Resource Details
-       /* $('.resourceLink').click(function (e) {
-            if ($(e.target).hasClass('click-cancel-js')) return;
-            else {
-                var resourceUrl = $(this).attr("data-id");
-                var resourceLinkUrl = $(this).attr('data-id1');
-                var resourceDocumentUrl = $(this).attr('data-id2');
-                var openResourceDocumentUrl = $(this).attr('data-id3');
-
-                if (openResourceDocumentUrl == "OpenLink") {
-                    window.location.href = resourceUrl;
-                }
-                else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
-                    window.open(resourceLinkUrl);
-                }
-                else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
-                    window.open(resourceDocumentUrl);
-                }
-            }
-        });*/
 
     });
 
