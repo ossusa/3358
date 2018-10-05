@@ -24,7 +24,7 @@
 
 			<div class="resources__logged-buttons centered">
 				<button type="button" 
-						class="resourceFeaturedLink resourceFeaturedLinky community__head-btn resources__logged-btn resource-link-js"
+						class="resourceFeaturedLink resourceFeaturedLinky community__head-btn resources__logged-btn"
 						data-id="@Model.ResourceUrl"
 						data-id1="@Model.ResourceDetails.ResourceLink"
 						data-id2="@Model.ResourceDetails.ResourceDocument"
@@ -56,7 +56,6 @@
 				<img src='@Model.ResourceDetails.ImageUrl' alt="@Model.ResourceDetails.ImageAlt" />
 			}
 			else
-			{
 			{
 				<div class="resources-placeholder">
 					<div class="placehoolder-background">
@@ -108,7 +107,7 @@
 		});
 
 		//Open Featured Resource Details
-		$('.resource-link-js').click(function () {
+		$('.resourceFeaturedLink, .resource-link-js').click(function () {
 			var resourceUrl = $(this).attr("data-id");
 			var resourceLinkUrl = $(this).attr('data-id1');
 			var resourceDocumentUrl = $(this).attr('data-id2');
