@@ -12,7 +12,7 @@
 
 		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
 		|| (item.ResourceDetails.ResourceTypeName == "video"));
-			<div class="resources__slide resourceLink"
+			<div class="resources__slide resourceLink resource-link-js"
 				 data-id="@item.ResourceUrl"
 				 data-id1="@item.ResourceDetails.ResourceLink"
 				 data-id2="@item.ResourceDetails.ResourceDocument"
@@ -257,7 +257,7 @@
 		});
 
 		//Open Recently Added Resource Details
-        $('.resourceLink').click(function (e) {
+        $('.resource-link-js').click(function (e) {
             if ($(e.target).hasClass('click-cancel-js')) return;
             else {
                 var resourceUrl = $(this).attr("data-id");
