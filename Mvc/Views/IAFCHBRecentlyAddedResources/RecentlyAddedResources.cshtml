@@ -258,6 +258,7 @@
 
 		//Open Recently Added Resource Details
         $('.resource-link-js').click(function (e) {
+            console.log('recently added resources');
             if ($(e.target).hasClass('click-cancel-js')) return;
             else {
                 var resourceUrl = $(this).attr("data-id");
