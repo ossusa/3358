@@ -13,12 +13,12 @@
 				<h6 data-id="@Model.ResourceUrl"
 					data-id1="@Model.ResourceDetails.ResourceLink"
 					data-id2="@Model.ResourceDetails.ResourceDocument"
-					@(openDocumentLink ? "data-id3=OpenLink":"data-id3=\"\"")
+					@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")
 					class="resources__slide-title resources__logged-title resource-link-js">@Model.ResourceDetails.ResourceTitle</h6>
 				<p data-id="@Model.ResourceUrl"
 				   data-id1="@Model.ResourceDetails.ResourceLink"
 				   data-id2="@Model.ResourceDetails.ResourceDocument"
-				   @(openDocumentLink ? "data-id3=OpenLink":"data-id3=\"\"")
+				   @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")
 			       class="resources__slide-desc resources__logged-desc resource-link-js">@Html.Raw(Model.ResourceDetails.ResourceSummary)</p>
 			
 
@@ -28,7 +28,7 @@
 						data-id="@Model.ResourceUrl"
 						data-id1="@Model.ResourceDetails.ResourceLink"
 						data-id2="@Model.ResourceDetails.ResourceDocument"
-						@(openDocumentLink ? "data-id3=OpenLink":"data-id3=\"\"")>
+						@(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 					View
 				</button>
 				@if (Model.IsUserAuthorized)
@@ -50,7 +50,7 @@
 			 data-id="@Model.ResourceUrl"
 			 data-id1="@Model.ResourceDetails.ResourceLink"
 			 data-id2="@Model.ResourceDetails.ResourceDocument"
-			 @(openDocumentLink ? "data-id3=OpenLink":"data-id3=\"\"")>
+			 @(openDocumentLink ?"data-id3=OpenLink":"data-id3=\"\"")>
 			@if (Model.ResourceDetails.ImageUrl != null && Model.ResourceDetails.ImageUrl != String.Empty)
 			{
 				<img src='@Model.ResourceDetails.ImageUrl' alt="@Model.ResourceDetails.ImageAlt" />
@@ -85,50 +85,45 @@
 
 <script>
 
-	$(document).ready(function () {
+    'use strict';
 
-		//Add ToMyHandBook
-		$('.addToMyHandBook').on('click', function () {
+    $(document).ready(function () {
 
-			var resourceId = $(this).attr('data-id');
+        //Add ToMyHandBook
+        $('.addToMyHandBook').on('click', function () {
 
-			$.ajax({
-				type: 'POST',
-				cache: false,
-				url: '@Url.Action("AddToMyHandBook", "IAFCHBFeaturedResourcesController")',
-				data: { resourceId },
-				dataType: "json",
-				success: function (response) {
-					if (response == true) {
-						$("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check click-cancel-js'></span>Added to My A-RIT");
-					}
-				}
-			});
-		});
+            var resourceId = $(this).attr('data-id');
 
-		//Open Featured Resource Details
-        $('.resource-link-js').click(function (e) {
-            console.log('featured resources');
-            if ($(e.target).hasClass('click-cancel-js')) return;
-            else {
-                var resourceUrl = $(this).attr("data-id");
-                var resourceLinkUrl = $(this).attr('data-id1');
-                var resourceDocumentUrl = $(this).attr('data-id2');
-                var openResourceDocumentUrl = $(this).attr('data-id3');
-
-                if (openResourceDocumentUrl == "OpenLink") {
-                    window.location.href = resourceUrl;
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                url: '@Url.Action("AddToMyHandBook", "IAFCHBFeaturedResourcesController")',
+                data: { resourceId: resourceId },
+                dataType: "json",
+                success: function success(response) {
+                    if (response == true) {
+                        $("#addToMyHandBook_" + resourceId).html("<span class='resources--plus anticon anticon-check click-cancel-js'></span>Added to My A-RIT");
+                    }
                 }
-                else if (resourceLinkUrl != undefined && resourceLinkUrl != "") {
-                    window.open(resourceLinkUrl);
-                }
-                else if (resourceDocumentUrl != undefined && resourceDocumentUrl != "") {
-                    window.open(resourceDocumentUrl);
-                }
-            }
+            });
         });
 
-	});
+        //Open Featured Resource Details
+        $('.resourceFeaturedLink, .resource-link-js').click(function () {
+            var resourceUrl = $(this).attr("data-id");
+            var resourceLinkUrl = $(this).attr('data-id1');
+            var resourceDocumentUrl = $(this).attr('data-id2');
+            var openResourceDocumentUrl = $(this).attr('data-id3');
+
+            if (openResourceDocumentUrl == "OpenLink") {
+                window.location.href = resourceUrl;
+            } else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
+                window.open(resourceLinkUrl);
+            } else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
+                window.open(resourceDocumentUrl);
+            }
+        });
+    });
 
 </script>
 
