@@ -1275,9 +1275,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 	
 
 		public IAFCHandBookResourceModel GetResourceDetailsUI(DynamicContent resource, string categoryName, bool isMyHandBookItem = false, string orderBy = OrderByMostPopular)
-		{
-			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+		{			
+			var categoryId = GetCategoryGuidByName(categoryName);			
 			if (categoryId == Guid.Empty)
 			{
 				return null; 
@@ -1321,9 +1320,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 
 		public IAFCHandBookResourceModel GetResourceDetailsUI(String name, string categoryName = null, string orderby = OrderByMostPopular)
-		{
-			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+		{			
+			var categoryId = GetCategoryGuidByName(categoryName);
 			if (categoryId == Guid.Empty)
 			{
 				return null;
@@ -2306,9 +2304,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			Guid? categoryId = null;
 			if(categoryName !=null)
-			{
-				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-				categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+			{				
+				categoryId = GetCategoryGuidByName(categoryName);
 				if (categoryId == Guid.Empty)
 				{
 					return null;
