@@ -2380,7 +2380,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "LOGIN/SIGN UP";
+			otherMenuItem.Title = "LOGIN / SIGN UP";
 			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = !isUserSignIn;
 			model.Menu.Add(otherMenuItem);
