@@ -12,7 +12,7 @@
 
 		openDocumentLink = ((item.ResourceDetails.ResourceDescription != null && item.ResourceDetails.ResourceDescription != String.Empty)
 		|| (item.ResourceDetails.ResourceTypeName == "video"));
-			<div class="resources__slide resourceLink"
+			<div class="resources__slide resourceLink resource-link-js"
 				 data-id="@item.ResourceUrl"
 				 data-id1="@item.ResourceDetails.ResourceLink"
 				 data-id2="@item.ResourceDetails.ResourceDocument"
@@ -118,127 +118,127 @@
     $(document).ready(function () {
 
         //Add Like
-		$('.addLike').click(function () {			
-			var likeAddAmount = 0;
-			var dislikeAddAmount = 0;
-			var resourceId = $(this).attr('data-id');
-			$("#resourceLikesBtn_" + resourceId).prop('disabled', true);
-			$("#resourceDisLikesBtn_" + resourceId).prop('disabled', true);
-			var isResourceLiked = $(this).attr('data-id2');			
-			var isResourceDisliked = $(this).attr('data-id3');			
-			if (isResourceDisliked == "disliked") {
-				if (isResourceLiked == "liked") {
-					likeAddAmount = -1;
-					$("#resourceLikesBtn_" + resourceId).attr('data-id2', "not_liked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "not_liked");
-				}
-				else {
-					likeAddAmount = 1;
-					dislikeAddAmount = -1;					
-					$("#resourceLikesBtn_" + resourceId).attr('data-id2', "liked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "liked");
-					$("#resourceLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
-				}								
-			}
-			else {
-				if (isResourceLiked == "liked") {
-					likeAddAmount = -1;
-					$("#resourceLikesBtn_" + resourceId).attr('data-id2', "not_liked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "not_liked");
-				}
-				else {
-					likeAddAmount = 1;
-					$("#resourceLikesBtn_" + resourceId).attr('data-id2', "liked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "liked");
-				}				
-			}
+        $('.addLike').click(function () {
+            var likeAddAmount = 0;
+            var dislikeAddAmount = 0;
+            var resourceId = $(this).attr('data-id');
+            $("#resourceLikesBtn_" + resourceId).prop('disabled', true);
+            $("#resourceDisLikesBtn_" + resourceId).prop('disabled', true);
+            var isResourceLiked = $(this).attr('data-id2');
+            var isResourceDisliked = $(this).attr('data-id3');
+            if (isResourceDisliked == "disliked") {
+                if (isResourceLiked == "liked") {
+                    likeAddAmount = -1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id2', "not_liked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "not_liked");
+                }
+                else {
+                    likeAddAmount = 1;
+                    dislikeAddAmount = -1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id2', "liked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "liked");
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
+                }
+            }
+            else {
+                if (isResourceLiked == "liked") {
+                    likeAddAmount = -1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id2', "not_liked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "not_liked");
+                }
+                else {
+                    likeAddAmount = 1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id2', "liked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "liked");
+                }
+            }
 
-			var likesAmmount = $(this).attr('data-id1');
-			var dislikesAmmount = $("#resourceDisLikesBtn_" + resourceId).attr('data-id1');
-			var newLikeResult = parseInt(likesAmmount) + likeAddAmount;
-			var newDisLikeResult = parseInt(dislikesAmmount) + dislikeAddAmount;
-			$("#resourceLikes_" + resourceId).html(newLikeResult);
-			$("#resourceDislikes_" + resourceId).html(newDisLikeResult );
-			likesAmmount = $(this).attr('data-id1', newLikeResult);
-			dislikesAmmount = $("#resourceDisLikesBtn_" + resourceId).attr('data-id1', newDisLikeResult );
-			
+            var likesAmmount = $(this).attr('data-id1');
+            var dislikesAmmount = $("#resourceDisLikesBtn_" + resourceId).attr('data-id1');
+            var newLikeResult = parseInt(likesAmmount) + likeAddAmount;
+            var newDisLikeResult = parseInt(dislikesAmmount) + dislikeAddAmount;
+            $("#resourceLikes_" + resourceId).html(newLikeResult);
+            $("#resourceDislikes_" + resourceId).html(newDisLikeResult );
+            likesAmmount = $(this).attr('data-id1', newLikeResult);
+            dislikesAmmount = $("#resourceDisLikesBtn_" + resourceId).attr('data-id1', newDisLikeResult );
+
             $.ajax({
                 type: 'POST',
                 cache: false,
                 url: '@Url.Action("AddLike", "IAFCHBRecentlyAddedResources")',
-				data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceLikesBtn_" + resourceId).prop('disabled', false);
-					$("#resourceDisLikesBtn_" + resourceId).prop('disabled', false);
-				}                             
+                data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount)  },
+                dataType: "json",
+                success: function (response) {
+                    $("#resourceLikesBtn_" + resourceId).prop('disabled', false);
+                    $("#resourceDisLikesBtn_" + resourceId).prop('disabled', false);
+                }
             });
         });
 
         //Add Dislike
-		$('.addDislike').click(function () {
-			var likeAddAmount = 0;
-			var dislikeAddAmount = 0;
-			var resourceId = $(this).attr('data-id');
-			$("#resourceLikesBtn_" + resourceId).prop('disabled', true);
-			$("#resourceDisLikesBtn_" + resourceId).prop('disabled', true);
-			var isResourceLiked = $(this).attr('data-id2');
-			var isResourceDisliked = $(this).attr('data-id3');
-			if (isResourceLiked == "liked") {
-				if (isResourceDisliked == "disliked") {
-					dislikeAddAmount = -1;
-					$("#resourceLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
-				}
-				else {
-					dislikeAddAmount = 1;
-					likeAddAmount = -1;
-					$("#resourceLikesBtn_" + resourceId).attr('data-id2', "not_liked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "not_liked");
-					$("#resourceLikesBtn_" + resourceId).attr('data-id3', "disliked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "disliked");					
-				}				
-			}
-			else {
-				if (isResourceDisliked == "disliked") {
-					dislikeAddAmount = -1;
-					$("#resourceLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
-					
-				}
-				else {
-					dislikeAddAmount = 1;
-					$("#resourceLikesBtn_" + resourceId).attr('data-id3', "disliked");
-					$("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "disliked");
-				
-				}			
-			}
+        $('.addDislike').click(function () {
+            var likeAddAmount = 0;
+            var dislikeAddAmount = 0;
+            var resourceId = $(this).attr('data-id');
+            $("#resourceLikesBtn_" + resourceId).prop('disabled', true);
+            $("#resourceDisLikesBtn_" + resourceId).prop('disabled', true);
+            var isResourceLiked = $(this).attr('data-id2');
+            var isResourceDisliked = $(this).attr('data-id3');
+            if (isResourceLiked == "liked") {
+                if (isResourceDisliked == "disliked") {
+                    dislikeAddAmount = -1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
+                }
+                else {
+                    dislikeAddAmount = 1;
+                    likeAddAmount = -1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id2', "not_liked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id2', "not_liked");
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id3', "disliked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "disliked");
+                }
+            }
+            else {
+                if (isResourceDisliked == "disliked") {
+                    dislikeAddAmount = -1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "not_disliked");
 
-			var dislikesAmmount = $(this).attr('data-id1');
-			var likesAmmount = $("#resourceLikesBtn_" + resourceId).attr('data-id1');
-			var newLikeResult = parseInt(likesAmmount) + likeAddAmount;
-			var newDisLikeResult = parseInt(dislikesAmmount) + dislikeAddAmount;
-			$("#resourceLikes_" + resourceId).html(newLikeResult);
-			$("#resourceDislikes_" + resourceId).html(newDisLikeResult);
-			likesAmmount = $("#resourceLikesBtn_" + resourceId).attr('data-id1', newLikeResult);
-			dislikesAmmount = $(this).attr('data-id1', newDisLikeResult);
-			
+                }
+                else {
+                    dislikeAddAmount = 1;
+                    $("#resourceLikesBtn_" + resourceId).attr('data-id3', "disliked");
+                    $("#resourceDisLikesBtn_" + resourceId).attr('data-id3', "disliked");
+
+                }
+            }
+
+            var dislikesAmmount = $(this).attr('data-id1');
+            var likesAmmount = $("#resourceLikesBtn_" + resourceId).attr('data-id1');
+            var newLikeResult = parseInt(likesAmmount) + likeAddAmount;
+            var newDisLikeResult = parseInt(dislikesAmmount) + dislikeAddAmount;
+            $("#resourceLikes_" + resourceId).html(newLikeResult);
+            $("#resourceDislikes_" + resourceId).html(newDisLikeResult);
+            likesAmmount = $("#resourceLikesBtn_" + resourceId).attr('data-id1', newLikeResult);
+            dislikesAmmount = $(this).attr('data-id1', newDisLikeResult);
+
             $.ajax({
                 type: 'POST',
                 cache: false,
                 url: '@Url.Action("AddDislike", "IAFCHBRecentlyAddedResources")',
-				data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount) },
-				dataType: "json",
-				success: function (response) {
-					$("#resourceLikesBtn_" + resourceId).prop('disabled', false);
-					$("#resourceDisLikesBtn_" + resourceId).prop('disabled', false);
-				}
+                data: { resourceId: resourceId, likeAddAmount: parseInt(likeAddAmount), dislikeAddAmount: parseInt(dislikeAddAmount) },
+                dataType: "json",
+                success: function (response) {
+                    $("#resourceLikesBtn_" + resourceId).prop('disabled', false);
+                    $("#resourceDisLikesBtn_" + resourceId).prop('disabled', false);
+                }
             });
         });
 
         //Add ToMyHandBook
-		$('.addToMyHandBook').click(function () {
+        $('.addToMyHandBook').click(function () {
 
             var resourceId = $(this).attr('data-id');
 
@@ -254,27 +254,6 @@
                     }
                 }
             });
-		});
-
-		//Open Recently Added Resource Details
-        $('.resourceLink').click(function (e) {
-            if ($(e.target).hasClass('click-cancel-js')) return;
-            else {
-                var resourceUrl = $(this).attr("data-id");
-                var resourceLinkUrl = $(this).attr('data-id1');
-                var resourceDocumentUrl = $(this).attr('data-id2');
-                var openResourceDocumentUrl = $(this).attr('data-id3');
-
-                if (openResourceDocumentUrl == "OpenLink") {
-                    window.location.href = resourceUrl;
-                }
-                else if (resourceLinkUrl != 'undefined' && resourceLinkUrl != "") {
-                    window.open(resourceLinkUrl);
-                }
-                else if (resourceDocumentUrl != 'undefined' && resourceDocumentUrl != "") {
-                    window.open(resourceDocumentUrl);
-                }
-            }
         });
 
     });
