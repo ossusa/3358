@@ -139,6 +139,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 		public const String ProjectVWSARIT = "project-vws-a-rit";
 		public const String ShowOnARITSite = "show-on-a-rit-site";
+
 		#endregion CategoriesName
 
 		#region Urls
