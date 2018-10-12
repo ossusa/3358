@@ -46,10 +46,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				var categories = resMaster.GetValue<TrackedList<Guid>>("Category").ToArray();
 				resDataMaster.Organizer.AddTaxa("Category", categories);
-
-				var aritcontentResource = resMaster.GetValue<TrackedList<Guid>>("aritcontent").ToArray();
-				resDataMaster.Organizer.AddTaxa("aritcontent", aritcontentResource);
-
+				
 				var shortsummary = resMaster.GetValue("shortsummary");
 				resDataMaster.SetValue("shortsummary", shortsummary);
 
@@ -182,10 +179,6 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var categories = resMaster.GetValue<TrackedList<Guid>>("Category").ToArray();
 				resDataTemp.Organizer.Clear("Category");
 				resDataTemp.Organizer.AddTaxa("Category", categories);
-
-				var aritcontentResource = resMaster.GetValue<TrackedList<Guid>>("aritcontent").ToArray();
-				resDataTemp.Organizer.Clear("aritcontent");
-				resDataTemp.Organizer.AddTaxa("aritcontent", aritcontentResource);
 
 				var shortsummary = resMaster.GetValue("shortsummary");
 				resDataTemp.SetValue("shortsummary", shortsummary);
@@ -375,7 +368,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			var recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
 				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)				
-				.Where(r => r.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(r => r.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.OrderByDescending(d => d.DateCreated)
 				.Take(6)
 				.ToList();
@@ -404,7 +397,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var featuredResource = dynamicModuleManager.GetDataItems(handBookResourcesType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
 					.Where(d => d.GetValue<IList<Guid>>("Category").Contains(Featured_VWS_A_RIT))
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.OrderByDescending(d => d.DateCreated)
 					.FirstOrDefault();
 
@@ -449,7 +442,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				var recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryID));
 
 				if (orderBy == OrderByMostRecent)
@@ -510,7 +503,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			var moreResourcesArray = dynamicModuleManager.GetDataItems(handBookResourcesType)
 				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-				.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.Where(d => d.GetValue<IList<Guid>>("Category").Contains(categoryID))
 				.Where(d => d.Id != resourceId)
 				.OrderByDescending(r => r.DateCreated)
@@ -806,7 +799,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
             int amount = dynamicModuleManager.GetDataItems(handBookResourcesType)
                 .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-				.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.Where(d => d.GetValue<IList<Guid>>("Category").Contains(categoryId))
                 .Count();
 
@@ -867,10 +860,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 log.Info("GetMyHandBook:" + model.UserId);
 
                 var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
                 var myCompletedHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyCompletedResources")
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
 
                 var myHandBookResourcesItem = new IAFCHandBookMyHandBookResourceModelModel();
@@ -901,12 +894,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     var childCategoriesList = GetChildCategories(categoryItem);
 
                     var categoryResources = myHandBookResources
-						.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+						.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 						.Where(i => i.GetValue<IList<Guid>>("Category").Any(c => childCategoriesList.Contains(c)))						
 						.ToList();
 
                     var categoryCompletedResources = myCompletedHandBookResources
-						.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+						.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 						.Where(i => i.GetValue<IList<Guid>>("Category").Any(c => childCategoriesList.Contains(c)))
                         .ToList();
 
@@ -933,12 +926,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     }
 
                     category.MyHandBookCompletedResources = myCompletedHandBookResources
-						.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+						.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 						.Where(i => i.GetValue<IList<Guid>>("Category").Any(c => childCategoriesList.Contains(c)))
                         .Count();
 
                     category.MyHandBookInCompletedResources = myHandBookResources
-						.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+						.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 						.Where(i => i.GetValue<IList<Guid>>("Category").Any(c => childCategoriesList.Contains(c)))
                         .Count();
 
@@ -1021,10 +1014,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				}
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
                 var myCompletedHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyCompletedResources")
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
 
                 var childCategoriesList = GetChildCategories(categoryItem);
@@ -1044,12 +1037,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                     childCategory.CategoryDescription = childCategoryDetails.ResourceCategoryDescription;
 
                     var categoryResources = myHandBookResources
-						.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+						.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 						.Where(d => d.GetValue<IList<Guid>>("Category").Contains(childItem))
                         .ToList();
 
                     var categoryCompletedResources = myCompletedHandBookResources
-						.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+						.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 						.Where(d => d.GetValue<IList<Guid>>("Category").Contains(childItem))
                         .ToList();
 
@@ -1129,10 +1122,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
                 }
 
                 var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
                 var myCompletedHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyCompletedResources")
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
 
                 var category = new IAFCHandBookTopicCategoryModel();
@@ -1148,12 +1141,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
                 var categoryResourcesList = myHandBookResources
                     .Where(i => i.GetValue<IList<Guid>>("Category").Contains(categoryId))
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
 
                 var categoryCompletedResourcesList = myCompletedHandBookResources
                     .Where(i => i.GetValue<IList<Guid>>("Category").Contains(categoryId))
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
 
                 var categoryResources = new List<DynamicContent>();
@@ -1282,7 +1275,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
             var myHandBookItem = GetOrCreateMyHandBook();
 
             var myHandBookCategoryResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
-				.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.Where(i => i.GetValue<IList<Guid>>("Category").Contains(categoryId))
                 .ToList();
 
@@ -1324,10 +1317,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 
 			var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
-					.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.ToList();
 			var myCompletedHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyCompletedResources")
-				.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.ToList();
 
 			var myHandBookResourcesExisxt = myHandBookResources.Where(r => r.Id == resourceItem.Id).Any();
@@ -1375,19 +1368,19 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 			var myHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyResources")
                 .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-				.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.Where(d => d.Id != resourceId);
 
             var myCompletedHandBookResources = myHandBookItem.GetRelatedItems<DynamicContent>("MyCompletedResources")
                 .Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-				.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.Where(d => d.Id != resourceId);
 
             var allMyHandBookResources = myHandBookResources.Union(myCompletedHandBookResources);
 
             var moreResourcesItemsArray = allMyHandBookResources
                 .Where(i => i.GetValue<IList<Guid>>("Category").Contains(categoryID))
-				.Where(d => d.GetValue<IList<Guid>>("aritcontent").Contains(ShowOnARITSiteGuid))
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.OrderByDescending(r => r.DateCreated)
                 .Take(5)
                 .ToArray();
