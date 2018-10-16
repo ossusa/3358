@@ -43,7 +43,10 @@
 										}
 										else
 										{
-											<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@Model.Id.ToString()"> <i class="anticon anticon-plus"></i> Add to My A-RIT </button>
+											<button type="button" class="addToMyHandBook resources__slide-btn" data-id="@Model.Id.ToString()"
+													data-addtomyarit="@Model.ResourceDetails.Category.ParentCategoryTitle - @Model.ResourceDetails.Category.CategoryTitle - @Model.ResourceDetails.ResourceTitle"> 
+												<i class="anticon anticon-plus"></i> Add to My A-RIT 
+											</button>
 										}
 									</div>
 								</div>
