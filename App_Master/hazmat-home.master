@@ -7,25 +7,15 @@
 <meta name="viewport" content="initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MVQVFZP');</script>
-<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!--&lt;!&ndash; Global site tag (gtag.js) - Google Analytics &ndash;&gt;-->
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76221774-1"></script>-->
-<!--<script>-->
-  <!--window.dataLayer = window.dataLayer || [];-->
-  <!--function gtag(){dataLayer.push(arguments);}-->
-  <!--gtag('js', new Date());-->
-
-  <!--gtag('config', 'UA-76221774-1');-->
-<!--</script>-->
-
-
+  gtag('config', 'UA-76221774-1');
+</script>
 
 <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -36,9 +26,6 @@
 </head>
 
 <body class="stretched no-transition">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVQVFZP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <form id="form1" runat="server" style="margin-bottom:0">
 <asp:ScriptManager ID="ScriptManager1" runat="server">
