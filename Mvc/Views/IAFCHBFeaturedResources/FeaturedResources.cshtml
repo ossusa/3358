@@ -40,7 +40,10 @@
 						}
 						else
 						{
-							<button type="button" class="resources__slide-btn resources__slide-btn_logged addToMyHandBook" data-id="@Model.Id.ToString()"><span class="resources--plus anticon anticon-plus"></span>Add to My A-RIT </button>
+							<button type="button" class="resources__slide-btn resources__slide-btn_logged addToMyHandBook" data-id="@Model.Id.ToString()" 
+									data-addtomyarit="@Model.ResourceDetails.Category.ParentCategoryTitle - @Model.ResourceDetails.Category.CategoryTitle - @Model.ResourceDetails.ResourceTitle" >
+								<span class="resources--plus anticon anticon-plus"></span>Add to My A-RIT 
+							</button>
 						}
 					</span>
 				}

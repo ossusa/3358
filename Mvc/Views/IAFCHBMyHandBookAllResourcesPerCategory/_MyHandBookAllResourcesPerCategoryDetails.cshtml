@@ -70,7 +70,10 @@
 					{
 						<div class="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString()) resources__slide-btn ">
 							<div class="markAsCompleteResource">
-								<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"><div class="complete_box click-cancel-js"></div>Mark As Complete</button>
+								<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"
+										data-сomplete="@item.ResourceDetails.Category.ParentCategoryTitle - @item.ResourceDetails.Category.CategoryTitle - @item.ResourceDetails.ResourceTitle">
+									<div class="complete_box click-cancel-js"></div>Mark As Complete
+								</button>
 							</div>
 						</div>
 						<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "remove", item.Id.ToString())">
@@ -91,7 +94,10 @@
 								}
 								else
 								{
-									<button type="button" class="click-cancel-js addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus click-cancel-js"></span> Add to My A-RIT </button>
+									<button type="button" class="click-cancel-js addSharedToMyHandBookBtn resources__slide-btn" data-id="@item.Id.ToString()"
+											data-addtomyarit="@item.ResourceDetails.Category.ParentCategoryTitle - @item.ResourceDetails.Category.CategoryTitle - @item.ResourceDetails.ResourceTitle">
+										<span class="resources--plus anticon anticon-plus click-cancel-js"></span> Add to My A-RIT 
+									</button>
 								}
 							</div>
 						</div>

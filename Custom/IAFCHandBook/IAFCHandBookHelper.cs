@@ -138,6 +138,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public const String DepartmentAdministrationName = "department-administration";
 
 		public const String ProjectVWSARIT = "project-vws-a-rit";
+		
+
 		#endregion CategoriesName
 
 		#region Urls
@@ -282,6 +284,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		public Guid FinanceCategory = Guid.Empty;
 		public Guid CommunityCategory = Guid.Empty;
 		public Guid DepartmentAdministrationCategory = Guid.Empty;
+
+		public Guid ProjectVWSARITGuid = Guid.Empty;
 		#endregion Guids
 
 		private List<Guid> topicParentCategories = new List<Guid>();
@@ -306,6 +310,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				InitCategoriesGuid();
 				InitCategoriesLists();
 				InitCategoryDictionary();
+
+				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+				ProjectVWSARITGuid = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == ProjectVWSARIT).Select(c => c.Id).First();
 			}
 			catch (Exception e)  
 			{
@@ -1144,18 +1151,25 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		{
 			var comments = new List<IAFCHandBookCommentModel>();
 
-			var resourceTypeItem = handBookResourcesType;
-			if (resourceType == commentResource)
+			try
 			{
-				resourceTypeItem = resourceCommentsType;
+				var resourceTypeItem = handBookResourcesType;
+				if (resourceType == commentResource)
+				{
+					resourceTypeItem = resourceCommentsType;
+				}
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+				var resourceItem = dynamicModuleManager.GetDataItems(resourceTypeItem).
+							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceId)
+							.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
+							.First();
+				comments = GetResourceComments(resourceItem, resourceType);
 			}
-
-			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
-			var resourceItem = dynamicModuleManager.GetDataItems(resourceTypeItem).
-						Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceId).
-						First();
-			comments = GetResourceComments(resourceItem, resourceType);
-
+			catch (Exception e)
+			{
+				log.Error("IAFC HandBook Helper GetResourceComments Error:" + e.StackTrace);
+			}
 
 			return comments;
 		}
@@ -1275,9 +1289,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 	
 
 		public IAFCHandBookResourceModel GetResourceDetailsUI(DynamicContent resource, string categoryName, bool isMyHandBookItem = false, string orderBy = OrderByMostPopular)
-		{
-			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+		{			
+			var categoryId = GetCategoryGuidByName(categoryName);			
 			if (categoryId == Guid.Empty)
 			{
 				return null; 
@@ -1296,8 +1309,9 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			{
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
-				var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType).
-							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name)
+				var resourceItem = dynamicModuleManager.GetDataItems(handBookResourcesType)
+							.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.UrlName == name)
+							.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 							.FirstOrDefault();
 
 				if (resourceItem==null)
@@ -1321,9 +1335,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 		}
 
 		public IAFCHandBookResourceModel GetResourceDetailsUI(String name, string categoryName = null, string orderby = OrderByMostPopular)
-		{
-			TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-			var categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+		{			
+			var categoryId = GetCategoryGuidByName(categoryName);
 			if (categoryId == Guid.Empty)
 			{
 				return null;
@@ -1855,8 +1868,10 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var myHandBookItem = GetOrCreateMyHandBook();
 
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
-				var resource = dynamicModuleManager.GetDataItems(handBookResourcesType).
-							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceId).First();
+				var resource = dynamicModuleManager.GetDataItems(handBookResourcesType)
+							.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && d.Id == resourceId)
+							.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
+							.First();
 
 				var masterResource = dynamicModuleManager.Lifecycle.GetMaster(resource);
 				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
@@ -1886,12 +1901,11 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var myHandBookItem = GetOrCreateMyHandBook();
 
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
-				var resourceList = dynamicModuleManager.GetDataItems(handBookResourcesType).
-							Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+				var resourceList = dynamicModuleManager.GetDataItems(handBookResourcesType)
+							.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+							.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 							.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId))
 							.ToArray();
-
-
 
 				var masterHandBook = dynamicModuleManager.Lifecycle.GetMaster(myHandBookItem);
 
@@ -2230,7 +2244,6 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				return null;
 			}
 			
-
 			return GetMyHandBookResourcesPerCategoryNext(categoryName, userId);
 		}
 		#endregion MyHandBookGetResourcesPerCategory
@@ -2306,9 +2319,8 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 			Guid? categoryId = null;
 			if(categoryName !=null)
-			{
-				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-				categoryId = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(t => t.Name == categoryName).Select(t => t.Id).FirstOrDefault();
+			{				
+				categoryId = GetCategoryGuidByName(categoryName);
 				if (categoryId == Guid.Empty)
 				{
 					return null;
@@ -2383,7 +2395,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			model.Menu.Add(otherMenuItem);
 
 			otherMenuItem = new IAFCHandBookMyHandBookMenuItemModel();
-			otherMenuItem.Title = "LOGIN/SIGN UP";
+			otherMenuItem.Title = "LOGIN / SIGN UP";
 			otherMenuItem.Url = "/Mxg/AuthService/SignInByHelix/?ReturnUrl=" + urlPath;
 			otherMenuItem.Visible = !isUserSignIn;
 			model.Menu.Add(otherMenuItem);
@@ -2409,10 +2421,12 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
 			var searchedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
-				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live && ((d.GetValue<string>("Title").Contains(searchText))
-																							||(d.GetValue<string>("ResourceDescription").Contains(searchText))
-																							|| (d.GetValue<string>("shortsummary").Contains(searchText)))
-																							);
+				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+				.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
+				.Where(d => (d.GetValue<string>("Title").Contains(searchText))
+						   || (d.GetValue<string>("ResourceDescription").Contains(searchText))
+						   || (d.GetValue<string>("shortsummary").Contains(searchText)));
+				
 
 			var searchedResourcesList = new List<DynamicContent>();
 			if (orderBy == OrderByTopic)
@@ -2559,14 +2573,17 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
 				var myHandBookResources = myHandBookItem.GetRelatedItems("MyResources").Cast<DynamicContent>()
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId))
 					.Count();
 				var myHandBookCompletedResources = myHandBookItem.GetRelatedItems("MyCompletedResources").Cast<DynamicContent>()
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId))
 					.Count();
 
 				var allResourcesPerCaterory = dynamicModuleManager.GetDataItems(handBookResourcesType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.Where(r => r.GetValue<IList<Guid>>("Category").Contains(categoryId)).Count();
 
 				if ((allResourcesPerCaterory == myHandBookResources + myHandBookCompletedResources )&& allResourcesPerCaterory!=0)
@@ -2596,12 +2613,14 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 				var resourceCategory = dynamicModuleManager.GetDataItems(handBookResourcesType)
 					.Where(d => d.Id == resourceId)
 					.ToArray()
+					.Where(d => d.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.Select(r => r.GetValue<IList<Guid>>("Category").Where(c => topicCategories.Contains(c)).First())
 					.First();
 
 				var handBookList = dynamicModuleManager.GetDataItems(myHandBookType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
 					.ToArray()
+					.Where(d => d.GetValue<TrackedList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 					.Where(h => h.GetValue<IList<Guid>>("Category").Contains(resourceCategory))
 					.ToArray();
 
@@ -2869,19 +2888,16 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			var model = new List<VWSARITResourcesListModel>();
 			try
 			{
-				TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
-				var ProjectVWSARITGuid = taxonomyManager.GetTaxa<HierarchicalTaxon>().Where(c => c.Name == ProjectVWSARIT).Select(c => c.Id).First();
-
-
+				
 				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 				var ProjectVWSARITExternalResourcesList = dynamicModuleManager.GetDataItems(externalResourcesType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-					.ToArray()
+					.ToArray()					
 					.Where(r => r.GetValue<TrackedList<Guid>>("feeding").Contains(ProjectVWSARITGuid)).ToList();
 
 				var ProjectVWSARITResourcesList = dynamicModuleManager.GetDataItems(resourceType)
 					.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)
-					.ToArray()
+					.ToArray()					
 					.Where(r => r.GetValue<TrackedList<Guid>>("feeding").Contains(ProjectVWSARITGuid));
 
 				

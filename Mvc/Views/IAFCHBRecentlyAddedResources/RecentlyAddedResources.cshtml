@@ -68,7 +68,10 @@
 								}
 								else
 								{
-									<button type="button" class="resources__slide-btn addToMyHandBook click-cancel-js" data-id="@item.Id.ToString()"><span class="resources--plus anticon anticon-plus click-cancel-js"></span>Add to My A-RIT</button>
+									<button type="button" class="resources__slide-btn addToMyHandBook click-cancel-js" data-id="@item.Id.ToString()"
+											data-addtomyarit="@item.ResourceDetails.Category.ParentCategoryTitle - @item.ResourceDetails.Category.CategoryTitle - @item.ResourceDetails.ResourceTitle">
+										<span class="resources--plus anticon anticon-plus click-cancel-js"></span>Add to My A-RIT
+									</button>
 								}
 							</div>
 						}
