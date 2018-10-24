@@ -71,7 +71,7 @@
 						<div class="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString()) resources__slide-btn ">
 							<div class="markAsCompleteResource">
 								<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"
-										data-сomplete="Leadership - Generational Differences - Generational Differences in the Workplace">
+										data-сomplete="@item.ResourceDetails.Category.ParentCategoryTitle - @item.ResourceDetails.Category.CategoryTitle - @item.ResourceDetails.ResourceTitle">
 									<div class="complete_box click-cancel-js"></div>Mark As Complete
 								</button>
 							</div>
