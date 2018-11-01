@@ -134,7 +134,15 @@ namespace SitefinityWebApp
                         }
                     }
                 }
+				else if (item.Status == ContentLifecycleStatus.Live && !item.Visible)
+				{
+					if (helper.IsHandBookResourcesDataExistsFor(item.Id, itemType))
+					{
+						helper.UbpublishIAFCHandBookResourcesData(item.Id, itemType);
+					}
+				}
             }
+
         }
 
 		private void DynamicContentDeletedEventHandler(IDynamicContentDeletingEvent evt)

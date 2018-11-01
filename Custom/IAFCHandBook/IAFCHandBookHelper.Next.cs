@@ -278,6 +278,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 
 				resDataMaster = dynamicModuleManager.Lifecycle.CheckIn(resDataTemp) as DynamicContent;
 				dynamicModuleManager.Lifecycle.Publish(resDataMaster);
+				
 				resDataMaster.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Published");
 
 				dynamicModuleManager.SaveChanges();
@@ -288,6 +289,38 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			}
 		}
 		#endregion UpdateIAFCHandBookResourcesData
+
+
+		#region UbpublishIAFCHandBookResourcesData
+		public void UbpublishIAFCHandBookResourcesData(Guid resourceLiveId, Type resourceType)
+		{
+			try
+			{
+				var relationFieldName = GetRelatedResourceFieldName(resourceType);
+				var currentUtcDateTime = DateTime.UtcNow;
+
+				DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
+
+				var resLive = dynamicModuleManager.GetDataItem(resourceType, resourceLiveId);
+				var resMaster = dynamicModuleManager.Lifecycle.GetMaster(resLive) as DynamicContent;
+				
+				var resDataList = resMaster.GetRelatedParentItems(handBookResourcesType.FullName, null, relationFieldName)
+					.ToList();
+
+				var resData = resDataList.First() as DynamicContent;
+
+				DynamicContent resLiveItem = dynamicModuleManager.Lifecycle.GetLive(resData) as DynamicContent;
+				dynamicModuleManager.Lifecycle.Unpublish(resLiveItem);
+				resData.SetWorkflowStatus(dynamicModuleManager.Provider.ApplicationName, "Unpublished");				
+
+				dynamicModuleManager.SaveChanges();
+			}
+			catch (Exception e)
+			{
+				log.Error($@"{nameof(UbpublishIAFCHandBookResourcesData)} Error: {e.StackTrace}");
+			}
+		}
+		#endregion UbpublishIAFCHandBookResourcesData
 
 		#region DeleteIAFCHandBookResourcesData
 		public void DeleteIAFCHandBookResourcesData(Guid resourceID, Type resourceType)
@@ -367,7 +400,7 @@ namespace SitefinityWebApp.Custom.IAFCHandBook
 			DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager();
 
 			var recentlyAddedResources = dynamicModuleManager.GetDataItems(handBookResourcesType)
-				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live)				
+				.Where(d => d.Visible == true && d.Status == ContentLifecycleStatus.Live )				
 				.Where(r => r.GetValue<IList<Guid>>("feeding").Contains(ProjectVWSARITGuid))
 				.OrderByDescending(d => d.DateCreated)
 				.Take(6)
