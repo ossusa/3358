@@ -90,7 +90,7 @@
 							<div class="resources__slide-btn" id="@string.Format("{0}_{1}", "markAsComplete", item.Id.ToString())">
 								<div class="markAsCompleteResource">
 									<button type="button" class="click-cancel-js markAsCompleteBtn complete_btn" data-id="@item.Id.ToString()" data-id2="@item.ResourceDetails.Category.Id"
-											data-сomplete="@item.ResourceDetails.Category.ParentCategoryTitle - @item.ResourceDetails.Category.CategoryTitle - @item.ResourceDetails.ResourceTitle">
+											data-markasbox="@item.ResourceDetails.Category.ParentCategoryTitle - @item.ResourceDetails.Category.CategoryTitle - @item.ResourceDetails.ResourceTitle">
 										<div class="complete_box click-cancel-js"></div>Mark As Complete
 									</button>
 								</div>
@@ -161,7 +161,7 @@
 {
 	<div class="complete_section">
 		<div class="box">
-			<h3 class="complete_section-title">Complete </h3>
+			<h3 class="complete_section-title markAsCompleteBtn" data-completedbox="Testing">Complete </h3>
 			<div>
 				<section class="complete_blocks_first">
 					@foreach (var item in Model.MyCompletedResources)

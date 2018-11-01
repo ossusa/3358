@@ -216,8 +216,11 @@ $(document).ready(function () {
 
 
 
-    $('.complete_box').on('click', function (event) {
-        $(event.currentTarget).addClass('anticon anticon-check');
+    // $('.complete_box').on('click', function (event) {
+    //     $(event.currentTarget).addClass('anticon anticon-check');
+    // });
+    $('.complete_btn, .markAsCompleteBtn').on('click', function (event) {
+        $(event.currentTarget).find('.complete_box').addClass('anticon anticon-check');
     });
     $('.header__list:nth-of-type(1) > a').click(function (e) {
         e.preventDefault();
