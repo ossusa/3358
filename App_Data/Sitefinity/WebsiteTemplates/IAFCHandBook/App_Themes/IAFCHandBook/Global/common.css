@@ -1352,7 +1352,8 @@ p {
   font-family: "Zilla Slab", serif;
   font-size: 24px;
   font-weight: 300;
-  width: 54.9%; }
+  width: 100%;
+  max-width: 800px; }
 
 .community__head-button-group {
   display: -ms-flexbox;

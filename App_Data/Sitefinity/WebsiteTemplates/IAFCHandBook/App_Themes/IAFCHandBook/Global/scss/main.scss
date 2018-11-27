@@ -1540,7 +1540,8 @@ p {
       font-family: $font_family_5;
       font-size: 24px;
       font-weight: 300;
-      width: 54.9%;
+      width: 100%;
+      max-width: 800px;
     }
     &-button-group {
       display: flex;
