@@ -1201,7 +1201,7 @@ p {
       }
     }
     &_desc{
-      max-width: 800px;
+      max-width: 612px;
     }
     &-first {
       padding: 100px 0 36px !important;
@@ -1540,8 +1540,9 @@ p {
       font-family: $font_family_5;
       font-size: 24px;
       font-weight: 300;
-      width: 100%;
-      max-width: 800px;
+      width: 54.9%;
+      //width: 100%;
+      //max-width: 800px;
     }
     &-button-group {
       display: flex;
