@@ -1074,7 +1074,7 @@ p {
       height: 40px;
       margin-left: 16px; }
   .topics__text_desc {
-    max-width: 612px; }
+    max-width: 800px; }
   .topics__text-first {
     padding: 100px 0 36px !important; }
   .topics__text-yellow h2 {
@@ -3879,7 +3879,7 @@ p {
   background: transparent;
   outline: none;
   margin-right: 6px;
-  pointer-events: none;}
+  pointer-events: none; }
 
 .complete_btn {
   border: none;
