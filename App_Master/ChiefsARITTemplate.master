@@ -83,9 +83,9 @@
             <div class="footer__info">
                 <div class="footer__info-col">
                     <div class="sfimageWrp">
-
+                        <a target="_blank" href="https://www.iafc.org/">
                         <img id="footerImageID" title="IACF" src="/images/default-source/iacfhandbook/iacf.png?MaxWidth=145&amp;MaxHeight=&amp;ScaleUp=false&amp;Quality=High" alt="IACF" style="margin-left:-15px;" />
-
+                        </a>
                     </div>
                 </div>
                 <div class="footer__info-cols">

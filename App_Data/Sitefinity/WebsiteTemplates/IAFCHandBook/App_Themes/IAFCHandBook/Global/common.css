@@ -725,6 +725,7 @@ p {
       flex-direction: column;
       -ms-flex-pack: distribute;
       justify-content: space-between;
+      border-top: 1px solid #ccc;
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px; }
     .resources__slide-article {
@@ -1074,7 +1075,7 @@ p {
       height: 40px;
       margin-left: 16px; }
   .topics__text_desc {
-    max-width: 612px; }
+    max-width: 800px; }
   .topics__text-first {
     padding: 100px 0 36px !important; }
   .topics__text-yellow h2 {
@@ -1352,7 +1353,7 @@ p {
   font-family: "Zilla Slab", serif;
   font-size: 24px;
   font-weight: 300;
-  width: 54.9%; }
+  max-width: 800px; }
 
 .community__head-button-group {
   display: -ms-flexbox;
@@ -2558,6 +2559,9 @@ p {
 
 .resource-link-js {
   cursor: pointer; }
+
+.boss {
+  width: 30px; }
 
 .selectric-wrapper {
   position: relative;
